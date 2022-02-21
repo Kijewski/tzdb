@@ -1,0 +1,107 @@
+name: CI
+
+on:
+  push:
+    branches: ['main']
+  pull_request:
+    branches: ['main']
+  schedule:
+    - cron: "58 7 * * 3"
+
+jobs:
+  fmt:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          lfs: true
+
+      - name: Install Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: nightly
+          override: true
+          components: rustfmt
+
+      - run: cargo fmt --all -- --check
+
+  check:
+    strategy:
+      matrix:
+        toolchain:
+          - "1.56"
+          - stable
+          - nightly
+
+    name: "Check/${{ matrix.toolchain }}"
+
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          lfs: true
+
+      - name: Install Rust
+        id: actions-rs
+        uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: stable
+          override: true
+          components: clippy
+
+      - name: Cache
+        uses: actions/cache@v2
+        with:
+          key: ${{ runner.os }}-check-${{ steps.actions-rs.outputs.rustc }}-${{ hashFiles('Cargo.lock') }}
+          restore-keys: ${{ runner.os }}-check-${{ steps.actions-rs.outputs.rustc }}-
+          path: |
+            ~/.cargo/registry/index/
+            ~/.cargo/registry/cache/
+            ~/.cargo/git/db/
+            target/
+
+      - run: cargo check --workspace --all-targets
+
+      - run: cargo clippy --all-targets -- -D warnings
+
+  test:
+    strategy:
+      matrix:
+        toolchain:
+          - "1.56"
+          - stable
+          - nightly
+
+    name: "Test/${{ matrix.toolchain }}"
+
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          lfs: true
+
+      - name: Install Rust
+        id: actions-rs
+        uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: ${{ matrix.toolchain }}
+          override: true
+
+      - name: Cache
+        uses: actions/cache@v2
+        with:
+          key: ${{ runner.os }}-test-${{ steps.actions-rs.outputs.rustc }}-${{ hashFiles('Cargo.lock') }}
+          restore-keys: ${{ runner.os }}-test-${{ steps.actions-rs.outputs.rustc }}-
+          path: |
+            ~/.cargo/registry/index/
+            ~/.cargo/registry/cache/
+            ~/.cargo/git/db/
+            target/
+
+      - run: cargo test --workspace --all-targets
