@@ -10,5 +10,5 @@ license = "MIT OR Apache-2.0"
 [dependencies]
 anyhow = "1.0.54"
 convert_case = "0.5.0"
-phf = { version = "0.10.1", default-features = false, features = ["macros"] }
+phf_codegen = "0.10.0"
 tz-rs = "0.5.3"

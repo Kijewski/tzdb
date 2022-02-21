@@ -12,6 +12,6 @@ readme = "README.md"
 
 [dependencies]
 once_cell = { version = "1.9.0", features = ["parking_lot", "race"] }
-phf = { version = "0.10.1", default-features = false, features = ["macros"] }
+phf = "0.10.1"
 tinystr = "0.5.0"
 tz-rs = "0.5.3"

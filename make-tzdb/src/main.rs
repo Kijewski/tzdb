@@ -136,7 +136,6 @@ pub fn main() -> anyhow::Result<()> {
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 use once_cell::race::OnceBox;
-use phf::phf_map;
 use tinystr::TinyAsciiStr;
 use tz::TimeZone;
 
@@ -180,19 +179,15 @@ use crate::DbTimeZone;
     writeln!(f, "}}")?;
     writeln!(f)?;
 
+    let mut phf = phf_codegen::Map::new();
+    for (_, name, _, canon) in &names_and_indices {
+        phf.entry(name.to_ascii_lowercase(), &format!("time_zone::{}", canon));
+    }
     writeln!(
         f,
-        "static TIME_ZONES_BY_NAME: phf::Map<&'static str, &'static DbTimeZone> = phf_map!("
+        "static TIME_ZONES_BY_NAME: phf::Map<&'static str, &'static DbTimeZone> = {};",
+        phf.build(),
     )?;
-    for (_, name, _, canon) in &names_and_indices {
-        writeln!(
-            f,
-            "    {:?} => time_zone::{},",
-            name.to_ascii_lowercase(),
-            canon,
-        )?;
-    }
-    writeln!(f, ");")?;
     writeln!(f)?;
 
     writeln!(
