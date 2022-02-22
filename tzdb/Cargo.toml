@@ -1,6 +1,6 @@
 [package]
 name = "tzdb"
-version = "0.0.6"
+version = "0.1.0"
 edition = "2021"
 authors = ["René Kijewski <crates.io@k6i.de>"]
 repository = "https://github.com/Kijewski/tzdb"
@@ -12,8 +12,7 @@ readme = "README.md"
 rust-version = "1.57"
 
 [dependencies]
-once_cell = { version = "1.9.0", features = ["parking_lot", "race"] }
-tz-rs = "0.5.3"
+tz-rs = "0.6.0"
 
 # optional dependencies
 byte-slice-cast = { version = "1.2.1", optional = true }

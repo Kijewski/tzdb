@@ -14,6 +14,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+mod parse;
+
 use std::cmp::Ordering;
 use std::collections::HashMap;
 use std::env::args;
@@ -169,11 +171,6 @@ pub fn main() -> anyhow::Result<()> {
         .unwrap();
     assert!(max_len <= 32);
 
-    let count: usize = entries_by_major
-        .iter()
-        .map(|(_, entries)| entries.len())
-        .sum();
-
     let mut f = String::new();
 
     writeln!(
@@ -199,10 +196,7 @@ pub fn main() -> anyhow::Result<()> {
 // DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-use once_cell::race::OnceBox;
-use tz::TimeZone;
-
-use crate::DbTimeZone;
+use tz::TimeZoneRef;
 "#
     )?;
 
@@ -221,7 +215,7 @@ use crate::DbTimeZone;
             writeln!(f, "    /// {},", entry.full)?;
             writeln!(
                 f,
-                "pub static {}: &DbTimeZone = &tzdata::{};",
+                "pub const {}: TimeZoneRef<'static> = tzdata::{};",
                 entry.minor, entry.canon,
             )?;
         }
@@ -229,18 +223,6 @@ use crate::DbTimeZone;
             writeln!(f, "}}")?;
         }
     }
-    writeln!(f, "}}")?;
-    writeln!(f)?;
-
-    writeln!(f, r#"#[cfg(feature = "by-name")]"#)?;
-    writeln!(
-        f,
-        "pub(crate) fn tz_by_name(s: &str) -> Option<&'static DbTimeZone> {{"
-    )?;
-    writeln!(
-        f,
-        "    Some(*TIME_ZONES_BY_NAME.get(crate::Lower32([0u128; 2]).for_str(s)?)?)"
-    )?;
     writeln!(f, "}}")?;
     writeln!(f)?;
 
@@ -256,66 +238,40 @@ use crate::DbTimeZone;
     writeln!(f, r#"#[cfg(feature = "by-name")]"#)?;
     writeln!(
         f,
-        "static TIME_ZONES_BY_NAME: phf::Map<&'static str, &'static DbTimeZone> = {};",
+        "\
+pub(crate) const TIME_ZONES_BY_NAME: phf::Map<&'static str, &'static TimeZoneRef<'static>> = {};",
         phf.build(),
     )?;
     writeln!(f)?;
 
+    let mut time_zones_list = entries_by_major
+        .iter()
+        .flat_map(|(_, entries)| entries.iter())
+        .map(|entry| entry.full.as_str())
+        .collect_vec();
+    time_zones_list.sort_by_key(|l| l.to_ascii_lowercase());
     writeln!(f, r#"#[cfg(feature = "list")]"#)?;
     writeln!(
         f,
-        "pub(crate) static TIME_ZONES_LIST: [(&str, &DbTimeZone); {}] = [",
-        count,
+        "pub(crate) const TIME_ZONES_LIST: [&str; {}] = [",
+        time_zones_list.len()
     )?;
-    for (_, entries) in entries_by_major.iter() {
-        for entry in entries {
-            writeln!(f, "({:?}, &tzdata::{}),", entry.full, entry.canon)?;
-        }
+    for name in time_zones_list {
+        writeln!(f, "{:?},", name)?;
     }
     writeln!(f, "];")?;
     writeln!(f)?;
 
     writeln!(f, "mod tzdata {{")?;
-    writeln!(f, "    use super::*;")?;
-    for (index, entries) in entries_by_bytes.values().enumerate() {
-        let entry = &entries[0];
+    writeln!(f, "    use tz::timezone::*;")?;
+
+    for (bytes, entries) in &entries_by_bytes {
         writeln!(f)?;
         writeln!(
             f,
-            "pub(crate) static {}: DbTimeZone = DbTimeZone {{",
-            &entry.canon
-        )?;
-        writeln!(f, "    index: {},", index)?;
-        writeln!(f, "    name: {:?},", &entry.full)?;
-        writeln!(f, "    debug_name: {:?},", &entry.canon)?;
-        writeln!(f, "    bytes: &bytes::{},", &entry.canon)?;
-        writeln!(f, "    parsed: &parsed::{},", &entry.canon)?;
-        writeln!(f, "}};")?;
-    }
-    writeln!(f, "}}")?;
-    writeln!(f)?;
-
-    writeln!(f, "pub(crate) mod parsed {{")?;
-    writeln!(f, "    use super::*;")?;
-    writeln!(f)?;
-    for entries in entries_by_bytes.values() {
-        writeln!(
-            f,
-            "pub(crate) static {}: OnceBox<TimeZone> = OnceBox::new();",
+            "pub(crate) const {}: TimeZoneRef<'static> = {};",
             &entries[0].canon,
-        )?;
-    }
-    writeln!(f, "}}")?;
-    writeln!(f)?;
-
-    writeln!(f, "pub(crate) mod bytes {{")?;
-    for (bytes, entries) in &entries_by_bytes {
-        writeln!(
-            f,
-            "pub(crate) const {}: [u8; {}] = {:?};",
-            &entries[0].canon,
-            bytes.len(),
-            bytes,
+            parse::Unwrap(&tz_convert(bytes)),
         )?;
     }
     writeln!(f, "}}")?;
@@ -335,4 +291,12 @@ fn prepare_casing(name: &str) -> String {
     name.replace('/', " ")
         .replace("GMT+", " GMT plus ")
         .replace("GMT-", " GMT minus ")
+}
+
+fn tz_convert(bytes: &[u8]) -> crate::parse::TimeZone {
+    let tz = TimeZone::from_tz_data(bytes).unwrap();
+    let s = format!("{:?}", tz);
+    let s = s.replace('{', "(");
+    let s = s.replace('}', ")");
+    ron::from_str::<crate::parse::TimeZone>(&s).unwrap()
 }
