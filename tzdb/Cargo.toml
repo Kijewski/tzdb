@@ -12,8 +12,7 @@ readme = "README.md"
 rust-version = "1.57"
 
 [dependencies]
-once_cell = { version = "1.9.0", features = ["parking_lot", "race"] }
-tz-rs = "0.5.3"
+tz-rs = { git = "https://github.com/x-hgg-x/tz-rs.git", branch = "statics" }
 
 # optional dependencies
 byte-slice-cast = { version = "1.2.1", optional = true }

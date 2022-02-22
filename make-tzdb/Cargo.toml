@@ -8,8 +8,11 @@ description = "Tool to generate `tzdb/src/generated.rs`"
 license = "MIT OR Apache-2.0"
 
 [dependencies]
+tz-rs = { git = "https://github.com/x-hgg-x/tz-rs.git", branch = "statics" }
+
 anyhow = "1.0.55"
 convert_case = "0.5.0"
 itertools = "0.10.3"
 phf_codegen = "0.10.0"
-tz-rs = "0.5.3"
+serde = { version = "1.0.136", features = ["derive"] }
+ron = "0.7.0"

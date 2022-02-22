@@ -64,67 +64,9 @@
 
 mod generated;
 
-use std::fmt;
-use std::ops::Deref;
-
-use once_cell::race::OnceBox;
 use tz::TimeZone;
 
 pub use crate::generated::time_zone;
-
-/// A time zone
-#[derive(Clone, Copy)]
-pub struct DbTimeZone {
-    index: usize,
-    name: &'static str,
-    debug_name: &'static str,
-    bytes: &'static [u8],
-    parsed: &'static OnceBox<TimeZone>,
-}
-
-impl PartialEq for DbTimeZone {
-    fn eq(&self, other: &Self) -> bool {
-        self.index == other.index
-    }
-}
-
-impl Eq for DbTimeZone {}
-
-impl PartialOrd for DbTimeZone {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        self.index.partial_cmp(&other.index)
-    }
-}
-
-impl Ord for DbTimeZone {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        self.index.cmp(&other.index)
-    }
-}
-
-impl fmt::Display for DbTimeZone {
-    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        f.write_str(self.name)
-    }
-}
-
-impl fmt::Debug for DbTimeZone {
-    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        f.write_str(self.debug_name)
-    }
-}
-
-impl Deref for DbTimeZone {
-    type Target = TimeZone;
-
-    fn deref(&self) -> &Self::Target {
-        self.parsed.get_or_init(|| {
-            let tz = TimeZone::from_tz_data(self.bytes)
-                .expect("could not parse time zone data, this should be impossible");
-            Box::new(tz)
-        })
-    }
-}
 
 /// Import this trait to extend [tz::TimeZone]'s functionality
 pub trait TimeZoneExt {
@@ -135,7 +77,7 @@ pub trait TimeZoneExt {
         doc(cfg(any(feature = "by-name", feature = "local")))
     )]
     #[inline]
-    fn from_db(s: &str) -> Option<&'static TimeZone> {
+    fn from_db(s: &str) -> Option<&'static tz::statics::StaticTimeZone> {
         Some(&*crate::generated::tz_by_name(s)?)
     }
 
@@ -143,7 +85,7 @@ pub trait TimeZoneExt {
     #[cfg(feature = "list")]
     #[cfg_attr(feature = "docsrs", doc(cfg(feature = "list")))]
     #[inline]
-    fn names_in_db() -> &'static [(&'static str, &'static DbTimeZone)] {
+    fn names_in_db() -> &'static [(&'static str, &'static tz::statics::StaticTimeZone)] {
         &crate::generated::TIME_ZONES_LIST[..]
     }
 
@@ -151,7 +93,7 @@ pub trait TimeZoneExt {
     #[cfg(feature = "local")]
     #[cfg_attr(feature = "docsrs", doc(cfg(feature = "local")))]
     #[inline]
-    fn local_from_db() -> Option<&'static DbTimeZone> {
+    fn local_from_db() -> Option<&'static tz::statics::StaticTimeZone> {
         Some(&*crate::generated::tz_by_name(
             &iana_time_zone::get_timezone().ok()?,
         )?)
@@ -202,14 +144,8 @@ mod tests {
     #[test]
     fn test_static() {
         assert_eq!(
-            time_zone::pacific::NAURU.deref(),
+            time_zone::pacific::NAURU,
             TimeZone::from_db("Pacific/Nauru").unwrap()
         );
-    }
-
-    #[test]
-    fn test_sync_send() {
-        trait AssertSyncSend: 'static + Sync + Send {}
-        impl AssertSyncSend for DbTimeZone {}
     }
 }
