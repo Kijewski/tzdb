@@ -139,8 +139,7 @@ pub trait TimeZoneExt {
 
 impl TimeZoneExt for TimeZone {}
 
-#[repr(align(32))]
-struct Lower32([u64; 4]);
+struct Lower32([u128; 2]);
 
 impl Lower32 {
     #[inline]
@@ -150,10 +149,8 @@ impl Lower32 {
             .get_mut(..s.len())?
             .copy_from_slice(s.as_bytes());
 
-        self.0[0] |= 0x2020_2020_2020_2020_u64;
-        self.0[1] |= 0x2020_2020_2020_2020_u64;
-        self.0[2] |= 0x2020_2020_2020_2020_u64;
-        self.0[3] |= 0x2020_2020_2020_2020_u64;
+        self.0[0] |= 0x2020_2020_2020_2020_2020_2020_2020_2020_u128;
+        self.0[1] |= 0x2020_2020_2020_2020_2020_2020_2020_2020_u128;
 
         std::str::from_utf8(self.0.as_byte_slice())
             .ok()?

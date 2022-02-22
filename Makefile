@@ -2,12 +2,12 @@
 
 TZDB_VERSION := tzdb-2021e
 
-tzdb/src/generated.rs: tmp/${TZDB_VERSION}/usr/share/zoneinfo/
+tzdb/src/generated.rs: tmp/${TZDB_VERSION}/usr/share/zoneinfo-leaps/
 	cargo r --bin make-tzdb -- $@ $<
 	cargo fmt
 
 tmp/${TZDB_VERSION}/usr/share/zoneinfo/: tmp/${TZDB_VERSION}/
-	cd tmp/${TZDB_VERSION}/ && make TOPDIR="$${PWD}/./" install
+	cd tmp/${TZDB_VERSION}/ && make TOPDIR="`pwd`" install
 
 tmp/${TZDB_VERSION}/: tmp/${TZDB_VERSION}.tar.lz
 	cd tmp/ && tar xf $(<F)

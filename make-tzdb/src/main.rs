@@ -172,7 +172,7 @@ use crate::{{DbTimeZone, Lower32}};
     assert!(max_len <= 32);
     writeln!(
         f,
-        "    Some(*TIME_ZONES_BY_NAME.get(Lower32([0u64; 4]).for_str(s)?)?)"
+        "    Some(*TIME_ZONES_BY_NAME.get(Lower32([0u128; 2]).for_str(s)?)?)"
     )?;
     writeln!(f, "}}")?;
     writeln!(f)?;
