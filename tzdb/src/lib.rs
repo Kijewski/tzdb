@@ -62,6 +62,7 @@ mod generated;
 use std::fmt;
 use std::ops::Deref;
 
+use byte_slice_cast::{AsByteSlice, AsMutByteSlice};
 use once_cell::race::OnceBox;
 use tz::TimeZone;
 
@@ -136,6 +137,28 @@ pub trait TimeZoneExt {
 }
 
 impl TimeZoneExt for TimeZone {}
+
+#[repr(align(32))]
+struct Lower32([u64; 4]);
+
+impl Lower32 {
+    #[inline]
+    fn for_str<'a>(&'a mut self, s: &str) -> Option<&'a str> {
+        self.0
+            .as_mut_byte_slice()
+            .get_mut(..s.len())?
+            .copy_from_slice(s.as_bytes());
+
+        self.0[0] |= 0x2020_2020_2020_2020_u64;
+        self.0[1] |= 0x2020_2020_2020_2020_u64;
+        self.0[2] |= 0x2020_2020_2020_2020_u64;
+        self.0[3] |= 0x2020_2020_2020_2020_u64;
+
+        std::str::from_utf8(self.0.as_byte_slice())
+            .ok()?
+            .get(..s.len())
+    }
+}
 
 #[cfg(test)]
 mod tests {

@@ -136,10 +136,9 @@ pub fn main() -> anyhow::Result<()> {
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 use once_cell::race::OnceBox;
-use tinystr::TinyAsciiStr;
 use tz::TimeZone;
 
-use crate::DbTimeZone;
+use crate::{{DbTimeZone, Lower32}};
 "#
     )?;
 
@@ -169,13 +168,12 @@ use crate::DbTimeZone;
         f,
         "pub(crate) fn tz_by_name(s: &str) -> Option<&'static DbTimeZone> {{"
     )?;
+    let max_len = names_and_indices.iter().map(|t| t.1.len()).max().unwrap();
+    assert!(max_len <= 32);
     writeln!(
         f,
-        "    let s: TinyAsciiStr<{}> = s.parse().ok()?;",
-        names_and_indices.iter().map(|t| t.1.len()).max().unwrap(),
+        "    Some(*TIME_ZONES_BY_NAME.get(Lower32([0u64; 4]).for_str(s)?)?)"
     )?;
-    writeln!(f, "    let s = s.to_ascii_lowercase();")?;
-    writeln!(f, "    Some(*TIME_ZONES_BY_NAME.get(&s)?)")?;
     writeln!(f, "}}")?;
     writeln!(f)?;
 
