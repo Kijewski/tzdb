@@ -31,6 +31,7 @@
 #![warn(unused_extern_crates)]
 #![warn(unused_lifetimes)]
 #![warn(unused_results)]
+#![cfg_attr(feature = "docsrs", feature(doc_cfg))]
 
 //! # tzdb — Time Zone Database
 //!
@@ -55,20 +56,21 @@
 //!
 //! let access_by_identifier = DateTime::now(tzdb::time_zone::EuropeKiev);
 //! let access_by_name = DateTime::now(TimeZone::from_db("Europe/Berlin").unwrap());
-//! let names_are_caseless = DateTime::now(TimeZone::from_db("ArCtIc/LongYeArByEn").unwrap());
+//! let names_are_case_insensitive = DateTime::now(TimeZone::from_db("ArCtIc/LongYeArByEn").unwrap());
 //! ```
+//!
+//! ## Feature flags
+#![cfg_attr(feature = "docsrs", doc = ::document_features::document_features!())]
 
 mod generated;
 
 use std::fmt;
 use std::ops::Deref;
 
-use byte_slice_cast::{AsByteSlice, AsMutByteSlice};
 use once_cell::race::OnceBox;
 use tz::TimeZone;
 
 pub use crate::generated::time_zone;
-use crate::generated::{tz_by_name, TIME_ZONES_LIST};
 
 /// A time zone
 #[derive(Clone, Copy)]
@@ -126,24 +128,34 @@ impl Deref for DbTimeZone {
 
 /// Import this trait to extend [tz::TimeZone]'s functionality
 pub trait TimeZoneExt {
-    /// Find a time zone by name, e.g. `"Europe/Berlin"` (caseless)
+    /// Find a time zone by name, e.g. `"Europe/Berlin"` (case-insensitive)
+    #[cfg(feature = "by-name")]
+    #[cfg_attr(feature = "docsrs", doc(cfg(feature = "by-name")))]
+    #[inline]
     fn from_db(s: &str) -> Option<&'static TimeZone> {
-        Some(&*tz_by_name(s)?)
+        Some(&*crate::generated::tz_by_name(s)?)
     }
 
     /// A list of all known time zones
+    #[cfg(feature = "list")]
+    #[cfg_attr(feature = "docsrs", doc(cfg(feature = "list")))]
+    #[inline]
     fn names_in_db() -> &'static [(&'static str, &'static DbTimeZone)] {
-        &TIME_ZONES_LIST[..]
+        &crate::generated::TIME_ZONES_LIST[..]
     }
 }
 
 impl TimeZoneExt for TimeZone {}
 
+#[cfg(feature = "by-name")]
 struct Lower32([u128; 2]);
 
+#[cfg(feature = "by-name")]
 impl Lower32 {
     #[inline]
     fn for_str<'a>(&'a mut self, s: &str) -> Option<&'a str> {
+        use byte_slice_cast::{AsByteSlice, AsMutByteSlice};
+
         self.0
             .as_mut_byte_slice()
             .get_mut(..s.len())?
