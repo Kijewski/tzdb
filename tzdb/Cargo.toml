@@ -1,6 +1,6 @@
 [package]
 name = "tzdb"
-version = "0.0.3"
+version = "0.0.4"
 edition = "2021"
 authors = ["René Kijewski <crates.io@k6i.de>"]
 repository = "https://github.com/Kijewski/tzdb"
@@ -12,7 +12,25 @@ readme = "README.md"
 rust-version = "1.57"
 
 [dependencies]
-byte-slice-cast = "1.2.0"
 once_cell = { version = "1.9.0", features = ["parking_lot", "race"] }
-phf = "0.10.1"
 tz-rs = "0.5.3"
+
+# optional dependencies
+byte-slice-cast = { version = "1.2.0", optional = true }
+document-features = { version = "=0.2.1", optional = true }
+phf = { version = "0.10.1", optional = true }
+
+[features]
+default = ["by-name", "list"]
+## enables [TimeZoneExt::from_db()]
+##
+by-name = ["phf", "byte-slice-cast"]
+## enables [TimeZoneExt::names_in_db()]
+##
+list = []
+
+# Internal feature, used when generating docs. *You* are not supposed to enable this feature!
+docsrs = ["document-features"]
+
+[package.metadata.docs.rs]
+features = ["docsrs", "defaults"]

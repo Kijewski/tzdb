@@ -33,6 +33,12 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "fb4a24b1aaf0fd0ce8b45161144d6f42cd91677fd5940fd431183eb023b3a2b8"
 
 [[package]]
+name = "document-features"
+version = "0.2.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b01c09fd63b5136fba41aa625c7b3254f0aa0a435ff6ec4b2c9a28d496c83c88"
+
+[[package]]
 name = "getrandom"
 version = "0.2.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -220,9 +226,10 @@ checksum = "53197282760ed5ce7fc3ac751eb93c532434ca296e79667217e4020c81088a00"
 
 [[package]]
 name = "tzdb"
-version = "0.0.3"
+version = "0.0.4"
 dependencies = [
  "byte-slice-cast",
+ "document-features",
  "once_cell",
  "phf",
  "tz-rs",

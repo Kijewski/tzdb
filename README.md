@@ -15,13 +15,13 @@ See the documentation for a full list the the contained time zones:
 
 ## Usage examples
 
-```rs
+```rust
 use tz::{DateTime, TimeZone};
 use tzdb::TimeZoneExt;
 
 let access_by_identifier = DateTime::now(tzdb::time_zone::EuropeKiev);
 let access_by_name = DateTime::now(TimeZone::from_db("Europe/Berlin").unwrap());
-let names_are_caseless = DateTime::now(TimeZone::from_db("ArCtIc/LongYeArByEn").unwrap());
+let names_are_case_insensitive = DateTime::now(TimeZone::from_db("ArCtIc/LongYeArByEn").unwrap());
 ```
 
 ## Git Cloning

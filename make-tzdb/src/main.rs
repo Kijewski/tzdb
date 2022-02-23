@@ -138,7 +138,7 @@ pub fn main() -> anyhow::Result<()> {
 use once_cell::race::OnceBox;
 use tz::TimeZone;
 
-use crate::{{DbTimeZone, Lower32}};
+use crate::DbTimeZone;
 "#
     )?;
 
@@ -164,6 +164,7 @@ use crate::{{DbTimeZone, Lower32}};
     writeln!(f, "}}")?;
     writeln!(f)?;
 
+    writeln!(f, r#"#[cfg(feature = "by-name")]"#)?;
     writeln!(
         f,
         "pub(crate) fn tz_by_name(s: &str) -> Option<&'static DbTimeZone> {{"
@@ -172,7 +173,7 @@ use crate::{{DbTimeZone, Lower32}};
     assert!(max_len <= 32);
     writeln!(
         f,
-        "    Some(*TIME_ZONES_BY_NAME.get(Lower32([0u128; 2]).for_str(s)?)?)"
+        "    Some(*TIME_ZONES_BY_NAME.get(crate::Lower32([0u128; 2]).for_str(s)?)?)"
     )?;
     writeln!(f, "}}")?;
     writeln!(f)?;
@@ -181,6 +182,7 @@ use crate::{{DbTimeZone, Lower32}};
     for (_, name, _, canon) in &names_and_indices {
         phf.entry(name.to_ascii_lowercase(), &format!("time_zone::{}", canon));
     }
+    writeln!(f, r#"#[cfg(feature = "by-name")]"#)?;
     writeln!(
         f,
         "static TIME_ZONES_BY_NAME: phf::Map<&'static str, &'static DbTimeZone> = {};",
@@ -188,6 +190,7 @@ use crate::{{DbTimeZone, Lower32}};
     )?;
     writeln!(f)?;
 
+    writeln!(f, r#"#[cfg(feature = "list")]"#)?;
     writeln!(
         f,
         "pub(crate) static TIME_ZONES_LIST: [(&str, &DbTimeZone); {}] = [",
