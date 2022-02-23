@@ -1,8 +1,9 @@
 # tzdb — Time Zone Database
 
-[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/Kijewski/tzdb/CI)](https://github.com/Kijewski/tzdb/actions/workflows/ci.yml)
-[![Crates.io](https://img.shields.io/crates/v/tzdb)](https://crates.io/crates/tzdb)
-[![License](https://img.shields.io/crates/l/tzdb?color=informational)](/LICENSES)
+[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/Kijewski/tzdb/CI?logo=github)](https://github.com/Kijewski/tzdb/actions/workflows/ci.yml)
+[![Crates.io](https://img.shields.io/crates/v/tzdb?logo=rust)](https://crates.io/crates/tzdb)
+![Minimum supported Rust version](https://img.shields.io/badge/msrv-1.57-informational?logo=rust)
+[![License](https://img.shields.io/crates/l/tzdb?color=informational&logo=apache)](/LICENSES)
 
 Static time zone information for [tz-rs](https://crates.io/crates/tz-rs).
 

@@ -9,6 +9,7 @@ license = "Apache-2.0"
 keywords = ["date", "time", "timezone", "zone", "calendar"]
 categories = ["date-and-time"]
 readme = "README.md"
+rust-version = "1.57"
 
 [dependencies]
 byte-slice-cast = "1.2.0"
