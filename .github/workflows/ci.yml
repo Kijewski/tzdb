@@ -57,7 +57,9 @@ jobs:
         uses: actions/cache@v2
         with:
           key: ${{ runner.os }}-check-${{ steps.actions-rs.outputs.rustc_hash }}-${{ hashFiles('Cargo.lock') }}
-          restore-keys: ${{ runner.os }}-check-${{ steps.actions-rs.outputs.rustc_hash }}-
+          restore-keys: |
+            ${{ runner.os }}-check-${{ steps.actions-rs.outputs.rustc_hash }}-
+            ${{ runner.os }}-check-
           path: |
             ~/.cargo/registry/index/
             ~/.cargo/registry/cache/
@@ -97,14 +99,20 @@ jobs:
         uses: actions/cache@v2
         with:
           key: ${{ runner.os }}-test-${{ steps.actions-rs.outputs.rustc_hash }}-${{ hashFiles('Cargo.lock') }}
-          restore-keys: ${{ runner.os }}-test-${{ steps.actions-rs.outputs.rustc_hash }}-
+          restore-keys: |
+            ${{ runner.os }}-test-${{ steps.actions-rs.outputs.rustc_hash }}-
+            ${{ runner.os }}-test-
           path: |
             ~/.cargo/registry/index/
             ~/.cargo/registry/cache/
             ~/.cargo/git/db/
             target/
 
-      - run: cargo test --workspace --all-targets
+      - name: Build
+        run: cargo build --workspace --all-targets
+
+      - name: Test
+        run: cargo test --workspace --all-targets
 
   doc:
     name: "Documentation"
@@ -128,7 +136,9 @@ jobs:
         uses: actions/cache@v2
         with:
           key: ${{ runner.os }}-doc-${{ steps.actions-rs.outputs.rustc_hash }}-${{ hashFiles('Cargo.lock') }}
-          restore-keys: ${{ runner.os }}-doc-${{ steps.actions-rs.outputs.rustc_hash }}-
+          restore-keys: |
+            ${{ runner.os }}-doc-${{ steps.actions-rs.outputs.rustc_hash }}-
+            ${{ runner.os }}-doc-
           path: |
             ~/.cargo/registry/index/
             ~/.cargo/registry/cache/
@@ -152,7 +162,8 @@ jobs:
         uses: actions/cache@v2
         with:
           key: ${{ runner.os }}-audit-${{ hashFiles('Cargo.lock') }}
-          restore-keys: ${{ runner.os }}-audit-
+          restore-keys: |
+            ${{ runner.os }}-audit-
           path: |
             ~/.cargo/registry/index/
             ~/.cargo/registry/cache/
