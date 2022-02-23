@@ -14,6 +14,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+use std::cmp::Ordering;
 use std::collections::HashMap;
 use std::env::args;
 use std::fmt::Write as _;
@@ -21,7 +22,60 @@ use std::fs::read_dir;
 use std::io::Write as _;
 
 use convert_case::{Case, Casing};
+use itertools::Itertools;
 use tz::TimeZone;
+
+struct TzName {
+    /// to_pascal("Europe/Belfast")
+    canon: String,
+    /// "Europe/Guernsey"
+    full: String,
+    /// Some(to_pascal("Europe"))
+    major: Option<String>,
+    /// to_pascal("Guernsey")
+    minor: String,
+}
+
+impl PartialEq for TzName {
+    fn eq(&self, other: &Self) -> bool {
+        self.cmp(other) == Ordering::Equal
+    }
+}
+
+impl Eq for TzName {}
+
+impl PartialOrd for TzName {
+    fn partial_cmp(&self, other: &Self) -> Option<Ordering> {
+        Some(self.cmp(other))
+    }
+}
+
+impl Ord for TzName {
+    fn cmp(&self, other: &Self) -> Ordering {
+        match self.major.is_some().cmp(&other.major.is_some()) {
+            Ordering::Equal => match self.major.cmp(&other.major) {
+                Ordering::Equal => self.minor.cmp(&other.minor),
+                r => r,
+            },
+            r => r,
+        }
+    }
+}
+
+impl TzName {
+    fn new(folder: Option<&str>, name: &str) -> TzName {
+        let full_name = match folder {
+            Some(folder) => format!("{}/{}", folder, name),
+            None => name.to_owned(),
+        };
+        Self {
+            canon: "".to_owned(),
+            full: full_name,
+            major: folder.map(|s| prepare_casing(s).to_case(Case::Snake)),
+            minor: prepare_casing(name).to_case(Case::UpperSnake),
+        }
+    }
+}
 
 pub fn main() -> anyhow::Result<()> {
     let mut args = args().into_iter().fuse();
@@ -45,7 +99,7 @@ pub fn main() -> anyhow::Result<()> {
         base_path.push('/');
     }
 
-    let mut files = HashMap::<Vec<u8>, Vec<_>>::new();
+    let mut entries_by_bytes = HashMap::<Vec<u8>, Vec<TzName>>::new();
 
     let mut folders = vec![];
     for entry in read_dir(&base_path)?.filter_map(|f| f.ok()) {
@@ -60,10 +114,8 @@ pub fn main() -> anyhow::Result<()> {
         }
         if let Ok(bytes) = std::fs::read(format!("{}/{}", &base_path, name)) {
             if TimeZone::from_tz_data(&bytes).is_ok() {
-                files
-                    .entry(bytes)
-                    .or_default()
-                    .push((name.to_owned(), to_pascal(name)));
+                let tz_entry = TzName::new(None, name);
+                entries_by_bytes.entry(bytes).or_default().push(tz_entry);
             }
         }
     }
@@ -76,49 +128,61 @@ pub fn main() -> anyhow::Result<()> {
             };
             if let Ok(bytes) = std::fs::read(format!("{}/{}/{}", &base_path, &folder, name)) {
                 if TimeZone::from_tz_data(&bytes).is_ok() {
-                    let name = format!("{}/{}", &folder, name);
-                    let pascal = to_pascal(&name);
-                    files.entry(bytes).or_default().push((name, pascal));
+                    let tz_entry = TzName::new(Some(folder.as_str()), name);
+                    entries_by_bytes.entry(bytes).or_default().push(tz_entry);
                 }
             }
         }
     }
+    for entries in entries_by_bytes.values_mut() {
+        entries.sort();
+        let canon = prepare_casing(&entries.first().unwrap().full).to_case(Case::UpperSnake);
+        for entry in entries {
+            entry.canon = canon.clone();
+        }
+    }
 
-    let mut files = files
+    let entries_by_major = entries_by_bytes
+        .values()
+        .flat_map(|entries| entries.iter())
+        .map(|tz_entry| (tz_entry.major.as_deref(), tz_entry))
+        .sorted_by(|(l, _), (r, _)| match (l, r) {
+            (None, None) => Ordering::Equal,
+            (None, Some(_)) => Ordering::Greater,
+            (Some(_), None) => Ordering::Less,
+            (Some(l), Some(r)) => l.cmp(r),
+        })
+        .group_by(|(k, _)| k.map(|s| s.to_owned()))
         .into_iter()
-        .map(|(bytes, names)| {
-            let canon = names
-                .iter()
-                .map(|(_, pascal)| pascal.as_str())
-                .min_by(|l, r| l.cmp(r))
-                .unwrap()
-                .to_owned();
-            (bytes, canon, names)
+        .map(|(major, entries)| {
+            let mut entries = entries.map(|(_, e)| e).collect_vec();
+            entries.sort();
+            (major, entries)
         })
-        .collect::<Vec<_>>();
-    files.sort_by(|l, r| l.1.cmp(&r.1));
+        .collect_vec();
 
-    let mut names_and_indices = files
+    let max_len = entries_by_major
         .iter()
-        .enumerate()
-        .flat_map(|(index, (_, canon, names))| {
-            let canon = canon.as_str();
-            names
-                .iter()
-                .map(move |(name, pascal)| (index, name.as_str(), pascal.as_str(), canon))
-        })
-        .collect::<Vec<_>>();
-    names_and_indices.sort_by(|l, r| l.2.cmp(r.2));
+        .flat_map(|(_, entries)| entries.iter())
+        .map(|entry| entry.full.len())
+        .max()
+        .unwrap();
+    assert!(max_len <= 32);
+
+    let count: usize = entries_by_major
+        .iter()
+        .map(|(_, entries)| entries.len())
+        .sum();
 
     let mut f = String::new();
 
     writeln!(
         f,
         r#"// SPDX-License-Identifier: MIT-0
-
+//
 // GENERATED FILE
 // ALL CHANGES MADE IN THIS FILE WILL BE LOST!
-
+//
 // MIT No Attribution
 //
 // Copyright 2022 René Kijewski <crates.io@k6i.de>
@@ -143,22 +207,26 @@ use crate::DbTimeZone;
     )?;
 
     writeln!(f, "/// All defined time zones statically accessible")?;
-    writeln!(f, "#[allow(non_upper_case_globals)]")?;
     writeln!(f, "pub mod time_zone {{")?;
     writeln!(f, "    use super::*;")?;
-    for (index, name, pascal, canon) in &names_and_indices {
+    for (folder, entries) in &entries_by_major {
         writeln!(f)?;
-        writeln!(f, "    /// {},", name)?;
-        if pascal == canon {
-            writeln!(f, "    pub static {}: &DbTimeZone = &DbTimeZone {{", canon)?;
-            writeln!(f, "        index: {},", index)?;
-            writeln!(f, "        name: {:?},", name)?;
-            writeln!(f, "        debug_name: {:?},", canon)?;
-            writeln!(f, "        bytes: bytes::{},", canon)?;
-            writeln!(f, "        parsed: &parsed::{},", canon)?;
-            writeln!(f, "    }};")?;
-        } else {
-            writeln!(f, "    pub static {}: &DbTimeZone = {};", pascal, canon)?;
+        if let Some(folder) = folder {
+            writeln!(f, "/// {}", folder)?;
+            writeln!(f, "pub mod {} {{", folder)?;
+            writeln!(f, "    use super::*;")?;
+            writeln!(f)?;
+        }
+        for entry in entries {
+            writeln!(f, "    /// {},", entry.full)?;
+            writeln!(
+                f,
+                "pub static {}: &DbTimeZone = &tzdata::{};",
+                entry.minor, entry.canon,
+            )?;
+        }
+        if folder.is_some() {
+            writeln!(f, "}}")?;
         }
     }
     writeln!(f, "}}")?;
@@ -169,8 +237,6 @@ use crate::DbTimeZone;
         f,
         "pub(crate) fn tz_by_name(s: &str) -> Option<&'static DbTimeZone> {{"
     )?;
-    let max_len = names_and_indices.iter().map(|t| t.1.len()).max().unwrap();
-    assert!(max_len <= 32);
     writeln!(
         f,
         "    Some(*TIME_ZONES_BY_NAME.get(crate::Lower32([0u128; 2]).for_str(s)?)?)"
@@ -179,8 +245,13 @@ use crate::DbTimeZone;
     writeln!(f)?;
 
     let mut phf = phf_codegen::Map::new();
-    for (_, name, _, canon) in &names_and_indices {
-        phf.entry(name.to_ascii_lowercase(), &format!("time_zone::{}", canon));
+    for entries in entries_by_bytes.values() {
+        for entry in entries {
+            phf.entry(
+                entry.full.to_ascii_lowercase(),
+                &format!("&tzdata::{}", entry.canon),
+            );
+        }
     }
     writeln!(f, r#"#[cfg(feature = "by-name")]"#)?;
     writeln!(
@@ -194,32 +265,58 @@ use crate::DbTimeZone;
     writeln!(
         f,
         "pub(crate) static TIME_ZONES_LIST: [(&str, &DbTimeZone); {}] = [",
-        names_and_indices.len()
+        count,
     )?;
-    for (_, name, _, canon) in &names_and_indices {
-        writeln!(f, "    ({:?}, time_zone::{}),", name, canon)?;
+    for (_, entries) in entries_by_major.iter() {
+        for entry in entries {
+            writeln!(f, "({:?}, &tzdata::{}),", entry.full, entry.canon)?;
+        }
     }
     writeln!(f, "];")?;
     writeln!(f)?;
 
-    writeln!(f, "#[allow(non_upper_case_globals)]")?;
+    writeln!(f, "mod tzdata {{")?;
+    writeln!(f, "    use super::*;")?;
+    for (index, entries) in entries_by_bytes.values().enumerate() {
+        let entry = &entries[0];
+        writeln!(f)?;
+        writeln!(
+            f,
+            "pub(crate) static {}: DbTimeZone = DbTimeZone {{",
+            &entry.canon
+        )?;
+        writeln!(f, "    index: {},", index)?;
+        writeln!(f, "    name: {:?},", &entry.full)?;
+        writeln!(f, "    debug_name: {:?},", &entry.canon)?;
+        writeln!(f, "    bytes: &bytes::{},", &entry.canon)?;
+        writeln!(f, "    parsed: &parsed::{},", &entry.canon)?;
+        writeln!(f, "}};")?;
+    }
+    writeln!(f, "}}")?;
+    writeln!(f)?;
+
     writeln!(f, "pub(crate) mod parsed {{")?;
     writeln!(f, "    use super::*;")?;
     writeln!(f)?;
-    for (_, canon, _) in &files {
+    for entries in entries_by_bytes.values() {
         writeln!(
             f,
-            "    pub(crate) static {}: OnceBox<TimeZone> = OnceBox::new();",
-            canon
+            "pub(crate) static {}: OnceBox<TimeZone> = OnceBox::new();",
+            &entries[0].canon,
         )?;
     }
     writeln!(f, "}}")?;
     writeln!(f)?;
 
-    writeln!(f, "#[allow(non_upper_case_globals)]")?;
     writeln!(f, "pub(crate) mod bytes {{")?;
-    for (bytes, canon, _) in &files {
-        writeln!(f, "    pub(crate) const {}: &[u8] = &{:?};", canon, bytes)?;
+    for (bytes, entries) in &entries_by_bytes {
+        writeln!(
+            f,
+            "pub(crate) const {}: [u8; {}] = {:?};",
+            &entries[0].canon,
+            bytes.len(),
+            bytes,
+        )?;
     }
     writeln!(f, "}}")?;
     writeln!(f)?;
@@ -234,9 +331,8 @@ use crate::DbTimeZone;
     Ok(())
 }
 
-fn to_pascal(name: &str) -> String {
+fn prepare_casing(name: &str) -> String {
     name.replace('/', " ")
         .replace("GMT+", " GMT plus ")
         .replace("GMT-", " GMT minus ")
-        .to_case(Case::Pascal)
 }

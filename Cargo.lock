@@ -55,6 +55,12 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "b01c09fd63b5136fba41aa625c7b3254f0aa0a435ff6ec4b2c9a28d496c83c88"
 
 [[package]]
+name = "either"
+version = "1.6.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e78d4f1cc4ae33bbfc157ed5d5a5ef3bc29227303d595861deb238fcec4e9457"
+
+[[package]]
 name = "getrandom"
 version = "0.2.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -85,6 +91,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "itertools"
+version = "0.10.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a9a9d19fa1e79b6215ff29b9d6880b706147f16e9b1dbb1e4e5947b5b02bc5e3"
+dependencies = [
+ "either",
+]
+
+[[package]]
 name = "libc"
 version = "0.2.119"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -105,6 +120,7 @@ version = "0.0.0"
 dependencies = [
  "anyhow",
  "convert_case",
+ "itertools",
  "phf_codegen",
  "tz-rs",
 ]
@@ -252,7 +268,7 @@ checksum = "53197282760ed5ce7fc3ac751eb93c532434ca296e79667217e4020c81088a00"
 
 [[package]]
 name = "tzdb"
-version = "0.0.5"
+version = "0.0.6"
 dependencies = [
  "byte-slice-cast",
  "document-features",

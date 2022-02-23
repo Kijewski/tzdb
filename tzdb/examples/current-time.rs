@@ -2,7 +2,7 @@ use std::env::args;
 use std::process::exit;
 
 use tz::{DateTime, Result, TimeZone};
-use tzdb::time_zone::Utc;
+use tzdb::time_zone::UTC;
 use tzdb::TimeZoneExt;
 
 pub fn main() -> Result<()> {
@@ -42,7 +42,7 @@ pub fn main() -> Result<()> {
         eprintln!("No time zone selected, defaulting to the system time zone.");
         eprintln!("To see a list of all known time zones run: {} --list", exe);
         eprintln!();
-        TimeZone::local_from_db().unwrap_or(Utc)
+        TimeZone::local_from_db().unwrap_or(UTC)
     };
 
     let dt = DateTime::now(timezone)?;
