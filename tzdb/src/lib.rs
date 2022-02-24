@@ -130,7 +130,10 @@ impl Deref for DbTimeZone {
 pub trait TimeZoneExt {
     /// Find a time zone by name, e.g. `"Europe/Berlin"` (case-insensitive)
     #[cfg(feature = "by-name")]
-    #[cfg_attr(feature = "docsrs", doc(cfg(feature = "by-name")))]
+    #[cfg_attr(
+        feature = "docsrs",
+        doc(cfg(any(feature = "by-name", feature = "local")))
+    )]
     #[inline]
     fn from_db(s: &str) -> Option<&'static TimeZone> {
         Some(&*crate::generated::tz_by_name(s)?)
@@ -142,6 +145,16 @@ pub trait TimeZoneExt {
     #[inline]
     fn names_in_db() -> &'static [(&'static str, &'static DbTimeZone)] {
         &crate::generated::TIME_ZONES_LIST[..]
+    }
+
+    /// Find the time zone of the current system
+    #[cfg(feature = "local")]
+    #[cfg_attr(feature = "docsrs", doc(cfg(feature = "local")))]
+    #[inline]
+    fn local_from_db() -> Option<&'static DbTimeZone> {
+        Some(&*crate::generated::tz_by_name(
+            &iana_time_zone::get_timezone().ok()?,
+        )?)
     }
 }
 

@@ -77,10 +77,14 @@ jobs:
           - "1.57"
           - stable
           - nightly
+        platform:
+          - ubuntu-latest
+          - windows-latest
+          - macos-latest
 
-    name: "Test/${{ matrix.toolchain }}"
+    name: "Test/${{ matrix.toolchain }} (${{ matrix.platform }})"
 
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.platform }}
     steps:
       - name: Checkout
         uses: actions/checkout@v2

@@ -39,10 +39,10 @@ pub fn main() -> Result<()> {
             },
         }
     } else {
-        eprintln!("No time zone selected, defaulting to UTC.");
+        eprintln!("No time zone selected, defaulting to the system time zone.");
         eprintln!("To see a list of all known time zones run: {} --list", exe);
         eprintln!();
-        Utc
+        TimeZone::local_from_db().unwrap_or(Utc)
     };
 
     let dt = DateTime::now(timezone)?;
@@ -92,7 +92,7 @@ pub fn main() -> Result<()> {
         "This is the {}{} day of the year {}.",
         1 + dt.year_day(),
         suffix((1 + dt.year_day()) as _),
-        1900 + dt.year()
+        dt.full_year(),
     );
     println!(
         "Now it is {:02}:{:02}:{:02}.",
