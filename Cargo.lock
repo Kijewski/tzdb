@@ -258,7 +258,7 @@ dependencies = [
 [[package]]
 name = "tz-rs"
 version = "0.5.3"
-source = "git+https://github.com/x-hgg-x/tz-rs.git?branch=statics#cf217a399a3bbf3b807578985b2716580744b4b7"
+source = "git+https://github.com/x-hgg-x/tz-rs.git?branch=master#f45f8d63e01eef6b8fca0bda97329b2a9a2baaa4"
 
 [[package]]
 name = "tzdb"

@@ -6,7 +6,7 @@ use serde::Deserialize;
 pub(crate) enum TimeZone {
     TimeZone {
         transitions: Vec<Transition>,
-        local_time_types: NonEmptyVec<LocalTimeType>,
+        local_time_types: Vec<GenericLocalTimeType>,
         leap_seconds: Vec<LeapSecond>,
         extra_rule: Option<TransitionRule>,
     },
@@ -21,11 +21,6 @@ pub(crate) enum Transition {
 }
 
 #[derive(Debug, Deserialize)]
-pub(crate) enum NonEmptyVec<T> {
-    NonEmptyVec { first: T, tail: Vec<T> },
-}
-
-#[derive(Debug, Deserialize)]
 pub(crate) enum LeapSecond {
     LeapSecond {
         unix_leap_time: i64,
@@ -35,10 +30,15 @@ pub(crate) enum LeapSecond {
 
 #[derive(Debug, Deserialize)]
 pub(crate) enum TransitionRule {
-    Fixed(LocalTimeType),
-    Alternate {
-        std: LocalTimeType,
-        dst: LocalTimeType,
+    Fixed(GenericLocalTimeType),
+    Alternate(GenericAlternateTime),
+}
+
+#[derive(Debug, Deserialize)]
+pub(crate) enum GenericAlternateTime {
+    GenericAlternateTime {
+        std: GenericLocalTimeType,
+        dst: GenericLocalTimeType,
         dst_start: RuleDay,
         dst_start_time: i32,
         dst_end: RuleDay,
@@ -47,8 +47,8 @@ pub(crate) enum TransitionRule {
 }
 
 #[derive(Debug, Deserialize)]
-pub(crate) enum LocalTimeType {
-    LocalTimeType {
+pub(crate) enum GenericLocalTimeType {
+    GenericLocalTimeType {
         ut_offset: i32,
         is_dst: bool,
         time_zone_designation: Option<String>,
@@ -57,39 +57,24 @@ pub(crate) enum LocalTimeType {
 
 #[derive(Debug, Deserialize)]
 pub(crate) enum RuleDay {
-    Julian1WithoutLeap(u16),
-    Julian0WithLeap(u16),
-    MonthWeekDay { month: u8, week: u8, week_day: u8 },
+    Julian1WithoutLeap(Julian1WithoutLeap),
+    Julian0WithLeap(Julian0WithLeap),
+    MonthWeekDay(MonthWeekDay),
 }
 
-impl fmt::Display for TimeZone {
-    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        let TimeZone::TimeZone {
-            transitions,
-            local_time_types,
-            leap_seconds,
-            extra_rule,
-        } = &self;
+#[derive(Debug, Deserialize)]
+pub(crate) enum Julian1WithoutLeap {
+    Julian1WithoutLeap(u16),
+}
 
-        writeln!(f, "::tz::statics::StaticTimeZone::new(")?;
-        writeln!(f, "    &[")?;
-        for transition in transitions {
-            writeln!(f, "        {},", transition)?;
-        }
-        writeln!(f, "    ],")?;
-        writeln!(f, "    {}", local_time_types)?;
-        writeln!(f, "    &[")?;
-        for t in leap_seconds {
-            writeln!(f, "        {},", t)?;
-        }
-        writeln!(f, "    ],")?;
-        match extra_rule {
-            Some(t) => writeln!(f, "    Some({}),", t)?,
-            None => writeln!(f, "    None,")?,
-        }
-        writeln!(f, ")")?;
-        Ok(())
-    }
+#[derive(Debug, Deserialize)]
+pub(crate) enum Julian0WithLeap {
+    Julian0WithLeap(u16),
+}
+
+#[derive(Debug, Deserialize)]
+pub(crate) enum MonthWeekDay {
+    MonthWeekDay { month: u8, week: u8, week_day: u8 },
 }
 
 impl fmt::Display for Transition {
@@ -100,23 +85,23 @@ impl fmt::Display for Transition {
         } = &self;
         writeln!(
             f,
-            "::tz::Transition::new({}, {})",
+            "Transition::new({}, {})",
             unix_leap_time, local_time_type_index
         )?;
         Ok(())
     }
 }
 
-impl fmt::Display for LocalTimeType {
+impl fmt::Display for GenericLocalTimeType {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        let LocalTimeType::LocalTimeType {
+        let GenericLocalTimeType::GenericLocalTimeType {
             ut_offset,
             is_dst,
             time_zone_designation,
         } = self;
         writeln!(
             f,
-            "::tz::LocalTimeType::new({}, {}, {:?})",
+            "StaticLocalTimeType::new({}, {}, {:?})",
             ut_offset, is_dst, time_zone_designation,
         )?;
         Ok(())
@@ -129,11 +114,7 @@ impl fmt::Display for LeapSecond {
             unix_leap_time,
             correction,
         } = self;
-        writeln!(
-            f,
-            "::tz::LeapSecond::new({}, {})",
-            unix_leap_time, correction,
-        )?;
+        writeln!(f, "LeapSecond::new({}, {})", unix_leap_time, correction,)?;
         Ok(())
     }
 }
@@ -141,65 +122,140 @@ impl fmt::Display for LeapSecond {
 impl fmt::Display for TransitionRule {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         match self {
-            TransitionRule::Fixed(t) => writeln!(f, "::tz::TransitionRule::Fixed({})", t)?,
-            TransitionRule::Alternate {
-                std,
-                dst,
-                dst_start,
-                dst_start_time,
-                dst_end,
-                dst_end_time,
-            } => {
-                writeln!(f, "::tz::TransitionRule::Alternate {{")?;
-                writeln!(f, "            std: {},", std)?;
-                writeln!(f, "            dst: {},", dst)?;
-                writeln!(f, "            dst_start: {},", dst_start)?;
-                writeln!(f, "            dst_start_time: {},", dst_start_time)?;
-                writeln!(f, "            dst_end: {},", dst_end)?;
-                writeln!(f, "            dst_end_time: {},", dst_end_time)?;
-                writeln!(f, "        }}")?;
+            TransitionRule::Fixed(t) => writeln!(f, "StaticTransitionRule::Fixed({})", Unwrap(t))?,
+            TransitionRule::Alternate(t) => {
+                writeln!(f, "StaticTransitionRule::Alternate({})", Unwrap(t))?;
             },
         }
         Ok(())
+    }
+}
+
+impl fmt::Display for GenericAlternateTime {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        let GenericAlternateTime::GenericAlternateTime {
+            std,
+            dst,
+            dst_start,
+            dst_start_time,
+            dst_end,
+            dst_end_time,
+        } = self;
+        writeln!(
+            f,
+            "StaticAlternateTime::new({}, {}, {}, {}, {}, {})",
+            Unwrap(std),
+            Unwrap(dst),
+            dst_start,
+            dst_start_time,
+            dst_end,
+            dst_end_time,
+        )
+    }
+}
+
+impl fmt::Display for MonthWeekDay {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        let MonthWeekDay::MonthWeekDay {
+            month,
+            week,
+            week_day,
+        } = self;
+        writeln!(f, "MonthWeekDay::new({}, {}, {})", month, week, week_day,)
+    }
+}
+
+impl fmt::Display for Julian0WithLeap {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        let Julian0WithLeap::Julian0WithLeap(t) = self;
+        writeln!(f, "Julian0WithLeap::new({})", t)
+    }
+}
+
+impl fmt::Display for Julian1WithoutLeap {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        let Julian1WithoutLeap::Julian1WithoutLeap(t) = self;
+        writeln!(f, "Julian1WithoutLeap::new({})", t)
     }
 }
 
 impl fmt::Display for RuleDay {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         match self {
+            RuleDay::Julian0WithLeap(t) => writeln!(f, "RuleDay::Julian0WithLeap({})", Unwrap(t))?,
             RuleDay::Julian1WithoutLeap(t) => {
-                writeln!(f, "::tz::RuleDay::Julian1WithoutLeap({})", t)?
+                writeln!(f, "RuleDay::Julian1WithoutLeap({})", Unwrap(t))?
             },
-            RuleDay::Julian0WithLeap(t) => writeln!(f, "::tz::RuleDay::Julian0WithLeap({})", t)?,
-            RuleDay::MonthWeekDay {
-                month,
-                week,
-                week_day,
-            } => {
-                writeln!(f, "::tz::RuleDay::MonthWeekDay {{")?;
-                writeln!(f, "            month: {},", month)?;
-                writeln!(f, "            week: {},", week)?;
-                writeln!(f, "            week_day: {},", week_day)?;
-                writeln!(f, "        }}")?;
+            RuleDay::MonthWeekDay(t) => {
+                writeln!(f, "RuleDay::MonthWeekDay({})", Unwrap(t))?;
             },
         }
         Ok(())
     }
 }
 
-impl<T: fmt::Display> fmt::Display for NonEmptyVec<T> {
+pub(crate) struct Unwrap<'a, T: fmt::Display>(pub(crate) &'a T);
+
+impl<'a, T: fmt::Display> fmt::Display for Unwrap<'a, T> {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        let NonEmptyVec::NonEmptyVec { first, tail } = self;
+        write!(
+            f,
+            r#"match {} {{ Ok(v) => v, Err(e) => panic!("{{}}", e.0) }}"#,
+            &self.0
+        )
+    }
+}
 
-        writeln!(f, "    (")?;
-        writeln!(f, "        {},", first)?;
-        writeln!(f, "        &[")?;
-        for t in tail {
-            writeln!(f, "        {},", t)?;
+pub(crate) struct UnwrapToConst<'a, T>(pub(crate) &'a str, pub(crate) &'a [T]);
+
+impl<'a, T: fmt::Display> fmt::Display for UnwrapToConst<'a, T> {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        writeln!(f, r"{{ const V: [{}; {}] = [", &self.0, self.1.len())?;
+        for elem in self.1 {
+            writeln!(f, "    {},", Unwrap(elem))?;
         }
-        writeln!(f, "        ],")?;
-        writeln!(f, "    ),")?;
+        writeln!(f, "]; V }}")
+    }
+}
 
-        Ok(())
+pub(crate) struct DisplayVec<'a, T>(pub(crate) &'a [T]);
+
+impl<'a, T: fmt::Display> fmt::Display for DisplayVec<'a, T> {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        writeln!(f, "[")?;
+        for elem in self.0 {
+            writeln!(f, "    {},", elem)?;
+        }
+        writeln!(f, "]")
+    }
+}
+
+pub(crate) struct DisplayOption<'a, T>(Option<&'a T>);
+
+impl<'a, T: fmt::Display> fmt::Display for DisplayOption<'a, T> {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        match &self.0 {
+            Some(v) => writeln!(f, "Some({})", v),
+            None => writeln!(f, "None"),
+        }
+    }
+}
+
+impl fmt::Display for TimeZone {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        let TimeZone::TimeZone {
+            transitions,
+            local_time_types,
+            leap_seconds,
+            extra_rule,
+        } = self;
+        writeln!(
+            f,
+            "StaticTimeZone::new(&{}, &{}, &{}, {})",
+            DisplayVec(transitions),
+            UnwrapToConst("StaticLocalTimeType", local_time_types),
+            DisplayVec(leap_seconds),
+            DisplayOption(extra_rule.as_ref()),
+        )
     }
 }

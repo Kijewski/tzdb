@@ -37,7 +37,8 @@
 //!
 //! [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/Kijewski/tzdb/CI?logo=github)](https://github.com/Kijewski/tzdb/actions/workflows/ci.yml)
 //! [![Crates.io](https://img.shields.io/crates/v/tzdb?logo=rust)](https://crates.io/crates/tzdb)
-//! ![Minimum supported Rust version](https://img.shields.io/badge/msrv-1.57-informational?logo=rust)
+//! ![Minimum supported Rust version](https://img.shields.io/badge/rustc-1.57+-important?logo=rust "Minimum Supported Rust Version")
+//! ![#!\[forbid\(unsafe_code\)\]](https://img.shields.io/badge/forbid-unsafe-critical?logo=rust "#![forbid(unsafe_code)]")
 //! [![License](https://img.shields.io/crates/l/tzdb?color=informational&logo=apache)](/LICENSES)
 //!
 //! Static time zone information for [tz-rs](https://crates.io/crates/tz-rs).

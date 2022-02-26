@@ -12,7 +12,7 @@ readme = "README.md"
 rust-version = "1.57"
 
 [dependencies]
-tz-rs = { git = "https://github.com/x-hgg-x/tz-rs.git", branch = "statics" }
+tz-rs = { git = "https://github.com/x-hgg-x/tz-rs.git", branch = "master" }
 
 # optional dependencies
 byte-slice-cast = { version = "1.2.1", optional = true }

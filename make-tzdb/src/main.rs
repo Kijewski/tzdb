@@ -275,22 +275,17 @@ use tz::statics::StaticTimeZone;
     writeln!(f)?;
 
     writeln!(f, "mod tzdata {{")?;
-    writeln!(f, "    use super::*;")?;
+    writeln!(f, "    use tz::statics::*;")?;
+    writeln!(f, "    use tz::timezone::*;")?;
+
     for (bytes, entries) in &entries_by_bytes {
         writeln!(f)?;
         writeln!(
             f,
-            "    pub(crate) static {}: StaticTimeZone = match {{",
+            "pub(crate) static {}: ::tz::statics::StaticTimeZone = {};",
             &entries[0].canon,
+            parse::Unwrap(&tz_convert(bytes)),
         )?;
-        writeln!(f, "        {}", tz_convert(bytes))?;
-        writeln!(f, "    }} {{")?;
-        writeln!(f, "        Ok(tz) => tz,")?;
-        writeln!(
-            f,
-            "        Err(::tz::statics::StaticTimeZoneError(e)) => panic!(\"{{}}\", e),",
-        )?;
-        writeln!(f, "    }};")?;
     }
     writeln!(f, "}}")?;
     writeln!(f)?;
