@@ -2,7 +2,7 @@
 
 TZDB_VERSION := tzdb-2021e
 
-tzdb/src/generated.rs: tmp/${TZDB_VERSION}/usr/share/zoneinfo-leaps/
+tzdb/src/generated.rs: tmp/${TZDB_VERSION}/usr/share/zoneinfo/
 	cargo r --bin make-tzdb -- $@ $<
 	cargo fmt
 
