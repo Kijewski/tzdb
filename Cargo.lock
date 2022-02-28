@@ -91,9 +91,9 @@ checksum = "ab5ef0d4909ef3724cc8cce6ccc8572c5c817592e9285f5464f8e86f8bd3726e"
 
 [[package]]
 name = "iana-time-zone"
-version = "0.1.29"
+version = "0.1.30"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e3e17b3eb7657b53fa282eb90b76ad5e51bdf357b3ddd899d56dd84ccd6c93e2"
+checksum = "31faad03d7f89aaa7fd5a8a1b190bec313ec7d03f2ba791088bf71881072ab78"
 dependencies = [
  "core-foundation",
  "windows",
