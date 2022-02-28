@@ -17,13 +17,13 @@
 mod parse;
 
 use std::cmp::Ordering;
-use std::collections::HashMap;
 use std::env::args;
 use std::fmt::Write as _;
 use std::fs::read_dir;
 use std::io::Write as _;
 
 use convert_case::{Case, Casing};
+use indexmap::IndexMap;
 use itertools::Itertools;
 use tz::TimeZone;
 
@@ -101,7 +101,7 @@ pub fn main() -> anyhow::Result<()> {
         base_path.push('/');
     }
 
-    let mut entries_by_bytes = HashMap::<Vec<u8>, Vec<TzName>>::new();
+    let mut entries_by_bytes = IndexMap::<Vec<u8>, Vec<TzName>>::new();
 
     let mut folders = vec![];
     for entry in read_dir(&base_path)?.filter_map(|f| f.ok()) {
@@ -143,6 +143,7 @@ pub fn main() -> anyhow::Result<()> {
             entry.canon = canon.clone();
         }
     }
+    entries_by_bytes.sort_by(|_, l, _, r| l[0].canon.cmp(&r[0].canon));
 
     let entries_by_major = entries_by_bytes
         .values()
