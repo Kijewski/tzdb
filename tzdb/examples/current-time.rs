@@ -13,7 +13,7 @@ pub fn main() -> Result<()> {
 
     if matches!(argument.as_deref(), Some("-l" | "--list")) {
         let mut line = String::with_capacity(80);
-        for (tz_name, _) in TimeZone::names_in_db() {
+        for tz_name in TimeZone::names_in_db() {
             if line.len() + 2 + tz_name.len() >= 80 {
                 println!("{},", line);
                 line.clear();
@@ -46,34 +46,11 @@ pub fn main() -> Result<()> {
     };
 
     let dt = DateTime::now(timezone)?;
-    let dow = [
-        "Sunday",
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-    ];
-    let dow = match dow.get(dt.week_day() as usize) {
+    let dow = match DOW.get(dt.week_day() as usize) {
         Some(dow) => *dow,
         None => unreachable!("Impossible week_day: {}", dt.week_day()),
     };
-    let month = [
-        "January",
-        "February",
-        "March",
-        "April",
-        "May",
-        "June",
-        "July",
-        "August",
-        "September",
-        "October",
-        "November",
-        "December",
-    ];
-    let month = match month.get(dt.month() as usize) {
+    let month = match MONTH.get(dt.month() as usize) {
         Some(month) => *month,
         None => unreachable!("Impossible month: {}", dt.month()),
     };
@@ -92,7 +69,7 @@ pub fn main() -> Result<()> {
         "This is the {}{} day of the year {}.",
         1 + dt.year_day(),
         suffix((1 + dt.year_day()) as _),
-        dt.full_year(),
+        dt.year(),
     );
     println!(
         "Now it is {:02}:{:02}:{:02}.",
@@ -100,6 +77,7 @@ pub fn main() -> Result<()> {
         dt.minute(),
         dt.second(),
     );
+    println!("{}", dt);
 
     Ok(())
 }
@@ -113,3 +91,29 @@ fn suffix(index: usize) -> &'static str {
         _ => "th",
     }
 }
+
+const DOW: [&str; 7] = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+];
+
+const MONTH: [&str; 13] = [
+    "",
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+];

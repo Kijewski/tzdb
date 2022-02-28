@@ -37,7 +37,7 @@
 //!
 //! [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/Kijewski/tzdb/CI?logo=github)](https://github.com/Kijewski/tzdb/actions/workflows/ci.yml)
 //! [![Crates.io](https://img.shields.io/crates/v/tzdb?logo=rust)](https://crates.io/crates/tzdb)
-//! ![Minimum supported Rust version](https://img.shields.io/badge/msrv-1.57-informational?logo=rust)
+//! ![Minimum supported Rust version](https://img.shields.io/badge/rustc-1.57+-important?logo=rust "Minimum Supported Rust Version")
 //! [![License](https://img.shields.io/crates/l/tzdb?color=informational&logo=apache)](/LICENSES)
 //!
 //! Static time zone information for [tz-rs](https://crates.io/crates/tz-rs).
@@ -64,66 +64,26 @@
 
 mod generated;
 
-use std::fmt;
-use std::ops::Deref;
-
-use once_cell::race::OnceBox;
-use tz::TimeZone;
+use tz::{TimeZone, TimeZoneRef};
 
 pub use crate::generated::time_zone;
 
-/// A time zone
-#[derive(Clone, Copy)]
-pub struct DbTimeZone {
-    index: usize,
-    name: &'static str,
-    debug_name: &'static str,
-    bytes: &'static [u8],
-    parsed: &'static OnceBox<TimeZone>,
-}
+#[cfg(feature = "by-name")]
+fn tz_by_name(s: &str) -> Option<TimeZoneRef<'static>> {
+    use std::str::from_utf8;
 
-impl PartialEq for DbTimeZone {
-    fn eq(&self, other: &Self) -> bool {
-        self.index == other.index
-    }
-}
+    use byte_slice_cast::{AsByteSlice, AsMutByteSlice};
 
-impl Eq for DbTimeZone {}
+    let mut lower = [0u128; 2];
+    lower
+        .as_mut_byte_slice()
+        .get_mut(..s.len())?
+        .copy_from_slice(s.as_bytes());
+    lower[0] |= 0x2020_2020_2020_2020_2020_2020_2020_2020_u128;
+    lower[1] |= 0x2020_2020_2020_2020_2020_2020_2020_2020_u128;
+    let lower = from_utf8(lower.as_byte_slice()).ok()?.get(..s.len())?;
 
-impl PartialOrd for DbTimeZone {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        self.index.partial_cmp(&other.index)
-    }
-}
-
-impl Ord for DbTimeZone {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        self.index.cmp(&other.index)
-    }
-}
-
-impl fmt::Display for DbTimeZone {
-    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        f.write_str(self.name)
-    }
-}
-
-impl fmt::Debug for DbTimeZone {
-    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        f.write_str(self.debug_name)
-    }
-}
-
-impl Deref for DbTimeZone {
-    type Target = TimeZone;
-
-    fn deref(&self) -> &Self::Target {
-        self.parsed.get_or_init(|| {
-            let tz = TimeZone::from_tz_data(self.bytes)
-                .expect("could not parse time zone data, this should be impossible");
-            Box::new(tz)
-        })
-    }
+    Some(**generated::TIME_ZONES_BY_NAME.get(lower)?)
 }
 
 /// Import this trait to extend [tz::TimeZone]'s functionality
@@ -134,54 +94,32 @@ pub trait TimeZoneExt {
         feature = "docsrs",
         doc(cfg(any(feature = "by-name", feature = "local")))
     )]
-    #[inline]
-    fn from_db(s: &str) -> Option<&'static TimeZone> {
-        Some(&*crate::generated::tz_by_name(s)?)
+    #[inline(always)]
+    fn from_db(s: &str) -> Option<TimeZoneRef<'static>> {
+        tz_by_name(s)
     }
 
     /// A list of all known time zones
     #[cfg(feature = "list")]
     #[cfg_attr(feature = "docsrs", doc(cfg(feature = "list")))]
     #[inline]
-    fn names_in_db() -> &'static [(&'static str, &'static DbTimeZone)] {
+    fn names_in_db() -> &'static [&'static str] {
         &crate::generated::TIME_ZONES_LIST[..]
     }
 
     /// Find the time zone of the current system
+    ///
+    /// This function uses [iana_time_zone::get_timezone()] in the background.
+    /// You may want to cache the output to avoid repeated filesystem accesses by get_timezone().
     #[cfg(feature = "local")]
     #[cfg_attr(feature = "docsrs", doc(cfg(feature = "local")))]
     #[inline]
-    fn local_from_db() -> Option<&'static DbTimeZone> {
-        Some(&*crate::generated::tz_by_name(
-            &iana_time_zone::get_timezone().ok()?,
-        )?)
+    fn local_from_db() -> Option<TimeZoneRef<'static>> {
+        tz_by_name(&iana_time_zone::get_timezone().ok()?)
     }
 }
 
 impl TimeZoneExt for TimeZone {}
-
-#[cfg(feature = "by-name")]
-struct Lower32([u128; 2]);
-
-#[cfg(feature = "by-name")]
-impl Lower32 {
-    #[inline]
-    fn for_str<'a>(&'a mut self, s: &str) -> Option<&'a str> {
-        use byte_slice_cast::{AsByteSlice, AsMutByteSlice};
-
-        self.0
-            .as_mut_byte_slice()
-            .get_mut(..s.len())?
-            .copy_from_slice(s.as_bytes());
-
-        self.0[0] |= 0x2020_2020_2020_2020_2020_2020_2020_2020_u128;
-        self.0[1] |= 0x2020_2020_2020_2020_2020_2020_2020_2020_u128;
-
-        std::str::from_utf8(self.0.as_byte_slice())
-            .ok()?
-            .get(..s.len())
-    }
-}
 
 #[cfg(test)]
 mod tests {
@@ -202,14 +140,8 @@ mod tests {
     #[test]
     fn test_static() {
         assert_eq!(
-            time_zone::pacific::NAURU.deref(),
+            time_zone::pacific::NAURU,
             TimeZone::from_db("Pacific/Nauru").unwrap()
         );
-    }
-
-    #[test]
-    fn test_sync_send() {
-        trait AssertSyncSend: 'static + Sync + Send {}
-        impl AssertSyncSend for DbTimeZone {}
     }
 }
