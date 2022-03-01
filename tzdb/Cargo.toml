@@ -1,6 +1,6 @@
 [package]
 name = "tzdb"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 authors = ["René Kijewski <crates.io@k6i.de>"]
 repository = "https://github.com/Kijewski/tzdb"
@@ -19,24 +19,33 @@ byte-slice-cast = { version = "1.2.1", optional = true }
 document-features = { version = "=0.2.1", optional = true }
 iana-time-zone = { version = "0.1.30", optional = true }
 phf = { version = "0.10.1", optional = true }
+serde = { version = "1.0.136", default-features = false, optional = true }
+serde_with = { version = "1.12.0", default-features = false, optional = true }
+
+[dev-dependencies]
+serde_json = "1.0.79"
 
 [features]
 default = ["by-name", "list", "local"]
-## enables [TimeZoneExt::from_db()]
+## enables [TimeZoneExt::from_db()] to get a time zone at runtime by name
 ##
 by-name = ["phf", "byte-slice-cast"]
-## enables [TimeZoneExt::names_in_db()]
+## enables [TimeZoneExt::names_in_db()] to get a list of all shipped time zones
 ##
 list = []
-## enables [TimeZoneExt::local_from_db()]
+## enables [TimeZoneExt::local_from_db()] to get the system time zone
 ##
 local = ["by-name", "iana-time-zone"]
+## enables [serde_as] to (de)serialize (Utc)DateTimes with [serde][::serde]
+##
+serde-as = ["serde", "serde_with"]
 
 # Internal feature, used when generating docs. *You* are not supposed to enable this feature!
-docsrs = ["document-features", "default"]
+docsrs = ["document-features", "testing"]
 
 # Internal feature, used when testing.
-testing = []
+testing = ["serde", "serde_with", "serde/derive", "serde_with/macros"]
 
 [package.metadata.docs.rs]
 features = ["docsrs"]
+all-features = true
