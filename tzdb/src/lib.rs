@@ -54,15 +54,20 @@
 //! use tz::{DateTime, TimeZone};
 //! use tzdb::TimeZoneExt;
 //!
-//! let access_by_identifier = DateTime::now(tzdb::time_zone::europe::KIEV);
-//! let access_by_name = DateTime::now(TimeZone::from_db("Europe/Berlin").unwrap());
-//! let names_are_case_insensitive = DateTime::now(TimeZone::from_db("ArCtIc/LongYeArByEn").unwrap());
+//! // access by identifier
+//! DateTime::now(tzdb::time_zone::europe::KIEV);
+//! // access by name
+//! DateTime::now(TimeZone::from_db("Europe/Berlin").unwrap());
+//! // names are case insensitive
+//! DateTime::now(TimeZone::from_db("ArCtIc/LongYeArByEn").unwrap());
 //! ```
 //!
 //! ## Feature flags
 #![cfg_attr(feature = "docsrs", doc = ::document_features::document_features!())]
 
 mod generated;
+#[cfg(feature = "serde-as")]
+pub mod serde_as;
 
 use tz::{TimeZone, TimeZoneRef};
 

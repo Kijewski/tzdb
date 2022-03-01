@@ -19,10 +19,20 @@ See the documentation for a full list the the contained time zones:
 use tz::{DateTime, TimeZone};
 use tzdb::TimeZoneExt;
 
-let access_by_identifier = DateTime::now(tzdb::time_zone::europe::KIEV);
-let access_by_name = DateTime::now(TimeZone::from_db("Europe/Berlin").unwrap());
-let names_are_case_insensitive = DateTime::now(TimeZone::from_db("ArCtIc/LongYeArByEn").unwrap());
+// access by identifier
+DateTime::now(tzdb::time_zone::europe::KIEV);
+// access by name
+DateTime::now(TimeZone::from_db("Europe/Berlin").unwrap());
+// names are case insensitive
+DateTime::now(TimeZone::from_db("ArCtIc/LongYeArByEn").unwrap());
 ```
+
+## Feature flags
+
+* `by-name` *(enabled by default)* — enables TimeZoneExt::from_db() to get a time zone at runtime by name
+* `list` *(enabled by default)* — enables TimeZoneExt::names_in_db() to get a list of all shipped time zones
+* `local` *(enabled by default)* — enables TimeZoneExt::local_from_db() to get the system time zone
+* `serde-as` — enables serde_as to (de)serialize (Utc)DateTimes with serde
 
 ## Git Cloning
 
