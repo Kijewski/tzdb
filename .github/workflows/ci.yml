@@ -66,9 +66,11 @@ jobs:
             ~/.cargo/git/db/
             target/
 
-      - run: cargo check --workspace --all-targets
+      - name: Check
+        run: cargo check --workspace --all-targets --features testing
 
-      - run: cargo clippy --all-targets -- -D warnings
+      - name: Lint
+        run: cargo clippy --workspace --all-targets --features testing -- -D warnings
 
   test:
     strategy:
@@ -112,11 +114,8 @@ jobs:
             ~/.cargo/git/db/
             target/
 
-      - name: Build
-        run: cargo build --workspace --all-targets
-
       - name: Test
-        run: cargo test --workspace --all-targets
+        run: cargo test --workspace --all-targets --features testing -- --show-output
 
   doc:
     name: "Documentation"
@@ -149,7 +148,7 @@ jobs:
             ~/.cargo/git/db/
             target/
 
-      - run: cargo doc --package tzdb --features docsrs
+      - run: cargo doc --package tzdb --features docsrs --all-features
 
   audit:
     runs-on: ubuntu-latest

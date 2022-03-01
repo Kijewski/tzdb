@@ -35,5 +35,8 @@ local = ["by-name", "iana-time-zone"]
 # Internal feature, used when generating docs. *You* are not supposed to enable this feature!
 docsrs = ["document-features", "default"]
 
+# Internal feature, used when testing.
+testing = []
+
 [package.metadata.docs.rs]
 features = ["docsrs"]
