@@ -12,12 +12,12 @@ readme = "README.md"
 rust-version = "1.57"
 
 [dependencies]
-tz-rs = "0.6.0"
+tz-rs = "0.6.1"
 
 # optional dependencies
 byte-slice-cast = { version = "1.2.1", optional = true }
 document-features = { version = "=0.2.1", optional = true }
-iana-time-zone = { version = "0.1.29", optional = true }
+iana-time-zone = { version = "0.1.30", optional = true }
 phf = { version = "0.10.1", optional = true }
 
 [features]
