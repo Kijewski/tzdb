@@ -15,4 +15,4 @@ itertools = "0.10.3"
 phf_codegen = "0.10.0"
 ron = "0.7.0"
 serde = { version = "1.0.136", features = ["derive"] }
-tz-rs = "0.6.2"
+tz-rs = "0.6.3"
