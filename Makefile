@@ -7,7 +7,7 @@ tzdb/src/generated.rs: tmp/${TZDB_VERSION}/usr/share/zoneinfo/
 	cargo fmt
 
 tmp/${TZDB_VERSION}/usr/share/zoneinfo/: tmp/${TZDB_VERSION}/
-	cd tmp/${TZDB_VERSION}/ && make TOPDIR="`pwd`" install
+	cd tmp/${TZDB_VERSION}/ && make PACKRATDATA=backzone TOPDIR="." install
 
 tmp/${TZDB_VERSION}/: tmp/${TZDB_VERSION}.tar.lz
 	cd tmp/ && tar xf $(<F)
