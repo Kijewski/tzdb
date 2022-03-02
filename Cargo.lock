@@ -391,7 +391,7 @@ checksum = "326e255e65b84326e3840ec4b648e6a481907340300a2f6c931e6fb14c60fc75"
 
 [[package]]
 name = "tzdb"
-version = "0.1.1"
+version = "0.1.2"
 dependencies = [
  "byte-slice-cast",
  "document-features",
