@@ -1,3 +1,8 @@
+**0.1.3**
+
+* Optimize DateTime deserialization to work without dynamic allocation
+  ([tz-rs#22](https://github.com/x-hgg-x/tz-rs/pull/22))
+
 **0.1.2**
 
 * Include “backzone” data to include pre-1970 information for some more time zones
