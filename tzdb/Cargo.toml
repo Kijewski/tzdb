@@ -1,6 +1,6 @@
 [package]
 name = "tzdb"
-version = "0.1.2"
+version = "0.1.3"
 edition = "2021"
 authors = ["René Kijewski <crates.io@k6i.de>"]
 repository = "https://github.com/Kijewski/tzdb"
@@ -12,7 +12,7 @@ readme = "README.md"
 rust-version = "1.57"
 
 [dependencies]
-tz-rs = "0.6.3"
+tz-rs = "0.6.4"
 
 # optional dependencies
 byte-slice-cast = { version = "1.2.1", optional = true }
@@ -44,7 +44,7 @@ serde-as = ["serde", "serde_with"]
 docsrs = ["document-features", "testing"]
 
 # Internal feature, used when testing.
-testing = ["serde", "serde_with", "serde/derive", "serde_with/macros"]
+testing = ["serde-as", "serde/derive", "serde_with/macros"]
 
 [package.metadata.docs.rs]
 features = ["docsrs"]

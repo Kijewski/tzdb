@@ -1,14 +1,13 @@
 use std::fmt;
 use std::num::FpCategory;
 
-use serde::de::{Error, SeqAccess, Visitor};
-use serde::ser::SerializeTuple;
+use serde::de::{Error, Visitor};
 use serde::{Deserializer, Serializer};
 use serde_with::{DeserializeAs, SerializeAs};
 use tz::{DateTime, UtcDateTime};
 
-use super::common::serialize_tz;
-use crate::serde_as::common::{deserialize_tz, TzTuple};
+use super::common::{deserialize_date_time, serialize_date_time};
+use crate::serde_as::common::project_utc;
 
 /// (De)serialize a (Utc)DateTime as an f64 with millisecond resolution
 ///
@@ -101,38 +100,19 @@ impl SerializeAs<UtcDateTime> for Float {
 
 impl<'de> DeserializeAs<'de, DateTime> for Float {
     fn deserialize_as<D: Deserializer<'de>>(deserializer: D) -> Result<DateTime, D::Error> {
-        struct UnixTpl;
-
-        impl<'de> Visitor<'de> for UnixTpl {
-            type Value = (f64, TzTuple<'de>);
-
-            fn expecting(&self, formatter: &mut fmt::Formatter<'_>) -> fmt::Result {
-                formatter.write_str("UnixTime")
-            }
-
-            fn visit_seq<A: SeqAccess<'de>>(self, mut seq: A) -> Result<Self::Value, A::Error> {
-                let ut = seq
-                    .next_element()?
-                    .ok_or_else(|| A::Error::custom("expected UnixTime"))?;
-                let tz = seq
-                    .next_element()?
-                    .ok_or_else(|| A::Error::custom("expected LocalTimeType"))?;
-                Ok((ut, tz))
-            }
-        }
-
-        let (value, tz) = deserializer.deserialize_tuple(2, UnixTpl)?;
+        let (value, tz) = deserialize_date_time(deserializer)?;
         let utc = nanos_to_utc(value)?;
-        let tz = deserialize_tz(tz)?;
-        utc.project(tz.as_ref()).map_err(D::Error::custom)
+        project_utc(utc, tz)
     }
 }
 
 impl SerializeAs<DateTime> for Float {
     fn serialize_as<S: Serializer>(source: &DateTime, serializer: S) -> Result<S::Ok, S::Error> {
-        let mut seq = serializer.serialize_tuple(2)?;
-        seq.serialize_element(&serialize_nanos(source.total_nanoseconds()))?;
-        serialize_tz::<S>(source, seq)
+        serialize_date_time(
+            serializer,
+            source,
+            serialize_nanos(source.total_nanoseconds()),
+        )
     }
 }
 
