@@ -43,7 +43,7 @@
 //! Static time zone information for [tz-rs](https://crates.io/crates/tz-rs).
 //!
 //! This crate provides all time zones found in the [Time Zone Database](https://www.iana.org/time-zones),
-//! currently in the version 2021e (released 2021-10-21).
+//! currently in the version 2022e (released 2022-03-15).
 //!
 //! See the documentation for a full list the the contained time zones:
 //! <https://docs.rs/tzdb/latest/tzdb/time_zone/index.html>
@@ -65,31 +65,10 @@
 //! ## Feature flags
 #![cfg_attr(feature = "docsrs", doc = ::document_features::document_features!())]
 
-mod generated;
-#[cfg(feature = "serde-as")]
-pub mod serde_as;
-
 use tz::{TimeZone, TimeZoneRef};
-
-pub use crate::generated::time_zone;
-
-#[cfg(feature = "by-name")]
-fn tz_by_name(s: &str) -> Option<TimeZoneRef<'static>> {
-    use std::str::from_utf8;
-
-    use byte_slice_cast::{AsByteSlice, AsMutByteSlice};
-
-    let mut lower = [0u128; 2];
-    lower
-        .as_mut_byte_slice()
-        .get_mut(..s.len())?
-        .copy_from_slice(s.as_bytes());
-    lower[0] |= 0x2020_2020_2020_2020_2020_2020_2020_2020_u128;
-    lower[1] |= 0x2020_2020_2020_2020_2020_2020_2020_2020_u128;
-    let lower = from_utf8(lower.as_byte_slice()).ok()?.get(..s.len())?;
-
-    Some(**generated::TIME_ZONES_BY_NAME.get(lower)?)
-}
+#[cfg(feature = "serde-as")]
+pub use tzdb_0_2::serde_as;
+pub use tzdb_0_2::time_zone;
 
 /// Import this trait to extend [tz::TimeZone]'s functionality
 pub trait TimeZoneExt {
@@ -101,26 +80,26 @@ pub trait TimeZoneExt {
     )]
     #[inline(always)]
     fn from_db(s: &str) -> Option<TimeZoneRef<'static>> {
-        tz_by_name(s)
+        tzdb_0_2::tz_by_name(s)
     }
 
     /// A list of all known time zones
     #[cfg(feature = "list")]
     #[cfg_attr(feature = "docsrs", doc(cfg(feature = "list")))]
-    #[inline]
+    #[inline(always)]
     fn names_in_db() -> &'static [&'static str] {
-        &crate::generated::TIME_ZONES_LIST[..]
+        tzdb_0_2::TZ_NAMES
     }
 
     /// Find the time zone of the current system
     ///
-    /// This function uses [iana_time_zone::get_timezone()] in the background.
+    /// This function uses [iana_time_zone::get_timezone()](https://docs.rs/iana-time-zone/0.1.31/iana_time_zone/fn.get_timezone.html) in the background.
     /// You may want to cache the output to avoid repeated filesystem accesses by get_timezone().
     #[cfg(feature = "local")]
     #[cfg_attr(feature = "docsrs", doc(cfg(feature = "local")))]
-    #[inline]
+    #[inline(always)]
     fn local_from_db() -> Option<TimeZoneRef<'static>> {
-        tz_by_name(&iana_time_zone::get_timezone().ok()?)
+        tzdb_0_2::local_tz()
     }
 }
 

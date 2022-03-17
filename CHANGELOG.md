@@ -1,3 +1,7 @@
+**0.1.4***
+
+* Let the v0.1.\* branch re-export v0.2.\*
+
 **0.1.3**
 
 * Optimize DateTime deserialization to work without dynamic allocation
