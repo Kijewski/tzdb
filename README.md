@@ -8,7 +8,7 @@
 Static time zone information for [tz-rs](https://crates.io/crates/tz-rs).
 
 This crate provides all time zones found in the [Time Zone Database](https://www.iana.org/time-zones),
-currently in the version 2021e (released 2021-10-21).
+currently in the version 2022e (released 2022-03-15).
 
 See the documentation for a full list the the contained time zones:
 <https://docs.rs/tzdb/latest/tzdb/time_zone/index.html>
@@ -17,14 +17,14 @@ See the documentation for a full list the the contained time zones:
 
 ```rust
 use tz::{DateTime, TimeZone};
-use tzdb::TimeZoneExt;
+use tzdb::{time_zone, tz_by_name};
 
 // access by identifier
-DateTime::now(tzdb::time_zone::europe::KIEV);
+DateTime::now(time_zone::europe::KIEV);
 // access by name
-DateTime::now(TimeZone::from_db("Europe/Berlin").unwrap());
+DateTime::now(tz_by_name("Europe/Berlin").unwrap());
 // names are case insensitive
-DateTime::now(TimeZone::from_db("ArCtIc/LongYeArByEn").unwrap());
+DateTime::now(tz_by_name("ArCtIc/LongYeArByEn").unwrap());
 ```
 
 ## Feature flags
@@ -32,7 +32,8 @@ DateTime::now(TimeZone::from_db("ArCtIc/LongYeArByEn").unwrap());
 * `by-name` *(enabled by default)* — enables TimeZoneExt::from_db() to get a time zone at runtime by name
 * `list` *(enabled by default)* — enables TimeZoneExt::names_in_db() to get a list of all shipped time zones
 * `local` *(enabled by default)* — enables TimeZoneExt::local_from_db() to get the system time zone
-* `serde-as` — enables serde_as to (de)serialize (Utc)DateTimes with serde
+* `serde-as` — enables the module `serde_as` to (de)serialize (Utc)DateTimes with serde
+* `binary` – make the unparsed, binary tzdata of a time zone available
 
 ## Git Cloning
 

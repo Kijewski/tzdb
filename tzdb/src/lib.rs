@@ -43,7 +43,7 @@
 //! Static time zone information for [tz-rs](https://crates.io/crates/tz-rs).
 //!
 //! This crate provides all time zones found in the [Time Zone Database](https://www.iana.org/time-zones),
-//! currently in the version 2021e (released 2021-10-21).
+//! currently in the version 2022e (released 2022-03-15).
 //!
 //! See the documentation for a full list the the contained time zones:
 //! <https://docs.rs/tzdb/latest/tzdb/time_zone/index.html>
@@ -52,14 +52,14 @@
 //!
 //! ```
 //! use tz::{DateTime, TimeZone};
-//! use tzdb::TimeZoneExt;
+//! use tzdb::{time_zone, tz_by_name};
 //!
 //! // access by identifier
-//! DateTime::now(tzdb::time_zone::europe::KIEV);
+//! DateTime::now(time_zone::europe::KIEV);
 //! // access by name
-//! DateTime::now(TimeZone::from_db("Europe/Berlin").unwrap());
+//! DateTime::now(tz_by_name("Europe/Berlin").unwrap());
 //! // names are case insensitive
-//! DateTime::now(TimeZone::from_db("ArCtIc/LongYeArByEn").unwrap());
+//! DateTime::now(tz_by_name("ArCtIc/LongYeArByEn").unwrap());
 //! ```
 //!
 //! ## Feature flags
@@ -69,21 +69,32 @@ mod generated;
 #[cfg(feature = "serde-as")]
 pub mod serde_as;
 
-use tz::{TimeZone, TimeZoneRef};
+use tz::TimeZoneRef;
 
 pub use crate::generated::time_zone;
 
+#[cfg(feature = "docsrs")]
+pub mod changelog {
+    #![doc = include_str!("../CHANGELOG.md")]
+}
+
+/// Find a time zone by name, e.g. `"Europe/Berlin"` (case-insensitive)
 #[cfg(feature = "by-name")]
-fn tz_by_name(s: &str) -> Option<TimeZoneRef<'static>> {
+#[cfg_attr(
+    feature = "docsrs",
+    doc(cfg(any(feature = "by-name", feature = "local")))
+)]
+pub fn tz_by_name<S: AsRef<[u8]>>(s: S) -> Option<TimeZoneRef<'static>> {
     use std::str::from_utf8;
 
     use byte_slice_cast::{AsByteSlice, AsMutByteSlice};
 
+    let s = s.as_ref();
     let mut lower = [0u128; 2];
     lower
         .as_mut_byte_slice()
         .get_mut(..s.len())?
-        .copy_from_slice(s.as_bytes());
+        .copy_from_slice(s);
     lower[0] |= 0x2020_2020_2020_2020_2020_2020_2020_2020_u128;
     lower[1] |= 0x2020_2020_2020_2020_2020_2020_2020_2020_u128;
     let lower = from_utf8(lower.as_byte_slice()).ok()?.get(..s.len())?;
@@ -91,62 +102,78 @@ fn tz_by_name(s: &str) -> Option<TimeZoneRef<'static>> {
     Some(**generated::TIME_ZONES_BY_NAME.get(lower)?)
 }
 
-/// Import this trait to extend [tz::TimeZone]'s functionality
-pub trait TimeZoneExt {
-    /// Find a time zone by name, e.g. `"Europe/Berlin"` (case-insensitive)
-    #[cfg(feature = "by-name")]
-    #[cfg_attr(
-        feature = "docsrs",
-        doc(cfg(any(feature = "by-name", feature = "local")))
-    )]
-    #[inline(always)]
-    fn from_db(s: &str) -> Option<TimeZoneRef<'static>> {
-        tz_by_name(s)
-    }
+/// Find the raw, unparsed time zone data by name, e.g. `"Europe/Berlin"` (case-insensitive)
+#[cfg(all(feature = "binary", feature = "by-name"))]
+#[cfg_attr(
+    feature = "docsrs",
+    doc(cfg(all(feature = "binary", any(feature = "by-name", feature = "local"),)))
+)]
+pub fn raw_tz_by_name<S: AsRef<[u8]>>(s: S) -> Option<&'static [u8]> {
+    use std::str::from_utf8;
 
-    /// A list of all known time zones
-    #[cfg(feature = "list")]
-    #[cfg_attr(feature = "docsrs", doc(cfg(feature = "list")))]
-    #[inline]
-    fn names_in_db() -> &'static [&'static str] {
-        &crate::generated::TIME_ZONES_LIST[..]
-    }
+    use byte_slice_cast::{AsByteSlice, AsMutByteSlice};
 
-    /// Find the time zone of the current system
-    ///
-    /// This function uses [iana_time_zone::get_timezone()] in the background.
-    /// You may want to cache the output to avoid repeated filesystem accesses by get_timezone().
-    #[cfg(feature = "local")]
-    #[cfg_attr(feature = "docsrs", doc(cfg(feature = "local")))]
-    #[inline]
-    fn local_from_db() -> Option<TimeZoneRef<'static>> {
-        tz_by_name(&iana_time_zone::get_timezone().ok()?)
-    }
+    let s = s.as_ref();
+    let mut lower = [0u128; 2];
+    lower
+        .as_mut_byte_slice()
+        .get_mut(..s.len())?
+        .copy_from_slice(s);
+    lower[0] |= 0x2020_2020_2020_2020_2020_2020_2020_2020_u128;
+    lower[1] |= 0x2020_2020_2020_2020_2020_2020_2020_2020_u128;
+    let lower = from_utf8(lower.as_byte_slice()).ok()?.get(..s.len())?;
+
+    Some(*generated::RAW_TIME_ZONES_BY_NAME.get(lower)?)
 }
 
-impl TimeZoneExt for TimeZone {}
+/// A list of all known time zones
+#[cfg(feature = "list")]
+#[cfg_attr(feature = "docsrs", doc(cfg(feature = "list")))]
+pub const TZ_NAMES: &[&str] = &crate::generated::TIME_ZONES_LIST;
+
+/// Find the time zone of the current system
+///
+/// This function uses [iana_time_zone::get_timezone()] in the background.
+/// You may want to cache the output to avoid repeated filesystem accesses by get_timezone().
+#[cfg(feature = "local")]
+#[cfg_attr(feature = "docsrs", doc(cfg(feature = "local")))]
+pub fn local_tz() -> Option<TimeZoneRef<'static>> {
+    tz_by_name(&iana_time_zone::get_timezone().ok()?)
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
 
+    #[cfg(feature = "by-name")]
     #[test]
     fn test_by_name() {
-        let _ = TimeZone::from_db("Europe/Berlin").unwrap();
-        let _ = TimeZone::from_db("America/Dominica").unwrap();
+        let _ = tz_by_name("Europe/Berlin").unwrap();
+        let _ = tz_by_name("America/Dominica").unwrap();
     }
 
+    #[cfg(feature = "by-name")]
     #[test]
     #[should_panic]
     fn test_by_absent_name() {
-        let _ = TimeZone::from_db("Berlin/Steglitz-Zehlendorf").unwrap();
+        let _ = tz_by_name("Berlin/Steglitz-Zehlendorf").unwrap();
     }
 
+    #[cfg(feature = "by-name")]
     #[test]
     fn test_static() {
         assert_eq!(
             time_zone::pacific::NAURU,
-            TimeZone::from_db("Pacific/Nauru").unwrap()
+            tz_by_name("Pacific/Nauru").unwrap()
+        );
+    }
+
+    #[cfg(all(feature = "binary", feature = "by-name"))]
+    #[test]
+    fn test_raw_static() {
+        assert_eq!(
+            time_zone::pacific::RAW_NAURU,
+            raw_tz_by_name("Pacific/Nauru").unwrap()
         );
     }
 }

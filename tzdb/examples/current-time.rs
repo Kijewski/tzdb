@@ -1,9 +1,9 @@
 use std::env::args;
 use std::process::exit;
 
-use tz::{DateTime, Result, TimeZone};
+use tz::{DateTime, Result};
 use tzdb::time_zone::UTC;
-use tzdb::TimeZoneExt;
+use tzdb::{local_tz, tz_by_name, TZ_NAMES};
 
 pub fn main() -> Result<()> {
     let mut args = args().into_iter().fuse();
@@ -13,7 +13,7 @@ pub fn main() -> Result<()> {
 
     if matches!(argument.as_deref(), Some("-l" | "--list")) {
         let mut line = String::with_capacity(80);
-        for tz_name in TimeZone::names_in_db() {
+        for tz_name in TZ_NAMES {
             if line.len() + 2 + tz_name.len() >= 80 {
                 println!("{},", line);
                 line.clear();
@@ -30,7 +30,7 @@ pub fn main() -> Result<()> {
     }
 
     let timezone = if let Some(argument) = argument {
-        match TimeZone::from_db(&argument) {
+        match tz_by_name(&argument) {
             Some(timezone) => timezone,
             None => {
                 eprintln!("No such time zone found in database: {:?}", argument);
@@ -42,7 +42,7 @@ pub fn main() -> Result<()> {
         eprintln!("No time zone selected, defaulting to the system time zone.");
         eprintln!("To see a list of all known time zones run: {} --list", exe);
         eprintln!();
-        TimeZone::local_from_db().unwrap_or(UTC)
+        local_tz().unwrap_or(UTC)
     };
 
     let dt = DateTime::now(timezone)?;

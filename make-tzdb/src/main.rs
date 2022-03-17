@@ -201,6 +201,7 @@ use tz::TimeZoneRef;
 "#
     )?;
 
+    // all known time zones as reference to (raw_)tzdata
     writeln!(f, "/// All defined time zones statically accessible")?;
     writeln!(f, "pub mod time_zone {{")?;
     writeln!(f, "    use super::*;")?;
@@ -210,16 +211,36 @@ use tz::TimeZoneRef;
             writeln!(f, "/// {}", folder)?;
             writeln!(f, "pub mod {} {{", folder)?;
             writeln!(f, "    use super::*;")?;
-            writeln!(f)?;
         }
         for entry in entries {
-            writeln!(f, "    /// {},", entry.full)?;
+            writeln!(f)?;
+            writeln!(f, "    /// Time zone data for {},", entry.full)?;
             writeln!(
                 f,
                 "pub const {}: TimeZoneRef<'static> = tzdata::{};",
                 entry.minor, entry.canon,
             )?;
         }
+
+        for entry in entries {
+            writeln!(f)?;
+            writeln!(
+                f,
+                "    /// Raw, unparsed time zone data for {},",
+                entry.full
+            )?;
+            writeln!(f, r#"#[cfg(feature = "binary")]"#)?;
+            writeln!(
+                f,
+                r#"#[cfg_attr(feature = "docsrs", doc(cfg(feature = "binary")))]"#
+            )?;
+            writeln!(
+                f,
+                "pub const RAW_{}: &[u8] = raw_tzdata::{};",
+                entry.minor, entry.canon,
+            )?;
+        }
+
         if folder.is_some() {
             writeln!(f, "}}")?;
         }
@@ -227,6 +248,7 @@ use tz::TimeZoneRef;
     writeln!(f, "}}")?;
     writeln!(f)?;
 
+    // map of time zone name to parsed data
     let mut phf = phf_codegen::Map::new();
     for entries in entries_by_bytes.values() {
         for entry in entries {
@@ -245,6 +267,26 @@ pub(crate) const TIME_ZONES_BY_NAME: phf::Map<&'static str, &'static TimeZoneRef
     )?;
     writeln!(f)?;
 
+    // map of time zone name to its unparsed, binary data
+    let mut phf = phf_codegen::Map::new();
+    for entries in entries_by_bytes.values() {
+        for entry in entries {
+            phf.entry(
+                entry.full.to_ascii_lowercase(),
+                &format!("raw_tzdata::{}", entry.canon),
+            );
+        }
+    }
+    writeln!(f, r#"#[cfg(all(feature = "binary", feature = "by-name"))]"#)?;
+    writeln!(
+        f,
+        "\
+pub(crate) const RAW_TIME_ZONES_BY_NAME: phf::Map<&'static str, &'static [u8]> = {};",
+        phf.build(),
+    )?;
+    writeln!(f)?;
+
+    // list of known time zone names
     let mut time_zones_list = entries_by_major
         .iter()
         .flat_map(|(_, entries)| entries.iter())
@@ -263,9 +305,9 @@ pub(crate) const TIME_ZONES_BY_NAME: phf::Map<&'static str, &'static TimeZoneRef
     writeln!(f, "];")?;
     writeln!(f)?;
 
+    // parsed time zone data by canonical name
     writeln!(f, "mod tzdata {{")?;
     writeln!(f, "    use tz::timezone::*;")?;
-
     for (bytes, entries) in &entries_by_bytes {
         writeln!(f)?;
         writeln!(
@@ -273,6 +315,19 @@ pub(crate) const TIME_ZONES_BY_NAME: phf::Map<&'static str, &'static TimeZoneRef
             "pub(crate) const {}: TimeZoneRef<'static> = {};",
             &entries[0].canon,
             parse::Unwrap(&tz_convert(bytes)),
+        )?;
+    }
+    writeln!(f, "}}")?;
+    writeln!(f)?;
+
+    // raw time zone data by canonical name
+    writeln!(f, r#"#[cfg(feature = "binary")]"#)?;
+    writeln!(f, "mod raw_tzdata {{")?;
+    for (bytes, entries) in &entries_by_bytes {
+        writeln!(
+            f,
+            "pub(crate) const {}: &[u8] = &{:?};",
+            &entries[0].canon, bytes,
         )?;
     }
     writeln!(f, "}}")?;
