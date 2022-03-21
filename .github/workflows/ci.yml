@@ -54,7 +54,7 @@ jobs:
           components: clippy
 
       - name: Cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           key: ${{ runner.os }}-check-${{ steps.actions-rs.outputs.rustc_hash }}-${{ hashFiles('Cargo.lock') }}
           restore-keys: |
@@ -102,7 +102,7 @@ jobs:
           override: true
 
       - name: Cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           key: ${{ runner.os }}-test-${{ steps.actions-rs.outputs.rustc_hash }}-${{ hashFiles('Cargo.lock') }}
           restore-keys: |
@@ -136,7 +136,7 @@ jobs:
           override: true
 
       - name: Cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           key: ${{ runner.os }}-doc-${{ steps.actions-rs.outputs.rustc_hash }}-${{ hashFiles('Cargo.lock') }}
           restore-keys: |
@@ -162,7 +162,7 @@ jobs:
           lfs: true
 
       - name: Cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           key: ${{ runner.os }}-audit-${{ hashFiles('Cargo.lock') }}
           restore-keys: |
