@@ -39,6 +39,12 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "baf1de4339761588bc0619e3cbc0120ee582ebb74b53b4efbf79117bd2da40fd"
 
 [[package]]
+name = "const_fn"
+version = "0.4.9"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "fbdcdcb6d86f71c5e97409ad45898af11cbc995b4ee8112d59095a28d376c935"
+
+[[package]]
 name = "convert_case"
 version = "0.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -385,9 +391,12 @@ dependencies = [
 
 [[package]]
 name = "tz-rs"
-version = "0.6.5"
+version = "0.6.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7a9203bc748453a277c1fa18bbc148c664fbd9c89950b5a8087fa8803e3cfb00"
+checksum = "0dea8928b9414243f87c1a67ea86b5598d02e916d65d0006847ba06b3f3e4878"
+dependencies = [
+ "const_fn",
+]
 
 [[package]]
 name = "tzdb"
