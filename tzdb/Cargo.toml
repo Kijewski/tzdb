@@ -1,6 +1,6 @@
 [package]
 name = "tzdb"
-version = "0.2.0"
+version = "0.2.1"
 edition = "2021"
 authors = ["René Kijewski <crates.io@k6i.de>"]
 repository = "https://github.com/Kijewski/tzdb"
@@ -12,11 +12,10 @@ readme = "README.md"
 rust-version = "1.57"
 
 [dependencies]
-tz-rs = "0.6.5"
+tz-rs = "0.6.7"
 
 # optional dependencies
 byte-slice-cast = { version = "1.2.1", optional = true }
-document-features = { version = "=0.2.1", optional = true }
 iana-time-zone = { version = "0.1.31", optional = true }
 phf = { version = "0.10.1", optional = true }
 serde = { version = "1.0.136", default-features = false, optional = true }
@@ -44,7 +43,7 @@ serde-as = ["serde", "serde_with"]
 binary = []
 
 # Internal feature, used when generating docs. *You* are not supposed to enable this feature!
-docsrs = ["document-features", "testing"]
+docsrs = ["testing"]
 
 # Internal feature, used when testing.
 testing = ["serde-as", "serde/derive", "serde_with/macros", "binary"]

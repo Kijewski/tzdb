@@ -43,7 +43,7 @@
 //! Static time zone information for [tz-rs](https://crates.io/crates/tz-rs).
 //!
 //! This crate provides all time zones found in the [Time Zone Database](https://www.iana.org/time-zones),
-//! currently in the version 2022e (released 2022-03-15).
+//! currently in the version 2022a (released 2022-03-15).
 //!
 //! See the documentation for a full list the the contained time zones:
 //! <https://docs.rs/tzdb/latest/tzdb/time_zone/index.html>
@@ -63,12 +63,24 @@
 //! ```
 //!
 //! ## Feature flags
-#![cfg_attr(feature = "docsrs", doc = ::document_features::document_features!())]
+//!
+//! * `by-name` *(enabled by default)* — enables [`tz_by_name()`] to get a time zone at runtime by name
+//!
+//! * `list` *(enabled by default)* — enables [`TZ_NAMES`] to get a list of all shipped time zones
+//!
+//! * `local` *(enabled by default)* — enables [`local_tz()`] to get the system time zone
+//!
+//! * `serde-as` — enables the module [`serde_as`] to (de)serialize (Utc)DateTimes with [serde]
+//!
+//! * `binary` – make the unparsed, binary tzdata of a time zone available
+//!
 
 mod generated;
 #[cfg(feature = "serde-as")]
 pub mod serde_as;
 
+#[cfg(feature = "docsrs")]
+use serde;
 use tz::TimeZoneRef;
 
 pub use crate::generated::time_zone;
@@ -77,6 +89,12 @@ pub use crate::generated::time_zone;
 pub mod changelog {
     #![doc = include_str!("../CHANGELOG.md")]
 }
+
+/// The version of the source Time Zone Database
+pub const VERSION: &str = "2022a";
+
+/// The SHA512 hash of the source Time Zone Database (using the "Complete Distribution")
+pub const VERSION_HASH: &str = "ece0b7a9ad3d365f8605e8f98a8a78b7fdbbb8aa615b585f21256d9401c59845fcdc951f5fc876293f1b7956b1a2d3fa2baf85099d637a91d4199ee30cf4307e";
 
 /// Find a time zone by name, e.g. `"Europe/Berlin"` (case-insensitive)
 #[cfg(feature = "by-name")]

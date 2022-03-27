@@ -1,5 +1,10 @@
 ## Changes between the versions
 
+### 0.2.1
+
+* Fix typos
+* Introduce VERSION and VERSION_HASH
+
 ### 0.2.0
 
 * Update to 2022a
