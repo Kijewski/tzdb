@@ -2,6 +2,10 @@
 
 ### 0.2.1
 
+* Bump dependency version numbers
+
+### 0.2.1
+
 * Fix typos
 * Introduce VERSION and VERSION_HASH
 
