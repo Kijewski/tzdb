@@ -18,7 +18,7 @@ tz-rs = { version = "0.6.9", features = ["const"] }
 byte-slice-cast = { version = "1.2.1", optional = true }
 iana-time-zone = { version = "0.1.33", optional = true }
 phf = { version = "0.10.1", optional = true }
-serde = { version = "1.0.136", default-features = false, optional = true }
+serde = { version = "1.0.137", default-features = false, optional = true }
 serde_with = { version = "1.12.1", default-features = false, optional = true }
 
 [dev-dependencies]
