@@ -14,6 +14,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+#[path = "../../tzdb/src/lower.rs"]
+mod lower;
 mod parse;
 
 use std::cmp::Ordering;
@@ -26,6 +28,8 @@ use convert_case::{Case, Casing};
 use indexmap::IndexMap;
 use itertools::Itertools;
 use tz::TimeZone;
+
+use crate::lower::full_to_lower;
 
 struct TzName {
     /// to_pascal("Europe/Belfast")
@@ -198,6 +202,8 @@ pub fn main() -> anyhow::Result<()> {
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 use tz::TimeZoneRef;
+#[cfg(feature = "by-name")]
+use crate::lower::Lower;
 "#
     )?;
 
@@ -253,7 +259,7 @@ use tz::TimeZoneRef;
     for entries in entries_by_bytes.values() {
         for entry in entries {
             phf.entry(
-                entry.full.to_ascii_lowercase(),
+                full_to_lower(entry.full.as_bytes()),
                 &format!("&tzdata::{}", entry.canon),
             );
         }
@@ -262,7 +268,7 @@ use tz::TimeZoneRef;
     writeln!(
         f,
         "\
-pub(crate) const TIME_ZONES_BY_NAME: phf::Map<&'static str, &'static TimeZoneRef<'static>> = {};",
+pub(crate) const TIME_ZONES_BY_NAME: phf::Map<Lower, &'static TimeZoneRef<'static>> = {};",
         phf.build(),
     )?;
     writeln!(f)?;
@@ -272,7 +278,7 @@ pub(crate) const TIME_ZONES_BY_NAME: phf::Map<&'static str, &'static TimeZoneRef
     for entries in entries_by_bytes.values() {
         for entry in entries {
             phf.entry(
-                entry.full.to_ascii_lowercase(),
+                full_to_lower(entry.full.as_bytes()),
                 &format!("raw_tzdata::{}", entry.canon),
             );
         }
@@ -281,7 +287,7 @@ pub(crate) const TIME_ZONES_BY_NAME: phf::Map<&'static str, &'static TimeZoneRef
     writeln!(
         f,
         "\
-pub(crate) const RAW_TIME_ZONES_BY_NAME: phf::Map<&'static str, &'static [u8]> = {};",
+pub(crate) const RAW_TIME_ZONES_BY_NAME: phf::Map<Lower, &'static [u8]> = {};",
         phf.build(),
     )?;
     writeln!(f)?;

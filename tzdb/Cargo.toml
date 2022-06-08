@@ -1,6 +1,6 @@
 [package]
 name = "tzdb"
-version = "0.2.2"
+version = "0.2.3"
 edition = "2021"
 authors = ["René Kijewski <crates.io@k6i.de>"]
 repository = "https://github.com/Kijewski/tzdb"
@@ -15,20 +15,21 @@ rust-version = "1.57"
 tz-rs = { version = "0.6.9", features = ["const"] }
 
 # optional dependencies
-byte-slice-cast = { version = "1.2.1", optional = true }
-iana-time-zone = { version = "0.1.33", optional = true }
-phf = { version = "0.10.1", optional = true }
-serde = { version = "1.0.136", default-features = false, optional = true }
-serde_with = { version = "1.12.1", default-features = false, optional = true }
+byte-slice-cast = { version = "=1", optional = true }
+iana-time-zone = { version = "=0.1", optional = true }
+phf = { version = "=0.10", optional = true }
+phf_shared = { version = "=0.10", optional = true }
+serde = { version = "=1", default-features = false, optional = true }
+serde_with = { version = "=1", default-features = false, optional = true }
 
 [dev-dependencies]
-serde_json = "1.0.79"
+serde_json = "=1"
 
 [features]
 default = ["by-name", "list", "local"]
 ## enables [tz_by_name()] to get a time zone at runtime by name
 ##
-by-name = ["phf", "byte-slice-cast"]
+by-name = ["phf", "phf_shared", "byte-slice-cast"]
 ## enables [TZ_NAMES] to get a list of all shipped time zones
 ##
 list = []
