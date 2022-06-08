@@ -6,13 +6,16 @@ authors = ["René Kijewski <crates.io@k6i.de>"]
 repository = "https://github.com/Kijewski/tzdb"
 description = "Tool to generate `tzdb/src/generated.rs`"
 license = "MIT OR Apache-2.0"
+publish = false
 
 [dependencies]
-anyhow = "1.0.56"
-convert_case = "0.5.0"
-indexmap = "1.8.1"
-itertools = "0.10.3"
-phf_codegen = "0.10.0"
-ron = "0.7.0"
-serde = { version = "1.0.136", features = ["derive"] }
-tz-rs = "0.6.9"
+anyhow = "=1"
+byte-slice-cast = "=1"
+convert_case = "=0.5"
+indexmap = "=1"
+itertools = "=0.10"
+phf_codegen = "=0.10"
+phf_shared = "=0.10"
+ron = "=0.7"
+serde = { version = "=1", features = ["derive"] }
+tz-rs = "=0.6"

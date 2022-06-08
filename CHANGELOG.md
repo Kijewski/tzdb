@@ -1,8 +1,12 @@
 ## Changes between the versions
 
-### 0.2.1
+### 0.2.3
 
-* Bump dependency version numbers
+* Fix lookup error for names containing underscores
+
+### 0.2.2
+
+* Bump dependency versions
 
 ### 0.2.1
 

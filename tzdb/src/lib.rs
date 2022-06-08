@@ -60,6 +60,7 @@
 //! DateTime::now(tz_by_name("Europe/Berlin").unwrap());
 //! // names are case insensitive
 //! DateTime::now(tz_by_name("ArCtIc/LongYeArByEn").unwrap());
+//!
 //! ```
 //!
 //! ## Feature flags
@@ -76,6 +77,7 @@
 //!
 
 mod generated;
+mod lower;
 #[cfg(feature = "serde-as")]
 pub mod serde_as;
 
@@ -103,21 +105,11 @@ pub const VERSION_HASH: &str = "ece0b7a9ad3d365f8605e8f98a8a78b7fdbbb8aa615b585f
     doc(cfg(any(feature = "by-name", feature = "local")))
 )]
 pub fn tz_by_name<S: AsRef<[u8]>>(s: S) -> Option<TimeZoneRef<'static>> {
-    use std::str::from_utf8;
-
-    use byte_slice_cast::{AsByteSlice, AsMutByteSlice};
-
     let s = s.as_ref();
-    let mut lower = [0u128; 2];
-    lower
-        .as_mut_byte_slice()
-        .get_mut(..s.len())?
-        .copy_from_slice(s);
-    lower[0] |= 0x2020_2020_2020_2020_2020_2020_2020_2020_u128;
-    lower[1] |= 0x2020_2020_2020_2020_2020_2020_2020_2020_u128;
-    let lower = from_utf8(lower.as_byte_slice()).ok()?.get(..s.len())?;
-
-    Some(**generated::TIME_ZONES_BY_NAME.get(lower)?)
+    if s.len() > 32 {
+        return None;
+    }
+    Some(**generated::TIME_ZONES_BY_NAME.get(&crate::lower::full_to_lower(s))?)
 }
 
 /// Find the raw, unparsed time zone data by name, e.g. `"Europe/Berlin"` (case-insensitive)
@@ -127,21 +119,11 @@ pub fn tz_by_name<S: AsRef<[u8]>>(s: S) -> Option<TimeZoneRef<'static>> {
     doc(cfg(all(feature = "binary", any(feature = "by-name", feature = "local"),)))
 )]
 pub fn raw_tz_by_name<S: AsRef<[u8]>>(s: S) -> Option<&'static [u8]> {
-    use std::str::from_utf8;
-
-    use byte_slice_cast::{AsByteSlice, AsMutByteSlice};
-
     let s = s.as_ref();
-    let mut lower = [0u128; 2];
-    lower
-        .as_mut_byte_slice()
-        .get_mut(..s.len())?
-        .copy_from_slice(s);
-    lower[0] |= 0x2020_2020_2020_2020_2020_2020_2020_2020_u128;
-    lower[1] |= 0x2020_2020_2020_2020_2020_2020_2020_2020_u128;
-    let lower = from_utf8(lower.as_byte_slice()).ok()?.get(..s.len())?;
-
-    Some(*generated::RAW_TIME_ZONES_BY_NAME.get(lower)?)
+    if s.len() > 32 {
+        return None;
+    }
+    Some(*generated::RAW_TIME_ZONES_BY_NAME.get(&crate::lower::full_to_lower(s))?)
 }
 
 /// A list of all known time zones
@@ -172,9 +154,25 @@ mod tests {
 
     #[cfg(feature = "by-name")]
     #[test]
-    #[should_panic]
     fn test_by_absent_name() {
-        let _ = tz_by_name("Berlin/Steglitz-Zehlendorf").unwrap();
+        assert_eq!(tz_by_name("Berlin/Steglitz-Zehlendorf"), None);
+    }
+
+    #[cfg(feature = "by-name")]
+    #[test]
+    fn test_name_empty() {
+        assert_eq!(tz_by_name(""), None);
+    }
+
+    #[cfg(feature = "by-name")]
+    #[test]
+    fn test_name_too_long() {
+        assert_eq!(
+            tz_by_name(
+                "Pacific/Taumatawhakatangihangakoauauotamateaturipukakapikimaungahoronukupokaiwhenuakitanatahu"
+            ),
+            None,
+        );
     }
 
     #[cfg(feature = "by-name")]
@@ -192,6 +190,27 @@ mod tests {
         assert_eq!(
             time_zone::pacific::RAW_NAURU,
             raw_tz_by_name("Pacific/Nauru").unwrap()
+        );
+    }
+
+    #[cfg(feature = "by-name")]
+    #[test]
+    fn test_issue_49() {
+        assert_eq!(
+            time_zone::asia::HO_CHI_MINH,
+            tz_by_name("Asia/Ho_Chi_Minh").unwrap()
+        );
+        assert_eq!(
+            time_zone::asia::HO_CHI_MINH,
+            tz_by_name("asia/ho_chi_minh").unwrap()
+        );
+        assert_eq!(
+            time_zone::asia::HO_CHI_MINH,
+            tz_by_name("ASIA/HO_CHI_MINH").unwrap()
+        );
+        assert_eq!(
+            time_zone::asia::HO_CHI_MINH,
+            tz_by_name("aSIA/hO_cHI_mINH").unwrap()
         );
     }
 }
