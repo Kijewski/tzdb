@@ -117,6 +117,41 @@ jobs:
       - name: Test
         run: cargo test --workspace --all-targets --features testing -- --show-output
 
+  miri:
+    name: "Miri test"
+
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          lfs: true
+
+      - name: Install Rust
+        id: actions-rs
+        uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: nightly
+          override: true
+          components: miri
+
+      - name: Cache
+        uses: actions/cache@v3
+        with:
+          key: ${{ runner.os }}-miri-${{ steps.actions-rs.outputs.rustc_hash }}-${{ hashFiles('Cargo.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-miri-${{ steps.actions-rs.outputs.rustc_hash }}-
+            ${{ runner.os }}-miri-
+          path: |
+            ~/.cargo/registry/index/
+            ~/.cargo/registry/cache/
+            ~/.cargo/git/db/
+            target/
+
+      - name: Test
+        run: cargo miri test --workspace --all-targets --features testing -- --show-output
+
   doc:
     name: "Documentation"
 
