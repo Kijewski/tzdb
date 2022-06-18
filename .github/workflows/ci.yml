@@ -17,12 +17,11 @@ jobs:
         with:
           lfs: true
 
-      - name: Install Rust
-        uses: actions-rs/toolchain@v1
+      - name: Setup Rust
+        uses: ./.github/actions/setup-rust
         with:
-          profile: minimal
+          key: fmt
           toolchain: nightly
-          override: true
           components: rustfmt
 
       - run: cargo fmt --all -- --check
@@ -36,7 +35,6 @@ jobs:
           - nightly
 
     name: "Check/${{ matrix.toolchain }}"
-
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -44,27 +42,12 @@ jobs:
         with:
           lfs: true
 
-      - name: Install Rust
-        id: actions-rs
-        uses: actions-rs/toolchain@v1
+      - name: Setup Rust
+        uses: ./.github/actions/setup-rust
         with:
-          profile: minimal
-          toolchain: stable
-          override: true
+          key: check
+          toolchain: ${{ matrix.toolchain }}
           components: clippy
-
-      - name: Cache
-        uses: actions/cache@v3
-        with:
-          key: ${{ runner.os }}-check-${{ steps.actions-rs.outputs.rustc_hash }}-${{ hashFiles('Cargo.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-check-${{ steps.actions-rs.outputs.rustc_hash }}-
-            ${{ runner.os }}-check-
-          path: |
-            ~/.cargo/registry/index/
-            ~/.cargo/registry/cache/
-            ~/.cargo/git/db/
-            target/
 
       - name: Check
         run: cargo check --workspace --all-targets --features testing
@@ -85,7 +68,6 @@ jobs:
           - macos-latest
 
     name: "Test/${{ matrix.toolchain }} (${{ matrix.platform }})"
-
     runs-on: ${{ matrix.platform }}
     steps:
       - name: Checkout
@@ -93,33 +75,17 @@ jobs:
         with:
           lfs: true
 
-      - name: Install Rust
-        id: actions-rs
-        uses: actions-rs/toolchain@v1
+      - name: Setup Rust
+        uses: ./.github/actions/setup-rust
         with:
-          profile: minimal
+          key: test
           toolchain: ${{ matrix.toolchain }}
-          override: true
-
-      - name: Cache
-        uses: actions/cache@v3
-        with:
-          key: ${{ runner.os }}-test-${{ steps.actions-rs.outputs.rustc_hash }}-${{ hashFiles('Cargo.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-test-${{ steps.actions-rs.outputs.rustc_hash }}-
-            ${{ runner.os }}-test-
-          path: |
-            ~/.cargo/registry/index/
-            ~/.cargo/registry/cache/
-            ~/.cargo/git/db/
-            target/
 
       - name: Test
         run: cargo test --workspace --all-targets --features testing -- --show-output
 
   miri:
-    name: "Miri test"
-
+    name: "Miri"
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -127,34 +93,18 @@ jobs:
         with:
           lfs: true
 
-      - name: Install Rust
-        id: actions-rs
-        uses: actions-rs/toolchain@v1
+      - name: Setup Rust
+        uses: ./.github/actions/setup-rust
         with:
-          profile: minimal
+          key: miri
           toolchain: nightly
-          override: true
           components: miri
-
-      - name: Cache
-        uses: actions/cache@v3
-        with:
-          key: ${{ runner.os }}-miri-${{ steps.actions-rs.outputs.rustc_hash }}-${{ hashFiles('Cargo.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-miri-${{ steps.actions-rs.outputs.rustc_hash }}-
-            ${{ runner.os }}-miri-
-          path: |
-            ~/.cargo/registry/index/
-            ~/.cargo/registry/cache/
-            ~/.cargo/git/db/
-            target/
 
       - name: Test
         run: cargo miri test --workspace --all-targets --features testing -- --show-output
 
   doc:
     name: "Documentation"
-
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -162,51 +112,30 @@ jobs:
         with:
           lfs: true
 
-      - name: Install Rust
-        id: actions-rs
-        uses: actions-rs/toolchain@v1
+      - name: Setup Rust
+        uses: ./.github/actions/setup-rust
         with:
-          profile: minimal
+          key: name
           toolchain: nightly
-          override: true
-
-      - name: Cache
-        uses: actions/cache@v3
-        with:
-          key: ${{ runner.os }}-doc-${{ steps.actions-rs.outputs.rustc_hash }}-${{ hashFiles('Cargo.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-doc-${{ steps.actions-rs.outputs.rustc_hash }}-
-            ${{ runner.os }}-doc-
-          path: |
-            ~/.cargo/registry/index/
-            ~/.cargo/registry/cache/
-            ~/.cargo/git/db/
-            target/
+          components: rust-docs
 
       - run: cargo doc --package tzdb --features docsrs --all-features
 
   audit:
-    runs-on: ubuntu-latest
-
     name: "Cargo audit"
-
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
         with:
           lfs: true
 
-      - name: Cache
-        uses: actions/cache@v3
+      - name: Setup Rust
+        uses: ./.github/actions/setup-rust
         with:
-          key: ${{ runner.os }}-audit-${{ hashFiles('Cargo.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-audit-
-          path: |
-            ~/.cargo/registry/index/
-            ~/.cargo/registry/cache/
-            ~/.cargo/git/db/
-            target/
+          key: audit
+
+      - run: cargo update
 
       - name: Audit
         uses: actions-rs/audit-check@v1

@@ -77,12 +77,14 @@
 //!
 
 mod generated;
+#[cfg(feature = "by-name")]
 mod lower;
 #[cfg(feature = "serde-as")]
 pub mod serde_as;
 
 #[cfg(feature = "docsrs")]
 use serde;
+#[cfg(feature = "by-name")]
 use tz::TimeZoneRef;
 
 pub use crate::generated::time_zone;
@@ -141,30 +143,26 @@ pub fn local_tz() -> Option<TimeZoneRef<'static>> {
     tz_by_name(&iana_time_zone::get_timezone().ok()?)
 }
 
-#[cfg(test)]
-mod tests {
+#[cfg(all(test, feature = "by-name"))]
+mod test_by_name {
     use super::*;
 
-    #[cfg(feature = "by-name")]
     #[test]
     fn test_by_name() {
         let _ = tz_by_name("Europe/Berlin").unwrap();
         let _ = tz_by_name("America/Dominica").unwrap();
     }
 
-    #[cfg(feature = "by-name")]
     #[test]
     fn test_by_absent_name() {
         assert_eq!(tz_by_name("Berlin/Steglitz-Zehlendorf"), None);
     }
 
-    #[cfg(feature = "by-name")]
     #[test]
     fn test_name_empty() {
         assert_eq!(tz_by_name(""), None);
     }
 
-    #[cfg(feature = "by-name")]
     #[test]
     fn test_name_too_long() {
         assert_eq!(
@@ -175,7 +173,6 @@ mod tests {
         );
     }
 
-    #[cfg(feature = "by-name")]
     #[test]
     fn test_static() {
         assert_eq!(
@@ -193,7 +190,6 @@ mod tests {
         );
     }
 
-    #[cfg(feature = "by-name")]
     #[test]
     fn test_issue_49() {
         assert_eq!(
