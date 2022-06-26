@@ -1,5 +1,9 @@
 ## Changes between the versions
 
+### 0.2.5
+
+* Ensure `-Zminimal-versions` works
+
 ### 0.2.4
 
 * Fix missing import if the project is used with `default-features = false`
