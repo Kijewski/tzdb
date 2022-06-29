@@ -1,11 +1,15 @@
 ## Changes between the versions
 
+### 0.2.7
+
+* Fix error if build and target platform have different pointer widths
+
 ### 0.2.6
 
 * Update [iana-time-zone](https://crates.io/crates/iana-time-zone) to implement
   [`local_tz()`](https://docs.rs/tzdb/0.2.6/tzdb/fn.local_tz.html) for
   Wasm ([#38](https://github.com/strawlab/iana-time-zone/pull/38)), and
-  {Free,Net,Open,Dragonfly}BSD ([#39](https://github.com/strawlab/iana-time-zone/pull/39)).
+  {Free,Net,Open,Dragonfly}BSD ([#39](https://github.com/strawlab/iana-time-zone/pull/39))
 
 ### 0.2.5
 
