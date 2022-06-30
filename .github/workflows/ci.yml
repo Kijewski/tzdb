@@ -30,7 +30,7 @@ jobs:
     strategy:
       matrix:
         toolchain:
-          - "1.57"
+          - "1.55"
           - stable
           - nightly
 
@@ -59,7 +59,7 @@ jobs:
     strategy:
       matrix:
         toolchain:
-          - "1.57"
+          - "1.55"
           - stable
           - nightly
         platform:

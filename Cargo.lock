@@ -109,9 +109,9 @@ dependencies = [
 
 [[package]]
 name = "either"
-version = "1.6.1"
+version = "1.7.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e78d4f1cc4ae33bbfc157ed5d5a5ef3bc29227303d595861deb238fcec4e9457"
+checksum = "3f107b87b6afc2a64fd13cac55fe06d6c8859f12d4b14cbcdd2c67d0976781be"
 
 [[package]]
 name = "fnv"
@@ -222,7 +222,7 @@ dependencies = [
  "phf_shared",
  "ron",
  "serde",
- "tz-rs",
+ "tz-rs 0.6.10 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
@@ -420,6 +420,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "tz-rs"
+version = "0.6.10"
+source = "git+https://github.com/Kijewski/tz-rs?branch=pr-1_55#99a02bfe51d91c13fd70ef42d94edda207986173"
+dependencies = [
+ "const_fn",
+]
+
+[[package]]
 name = "tzdb"
 version = "0.2.7"
 dependencies = [
@@ -430,7 +438,7 @@ dependencies = [
  "serde",
  "serde_json",
  "serde_with",
- "tz-rs",
+ "tz-rs 0.6.10 (git+https://github.com/Kijewski/tz-rs?branch=pr-1_55)",
 ]
 
 [[package]]

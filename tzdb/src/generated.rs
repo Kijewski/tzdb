@@ -19,6 +19,8 @@
 // DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+#![allow(unconditional_panic)]
+
 use tz::TimeZoneRef;
 
 #[cfg(feature = "by-name")]
@@ -15787,11 +15789,11 @@ mod tzdata {
             const V: [LocalTimeType; 2] = [
                 match LocalTimeType::new(-968, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(0, false, Some(b"GMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -15801,13 +15803,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(0, false, Some(b"GMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AFRICA_ACCRA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -15878,23 +15880,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(-52, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(1200, true, Some(b"+0020")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(0, false, Some(b"GMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(1800, false, Some(b"+0030")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(1800, true, Some(b"+0030")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -15904,13 +15906,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(0, false, Some(b"GMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AFRICA_ADDIS_ABABA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -15922,15 +15924,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(9288, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(9320, false, Some(b"ADMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, false, Some(b"EAT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -15940,13 +15942,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(10800, false, Some(b"EAT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AFRICA_ALGIERS: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -15990,27 +15992,27 @@ mod tzdata {
             const V: [LocalTimeType; 6] = [
                 match LocalTimeType::new(732, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(561, false, Some(b"PMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, true, Some(b"WEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(0, false, Some(b"WET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, true, Some(b"CEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, false, Some(b"CET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -16020,13 +16022,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(3600, false, Some(b"CET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AFRICA_ASMARA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -16039,19 +16041,19 @@ mod tzdata {
             const V: [LocalTimeType; 4] = [
                 match LocalTimeType::new(9332, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(9332, false, Some(b"AMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(9320, false, Some(b"ADMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, false, Some(b"EAT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -16061,13 +16063,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(10800, false, Some(b"EAT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AFRICA_BAMAKO: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -16080,15 +16082,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(-1920, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(0, false, Some(b"GMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-3600, false, Some(b"-01")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -16098,13 +16100,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(0, false, Some(b"GMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AFRICA_BANGUI: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -16113,11 +16115,11 @@ mod tzdata {
             const V: [LocalTimeType; 2] = [
                 match LocalTimeType::new(4460, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, false, Some(b"WAT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -16127,13 +16129,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(3600, false, Some(b"WAT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AFRICA_BANJUL: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -16146,19 +16148,19 @@ mod tzdata {
             const V: [LocalTimeType; 4] = [
                 match LocalTimeType::new(-3996, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-3996, false, Some(b"BMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-3600, false, Some(b"-01")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(0, false, Some(b"GMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -16168,13 +16170,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(0, false, Some(b"GMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AFRICA_BISSAU: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -16186,15 +16188,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(-3740, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-3600, false, Some(b"-01")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(0, false, Some(b"GMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -16204,13 +16206,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(0, false, Some(b"GMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AFRICA_BLANTYRE: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -16223,19 +16225,19 @@ mod tzdata {
             const V: [LocalTimeType; 4] = [
                 match LocalTimeType::new(8400, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(8470, false, Some(b"ZMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(8460, false, Some(b"ZMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, false, Some(b"CAT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -16245,13 +16247,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(7200, false, Some(b"CAT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AFRICA_BRAZZAVILLE: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -16260,11 +16262,11 @@ mod tzdata {
             const V: [LocalTimeType; 2] = [
                 match LocalTimeType::new(3668, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, false, Some(b"WAT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -16274,13 +16276,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(3600, false, Some(b"WAT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AFRICA_BUJUMBURA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -16289,11 +16291,11 @@ mod tzdata {
             const V: [LocalTimeType; 2] = [
                 match LocalTimeType::new(7048, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, false, Some(b"CAT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -16303,13 +16305,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(7200, false, Some(b"CAT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AFRICA_CASABLANCA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -16516,23 +16518,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(-1820, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, true, Some(b"+01")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(0, false, Some(b"+00")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, false, Some(b"+01")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(0, true, Some(b"+00")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -16542,13 +16544,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(3600, false, Some(b"+01")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AFRICA_CEUTA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -16601,23 +16603,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(-1276, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(0, false, Some(b"WET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, true, Some(b"WEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, false, Some(b"CET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, true, Some(b"CEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -16628,32 +16630,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(3600, false, Some(b"CET")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(7200, true, Some(b"CEST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     10800,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AFRICA_CONAKRY: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -16666,15 +16668,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(-3292, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(0, false, Some(b"GMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-3600, false, Some(b"-01")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -16684,13 +16686,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(0, false, Some(b"GMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AFRICA_DAKAR: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -16702,15 +16704,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(-4184, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-3600, false, Some(b"-01")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(0, false, Some(b"GMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -16720,13 +16722,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(0, false, Some(b"GMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AFRICA_DAR_ES_SALAAM: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -16739,15 +16741,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(9428, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, false, Some(b"EAT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(9900, false, Some(b"+0245")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -16757,13 +16759,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(10800, false, Some(b"EAT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AFRICA_DJIBOUTI: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -16772,11 +16774,11 @@ mod tzdata {
             const V: [LocalTimeType; 2] = [
                 match LocalTimeType::new(10356, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, false, Some(b"EAT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -16786,13 +16788,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(10800, false, Some(b"EAT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AFRICA_DOUALA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -16801,11 +16803,11 @@ mod tzdata {
             const V: [LocalTimeType; 2] = [
                 match LocalTimeType::new(2328, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, false, Some(b"WAT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -16815,13 +16817,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(3600, false, Some(b"WAT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AFRICA_EL_AAIUN: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -17017,27 +17019,27 @@ mod tzdata {
             const V: [LocalTimeType; 6] = [
                 match LocalTimeType::new(-3168, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-3600, false, Some(b"-01")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, true, Some(b"+01")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(0, false, Some(b"+00")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(0, true, Some(b"+00")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, false, Some(b"+01")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -17047,13 +17049,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(3600, false, Some(b"+01")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AFRICA_FREETOWN: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -17082,23 +17084,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(-3180, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-3180, false, Some(b"FMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-2400, true, Some(b"-0040")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-3600, false, Some(b"-01")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(1200, true, Some(b"+01")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -17109,32 +17111,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(2400, false, Some(b"XXX")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(1200, true, Some(b"+01")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::Julian0WithLeap(match Julian0WithLeap::new(0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     0,
                     RuleDay::Julian1WithoutLeap(match Julian1WithoutLeap::new(365) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     85200,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AFRICA_GABORONE: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -17148,19 +17150,19 @@ mod tzdata {
             const V: [LocalTimeType; 4] = [
                 match LocalTimeType::new(6220, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(5400, false, Some(b"SAST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, false, Some(b"CAT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, true, Some(b"CAST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -17170,13 +17172,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(7200, false, Some(b"CAT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AFRICA_HARARE: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -17185,11 +17187,11 @@ mod tzdata {
             const V: [LocalTimeType; 2] = [
                 match LocalTimeType::new(7452, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, false, Some(b"CAT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -17199,13 +17201,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(7200, false, Some(b"CAT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AFRICA_JOHANNESBURG: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -17221,19 +17223,19 @@ mod tzdata {
             const V: [LocalTimeType; 4] = [
                 match LocalTimeType::new(6720, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(5400, false, Some(b"SAST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, true, Some(b"SAST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, false, Some(b"SAST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -17243,13 +17245,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(7200, false, Some(b"SAST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AFRICA_JUBA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -17294,19 +17296,19 @@ mod tzdata {
             const V: [LocalTimeType; 4] = [
                 match LocalTimeType::new(7588, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, true, Some(b"CAST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, false, Some(b"CAT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, false, Some(b"EAT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -17316,13 +17318,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(7200, false, Some(b"CAT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AFRICA_KAMPALA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -17336,19 +17338,19 @@ mod tzdata {
             const V: [LocalTimeType; 4] = [
                 match LocalTimeType::new(7780, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, false, Some(b"EAT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(9000, false, Some(b"+0230")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(9900, false, Some(b"+0245")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -17358,13 +17360,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(10800, false, Some(b"EAT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AFRICA_KHARTOUM: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -17409,19 +17411,19 @@ mod tzdata {
             const V: [LocalTimeType; 4] = [
                 match LocalTimeType::new(7808, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, true, Some(b"CAST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, false, Some(b"CAT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, false, Some(b"EAT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -17431,13 +17433,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(7200, false, Some(b"CAT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AFRICA_KIGALI: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -17446,11 +17448,11 @@ mod tzdata {
             const V: [LocalTimeType; 2] = [
                 match LocalTimeType::new(7216, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, false, Some(b"CAT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -17460,13 +17462,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(7200, false, Some(b"CAT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AFRICA_KINSHASA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -17475,11 +17477,11 @@ mod tzdata {
             const V: [LocalTimeType; 2] = [
                 match LocalTimeType::new(3672, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, false, Some(b"WAT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -17489,13 +17491,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(3600, false, Some(b"WAT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AFRICA_LAGOS: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -17509,19 +17511,19 @@ mod tzdata {
             const V: [LocalTimeType; 4] = [
                 match LocalTimeType::new(815, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(0, false, Some(b"GMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(1800, false, Some(b"+0030")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, false, Some(b"WAT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -17531,13 +17533,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(3600, false, Some(b"WAT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AFRICA_LIBREVILLE: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -17546,11 +17548,11 @@ mod tzdata {
             const V: [LocalTimeType; 2] = [
                 match LocalTimeType::new(2268, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, false, Some(b"WAT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -17560,13 +17562,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(3600, false, Some(b"WAT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AFRICA_LOME: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -17575,11 +17577,11 @@ mod tzdata {
             const V: [LocalTimeType; 2] = [
                 match LocalTimeType::new(292, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(0, false, Some(b"GMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -17589,13 +17591,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(0, false, Some(b"GMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AFRICA_LUANDA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -17607,15 +17609,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(3176, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3124, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, false, Some(b"WAT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -17625,13 +17627,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(3600, false, Some(b"WAT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AFRICA_LUBUMBASHI: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -17643,15 +17645,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(6592, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, false, Some(b"WAT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, false, Some(b"CAT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -17661,13 +17663,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(7200, false, Some(b"CAT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AFRICA_LUSAKA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -17676,11 +17678,11 @@ mod tzdata {
             const V: [LocalTimeType; 2] = [
                 match LocalTimeType::new(6788, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, false, Some(b"CAT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -17690,13 +17692,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(7200, false, Some(b"CAT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AFRICA_MALABO: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -17708,15 +17710,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(2108, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(0, false, Some(b"GMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, false, Some(b"WAT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -17726,13 +17728,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(3600, false, Some(b"WAT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AFRICA_MAPUTO: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -17741,11 +17743,11 @@ mod tzdata {
             const V: [LocalTimeType; 2] = [
                 match LocalTimeType::new(7820, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, false, Some(b"CAT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -17755,13 +17757,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(7200, false, Some(b"CAT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AFRICA_MASERU: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -17774,15 +17776,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(6600, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, false, Some(b"SAST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, true, Some(b"SAST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -17792,13 +17794,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(7200, false, Some(b"SAST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AFRICA_MBABANE: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -17807,11 +17809,11 @@ mod tzdata {
             const V: [LocalTimeType; 2] = [
                 match LocalTimeType::new(7464, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, false, Some(b"SAST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -17821,13 +17823,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(7200, false, Some(b"SAST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AFRICA_MOGADISHU: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -17840,15 +17842,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(10888, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, false, Some(b"EAT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(9000, false, Some(b"+0230")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -17858,13 +17860,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(10800, false, Some(b"EAT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AFRICA_MONROVIA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -17877,19 +17879,19 @@ mod tzdata {
             const V: [LocalTimeType; 4] = [
                 match LocalTimeType::new(-2588, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-2588, false, Some(b"MMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-2670, false, Some(b"MMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(0, false, Some(b"GMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -17899,13 +17901,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(0, false, Some(b"GMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AFRICA_NAIROBI: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -17920,19 +17922,19 @@ mod tzdata {
             const V: [LocalTimeType; 4] = [
                 match LocalTimeType::new(8836, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(9000, false, Some(b"+0230")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, false, Some(b"EAT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(9900, false, Some(b"+0245")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -17942,13 +17944,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(10800, false, Some(b"EAT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AFRICA_NDJAMENA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -17961,15 +17963,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(3612, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, false, Some(b"WAT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, true, Some(b"WAST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -17979,13 +17981,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(3600, false, Some(b"WAT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AFRICA_NIAMEY: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -17998,19 +18000,19 @@ mod tzdata {
             const V: [LocalTimeType; 4] = [
                 match LocalTimeType::new(508, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-3600, false, Some(b"-01")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(0, false, Some(b"GMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, false, Some(b"WAT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -18020,13 +18022,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(3600, false, Some(b"WAT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AFRICA_NOUAKCHOTT: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -18039,15 +18041,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(-3828, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(0, false, Some(b"GMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-3600, false, Some(b"-01")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -18057,13 +18059,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(0, false, Some(b"GMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AFRICA_OUAGADOUGOU: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -18072,11 +18074,11 @@ mod tzdata {
             const V: [LocalTimeType; 2] = [
                 match LocalTimeType::new(-364, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(0, false, Some(b"GMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -18086,13 +18088,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(0, false, Some(b"GMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AFRICA_PORTO_NOVO: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -18104,15 +18106,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(628, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(0, false, Some(b"GMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, false, Some(b"WAT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -18122,13 +18124,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(3600, false, Some(b"WAT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AFRICA_SAO_TOME: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -18142,19 +18144,19 @@ mod tzdata {
             const V: [LocalTimeType; 4] = [
                 match LocalTimeType::new(1616, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-2205, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(0, false, Some(b"GMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, false, Some(b"WAT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -18164,13 +18166,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(0, false, Some(b"GMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AFRICA_TIMBUKTU: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -18179,11 +18181,11 @@ mod tzdata {
             const V: [LocalTimeType; 2] = [
                 match LocalTimeType::new(-724, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(0, false, Some(b"GMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -18193,13 +18195,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(0, false, Some(b"GMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AFRICA_TUNIS: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -18243,19 +18245,19 @@ mod tzdata {
             const V: [LocalTimeType; 4] = [
                 match LocalTimeType::new(2444, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(561, false, Some(b"PMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, true, Some(b"CEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, false, Some(b"CET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -18265,13 +18267,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(3600, false, Some(b"CET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AFRICA_WINDHOEK: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -18334,27 +18336,27 @@ mod tzdata {
             const V: [LocalTimeType; 6] = [
                 match LocalTimeType::new(4104, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(5400, false, Some(b"+0130")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, false, Some(b"SAST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, true, Some(b"SAST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, true, Some(b"WAT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, false, Some(b"CAT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -18364,13 +18366,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(7200, false, Some(b"CAT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_ADAK: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -18464,43 +18466,43 @@ mod tzdata {
             const V: [LocalTimeType; 10] = [
                 match LocalTimeType::new(44002, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-42398, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-39600, false, Some(b"NST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-36000, true, Some(b"NWT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-36000, true, Some(b"NPT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-39600, false, Some(b"BST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-36000, true, Some(b"BDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-36000, false, Some(b"AHST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-32400, true, Some(b"HDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-36000, false, Some(b"HST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -18511,32 +18513,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(-36000, false, Some(b"HST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(-32400, true, Some(b"HDT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 2, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(11, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_ANCHORAGE: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -18630,43 +18632,43 @@ mod tzdata {
             const V: [LocalTimeType; 10] = [
                 match LocalTimeType::new(50424, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-35976, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-36000, false, Some(b"AST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-32400, true, Some(b"AWT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-32400, true, Some(b"APT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-36000, false, Some(b"AHST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-32400, true, Some(b"AHDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-32400, false, Some(b"YST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-28800, true, Some(b"AKDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-32400, false, Some(b"AKST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -18677,32 +18679,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(-32400, false, Some(b"AKST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(-28800, true, Some(b"AKDT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 2, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(11, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_ANGUILLA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -18711,11 +18713,11 @@ mod tzdata {
             const V: [LocalTimeType; 2] = [
                 match LocalTimeType::new(-15136, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, false, Some(b"AST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -18725,13 +18727,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-14400, false, Some(b"AST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_ANTIGUA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -18743,15 +18745,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(-14832, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, false, Some(b"EST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, false, Some(b"AST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -18761,13 +18763,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-14400, false, Some(b"AST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_ARAGUAINA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -18828,15 +18830,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(-11568, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-7200, true, Some(b"-02")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-10800, false, Some(b"-03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -18846,13 +18848,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-10800, false, Some(b"-03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_ARUBA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -18864,15 +18866,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(-16824, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-16200, false, Some(b"-0430")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, false, Some(b"AST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -18882,13 +18884,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-14400, false, Some(b"AST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_ASUNCION: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -18977,23 +18979,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(-13840, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-13840, false, Some(b"AMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, false, Some(b"-04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-10800, false, Some(b"-03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-10800, true, Some(b"-03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -19004,32 +19006,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(-14400, false, Some(b"-04")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(-10800, true, Some(b"-03")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     0,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 4, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     0,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_ATIKOKAN: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -19046,27 +19048,27 @@ mod tzdata {
             const V: [LocalTimeType; 6] = [
                 match LocalTimeType::new(-21988, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, true, Some(b"CDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-21600, false, Some(b"CST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, true, Some(b"CWT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, true, Some(b"CPT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, false, Some(b"EST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -19076,13 +19078,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-18000, false, Some(b"EST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_BAHIA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -19153,15 +19155,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(-9244, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-7200, true, Some(b"-02")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-10800, false, Some(b"-03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -19171,13 +19173,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-10800, false, Some(b"-03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_BAHIA_BANDERAS: TimeZoneRef<'static> =
@@ -19227,27 +19229,27 @@ mod tzdata {
                 const V: [LocalTimeType; 6] = [
                     match LocalTimeType::new(-25260, false, Some(b"LMT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(-25200, false, Some(b"MST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(-21600, false, Some(b"CST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(-28800, false, Some(b"PST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(-21600, true, Some(b"MDT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(-18000, true, Some(b"CDT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                 ];
                 V
@@ -19258,32 +19260,32 @@ mod tzdata {
                     match AlternateTime::new(
                         match LocalTimeType::new(-21600, false, Some(b"CST")) {
                             Ok(v) => v,
-                            Err(e) => panic!("{}", e.0),
+                            Err(_) => [][1],
                         },
                         match LocalTimeType::new(-18000, true, Some(b"CDT")) {
                             Ok(v) => v,
-                            Err(e) => panic!("{}", e.0),
+                            Err(_) => [][1],
                         },
                         RuleDay::MonthWeekDay(match MonthWeekDay::new(4, 1, 0) {
                             Ok(v) => v,
-                            Err(e) => panic!("{}", e.0),
+                            Err(_) => [][1],
                         }),
                         7200,
                         RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 0) {
                             Ok(v) => v,
-                            Err(e) => panic!("{}", e.0),
+                            Err(_) => [][1],
                         }),
                         7200,
                     ) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                 );
                 V
             }),
         ) {
             Ok(v) => v,
-            Err(e) => panic!("{}", e.0),
+            Err(_) => [][1],
         };
 
     pub(crate) const AMERICA_BARBADOS: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -19308,19 +19310,19 @@ mod tzdata {
             const V: [LocalTimeType; 4] = [
                 match LocalTimeType::new(-14309, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-10800, true, Some(b"ADT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, false, Some(b"AST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-12600, true, Some(b"-0330")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -19330,13 +19332,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-14400, false, Some(b"AST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_BELEM: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -19375,15 +19377,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(-11636, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-7200, true, Some(b"-02")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-10800, false, Some(b"-03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -19393,13 +19395,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-10800, false, Some(b"-03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_BELIZE: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -19507,27 +19509,27 @@ mod tzdata {
             const V: [LocalTimeType; 6] = [
                 match LocalTimeType::new(-21168, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-19800, true, Some(b"-0530")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-21600, false, Some(b"CST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, true, Some(b"CWT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, true, Some(b"CPT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, true, Some(b"CDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -19537,13 +19539,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-21600, false, Some(b"CST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_BLANC_SABLON: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -19559,23 +19561,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(-13708, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-10800, true, Some(b"ADT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, false, Some(b"AST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-10800, true, Some(b"AWT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-10800, true, Some(b"APT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -19585,13 +19587,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-14400, false, Some(b"AST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_BOA_VISTA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -19634,15 +19636,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(-14560, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-10800, true, Some(b"-03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, false, Some(b"-04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -19652,13 +19654,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-14400, false, Some(b"-04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_BOGOTA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -19672,19 +19674,19 @@ mod tzdata {
             const V: [LocalTimeType; 4] = [
                 match LocalTimeType::new(-17776, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-17776, false, Some(b"BMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, true, Some(b"-04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, false, Some(b"-05")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -19694,13 +19696,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-18000, false, Some(b"-05")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_BOISE: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -19800,31 +19802,31 @@ mod tzdata {
             const V: [LocalTimeType; 7] = [
                 match LocalTimeType::new(-27889, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-25200, true, Some(b"PDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-28800, false, Some(b"PST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-21600, true, Some(b"MWT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-21600, true, Some(b"MPT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-25200, false, Some(b"MST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-21600, true, Some(b"MDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -19835,32 +19837,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(-25200, false, Some(b"MST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(-21600, true, Some(b"MDT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 2, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(11, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_BUENOS_AIRES: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -19931,27 +19933,27 @@ mod tzdata {
             const V: [LocalTimeType; 6] = [
                 match LocalTimeType::new(-14028, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-15408, false, Some(b"CMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, false, Some(b"-04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-10800, true, Some(b"-03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-7200, true, Some(b"-02")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-10800, false, Some(b"-03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -19961,13 +19963,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-10800, false, Some(b"-03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_CAMBRIDGE_BAY: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -20039,39 +20041,39 @@ mod tzdata {
             const V: [LocalTimeType; 9] = [
                 match LocalTimeType::new(0, false, Some(b"-00")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-21600, true, Some(b"MWT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-21600, true, Some(b"MPT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-25200, false, Some(b"MST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, true, Some(b"MDDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-21600, true, Some(b"MDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, true, Some(b"CDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-21600, false, Some(b"CST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, false, Some(b"EST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -20082,32 +20084,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(-25200, false, Some(b"MST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(-21600, true, Some(b"MDT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 2, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(11, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_CAMPO_GRANDE: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -20208,15 +20210,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(-13108, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-10800, true, Some(b"-03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, false, Some(b"-04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -20226,13 +20228,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-14400, false, Some(b"-04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_CANCUN: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -20284,23 +20286,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(-20824, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-21600, false, Some(b"CST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, true, Some(b"EDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, false, Some(b"EST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, true, Some(b"CDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -20310,13 +20312,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-18000, false, Some(b"EST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_CARACAS: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -20331,19 +20333,19 @@ mod tzdata {
             const V: [LocalTimeType; 4] = [
                 match LocalTimeType::new(-16064, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-16060, false, Some(b"CMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-16200, false, Some(b"-0430")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, false, Some(b"-04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -20353,13 +20355,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-14400, false, Some(b"-04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_CATAMARCA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -20430,27 +20432,27 @@ mod tzdata {
             const V: [LocalTimeType; 6] = [
                 match LocalTimeType::new(-15788, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-15408, false, Some(b"CMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, false, Some(b"-04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-10800, true, Some(b"-03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-7200, true, Some(b"-02")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-10800, false, Some(b"-03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -20460,13 +20462,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-10800, false, Some(b"-03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_CAYENNE: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -20478,15 +20480,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(-12560, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, false, Some(b"-04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-10800, false, Some(b"-03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -20496,13 +20498,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-10800, false, Some(b"-03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_CAYMAN: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -20514,15 +20516,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(-19532, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18430, false, Some(b"KMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, false, Some(b"EST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -20532,13 +20534,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-18000, false, Some(b"EST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_CHICAGO: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -20723,27 +20725,27 @@ mod tzdata {
             const V: [LocalTimeType; 6] = [
                 match LocalTimeType::new(-21036, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, true, Some(b"CDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-21600, false, Some(b"CST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, false, Some(b"EST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, true, Some(b"CWT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, true, Some(b"CPT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -20754,32 +20756,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(-21600, false, Some(b"CST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(-18000, true, Some(b"CDT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 2, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(11, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_CHIHUAHUA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -20808,23 +20810,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(-25460, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-25200, false, Some(b"MST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-21600, false, Some(b"CST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, true, Some(b"CDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-21600, true, Some(b"MDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -20835,32 +20837,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(-25200, false, Some(b"MST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(-21600, true, Some(b"MDT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(4, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_CORAL_HARBOUR: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -20878,23 +20880,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(-19960, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, true, Some(b"EDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, false, Some(b"EST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, true, Some(b"EWT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, true, Some(b"EPT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -20904,13 +20906,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-18000, false, Some(b"EST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_CORDOBA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -20981,27 +20983,27 @@ mod tzdata {
             const V: [LocalTimeType; 6] = [
                 match LocalTimeType::new(-15408, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-15408, false, Some(b"CMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, false, Some(b"-04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-10800, true, Some(b"-03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-7200, true, Some(b"-02")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-10800, false, Some(b"-03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -21011,13 +21013,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-10800, false, Some(b"-03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_COSTA_RICA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -21037,19 +21039,19 @@ mod tzdata {
             const V: [LocalTimeType; 4] = [
                 match LocalTimeType::new(-20173, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-20173, false, Some(b"SJMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, true, Some(b"CDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-21600, false, Some(b"CST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -21059,13 +21061,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-21600, false, Some(b"CST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_CRESTON: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -21078,15 +21080,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(-27964, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-25200, false, Some(b"MST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-28800, false, Some(b"PST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -21096,13 +21098,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-25200, false, Some(b"MST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_CUIABA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -21201,15 +21203,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(-13460, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-10800, true, Some(b"-03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, false, Some(b"-04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -21219,13 +21221,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-14400, false, Some(b"-04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_CURACAO: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -21237,15 +21239,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(-16547, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-16200, false, Some(b"-0430")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, false, Some(b"AST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -21255,13 +21257,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-14400, false, Some(b"AST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_DANMARKSHAVN: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -21305,19 +21307,19 @@ mod tzdata {
             const V: [LocalTimeType; 4] = [
                 match LocalTimeType::new(-4480, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-10800, false, Some(b"-03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-7200, true, Some(b"-02")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(0, false, Some(b"GMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -21327,13 +21329,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(0, false, Some(b"GMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_DAWSON: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -21436,39 +21438,39 @@ mod tzdata {
             const V: [LocalTimeType; 9] = [
                 match LocalTimeType::new(-33460, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-28800, true, Some(b"YDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-32400, false, Some(b"YST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-28800, true, Some(b"YWT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-28800, true, Some(b"YPT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-25200, true, Some(b"YDDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-28800, false, Some(b"PST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-25200, true, Some(b"PDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-25200, false, Some(b"MST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -21478,13 +21480,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-25200, false, Some(b"MST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_DAWSON_CREEK: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -21552,27 +21554,27 @@ mod tzdata {
             const V: [LocalTimeType; 6] = [
                 match LocalTimeType::new(-28856, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-25200, true, Some(b"PDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-28800, false, Some(b"PST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-25200, true, Some(b"PWT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-25200, true, Some(b"PPT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-25200, false, Some(b"MST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -21582,13 +21584,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-25200, false, Some(b"MST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_DETROIT: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -21678,27 +21680,27 @@ mod tzdata {
             const V: [LocalTimeType; 6] = [
                 match LocalTimeType::new(-19931, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-21600, false, Some(b"CST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, false, Some(b"EST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, true, Some(b"EWT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, true, Some(b"EPT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, true, Some(b"EDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -21709,32 +21711,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(-18000, false, Some(b"EST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(-14400, true, Some(b"EDT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 2, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(11, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_DOMINICA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -21743,11 +21745,11 @@ mod tzdata {
             const V: [LocalTimeType; 2] = [
                 match LocalTimeType::new(-14736, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, false, Some(b"AST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -21757,13 +21759,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-14400, false, Some(b"AST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_EDMONTON: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -21862,23 +21864,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(-27232, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-21600, true, Some(b"MDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-25200, false, Some(b"MST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-21600, true, Some(b"MWT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-21600, true, Some(b"MPT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -21889,32 +21891,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(-25200, false, Some(b"MST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(-21600, true, Some(b"MDT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 2, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(11, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_EIRUNEPE: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -21957,19 +21959,19 @@ mod tzdata {
             const V: [LocalTimeType; 4] = [
                 match LocalTimeType::new(-16768, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, true, Some(b"-04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, false, Some(b"-05")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, false, Some(b"-04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -21979,13 +21981,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-18000, false, Some(b"-05")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_EL_SALVADOR: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -22000,15 +22002,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(-21408, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, true, Some(b"CDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-21600, false, Some(b"CST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -22018,13 +22020,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-21600, false, Some(b"CST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_ENSENADA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -22052,19 +22054,19 @@ mod tzdata {
             const V: [LocalTimeType; 4] = [
                 match LocalTimeType::new(-27988, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-28800, false, Some(b"PST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-25200, false, Some(b"MST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-25200, true, Some(b"PDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -22075,32 +22077,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(-28800, false, Some(b"PST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(-25200, true, Some(b"PDT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(4, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_FORTALEZA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -22149,15 +22151,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(-9240, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-7200, true, Some(b"-02")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-10800, false, Some(b"-03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -22167,13 +22169,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-10800, false, Some(b"-03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_FORT_NELSON: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -22326,27 +22328,27 @@ mod tzdata {
             const V: [LocalTimeType; 6] = [
                 match LocalTimeType::new(-29447, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-25200, true, Some(b"PDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-28800, false, Some(b"PST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-25200, true, Some(b"PWT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-25200, true, Some(b"PPT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-25200, false, Some(b"MST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -22356,13 +22358,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-25200, false, Some(b"MST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_FORT_WAYNE: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -22410,31 +22412,31 @@ mod tzdata {
             const V: [LocalTimeType; 7] = [
                 match LocalTimeType::new(-20678, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, true, Some(b"CDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-21600, false, Some(b"CST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, true, Some(b"CWT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, true, Some(b"CPT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, false, Some(b"EST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, true, Some(b"EDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -22445,32 +22447,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(-18000, false, Some(b"EST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(-14400, true, Some(b"EDT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 2, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(11, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_GLACE_BAY: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -22559,23 +22561,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(-14388, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-10800, true, Some(b"ADT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, false, Some(b"AST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-10800, true, Some(b"AWT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-10800, true, Some(b"APT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -22586,32 +22588,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(-14400, false, Some(b"AST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(-10800, true, Some(b"ADT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 2, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(11, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_GODTHAB: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -22655,15 +22657,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(-12416, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-10800, false, Some(b"-03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-7200, true, Some(b"-02")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -22674,32 +22676,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(-10800, false, Some(b"-03")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(-7200, true, Some(b"-02")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     -7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     -3600,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_GOOSE_BAY: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -22861,43 +22863,43 @@ mod tzdata {
             const V: [LocalTimeType; 10] = [
                 match LocalTimeType::new(-14500, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-12652, false, Some(b"NST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-9052, true, Some(b"NDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-12600, false, Some(b"NST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-9000, true, Some(b"NDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-9000, true, Some(b"NPT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-9000, true, Some(b"NWT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-10800, true, Some(b"ADT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, false, Some(b"AST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-7200, true, Some(b"ADDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -22908,32 +22910,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(-14400, false, Some(b"AST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(-10800, true, Some(b"ADT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 2, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(11, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_GRAND_TURK: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -23019,23 +23021,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(-17072, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18430, false, Some(b"KMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, false, Some(b"EST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, true, Some(b"EDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, false, Some(b"AST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -23046,32 +23048,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(-18000, false, Some(b"EST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(-14400, true, Some(b"EDT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 2, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(11, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_GRENADA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -23080,11 +23082,11 @@ mod tzdata {
             const V: [LocalTimeType; 2] = [
                 match LocalTimeType::new(-14820, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, false, Some(b"AST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -23094,13 +23096,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-14400, false, Some(b"AST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_GUADELOUPE: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -23109,11 +23111,11 @@ mod tzdata {
             const V: [LocalTimeType; 2] = [
                 match LocalTimeType::new(-14768, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, false, Some(b"AST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -23123,13 +23125,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-14400, false, Some(b"AST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_GUATEMALA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -23148,15 +23150,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(-21724, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, true, Some(b"CDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-21600, false, Some(b"CST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -23166,13 +23168,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-21600, false, Some(b"CST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_GUAYAQUIL: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -23186,19 +23188,19 @@ mod tzdata {
             const V: [LocalTimeType; 4] = [
                 match LocalTimeType::new(-19160, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18840, false, Some(b"QMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, true, Some(b"-04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, false, Some(b"-05")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -23208,13 +23210,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-18000, false, Some(b"-05")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_GUYANA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -23228,19 +23230,19 @@ mod tzdata {
             const V: [LocalTimeType; 4] = [
                 match LocalTimeType::new(-13959, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, false, Some(b"-04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-13500, false, Some(b"-0345")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-10800, false, Some(b"-03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -23250,13 +23252,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-14400, false, Some(b"-04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_HALIFAX: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -23433,23 +23435,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(-15264, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-10800, true, Some(b"ADT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, false, Some(b"AST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-10800, true, Some(b"AWT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-10800, true, Some(b"APT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -23460,32 +23462,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(-14400, false, Some(b"AST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(-10800, true, Some(b"ADT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 2, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(11, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_HERMOSILLO: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -23510,23 +23512,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(-26632, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-25200, false, Some(b"MST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-21600, false, Some(b"CST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-28800, false, Some(b"PST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-21600, true, Some(b"MDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -23536,13 +23538,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-25200, false, Some(b"MST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_INUVIK: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -23611,23 +23613,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(0, false, Some(b"-00")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-21600, true, Some(b"PDDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-28800, false, Some(b"PST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-25200, false, Some(b"MST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-21600, true, Some(b"MDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -23638,32 +23640,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(-25200, false, Some(b"MST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(-21600, true, Some(b"MDT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 2, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(11, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_IQALUIT: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -23733,35 +23735,35 @@ mod tzdata {
             const V: [LocalTimeType; 8] = [
                 match LocalTimeType::new(0, false, Some(b"-00")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, true, Some(b"EPT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, false, Some(b"EST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-10800, true, Some(b"EDDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, true, Some(b"EDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, true, Some(b"EWT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-21600, false, Some(b"CST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, true, Some(b"CDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -23772,32 +23774,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(-18000, false, Some(b"EST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(-14400, true, Some(b"EDT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 2, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(11, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_JUJUY: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -23866,27 +23868,27 @@ mod tzdata {
             const V: [LocalTimeType; 6] = [
                 match LocalTimeType::new(-15672, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-15408, false, Some(b"CMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, false, Some(b"-04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-10800, true, Some(b"-03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-7200, true, Some(b"-02")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-10800, false, Some(b"-03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -23896,13 +23898,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-10800, false, Some(b"-03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_JUNEAU: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -23995,43 +23997,43 @@ mod tzdata {
             const V: [LocalTimeType; 10] = [
                 match LocalTimeType::new(54139, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-32261, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-28800, false, Some(b"PST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-25200, true, Some(b"PWT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-25200, true, Some(b"PPT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-25200, true, Some(b"PDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-28800, true, Some(b"YDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-32400, false, Some(b"YST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-28800, true, Some(b"AKDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-32400, false, Some(b"AKST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -24042,32 +24044,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(-32400, false, Some(b"AKST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(-28800, true, Some(b"AKDT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 2, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(11, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_KNOX_IN: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -24170,27 +24172,27 @@ mod tzdata {
             const V: [LocalTimeType; 6] = [
                 match LocalTimeType::new(-20790, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, true, Some(b"CDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-21600, false, Some(b"CST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, true, Some(b"CWT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, true, Some(b"CPT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, false, Some(b"EST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -24201,32 +24203,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(-21600, false, Some(b"CST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(-18000, true, Some(b"CDT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 2, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(11, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_LA_PAZ: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -24239,19 +24241,19 @@ mod tzdata {
             const V: [LocalTimeType; 4] = [
                 match LocalTimeType::new(-16356, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-16356, false, Some(b"CMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-12756, true, Some(b"BST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, false, Some(b"-04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -24261,13 +24263,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-14400, false, Some(b"-04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_LIMA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -24293,19 +24295,19 @@ mod tzdata {
             const V: [LocalTimeType; 4] = [
                 match LocalTimeType::new(-18492, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18516, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, true, Some(b"-04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, false, Some(b"-05")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -24315,13 +24317,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-18000, false, Some(b"-05")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_LOS_ANGELES: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -24456,23 +24458,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(-28378, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-25200, true, Some(b"PDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-28800, false, Some(b"PST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-25200, true, Some(b"PWT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-25200, true, Some(b"PPT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -24483,32 +24485,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(-28800, false, Some(b"PST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(-25200, true, Some(b"PDT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 2, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(11, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_LOUISVILLE: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -24635,31 +24637,31 @@ mod tzdata {
             const V: [LocalTimeType; 7] = [
                 match LocalTimeType::new(-20582, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, true, Some(b"CDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-21600, false, Some(b"CST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, true, Some(b"CWT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, true, Some(b"CPT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, false, Some(b"EST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, true, Some(b"EDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -24670,32 +24672,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(-18000, false, Some(b"EST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(-14400, true, Some(b"EDT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 2, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(11, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_MACEIO: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -24746,15 +24748,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(-8572, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-7200, true, Some(b"-02")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-10800, false, Some(b"-03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -24764,13 +24766,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-10800, false, Some(b"-03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_MANAGUA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -24796,23 +24798,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(-20708, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-20712, false, Some(b"MMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-21600, false, Some(b"CST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, false, Some(b"EST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, true, Some(b"CDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -24822,13 +24824,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-21600, false, Some(b"CST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_MANAUS: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -24869,15 +24871,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(-14404, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-10800, true, Some(b"-03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, false, Some(b"-04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -24887,13 +24889,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-14400, false, Some(b"-04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_MARIGOT: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -24902,11 +24904,11 @@ mod tzdata {
             const V: [LocalTimeType; 2] = [
                 match LocalTimeType::new(-14764, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, false, Some(b"AST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -24916,13 +24918,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-14400, false, Some(b"AST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_MARTINIQUE: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -24936,19 +24938,19 @@ mod tzdata {
             const V: [LocalTimeType; 4] = [
                 match LocalTimeType::new(-14660, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14660, false, Some(b"FFMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, false, Some(b"AST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-10800, true, Some(b"ADT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -24958,13 +24960,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-14400, false, Some(b"AST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_MATAMOROS: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -25006,15 +25008,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(-24000, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-21600, false, Some(b"CST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, true, Some(b"CDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -25025,32 +25027,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(-21600, false, Some(b"CST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(-18000, true, Some(b"CDT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 2, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(11, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_MAZATLAN: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -25082,23 +25084,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(-25540, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-25200, false, Some(b"MST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-21600, false, Some(b"CST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-28800, false, Some(b"PST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-21600, true, Some(b"MDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -25109,32 +25111,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(-25200, false, Some(b"MST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(-21600, true, Some(b"MDT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(4, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_MENDOZA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -25205,27 +25207,27 @@ mod tzdata {
             const V: [LocalTimeType; 6] = [
                 match LocalTimeType::new(-16516, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-15408, false, Some(b"CMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, false, Some(b"-04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-10800, true, Some(b"-03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-7200, true, Some(b"-02")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-10800, false, Some(b"-03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -25235,13 +25237,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-10800, false, Some(b"-03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_MENOMINEE: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -25333,27 +25335,27 @@ mod tzdata {
             const V: [LocalTimeType; 6] = [
                 match LocalTimeType::new(-21027, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, true, Some(b"CDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-21600, false, Some(b"CST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, true, Some(b"CWT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, true, Some(b"CPT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, false, Some(b"EST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -25364,32 +25366,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(-21600, false, Some(b"CST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(-18000, true, Some(b"CDT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 2, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(11, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_MERIDA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -25415,19 +25417,19 @@ mod tzdata {
             const V: [LocalTimeType; 4] = [
                 match LocalTimeType::new(-21508, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-21600, false, Some(b"CST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, false, Some(b"EST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, true, Some(b"CDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -25438,32 +25440,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(-21600, false, Some(b"CST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(-18000, true, Some(b"CDT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(4, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_METLAKATLA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -25517,35 +25519,35 @@ mod tzdata {
             const V: [LocalTimeType; 8] = [
                 match LocalTimeType::new(54822, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-31578, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-28800, false, Some(b"PST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-25200, true, Some(b"PWT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-25200, true, Some(b"PPT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-25200, true, Some(b"PDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-32400, false, Some(b"AKST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-28800, true, Some(b"AKDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -25556,32 +25558,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(-32400, false, Some(b"AKST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(-28800, true, Some(b"AKDT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 2, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(11, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_MEXICO_CITY: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -25618,23 +25620,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(-23796, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-25200, false, Some(b"MST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-21600, false, Some(b"CST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, true, Some(b"CDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, true, Some(b"CWT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -25645,32 +25647,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(-21600, false, Some(b"CST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(-18000, true, Some(b"CDT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(4, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_MIQUELON: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -25723,19 +25725,19 @@ mod tzdata {
             const V: [LocalTimeType; 4] = [
                 match LocalTimeType::new(-13480, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, false, Some(b"AST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-10800, false, Some(b"-03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-7200, true, Some(b"-02")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -25746,32 +25748,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(-10800, false, Some(b"-03")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(-7200, true, Some(b"-02")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 2, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(11, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_MONCTON: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -25927,27 +25929,27 @@ mod tzdata {
             const V: [LocalTimeType; 6] = [
                 match LocalTimeType::new(-15548, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, false, Some(b"EST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-10800, true, Some(b"ADT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, false, Some(b"AST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-10800, true, Some(b"AWT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-10800, true, Some(b"APT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -25958,32 +25960,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(-14400, false, Some(b"AST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(-10800, true, Some(b"ADT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 2, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(11, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_MONTERREY: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -26009,15 +26011,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(-24076, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-21600, false, Some(b"CST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, true, Some(b"CDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -26028,32 +26030,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(-21600, false, Some(b"CST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(-18000, true, Some(b"CDT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(4, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_MONTEVIDEO: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -26149,39 +26151,39 @@ mod tzdata {
             const V: [LocalTimeType; 9] = [
                 match LocalTimeType::new(-13491, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-13491, false, Some(b"MMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, false, Some(b"-04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-12600, false, Some(b"-0330")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-10800, true, Some(b"-03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-10800, false, Some(b"-03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-9000, true, Some(b"-0230")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-7200, true, Some(b"-02")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-5400, true, Some(b"-0130")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -26191,13 +26193,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-10800, false, Some(b"-03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_MONTREAL: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -26379,23 +26381,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(-17656, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, true, Some(b"EDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, false, Some(b"EST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, true, Some(b"EWT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, true, Some(b"EPT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -26406,32 +26408,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(-18000, false, Some(b"EST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(-14400, true, Some(b"EDT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 2, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(11, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_MONTSERRAT: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -26440,11 +26442,11 @@ mod tzdata {
             const V: [LocalTimeType; 2] = [
                 match LocalTimeType::new(-14932, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, false, Some(b"AST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -26454,13 +26456,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-14400, false, Some(b"AST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_NASSAU: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -26563,23 +26565,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(-18570, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, true, Some(b"EWT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, false, Some(b"EST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, true, Some(b"EPT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, true, Some(b"EDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -26590,32 +26592,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(-18000, false, Some(b"EST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(-14400, true, Some(b"EDT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 2, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(11, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_NEW_YORK: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -26800,23 +26802,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(-17762, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, true, Some(b"EDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, false, Some(b"EST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, true, Some(b"EWT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, true, Some(b"EPT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -26827,32 +26829,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(-18000, false, Some(b"EST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(-14400, true, Some(b"EDT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 2, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(11, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_NIPIGON: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -26936,23 +26938,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(-21184, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, true, Some(b"EDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, false, Some(b"EST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, true, Some(b"EWT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, true, Some(b"EPT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -26963,32 +26965,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(-18000, false, Some(b"EST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(-14400, true, Some(b"EDT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 2, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(11, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_NOME: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -27082,43 +27084,43 @@ mod tzdata {
             const V: [LocalTimeType; 10] = [
                 match LocalTimeType::new(46702, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-39698, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-39600, false, Some(b"NST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-36000, true, Some(b"NWT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-36000, true, Some(b"NPT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-39600, false, Some(b"BST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-36000, true, Some(b"BDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-32400, false, Some(b"YST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-28800, true, Some(b"AKDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-32400, false, Some(b"AKST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -27129,32 +27131,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(-32400, false, Some(b"AKST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(-28800, true, Some(b"AKDT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 2, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(11, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_NORONHA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -27203,15 +27205,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(-7780, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-3600, true, Some(b"-01")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-7200, false, Some(b"-02")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -27221,13 +27223,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-7200, false, Some(b"-02")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_OJINAGA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -27272,23 +27274,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(-25060, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-25200, false, Some(b"MST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-21600, false, Some(b"CST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, true, Some(b"CDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-21600, true, Some(b"MDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -27299,32 +27301,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(-25200, false, Some(b"MST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(-21600, true, Some(b"MDT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 2, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(11, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_PANAMA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -27336,15 +27338,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(-19088, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-19176, false, Some(b"CMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, false, Some(b"EST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -27354,13 +27356,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-18000, false, Some(b"EST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_PANGNIRTUNG: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -27431,43 +27433,43 @@ mod tzdata {
             const V: [LocalTimeType; 10] = [
                 match LocalTimeType::new(0, false, Some(b"-00")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-10800, true, Some(b"AWT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-10800, true, Some(b"APT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, false, Some(b"AST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-7200, true, Some(b"ADDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-10800, true, Some(b"ADT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, true, Some(b"EDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, false, Some(b"EST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-21600, false, Some(b"CST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, true, Some(b"CDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -27478,32 +27480,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(-18000, false, Some(b"EST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(-14400, true, Some(b"EDT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 2, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(11, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_PARAMARIBO: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -27517,23 +27519,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(-13240, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-13252, false, Some(b"PMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-13236, false, Some(b"PMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-12600, false, Some(b"-0330")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-10800, false, Some(b"-03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -27543,13 +27545,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-10800, false, Some(b"-03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_PHOENIX: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -27570,19 +27572,19 @@ mod tzdata {
             const V: [LocalTimeType; 4] = [
                 match LocalTimeType::new(-26898, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-21600, true, Some(b"MDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-25200, false, Some(b"MST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-21600, true, Some(b"MWT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -27592,13 +27594,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-25200, false, Some(b"MST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_PORTO_ACRE: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -27639,19 +27641,19 @@ mod tzdata {
             const V: [LocalTimeType; 4] = [
                 match LocalTimeType::new(-16272, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, true, Some(b"-04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, false, Some(b"-05")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, false, Some(b"-04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -27661,13 +27663,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-18000, false, Some(b"-05")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_PORTO_VELHO: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -27706,15 +27708,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(-15336, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-10800, true, Some(b"-03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, false, Some(b"-04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -27724,13 +27726,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-14400, false, Some(b"-04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_PORT_AU_PRINCE: TimeZoneRef<'static> =
@@ -27786,19 +27788,19 @@ mod tzdata {
                 const V: [LocalTimeType; 4] = [
                     match LocalTimeType::new(-17360, false, Some(b"LMT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(-17340, false, Some(b"PPMT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(-14400, true, Some(b"EDT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(-18000, false, Some(b"EST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                 ];
                 V
@@ -27809,32 +27811,32 @@ mod tzdata {
                     match AlternateTime::new(
                         match LocalTimeType::new(-18000, false, Some(b"EST")) {
                             Ok(v) => v,
-                            Err(e) => panic!("{}", e.0),
+                            Err(_) => [][1],
                         },
                         match LocalTimeType::new(-14400, true, Some(b"EDT")) {
                             Ok(v) => v,
-                            Err(e) => panic!("{}", e.0),
+                            Err(_) => [][1],
                         },
                         RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 2, 0) {
                             Ok(v) => v,
-                            Err(e) => panic!("{}", e.0),
+                            Err(_) => [][1],
                         }),
                         7200,
                         RuleDay::MonthWeekDay(match MonthWeekDay::new(11, 1, 0) {
                             Ok(v) => v,
-                            Err(e) => panic!("{}", e.0),
+                            Err(_) => [][1],
                         }),
                         7200,
                     ) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                 );
                 V
             }),
         ) {
             Ok(v) => v,
-            Err(e) => panic!("{}", e.0),
+            Err(_) => [][1],
         };
 
     pub(crate) const AMERICA_PUERTO_RICO: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -27848,19 +27850,19 @@ mod tzdata {
             const V: [LocalTimeType; 4] = [
                 match LocalTimeType::new(-15865, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, false, Some(b"AST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-10800, true, Some(b"APT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-10800, true, Some(b"AWT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -27870,13 +27872,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-14400, false, Some(b"AST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_PUNTA_ARENAS: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -28002,31 +28004,31 @@ mod tzdata {
             const V: [LocalTimeType; 7] = [
                 match LocalTimeType::new(-17020, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-16965, false, Some(b"SMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, false, Some(b"-05")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, false, Some(b"-04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, true, Some(b"-04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-10800, true, Some(b"-03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-10800, false, Some(b"-03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -28036,13 +28038,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-10800, false, Some(b"-03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_RAINY_RIVER: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -28126,23 +28128,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(-22696, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, true, Some(b"CDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-21600, false, Some(b"CST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, true, Some(b"CWT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, true, Some(b"CPT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -28153,32 +28155,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(-21600, false, Some(b"CST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(-18000, true, Some(b"CDT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 2, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(11, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_RANKIN_INLET: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -28246,23 +28248,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(0, false, Some(b"-00")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, true, Some(b"CDDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-21600, false, Some(b"CST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, true, Some(b"CDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, false, Some(b"EST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -28273,32 +28275,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(-21600, false, Some(b"CST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(-18000, true, Some(b"CDT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 2, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(11, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_RECIFE: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -28347,15 +28349,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(-8376, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-7200, true, Some(b"-02")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-10800, false, Some(b"-03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -28365,13 +28367,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-10800, false, Some(b"-03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_REGINA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -28434,27 +28436,27 @@ mod tzdata {
             const V: [LocalTimeType; 6] = [
                 match LocalTimeType::new(-25116, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-21600, true, Some(b"MDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-25200, false, Some(b"MST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-21600, true, Some(b"MWT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-21600, true, Some(b"MPT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-21600, false, Some(b"CST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -28464,13 +28466,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-21600, false, Some(b"CST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_RESOLUTE: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -28538,23 +28540,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(0, false, Some(b"-00")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, true, Some(b"CDDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-21600, false, Some(b"CST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, true, Some(b"CDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, false, Some(b"EST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -28565,32 +28567,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(-21600, false, Some(b"CST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(-18000, true, Some(b"CDT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 2, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(11, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_ROSARIO: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -28653,27 +28655,27 @@ mod tzdata {
             const V: [LocalTimeType; 6] = [
                 match LocalTimeType::new(-14560, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-15404, false, Some(b"CMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, false, Some(b"-04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-10800, true, Some(b"-03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-7200, true, Some(b"-02")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-10800, false, Some(b"-03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -28683,13 +28685,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-10800, false, Some(b"-03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_SANTAREM: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -28729,19 +28731,19 @@ mod tzdata {
             const V: [LocalTimeType; 4] = [
                 match LocalTimeType::new(-13128, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-10800, true, Some(b"-03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, false, Some(b"-04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-10800, false, Some(b"-03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -28751,13 +28753,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-10800, false, Some(b"-03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_SANTA_ISABEL: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -28861,27 +28863,27 @@ mod tzdata {
             const V: [LocalTimeType; 6] = [
                 match LocalTimeType::new(-28084, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-25200, false, Some(b"MST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-28800, false, Some(b"PST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-25200, true, Some(b"PDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-25200, true, Some(b"PWT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-25200, true, Some(b"PPT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -28892,32 +28894,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(-28800, false, Some(b"PST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(-25200, true, Some(b"PDT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 2, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(11, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_SANTIAGO: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -29049,27 +29051,27 @@ mod tzdata {
             const V: [LocalTimeType; 6] = [
                 match LocalTimeType::new(-16965, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-16965, false, Some(b"SMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, false, Some(b"-05")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, false, Some(b"-04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, true, Some(b"-04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-10800, true, Some(b"-03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -29080,32 +29082,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(-14400, false, Some(b"-04")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(-10800, true, Some(b"-03")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(9, 1, 6) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     86400,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(4, 1, 6) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     86400,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_SANTO_DOMINGO: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -29132,27 +29134,27 @@ mod tzdata {
             const V: [LocalTimeType; 6] = [
                 match LocalTimeType::new(-16776, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-16800, false, Some(b"SDMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, true, Some(b"EDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, false, Some(b"EST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-16200, true, Some(b"-0430")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, false, Some(b"AST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -29162,13 +29164,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-14400, false, Some(b"AST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_SAO_PAULO: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -29269,15 +29271,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(-11188, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-7200, true, Some(b"-02")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-10800, false, Some(b"-03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -29287,13 +29289,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-10800, false, Some(b"-03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_SCORESBYSUND: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -29337,23 +29339,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(-5272, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-7200, false, Some(b"-02")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-3600, true, Some(b"-01")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-3600, false, Some(b"-01")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(0, true, Some(b"+00")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -29364,32 +29366,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(-3600, false, Some(b"-01")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(0, true, Some(b"+00")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     0,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     3600,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_SITKA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -29482,39 +29484,39 @@ mod tzdata {
             const V: [LocalTimeType; 9] = [
                 match LocalTimeType::new(53927, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-32473, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-28800, false, Some(b"PST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-25200, true, Some(b"PWT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-25200, true, Some(b"PPT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-25200, true, Some(b"PDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-32400, false, Some(b"YST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-28800, true, Some(b"AKDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-32400, false, Some(b"AKST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -29525,32 +29527,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(-32400, false, Some(b"AKST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(-28800, true, Some(b"AKDT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 2, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(11, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_ST_JOHNS: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -29747,35 +29749,35 @@ mod tzdata {
             const V: [LocalTimeType; 8] = [
                 match LocalTimeType::new(-12652, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-9052, true, Some(b"NDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-12652, false, Some(b"NST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-9000, true, Some(b"NDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-12600, false, Some(b"NST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-9000, true, Some(b"NPT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-9000, true, Some(b"NWT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-5400, true, Some(b"NDDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -29786,32 +29788,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(-12600, false, Some(b"NST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(-9000, true, Some(b"NDT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 2, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(11, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_ST_KITTS: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -29820,11 +29822,11 @@ mod tzdata {
             const V: [LocalTimeType; 2] = [
                 match LocalTimeType::new(-15052, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, false, Some(b"AST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -29834,13 +29836,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-14400, false, Some(b"AST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_ST_LUCIA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -29852,15 +29854,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(-14640, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14640, false, Some(b"CMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, false, Some(b"AST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -29870,13 +29872,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-14400, false, Some(b"AST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_ST_THOMAS: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -29885,11 +29887,11 @@ mod tzdata {
             const V: [LocalTimeType; 2] = [
                 match LocalTimeType::new(-15584, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, false, Some(b"AST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -29899,13 +29901,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-14400, false, Some(b"AST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_ST_VINCENT: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -29917,15 +29919,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(-14696, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14696, false, Some(b"KMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, false, Some(b"AST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -29935,13 +29937,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-14400, false, Some(b"AST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_SWIFT_CURRENT: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -29974,27 +29976,27 @@ mod tzdata {
             const V: [LocalTimeType; 6] = [
                 match LocalTimeType::new(-25880, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-21600, true, Some(b"MDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-25200, false, Some(b"MST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-21600, true, Some(b"MWT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-21600, true, Some(b"MPT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-21600, false, Some(b"CST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -30004,13 +30006,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-21600, false, Some(b"CST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_TEGUCIGALPA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -30027,15 +30029,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(-20932, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, true, Some(b"CDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-21600, false, Some(b"CST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -30045,13 +30047,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-21600, false, Some(b"CST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_THULE: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -30095,15 +30097,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(-16508, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-10800, true, Some(b"ADT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, false, Some(b"AST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -30114,32 +30116,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(-14400, false, Some(b"AST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(-10800, true, Some(b"ADT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 2, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(11, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_THUNDER_BAY: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -30227,27 +30229,27 @@ mod tzdata {
             const V: [LocalTimeType; 6] = [
                 match LocalTimeType::new(-21420, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-21600, false, Some(b"CST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, false, Some(b"EST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, true, Some(b"EWT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, true, Some(b"EPT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, true, Some(b"EDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -30258,32 +30260,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(-18000, false, Some(b"EST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(-14400, true, Some(b"EDT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 2, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(11, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_TORONTO: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -30465,23 +30467,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(-19052, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, true, Some(b"EDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, false, Some(b"EST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, true, Some(b"EWT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, true, Some(b"EPT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -30492,32 +30494,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(-18000, false, Some(b"EST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(-14400, true, Some(b"EDT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 2, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(11, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_TORTOLA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -30526,11 +30528,11 @@ mod tzdata {
             const V: [LocalTimeType; 2] = [
                 match LocalTimeType::new(-15508, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, false, Some(b"AST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -30540,13 +30542,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-14400, false, Some(b"AST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_VANCOUVER: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -30685,23 +30687,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(-29548, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-25200, true, Some(b"PDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-28800, false, Some(b"PST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-25200, true, Some(b"PWT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-25200, true, Some(b"PPT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -30712,32 +30714,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(-28800, false, Some(b"PST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(-25200, true, Some(b"PDT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 2, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(11, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_WHITEHORSE: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -30840,39 +30842,39 @@ mod tzdata {
             const V: [LocalTimeType; 9] = [
                 match LocalTimeType::new(-32412, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-28800, true, Some(b"YDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-32400, false, Some(b"YST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-28800, true, Some(b"YWT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-28800, true, Some(b"YPT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-25200, true, Some(b"YDDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-28800, false, Some(b"PST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-25200, true, Some(b"PDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-25200, false, Some(b"MST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -30882,13 +30884,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-25200, false, Some(b"MST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_WINNIPEG: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -31023,23 +31025,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(-23316, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, true, Some(b"CDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-21600, false, Some(b"CST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, true, Some(b"CWT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, true, Some(b"CPT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -31050,32 +31052,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(-21600, false, Some(b"CST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(-18000, true, Some(b"CDT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 2, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(11, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_YAKUTAT: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -31168,35 +31170,35 @@ mod tzdata {
             const V: [LocalTimeType; 8] = [
                 match LocalTimeType::new(52865, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-33535, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-32400, false, Some(b"YST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-28800, true, Some(b"YWT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-28800, true, Some(b"YPT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-28800, true, Some(b"YDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-28800, true, Some(b"AKDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-32400, false, Some(b"AKST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -31207,32 +31209,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(-32400, false, Some(b"AKST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(-28800, true, Some(b"AKDT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 2, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(11, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AMERICA_YELLOWKNIFE: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -31303,27 +31305,27 @@ mod tzdata {
             const V: [LocalTimeType; 6] = [
                 match LocalTimeType::new(0, false, Some(b"-00")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-21600, true, Some(b"MWT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-21600, true, Some(b"MPT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-25200, false, Some(b"MST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, true, Some(b"MDDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-21600, true, Some(b"MDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -31334,32 +31336,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(-25200, false, Some(b"MST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(-21600, true, Some(b"MDT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 2, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(11, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ANTARCTICA_CASEY: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -31381,15 +31383,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(0, false, Some(b"-00")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(28800, false, Some(b"+08")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(39600, false, Some(b"+11")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -31399,13 +31401,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(39600, false, Some(b"+11")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ANTARCTICA_DAVIS: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -31422,15 +31424,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(0, false, Some(b"-00")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(25200, false, Some(b"+07")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(18000, false, Some(b"+05")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -31440,13 +31442,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(25200, false, Some(b"+07")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ANTARCTICA_DUMONT_D_URVILLE: TimeZoneRef<'static> =
@@ -31460,11 +31462,11 @@ mod tzdata {
                 const V: [LocalTimeType; 2] = [
                     match LocalTimeType::new(0, false, Some(b"-00")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(36000, false, Some(b"+10")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                 ];
                 V
@@ -31474,13 +31476,13 @@ mod tzdata {
                 const V: TransitionRule =
                     TransitionRule::Fixed(match LocalTimeType::new(36000, false, Some(b"+10")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     });
                 V
             }),
         ) {
             Ok(v) => v,
-            Err(e) => panic!("{}", e.0),
+            Err(_) => [][1],
         };
 
     pub(crate) const ANTARCTICA_MACQUARIE: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -31581,15 +31583,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(0, false, Some(b"-00")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(36000, false, Some(b"AEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(39600, true, Some(b"AEDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -31600,32 +31602,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(36000, false, Some(b"AEST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(39600, true, Some(b"AEDT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(4, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     10800,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ANTARCTICA_MAWSON: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -31637,15 +31639,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(0, false, Some(b"-00")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(21600, false, Some(b"+06")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(18000, false, Some(b"+05")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -31655,13 +31657,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(18000, false, Some(b"+05")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ANTARCTICA_MC_MURDO: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -31739,15 +31741,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(0, false, Some(b"-00")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(46800, true, Some(b"NZDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(43200, false, Some(b"NZST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -31758,32 +31760,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(43200, false, Some(b"NZST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(46800, true, Some(b"NZDT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(9, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(4, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     10800,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ANTARCTICA_PALMER: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -31875,23 +31877,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(0, false, Some(b"-00")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, false, Some(b"-04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-10800, true, Some(b"-03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-7200, true, Some(b"-02")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-10800, false, Some(b"-03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -31901,13 +31903,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-10800, false, Some(b"-03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ANTARCTICA_ROTHERA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -31916,11 +31918,11 @@ mod tzdata {
             const V: [LocalTimeType; 2] = [
                 match LocalTimeType::new(0, false, Some(b"-00")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-10800, false, Some(b"-03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -31930,13 +31932,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-10800, false, Some(b"-03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ANTARCTICA_SYOWA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -31945,11 +31947,11 @@ mod tzdata {
             const V: [LocalTimeType; 2] = [
                 match LocalTimeType::new(0, false, Some(b"-00")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, false, Some(b"+03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -31959,13 +31961,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(10800, false, Some(b"+03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ANTARCTICA_TROLL: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -31977,15 +31979,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(0, false, Some(b"-00")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, true, Some(b"+02")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(0, false, Some(b"+00")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -31996,32 +31998,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(0, false, Some(b"+00")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(7200, true, Some(b"+02")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     3600,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     10800,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ANTARCTICA_VOSTOK: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -32030,11 +32032,11 @@ mod tzdata {
             const V: [LocalTimeType; 2] = [
                 match LocalTimeType::new(0, false, Some(b"-00")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(21600, false, Some(b"+06")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -32044,13 +32046,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(21600, false, Some(b"+06")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ARCTIC_LONGYEARBYEN: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -32118,15 +32120,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(2580, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, true, Some(b"CEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, false, Some(b"CET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -32137,32 +32139,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(3600, false, Some(b"CET")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(7200, true, Some(b"CEST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     10800,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_ADEN: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -32171,11 +32173,11 @@ mod tzdata {
             const V: [LocalTimeType; 2] = [
                 match LocalTimeType::new(10794, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, false, Some(b"+03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -32185,13 +32187,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(10800, false, Some(b"+03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_ALMATY: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -32252,23 +32254,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(18468, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(18000, false, Some(b"+05")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(25200, true, Some(b"+07")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(21600, false, Some(b"+06")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(21600, true, Some(b"+06")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -32278,13 +32280,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(21600, false, Some(b"+06")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_AMMAN: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -32379,15 +32381,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(8624, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, true, Some(b"EEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, false, Some(b"EET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -32398,32 +32400,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(7200, false, Some(b"EET")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(10800, true, Some(b"EEST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(2, 5, 4) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     86400,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 5) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     3600,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_ANADYR: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -32497,31 +32499,31 @@ mod tzdata {
             const V: [LocalTimeType; 7] = [
                 match LocalTimeType::new(42596, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(43200, false, Some(b"+12")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(50400, true, Some(b"+14")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(46800, false, Some(b"+13")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(46800, true, Some(b"+13")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(43200, true, Some(b"+12")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(39600, false, Some(b"+11")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -32531,13 +32533,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(43200, false, Some(b"+12")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_AQTAU: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -32597,27 +32599,27 @@ mod tzdata {
             const V: [LocalTimeType; 6] = [
                 match LocalTimeType::new(12064, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(14400, false, Some(b"+04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(18000, false, Some(b"+05")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(21600, false, Some(b"+06")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(21600, true, Some(b"+06")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(18000, true, Some(b"+05")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -32627,13 +32629,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(18000, false, Some(b"+05")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_AQTOBE: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -32694,27 +32696,27 @@ mod tzdata {
             const V: [LocalTimeType; 6] = [
                 match LocalTimeType::new(13720, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(14400, false, Some(b"+04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(18000, false, Some(b"+05")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(21600, true, Some(b"+06")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(21600, false, Some(b"+06")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(18000, true, Some(b"+05")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -32724,13 +32726,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(18000, false, Some(b"+05")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_ASHGABAT: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -32765,23 +32767,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(14012, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(14400, false, Some(b"+04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(21600, true, Some(b"+06")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(18000, false, Some(b"+05")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(18000, true, Some(b"+05")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -32791,13 +32793,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(18000, false, Some(b"+05")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_ATYRAU: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -32857,31 +32859,31 @@ mod tzdata {
             const V: [LocalTimeType; 7] = [
                 match LocalTimeType::new(12464, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, false, Some(b"+03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(18000, false, Some(b"+05")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(21600, false, Some(b"+06")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(21600, true, Some(b"+06")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(18000, true, Some(b"+05")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(14400, false, Some(b"+04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -32891,13 +32893,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(18000, false, Some(b"+05")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_BAGHDAD: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -32961,19 +32963,19 @@ mod tzdata {
             const V: [LocalTimeType; 4] = [
                 match LocalTimeType::new(10660, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10656, false, Some(b"BMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, false, Some(b"+03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(14400, true, Some(b"+04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -32983,13 +32985,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(10800, false, Some(b"+03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_BAHRAIN: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -33002,19 +33004,19 @@ mod tzdata {
             const V: [LocalTimeType; 4] = [
                 match LocalTimeType::new(12140, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(12600, false, Some(b"+0330")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(14400, false, Some(b"+04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, false, Some(b"+03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -33024,13 +33026,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(10800, false, Some(b"+03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_BAKU: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -33106,23 +33108,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(11964, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, false, Some(b"+03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(18000, true, Some(b"+05")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(14400, false, Some(b"+04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(14400, true, Some(b"+04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -33132,13 +33134,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(14400, false, Some(b"+04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_BANGKOK: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -33150,15 +33152,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(24124, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(24124, false, Some(b"BMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(25200, false, Some(b"+07")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -33168,13 +33170,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(25200, false, Some(b"+07")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_BARNAUL: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -33251,23 +33253,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(20100, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(21600, false, Some(b"+06")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(28800, true, Some(b"+08")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(25200, false, Some(b"+07")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(25200, true, Some(b"+07")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -33277,13 +33279,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(25200, false, Some(b"+07")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_BEIRUT: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -33357,15 +33359,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(8520, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, true, Some(b"EEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, false, Some(b"EET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -33376,32 +33378,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(7200, false, Some(b"EET")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(10800, true, Some(b"EEST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     0,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     0,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_BISHKEK: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -33463,23 +33465,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(17904, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(18000, false, Some(b"+05")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(25200, true, Some(b"+07")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(21600, false, Some(b"+06")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(21600, true, Some(b"+06")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -33489,13 +33491,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(21600, false, Some(b"+06")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_BRUNEI: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -33507,15 +33509,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(27580, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(27000, false, Some(b"+0730")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(28800, false, Some(b"+08")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -33525,13 +33527,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(28800, false, Some(b"+08")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_CALCUTTA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -33548,23 +33550,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(21208, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(21200, false, Some(b"HMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(19270, false, Some(b"MMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(19800, false, Some(b"IST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(23400, true, Some(b"+0630")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -33574,13 +33576,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(19800, false, Some(b"IST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_CHITA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -33656,27 +33658,27 @@ mod tzdata {
             const V: [LocalTimeType; 6] = [
                 match LocalTimeType::new(27232, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(28800, false, Some(b"+08")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(36000, true, Some(b"+10")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(32400, false, Some(b"+09")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(32400, true, Some(b"+09")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(36000, false, Some(b"+10")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -33686,13 +33688,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(32400, false, Some(b"+09")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_CHOIBALSAN: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -33753,27 +33755,27 @@ mod tzdata {
             const V: [LocalTimeType; 6] = [
                 match LocalTimeType::new(27480, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(25200, false, Some(b"+07")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(28800, false, Some(b"+08")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(32400, false, Some(b"+09")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(36000, true, Some(b"+10")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(32400, true, Some(b"+09")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -33783,13 +33785,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(28800, false, Some(b"+08")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_CHONGQING: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -33813,19 +33815,19 @@ mod tzdata {
             const V: [LocalTimeType; 4] = [
                 match LocalTimeType::new(25580, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(25200, false, Some(b"+07")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(32400, true, Some(b"CDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(28800, false, Some(b"CST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -33835,13 +33837,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(28800, false, Some(b"CST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_COLOMBO: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -33859,31 +33861,31 @@ mod tzdata {
             const V: [LocalTimeType; 7] = [
                 match LocalTimeType::new(19164, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(19172, false, Some(b"MMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(19800, false, Some(b"+0530")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(21600, true, Some(b"+06")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(23400, true, Some(b"+0630")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(23400, false, Some(b"+0630")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(21600, false, Some(b"+06")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -33893,13 +33895,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(19800, false, Some(b"+0530")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_DACCA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -33916,27 +33918,27 @@ mod tzdata {
             const V: [LocalTimeType; 6] = [
                 match LocalTimeType::new(21700, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(21200, false, Some(b"HMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(23400, false, Some(b"+0630")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(19800, false, Some(b"+0530")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(21600, false, Some(b"+06")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(25200, true, Some(b"+07")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -33946,13 +33948,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(21600, false, Some(b"+06")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_DAMASCUS: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -34061,15 +34063,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(8712, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, true, Some(b"EEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, false, Some(b"EET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -34080,32 +34082,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(7200, false, Some(b"EET")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(10800, true, Some(b"EEST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 5, 5) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     0,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 5) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     0,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_DILI: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -34119,15 +34121,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(30140, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(28800, false, Some(b"+08")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(32400, false, Some(b"+09")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -34137,13 +34139,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(32400, false, Some(b"+09")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_DUBAI: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -34152,11 +34154,11 @@ mod tzdata {
             const V: [LocalTimeType; 2] = [
                 match LocalTimeType::new(13272, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(14400, false, Some(b"+04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -34166,13 +34168,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(14400, false, Some(b"+04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_DUSHANBE: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -34206,23 +34208,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(16512, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(18000, false, Some(b"+05")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(25200, true, Some(b"+07")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(21600, false, Some(b"+06")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(21600, true, Some(b"+06")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -34232,13 +34234,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(18000, false, Some(b"+05")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_FAMAGUSTA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -34334,19 +34336,19 @@ mod tzdata {
             const V: [LocalTimeType; 4] = [
                 match LocalTimeType::new(8148, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, true, Some(b"EEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, false, Some(b"EET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, false, Some(b"+03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -34357,32 +34359,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(7200, false, Some(b"EET")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(10800, true, Some(b"EEST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     10800,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     14400,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_GAZA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -34510,23 +34512,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(8272, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, true, Some(b"EEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, false, Some(b"EET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, true, Some(b"IDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, false, Some(b"IST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -34537,32 +34539,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(7200, false, Some(b"EET")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(10800, true, Some(b"EEST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 4, 4) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     259200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 4, 4) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     90000,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_HANOI: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -34579,23 +34581,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(25404, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(25590, false, Some(b"PLMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(25200, false, Some(b"+07")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(28800, false, Some(b"+08")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(32400, false, Some(b"+09")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -34605,13 +34607,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(25200, false, Some(b"+07")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_HARBIN: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -34638,23 +34640,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(30404, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(30600, false, Some(b"+0830")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(28800, false, Some(b"CST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(32400, false, Some(b"+09")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(32400, true, Some(b"CDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -34664,13 +34666,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(28800, false, Some(b"CST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_HEBRON: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -34800,23 +34802,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(8423, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, true, Some(b"EEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, false, Some(b"EET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, true, Some(b"IDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, false, Some(b"IST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -34827,32 +34829,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(7200, false, Some(b"EET")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(10800, true, Some(b"EEST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 4, 4) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     259200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 4, 4) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     90000,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_HOVD: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -34912,19 +34914,19 @@ mod tzdata {
             const V: [LocalTimeType; 4] = [
                 match LocalTimeType::new(21996, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(21600, false, Some(b"+06")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(28800, true, Some(b"+08")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(25200, false, Some(b"+07")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -34934,13 +34936,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(25200, false, Some(b"+07")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_HO_CHI_MINH: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -34959,23 +34961,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(25600, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(25590, false, Some(b"PLMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(25200, false, Some(b"+07")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(28800, false, Some(b"+08")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(32400, false, Some(b"+09")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -34985,13 +34987,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(25200, false, Some(b"+07")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_IRKUTSK: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -35067,31 +35069,31 @@ mod tzdata {
             const V: [LocalTimeType; 7] = [
                 match LocalTimeType::new(25025, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(25025, false, Some(b"IMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(25200, false, Some(b"+07")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(32400, true, Some(b"+09")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(28800, false, Some(b"+08")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(28800, true, Some(b"+08")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(32400, false, Some(b"+09")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -35101,13 +35103,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(28800, false, Some(b"+08")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_JAKARTA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -35125,31 +35127,31 @@ mod tzdata {
             const V: [LocalTimeType; 7] = [
                 match LocalTimeType::new(25632, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(25632, false, Some(b"BMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(26400, false, Some(b"+0720")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(27000, false, Some(b"+0730")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(32400, false, Some(b"+09")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(28800, false, Some(b"+08")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(25200, false, Some(b"WIB")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -35159,13 +35161,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(25200, false, Some(b"WIB")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_JAYAPURA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -35178,19 +35180,19 @@ mod tzdata {
             const V: [LocalTimeType; 4] = [
                 match LocalTimeType::new(33768, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(32400, false, Some(b"+09")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(34200, false, Some(b"+0930")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(32400, false, Some(b"WIT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -35200,13 +35202,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(32400, false, Some(b"WIT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_KABUL: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -35218,15 +35220,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(16608, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(14400, false, Some(b"+04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(16200, false, Some(b"+0430")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -35236,13 +35238,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(16200, false, Some(b"+0430")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_KAMCHATKA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -35316,23 +35318,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(38076, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(39600, false, Some(b"+11")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(46800, true, Some(b"+13")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(43200, false, Some(b"+12")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(43200, true, Some(b"+12")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -35342,13 +35344,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(43200, false, Some(b"+12")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_KARACHI: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -35369,27 +35371,27 @@ mod tzdata {
             const V: [LocalTimeType; 6] = [
                 match LocalTimeType::new(16092, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(19800, false, Some(b"+0530")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(23400, true, Some(b"+0630")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(18000, false, Some(b"+05")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(21600, true, Some(b"PKST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(18000, false, Some(b"PKT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -35399,13 +35401,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(18000, false, Some(b"PKT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_KASHGAR: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -35430,23 +35432,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(18236, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(19800, false, Some(b"+0530")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(18000, false, Some(b"+05")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(32400, true, Some(b"CDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(28800, false, Some(b"CST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -35456,13 +35458,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(28800, false, Some(b"CST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_KATHMANDU: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -35474,15 +35476,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(20476, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(19800, false, Some(b"+0530")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(20700, false, Some(b"+0545")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -35492,13 +35494,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(20700, false, Some(b"+0545")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_KHANDYGA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -35575,35 +35577,35 @@ mod tzdata {
             const V: [LocalTimeType; 8] = [
                 match LocalTimeType::new(32533, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(28800, false, Some(b"+08")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(36000, true, Some(b"+10")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(32400, false, Some(b"+09")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(32400, true, Some(b"+09")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(39600, true, Some(b"+11")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(36000, false, Some(b"+10")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(39600, false, Some(b"+11")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -35613,13 +35615,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(32400, false, Some(b"+09")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_KRASNOYARSK: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -35694,27 +35696,27 @@ mod tzdata {
             const V: [LocalTimeType; 6] = [
                 match LocalTimeType::new(22286, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(21600, false, Some(b"+06")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(28800, true, Some(b"+08")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(25200, false, Some(b"+07")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(25200, true, Some(b"+07")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(28800, false, Some(b"+08")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -35724,13 +35726,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(25200, false, Some(b"+07")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_KUALA_LUMPUR: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -35748,35 +35750,35 @@ mod tzdata {
             const V: [LocalTimeType; 8] = [
                 match LocalTimeType::new(24406, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(24925, false, Some(b"SMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(25200, false, Some(b"+07")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(26400, true, Some(b"+0720")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(26400, false, Some(b"+0720")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(27000, false, Some(b"+0730")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(32400, false, Some(b"+09")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(28800, false, Some(b"+08")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -35786,13 +35788,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(28800, false, Some(b"+08")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_KUCHING: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -35820,23 +35822,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(26480, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(27000, false, Some(b"+0730")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(30000, true, Some(b"+0820")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(28800, false, Some(b"+08")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(32400, false, Some(b"+09")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -35846,13 +35848,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(28800, false, Some(b"+08")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_KUWAIT: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -35861,11 +35863,11 @@ mod tzdata {
             const V: [LocalTimeType; 2] = [
                 match LocalTimeType::new(11516, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, false, Some(b"+03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -35875,13 +35877,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(10800, false, Some(b"+03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_MACAO: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -35962,23 +35964,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(27250, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(28800, false, Some(b"CST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(36000, true, Some(b"+10")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(32400, false, Some(b"+09")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(32400, true, Some(b"CDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -35988,13 +35990,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(28800, false, Some(b"CST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_MAGADAN: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -36070,27 +36072,27 @@ mod tzdata {
             const V: [LocalTimeType; 6] = [
                 match LocalTimeType::new(36192, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(36000, false, Some(b"+10")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(43200, true, Some(b"+12")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(39600, false, Some(b"+11")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(39600, true, Some(b"+11")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(43200, false, Some(b"+12")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -36100,13 +36102,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(39600, false, Some(b"+11")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_MAKASSAR: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -36120,23 +36122,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(28656, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(28656, false, Some(b"MMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(28800, false, Some(b"+08")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(32400, false, Some(b"+09")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(28800, false, Some(b"WITA")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -36146,13 +36148,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(28800, false, Some(b"WITA")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_MANILA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -36172,23 +36174,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(-57360, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(29040, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(32400, true, Some(b"PDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(28800, false, Some(b"PST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(32400, false, Some(b"JST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -36198,13 +36200,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(28800, false, Some(b"PST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_MUSCAT: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -36213,11 +36215,11 @@ mod tzdata {
             const V: [LocalTimeType; 2] = [
                 match LocalTimeType::new(14064, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(14400, false, Some(b"+04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -36227,13 +36229,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(14400, false, Some(b"+04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_NICOSIA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -36292,15 +36294,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(8008, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, true, Some(b"EEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, false, Some(b"EET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -36311,32 +36313,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(7200, false, Some(b"EET")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(10800, true, Some(b"EEST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     10800,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     14400,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_NOVOKUZNETSK: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -36410,23 +36412,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(20928, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(21600, false, Some(b"+06")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(28800, true, Some(b"+08")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(25200, false, Some(b"+07")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(25200, true, Some(b"+07")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -36436,13 +36438,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(25200, false, Some(b"+07")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_NOVOSIBIRSK: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -36519,23 +36521,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(19900, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(21600, false, Some(b"+06")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(28800, true, Some(b"+08")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(25200, false, Some(b"+07")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(25200, true, Some(b"+07")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -36545,13 +36547,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(25200, false, Some(b"+07")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_OMSK: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -36626,27 +36628,27 @@ mod tzdata {
             const V: [LocalTimeType; 6] = [
                 match LocalTimeType::new(17610, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(18000, false, Some(b"+05")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(25200, true, Some(b"+07")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(21600, false, Some(b"+06")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(21600, true, Some(b"+06")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(25200, false, Some(b"+07")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -36656,13 +36658,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(21600, false, Some(b"+06")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_ORAL: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -36723,31 +36725,31 @@ mod tzdata {
             const V: [LocalTimeType; 7] = [
                 match LocalTimeType::new(12324, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, false, Some(b"+03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(18000, false, Some(b"+05")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(21600, true, Some(b"+06")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(21600, false, Some(b"+06")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(18000, true, Some(b"+05")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(14400, false, Some(b"+04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -36757,13 +36759,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(18000, false, Some(b"+05")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_PHNOM_PENH: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -36778,23 +36780,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(25180, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(25590, false, Some(b"PLMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(25200, false, Some(b"+07")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(28800, false, Some(b"+08")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(32400, false, Some(b"+09")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -36804,13 +36806,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(25200, false, Some(b"+07")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_PONTIANAK: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -36828,31 +36830,31 @@ mod tzdata {
             const V: [LocalTimeType; 7] = [
                 match LocalTimeType::new(26240, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(26240, false, Some(b"PMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(27000, false, Some(b"+0730")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(32400, false, Some(b"+09")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(28800, false, Some(b"+08")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(28800, false, Some(b"WITA")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(25200, false, Some(b"WIB")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -36862,13 +36864,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(25200, false, Some(b"WIB")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_PYONGYANG: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -36883,19 +36885,19 @@ mod tzdata {
             const V: [LocalTimeType; 4] = [
                 match LocalTimeType::new(30180, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(30600, false, Some(b"KST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(32400, false, Some(b"JST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(32400, false, Some(b"KST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -36905,13 +36907,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(32400, false, Some(b"KST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_QATAR: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -36923,15 +36925,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(12368, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(14400, false, Some(b"+04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, false, Some(b"+03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -36941,13 +36943,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(10800, false, Some(b"+03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_QOSTANAY: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -37008,27 +37010,27 @@ mod tzdata {
             const V: [LocalTimeType; 6] = [
                 match LocalTimeType::new(15268, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(14400, false, Some(b"+04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(18000, false, Some(b"+05")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(21600, true, Some(b"+06")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(21600, false, Some(b"+06")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(18000, true, Some(b"+05")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -37038,13 +37040,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(21600, false, Some(b"+06")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_QYZYLORDA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -37106,27 +37108,27 @@ mod tzdata {
             const V: [LocalTimeType; 6] = [
                 match LocalTimeType::new(15712, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(14400, false, Some(b"+04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(18000, false, Some(b"+05")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(21600, true, Some(b"+06")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(21600, false, Some(b"+06")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(18000, true, Some(b"+05")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -37136,13 +37138,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(18000, false, Some(b"+05")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_RANGOON: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -37156,19 +37158,19 @@ mod tzdata {
             const V: [LocalTimeType; 4] = [
                 match LocalTimeType::new(23087, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(23087, false, Some(b"RMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(23400, false, Some(b"+0630")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(32400, false, Some(b"+09")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -37178,13 +37180,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(23400, false, Some(b"+0630")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_RIYADH: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -37193,11 +37195,11 @@ mod tzdata {
             const V: [LocalTimeType; 2] = [
                 match LocalTimeType::new(11212, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, false, Some(b"+03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -37207,13 +37209,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(10800, false, Some(b"+03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_SAKHALIN: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -37289,27 +37291,27 @@ mod tzdata {
             const V: [LocalTimeType; 6] = [
                 match LocalTimeType::new(34248, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(32400, false, Some(b"+09")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(43200, true, Some(b"+12")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(39600, false, Some(b"+11")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(39600, true, Some(b"+11")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(36000, false, Some(b"+10")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -37319,13 +37321,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(39600, false, Some(b"+11")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_SAMARKAND: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -37359,23 +37361,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(16073, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(14400, false, Some(b"+04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(18000, false, Some(b"+05")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(21600, true, Some(b"+06")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(21600, false, Some(b"+06")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -37385,13 +37387,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(18000, false, Some(b"+05")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_SREDNEKOLYMSK: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -37466,27 +37468,27 @@ mod tzdata {
             const V: [LocalTimeType; 6] = [
                 match LocalTimeType::new(36892, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(36000, false, Some(b"+10")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(43200, true, Some(b"+12")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(39600, false, Some(b"+11")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(39600, true, Some(b"+11")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(43200, false, Some(b"+12")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -37496,13 +37498,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(39600, false, Some(b"+11")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_TASHKENT: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -37536,23 +37538,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(16631, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(18000, false, Some(b"+05")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(25200, true, Some(b"+07")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(21600, false, Some(b"+06")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(21600, true, Some(b"+06")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -37562,13 +37564,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(18000, false, Some(b"+05")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_TBILISI: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -37630,27 +37632,27 @@ mod tzdata {
             const V: [LocalTimeType; 6] = [
                 match LocalTimeType::new(10751, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10751, false, Some(b"TBMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, false, Some(b"+03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(18000, true, Some(b"+05")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(14400, false, Some(b"+04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(14400, true, Some(b"+04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -37660,13 +37662,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(14400, false, Some(b"+04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_TEL_AVIV: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -37776,23 +37778,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(8344, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(8460, false, Some(b"JMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, true, Some(b"IDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, false, Some(b"IST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(14400, true, Some(b"IDDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -37803,32 +37805,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(7200, false, Some(b"IST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(10800, true, Some(b"IDT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 4, 4) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     93600,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_THIMBU: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -37840,15 +37842,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(21516, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(19800, false, Some(b"+0530")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(21600, false, Some(b"+06")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -37858,13 +37860,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(21600, false, Some(b"+06")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_TOMSK: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -37941,23 +37943,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(20391, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(21600, false, Some(b"+06")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(28800, true, Some(b"+08")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(25200, false, Some(b"+07")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(25200, true, Some(b"+07")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -37967,13 +37969,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(25200, false, Some(b"+07")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_ULAANBAATAR: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -38033,19 +38035,19 @@ mod tzdata {
             const V: [LocalTimeType; 4] = [
                 match LocalTimeType::new(25652, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(25200, false, Some(b"+07")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(32400, true, Some(b"+09")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(28800, false, Some(b"+08")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -38055,13 +38057,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(28800, false, Some(b"+08")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_URUMQI: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -38070,11 +38072,11 @@ mod tzdata {
             const V: [LocalTimeType; 2] = [
                 match LocalTimeType::new(21020, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(21600, false, Some(b"+06")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -38084,13 +38086,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(21600, false, Some(b"+06")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_UST_NERA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -38166,35 +38168,35 @@ mod tzdata {
             const V: [LocalTimeType; 8] = [
                 match LocalTimeType::new(34374, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(28800, false, Some(b"+08")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(32400, false, Some(b"+09")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(39600, false, Some(b"+11")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(43200, true, Some(b"+12")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(39600, true, Some(b"+11")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(36000, false, Some(b"+10")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(43200, false, Some(b"+12")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -38204,13 +38206,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(36000, false, Some(b"+10")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_VIENTIANE: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -38227,23 +38229,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(24624, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(25590, false, Some(b"PLMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(25200, false, Some(b"+07")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(28800, false, Some(b"+08")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(32400, false, Some(b"+09")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -38253,13 +38255,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(25200, false, Some(b"+07")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_VLADIVOSTOK: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -38334,27 +38336,27 @@ mod tzdata {
             const V: [LocalTimeType; 6] = [
                 match LocalTimeType::new(31651, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(32400, false, Some(b"+09")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(39600, true, Some(b"+11")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(36000, false, Some(b"+10")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(36000, true, Some(b"+10")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(39600, false, Some(b"+11")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -38364,13 +38366,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(36000, false, Some(b"+10")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_YAKUTSK: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -38445,27 +38447,27 @@ mod tzdata {
             const V: [LocalTimeType; 6] = [
                 match LocalTimeType::new(31138, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(28800, false, Some(b"+08")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(36000, true, Some(b"+10")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(32400, false, Some(b"+09")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(32400, true, Some(b"+09")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(36000, false, Some(b"+10")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -38475,13 +38477,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(32400, false, Some(b"+09")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_YEKATERINBURG: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -38557,31 +38559,31 @@ mod tzdata {
             const V: [LocalTimeType; 7] = [
                 match LocalTimeType::new(14553, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(13505, false, Some(b"PMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(14400, false, Some(b"+04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(21600, true, Some(b"+06")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(18000, false, Some(b"+05")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(18000, true, Some(b"+05")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(21600, false, Some(b"+06")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -38591,13 +38593,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(18000, false, Some(b"+05")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ASIA_YEREVAN: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -38669,23 +38671,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(10680, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, false, Some(b"+03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(18000, true, Some(b"+05")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(14400, false, Some(b"+04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(14400, true, Some(b"+04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -38695,13 +38697,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(14400, false, Some(b"+04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ATLANTIC_AZORES: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -38851,31 +38853,31 @@ mod tzdata {
             const V: [LocalTimeType; 7] = [
                 match LocalTimeType::new(-6160, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-6872, false, Some(b"HMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-3600, true, Some(b"-01")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-7200, false, Some(b"-02")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(0, true, Some(b"+00")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-3600, false, Some(b"-01")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(0, false, Some(b"WET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -38886,32 +38888,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(-3600, false, Some(b"-01")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(0, true, Some(b"+00")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     0,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     3600,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ATLANTIC_BERMUDA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -39016,23 +39018,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(-15558, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-11958, true, Some(b"BST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-15558, false, Some(b"BMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-10800, true, Some(b"ADT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, false, Some(b"AST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -39043,32 +39045,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(-14400, false, Some(b"AST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(-10800, true, Some(b"ADT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 2, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(11, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ATLANTIC_CANARY: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -39113,19 +39115,19 @@ mod tzdata {
             const V: [LocalTimeType; 4] = [
                 match LocalTimeType::new(-3696, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-3600, false, Some(b"-01")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(0, false, Some(b"WET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, true, Some(b"WEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -39136,32 +39138,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(0, false, Some(b"WET")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(3600, true, Some(b"WEST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     3600,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ATLANTIC_CAPE_VERDE: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -39175,19 +39177,19 @@ mod tzdata {
             const V: [LocalTimeType; 4] = [
                 match LocalTimeType::new(-5644, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-7200, false, Some(b"-02")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-3600, true, Some(b"-01")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-3600, false, Some(b"-01")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -39197,13 +39199,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-3600, false, Some(b"-01")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ATLANTIC_FAEROE: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -39245,15 +39247,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(-1624, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(0, false, Some(b"WET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, true, Some(b"WEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -39264,32 +39266,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(0, false, Some(b"WET")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(3600, true, Some(b"WEST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     3600,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ATLANTIC_JAN_MAYEN: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -39297,7 +39299,7 @@ mod tzdata {
         &{
             const V: [LocalTimeType; 1] = [match LocalTimeType::new(-3600, false, Some(b"-01")) {
                 Ok(v) => v,
-                Err(e) => panic!("{}", e.0),
+                Err(_) => [][1],
             }];
             V
         },
@@ -39306,13 +39308,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-3600, false, Some(b"-01")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ATLANTIC_MADEIRA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -39462,31 +39464,31 @@ mod tzdata {
             const V: [LocalTimeType; 7] = [
                 match LocalTimeType::new(-4056, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-4056, false, Some(b"FMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(0, true, Some(b"+00")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-3600, false, Some(b"-01")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, true, Some(b"+01")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, true, Some(b"WEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(0, false, Some(b"WET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -39497,32 +39499,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(0, false, Some(b"WET")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(3600, true, Some(b"WEST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     3600,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ATLANTIC_SOUTH_GEORGIA: TimeZoneRef<'static> =
@@ -39532,11 +39534,11 @@ mod tzdata {
                 const V: [LocalTimeType; 2] = [
                     match LocalTimeType::new(-8768, false, Some(b"LMT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(-7200, false, Some(b"-02")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                 ];
                 V
@@ -39546,13 +39548,13 @@ mod tzdata {
                 const V: TransitionRule =
                     TransitionRule::Fixed(match LocalTimeType::new(-7200, false, Some(b"-02")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     });
                 V
             }),
         ) {
             Ok(v) => v,
-            Err(e) => panic!("{}", e.0),
+            Err(_) => [][1],
         };
 
     pub(crate) const ATLANTIC_STANLEY: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -39632,27 +39634,27 @@ mod tzdata {
             const V: [LocalTimeType; 6] = [
                 match LocalTimeType::new(-13884, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-13884, false, Some(b"SMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-10800, true, Some(b"-03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, false, Some(b"-04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-7200, true, Some(b"-02")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-10800, false, Some(b"-03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -39662,13 +39664,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-10800, false, Some(b"-03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ATLANTIC_ST_HELENA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -39680,15 +39682,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(-1368, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-1368, false, Some(b"JMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(0, false, Some(b"GMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -39698,13 +39700,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(0, false, Some(b"GMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AUSTRALIA_ACT: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -39797,15 +39799,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(36292, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(39600, true, Some(b"AEDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(36000, false, Some(b"AEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -39816,32 +39818,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(36000, false, Some(b"AEST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(39600, true, Some(b"AEDT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(4, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     10800,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AUSTRALIA_ADELAIDE: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -39935,19 +39937,19 @@ mod tzdata {
             const V: [LocalTimeType; 4] = [
                 match LocalTimeType::new(33260, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(32400, false, Some(b"ACST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(37800, true, Some(b"ACDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(34200, false, Some(b"ACST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -39958,32 +39960,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(34200, false, Some(b"ACST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(37800, true, Some(b"ACDT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(4, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     10800,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AUSTRALIA_BRISBANE: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -40010,15 +40012,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(36728, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(39600, true, Some(b"AEDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(36000, false, Some(b"AEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -40028,13 +40030,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(36000, false, Some(b"AEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AUSTRALIA_BROKEN_HILL: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -40129,23 +40131,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(33948, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(36000, false, Some(b"AEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(32400, false, Some(b"ACST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(37800, true, Some(b"ACDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(34200, false, Some(b"ACST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -40156,32 +40158,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(34200, false, Some(b"ACST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(37800, true, Some(b"ACDT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(4, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     10800,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AUSTRALIA_CURRIE: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -40283,15 +40285,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(34528, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(39600, true, Some(b"AEDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(36000, false, Some(b"AEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -40302,32 +40304,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(36000, false, Some(b"AEST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(39600, true, Some(b"AEDT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(4, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     10800,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AUSTRALIA_DARWIN: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -40347,19 +40349,19 @@ mod tzdata {
             const V: [LocalTimeType; 4] = [
                 match LocalTimeType::new(31400, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(32400, false, Some(b"ACST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(37800, true, Some(b"ACDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(34200, false, Some(b"ACST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -40369,13 +40371,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(34200, false, Some(b"ACST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AUSTRALIA_EUCLA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -40404,15 +40406,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(30928, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(35100, true, Some(b"+0945")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(31500, false, Some(b"+0845")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -40422,13 +40424,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(31500, false, Some(b"+0845")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AUSTRALIA_HOBART: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -40532,15 +40534,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(35356, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(39600, true, Some(b"AEDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(36000, false, Some(b"AEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -40551,32 +40553,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(36000, false, Some(b"AEST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(39600, true, Some(b"AEDT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(4, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     10800,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AUSTRALIA_LHI: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -40642,23 +40644,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(38180, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(36000, false, Some(b"AEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(41400, true, Some(b"+1130")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(37800, false, Some(b"+1030")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(39600, true, Some(b"+11")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -40669,32 +40671,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(37800, false, Some(b"+1030")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(39600, true, Some(b"+11")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(4, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AUSTRALIA_LINDEMAN: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -40725,15 +40727,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(35756, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(39600, true, Some(b"AEDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(36000, false, Some(b"AEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -40743,13 +40745,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(36000, false, Some(b"AEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AUSTRALIA_MELBOURNE: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -40842,15 +40844,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(34792, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(39600, true, Some(b"AEDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(36000, false, Some(b"AEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -40861,32 +40863,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(36000, false, Some(b"AEST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(39600, true, Some(b"AEDT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(4, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     10800,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const AUSTRALIA_PERTH: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -40915,15 +40917,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(27804, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(32400, true, Some(b"AWDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(28800, false, Some(b"AWST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -40933,13 +40935,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(28800, false, Some(b"AWST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const CET: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -41002,11 +41004,11 @@ mod tzdata {
             const V: [LocalTimeType; 2] = [
                 match LocalTimeType::new(3600, false, Some(b"CET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, true, Some(b"CEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -41017,32 +41019,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(3600, false, Some(b"CET")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(7200, true, Some(b"CEST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     10800,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const CHILE_EASTER_ISLAND: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -41154,27 +41156,27 @@ mod tzdata {
             const V: [LocalTimeType; 6] = [
                 match LocalTimeType::new(-26248, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-26248, false, Some(b"EMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-21600, true, Some(b"-06")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-25200, false, Some(b"-07")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-21600, false, Some(b"-06")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, true, Some(b"-05")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -41185,32 +41187,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(-21600, false, Some(b"-06")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(-18000, true, Some(b"-05")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(9, 1, 6) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     79200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(4, 1, 6) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     79200,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const CST_6_CDT: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -41308,19 +41310,19 @@ mod tzdata {
             const V: [LocalTimeType; 4] = [
                 match LocalTimeType::new(-21600, false, Some(b"CST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, true, Some(b"CDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, true, Some(b"CWT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, true, Some(b"CPT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -41331,32 +41333,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(-21600, false, Some(b"CST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(-18000, true, Some(b"CDT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 2, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(11, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const CUBA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -41472,19 +41474,19 @@ mod tzdata {
             const V: [LocalTimeType; 4] = [
                 match LocalTimeType::new(-19768, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-19776, false, Some(b"HMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, true, Some(b"CDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, false, Some(b"CST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -41495,32 +41497,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(-18000, false, Some(b"CST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(-14400, true, Some(b"CDT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 2, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     0,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(11, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     3600,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const EET: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -41569,11 +41571,11 @@ mod tzdata {
             const V: [LocalTimeType; 2] = [
                 match LocalTimeType::new(7200, false, Some(b"EET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, true, Some(b"EEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -41584,32 +41586,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(7200, false, Some(b"EET")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(10800, true, Some(b"EEST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     10800,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     14400,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const EGYPT: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -41746,15 +41748,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(7509, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, true, Some(b"EEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, false, Some(b"EET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -41764,13 +41766,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(7200, false, Some(b"EET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const EIRE: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -41925,35 +41927,35 @@ mod tzdata {
             const V: [LocalTimeType; 8] = [
                 match LocalTimeType::new(-1500, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-1521, false, Some(b"DMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(2079, true, Some(b"IST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, true, Some(b"BST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(0, false, Some(b"GMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, true, Some(b"IST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(0, true, Some(b"GMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, false, Some(b"IST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -41964,32 +41966,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(3600, false, Some(b"IST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(0, true, Some(b"GMT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     3600,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const EST: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -41997,7 +41999,7 @@ mod tzdata {
         &{
             const V: [LocalTimeType; 1] = [match LocalTimeType::new(-18000, false, Some(b"EST")) {
                 Ok(v) => v,
-                Err(e) => panic!("{}", e.0),
+                Err(_) => [][1],
             }];
             V
         },
@@ -42006,13 +42008,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-18000, false, Some(b"EST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const EST_5_EDT: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -42110,19 +42112,19 @@ mod tzdata {
             const V: [LocalTimeType; 4] = [
                 match LocalTimeType::new(-18000, false, Some(b"EST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, true, Some(b"EDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, true, Some(b"EWT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, true, Some(b"EPT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -42133,32 +42135,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(-18000, false, Some(b"EST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(-14400, true, Some(b"EDT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 2, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(11, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ETC_GMT_MINUS_1: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -42166,7 +42168,7 @@ mod tzdata {
         &{
             const V: [LocalTimeType; 1] = [match LocalTimeType::new(3600, false, Some(b"+01")) {
                 Ok(v) => v,
-                Err(e) => panic!("{}", e.0),
+                Err(_) => [][1],
             }];
             V
         },
@@ -42175,13 +42177,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(3600, false, Some(b"+01")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ETC_GMT_MINUS_10: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -42189,7 +42191,7 @@ mod tzdata {
         &{
             const V: [LocalTimeType; 1] = [match LocalTimeType::new(36000, false, Some(b"+10")) {
                 Ok(v) => v,
-                Err(e) => panic!("{}", e.0),
+                Err(_) => [][1],
             }];
             V
         },
@@ -42198,13 +42200,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(36000, false, Some(b"+10")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ETC_GMT_MINUS_11: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -42212,7 +42214,7 @@ mod tzdata {
         &{
             const V: [LocalTimeType; 1] = [match LocalTimeType::new(39600, false, Some(b"+11")) {
                 Ok(v) => v,
-                Err(e) => panic!("{}", e.0),
+                Err(_) => [][1],
             }];
             V
         },
@@ -42221,13 +42223,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(39600, false, Some(b"+11")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ETC_GMT_MINUS_12: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -42235,7 +42237,7 @@ mod tzdata {
         &{
             const V: [LocalTimeType; 1] = [match LocalTimeType::new(43200, false, Some(b"+12")) {
                 Ok(v) => v,
-                Err(e) => panic!("{}", e.0),
+                Err(_) => [][1],
             }];
             V
         },
@@ -42244,13 +42246,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(43200, false, Some(b"+12")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ETC_GMT_MINUS_13: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -42258,7 +42260,7 @@ mod tzdata {
         &{
             const V: [LocalTimeType; 1] = [match LocalTimeType::new(46800, false, Some(b"+13")) {
                 Ok(v) => v,
-                Err(e) => panic!("{}", e.0),
+                Err(_) => [][1],
             }];
             V
         },
@@ -42267,13 +42269,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(46800, false, Some(b"+13")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ETC_GMT_MINUS_14: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -42281,7 +42283,7 @@ mod tzdata {
         &{
             const V: [LocalTimeType; 1] = [match LocalTimeType::new(50400, false, Some(b"+14")) {
                 Ok(v) => v,
-                Err(e) => panic!("{}", e.0),
+                Err(_) => [][1],
             }];
             V
         },
@@ -42290,13 +42292,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(50400, false, Some(b"+14")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ETC_GMT_MINUS_2: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -42304,7 +42306,7 @@ mod tzdata {
         &{
             const V: [LocalTimeType; 1] = [match LocalTimeType::new(7200, false, Some(b"+02")) {
                 Ok(v) => v,
-                Err(e) => panic!("{}", e.0),
+                Err(_) => [][1],
             }];
             V
         },
@@ -42313,13 +42315,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(7200, false, Some(b"+02")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ETC_GMT_MINUS_3: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -42327,7 +42329,7 @@ mod tzdata {
         &{
             const V: [LocalTimeType; 1] = [match LocalTimeType::new(10800, false, Some(b"+03")) {
                 Ok(v) => v,
-                Err(e) => panic!("{}", e.0),
+                Err(_) => [][1],
             }];
             V
         },
@@ -42336,13 +42338,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(10800, false, Some(b"+03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ETC_GMT_MINUS_4: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -42350,7 +42352,7 @@ mod tzdata {
         &{
             const V: [LocalTimeType; 1] = [match LocalTimeType::new(14400, false, Some(b"+04")) {
                 Ok(v) => v,
-                Err(e) => panic!("{}", e.0),
+                Err(_) => [][1],
             }];
             V
         },
@@ -42359,13 +42361,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(14400, false, Some(b"+04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ETC_GMT_MINUS_5: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -42373,7 +42375,7 @@ mod tzdata {
         &{
             const V: [LocalTimeType; 1] = [match LocalTimeType::new(18000, false, Some(b"+05")) {
                 Ok(v) => v,
-                Err(e) => panic!("{}", e.0),
+                Err(_) => [][1],
             }];
             V
         },
@@ -42382,13 +42384,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(18000, false, Some(b"+05")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ETC_GMT_MINUS_6: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -42396,7 +42398,7 @@ mod tzdata {
         &{
             const V: [LocalTimeType; 1] = [match LocalTimeType::new(21600, false, Some(b"+06")) {
                 Ok(v) => v,
-                Err(e) => panic!("{}", e.0),
+                Err(_) => [][1],
             }];
             V
         },
@@ -42405,13 +42407,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(21600, false, Some(b"+06")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ETC_GMT_MINUS_7: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -42419,7 +42421,7 @@ mod tzdata {
         &{
             const V: [LocalTimeType; 1] = [match LocalTimeType::new(25200, false, Some(b"+07")) {
                 Ok(v) => v,
-                Err(e) => panic!("{}", e.0),
+                Err(_) => [][1],
             }];
             V
         },
@@ -42428,13 +42430,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(25200, false, Some(b"+07")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ETC_GMT_MINUS_8: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -42442,7 +42444,7 @@ mod tzdata {
         &{
             const V: [LocalTimeType; 1] = [match LocalTimeType::new(28800, false, Some(b"+08")) {
                 Ok(v) => v,
-                Err(e) => panic!("{}", e.0),
+                Err(_) => [][1],
             }];
             V
         },
@@ -42451,13 +42453,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(28800, false, Some(b"+08")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ETC_GMT_MINUS_9: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -42465,7 +42467,7 @@ mod tzdata {
         &{
             const V: [LocalTimeType; 1] = [match LocalTimeType::new(32400, false, Some(b"+09")) {
                 Ok(v) => v,
-                Err(e) => panic!("{}", e.0),
+                Err(_) => [][1],
             }];
             V
         },
@@ -42474,13 +42476,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(32400, false, Some(b"+09")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ETC_GMT_PLUS_10: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -42488,7 +42490,7 @@ mod tzdata {
         &{
             const V: [LocalTimeType; 1] = [match LocalTimeType::new(-36000, false, Some(b"-10")) {
                 Ok(v) => v,
-                Err(e) => panic!("{}", e.0),
+                Err(_) => [][1],
             }];
             V
         },
@@ -42497,13 +42499,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-36000, false, Some(b"-10")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ETC_GMT_PLUS_11: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -42511,7 +42513,7 @@ mod tzdata {
         &{
             const V: [LocalTimeType; 1] = [match LocalTimeType::new(-39600, false, Some(b"-11")) {
                 Ok(v) => v,
-                Err(e) => panic!("{}", e.0),
+                Err(_) => [][1],
             }];
             V
         },
@@ -42520,13 +42522,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-39600, false, Some(b"-11")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ETC_GMT_PLUS_12: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -42534,7 +42536,7 @@ mod tzdata {
         &{
             const V: [LocalTimeType; 1] = [match LocalTimeType::new(-43200, false, Some(b"-12")) {
                 Ok(v) => v,
-                Err(e) => panic!("{}", e.0),
+                Err(_) => [][1],
             }];
             V
         },
@@ -42543,13 +42545,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-43200, false, Some(b"-12")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ETC_GMT_PLUS_2: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -42557,7 +42559,7 @@ mod tzdata {
         &{
             const V: [LocalTimeType; 1] = [match LocalTimeType::new(-7200, false, Some(b"-02")) {
                 Ok(v) => v,
-                Err(e) => panic!("{}", e.0),
+                Err(_) => [][1],
             }];
             V
         },
@@ -42566,13 +42568,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-7200, false, Some(b"-02")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ETC_GMT_PLUS_3: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -42580,7 +42582,7 @@ mod tzdata {
         &{
             const V: [LocalTimeType; 1] = [match LocalTimeType::new(-10800, false, Some(b"-03")) {
                 Ok(v) => v,
-                Err(e) => panic!("{}", e.0),
+                Err(_) => [][1],
             }];
             V
         },
@@ -42589,13 +42591,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-10800, false, Some(b"-03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ETC_GMT_PLUS_4: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -42603,7 +42605,7 @@ mod tzdata {
         &{
             const V: [LocalTimeType; 1] = [match LocalTimeType::new(-14400, false, Some(b"-04")) {
                 Ok(v) => v,
-                Err(e) => panic!("{}", e.0),
+                Err(_) => [][1],
             }];
             V
         },
@@ -42612,13 +42614,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-14400, false, Some(b"-04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ETC_GMT_PLUS_5: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -42626,7 +42628,7 @@ mod tzdata {
         &{
             const V: [LocalTimeType; 1] = [match LocalTimeType::new(-18000, false, Some(b"-05")) {
                 Ok(v) => v,
-                Err(e) => panic!("{}", e.0),
+                Err(_) => [][1],
             }];
             V
         },
@@ -42635,13 +42637,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-18000, false, Some(b"-05")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ETC_GMT_PLUS_6: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -42649,7 +42651,7 @@ mod tzdata {
         &{
             const V: [LocalTimeType; 1] = [match LocalTimeType::new(-21600, false, Some(b"-06")) {
                 Ok(v) => v,
-                Err(e) => panic!("{}", e.0),
+                Err(_) => [][1],
             }];
             V
         },
@@ -42658,13 +42660,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-21600, false, Some(b"-06")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ETC_GMT_PLUS_7: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -42672,7 +42674,7 @@ mod tzdata {
         &{
             const V: [LocalTimeType; 1] = [match LocalTimeType::new(-25200, false, Some(b"-07")) {
                 Ok(v) => v,
-                Err(e) => panic!("{}", e.0),
+                Err(_) => [][1],
             }];
             V
         },
@@ -42681,13 +42683,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-25200, false, Some(b"-07")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ETC_GMT_PLUS_8: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -42695,7 +42697,7 @@ mod tzdata {
         &{
             const V: [LocalTimeType; 1] = [match LocalTimeType::new(-28800, false, Some(b"-08")) {
                 Ok(v) => v,
-                Err(e) => panic!("{}", e.0),
+                Err(_) => [][1],
             }];
             V
         },
@@ -42704,13 +42706,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-28800, false, Some(b"-08")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ETC_GMT_PLUS_9: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -42718,7 +42720,7 @@ mod tzdata {
         &{
             const V: [LocalTimeType; 1] = [match LocalTimeType::new(-32400, false, Some(b"-09")) {
                 Ok(v) => v,
-                Err(e) => panic!("{}", e.0),
+                Err(_) => [][1],
             }];
             V
         },
@@ -42727,13 +42729,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-32400, false, Some(b"-09")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const EUROPE_AMSTERDAM: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -42840,31 +42842,31 @@ mod tzdata {
             const V: [LocalTimeType; 7] = [
                 match LocalTimeType::new(1172, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(4772, true, Some(b"NST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(1172, false, Some(b"AMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(1200, false, Some(b"+0020")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(4800, true, Some(b"+0120")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, false, Some(b"CET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, true, Some(b"CEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -42875,32 +42877,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(3600, false, Some(b"CET")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(7200, true, Some(b"CEST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     10800,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const EUROPE_ANDORRA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -42935,19 +42937,19 @@ mod tzdata {
             const V: [LocalTimeType; 4] = [
                 match LocalTimeType::new(364, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(0, false, Some(b"WET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, false, Some(b"CET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, true, Some(b"CEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -42958,32 +42960,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(3600, false, Some(b"CET")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(7200, true, Some(b"CEST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     10800,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const EUROPE_ASTRAKHAN: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -43057,23 +43059,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(11532, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, false, Some(b"+03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(18000, true, Some(b"+05")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(14400, false, Some(b"+04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(14400, true, Some(b"+04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -43083,13 +43085,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(14400, false, Some(b"+04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const EUROPE_ATHENS: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -43154,27 +43156,27 @@ mod tzdata {
             const V: [LocalTimeType; 6] = [
                 match LocalTimeType::new(5692, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(5692, false, Some(b"AMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, true, Some(b"EEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, false, Some(b"EET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, false, Some(b"CET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, true, Some(b"CEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -43185,32 +43187,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(7200, false, Some(b"EET")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(10800, true, Some(b"EEST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     10800,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     14400,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const EUROPE_BELFAST: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -43379,31 +43381,31 @@ mod tzdata {
             const V: [LocalTimeType; 7] = [
                 match LocalTimeType::new(-1420, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-1521, false, Some(b"DMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(2079, true, Some(b"IST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, true, Some(b"BST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(0, false, Some(b"GMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, true, Some(b"BDST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, false, Some(b"BST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -43414,32 +43416,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(0, false, Some(b"GMT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(3600, true, Some(b"BST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     3600,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const EUROPE_BELGRADE: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -43485,15 +43487,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(4920, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, false, Some(b"CET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, true, Some(b"CEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -43504,32 +43506,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(3600, false, Some(b"CET")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(7200, true, Some(b"CEST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     10800,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const EUROPE_BERLIN: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -43599,19 +43601,19 @@ mod tzdata {
             const V: [LocalTimeType; 4] = [
                 match LocalTimeType::new(3208, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, true, Some(b"CEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, false, Some(b"CET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, true, Some(b"CEMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -43622,32 +43624,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(3600, false, Some(b"CET")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(7200, true, Some(b"CEST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     10800,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const EUROPE_BRATISLAVA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -43718,23 +43720,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(3464, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3464, false, Some(b"PMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, true, Some(b"CEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, false, Some(b"CET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(0, true, Some(b"GMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -43745,32 +43747,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(3600, false, Some(b"CET")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(7200, true, Some(b"CEST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     10800,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const EUROPE_BRUSSELS: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -43882,27 +43884,27 @@ mod tzdata {
             const V: [LocalTimeType; 6] = [
                 match LocalTimeType::new(1050, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(1050, false, Some(b"BMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(0, false, Some(b"WET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, false, Some(b"CET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, true, Some(b"CEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, true, Some(b"WEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -43913,32 +43915,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(3600, false, Some(b"CET")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(7200, true, Some(b"CEST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     10800,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const EUROPE_BUCHAREST: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -44003,19 +44005,19 @@ mod tzdata {
             const V: [LocalTimeType; 4] = [
                 match LocalTimeType::new(6264, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(6264, false, Some(b"BMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, true, Some(b"EEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, false, Some(b"EET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -44026,32 +44028,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(7200, false, Some(b"EET")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(10800, true, Some(b"EEST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     10800,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     14400,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const EUROPE_BUDAPEST: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -44129,15 +44131,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(4580, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, true, Some(b"CEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, false, Some(b"CET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -44148,32 +44150,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(3600, false, Some(b"CET")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(7200, true, Some(b"CEST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     10800,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const EUROPE_BUSINGEN: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -44220,19 +44222,19 @@ mod tzdata {
             const V: [LocalTimeType; 4] = [
                 match LocalTimeType::new(2048, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(1786, false, Some(b"BMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, true, Some(b"CEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, false, Some(b"CET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -44243,32 +44245,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(3600, false, Some(b"CET")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(7200, true, Some(b"CEST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     10800,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const EUROPE_CHISINAU: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -44338,39 +44340,39 @@ mod tzdata {
             const V: [LocalTimeType; 9] = [
                 match LocalTimeType::new(6920, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(6900, false, Some(b"CMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(6264, false, Some(b"BMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, true, Some(b"EEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, false, Some(b"EET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, false, Some(b"CET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, true, Some(b"CEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(14400, true, Some(b"MSD")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, false, Some(b"MSK")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -44381,32 +44383,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(7200, false, Some(b"EET")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(10800, true, Some(b"EEST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     10800,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const EUROPE_COPENHAGEN: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -44467,19 +44469,19 @@ mod tzdata {
             const V: [LocalTimeType; 4] = [
                 match LocalTimeType::new(3020, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3020, false, Some(b"CMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, true, Some(b"CEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, false, Some(b"CET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -44490,32 +44492,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(3600, false, Some(b"CET")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(7200, true, Some(b"CEST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     10800,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const EUROPE_GIBRALTAR: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -44640,27 +44642,27 @@ mod tzdata {
             const V: [LocalTimeType; 6] = [
                 match LocalTimeType::new(-1284, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, true, Some(b"BST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(0, false, Some(b"GMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, true, Some(b"BDST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, false, Some(b"CET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, true, Some(b"CEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -44671,32 +44673,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(3600, false, Some(b"CET")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(7200, true, Some(b"CEST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     10800,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const EUROPE_GUERNSEY: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -44864,31 +44866,31 @@ mod tzdata {
             const V: [LocalTimeType; 7] = [
                 match LocalTimeType::new(-609, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, true, Some(b"BST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(0, false, Some(b"GMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, false, Some(b"CET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, true, Some(b"CEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, true, Some(b"BDST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, false, Some(b"BST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -44899,32 +44901,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(0, false, Some(b"GMT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(3600, true, Some(b"BST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     3600,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const EUROPE_HELSINKI: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -44969,19 +44971,19 @@ mod tzdata {
             const V: [LocalTimeType; 4] = [
                 match LocalTimeType::new(5989, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(5989, false, Some(b"HMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, true, Some(b"EEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, false, Some(b"EET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -44992,32 +44994,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(7200, false, Some(b"EET")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(10800, true, Some(b"EEST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     10800,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     14400,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const EUROPE_ISLE_OF_MAN: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -45186,23 +45188,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(-1075, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, true, Some(b"BST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(0, false, Some(b"GMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, true, Some(b"BDST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, false, Some(b"BST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -45213,32 +45215,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(0, false, Some(b"GMT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(3600, true, Some(b"BST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     3600,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const EUROPE_JERSEY: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -45406,31 +45408,31 @@ mod tzdata {
             const V: [LocalTimeType; 7] = [
                 match LocalTimeType::new(-506, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, true, Some(b"BST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(0, false, Some(b"GMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, false, Some(b"CET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, true, Some(b"CEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, true, Some(b"BDST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, false, Some(b"BST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -45441,32 +45443,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(0, false, Some(b"GMT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(3600, true, Some(b"BST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     3600,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const EUROPE_KALININGRAD: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -45556,35 +45558,35 @@ mod tzdata {
             const V: [LocalTimeType; 8] = [
                 match LocalTimeType::new(4920, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, true, Some(b"CEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, false, Some(b"CET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, true, Some(b"EEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, false, Some(b"EET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(14400, true, Some(b"MSD")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, false, Some(b"MSK")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, false, Some(b"+03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -45594,13 +45596,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(7200, false, Some(b"EET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const EUROPE_KIEV: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -45649,35 +45651,35 @@ mod tzdata {
             const V: [LocalTimeType; 8] = [
                 match LocalTimeType::new(7324, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7324, false, Some(b"KMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, false, Some(b"EET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, false, Some(b"MSK")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, false, Some(b"CET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, true, Some(b"CEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(14400, true, Some(b"MSD")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, true, Some(b"EEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -45688,32 +45690,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(7200, false, Some(b"EET")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(10800, true, Some(b"EEST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     10800,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     14400,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const EUROPE_KIROV: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -45786,23 +45788,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(11928, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, false, Some(b"+03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(18000, true, Some(b"+05")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(14400, false, Some(b"+04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(14400, true, Some(b"+04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -45812,13 +45814,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(10800, false, Some(b"+03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const EUROPE_LJUBLJANA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -45864,15 +45866,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(3484, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, false, Some(b"CET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, true, Some(b"CEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -45883,32 +45885,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(3600, false, Some(b"CET")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(7200, true, Some(b"CEST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     10800,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const EUROPE_LUXEMBOURG: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -46018,31 +46020,31 @@ mod tzdata {
             const V: [LocalTimeType; 7] = [
                 match LocalTimeType::new(1476, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, true, Some(b"CEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, false, Some(b"CET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, true, Some(b"WEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(0, false, Some(b"WET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, false, Some(b"WET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, true, Some(b"WEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -46053,32 +46055,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(3600, false, Some(b"CET")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(7200, true, Some(b"CEST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     10800,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const EUROPE_MADRID: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -46167,27 +46169,27 @@ mod tzdata {
             const V: [LocalTimeType; 6] = [
                 match LocalTimeType::new(-884, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, true, Some(b"WEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(0, false, Some(b"WET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, true, Some(b"WEMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, true, Some(b"CEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, false, Some(b"CET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -46198,32 +46200,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(3600, false, Some(b"CET")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(7200, true, Some(b"CEST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     10800,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const EUROPE_MALTA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -46319,15 +46321,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(3484, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, true, Some(b"CEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, false, Some(b"CET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -46338,32 +46340,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(3600, false, Some(b"CET")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(7200, true, Some(b"CEST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     10800,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const EUROPE_MINSK: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -46441,39 +46443,39 @@ mod tzdata {
             const V: [LocalTimeType; 9] = [
                 match LocalTimeType::new(6616, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(6600, false, Some(b"MMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, false, Some(b"EET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, false, Some(b"MSK")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, false, Some(b"CET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, true, Some(b"CEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(14400, true, Some(b"MSD")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, true, Some(b"EEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, false, Some(b"+03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -46483,13 +46485,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(10800, false, Some(b"+03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const EUROPE_MONACO: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -46601,31 +46603,31 @@ mod tzdata {
             const V: [LocalTimeType; 7] = [
                 match LocalTimeType::new(1772, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(561, false, Some(b"PMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, true, Some(b"WEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(0, false, Some(b"WET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, true, Some(b"WEMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, true, Some(b"CEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, false, Some(b"CET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -46636,32 +46638,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(3600, false, Some(b"CET")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(7200, true, Some(b"CEST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     10800,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const EUROPE_PARIS: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -46772,31 +46774,31 @@ mod tzdata {
             const V: [LocalTimeType; 7] = [
                 match LocalTimeType::new(561, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(561, false, Some(b"PMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, true, Some(b"WEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(0, false, Some(b"WET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, false, Some(b"CET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, true, Some(b"CEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, true, Some(b"WEMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -46807,32 +46809,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(3600, false, Some(b"CET")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(7200, true, Some(b"CEST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     10800,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const EUROPE_RIGA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -46895,39 +46897,39 @@ mod tzdata {
             const V: [LocalTimeType; 9] = [
                 match LocalTimeType::new(5794, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(5794, false, Some(b"RMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(9394, true, Some(b"LST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, false, Some(b"EET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, false, Some(b"MSK")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, false, Some(b"CET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, true, Some(b"CEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(14400, true, Some(b"MSD")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, true, Some(b"EEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -46938,32 +46940,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(7200, false, Some(b"EET")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(10800, true, Some(b"EEST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     10800,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     14400,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const EUROPE_ROME: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -47060,19 +47062,19 @@ mod tzdata {
             const V: [LocalTimeType; 4] = [
                 match LocalTimeType::new(2996, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(2996, false, Some(b"RMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, true, Some(b"CEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, false, Some(b"CET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -47083,32 +47085,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(3600, false, Some(b"CET")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(7200, true, Some(b"CEST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     10800,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const EUROPE_SAMARA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -47182,27 +47184,27 @@ mod tzdata {
             const V: [LocalTimeType; 6] = [
                 match LocalTimeType::new(12020, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, false, Some(b"+03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(14400, false, Some(b"+04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(18000, true, Some(b"+05")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(14400, true, Some(b"+04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, true, Some(b"+03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -47212,13 +47214,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(14400, false, Some(b"+04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const EUROPE_SARAJEVO: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -47264,15 +47266,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(4420, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, false, Some(b"CET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, true, Some(b"CEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -47283,32 +47285,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(3600, false, Some(b"CET")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(7200, true, Some(b"CEST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     10800,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const EUROPE_SARATOV: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -47382,23 +47384,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(11058, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, false, Some(b"+03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(18000, true, Some(b"+05")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(14400, false, Some(b"+04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(14400, true, Some(b"+04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -47408,13 +47410,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(14400, false, Some(b"+04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const EUROPE_SIMFEROPOL: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -47499,39 +47501,39 @@ mod tzdata {
             const V: [LocalTimeType; 9] = [
                 match LocalTimeType::new(8184, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(8160, false, Some(b"SMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, false, Some(b"EET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, false, Some(b"MSK")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, false, Some(b"CET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, true, Some(b"CEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(14400, true, Some(b"MSD")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, true, Some(b"EEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(14400, false, Some(b"MSK")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -47541,13 +47543,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(10800, false, Some(b"MSK")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const EUROPE_SKOPJE: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -47593,15 +47595,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(5144, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, false, Some(b"CET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, true, Some(b"CEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -47612,32 +47614,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(3600, false, Some(b"CET")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(7200, true, Some(b"CEST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     10800,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const EUROPE_SOFIA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -47692,27 +47694,27 @@ mod tzdata {
             const V: [LocalTimeType; 6] = [
                 match LocalTimeType::new(5596, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7016, false, Some(b"IMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, false, Some(b"EET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, false, Some(b"CET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, true, Some(b"CEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, true, Some(b"EEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -47723,32 +47725,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(7200, false, Some(b"EET")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(10800, true, Some(b"EEST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     10800,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     14400,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const EUROPE_STOCKHOLM: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -47795,19 +47797,19 @@ mod tzdata {
             const V: [LocalTimeType; 4] = [
                 match LocalTimeType::new(4332, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3614, false, Some(b"SET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, false, Some(b"CET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, true, Some(b"CEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -47818,32 +47820,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(3600, false, Some(b"CET")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(7200, true, Some(b"CEST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     10800,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const EUROPE_TALLINN: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -47905,35 +47907,35 @@ mod tzdata {
             const V: [LocalTimeType; 8] = [
                 match LocalTimeType::new(5940, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(5940, false, Some(b"TMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, true, Some(b"CEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, false, Some(b"CET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, false, Some(b"EET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, false, Some(b"MSK")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(14400, true, Some(b"MSD")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, true, Some(b"EEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -47944,32 +47946,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(7200, false, Some(b"EET")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(10800, true, Some(b"EEST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     10800,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     14400,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const EUROPE_TIRANE: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -48029,15 +48031,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(4760, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, false, Some(b"CET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, true, Some(b"CEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -48048,32 +48050,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(3600, false, Some(b"CET")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(7200, true, Some(b"CEST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     10800,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const EUROPE_TIRASPOL: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -48170,39 +48172,39 @@ mod tzdata {
             const V: [LocalTimeType; 9] = [
                 match LocalTimeType::new(7112, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(6900, false, Some(b"CMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(6264, false, Some(b"BMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, true, Some(b"EEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, false, Some(b"EET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, false, Some(b"CET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, true, Some(b"CEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(14400, true, Some(b"MSD")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, false, Some(b"MSK")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -48212,13 +48214,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(10800, false, Some(b"MSK")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const EUROPE_ULYANOVSK: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -48294,31 +48296,31 @@ mod tzdata {
             const V: [LocalTimeType; 7] = [
                 match LocalTimeType::new(11616, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, false, Some(b"+03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(18000, true, Some(b"+05")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(14400, false, Some(b"+04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(14400, true, Some(b"+04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, true, Some(b"+03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, false, Some(b"+02")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -48328,13 +48330,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(14400, false, Some(b"+04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const EUROPE_UZHGOROD: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -48382,31 +48384,31 @@ mod tzdata {
             const V: [LocalTimeType; 7] = [
                 match LocalTimeType::new(5352, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, false, Some(b"CET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, true, Some(b"CEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(14400, true, Some(b"MSD")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, false, Some(b"MSK")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, false, Some(b"EET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, true, Some(b"EEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -48417,32 +48419,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(7200, false, Some(b"EET")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(10800, true, Some(b"EEST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     10800,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     14400,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const EUROPE_VADUZ: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -48488,15 +48490,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(2284, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, true, Some(b"CEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, false, Some(b"CET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -48507,32 +48509,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(3600, false, Some(b"CET")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(7200, true, Some(b"CEST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     10800,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const EUROPE_VIENNA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -48598,15 +48600,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(3921, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, true, Some(b"CEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, false, Some(b"CET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -48617,32 +48619,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(3600, false, Some(b"CET")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(7200, true, Some(b"CEST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     10800,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const EUROPE_VILNIUS: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -48703,39 +48705,39 @@ mod tzdata {
             const V: [LocalTimeType; 9] = [
                 match LocalTimeType::new(6076, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(5040, false, Some(b"WMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(5736, false, Some(b"KMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, false, Some(b"CET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, false, Some(b"EET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, false, Some(b"MSK")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, true, Some(b"CEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(14400, true, Some(b"MSD")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, true, Some(b"EEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -48746,32 +48748,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(7200, false, Some(b"EET")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(10800, true, Some(b"EEST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     10800,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     14400,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const EUROPE_VOLGOGRAD: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -48846,23 +48848,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(10660, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, false, Some(b"+03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(14400, false, Some(b"+04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(18000, true, Some(b"+05")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(14400, true, Some(b"+04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -48872,13 +48874,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(10800, false, Some(b"+03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const EUROPE_ZAGREB: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -48924,15 +48926,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(3832, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, false, Some(b"CET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, true, Some(b"CEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -48943,32 +48945,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(3600, false, Some(b"CET")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(7200, true, Some(b"CEST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     10800,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const EUROPE_ZAPOROZHYE: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -49018,35 +49020,35 @@ mod tzdata {
             const V: [LocalTimeType; 8] = [
                 match LocalTimeType::new(8440, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(8400, false, Some(b"+0220")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, false, Some(b"EET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, false, Some(b"MSK")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, false, Some(b"CET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, true, Some(b"CEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(14400, true, Some(b"MSD")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, true, Some(b"EEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -49057,32 +49059,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(7200, false, Some(b"EET")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(10800, true, Some(b"EEST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     10800,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     14400,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const FACTORY: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -49090,7 +49092,7 @@ mod tzdata {
         &{
             const V: [LocalTimeType; 1] = [match LocalTimeType::new(0, false, Some(b"-00")) {
                 Ok(v) => v,
-                Err(e) => panic!("{}", e.0),
+                Err(_) => [][1],
             }];
             V
         },
@@ -49099,13 +49101,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(0, false, Some(b"-00")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const GB: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -49274,23 +49276,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(-75, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, true, Some(b"BST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(0, false, Some(b"GMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, true, Some(b"BDST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, false, Some(b"BST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -49301,32 +49303,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(0, false, Some(b"GMT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(3600, true, Some(b"BST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     3600,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const GMT: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -49334,7 +49336,7 @@ mod tzdata {
         &{
             const V: [LocalTimeType; 1] = [match LocalTimeType::new(0, false, Some(b"GMT")) {
                 Ok(v) => v,
-                Err(e) => panic!("{}", e.0),
+                Err(_) => [][1],
             }];
             V
         },
@@ -49343,13 +49345,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(0, false, Some(b"GMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const HONGKONG: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -49428,23 +49430,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(27402, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(28800, false, Some(b"HKT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(32400, true, Some(b"HKST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(30600, true, Some(b"HKWT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(32400, false, Some(b"JST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -49454,13 +49456,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(28800, false, Some(b"HKT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const HST: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -49468,7 +49470,7 @@ mod tzdata {
         &{
             const V: [LocalTimeType; 1] = [match LocalTimeType::new(-36000, false, Some(b"HST")) {
                 Ok(v) => v,
-                Err(e) => panic!("{}", e.0),
+                Err(_) => [][1],
             }];
             V
         },
@@ -49477,13 +49479,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-36000, false, Some(b"HST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ICELAND: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -49561,19 +49563,19 @@ mod tzdata {
             const V: [LocalTimeType; 4] = [
                 match LocalTimeType::new(-5280, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(0, true, Some(b"+00")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-3600, false, Some(b"-01")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(0, false, Some(b"GMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -49583,13 +49585,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(0, false, Some(b"GMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const INDIAN_ANTANANARIVO: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -49602,15 +49604,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(11404, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, false, Some(b"EAT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(14400, true, Some(b"EAST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -49620,13 +49622,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(10800, false, Some(b"EAT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const INDIAN_CHAGOS: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -49638,15 +49640,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(17380, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(18000, false, Some(b"+05")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(21600, false, Some(b"+06")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -49656,13 +49658,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(21600, false, Some(b"+06")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const INDIAN_CHRISTMAS: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -49671,11 +49673,11 @@ mod tzdata {
             const V: [LocalTimeType; 2] = [
                 match LocalTimeType::new(25372, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(25200, false, Some(b"+07")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -49685,13 +49687,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(25200, false, Some(b"+07")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const INDIAN_COCOS: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -49700,11 +49702,11 @@ mod tzdata {
             const V: [LocalTimeType; 2] = [
                 match LocalTimeType::new(23260, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(23400, false, Some(b"+0630")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -49714,13 +49716,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(23400, false, Some(b"+0630")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const INDIAN_COMORO: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -49729,11 +49731,11 @@ mod tzdata {
             const V: [LocalTimeType; 2] = [
                 match LocalTimeType::new(10384, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, false, Some(b"EAT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -49743,13 +49745,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(10800, false, Some(b"EAT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const INDIAN_KERGUELEN: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -49758,11 +49760,11 @@ mod tzdata {
             const V: [LocalTimeType; 2] = [
                 match LocalTimeType::new(0, false, Some(b"-00")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(18000, false, Some(b"+05")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -49772,13 +49774,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(18000, false, Some(b"+05")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const INDIAN_MAHE: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -49787,11 +49789,11 @@ mod tzdata {
             const V: [LocalTimeType; 2] = [
                 match LocalTimeType::new(13308, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(14400, false, Some(b"+04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -49801,13 +49803,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(14400, false, Some(b"+04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const INDIAN_MALDIVES: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -49819,15 +49821,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(17640, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(17640, false, Some(b"MMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(18000, false, Some(b"+05")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -49837,13 +49839,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(18000, false, Some(b"+05")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const INDIAN_MAURITIUS: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -49858,15 +49860,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(13800, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(18000, true, Some(b"+05")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(14400, false, Some(b"+04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -49876,13 +49878,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(14400, false, Some(b"+04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const INDIAN_MAYOTTE: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -49891,11 +49893,11 @@ mod tzdata {
             const V: [LocalTimeType; 2] = [
                 match LocalTimeType::new(10856, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, false, Some(b"EAT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -49905,13 +49907,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(10800, false, Some(b"EAT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const INDIAN_REUNION: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -49920,11 +49922,11 @@ mod tzdata {
             const V: [LocalTimeType; 2] = [
                 match LocalTimeType::new(13312, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(14400, false, Some(b"+04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -49934,13 +49936,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(14400, false, Some(b"+04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const IRAN: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -50151,27 +50153,27 @@ mod tzdata {
             const V: [LocalTimeType; 6] = [
                 match LocalTimeType::new(12344, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(12344, false, Some(b"TMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(12600, false, Some(b"+0330")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(18000, true, Some(b"+05")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(14400, false, Some(b"+04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(16200, true, Some(b"+0430")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -50182,32 +50184,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(12600, false, Some(b"+0330")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(16200, true, Some(b"+0430")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::Julian1WithoutLeap(match Julian1WithoutLeap::new(79) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     86400,
                     RuleDay::Julian1WithoutLeap(match Julian1WithoutLeap::new(263) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     86400,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ISRAEL: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -50317,23 +50319,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(8454, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(8440, false, Some(b"JMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, true, Some(b"IDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, false, Some(b"IST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(14400, true, Some(b"IDDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -50344,32 +50346,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(7200, false, Some(b"IST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(10800, true, Some(b"IDT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 4, 4) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     93600,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const JAMAICA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -50401,19 +50403,19 @@ mod tzdata {
             const V: [LocalTimeType; 4] = [
                 match LocalTimeType::new(-18430, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18430, false, Some(b"KMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, false, Some(b"EST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-14400, true, Some(b"EDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -50423,13 +50425,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-18000, false, Some(b"EST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const JAPAN: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -50448,15 +50450,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(33539, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(36000, true, Some(b"JDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(32400, false, Some(b"JST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -50466,13 +50468,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(32400, false, Some(b"JST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const KWAJALEIN: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -50488,27 +50490,27 @@ mod tzdata {
             const V: [LocalTimeType; 6] = [
                 match LocalTimeType::new(40160, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(39600, false, Some(b"+11")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(36000, false, Some(b"+10")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(32400, false, Some(b"+09")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-43200, false, Some(b"-12")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(43200, false, Some(b"+12")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -50518,13 +50520,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(43200, false, Some(b"+12")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const LIBYA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -50566,19 +50568,19 @@ mod tzdata {
             const V: [LocalTimeType; 4] = [
                 match LocalTimeType::new(3164, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, true, Some(b"CEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, false, Some(b"CET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, false, Some(b"EET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -50588,13 +50590,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(7200, false, Some(b"EET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const MET: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -50657,11 +50659,11 @@ mod tzdata {
             const V: [LocalTimeType; 2] = [
                 match LocalTimeType::new(3600, false, Some(b"MET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, true, Some(b"MEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -50672,32 +50674,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(3600, false, Some(b"MET")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(7200, true, Some(b"MEST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     10800,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const MST: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -50705,7 +50707,7 @@ mod tzdata {
         &{
             const V: [LocalTimeType; 1] = [match LocalTimeType::new(-25200, false, Some(b"MST")) {
                 Ok(v) => v,
-                Err(e) => panic!("{}", e.0),
+                Err(_) => [][1],
             }];
             V
         },
@@ -50714,13 +50716,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-25200, false, Some(b"MST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const MST_7_MDT: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -50818,19 +50820,19 @@ mod tzdata {
             const V: [LocalTimeType; 4] = [
                 match LocalTimeType::new(-25200, false, Some(b"MST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-21600, true, Some(b"MDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-21600, true, Some(b"MWT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-21600, true, Some(b"MPT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -50841,32 +50843,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(-25200, false, Some(b"MST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(-21600, true, Some(b"MDT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 2, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(11, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const NAVAJO: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -50973,23 +50975,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(-25196, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-21600, true, Some(b"MDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-25200, false, Some(b"MST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-21600, true, Some(b"MWT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-21600, true, Some(b"MPT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -51000,32 +51002,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(-25200, false, Some(b"MST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(-21600, true, Some(b"MDT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 2, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(11, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const NZ: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -51131,27 +51133,27 @@ mod tzdata {
             const V: [LocalTimeType; 6] = [
                 match LocalTimeType::new(41944, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(45000, true, Some(b"NZST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(41400, false, Some(b"NZMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(43200, true, Some(b"NZST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(46800, true, Some(b"NZDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(43200, false, Some(b"NZST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -51162,32 +51164,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(43200, false, Some(b"NZST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(46800, true, Some(b"NZDT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(9, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(4, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     10800,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const NZ_CHAT: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -51266,19 +51268,19 @@ mod tzdata {
             const V: [LocalTimeType; 4] = [
                 match LocalTimeType::new(44028, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(44100, false, Some(b"+1215")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(49500, true, Some(b"+1345")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(45900, false, Some(b"+1245")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -51289,32 +51291,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(45900, false, Some(b"+1245")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(49500, true, Some(b"+1345")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(9, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     9900,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(4, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     13500,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const PACIFIC_APIA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -51350,31 +51352,31 @@ mod tzdata {
             const V: [LocalTimeType; 7] = [
                 match LocalTimeType::new(45184, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-41216, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-41400, false, Some(b"-1130")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-36000, true, Some(b"-10")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-39600, false, Some(b"-11")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(46800, false, Some(b"+13")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(50400, true, Some(b"+14")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -51384,13 +51386,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(46800, false, Some(b"+13")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const PACIFIC_BOUGAINVILLE: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -51405,23 +51407,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(37336, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(35312, false, Some(b"PMMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(36000, false, Some(b"+10")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(32400, false, Some(b"+09")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(39600, false, Some(b"+11")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -51431,13 +51433,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(39600, false, Some(b"+11")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const PACIFIC_CHUUK: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -51453,19 +51455,19 @@ mod tzdata {
             const V: [LocalTimeType; 4] = [
                 match LocalTimeType::new(-49972, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(36428, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(36000, false, Some(b"+10")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(32400, false, Some(b"+09")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -51475,13 +51477,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(36000, false, Some(b"+10")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const PACIFIC_EFATE: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -51514,15 +51516,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(40396, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(43200, true, Some(b"+12")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(39600, false, Some(b"+11")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -51532,13 +51534,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(39600, false, Some(b"+11")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const PACIFIC_ENDERBURY: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -51552,15 +51554,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(0, false, Some(b"-00")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-41060, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-43200, false, Some(b"-12")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -51570,13 +51572,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(0, false, Some(b"-00")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const PACIFIC_FAKAOFO: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -51588,15 +51590,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(-41096, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-39600, false, Some(b"-11")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(46800, false, Some(b"+13")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -51606,13 +51608,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(46800, false, Some(b"+13")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const PACIFIC_FIJI: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -51652,15 +51654,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(42944, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(46800, true, Some(b"+13")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(43200, false, Some(b"+12")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -51671,32 +51673,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(43200, false, Some(b"+12")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(46800, true, Some(b"+13")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(11, 2, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(1, 2, 3) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     356400,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const PACIFIC_FUNAFUTI: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -51705,11 +51707,11 @@ mod tzdata {
             const V: [LocalTimeType; 2] = [
                 match LocalTimeType::new(43012, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(43200, false, Some(b"+12")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -51719,13 +51721,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(43200, false, Some(b"+12")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const PACIFIC_GALAPAGOS: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -51739,19 +51741,19 @@ mod tzdata {
             const V: [LocalTimeType; 4] = [
                 match LocalTimeType::new(-21504, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, false, Some(b"-05")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-18000, true, Some(b"-05")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-21600, false, Some(b"-06")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -51761,13 +51763,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-21600, false, Some(b"-06")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const PACIFIC_GAMBIER: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -51776,11 +51778,11 @@ mod tzdata {
             const V: [LocalTimeType; 2] = [
                 match LocalTimeType::new(-32388, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-32400, false, Some(b"-09")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -51790,13 +51792,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-32400, false, Some(b"-09")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const PACIFIC_GUADALCANAL: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -51805,11 +51807,11 @@ mod tzdata {
             const V: [LocalTimeType; 2] = [
                 match LocalTimeType::new(38388, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(39600, false, Some(b"+11")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -51819,13 +51821,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(39600, false, Some(b"+11")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const PACIFIC_GUAM: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -51856,27 +51858,27 @@ mod tzdata {
             const V: [LocalTimeType; 6] = [
                 match LocalTimeType::new(-51660, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(34740, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(36000, false, Some(b"GST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(32400, false, Some(b"+09")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(39600, true, Some(b"GDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(36000, false, Some(b"ChST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -51886,13 +51888,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(36000, false, Some(b"ChST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const PACIFIC_HONOLULU: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -51909,27 +51911,27 @@ mod tzdata {
             const V: [LocalTimeType; 6] = [
                 match LocalTimeType::new(-37886, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-37800, false, Some(b"HST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-34200, true, Some(b"HDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-34200, true, Some(b"HWT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-34200, true, Some(b"HPT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-36000, false, Some(b"HST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -51939,13 +51941,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-36000, false, Some(b"HST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const PACIFIC_KANTON: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -51958,19 +51960,19 @@ mod tzdata {
             const V: [LocalTimeType; 4] = [
                 match LocalTimeType::new(0, false, Some(b"-00")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-43200, false, Some(b"-12")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-39600, false, Some(b"-11")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(46800, false, Some(b"+13")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -51980,13 +51982,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(46800, false, Some(b"+13")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const PACIFIC_KIRITIMATI: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -51999,19 +52001,19 @@ mod tzdata {
             const V: [LocalTimeType; 4] = [
                 match LocalTimeType::new(-37760, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-38400, false, Some(b"-1040")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-36000, false, Some(b"-10")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(50400, false, Some(b"+14")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -52021,13 +52023,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(50400, false, Some(b"+14")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const PACIFIC_KOSRAE: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -52046,27 +52048,27 @@ mod tzdata {
             const V: [LocalTimeType; 6] = [
                 match LocalTimeType::new(-47284, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(39116, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(39600, false, Some(b"+11")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(32400, false, Some(b"+09")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(36000, false, Some(b"+10")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(43200, false, Some(b"+12")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -52076,13 +52078,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(39600, false, Some(b"+11")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const PACIFIC_MAJURO: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -52099,23 +52101,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(41088, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(39600, false, Some(b"+11")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(32400, false, Some(b"+09")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(36000, false, Some(b"+10")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(43200, false, Some(b"+12")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -52125,13 +52127,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(43200, false, Some(b"+12")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const PACIFIC_MARQUESAS: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -52140,11 +52142,11 @@ mod tzdata {
             const V: [LocalTimeType; 2] = [
                 match LocalTimeType::new(-33480, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-34200, false, Some(b"-0930")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -52154,13 +52156,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-34200, false, Some(b"-0930")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const PACIFIC_MIDWAY: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -52173,15 +52175,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(-42568, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-39600, false, Some(b"-11")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-36000, true, Some(b"-10")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -52191,13 +52193,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-39600, false, Some(b"-11")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const PACIFIC_NAURU: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -52211,19 +52213,19 @@ mod tzdata {
             const V: [LocalTimeType; 4] = [
                 match LocalTimeType::new(40060, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(41400, false, Some(b"+1130")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(32400, false, Some(b"+09")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(43200, false, Some(b"+12")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -52233,13 +52235,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(43200, false, Some(b"+12")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const PACIFIC_NIUE: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -52251,15 +52253,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(-40780, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-40800, false, Some(b"-1120")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-39600, false, Some(b"-11")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -52269,13 +52271,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-39600, false, Some(b"-11")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const PACIFIC_NORFOLK: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -52291,27 +52293,27 @@ mod tzdata {
             const V: [LocalTimeType; 6] = [
                 match LocalTimeType::new(40312, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(40320, false, Some(b"+1112")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(41400, false, Some(b"+1130")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(45000, true, Some(b"+1230")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(39600, false, Some(b"+11")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(43200, true, Some(b"+12")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -52322,32 +52324,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(39600, false, Some(b"+11")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(43200, true, Some(b"+12")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(4, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     10800,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const PACIFIC_NOUMEA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -52364,15 +52366,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(39948, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(43200, true, Some(b"+12")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(39600, false, Some(b"+11")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -52382,13 +52384,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(39600, false, Some(b"+11")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const PACIFIC_PAGO_PAGO: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -52400,15 +52402,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(45432, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-40968, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-39600, false, Some(b"SST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -52418,13 +52420,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-39600, false, Some(b"SST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const PACIFIC_PALAU: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -52436,15 +52438,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(-54124, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(32276, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(32400, false, Some(b"+09")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -52454,13 +52456,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(32400, false, Some(b"+09")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const PACIFIC_PITCAIRN: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -52472,15 +52474,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(-31220, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-30600, false, Some(b"-0830")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-28800, false, Some(b"-08")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -52490,13 +52492,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-28800, false, Some(b"-08")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const PACIFIC_POHNPEI: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -52513,23 +52515,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(-48428, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(37972, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(39600, false, Some(b"+11")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(32400, false, Some(b"+09")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(36000, false, Some(b"+10")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -52539,13 +52541,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(39600, false, Some(b"+11")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const PACIFIC_PORT_MORESBY: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -52557,15 +52559,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(35320, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(35312, false, Some(b"PMMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(36000, false, Some(b"+10")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -52575,13 +52577,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(36000, false, Some(b"+10")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const PACIFIC_RAROTONGA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -52619,23 +52621,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(48056, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-38344, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-37800, false, Some(b"-1030")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-36000, false, Some(b"-10")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-34200, true, Some(b"-0930")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -52645,13 +52647,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-36000, false, Some(b"-10")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const PACIFIC_SAIPAN: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -52665,23 +52667,23 @@ mod tzdata {
             const V: [LocalTimeType; 5] = [
                 match LocalTimeType::new(-51420, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(34980, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(32400, false, Some(b"+09")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(36000, false, Some(b"+10")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(36000, false, Some(b"ChST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -52691,13 +52693,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(36000, false, Some(b"ChST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const PACIFIC_TAHITI: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -52706,11 +52708,11 @@ mod tzdata {
             const V: [LocalTimeType; 2] = [
                 match LocalTimeType::new(-35896, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-36000, false, Some(b"-10")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -52720,13 +52722,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-36000, false, Some(b"-10")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const PACIFIC_TARAWA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -52735,11 +52737,11 @@ mod tzdata {
             const V: [LocalTimeType; 2] = [
                 match LocalTimeType::new(41524, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(43200, false, Some(b"+12")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -52749,13 +52751,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(43200, false, Some(b"+12")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const PACIFIC_TONGATAPU: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -52775,19 +52777,19 @@ mod tzdata {
             const V: [LocalTimeType; 4] = [
                 match LocalTimeType::new(44352, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(44400, false, Some(b"+1220")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(46800, false, Some(b"+13")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(50400, true, Some(b"+14")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -52797,13 +52799,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(46800, false, Some(b"+13")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const PACIFIC_WAKE: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -52812,11 +52814,11 @@ mod tzdata {
             const V: [LocalTimeType; 2] = [
                 match LocalTimeType::new(39988, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(43200, false, Some(b"+12")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -52826,13 +52828,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(43200, false, Some(b"+12")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const PACIFIC_WALLIS: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -52841,11 +52843,11 @@ mod tzdata {
             const V: [LocalTimeType; 2] = [
                 match LocalTimeType::new(44120, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(43200, false, Some(b"+12")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -52855,13 +52857,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(43200, false, Some(b"+12")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const POLAND: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -52953,27 +52955,27 @@ mod tzdata {
             const V: [LocalTimeType; 6] = [
                 match LocalTimeType::new(5040, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(5040, false, Some(b"WMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, true, Some(b"CEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, false, Some(b"CET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, true, Some(b"EEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, false, Some(b"EET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -52984,32 +52986,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(3600, false, Some(b"CET")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(7200, true, Some(b"CEST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     10800,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const PORTUGAL: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -53160,27 +53162,27 @@ mod tzdata {
             const V: [LocalTimeType; 6] = [
                 match LocalTimeType::new(-2205, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, true, Some(b"WEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(0, false, Some(b"WET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, true, Some(b"WEMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, false, Some(b"CET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, true, Some(b"CEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -53191,32 +53193,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(0, false, Some(b"WET")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(3600, true, Some(b"WEST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     3600,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const PRC: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -53255,15 +53257,15 @@ mod tzdata {
             const V: [LocalTimeType; 3] = [
                 match LocalTimeType::new(29143, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(32400, true, Some(b"CDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(28800, false, Some(b"CST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -53273,13 +53275,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(28800, false, Some(b"CST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const PST_8_PDT: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -53377,19 +53379,19 @@ mod tzdata {
             const V: [LocalTimeType; 4] = [
                 match LocalTimeType::new(-28800, false, Some(b"PST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-25200, true, Some(b"PDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-25200, true, Some(b"PWT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(-25200, true, Some(b"PPT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -53400,32 +53402,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(-28800, false, Some(b"PST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(-25200, true, Some(b"PDT")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 2, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(11, 1, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ROC: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -53476,19 +53478,19 @@ mod tzdata {
             const V: [LocalTimeType; 4] = [
                 match LocalTimeType::new(29160, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(28800, false, Some(b"CST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(32400, false, Some(b"JST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(32400, true, Some(b"CDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -53498,13 +53500,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(28800, false, Some(b"CST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const ROK: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -53543,27 +53545,27 @@ mod tzdata {
             const V: [LocalTimeType; 6] = [
                 match LocalTimeType::new(30472, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(30600, false, Some(b"KST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(32400, false, Some(b"JST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(36000, true, Some(b"KDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(32400, false, Some(b"KST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(34200, true, Some(b"KDT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -53573,13 +53575,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(32400, false, Some(b"KST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const SINGAPORE: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -53597,35 +53599,35 @@ mod tzdata {
             const V: [LocalTimeType; 8] = [
                 match LocalTimeType::new(24925, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(24925, false, Some(b"SMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(25200, false, Some(b"+07")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(26400, true, Some(b"+0720")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(26400, false, Some(b"+0720")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(27000, false, Some(b"+0730")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(32400, false, Some(b"+09")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(28800, false, Some(b"+08")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -53635,13 +53637,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(28800, false, Some(b"+08")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const TURKEY: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -53766,27 +53768,27 @@ mod tzdata {
             const V: [LocalTimeType; 6] = [
                 match LocalTimeType::new(6952, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7016, false, Some(b"IMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, true, Some(b"EEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, false, Some(b"EET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, false, Some(b"+03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(14400, true, Some(b"+04")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -53796,13 +53798,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(10800, false, Some(b"+03")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const UCT: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -53810,7 +53812,7 @@ mod tzdata {
         &{
             const V: [LocalTimeType; 1] = [match LocalTimeType::new(0, false, Some(b"UTC")) {
                 Ok(v) => v,
-                Err(e) => panic!("{}", e.0),
+                Err(_) => [][1],
             }];
             V
         },
@@ -53819,13 +53821,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(0, false, Some(b"UTC")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const WET: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -53874,11 +53876,11 @@ mod tzdata {
             const V: [LocalTimeType; 2] = [
                 match LocalTimeType::new(0, false, Some(b"WET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(3600, true, Some(b"WEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -53889,32 +53891,32 @@ mod tzdata {
                 match AlternateTime::new(
                     match LocalTimeType::new(0, false, Some(b"WET")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     match LocalTimeType::new(3600, true, Some(b"WEST")) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     },
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     3600,
                     RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 0) {
                         Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
+                        Err(_) => [][1],
                     }),
                     7200,
                 ) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             );
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 
     pub(crate) const W_SU: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
@@ -54002,47 +54004,47 @@ mod tzdata {
             const V: [LocalTimeType; 11] = [
                 match LocalTimeType::new(9017, false, Some(b"LMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(9017, false, Some(b"MMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(12679, true, Some(b"MST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(9079, false, Some(b"MMT")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(16279, true, Some(b"MDST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(14400, true, Some(b"MSD")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, false, Some(b"MSK")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(18000, true, Some(b"+05")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(7200, false, Some(b"EET")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(10800, true, Some(b"EEST")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
                 match LocalTimeType::new(14400, false, Some(b"MSK")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 },
             ];
             V
@@ -54052,13 +54054,13 @@ mod tzdata {
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(10800, false, Some(b"MSK")) {
                     Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
+                    Err(_) => [][1],
                 });
             V
         }),
     ) {
         Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
+        Err(_) => [][1],
     };
 }
 

@@ -201,11 +201,7 @@ pub(crate) struct Unwrap<'a, T: fmt::Display>(pub(crate) &'a T);
 
 impl<'a, T: fmt::Display> fmt::Display for Unwrap<'a, T> {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        write!(
-            f,
-            r#"match {} {{ Ok(v) => v, Err(e) => panic!("{{}}", e.0) }}"#,
-            &self.0
-        )
+        write!(f, r#"match {} {{ Ok(v) => v, Err(_) => [][1] }}"#, &self.0)
     }
 }
 
