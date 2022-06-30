@@ -81,6 +81,10 @@ mod generated;
 mod lower;
 #[cfg(feature = "serde-as")]
 pub mod serde_as;
+#[cfg(all(test, feature = "by-name"))]
+mod test_by_name;
+#[cfg(all(test, not(miri), feature = "by-name"))]
+mod test_proptest;
 
 #[cfg(feature = "docsrs")]
 use serde;
@@ -141,77 +145,4 @@ pub const TZ_NAMES: &[&str] = &crate::generated::TIME_ZONES_LIST;
 #[cfg_attr(feature = "docsrs", doc(cfg(feature = "local")))]
 pub fn local_tz() -> Option<TimeZoneRef<'static>> {
     tz_by_name(&iana_time_zone::get_timezone().ok()?)
-}
-
-#[cfg(all(test, feature = "by-name"))]
-mod test_by_name {
-    use super::*;
-
-    #[test]
-    fn test_by_name() {
-        let _ = tz_by_name("Europe/Berlin").unwrap();
-        let _ = tz_by_name("America/Dominica").unwrap();
-    }
-
-    #[test]
-    fn test_by_absent_name() {
-        assert_eq!(tz_by_name("Berlin/Steglitz-Zehlendorf"), None);
-    }
-
-    #[test]
-    fn test_name_empty() {
-        assert_eq!(tz_by_name(""), None);
-    }
-
-    #[test]
-    fn test_name_too_long() {
-        assert_eq!(
-            tz_by_name(
-                "Pacific/Taumatawhakatangihangakoauauotamateaturipukakapikimaungahoronukupokaiwhenuakitanatahu"
-            ),
-            None,
-        );
-    }
-
-    #[test]
-    fn test_static() {
-        assert_eq!(
-            time_zone::pacific::NAURU,
-            tz_by_name("Pacific/Nauru").unwrap()
-        );
-    }
-
-    #[cfg(all(feature = "binary", feature = "by-name"))]
-    #[test]
-    fn test_raw_static() {
-        assert_eq!(
-            time_zone::pacific::RAW_NAURU,
-            raw_tz_by_name("Pacific/Nauru").unwrap()
-        );
-    }
-
-    #[test]
-    fn test_issue_49() {
-        assert_eq!(
-            time_zone::asia::HO_CHI_MINH,
-            tz_by_name("Asia/Ho_Chi_Minh").unwrap()
-        );
-        assert_eq!(
-            time_zone::asia::HO_CHI_MINH,
-            tz_by_name("asia/ho_chi_minh").unwrap()
-        );
-        assert_eq!(
-            time_zone::asia::HO_CHI_MINH,
-            tz_by_name("ASIA/HO_CHI_MINH").unwrap()
-        );
-        assert_eq!(
-            time_zone::asia::HO_CHI_MINH,
-            tz_by_name("aSIA/hO_cHI_mINH").unwrap()
-        );
-    }
-
-    #[test]
-    fn test_trailing_spaces() {
-        assert_eq!(None, tz_by_name("Pacific/Nauru "));
-    }
 }
