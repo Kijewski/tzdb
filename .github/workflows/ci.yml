@@ -100,10 +100,10 @@ jobs:
           toolchain: nightly
 
       - name: Update lockfile
-        run: cd tzdb && cargo generate-lockfile -Zminimal-versions
+        run: cargo generate-lockfile -Zminimal-versions
 
       - name: Test
-        run: cd tzdb && cargo test --all-targets --features testing -- --show-output
+        run: cargo test --all-targets --features testing -- --show-output
 
   miri:
     name: "Miri"

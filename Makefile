@@ -2,7 +2,7 @@
 
 TZDB_VERSION := tzdb-2022a
 
-tzdb/src/generated.rs: tmp/${TZDB_VERSION}/usr/share/zoneinfo/
+src/generated.rs: tmp/${TZDB_VERSION}/usr/share/zoneinfo/
 	cargo r --bin make-tzdb -- $@ $<
 	cargo +nightly fmt -- $@
 
