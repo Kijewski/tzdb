@@ -26,14 +26,12 @@ runs:
           ~/.rustup/downloads
           ~/.rustup/toolchains
           ~/.rustup/update-hashes
-        key: v3-rustup-${{ runner.os }}
+        key: v5-rustup-${{ runner.os }}
 
     - name: Install Toolchain
-      uses: actions-rs/toolchain@v1
+      uses: dtolnay/rust-toolchain@v1
       id: toolchain-install
       with:
-        profile: minimal
-        override: true
         toolchain: ${{ inputs.toolchain }}
         components: ${{ inputs.components }}
 
@@ -55,7 +53,7 @@ runs:
           ~/.cargo/bin/
           target/
         key: |
-          v3-${{ inputs.key }}-${{ runner.os }}-${{ inputs.toolchain }}-${{ steps.toolchain-install.outputs.rustc_hash }}-${{ hashFiles('Cargo.toml', 'Cargo.lock') }}
+          v5-${{ inputs.key }}-${{ runner.os }}-${{ inputs.toolchain }}-${{ steps.toolchain-install.outputs.cachekey }}-${{ hashFiles('**/Cargo.toml', 'Cargo.lock') }}
         restore-keys: |
-          v3-${{ inputs.key }}-${{ runner.os }}-${{ inputs.toolchain }}-${{ steps.toolchain-install.outputs.rustc_hash }}-
-          v3-${{ inputs.key }}-${{ runner.os }}-${{ inputs.toolchain }}-
+          v5-${{ inputs.key }}-${{ runner.os }}-${{ inputs.toolchain }}-${{ steps.toolchain-install.outputs.cachekey }}-
+          v5-${{ inputs.key }}-${{ runner.os }}-${{ inputs.toolchain }}-
