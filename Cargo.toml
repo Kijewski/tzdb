@@ -12,7 +12,7 @@ readme = "README.md"
 rust-version = "1.57"
 
 [dependencies]
-tz-rs = { version = "^0.6.10", features = ["const"] }
+tz-rs = { version = "^0.6.11", features = ["const"] }
 
 # optional dependencies
 byte-slice-cast = { version = "^1.0.0", optional = true }
