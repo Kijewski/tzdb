@@ -586,9 +586,9 @@ dependencies = [
 
 [[package]]
 name = "tz-rs"
-version = "0.6.10"
+version = "0.6.11"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1f3e4cde225c596cb96495478b4afbdc2d23e20218a18afbf64603a320a2c02b"
+checksum = "7eb454313e3d79601e2116bb6c7a93ec0eda1dbb52f9204f831f897204182c5f"
 dependencies = [
  "const_fn",
 ]
