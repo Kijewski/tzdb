@@ -24,7 +24,7 @@ jobs:
           toolchain: nightly
           components: rustfmt
 
-      - run: cargo fmt --all -- --check
+      - run: cargo +nightly fmt --all -- --check
 
   check:
     strategy:
@@ -50,10 +50,10 @@ jobs:
           components: clippy
 
       - name: Check
-        run: cargo check --workspace --all-targets --features testing
+        run: cargo +${{ matrix.toolchain }} check --workspace --all-targets --features testing
 
       - name: Lint
-        run: cargo clippy --workspace --all-targets --features testing -- -D warnings
+        run: cargo +${{ matrix.toolchain }} clippy --workspace --all-targets --features testing -- -D warnings
 
   test:
     strategy:
@@ -82,7 +82,7 @@ jobs:
           toolchain: ${{ matrix.toolchain }}
 
       - name: Test
-        run: cargo test --workspace --all-targets --features testing -- --show-output
+        run: cargo +${{ matrix.toolchain }} test --workspace --all-targets --features testing -- --show-output
 
   minimum-versions:
     name: "Minimal versions"
@@ -103,7 +103,7 @@ jobs:
         run: cargo generate-lockfile -Zminimal-versions
 
       - name: Test
-        run: cargo test --all-targets --features testing -- --show-output
+        run: cargo +nightly test --all-targets --features testing -- --show-output
 
   miri:
     name: "Miri"
@@ -122,7 +122,7 @@ jobs:
           components: miri
 
       - name: Test
-        run: cargo miri test --workspace --all-targets --features testing -- --show-output
+        run: cargo +nightly miri test --workspace --all-targets --features testing -- --show-output
 
   doc:
     name: "Documentation"
@@ -140,7 +140,7 @@ jobs:
           toolchain: nightly
           components: rust-docs
 
-      - run: cargo doc --package tzdb --features docsrs --all-features
+      - run: cargo +nightly doc --package tzdb --features docsrs --all-features
 
   audit:
     name: "Cargo audit"
