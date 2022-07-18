@@ -49,11 +49,14 @@ jobs:
           toolchain: ${{ matrix.toolchain }}
           components: clippy
 
-      - name: Check
-        run: cargo +${{ matrix.toolchain }} check --workspace --all-targets --features testing
+      - name: Update lockfile
+        run: cargo update
 
-      - name: Lint
-        run: cargo +${{ matrix.toolchain }} clippy --workspace --all-targets --features testing -- -D warnings
+      - name: Check
+        run: cargo +${{ matrix.toolchain }} check --package tzdb --all-targets --features testing
+
+      - name: Clippy
+        run: cargo +${{ matrix.toolchain }} clippy --package tzdb --all-targets --features testing -- -D warnings
 
   test:
     strategy:
@@ -81,8 +84,11 @@ jobs:
           key: test
           toolchain: ${{ matrix.toolchain }}
 
+      - name: Update lockfile
+        run: cargo update
+
       - name: Test
-        run: cargo +${{ matrix.toolchain }} test --workspace --all-targets --features testing -- --show-output
+        run: cargo +${{ matrix.toolchain }} test --package tzdb --all-targets --features testing -- --show-output
 
   minimum-versions:
     name: "Minimal versions"
@@ -103,7 +109,7 @@ jobs:
         run: cargo generate-lockfile -Zminimal-versions
 
       - name: Test
-        run: cargo +nightly test --all-targets --features testing -- --show-output
+        run: cargo +nightly test --package tzdb --all-targets --features testing -- --show-output
 
   miri:
     name: "Miri"
@@ -121,8 +127,11 @@ jobs:
           toolchain: nightly
           components: miri
 
+      - name: Update lockfile
+        run: cargo update
+
       - name: Test
-        run: cargo +nightly miri test --workspace --all-targets --features testing -- --show-output
+        run: cargo +nightly miri test --package tzdb --all-targets --features testing -- --show-output
 
   doc:
     name: "Documentation"
@@ -140,7 +149,10 @@ jobs:
           toolchain: nightly
           components: rust-docs
 
-      - run: cargo +nightly doc --package tzdb --features docsrs --all-features
+      - name: Update lockfile
+        run: cargo update
+
+      - run: cargo +nightly doc --package tzdb --no-deps --features docsrs --all-features
 
   audit:
     name: "Cargo audit"
@@ -156,7 +168,8 @@ jobs:
         with:
           key: audit
 
-      - run: cargo update
+      - name: Update lockfile
+        run: cargo update
 
       - name: Audit
         uses: actions-rs/audit-check@v1

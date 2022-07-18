@@ -1,6 +1,6 @@
 [package]
 name = "tzdb"
-version = "0.2.7"
+version = "0.2.8"
 edition = "2021"
 authors = ["René Kijewski <crates.io@k6i.de>"]
 repository = "https://github.com/Kijewski/tzdb"
@@ -17,10 +17,10 @@ tz-rs = { version = "^0.6.11", features = ["const"] }
 # optional dependencies
 byte-slice-cast = { version = "^1.0.0", optional = true }
 iana-time-zone = { version = "^0.1.35", optional = true }
-phf = { version = "^0.10.0", optional = true }
-phf_shared = { version = "^0.10.0", optional = true }
+phf = { version = ">= 0.10.0, <= 0.11", optional = true }
+phf_shared = { version = ">= 0.10.0, <= 0.11", optional = true }
 serde = { version = "^1.0.51", default-features = false, optional = true }
-serde_with = { version = "^1.5.0", default-features = false, optional = true }
+serde_with = { version = ">= 1.5.0, <= 2", default-features = false, optional = true }
 
 [dev-dependencies]
 serde_json = "=1"
@@ -29,20 +29,15 @@ test-strategy = "=0.2"
 
 [features]
 default = ["by-name", "list", "local"]
-## enables [tz_by_name()] to get a time zone at runtime by name
-##
+# enables [tz_by_name()] to get a time zone at runtime by name:
 by-name = ["phf", "phf_shared", "byte-slice-cast"]
-## enables [TZ_NAMES] to get a list of all shipped time zones
-##
+# enables [TZ_NAMES] to get a list of all shipped time zones:
 list = []
-## enables [local_tz()] to get the system time zone
-##
+# enables [local_tz()] to get the system time zone:
 local = ["by-name", "iana-time-zone"]
-## enables the module [serde_as] to (de)serialize (Utc)DateTimes with [serde][::serde]
-##
+# enables the module [serde_as] to (de)serialize (Utc)DateTimes with serde:
 serde-as = ["serde", "serde_with"]
-## make the unparsed, binary tzdata of a time zone available
-##
+# make the unparsed, binary tzdata of a time zone available:
 binary = []
 
 # Internal feature, used when generating docs. *You* are not supposed to enable this feature!

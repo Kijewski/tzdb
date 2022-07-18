@@ -1,5 +1,10 @@
 ## Changes between the versions
 
+### 0.2.8
+
+* Update phf dependency to v0.11.0
+* Update serde_with dependency to v2.0.0
+
 ### 0.2.7
 
 * Fix error if build and target platform have different pointer widths
