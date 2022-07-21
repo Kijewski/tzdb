@@ -1,5 +1,10 @@
 ## Changes between the versions
 
+### 0.3.0
+
+* Remove serde-as feature. The feature is very unrelated to goals of the crate, so it should be
+  moved somewhere else.
+
 ### 0.2.7
 
 * Fix error if build and target platform have different pointer widths
