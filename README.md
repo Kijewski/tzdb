@@ -33,6 +33,9 @@ DateTime::now(tz_by_name("ArCtIc/LongYeArByEn").unwrap());
 * `list` *(enabled by default)* — enables TZ_NAMES to get a list of all shipped time zones
 * `local` *(enabled by default)* — enables local_tz() to get the system time zone
 * `serde-as` — enables the module `serde_as` to (de)serialize (Utc)DateTimes with serde
+   * `serde-as-v1` — enables the module `serde_as_v1` compatible to `serde_with` version 1.x
+   * `serde-as-v2` — enables the module `serde_as_v2` compatible to `serde_with` version 2.x
+   * *(see the [`serde_as`] module documentation for more information)*
 * `binary` – make the unparsed, binary tzdata of a time zone available
 
 ## Git cloning

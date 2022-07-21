@@ -51,6 +51,7 @@
 //! ## Usage examples
 //!
 //! ```
+//! # #[cfg(feature = "by_name")] const _: () = {
 //! use tz::{DateTime, TimeZone};
 //! use tzdb::{time_zone, tz_by_name};
 //!
@@ -60,7 +61,7 @@
 //! DateTime::now(tz_by_name("Europe/Berlin").unwrap());
 //! // names are case insensitive
 //! DateTime::now(tz_by_name("ArCtIc/LongYeArByEn").unwrap());
-//!
+//! # };
 //! ```
 //!
 //! ## Feature flags
@@ -71,7 +72,10 @@
 //!
 //! * `local` *(enabled by default)* — enables [`local_tz()`] to get the system time zone
 //!
-//! * `serde-as` — enables the module [`serde_as`] to (de)serialize (Utc)DateTimes with [serde]
+//! * `serde-as` — enables the module [`serde_as`] to (de)serialize (Utc)DateTimes with [`serde`] / [`serde_with`](::serde_with_v2)
+//!    * `serde-as-v1` — enables the module [`serde_as_v1`] compatible to [`serde_with` version 1.x](::serde_with_v1)
+//!    * `serde-as-v2` — enables the module [`serde_as_v2`] compatible to [`serde_with` version 2.x](::serde_with_v2)
+//!    * *(see the [`serde_as`] module documentation for more information)*
 //!
 //! * `binary` – make the unparsed, binary tzdata of a time zone available
 //!
@@ -79,13 +83,21 @@
 mod generated;
 #[cfg(feature = "by-name")]
 mod lower;
-#[cfg(feature = "serde-as")]
+#[cfg(any(feature = "serde-as-v1", feature = "serde-as-v2"))]
 pub mod serde_as;
+#[cfg(feature = "serde-as-v1")]
+#[path = "serde_as/mod_v1.rs"]
+pub mod serde_as_v1;
+#[cfg(feature = "serde-as-v2")]
+#[path = "serde_as/mod_v2.rs"]
+pub mod serde_as_v2;
 #[cfg(all(test, feature = "by-name"))]
 mod test_by_name;
 #[cfg(all(test, not(miri), feature = "by-name"))]
 mod test_proptest;
 
+#[cfg(feature = "local")]
+use iana_time_zone::get_timezone;
 #[cfg(feature = "docsrs")]
 use serde;
 #[cfg(feature = "by-name")]
@@ -105,6 +117,15 @@ pub const VERSION: &str = "2022a";
 pub const VERSION_HASH: &str = "ece0b7a9ad3d365f8605e8f98a8a78b7fdbbb8aa615b585f21256d9401c59845fcdc951f5fc876293f1b7956b1a2d3fa2baf85099d637a91d4199ee30cf4307e";
 
 /// Find a time zone by name, e.g. `"Europe/Berlin"` (case-insensitive)
+///
+/// ```
+/// # #[cfg(feature = "by_name")] const _: () = {
+/// assert_eq!(
+///     tzdb::time_zone::europe::BERLIN,
+///     tzdb::tz_by_name("Europe/Berlin").unwrap(),
+/// );
+/// # };
+/// ```
 #[cfg(feature = "by-name")]
 #[cfg_attr(
     feature = "docsrs",
@@ -119,6 +140,15 @@ pub fn tz_by_name<S: AsRef<[u8]>>(s: S) -> Option<TimeZoneRef<'static>> {
 }
 
 /// Find the raw, unparsed time zone data by name, e.g. `"Europe/Berlin"` (case-insensitive)
+///
+/// ```
+/// # #[cfg(all(feature = "binary", feature = "by-name"))] const _: () = {
+/// assert_eq!(
+///     tzdb::time_zone::europe::RAW_BERLIN,
+///     tzdb::raw_tz_by_name("Europe/Berlin").unwrap(),
+/// );
+/// # };
+/// ```
 #[cfg(all(feature = "binary", feature = "by-name"))]
 #[cfg_attr(
     feature = "docsrs",
@@ -139,10 +169,10 @@ pub const TZ_NAMES: &[&str] = &crate::generated::TIME_ZONES_LIST;
 
 /// Find the time zone of the current system
 ///
-/// This function uses [iana_time_zone::get_timezone()] in the background.
-/// You may want to cache the output to avoid repeated filesystem accesses by get_timezone().
+/// This function uses [`iana_time_zone::get_timezone()`](get_timezone) in the background.
+/// You may want to cache the output to avoid repeated filesystem accesses by `get_timezone()`.
 #[cfg(feature = "local")]
 #[cfg_attr(feature = "docsrs", doc(cfg(feature = "local")))]
 pub fn local_tz() -> Option<TimeZoneRef<'static>> {
-    tz_by_name(&iana_time_zone::get_timezone().ok()?)
+    tz_by_name(&get_timezone().ok()?)
 }

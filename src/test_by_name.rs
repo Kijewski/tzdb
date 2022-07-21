@@ -34,7 +34,7 @@ fn test_static() {
     );
 }
 
-#[cfg(all(feature = "binary", feature = "by-name"))]
+#[cfg(feature = "binary")]
 #[test]
 fn test_raw_static() {
     assert_eq!(

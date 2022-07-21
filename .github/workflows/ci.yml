@@ -140,7 +140,7 @@ jobs:
           toolchain: nightly
           components: rust-docs
 
-      - run: cargo +nightly doc --package tzdb --features docsrs --all-features
+      - run: RUSTDOCFLAGS="-D warnings" cargo +nightly doc --package tzdb --features docsrs --all-features --no-deps
 
   audit:
     name: "Cargo audit"
@@ -162,3 +162,24 @@ jobs:
         uses: actions-rs/audit-check@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+
+  powerset:
+    name: "Feature powerset"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          lfs: true
+
+      - name: Setup Rust
+        uses: ./.github/actions/setup-rust
+        with:
+          key: powerset
+          toolchain: stable
+
+      - name: Install hack
+        run: cargo +stable install hack --force
+
+      - name: Powerset
+        run: cargo +stable hack test --feature-powerset --exclude-features docsrs,serde_as --features testing --ignore-private --tests --lib

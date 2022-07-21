@@ -1,5 +1,6 @@
 use std::fmt;
 use std::marker::PhantomData;
+use std::num::FpCategory;
 
 use serde::de::{Error, SeqAccess, Visitor};
 use serde::ser::SerializeTuple;
@@ -63,4 +64,19 @@ pub(super) fn serialize_date_time<S: Serializer, T: Serialize>(
     seq.serialize_element(&date_time)?;
     seq.serialize_element(&local_time_type)?;
     seq.end()
+}
+
+pub(super) fn nanos_to_utc<E: Error>(value: f64) -> Result<UtcDateTime, E> {
+    match value.classify() {
+        FpCategory::Nan | FpCategory::Infinite => Err(E::custom("illegal Unix time")),
+        FpCategory::Zero | FpCategory::Subnormal => {
+            UtcDateTime::from_timespec(0, 0).map_err(E::custom)
+        },
+        FpCategory::Normal => {
+            let secs = value.floor();
+            let nanos = ((value - secs) * 1_000_000_000_f64) as u32;
+            let nanos = nanos - nanos % 1_000_000;
+            UtcDateTime::from_timespec(secs as _, nanos as _).map_err(E::custom)
+        },
+    }
 }

@@ -1,5 +1,11 @@
 ## Changes between the versions
 
+### 0.2.8
+
+* Support serde_with v1 and v2
+* Let the user decide which version to use, or even both
+* Update the CI to test with the powerset of all features
+
 ### 0.2.7
 
 * Fix error if build and target platform have different pointer widths

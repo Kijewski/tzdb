@@ -3,11 +3,10 @@ use std::fmt;
 use serde::de::{Error, SeqAccess, Visitor};
 use serde::ser::SerializeTuple;
 use serde::{Deserializer, Serializer};
-use serde_with::{DeserializeAs, SerializeAs};
 use tz::{DateTime, UtcDateTime};
 
-use super::common::{deserialize_date_time, serialize_date_time};
-use crate::serde_as::common::project_utc;
+use super::common::{deserialize_date_time, project_utc, serialize_date_time};
+use super::serde_with;
 
 /// (De)serialize a (Utc)DateTime as a tuple with nanosecond resolution
 ///
@@ -25,23 +24,30 @@ use crate::serde_as::common::project_utc;
 /// to make it [serde] serializable/deserializable.
 ///
 /// ```
+/// # #[cfg(all(feature = "serde-as-v1", not(feature = "serde-as-v2")))]
+/// # pub use ::serde_with_v1 as serde_with;
+/// # #[cfg(feature = "serde-as-v2")]
+/// # pub use ::serde_with_v2 as serde_with;
+/// #
 /// use serde::{Deserialize, Serialize};
 /// use serde_with::serde_as;
 /// use tz::UtcDateTime;
 /// use tzdb::serde_as::Nanoseconds;
 ///
+/// # #[serde_as(crate = "serde_with")]
+/// # /*
 /// #[serde_as]
+/// # */
 /// #[derive(Deserialize, Serialize)]
 /// struct Foo {
 ///     #[serde_as(as = "Nanoseconds")]
 ///     now: UtcDateTime,
 /// }
 /// ```
-#[cfg_attr(feature = "docsrs", doc(cfg(feature = "serde-as")))]
 #[derive(Debug, Clone, Copy, Default)]
 pub struct Nanoseconds;
 
-impl<'de> DeserializeAs<'de, UtcDateTime> for Nanoseconds {
+impl<'de> serde_with::DeserializeAs<'de, UtcDateTime> for Nanoseconds {
     fn deserialize_as<D: Deserializer<'de>>(deserializer: D) -> Result<UtcDateTime, D::Error> {
         struct UnixTpl;
 
@@ -68,7 +74,7 @@ impl<'de> DeserializeAs<'de, UtcDateTime> for Nanoseconds {
     }
 }
 
-impl SerializeAs<UtcDateTime> for Nanoseconds {
+impl serde_with::SerializeAs<UtcDateTime> for Nanoseconds {
     fn serialize_as<S: Serializer>(source: &UtcDateTime, serializer: S) -> Result<S::Ok, S::Error> {
         let mut seq = serializer.serialize_tuple(2)?;
         seq.serialize_element(&source.unix_time())?;
@@ -77,7 +83,7 @@ impl SerializeAs<UtcDateTime> for Nanoseconds {
     }
 }
 
-impl<'de> DeserializeAs<'de, DateTime> for Nanoseconds {
+impl<'de> serde_with::DeserializeAs<'de, DateTime> for Nanoseconds {
     fn deserialize_as<D: Deserializer<'de>>(deserializer: D) -> Result<DateTime, D::Error> {
         let ((secs, nanos), tz) = deserialize_date_time(deserializer)?;
         let utc = UtcDateTime::from_timespec(secs, nanos).map_err(D::Error::custom)?;
@@ -85,7 +91,7 @@ impl<'de> DeserializeAs<'de, DateTime> for Nanoseconds {
     }
 }
 
-impl SerializeAs<DateTime> for Nanoseconds {
+impl serde_with::SerializeAs<DateTime> for Nanoseconds {
     fn serialize_as<S: Serializer>(source: &DateTime, serializer: S) -> Result<S::Ok, S::Error> {
         serialize_date_time(
             serializer,
@@ -93,47 +99,4 @@ impl SerializeAs<DateTime> for Nanoseconds {
             (source.unix_time(), source.nanoseconds()),
         )
     }
-}
-
-#[cfg(test)]
-#[test]
-fn test_seconds_nanos_tuple() {
-    use serde::{Deserialize, Serialize};
-    use serde_json::{from_str, to_string};
-    use serde_with::serde_as;
-
-    use crate::time_zone::europe::BERLIN;
-
-    #[serde_as]
-    #[derive(Debug, Serialize, Deserialize, PartialEq, PartialOrd)]
-    struct UtcStruct(#[serde_as(as = "Nanoseconds")] UtcDateTime);
-
-    #[serde_as]
-    #[derive(Debug, Serialize, Deserialize, PartialEq, PartialOrd)]
-    struct DtStruct(#[serde_as(as = "Nanoseconds")] DateTime);
-
-    #[cfg(not(feature = "testing"))]
-    compile_error!("When testing, use: --features testing");
-
-    let utc = UtcDateTime::new(2022, 3, 1, 15, 20, 37, 730296742).unwrap();
-    let dt = utc.project(BERLIN).unwrap();
-    assert_eq!(utc.total_nanoseconds(), 1_646_148_037_730_296_742);
-    assert_eq!(dt.local_time_type().ut_offset(), 3600);
-
-    assert_eq!(
-        to_string(&UtcStruct(utc)).unwrap(),
-        "[1646148037,730296742]",
-    );
-    assert_eq!(
-        from_str::<UtcStruct>("[1646148037,730296742]").unwrap(),
-        UtcStruct(utc),
-    );
-    assert_eq!(
-        to_string(&DtStruct(dt)).unwrap(),
-        r#"[[1646148037,730296742],[3600,false,"CET"]]"#,
-    );
-    assert_eq!(
-        from_str::<DtStruct>(r#"[[1646148037,730296742],[3600,false,"CET"]]"#).unwrap(),
-        DtStruct(dt),
-    );
 }
