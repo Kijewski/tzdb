@@ -203,6 +203,20 @@ pub fn main() -> anyhow::Result<()> {
 use tz::TimeZoneRef;
 #[cfg(feature = "by-name")]
 use crate::lower::Lower;
+
+macro_rules! unwrap {{
+    ($($tt:tt)*) => {{
+        match $($tt)* {{
+            Ok(value) => value,
+            Err(_) => {{
+                #[allow(unconditional_panic)]
+                let err = [][0];
+                err
+            }}
+        }}
+    }}
+}}
+pub(crate) use unwrap;
 "#
     )?;
 
