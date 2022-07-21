@@ -3,7 +3,8 @@
 ### 0.3.0
 
 * Remove serde-as feature. The feature is very unrelated to goals of the crate, so it should be
-  moved somewhere else.
+  moved somewhere else
+* Split up `generated.rs` to speed up compilation if not all features are selected
 
 ### 0.2.7
 
