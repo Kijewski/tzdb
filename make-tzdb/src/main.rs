@@ -20,8 +20,9 @@ mod parse;
 use std::cmp::Ordering;
 use std::env::args;
 use std::fmt::Write as _;
-use std::fs::read_dir;
+use std::fs::{create_dir_all, read_dir};
 use std::io::Write as _;
+use std::path::PathBuf;
 
 use convert_case::{Case, Casing};
 use indexmap::IndexMap;
@@ -84,9 +85,9 @@ impl TzName {
 
 pub fn main() -> anyhow::Result<()> {
     let mut args = args().into_iter().fuse();
-    args.next();
-
-    let target = args.next().unwrap_or_else(|| "/dev/stdout".to_owned());
+    let _ = args.next(); // exe path
+    let target_dir = PathBuf::from(args.next().unwrap_or_else(|| "tzdb/generated".to_owned()));
+    create_dir_all(&target_dir)?;
 
     let mut base_path = args
         .next()
@@ -182,7 +183,7 @@ pub fn main() -> anyhow::Result<()> {
         r#"// SPDX-License-Identifier: MIT-0
 //
 // GENERATED FILE
-// ALL CHANGES MADE IN THIS FILE WILL BE LOST!
+// ALL CHANGES MADE IN THIS FOLDER WILL BE LOST!
 //
 // MIT No Attribution
 //
@@ -280,11 +281,14 @@ pub(crate) use unwrap;
     writeln!(f, r#"#[cfg(feature = "by-name")]"#)?;
     writeln!(
         f,
-        "\
-pub(crate) const TIME_ZONES_BY_NAME: phf::Map<Lower, &'static TimeZoneRef<'static>> = {};",
-        phf.build(),
+        "pub(crate) const TIME_ZONES_BY_NAME: phf::Map<Lower, &'static TimeZoneRef<'static>> = \
+        include!(\"time_zones_by_name.inc.rs\");",
     )?;
     writeln!(f)?;
+    write_string(
+        phf.build().to_string(),
+        target_dir.join("time_zones_by_name.inc.rs"),
+    )?;
 
     // map of time zone name to its unparsed, binary data
     let mut phf = phf_codegen::Map::new();
@@ -299,11 +303,14 @@ pub(crate) const TIME_ZONES_BY_NAME: phf::Map<Lower, &'static TimeZoneRef<'stati
     writeln!(f, r#"#[cfg(all(feature = "binary", feature = "by-name"))]"#)?;
     writeln!(
         f,
-        "\
-pub(crate) const RAW_TIME_ZONES_BY_NAME: phf::Map<Lower, &'static [u8]> = {};",
-        phf.build(),
+        "pub(crate) const RAW_TIME_ZONES_BY_NAME: phf::Map<Lower, &'static [u8]> = \
+        include!(\"raw_time_zones_by_name.inc.rs\");"
     )?;
     writeln!(f)?;
+    write_string(
+        phf.build().to_string(),
+        target_dir.join("raw_time_zones_by_name.inc.rs"),
+    )?;
 
     // list of known time zone names
     let mut time_zones_list = entries_by_major
@@ -315,14 +322,17 @@ pub(crate) const RAW_TIME_ZONES_BY_NAME: phf::Map<Lower, &'static [u8]> = {};",
     writeln!(f, r#"#[cfg(feature = "list")]"#)?;
     writeln!(
         f,
-        "pub(crate) const TIME_ZONES_LIST: [&str; {}] = [",
+        "pub(crate) const TIME_ZONES_LIST: [&str; {}] = include!(\"time_zones_list.inc.rs\");",
         time_zones_list.len()
     )?;
-    for name in time_zones_list {
-        writeln!(f, "{:?},", name)?;
-    }
-    writeln!(f, "];")?;
     writeln!(f)?;
+    let mut r = String::new();
+    writeln!(r, "[")?;
+    for name in time_zones_list {
+        writeln!(r, "{:?},", name)?;
+    }
+    writeln!(r, "]")?;
+    write_string(r, target_dir.join("time_zones_list.inc.rs"))?;
 
     // parsed time zone data by canonical name
     writeln!(f, "mod tzdata {{")?;
@@ -341,25 +351,30 @@ pub(crate) const RAW_TIME_ZONES_BY_NAME: phf::Map<Lower, &'static [u8]> = {};",
 
     // raw time zone data by canonical name
     writeln!(f, r#"#[cfg(feature = "binary")]"#)?;
-    writeln!(f, "mod raw_tzdata {{")?;
+    writeln!(f, "mod raw_tzdata;")?;
+    writeln!(f)?;
+    let mut r = String::new();
     for (bytes, entries) in &entries_by_bytes {
         writeln!(
-            f,
+            r,
             "pub(crate) const {}: &[u8] = &{:?};",
             &entries[0].canon, bytes,
         )?;
     }
-    writeln!(f, "}}")?;
-    writeln!(f)?;
+    write_string(r, target_dir.join("raw_tzdata.rs"))?;
 
+    write_string(f, target_dir.join("mod.rs"))?;
+
+    Ok(())
+}
+
+fn write_string(s: String, f: PathBuf) -> std::io::Result<()> {
     std::fs::OpenOptions::new()
         .create(true)
         .write(true)
         .truncate(true)
-        .open(target)?
-        .write_all(f.as_bytes())?;
-
-    Ok(())
+        .open(f)?
+        .write_all(s.as_bytes())
 }
 
 fn prepare_casing(name: &str) -> String {

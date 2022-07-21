@@ -2,9 +2,9 @@
 
 TZDB_VERSION := tzdb-2022a
 
-src/generated.rs: tmp/${TZDB_VERSION}/usr/share/zoneinfo/
-	cargo r --package make-tzdb --bin make-tzdb -- $@ $<
-	cargo +nightly fmt -- $@
+src/generated/mod.rs: tmp/${TZDB_VERSION}/usr/share/zoneinfo/
+	cargo r --package make-tzdb --bin make-tzdb -- $(@D) $<
+	cargo +nightly fmt -- $(@D)/mod.rs $(@D)/raw_tzdata.rs
 
 tmp/${TZDB_VERSION}/usr/share/zoneinfo/: tmp/${TZDB_VERSION}/
 	cd tmp/${TZDB_VERSION}/ && make PACKRATDATA=backzone TOPDIR="." install
