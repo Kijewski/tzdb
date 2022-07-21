@@ -26,6 +26,7 @@ test-strategy = "=0.2"
 
 [features]
 default = ["by-name", "list", "local"]
+
 ## Enables [tz_by_name()] to get a time zone at runtime by name:
 by-name = ["phf", "phf_shared", "byte-slice-cast"]
 
