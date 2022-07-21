@@ -30,7 +30,7 @@ jobs:
     strategy:
       matrix:
         toolchain:
-          - "1.57"
+          - "1.55"
           - stable
           - nightly
 
@@ -50,16 +50,16 @@ jobs:
           components: clippy
 
       - name: Check
-        run: cargo +${{ matrix.toolchain }} check --workspace --all-targets
+        run: cargo +${{ matrix.toolchain }} check --package tzdb --all-targets
 
       - name: Lint
-        run: cargo +${{ matrix.toolchain }} clippy --workspace --all-targets -- -D warnings
+        run: cargo +${{ matrix.toolchain }} clippy --package tzdb --all-targets -- -D warnings
 
   test:
     strategy:
       matrix:
         toolchain:
-          - "1.57"
+          - "1.55"
           - stable
           - nightly
         platform:
@@ -82,7 +82,7 @@ jobs:
           toolchain: ${{ matrix.toolchain }}
 
       - name: Test
-        run: cargo +${{ matrix.toolchain }} test --workspace --all-targets -- --show-output
+        run: cargo +${{ matrix.toolchain }} test --package tzdb --all-targets -- --show-output
 
   minimum-versions:
     name: "Minimal versions"
@@ -122,7 +122,7 @@ jobs:
           components: miri
 
       - name: Test
-        run: cargo +nightly miri test --workspace --all-targets -- --show-output
+        run: cargo +nightly miri test --package tzdb --all-targets -- --show-output
 
   doc:
     name: "Documentation"
@@ -164,7 +164,16 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
   powerset:
-    name: "Feature powerset"
+    strategy:
+      matrix:
+        toolchain:
+          - "1.55"
+          - stable
+          - nightly
+        platform:
+          - ubuntu-latest
+
+    name: "Feature powerset/${{ matrix.toolchain }} (${{ matrix.platform }})"
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -176,10 +185,10 @@ jobs:
         uses: ./.github/actions/setup-rust
         with:
           key: powerset
-          toolchain: stable
+          toolchain: ${{ matrix.toolchain }}
 
       - name: Install hack
         run: cargo +stable install cargo-hack --force
 
       - name: Powerset
-        run: cargo +stable hack test --feature-powerset --exclude-features docsrs --ignore-private --tests --lib
+        run: cargo +${{ matrix.toolchain }} hack test --feature-powerset --exclude-features docsrs --ignore-private --tests --lib

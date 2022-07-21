@@ -434,9 +434,9 @@ checksum = "7bd3e3206899af3f8b12af284fafc038cc1dc2b41d1b89dd17297221c5d225de"
 
 [[package]]
 name = "structmeta"
-version = "0.1.5"
+version = "0.1.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1bd9c2155aa89fb2c2cb87d99a610c689e7c47099b3e9f1c8a8f53faf4e3d2e3"
+checksum = "59915b528a896f2e3bfa1a6ace65f7bb0ff9f9863de6213b0c01cb6fd3c3ac71"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -446,9 +446,9 @@ dependencies = [
 
 [[package]]
 name = "structmeta-derive"
-version = "0.1.5"
+version = "0.1.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "bafede0d0a2f21910f36d47b1558caae3076ed80f6f3ad0fc85a91e6ba7e5938"
+checksum = "b73800bcca56045d5ab138a48cd28a96093335335deaa916f22b5749c4150c79"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -482,9 +482,9 @@ dependencies = [
 
 [[package]]
 name = "test-strategy"
-version = "0.2.0"
+version = "0.1.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c18b325ca048e49683d5cb9166a50191fc862e36020706bbd7723c22a05d4ffa"
+checksum = "22c726321a7c108ca1de4ed2e6a362ead7193ecfbe0b326c5dff602b65a09e6a"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -510,6 +510,7 @@ dependencies = [
  "phf",
  "phf_shared",
  "proptest",
+ "structmeta",
  "test-strategy",
  "tz-rs",
 ]

@@ -37,7 +37,7 @@
 //!
 //! [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/Kijewski/tzdb/CI?logo=github)](https://github.com/Kijewski/tzdb/actions/workflows/ci.yml)
 //! [![Crates.io](https://img.shields.io/crates/v/tzdb?logo=rust)](https://crates.io/crates/tzdb)
-//! ![Minimum supported Rust version](https://img.shields.io/badge/rustc-1.57+-important?logo=rust "Minimum Supported Rust Version")
+//! ![Minimum supported Rust version](https://img.shields.io/badge/rustc-1.55+-important?logo=rust "Minimum Supported Rust Version")
 //! [![License](https://img.shields.io/crates/l/tzdb?color=informational&logo=apache)](/LICENSES)
 //!
 //! Static time zone information for [tz-rs](https://crates.io/crates/tz-rs).
@@ -82,6 +82,8 @@ mod test_by_name;
 #[cfg(all(test, not(miri), feature = "by-name"))]
 mod test_proptest;
 
+#[cfg(feature = "local")]
+use iana_time_zone::get_timezone;
 #[cfg(feature = "by-name")]
 use tz::TimeZoneRef;
 
@@ -99,6 +101,15 @@ pub const VERSION: &str = "2022a";
 pub const VERSION_HASH: &str = "ece0b7a9ad3d365f8605e8f98a8a78b7fdbbb8aa615b585f21256d9401c59845fcdc951f5fc876293f1b7956b1a2d3fa2baf85099d637a91d4199ee30cf4307e";
 
 /// Find a time zone by name, e.g. `"Europe/Berlin"` (case-insensitive)
+///
+/// ```
+/// # #[cfg(feature = "by_name")] const _: () = {
+/// assert_eq!(
+///     tzdb::time_zone::europe::BERLIN,
+///     tzdb::tz_by_name("Europe/Berlin").unwrap(),
+/// );
+/// # };
+/// ```
 #[cfg(feature = "by-name")]
 #[cfg_attr(
     feature = "docsrs",
@@ -113,6 +124,15 @@ pub fn tz_by_name<S: AsRef<[u8]>>(s: S) -> Option<TimeZoneRef<'static>> {
 }
 
 /// Find the raw, unparsed time zone data by name, e.g. `"Europe/Berlin"` (case-insensitive)
+///
+/// ```
+/// # #[cfg(all(feature = "binary", feature = "by-name"))] const _: () = {
+/// assert_eq!(
+///     tzdb::time_zone::europe::RAW_BERLIN,
+///     tzdb::raw_tz_by_name("Europe/Berlin").unwrap(),
+/// );
+/// # };
+/// ```
 #[cfg(all(feature = "binary", feature = "by-name"))]
 #[cfg_attr(
     feature = "docsrs",
@@ -133,10 +153,10 @@ pub const TZ_NAMES: &[&str] = &crate::generated::TIME_ZONES_LIST;
 
 /// Find the time zone of the current system
 ///
-/// This function uses [iana_time_zone::get_timezone()] in the background.
+/// This function uses [`iana_time_zone::get_timezone()`](get_timezone) in the background.
 /// You may want to cache the output to avoid repeated filesystem accesses by get_timezone().
 #[cfg(feature = "local")]
 #[cfg_attr(feature = "docsrs", doc(cfg(feature = "local")))]
 pub fn local_tz() -> Option<TimeZoneRef<'static>> {
-    tz_by_name(&iana_time_zone::get_timezone().ok()?)
+    tz_by_name(&get_timezone().ok()?)
 }
