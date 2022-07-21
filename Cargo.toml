@@ -18,7 +18,7 @@ tz-rs = { version = "^0.6.11", features = ["const"] }
 byte-slice-cast = { version = "^1.0.0", optional = true }
 iana-time-zone = { version = "^0.1.35", optional = true }
 phf = { version = "^0.10.0", optional = true }
-phf_shared = { version = "^0.10.0", optional = true }
+phf_shared = { version = "^0.11.0", optional = true }
 
 [dev-dependencies]
 proptest = "=1"
