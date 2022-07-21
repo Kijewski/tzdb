@@ -5,6 +5,7 @@
 * Remove serde-as feature. The feature is very unrelated to goals of the crate, so it should be
   moved somewhere else
 * Split up `generated.rs` to speed up compilation if not all features are selected
+* Reduce msrv to 1.55
 
 ### 0.2.7
 
