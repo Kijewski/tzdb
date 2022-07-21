@@ -1,3 +1,5 @@
+use core::fmt;
+
 use byte_slice_cast::AsMutByteSlice;
 use phf_shared::{FmtConst, PhfBorrow, PhfHash};
 
@@ -31,7 +33,7 @@ impl PhfHash for Lower {
 }
 
 impl FmtConst for Lower {
-    fn fmt_const(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+    fn fmt_const(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         write!(f, "Lower({:#x?})", self.0)
     }
 }
