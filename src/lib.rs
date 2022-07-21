@@ -14,6 +14,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+#![cfg_attr(not(test), no_std)]
 #![forbid(unsafe_code)]
 #![allow(unused_attributes)]
 #![warn(absolute_paths_not_starting_with_crate)]
