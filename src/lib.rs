@@ -71,23 +71,17 @@
 //!
 //! * `local` *(enabled by default)* — enables [`local_tz()`] to get the system time zone
 //!
-//! * `serde-as` — enables the module [`serde_as`] to (de)serialize (Utc)DateTimes with [serde]
-//!
 //! * `binary` – make the unparsed, binary tzdata of a time zone available
 //!
 
 mod generated;
 #[cfg(feature = "by-name")]
 mod lower;
-#[cfg(feature = "serde-as")]
-pub mod serde_as;
 #[cfg(all(test, feature = "by-name"))]
 mod test_by_name;
 #[cfg(all(test, not(miri), feature = "by-name"))]
 mod test_proptest;
 
-#[cfg(feature = "docsrs")]
-use serde;
 #[cfg(feature = "by-name")]
 use tz::TimeZoneRef;
 
