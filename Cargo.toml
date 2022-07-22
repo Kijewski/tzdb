@@ -22,7 +22,7 @@ phf_shared = { version = "^0.10.0", default-features = false, optional = true }
 
 [dev-dependencies]
 proptest = "=1"
-test-strategy = "=0.1.2"
+test-strategy = "=0.2.0"
 structmeta = "=0.1.4"
 
 [features]
