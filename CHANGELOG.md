@@ -1,5 +1,11 @@
 ## Changes between the versions
 
+### 0.3.1
+
+* Update [iana-time-zone](https://crates.io/crates/iana-time-zone) to implement
+  [`local_tz()`](https://docs.rs/tzdb/0.2.6/tzdb/fn.local_tz.html) for
+  iOS ([#41](https://github.com/strawlab/iana-time-zone/pull/41))
+
 ### 0.3.0
 
 * Remove serde-as feature. The feature is very unrelated to goals of the crate, so it should be
