@@ -239,7 +239,7 @@ jobs:
         run: cargo hack --version || cargo +stable install cargo-hack --force
 
       - name: Powerset
-        run: cargo hack test --feature-powerset --ignore-private --doc
+        run: cargo hack test --feature-powerset --exclude-features default --ignore-private --doc
 
   powerset-tests:
     strategy:
@@ -269,7 +269,7 @@ jobs:
         run: cargo hack --version || cargo +stable install cargo-hack --force
 
       - name: Powerset
-        run: cargo hack test --feature-powerset --ignore-private --tests --lib
+        run: cargo hack test --feature-powerset --exclude-features default --ignore-private --tests --lib
 
   build-cross:
     strategy:

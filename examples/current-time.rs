@@ -1,11 +1,9 @@
 use std::env::args;
 use std::process::exit;
 
-use tz::{DateTime, Result};
-use tzdb::time_zone::UTC;
-use tzdb::{local_tz, tz_by_name, TZ_NAMES};
+use tzdb::{local_tz, now, time_zone, tz_by_name, TZ_NAMES};
 
-pub fn main() -> Result<()> {
+pub fn main() -> Result<(), now::NowError> {
     let mut args = args().into_iter().fuse();
     let exe = args.next();
     let exe = exe.as_deref().unwrap_or("current-time");
@@ -42,10 +40,10 @@ pub fn main() -> Result<()> {
         eprintln!("No time zone selected, defaulting to the system time zone.");
         eprintln!("To see a list of all known time zones run: {} --list", exe);
         eprintln!();
-        local_tz().unwrap_or(UTC)
+        local_tz().unwrap_or(time_zone::UTC)
     };
 
-    let dt = DateTime::now(timezone)?;
+    let dt = now::in_tz(timezone)?;
     let dow = match DOW.get(dt.week_day() as usize) {
         Some(dow) => *dow,
         None => unreachable!("Impossible week_day: {}", dt.week_day()),
