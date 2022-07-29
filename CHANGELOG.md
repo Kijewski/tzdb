@@ -1,5 +1,12 @@
 ## Changes between the versions
 
+### 0.3.2
+
+* Update [iana-time-zone](https://crates.io/crates/iana-time-zone) to implement
+  [`local_tz()`](https://docs.rs/tzdb/0.3.2/tzdb/fn.local_tz.html) for
+  Illumos ([#44](https://github.com/strawlab/iana-time-zone/pull/44)) and
+  Android ([#45](https://github.com/strawlab/iana-time-zone/pull/45))
+
 ### 0.3.1
 
 * Update [iana-time-zone](https://crates.io/crates/iana-time-zone) to implement

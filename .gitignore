@@ -2,6 +2,7 @@
 /tmp
 
 run.cgi
+Cargo.lock
 
 *.pyc
 *.swp*

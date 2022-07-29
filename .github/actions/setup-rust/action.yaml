@@ -11,6 +11,9 @@ inputs:
   components:
     description: Pass-through to components on actions-rs
     required: false
+  target:
+    description: Pass-through to target on actions-rs
+    required: false
 
 runs:
   using: composite
@@ -34,6 +37,11 @@ runs:
       with:
         toolchain: ${{ inputs.toolchain }}
         components: ${{ inputs.components }}
+        target: ${{ inputs.target }}
+
+    - name: Set default toolchain
+      run: rustup default ${{ inputs.toolchain }} || true
+      shell: bash
 
     - name: Update self
       run: rustup self update || true
@@ -53,7 +61,7 @@ runs:
           ~/.cargo/bin/
           target/
         key: |
-          v5-${{ inputs.key }}-${{ runner.os }}-${{ inputs.toolchain }}-${{ steps.toolchain-install.outputs.cachekey }}-${{ hashFiles('**/Cargo.toml', 'Cargo.lock') }}
+          v5-${{ inputs.key }}-${{ runner.os }}-${{ inputs.toolchain }}-${{ steps.toolchain-install.outputs.cachekey }}-${{ hashFiles('**/Cargo.toml', '**/Cargo.lock') }}
         restore-keys: |
           v5-${{ inputs.key }}-${{ runner.os }}-${{ inputs.toolchain }}-${{ steps.toolchain-install.outputs.cachekey }}-
           v5-${{ inputs.key }}-${{ runner.os }}-${{ inputs.toolchain }}-
