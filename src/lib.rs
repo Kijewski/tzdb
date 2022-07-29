@@ -52,6 +52,7 @@
 //! ## Usage examples
 //!
 //! ```
+//! # #[cfg(feature = "by-name")] let _: () = {
 //! use tz::{DateTime, TimeZone};
 //! use tzdb::{time_zone, tz_by_name};
 //!
@@ -61,7 +62,7 @@
 //! DateTime::now(tz_by_name("Europe/Berlin").unwrap());
 //! // names are case insensitive
 //! DateTime::now(tz_by_name("ArCtIc/LongYeArByEn").unwrap());
-//!
+//! # };
 //! ```
 //!
 //! ## Feature flags
@@ -104,7 +105,7 @@ pub const VERSION_HASH: &str = "ece0b7a9ad3d365f8605e8f98a8a78b7fdbbb8aa615b585f
 /// Find a time zone by name, e.g. `"Europe/Berlin"` (case-insensitive)
 ///
 /// ```
-/// # #[cfg(feature = "by_name")] const _: () = {
+/// # #[cfg(feature = "by-name")] let _: () = {
 /// assert_eq!(
 ///     tzdb::time_zone::europe::BERLIN,
 ///     tzdb::tz_by_name("Europe/Berlin").unwrap(),
@@ -127,7 +128,7 @@ pub fn tz_by_name<S: AsRef<[u8]>>(s: S) -> Option<TimeZoneRef<'static>> {
 /// Find the raw, unparsed time zone data by name, e.g. `"Europe/Berlin"` (case-insensitive)
 ///
 /// ```
-/// # #[cfg(all(feature = "binary", feature = "by-name"))] const _: () = {
+/// # #[cfg(all(feature = "binary", feature = "by-name"))] let _: () = {
 /// assert_eq!(
 ///     tzdb::time_zone::europe::RAW_BERLIN,
 ///     tzdb::raw_tz_by_name("Europe/Berlin").unwrap(),
