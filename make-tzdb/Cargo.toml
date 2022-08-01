@@ -10,7 +10,6 @@ publish = false
 
 [dependencies]
 anyhow = "=1"
-byte-slice-cast = "=1"
 convert_case = "=0.5"
 indexmap = "=1"
 itertools = "=0.10"
