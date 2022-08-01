@@ -250,10 +250,7 @@ pub(crate) use unwrap;
                 entry.full
             )?;
             writeln!(f, r#"#[cfg(feature = "binary")]"#)?;
-            writeln!(
-                f,
-                r#"#[cfg_attr(feature = "docsrs", doc(cfg(feature = "binary")))]"#
-            )?;
+            writeln!(f, r#"#[cfg_attr(docsrs, doc(cfg(feature = "binary")))]"#)?;
             writeln!(
                 f,
                 "pub const RAW_{}: &[u8] = raw_tzdata::{};",

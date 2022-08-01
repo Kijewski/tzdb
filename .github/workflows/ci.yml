@@ -28,6 +28,7 @@ jobs:
 
   test:
     strategy:
+      fail-fast: false
       matrix:
         toolchain:
           - "1.55"
@@ -56,6 +57,7 @@ jobs:
 
   minimum-versions:
     strategy:
+      fail-fast: false
       matrix:
         toolchain:
           - "1.55"
@@ -116,7 +118,7 @@ jobs:
           toolchain: nightly
           components: rust-docs
 
-      - run: RUSTDOCFLAGS="-D warnings --cfg docsrs" cargo doc --package tzdb --all-features --no-deps --features docsrs
+      - run: RUSTDOCFLAGS="-D warnings --cfg docsrs" cargo doc --package tzdb --all-features --no-deps
 
   audit:
     name: "Cargo audit"
@@ -140,6 +142,7 @@ jobs:
 
   powerset-docs:
     strategy:
+      fail-fast: false
       matrix:
         toolchain:
           - "1.55"
@@ -165,10 +168,11 @@ jobs:
         run: cargo hack --version || cargo +stable install cargo-hack --force
 
       - name: Powerset
-        run: cargo hack test --feature-powerset --ignore-private --exclude-features docsrs --doc
+        run: cargo hack test --feature-powerset --ignore-private --doc
 
   powerset-tests:
     strategy:
+      fail-fast: false
       matrix:
         toolchain:
           - "1.55"
@@ -194,10 +198,11 @@ jobs:
         run: cargo hack --version || cargo +stable install cargo-hack --force
 
       - name: Powerset
-        run: cargo hack test --feature-powerset --ignore-private --exclude-features docsrs --tests --lib
+        run: cargo hack test --feature-powerset --ignore-private --tests --lib
 
   build-cross:
     strategy:
+      fail-fast: false
       matrix:
         target:
           - x86_64-unknown-freebsd
@@ -220,7 +225,7 @@ jobs:
           target: ${{ matrix.target }}
           components: clippy
 
-      - run: cross --version || cargo +stable install cross --force
+      - run: cross rustc --target ${{ matrix.target }} -- --version || cargo +stable install cross --force
       - run: cross check --target ${{ matrix.target }} --package tzdb --all-targets
       - run: cross clippy --target ${{ matrix.target }} --package tzdb --all-targets -- -D warnings
       - run: cross build --target ${{ matrix.target }} --package tzdb --lib
@@ -228,6 +233,7 @@ jobs:
 
   build-cross-ios:
     strategy:
+      fail-fast: false
       matrix:
         target:
           - aarch64-apple-ios-sim
@@ -246,7 +252,7 @@ jobs:
           target: ${{ matrix.target }}
           components: clippy
 
-      - run: cross --version || cargo +stable install cross --force
+      - run: cross rustc --target ${{ matrix.target }} -- --version || cargo +stable install cross --force
       - run: cross check --target ${{ matrix.target }} --package tzdb --all-targets
       - run: cross clippy --target ${{ matrix.target }} --package tzdb --all-targets -- -D warnings
       - run: cross build --target ${{ matrix.target }} --package tzdb --lib

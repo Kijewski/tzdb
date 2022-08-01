@@ -15,6 +15,7 @@
 // limitations under the License.
 
 #![cfg_attr(not(test), no_std)]
+#![cfg_attr(docsrs, feature(doc_cfg))]
 #![forbid(unsafe_code)]
 #![allow(unused_attributes)]
 #![warn(absolute_paths_not_starting_with_crate)]
@@ -32,7 +33,6 @@
 #![warn(unused_extern_crates)]
 #![warn(unused_lifetimes)]
 #![warn(unused_results)]
-#![cfg_attr(feature = "docsrs", feature(doc_cfg))]
 
 //! # tzdb — Time Zone Database
 //!
@@ -91,7 +91,7 @@ use tz::TimeZoneRef;
 
 pub use crate::generated::time_zone;
 
-#[cfg(feature = "docsrs")]
+#[cfg(docsrs)]
 pub mod changelog {
     #![doc = include_str!("../CHANGELOG.md")]
 }
@@ -113,10 +113,7 @@ pub const VERSION_HASH: &str = "ece0b7a9ad3d365f8605e8f98a8a78b7fdbbb8aa615b585f
 /// # };
 /// ```
 #[cfg(feature = "by-name")]
-#[cfg_attr(
-    feature = "docsrs",
-    doc(cfg(any(feature = "by-name", feature = "local")))
-)]
+#[cfg_attr(docsrs, doc(cfg(any(feature = "by-name", feature = "local"))))]
 pub fn tz_by_name<S: AsRef<[u8]>>(s: S) -> Option<TimeZoneRef<'static>> {
     let s = s.as_ref();
     if s.len() > crate::lower::FULL_TO_LOWER_MAX_LEN {
@@ -137,7 +134,7 @@ pub fn tz_by_name<S: AsRef<[u8]>>(s: S) -> Option<TimeZoneRef<'static>> {
 /// ```
 #[cfg(all(feature = "binary", feature = "by-name"))]
 #[cfg_attr(
-    feature = "docsrs",
+    docsrs,
     doc(cfg(all(feature = "binary", any(feature = "by-name", feature = "local"),)))
 )]
 pub fn raw_tz_by_name<S: AsRef<[u8]>>(s: S) -> Option<&'static [u8]> {
@@ -150,7 +147,7 @@ pub fn raw_tz_by_name<S: AsRef<[u8]>>(s: S) -> Option<&'static [u8]> {
 
 /// A list of all known time zones
 #[cfg(feature = "list")]
-#[cfg_attr(feature = "docsrs", doc(cfg(feature = "list")))]
+#[cfg_attr(docsrs, doc(cfg(feature = "list")))]
 pub const TZ_NAMES: &[&str] = &crate::generated::TIME_ZONES_LIST;
 
 /// Find the time zone of the current system
@@ -158,7 +155,7 @@ pub const TZ_NAMES: &[&str] = &crate::generated::TIME_ZONES_LIST;
 /// This function uses [`iana_time_zone::get_timezone()`](get_timezone) in the background.
 /// You may want to cache the output to avoid repeated filesystem accesses by get_timezone().
 #[cfg(feature = "local")]
-#[cfg_attr(feature = "docsrs", doc(cfg(feature = "local")))]
+#[cfg_attr(docsrs, doc(cfg(feature = "local")))]
 pub fn local_tz() -> Option<TimeZoneRef<'static>> {
     tz_by_name(&get_timezone().ok()?)
 }

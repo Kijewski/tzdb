@@ -28,7 +28,7 @@ structmeta = "=0.1.4"
 [features]
 default = ["by-name", "list", "local"]
 
-## Enables [tz_by_name()] to get a time zone at runtime by name:
+# Enables [tz_by_name()] to get a time zone at runtime by name:
 by-name = ["phf", "phf_shared", "byte-slice-cast"]
 
 # Enables [TZ_NAMES] to get a list of all shipped time zones:
@@ -40,12 +40,9 @@ local = ["by-name", "iana-time-zone"]
 # Make the unparsed, binary tzdata of a time zone available:
 binary = []
 
-# Internal feature, used when generating docs. *You* are not supposed to enable this feature!
-docsrs = []
-
 [package.metadata.docs.rs]
-features = ["docsrs"]
 all-features = true
+rustdoc-args = ["--cfg", "docsrs"]
 
 [workspace]
 members = [
