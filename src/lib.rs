@@ -104,6 +104,8 @@ pub const VERSION_HASH: &str = "ece0b7a9ad3d365f8605e8f98a8a78b7fdbbb8aa615b585f
 
 /// Find a time zone by name, e.g. `"Europe/Berlin"` (case-insensitive)
 ///
+/// # Example
+///
 /// ```
 /// # #[cfg(feature = "by-name")] let _: () = {
 /// assert_eq!(
@@ -123,6 +125,8 @@ pub fn tz_by_name<S: AsRef<[u8]>>(s: S) -> Option<TimeZoneRef<'static>> {
 }
 
 /// Find the raw, unparsed time zone data by name, e.g. `"Europe/Berlin"` (case-insensitive)
+///
+/// # Example
 ///
 /// ```
 /// # #[cfg(all(feature = "binary", feature = "by-name"))] let _: () = {
@@ -154,6 +158,25 @@ pub const TZ_NAMES: &[&str] = &crate::generated::TIME_ZONES_LIST;
 ///
 /// This function uses [`iana_time_zone::get_timezone()`](get_timezone) in the background.
 /// You may want to cache the output to avoid repeated filesystem accesses by get_timezone().
+///
+/// # Example
+///
+/// ```rust
+/// # #[cfg(feature = "local")] let _: () = {
+/// // Query the time zone of the local system:
+/// let time_zone = tzdb::local_tz().unwrap();
+/// # };
+/// ```
+///
+/// Most likely you will want to fallback to a default time zone,
+/// if the system time zone could not be determined or was not found in the database:
+///
+/// ```rust
+/// # #[cfg(feature = "local")] let _: () = {
+/// // Query the time zone of the local system:
+/// let time_zone = tzdb::local_tz().unwrap_or(tzdb::time_zone::GMT);
+/// # };
+/// ```
 #[cfg(feature = "local")]
 #[cfg_attr(docsrs, doc(cfg(feature = "local")))]
 pub fn local_tz() -> Option<TimeZoneRef<'static>> {
