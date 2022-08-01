@@ -73,8 +73,17 @@
 //!
 //! * `local` <sup>*(enabled by default)*</sup> — enables [`local_tz()`] to get the system time zone
 //!
-//! * `binary` – make the unparsed, binary tzdata of a time zone available
+//! * `binary` — make the unparsed, binary tzdata of a time zone available
 //!
+//! * `std` <sup>*(enabled by default)*</sup> — enable features that need the standard library [`std`]
+//!
+//! * `alloc` <sup>*(enabled by default, enabled by* `std`*)*</sup> — enable features that need the standard library [`alloc`]
+//!
+
+#[cfg(docsrs)]
+extern crate alloc;
+#[cfg(docsrs)]
+extern crate std;
 
 mod generated;
 #[cfg(feature = "by-name")]

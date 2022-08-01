@@ -69,6 +69,19 @@ jobs:
 
       - run: cargo clippy --package tzdb --all-targets -- -D clippy::pedantic
 
+  test-shadow:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Rust
+        uses: ./.github/actions/setup-rust
+        with:
+          key: shadow
+
+      - run: cd test-shadow && cargo run
+
   minimum-versions:
     strategy:
       fail-fast: false

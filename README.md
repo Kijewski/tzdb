@@ -33,6 +33,8 @@ DateTime::now(tz_by_name("ArCtIc/LongYeArByEn").unwrap());
 * `list` <sup>*(enabled by default)*</sup> — enables TZ_NAMES to get a list of all shipped time zones
 * `local` <sup>*(enabled by default)*</sup> — enables local_tz() to get the system time zone
 * `binary` – make the unparsed, binary tzdata of a time zone available
+* `std` <sup>*(enabled by default)*</sup> – enable features that need the standard library `std`
+* `alloc` <sup>*(enabled by default, enabled by* `std`*)*</sup> – enable features that need the standard library `alloc`
 
 ## Git cloning
 

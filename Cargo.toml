@@ -1,6 +1,6 @@
 [package]
 name = "tzdb"
-version = "0.3.2"
+version = "0.3.3"
 edition = "2018"
 authors = ["René Kijewski <crates.io@k6i.de>"]
 repository = "https://github.com/Kijewski/tzdb"
@@ -12,7 +12,8 @@ readme = "README.md"
 #rust-version = "1.55"
 
 [dependencies]
-tz-rs = { version = "^0.6.11", features = ["const"] }
+# FIXME: using "default-features = false" is a breaking change
+tz-rs = { version = "^0.6.12", features = ["const"] }
 
 # optional dependencies
 byte-slice-cast = { version = "^1.0.0", optional = true }
@@ -21,12 +22,13 @@ phf = { version = "^0.10.0", default-features = false, optional = true }
 phf_shared = { version = "^0.10.0", default-features = false, optional = true }
 
 [dev-dependencies]
+tz-rs = { version = "^0.6.12", default-features = false, features = ["const"] }
 proptest = "=1"
 test-strategy = "=0.1.2"
 structmeta = "=0.1.4"
 
 [features]
-default = ["by-name", "list", "local"]
+default = ["by-name", "list", "local", "std"]
 
 # Enables [tz_by_name()] to get a time zone at runtime by name:
 by-name = ["phf", "phf_shared", "byte-slice-cast"]
@@ -39,6 +41,12 @@ local = ["by-name", "iana-time-zone"]
 
 # Make the unparsed, binary tzdata of a time zone available:
 binary = []
+
+# Enable features that need the standard library `std`:
+std = ["alloc", "tz-rs/std"]
+
+# Enable features that need the standard library `alloc`:
+alloc = ["tz-rs/alloc"]
 
 [package.metadata.docs.rs]
 all-features = true

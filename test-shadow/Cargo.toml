@@ -1,0 +1,16 @@
+[package]
+name = "test-shadow"
+version = "0.1.0"
+edition = "2018"
+
+[dependencies]
+shadow-rs = "^0.16.1"
+
+[build-dependencies]
+shadow-rs = "^0.16.1"
+
+[patch.crates-io]
+tzdb = { path = ".." }
+
+[workspace]
+members = ["."]
