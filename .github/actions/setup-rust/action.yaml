@@ -61,7 +61,7 @@ runs:
           ~/.cargo/bin/
           target/
         key: |
-          v5-${{ inputs.key }}-${{ runner.os }}-${{ inputs.toolchain }}-${{ steps.toolchain-install.outputs.cachekey }}-${{ hashFiles('**/Cargo.toml', '**/Cargo.lock') }}
+          v5-${{ inputs.key }}-${{ runner.os }}-${{ inputs.toolchain }}-${{ inputs.target }}-${{ steps.toolchain-install.outputs.cachekey }}-${{ hashFiles('**/Cargo.toml', '**/Cargo.lock') }}
         restore-keys: |
-          v5-${{ inputs.key }}-${{ runner.os }}-${{ inputs.toolchain }}-${{ steps.toolchain-install.outputs.cachekey }}-
-          v5-${{ inputs.key }}-${{ runner.os }}-${{ inputs.toolchain }}-
+          v5-${{ inputs.key }}-${{ runner.os }}-${{ inputs.toolchain }}-${{ inputs.target }}-${{ steps.toolchain-install.outputs.cachekey }}-
+          v5-${{ inputs.key }}-${{ runner.os }}-${{ inputs.toolchain }}-${{ inputs.target }}-

@@ -201,6 +201,8 @@ pub fn main() -> anyhow::Result<()> {
 // DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+#![allow(clippy::pedantic)]
+
 use tz::TimeZoneRef;
 #[cfg(feature = "by-name")]
 use crate::lower::Lower;
@@ -250,10 +252,7 @@ pub(crate) use unwrap;
                 entry.full
             )?;
             writeln!(f, r#"#[cfg(feature = "binary")]"#)?;
-            writeln!(
-                f,
-                r#"#[cfg_attr(feature = "docsrs", doc(cfg(feature = "binary")))]"#
-            )?;
+            writeln!(f, r#"#[cfg_attr(docsrs, doc(cfg(feature = "binary")))]"#)?;
             writeln!(
                 f,
                 "pub const RAW_{}: &[u8] = raw_tzdata::{};",

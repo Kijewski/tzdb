@@ -1,6 +1,6 @@
-/target
 /tmp
 
+target/
 run.cgi
 Cargo.lock
 
