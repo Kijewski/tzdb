@@ -124,7 +124,7 @@ pub const VERSION_HASH: &str = "ece0b7a9ad3d365f8605e8f98a8a78b7fdbbb8aa615b585f
 /// # };
 /// ```
 #[cfg(feature = "by-name")]
-#[cfg_attr(docsrs, doc(cfg(any(feature = "by-name", feature = "local"))))]
+#[cfg_attr(docsrs, doc(cfg(feature = "by-name")))]
 pub fn tz_by_name<S: AsRef<[u8]>>(s: S) -> Option<tz::TimeZoneRef<'static>> {
     let s = s.as_ref();
     if s.len() > crate::lower::FULL_TO_LOWER_MAX_LEN {
