@@ -35,6 +35,7 @@ DateTime::now(tz_by_name("ArCtIc/LongYeArByEn").unwrap());
 * `binary` – make the unparsed, binary tzdata of a time zone available
 * `std` <sup>*(enabled by default)*</sup> – enable features that need the standard library `std`
 * `alloc` <sup>*(enabled by default, enabled by* `std`*)*</sup> – enable features that need the standard library `alloc`
+* `fallback` <sup>*(enabled by default)*</sup> — compile for unknown target platforms, too
 
 ## Git cloning
 

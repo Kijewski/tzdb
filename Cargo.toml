@@ -28,7 +28,7 @@ test-strategy = "=0.1.2"
 structmeta = "=0.1.4"
 
 [features]
-default = ["by-name", "list", "local", "std"]
+default = ["by-name", "list", "local", "std", "fallback"]
 
 # Enables [tz_by_name()] to get a time zone at runtime by name:
 by-name = ["phf", "phf_shared", "byte-slice-cast"]
@@ -47,6 +47,9 @@ std = ["alloc", "tz-rs/std"]
 
 # Enable features that need the standard library `alloc`:
 alloc = ["tz-rs/alloc"]
+
+# Compile for unknown target platforms, too:
+fallback = []
 
 [package.metadata.docs.rs]
 all-features = true

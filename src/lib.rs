@@ -14,7 +14,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#![cfg_attr(not(test), no_std)]
+#![cfg_attr(not(any(test, feature = "std")), no_std)]
 #![cfg_attr(docsrs, feature(doc_cfg))]
 #![forbid(unsafe_code)]
 #![allow(unused_attributes)]
@@ -79,6 +79,8 @@
 //!
 //! * `alloc` <sup>*(enabled by default, enabled by* `std`*)*</sup> — enable features that need the standard library [`alloc`]
 //!
+//! * `fallback` <sup>*(enabled by default)*</sup> — compile for unknown target platforms, too
+//!
 
 #[cfg(docsrs)]
 extern crate alloc;
@@ -95,8 +97,6 @@ mod test_proptest;
 
 #[cfg(feature = "local")]
 use iana_time_zone::get_timezone;
-#[cfg(feature = "by-name")]
-use tz::TimeZoneRef;
 
 pub use crate::generated::time_zone;
 
@@ -125,7 +125,7 @@ pub const VERSION_HASH: &str = "ece0b7a9ad3d365f8605e8f98a8a78b7fdbbb8aa615b585f
 /// ```
 #[cfg(feature = "by-name")]
 #[cfg_attr(docsrs, doc(cfg(any(feature = "by-name", feature = "local"))))]
-pub fn tz_by_name<S: AsRef<[u8]>>(s: S) -> Option<TimeZoneRef<'static>> {
+pub fn tz_by_name<S: AsRef<[u8]>>(s: S) -> Option<tz::TimeZoneRef<'static>> {
     let s = s.as_ref();
     if s.len() > crate::lower::FULL_TO_LOWER_MAX_LEN {
         return None;
@@ -146,10 +146,7 @@ pub fn tz_by_name<S: AsRef<[u8]>>(s: S) -> Option<TimeZoneRef<'static>> {
 /// # };
 /// ```
 #[cfg(all(feature = "binary", feature = "by-name"))]
-#[cfg_attr(
-    docsrs,
-    doc(cfg(all(feature = "binary", any(feature = "by-name", feature = "local"),)))
-)]
+#[cfg_attr(docsrs, doc(cfg(all(feature = "binary", feature = "by-name"))))]
 pub fn raw_tz_by_name<S: AsRef<[u8]>>(s: S) -> Option<&'static [u8]> {
     let s = s.as_ref();
     if s.len() > crate::lower::FULL_TO_LOWER_MAX_LEN {
@@ -189,6 +186,6 @@ pub const TZ_NAMES: &[&str] = &crate::generated::TIME_ZONES_LIST;
 #[cfg(feature = "local")]
 #[cfg_attr(docsrs, doc(cfg(feature = "local")))]
 #[must_use]
-pub fn local_tz() -> Option<TimeZoneRef<'static>> {
+pub fn local_tz() -> Option<tz::TimeZoneRef<'static>> {
     tz_by_name(&get_timezone().ok()?)
 }

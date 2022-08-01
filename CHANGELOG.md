@@ -5,7 +5,7 @@
 * Update [tz-rs](https://crates.io/crates/tz-rs) to v0.6.12 to work in a no-std context
   ([#33](https://github.com/x-hgg-x/tz-rs/pull/33))
 * Expand documentation
-* Add features `std` and `alloc` (unused until the next breaking change)
+* Add features `std`, `alloc`, and `fallback` (unused until the next breaking change)
 
 ### 0.3.2 (2022-07-30)
 
