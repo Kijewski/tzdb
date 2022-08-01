@@ -157,7 +157,7 @@ pub const TZ_NAMES: &[&str] = &crate::generated::TIME_ZONES_LIST;
 /// Find the time zone of the current system
 ///
 /// This function uses [`iana_time_zone::get_timezone()`](get_timezone) in the background.
-/// You may want to cache the output to avoid repeated filesystem accesses by get_timezone().
+/// You may want to cache the output to avoid repeated filesystem accesses by `get_timezone()`.
 ///
 /// # Example
 ///
@@ -179,6 +179,7 @@ pub const TZ_NAMES: &[&str] = &crate::generated::TIME_ZONES_LIST;
 /// ```
 #[cfg(feature = "local")]
 #[cfg_attr(docsrs, doc(cfg(feature = "local")))]
+#[must_use]
 pub fn local_tz() -> Option<TimeZoneRef<'static>> {
     tz_by_name(&get_timezone().ok()?)
 }
