@@ -67,11 +67,11 @@
 //!
 //! ## Feature flags
 //!
-//! * `by-name` *(enabled by default)* — enables [`tz_by_name()`] to get a time zone at runtime by name
+//! * `by-name` <sup>*(enabled by default, enabled by* `local`*)*</sup> — enables [`tz_by_name()`] to get a time zone at runtime by name
 //!
-//! * `list` *(enabled by default)* — enables [`TZ_NAMES`] to get a list of all shipped time zones
+//! * `list` <sup>*(enabled by default)*</sup> — enables [`TZ_NAMES`] to get a list of all shipped time zones
 //!
-//! * `local` *(enabled by default)* — enables [`local_tz()`] to get the system time zone
+//! * `local` <sup>*(enabled by default)*</sup> — enables [`local_tz()`] to get the system time zone
 //!
 //! * `binary` – make the unparsed, binary tzdata of a time zone available
 //!
