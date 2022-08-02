@@ -51,7 +51,7 @@
 //! ## Usage examples
 //!
 //! ```
-//! # #[cfg(feature = "by-name")] let _: () = {
+//! # #[cfg(all(feature = "by-name", feature = "std"))] let _: () = {
 //! use tz::{DateTime, TimeZone};
 //! use tzdb::{time_zone, tz_by_name};
 //!
