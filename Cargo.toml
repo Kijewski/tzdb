@@ -7,7 +7,7 @@ repository = "https://github.com/Kijewski/tzdb"
 description = "Static time zone information for tz-rs"
 license = "Apache-2.0"
 keywords = ["date", "time", "timezone", "zone", "calendar"]
-categories = ["date-and-time"]
+categories = ["date-and-time", "no-std"]
 readme = "README.md"
 rust-version = "1.60"
 
@@ -18,36 +18,39 @@ tz-rs = { version = "^0.6.12", default-features = false, features = ["const"] }
 iana-time-zone = { version = "^0.1.40", optional = true }
 phf = { version = "^0.11.0", default-features = false, optional = true }
 phf_shared = { version = "^0.11.0", default-features = false, optional = true }
+utcnow = { version = "^0.1.3", default-features = false, optional = true }
 
 [dev-dependencies]
-tz-rs = { version = "^0.6.12", default-features = false, features = ["const"] }
 proptest = "=1"
-test-strategy = "=0.1.2"
-structmeta = "=0.1.4"
+test-strategy = "^0.2.0"
+structmeta = "^0.1.5"
 
 [features]
-default = ["by-name", "list", "local", "std", "fallback"]
+default = ["by-name", "list", "local", "std", "fallback", "now"]
 
-# Enables [tz_by_name()] to get a time zone at runtime by name:
+# Enables [`tz_by_name()`] to get a time zone at runtime by name:
 by-name = ["phf", "phf_shared"]
 
-# Enables [TZ_NAMES] to get a list of all shipped time zones:
+# Enables [`TZ_NAMES`] to get a list of all shipped time zones:
 list = []
 
-# Enables [local_tz()] to get the system time zone:
+# Enables [`local_tz()`] to get the system time zone:
 local = ["by-name", "iana-time-zone"]
 
 # Make the unparsed, binary tzdata of a time zone available:
 binary = []
 
 # Enable features that need the standard library `std`:
-std = ["alloc", "tz-rs/std"]
+std = ["alloc", "tz-rs/std", "utcnow?/std"]
 
 # Enable features that need the standard library `alloc`:
 alloc = ["tz-rs/alloc"]
 
-# Compile for unknown target platforms, too:
-fallback = []
+# Do not fail to compile for unknown target platforms:
+fallback = ["utcnow?/fallback"]
+
+# Enables the module [`now`] to get the current time:
+now = ["utcnow"]
 
 [package.metadata.docs.rs]
 all-features = true

@@ -50,17 +50,27 @@
 //!
 //! ## Usage examples
 //!
-//! ```
-//! # #[cfg(all(feature = "by-name", feature = "std"))] let _: () = {
-//! use tz::{DateTime, TimeZone};
-//! use tzdb::{time_zone, tz_by_name};
+//! ```rust
+//! # #[cfg(all(feature = "local", feature = "now"))] let _: () = {
+//! // get the system time zone
+//! let time_zone = tzdb::local_tz().unwrap();       // tz::TimeZoneRef<'_>
+//! let current_time = tzdb::now::local().unwrap();  // tz::DateTime
 //!
 //! // access by identifier
-//! DateTime::now(time_zone::europe::KIEV);
+//! let time_zone = tzdb::time_zone::europe::KIEV;
+//! let current_time = tzdb::now::in_tz(tzdb::time_zone::europe::KIEV).unwrap();
+//!
 //! // access by name
-//! DateTime::now(tz_by_name("Europe/Berlin").unwrap());
+//! let time_zone = tzdb::tz_by_name("Europe/Berlin").unwrap();
+//! let current_time = tzdb::now::in_named("Europe/Berlin").unwrap();
+//!
 //! // names are case insensitive
-//! DateTime::now(tz_by_name("ArCtIc/LongYeArByEn").unwrap());
+//! let time_zone = tzdb::tz_by_name("ArCtIc/LongYeArByEn").unwrap();
+//! let current_time = tzdb::now::in_named("ArCtIc/LongYeArByEn").unwrap();
+//!
+//! // provide a default time zone
+//! let current_time = tzdb::now::local_or(tzdb::time_zone::GMT).unwrap();
+//! let current_time = tzdb::now::in_named_or(tzdb::time_zone::GMT, "Some/City").unwrap();
 //! # };
 //! ```
 //!
@@ -71,6 +81,8 @@
 //! * `list` <sup>*(enabled by default)*</sup> — enables [`TZ_NAMES`] to get a list of all shipped time zones
 //!
 //! * `local` <sup>*(enabled by default)*</sup> — enables [`local_tz()`] to get the system time zone
+//!
+//! * `now` <sup>*(enabled by default)*</sup> — enables the module [`now`] to get the current time
 //!
 //! * `binary` — make the unparsed, binary tzdata of a time zone available
 //!
@@ -89,6 +101,9 @@ extern crate std;
 mod generated;
 #[cfg(feature = "by-name")]
 mod lower;
+#[cfg(feature = "now")]
+#[cfg_attr(docsrs, doc(cfg(feature = "now")))]
+pub mod now;
 #[cfg(all(test, feature = "by-name"))]
 mod test_by_name;
 #[cfg(all(test, not(miri), feature = "by-name"))]
