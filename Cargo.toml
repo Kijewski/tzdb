@@ -17,8 +17,8 @@ tz-rs = { version = "^0.6.12", features = ["const"] }
 
 # optional dependencies
 iana-time-zone = { version = "^0.1.40", optional = true }
-phf = { version = "^0.10.0", default-features = false, optional = true }
-phf_shared = { version = "^0.10.0", default-features = false, optional = true }
+phf = { version = "^0.11.0", default-features = false, optional = true }
+phf_shared = { version = "^0.11.0", default-features = false, optional = true }
 
 [dev-dependencies]
 tz-rs = { version = "^0.6.12", default-features = false, features = ["const"] }
