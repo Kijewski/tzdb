@@ -12,8 +12,7 @@ readme = "README.md"
 rust-version = "1.60"
 
 [dependencies]
-# FIXME: using "default-features = false" is a breaking change
-tz-rs = { version = "^0.6.12", features = ["const"] }
+tz-rs = { version = "^0.6.12", default-features = false, features = ["const"] }
 
 # optional dependencies
 iana-time-zone = { version = "^0.1.40", optional = true }
