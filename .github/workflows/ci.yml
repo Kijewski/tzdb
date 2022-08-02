@@ -93,7 +93,7 @@ jobs:
       - name: Setup Rust
         uses: ./.github/actions/setup-rust
         with:
-          key: shadow
+          key: artichoke
 
       - run: cd test-artichoke && cargo run
 
