@@ -82,6 +82,19 @@ jobs:
 
       - run: cd test-shadow && cargo run
 
+  test-artichoke:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Rust
+        uses: ./.github/actions/setup-rust
+        with:
+          key: shadow
+
+      - run: cd test-artichoke && cargo run
+
   minimum-versions:
     strategy:
       fail-fast: false
