@@ -1,7 +1,7 @@
 [package]
 name = "tzdb"
 version = "0.3.4"
-edition = "2018"
+edition = "2021"
 authors = ["René Kijewski <crates.io@k6i.de>"]
 repository = "https://github.com/Kijewski/tzdb"
 description = "Static time zone information for tz-rs"
@@ -9,16 +9,15 @@ license = "Apache-2.0"
 keywords = ["date", "time", "timezone", "zone", "calendar"]
 categories = ["date-and-time"]
 readme = "README.md"
-#rust-version = "1.55"
+rust-version = "1.60"
 
 [dependencies]
-# FIXME: using "default-features = false" is a breaking change
-tz-rs = { version = "^0.6.12", features = ["const"] }
+tz-rs = { version = "^0.6.12", default-features = false, features = ["const"] }
 
 # optional dependencies
 iana-time-zone = { version = "^0.1.40", optional = true }
-phf = { version = "^0.10.0", default-features = false, optional = true }
-phf_shared = { version = "^0.10.0", default-features = false, optional = true }
+phf = { version = "^0.11.0", default-features = false, optional = true }
+phf_shared = { version = "^0.11.0", default-features = false, optional = true }
 
 [dev-dependencies]
 tz-rs = { version = "^0.6.12", default-features = false, features = ["const"] }
