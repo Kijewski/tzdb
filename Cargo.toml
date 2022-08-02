@@ -15,7 +15,7 @@ rust-version = "1.60"
 tz-rs = { version = "^0.6.12", default-features = false, features = ["const"] }
 
 # optional dependencies
-iana-time-zone = { version = "^0.1.40", optional = true }
+iana-time-zone = { version = "^0.1.41", default-features = false, optional = true }
 phf = { version = "^0.11.0", default-features = false, optional = true }
 phf_shared = { version = "^0.11.0", default-features = false, optional = true }
 utcnow = { version = "^0.1.3", default-features = false, optional = true }
@@ -47,7 +47,7 @@ std = ["alloc", "tz-rs/std", "utcnow?/std"]
 alloc = ["tz-rs/alloc"]
 
 # Do not fail to compile for unknown target platforms:
-fallback = ["utcnow?/fallback"]
+fallback = ["iana-time-zone?/fallback", "utcnow?/fallback"]
 
 # Enables the module [`now`] to get the current time:
 now = ["utcnow"]
