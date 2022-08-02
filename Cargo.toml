@@ -1,7 +1,7 @@
 [package]
 name = "tzdb"
 version = "0.3.4"
-edition = "2018"
+edition = "2021"
 authors = ["René Kijewski <crates.io@k6i.de>"]
 repository = "https://github.com/Kijewski/tzdb"
 description = "Static time zone information for tz-rs"
@@ -9,7 +9,7 @@ license = "Apache-2.0"
 keywords = ["date", "time", "timezone", "zone", "calendar"]
 categories = ["date-and-time"]
 readme = "README.md"
-#rust-version = "1.55"
+rust-version = "1.60"
 
 [dependencies]
 # FIXME: using "default-features = false" is a breaking change
