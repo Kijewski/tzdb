@@ -122,14 +122,18 @@ pub const VERSION_HASH: &str = "ece0b7a9ad3d365f8605e8f98a8a78b7fdbbb8aa615b585f
 /// );
 /// # };
 /// ```
+#[inline]
 #[cfg(feature = "by-name")]
 #[cfg_attr(docsrs, doc(cfg(feature = "by-name")))]
 pub fn tz_by_name<S: AsRef<[u8]>>(s: S) -> Option<tz::TimeZoneRef<'static>> {
-    let s = s.as_ref();
-    if s.len() > crate::lower::FULL_TO_LOWER_MAX_LEN {
-        return None;
+    fn tz_by_name(s: &[u8]) -> Option<tz::TimeZoneRef<'static>> {
+        if s.len() > crate::lower::FULL_TO_LOWER_MAX_LEN {
+            return None;
+        }
+        Some(**generated::TIME_ZONES_BY_NAME.get(&crate::lower::full_to_lower(s))?)
     }
-    Some(**generated::TIME_ZONES_BY_NAME.get(&crate::lower::full_to_lower(s))?)
+
+    tz_by_name(s.as_ref())
 }
 
 /// Find the raw, unparsed time zone data by name, e.g. `"Europe/Berlin"` (case-insensitive)
@@ -144,14 +148,18 @@ pub fn tz_by_name<S: AsRef<[u8]>>(s: S) -> Option<tz::TimeZoneRef<'static>> {
 /// );
 /// # };
 /// ```
+#[inline]
 #[cfg(all(feature = "binary", feature = "by-name"))]
 #[cfg_attr(docsrs, doc(cfg(all(feature = "binary", feature = "by-name"))))]
 pub fn raw_tz_by_name<S: AsRef<[u8]>>(s: S) -> Option<&'static [u8]> {
-    let s = s.as_ref();
-    if s.len() > crate::lower::FULL_TO_LOWER_MAX_LEN {
-        return None;
+    fn raw_tz_by_name(s: &[u8]) -> Option<&'static [u8]> {
+        if s.len() > crate::lower::FULL_TO_LOWER_MAX_LEN {
+            return None;
+        }
+        Some(*generated::RAW_TIME_ZONES_BY_NAME.get(&crate::lower::full_to_lower(s))?)
     }
-    Some(*generated::RAW_TIME_ZONES_BY_NAME.get(&crate::lower::full_to_lower(s))?)
+
+    raw_tz_by_name(s.as_ref())
 }
 
 /// A list of all known time zones
