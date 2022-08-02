@@ -6,6 +6,10 @@ edition = "2018"
 [dependencies]
 shadow-rs = "^0.16.1"
 
+# FIXME: Remove explicit dependency when 0.4 is released.
+#        Shadow-rs then should use tzdb with `features = "std"`.
+tzdb = { version = "0.3.0", features = ["std"] }
+
 [build-dependencies]
 shadow-rs = "^0.16.1"
 

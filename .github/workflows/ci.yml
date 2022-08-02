@@ -4,9 +4,11 @@ on:
   push:
     branches:
       - main
+      - v0.4.x
   pull_request:
     branches:
       - main
+      - v0.4.x
   schedule:
     - cron: "58 7 * * 3"
 
@@ -31,7 +33,7 @@ jobs:
       fail-fast: false
       matrix:
         toolchain:
-          - "1.55"
+          - "1.60"
           - stable
           - nightly
         platform:
@@ -82,12 +84,25 @@ jobs:
 
       - run: cd test-shadow && cargo run
 
+  test-artichoke:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Rust
+        uses: ./.github/actions/setup-rust
+        with:
+          key: artichoke
+
+      - run: cd test-artichoke && cargo run
+
   minimum-versions:
     strategy:
       fail-fast: false
       matrix:
         toolchain:
-          - "1.55"
+          - "1.60"
           - stable
           - nightly
         platform:
@@ -201,7 +216,7 @@ jobs:
       fail-fast: false
       matrix:
         toolchain:
-          - "1.55"
+          - "1.60"
           - stable
           - nightly
         platform:
@@ -224,14 +239,14 @@ jobs:
         run: cargo hack --version || cargo +stable install cargo-hack --force
 
       - name: Powerset
-        run: cargo hack test --feature-powerset --ignore-private --doc
+        run: cargo hack test --feature-powerset --exclude-features default --ignore-private --doc
 
   powerset-tests:
     strategy:
       fail-fast: false
       matrix:
         toolchain:
-          - "1.55"
+          - "1.60"
           - stable
           - nightly
         platform:
@@ -254,7 +269,7 @@ jobs:
         run: cargo hack --version || cargo +stable install cargo-hack --force
 
       - name: Powerset
-        run: cargo hack test --feature-powerset --ignore-private --tests --lib
+        run: cargo hack test --feature-powerset --exclude-features default --ignore-private --tests --lib
 
   build-cross:
     strategy:

@@ -1,5 +1,11 @@
 ## Changes between the versions
 
+### 0.4.0 (????-??-??)
+
+* Increase msrv to 1.60
+* Add `now` module, which uses [`utcnow()`](https://crates.io/crates/utcnow),
+  and works in `#[no_std]`
+
 ### 0.3.4 (2022-08-02)
 
 * Fix endianess issues for PowerPCs
