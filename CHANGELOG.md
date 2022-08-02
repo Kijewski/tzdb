@@ -1,5 +1,9 @@
 ## Changes between the versions
 
+### 0.3.4 (2022-08-02)
+
+* Fix endianess issues for PowerPCs
+
 ### 0.3.3 (2022-08-01)
 
 * Update [tz-rs](https://crates.io/crates/tz-rs) to v0.6.12 to work in a no-std context
