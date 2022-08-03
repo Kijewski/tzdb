@@ -217,12 +217,12 @@ jobs:
       matrix:
         toolchain:
           - "1.60"
-          - stable
-          - nightly
+          # - stable
+          # - nightly
         platform:
           - ubuntu-20.04
-          - windows-2022
-          - macos-12
+          # - windows-2022
+          # - macos-12
 
     runs-on: ${{ matrix.platform }}
     steps:
@@ -247,12 +247,12 @@ jobs:
       matrix:
         toolchain:
           - "1.60"
-          - stable
-          - nightly
+          # - stable
+          # - nightly
         platform:
           - ubuntu-20.04
-          - windows-2022
-          - macos-12
+          # - windows-2022
+          # - macos-12
 
     runs-on: ${{ matrix.platform }}
     steps:
