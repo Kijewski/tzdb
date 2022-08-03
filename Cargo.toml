@@ -1,13 +1,13 @@
 [package]
 name = "tzdb"
-version = "0.3.4"
+version = "0.4.0-pre.1"
 edition = "2021"
 authors = ["René Kijewski <crates.io@k6i.de>"]
 repository = "https://github.com/Kijewski/tzdb"
 description = "Static time zone information for tz-rs"
 license = "Apache-2.0"
 keywords = ["date", "time", "timezone", "zone", "calendar"]
-categories = ["date-and-time", "no-std"]
+categories = ["date-and-time"]
 readme = "README.md"
 rust-version = "1.60"
 
