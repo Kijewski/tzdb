@@ -18,7 +18,7 @@ tz-rs = { version = "^0.6.12", default-features = false, features = ["const"] }
 iana-time-zone = { version = "^0.1.41", default-features = false, optional = true }
 phf = { version = "^0.11.0", default-features = false, optional = true }
 phf_shared = { version = "^0.11.0", default-features = false, optional = true }
-utcnow = { version = "^0.1.3", default-features = false, optional = true }
+utcnow = { version = "^0.2.0", default-features = false, optional = true }
 
 [dev-dependencies]
 proptest = "=1"
