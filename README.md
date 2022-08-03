@@ -39,12 +39,19 @@ let current_time = tzdb::now::in_named_or(tzdb::time_zone::GMT, "Some/City")?;
 ## Feature flags
 
 * `by-name` <sup>(enabled by default, enabled by `local`)</sup> — enables `tz_by_name()` to get a time zone at runtime by name
+
 * `list` <sup>(enabled by default)</sup> — enables `TZ_NAMES` to get a list of all shipped time zones
+
 * `local` <sup>(enabled by default)</sup> — enables `local_tz()` to get the system time zone
+
 * `now` <sup>(enabled by default)</sup> — enables the module `now` to get the current time
+
 * `binary` – make the unparsed, binary tzdata of a time zone available
+
 * `std` <sup>(enabled by default)</sup> – enable features that need the standard library `std`
+
 * `alloc` <sup>(enabled by default, enabled by `std`)</sup> – enable features that need the standard library `alloc`
+
 * `fallback` <sup>(enabled by default)</sup> — compile for unknown target platforms, too
 
 ## Git cloning
