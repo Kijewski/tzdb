@@ -1,6 +1,6 @@
 ## Changes between the versions
 
-### 0.4.0 (????-??-??)
+### 0.4.0 (2022-08-05)
 
 * Increase msrv to 1.60
 * Add `now` module, which uses [`utcnow()`](https://crates.io/crates/utcnow),
