@@ -1,5 +1,11 @@
 ## Changes between the versions
 
+### 0.4.1 (2022-08-10)
+
+* Update [iana-time-zone](https://crates.io/crates/iana-time-zone) to v0.1.42
+  in order to fix problems on CentOS
+  ([#48](https://github.com/strawlab/iana-time-zone/pull/48))
+
 ### 0.4.0 (2022-08-05)
 
 * Increase msrv to 1.60
