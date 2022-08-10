@@ -203,69 +203,58 @@ pub fn main() -> anyhow::Result<()> {
 
 #![allow(clippy::pedantic)]
 
-use tz::TimeZoneRef;
 #[cfg(feature = "by-name")]
 use crate::lower::Lower;
-
-macro_rules! unwrap {{
-    ($($tt:tt)*) => {{
-        match $($tt)* {{
-            Ok(value) => value,
-            Err(_) => {{
-                #[allow(unconditional_panic)]
-                let err = [][0];
-                err
-            }}
-        }}
-    }}
-}}
-pub(crate) use unwrap;
 "#
     )?;
 
     // all known time zones as reference to (raw_)tzdata
     writeln!(f, "/// All defined time zones statically accessible")?;
-    writeln!(f, "pub mod time_zone {{")?;
-    writeln!(f, "    use super::*;")?;
+    writeln!(f, "pub mod time_zone;")?;
+    writeln!(f)?;
+    let mut r = String::new();
+    writeln!(r, "use super::*;")?;
     for (folder, entries) in &entries_by_major {
-        writeln!(f)?;
+        writeln!(r)?;
         if let Some(folder) = folder {
-            writeln!(f, "/// {}", folder)?;
-            writeln!(f, "pub mod {} {{", folder)?;
-            writeln!(f, "    use super::*;")?;
+            writeln!(r, "/// {}", folder)?;
+            writeln!(r, "pub mod {} {{", folder)?;
+            writeln!(r, "    use super::*;")?;
         }
-        for entry in entries {
-            writeln!(f)?;
-            writeln!(f, "    /// Time zone data for {},", entry.full)?;
+
+        for entry in entries.iter() {
+            writeln!(r)?;
+            writeln!(r, "    /// Time zone data for {},", entry.full)?;
+            writeln!(r, r#"#[cfg(feature = "tz-rs")]"#)?;
+            writeln!(r, r#"#[cfg_attr(docsrs, doc(cfg(feature = "tz-rs")))]"#)?;
             writeln!(
-                f,
-                "pub const {}: TimeZoneRef<'static> = tzdata::{};",
+                r,
+                "pub const {}: tz::TimeZoneRef<'static> = tzdata::{};",
                 entry.minor, entry.canon,
             )?;
         }
 
-        for entry in entries {
-            writeln!(f)?;
+        for entry in entries.iter() {
+            writeln!(r)?;
             writeln!(
-                f,
+                r,
                 "    /// Raw, unparsed time zone data for {},",
                 entry.full
             )?;
-            writeln!(f, r#"#[cfg(feature = "binary")]"#)?;
-            writeln!(f, r#"#[cfg_attr(docsrs, doc(cfg(feature = "binary")))]"#)?;
+            writeln!(r, r#"#[cfg(feature = "binary")]"#)?;
+            writeln!(r, r#"#[cfg_attr(docsrs, doc(cfg(feature = "binary")))]"#)?;
             writeln!(
-                f,
+                r,
                 "pub const RAW_{}: &[u8] = raw_tzdata::{};",
                 entry.minor, entry.canon,
             )?;
         }
 
         if folder.is_some() {
-            writeln!(f, "}}")?;
+            writeln!(r, "}}")?;
         }
     }
-    writeln!(f, "}}")?;
-    writeln!(f)?;
+    write_string(r, target_dir.join("time_zone.rs"))?;
 
     // map of time zone name to parsed data
     let mut phf = phf_codegen::Map::new();
@@ -277,11 +266,11 @@ pub(crate) use unwrap;
             );
         }
     }
-    writeln!(f, r#"#[cfg(feature = "by-name")]"#)?;
+    writeln!(f, r#"#[cfg(all(feature = "tz-rs", feature = "by-name"))]"#)?;
     writeln!(
         f,
-        "pub(crate) const TIME_ZONES_BY_NAME: phf::Map<Lower, &'static TimeZoneRef<'static>> = \
-        include!(\"time_zones_by_name.inc.rs\");",
+        "pub(crate) const TIME_ZONES_BY_NAME: phf::Map<Lower, &'static tz::TimeZoneRef<'static>> \
+        = include!(\"time_zones_by_name.inc.rs\");",
     )?;
     writeln!(f)?;
     write_string(
@@ -318,7 +307,7 @@ pub(crate) use unwrap;
         .map(|entry| entry.full.as_str())
         .collect_vec();
     time_zones_list.sort_by_key(|l| l.to_ascii_lowercase());
-    writeln!(f, r#"#[cfg(feature = "list")]"#)?;
+    writeln!(f, r#"#[cfg(all(feature = "tz-rs", feature = "list"))]"#)?;
     writeln!(
         f,
         "pub(crate) const TIME_ZONES_LIST: [&str; {}] = include!(\"time_zones_list.inc.rs\");",
@@ -334,22 +323,30 @@ pub(crate) use unwrap;
     write_string(r, target_dir.join("time_zones_list.inc.rs"))?;
 
     // parsed time zone data by canonical name
-    writeln!(f, "mod tzdata {{")?;
-    writeln!(f, "    use tz::timezone::*;")?;
+    writeln!(f, r#"#[cfg(feature = "tz-rs")]"#)?;
+    writeln!(f, "mod tzdata;")?;
+    writeln!(f)?;
+    let mut r = String::new();
+    writeln!(
+        r,
+        "use tz::timezone::{{AlternateTime, Julian0WithLeap, Julian1WithoutLeap, MonthWeekDay, RuleDay, Transition, TransitionRule}};",
+    )?;
+    writeln!(r, "use tz::{{LocalTimeType, TimeZoneRef}};")?;
+    writeln!(r)?;
+    writeln!(r, "use crate::unwrap;")?;
     for (bytes, entries) in &entries_by_bytes {
-        writeln!(f)?;
+        writeln!(r)?;
         writeln!(
-            f,
+            r,
             "pub(crate) const {}: TimeZoneRef<'static> = {};",
             &entries[0].canon,
             parse::Unwrap(&tz_convert(bytes)),
         )?;
     }
-    writeln!(f, "}}")?;
-    writeln!(f)?;
+    write_string(r, target_dir.join("tzdata.rs"))?;
 
     // raw time zone data by canonical name
-    writeln!(f, r#"#[cfg(feature = "binary")]"#)?;
+    writeln!(f, r#"#[cfg(all(feature = "binary", feature = "list"))]"#)?;
     writeln!(f, "mod raw_tzdata;")?;
     writeln!(f)?;
     let mut r = String::new();
@@ -359,6 +356,7 @@ pub(crate) use unwrap;
             "pub(crate) const {}: &[u8] = &{:?};",
             &entries[0].canon, bytes,
         )?;
+        writeln!(r)?;
     }
     write_string(r, target_dir.join("raw_tzdata.rs"))?;
 
@@ -367,7 +365,10 @@ pub(crate) use unwrap;
     Ok(())
 }
 
-fn write_string(s: String, f: PathBuf) -> std::io::Result<()> {
+fn write_string(mut s: String, f: PathBuf) -> std::io::Result<()> {
+    if !s.ends_with('\n') {
+        s.push('\n');
+    }
     std::fs::OpenOptions::new()
         .create(true)
         .write(true)

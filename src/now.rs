@@ -270,8 +270,8 @@ pub fn in_tz(time_zone_ref: TimeZoneRef<'_>) -> Result<DateTime, NowError> {
 /// * [`local()`] / [`local_or()`]
 /// * `in_named()` / [`in_named_or()`]
 /// * [`in_tz()`]
-#[cfg(feature = "by-name")]
-#[cfg_attr(docsrs, doc(cfg(feature = "by-name")))]
+#[cfg(all(feature = "by-name", feature = "tz-rs"))]
+#[cfg_attr(docsrs, doc(cfg(all(feature = "by-name", feature = "tz-rs"))))]
 pub fn in_named(tz: impl AsRef<[u8]>) -> Result<DateTime, NowError> {
     in_tz(crate::tz_by_name(tz).ok_or(NowError::UnknownTimezone(opaque::Opaque))?)
 }
@@ -303,8 +303,8 @@ pub fn in_named(tz: impl AsRef<[u8]>) -> Result<DateTime, NowError> {
 /// * [`local()`] / [`local_or()`]
 /// * [`in_named()`] / `in_named_or()`
 /// * [`in_tz()`]
-#[cfg(feature = "by-name")]
-#[cfg_attr(docsrs, doc(cfg(feature = "by-name")))]
+#[cfg(all(feature = "by-name", feature = "tz-rs"))]
+#[cfg_attr(docsrs, doc(cfg(all(feature = "by-name", feature = "tz-rs"))))]
 pub fn in_named_or(default: TimeZoneRef<'_>, tz: impl AsRef<[u8]>) -> Result<DateTime, NowError> {
     in_tz(crate::tz_by_name(tz).unwrap_or(default))
 }

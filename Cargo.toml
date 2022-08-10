@@ -12,12 +12,11 @@ readme = "README.md"
 rust-version = "1.60"
 
 [dependencies]
-tz-rs = { version = "^0.6.12", default-features = false, features = ["const"] }
-
 # optional dependencies
 iana-time-zone = { version = "^0.1.41", default-features = false, optional = true }
 phf = { version = "^0.11.0", default-features = false, optional = true }
 phf_shared = { version = "^0.11.0", default-features = false, optional = true }
+tz-rs = { version = "^0.6.12", default-features = false, features = ["const"], optional = true }
 utcnow = { version = "^0.2.0", default-features = false, optional = true }
 
 [dev-dependencies]
@@ -26,7 +25,7 @@ test-strategy = "^0.2.0"
 structmeta = "^0.1.5"
 
 [features]
-default = ["by-name", "list", "local", "std", "fallback", "now"]
+default = ["by-name", "fallback", "list", "local", "now", "std"]
 
 # Enables [`tz_by_name()`] to get a time zone at runtime by name:
 by-name = ["phf", "phf_shared"]
@@ -35,7 +34,7 @@ by-name = ["phf", "phf_shared"]
 list = []
 
 # Enables [`local_tz()`] to get the system time zone:
-local = ["by-name", "iana-time-zone"]
+local = ["by-name", "iana-time-zone", "tz-rs"]
 
 # Make the unparsed, binary tzdata of a time zone available:
 binary = []

@@ -138,8 +138,8 @@ pub const VERSION_HASH: &str = "ece0b7a9ad3d365f8605e8f98a8a78b7fdbbb8aa615b585f
 /// # };
 /// ```
 #[inline]
-#[cfg(feature = "by-name")]
-#[cfg_attr(docsrs, doc(cfg(feature = "by-name")))]
+#[cfg(all(feature = "tz-rs", feature = "by-name"))]
+#[cfg_attr(docsrs, doc(cfg(all(feature = "tz-rs", feature = "by-name"))))]
 pub fn tz_by_name<S: AsRef<[u8]>>(s: S) -> Option<tz::TimeZoneRef<'static>> {
     fn tz_by_name(s: &[u8]) -> Option<tz::TimeZoneRef<'static>> {
         if s.len() > crate::lower::FULL_TO_LOWER_MAX_LEN {
@@ -178,7 +178,7 @@ pub fn raw_tz_by_name<S: AsRef<[u8]>>(s: S) -> Option<&'static [u8]> {
 }
 
 /// A list of all known time zones
-#[cfg(feature = "list")]
+#[cfg(all(feature = "list"))]
 #[cfg_attr(docsrs, doc(cfg(feature = "list")))]
 pub const TZ_NAMES: &[&str] = &crate::generated::TIME_ZONES_LIST;
 
@@ -211,3 +211,18 @@ pub const TZ_NAMES: &[&str] = &crate::generated::TIME_ZONES_LIST;
 pub fn local_tz() -> Option<tz::TimeZoneRef<'static>> {
     tz_by_name(&get_timezone().ok()?)
 }
+
+#[allow(unused)]
+macro_rules! unwrap {
+    ($($tt:tt)*) => {
+        match $($tt)* {
+            Ok(value) => value,
+            Err(_) => {
+                #[allow(unconditional_panic)]
+                let err = [][0];
+                err
+            }
+        }
+    }
+}
+pub(crate) use unwrap;

@@ -201,7 +201,7 @@ pub(crate) struct Unwrap<'a, T: fmt::Display>(pub(crate) &'a T);
 
 impl<'a, T: fmt::Display> fmt::Display for Unwrap<'a, T> {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        write!(f, r#"crate::generated::unwrap!({})"#, &self.0)
+        write!(f, r#"unwrap!({})"#, &self.0)
     }
 }
 
