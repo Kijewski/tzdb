@@ -1,5 +1,11 @@
 ## Changes between the versions
 
+### 0.4.3 (2022-08-11)
+
+* Update [iana-time-zone](https://crates.io/crates/iana-time-zone) to fix more issues on CentOS 7
+  ([#49](https://github.com/strawlab/iana-time-zone/pull/49)), and not to depend on core-foundation
+  ([#50](https://github.com/strawlab/iana-time-zone/pull/50))
+
 ### 0.4.2 (2022-08-11)
 
 * Update to [Time Zone Database 2022b](https://mm.icann.org/pipermail/tz-announce/2022-August/000071.html)
