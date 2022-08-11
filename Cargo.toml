@@ -1,6 +1,6 @@
 [package]
 name = "tzdb"
-version = "0.3.4"
+version = "0.3.5"
 edition = "2018"
 authors = ["René Kijewski <crates.io@k6i.de>"]
 repository = "https://github.com/Kijewski/tzdb"
@@ -16,7 +16,7 @@ readme = "README.md"
 tz-rs = { version = "^0.6.12", features = ["const"] }
 
 # optional dependencies
-iana-time-zone = { version = "^0.1.40", optional = true }
+iana-time-zone = { version = "^0.1.42", optional = true }
 phf = { version = "^0.10.0", default-features = false, optional = true }
 phf_shared = { version = "^0.10.0", default-features = false, optional = true }
 

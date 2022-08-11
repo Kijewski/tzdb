@@ -56,7 +56,7 @@
 //! use tzdb::{time_zone, tz_by_name};
 //!
 //! // access by identifier
-//! DateTime::now(time_zone::europe::KIEV);
+//! DateTime::now(time_zone::europe::KYIV);
 //! // access by name
 //! DateTime::now(tz_by_name("Europe/Berlin").unwrap());
 //! // names are case insensitive
@@ -105,10 +105,10 @@ pub mod changelog {
 }
 
 /// The version of the source Time Zone Database
-pub const VERSION: &str = "2022a";
+pub const VERSION: &str = "2022b";
 
 /// The SHA512 hash of the source Time Zone Database (using the "Complete Distribution")
-pub const VERSION_HASH: &str = "ece0b7a9ad3d365f8605e8f98a8a78b7fdbbb8aa615b585f21256d9401c59845fcdc951f5fc876293f1b7956b1a2d3fa2baf85099d637a91d4199ee30cf4307e";
+pub const VERSION_HASH: &str = "b5bd93401c9586047e865a49b9f7fd0bdf451973be24a433786633f41a1ecc2f7eacdeb78d9a906c3526bfd3b236edab72682e5bc09add42156f8dcc2497694a";
 
 /// Find a time zone by name, e.g. `"Europe/Berlin"` (case-insensitive)
 ///

@@ -20,7 +20,7 @@ use tz::{DateTime, TimeZone};
 use tzdb::{time_zone, tz_by_name};
 
 // access by identifier
-DateTime::now(time_zone::europe::KIEV);
+DateTime::now(time_zone::europe::KYIV);
 // access by name
 DateTime::now(tz_by_name("Europe/Berlin").unwrap());
 // names are case insensitive
