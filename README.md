@@ -20,8 +20,8 @@ let time_zone = tzdb::local_tz()?;       // tz::TimeZoneRef<'_>
 let current_time = tzdb::now::local()?;  // tz::DateTime
 
 // access by identifier
-let time_zone = tzdb::time_zone::europe::KIEV;
-let current_time = tzdb::now::in_tz(tzdb::time_zone::europe::KIEV)?;
+let time_zone = tzdb::time_zone::europe::KYIV;
+let current_time = tzdb::now::in_tz(tzdb::time_zone::europe::KYIV)?;
 
 // access by name
 let time_zone = tzdb::tz_by_name("Europe/Berlin")?;
