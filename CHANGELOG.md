@@ -1,5 +1,9 @@
 ## Changes between the versions
 
+### 0.4.2 (2022-08-11)
+
+* Update to [Time Zone Database 2022b](https://mm.icann.org/pipermail/tz-announce/2022-August/000071.html)
+
 ### 0.4.1 (2022-08-10)
 
 * Update [iana-time-zone](https://crates.io/crates/iana-time-zone) to v0.1.42

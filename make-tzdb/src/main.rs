@@ -367,7 +367,10 @@ pub(crate) use unwrap;
     Ok(())
 }
 
-fn write_string(s: String, f: PathBuf) -> std::io::Result<()> {
+fn write_string(mut s: String, f: PathBuf) -> std::io::Result<()> {
+    if !s.ends_with("\n") {
+        s.push('\n');
+    }
     std::fs::OpenOptions::new()
         .create(true)
         .write(true)
