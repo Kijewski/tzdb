@@ -238,7 +238,6 @@
 "Asia/Dushanbe",
 "Asia/Famagusta",
 "Asia/Gaza",
-"Asia/Hanoi",
 "Asia/Harbin",
 "Asia/Hebron",
 "Asia/Ho_Chi_Minh",

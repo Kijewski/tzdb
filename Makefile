@@ -1,13 +1,13 @@
 .DELETE_ON_ERROR:
 
-TZDB_VERSION := tzdb-2022b
+TZDB_VERSION := tzdb-2022c
 
 src/generated/mod.rs: tmp/${TZDB_VERSION}/usr/share/zoneinfo/
 	cargo r --package make-tzdb --bin make-tzdb -- $(@D) $<
 	cargo +nightly fmt -- $(@D)/mod.rs $(@D)/raw_tzdata.rs
 
 tmp/${TZDB_VERSION}/usr/share/zoneinfo/: tmp/${TZDB_VERSION}/
-	cd tmp/${TZDB_VERSION}/ && make PACKRATDATA=backzone TOPDIR="." install
+	cd tmp/${TZDB_VERSION}/ && make PACKRATDATA=backzone PACKRATLIST=zone.tab TOPDIR="." install
 
 tmp/${TZDB_VERSION}/: tmp/${TZDB_VERSION}.tar.lz
 	cd tmp/ && tar xf $(<F)
