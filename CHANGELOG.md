@@ -1,5 +1,9 @@
 ## Changes between the versions
 
+### 0.4.4 (2022-08-16)
+
+* Update to [Time Zone Database 2022c](https://mm.icann.org/pipermail/tz-announce/2022-August/000072.html)
+
 ### 0.4.3 (2022-08-12)
 
 * Update [iana-time-zone](https://crates.io/crates/iana-time-zone) to fix more issues on CentOS 7
