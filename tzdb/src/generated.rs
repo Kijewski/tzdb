@@ -183,7 +183,7 @@ pub mod time_zone {
         pub const SAO_TOME: TimeZoneRef<'static> = tzdata::AFRICA_SAO_TOME;
 
         /// Time zone data for Africa/Timbuktu,
-        pub const TIMBUKTU: TimeZoneRef<'static> = tzdata::AFRICA_TIMBUKTU;
+        pub const TIMBUKTU: TimeZoneRef<'static> = tzdata::AFRICA_BAMAKO;
 
         /// Time zone data for Africa/Tripoli,
         pub const TRIPOLI: TimeZoneRef<'static> = tzdata::LIBYA;
@@ -447,7 +447,7 @@ pub mod time_zone {
         /// Raw, unparsed time zone data for Africa/Timbuktu,
         #[cfg(feature = "binary")]
         #[cfg_attr(feature = "docsrs", doc(cfg(feature = "binary")))]
-        pub const RAW_TIMBUKTU: &[u8] = raw_tzdata::AFRICA_TIMBUKTU;
+        pub const RAW_TIMBUKTU: &[u8] = raw_tzdata::AFRICA_BAMAKO;
 
         /// Raw, unparsed time zone data for Africa/Tripoli,
         #[cfg(feature = "binary")]
@@ -554,7 +554,7 @@ pub mod time_zone {
         pub const CHIHUAHUA: TimeZoneRef<'static> = tzdata::AMERICA_CHIHUAHUA;
 
         /// Time zone data for America/Coral_Harbour,
-        pub const CORAL_HARBOUR: TimeZoneRef<'static> = tzdata::AMERICA_CORAL_HARBOUR;
+        pub const CORAL_HARBOUR: TimeZoneRef<'static> = tzdata::AMERICA_ATIKOKAN;
 
         /// Time zone data for America/Cordoba,
         pub const CORDOBA: TimeZoneRef<'static> = tzdata::AMERICA_CORDOBA;
@@ -809,13 +809,13 @@ pub mod time_zone {
         pub const RIO_BRANCO: TimeZoneRef<'static> = tzdata::AMERICA_PORTO_ACRE;
 
         /// Time zone data for America/Rosario,
-        pub const ROSARIO: TimeZoneRef<'static> = tzdata::AMERICA_ROSARIO;
+        pub const ROSARIO: TimeZoneRef<'static> = tzdata::AMERICA_CORDOBA;
 
         /// Time zone data for America/Santarem,
         pub const SANTAREM: TimeZoneRef<'static> = tzdata::AMERICA_SANTAREM;
 
         /// Time zone data for America/Santa_Isabel,
-        pub const SANTA_ISABEL: TimeZoneRef<'static> = tzdata::AMERICA_SANTA_ISABEL;
+        pub const SANTA_ISABEL: TimeZoneRef<'static> = tzdata::AMERICA_ENSENADA;
 
         /// Time zone data for America/Santiago,
         pub const SANTIAGO: TimeZoneRef<'static> = tzdata::AMERICA_SANTIAGO;
@@ -866,10 +866,10 @@ pub mod time_zone {
         pub const THUNDER_BAY: TimeZoneRef<'static> = tzdata::AMERICA_THUNDER_BAY;
 
         /// Time zone data for America/Tijuana,
-        pub const TIJUANA: TimeZoneRef<'static> = tzdata::AMERICA_SANTA_ISABEL;
+        pub const TIJUANA: TimeZoneRef<'static> = tzdata::AMERICA_ENSENADA;
 
         /// Time zone data for America/Toronto,
-        pub const TORONTO: TimeZoneRef<'static> = tzdata::AMERICA_TORONTO;
+        pub const TORONTO: TimeZoneRef<'static> = tzdata::AMERICA_MONTREAL;
 
         /// Time zone data for America/Tortola,
         pub const TORTOLA: TimeZoneRef<'static> = tzdata::AMERICA_TORTOLA;
@@ -1035,7 +1035,7 @@ pub mod time_zone {
         /// Raw, unparsed time zone data for America/Coral_Harbour,
         #[cfg(feature = "binary")]
         #[cfg_attr(feature = "docsrs", doc(cfg(feature = "binary")))]
-        pub const RAW_CORAL_HARBOUR: &[u8] = raw_tzdata::AMERICA_CORAL_HARBOUR;
+        pub const RAW_CORAL_HARBOUR: &[u8] = raw_tzdata::AMERICA_ATIKOKAN;
 
         /// Raw, unparsed time zone data for America/Cordoba,
         #[cfg(feature = "binary")]
@@ -1460,7 +1460,7 @@ pub mod time_zone {
         /// Raw, unparsed time zone data for America/Rosario,
         #[cfg(feature = "binary")]
         #[cfg_attr(feature = "docsrs", doc(cfg(feature = "binary")))]
-        pub const RAW_ROSARIO: &[u8] = raw_tzdata::AMERICA_ROSARIO;
+        pub const RAW_ROSARIO: &[u8] = raw_tzdata::AMERICA_CORDOBA;
 
         /// Raw, unparsed time zone data for America/Santarem,
         #[cfg(feature = "binary")]
@@ -1470,7 +1470,7 @@ pub mod time_zone {
         /// Raw, unparsed time zone data for America/Santa_Isabel,
         #[cfg(feature = "binary")]
         #[cfg_attr(feature = "docsrs", doc(cfg(feature = "binary")))]
-        pub const RAW_SANTA_ISABEL: &[u8] = raw_tzdata::AMERICA_SANTA_ISABEL;
+        pub const RAW_SANTA_ISABEL: &[u8] = raw_tzdata::AMERICA_ENSENADA;
 
         /// Raw, unparsed time zone data for America/Santiago,
         #[cfg(feature = "binary")]
@@ -1555,12 +1555,12 @@ pub mod time_zone {
         /// Raw, unparsed time zone data for America/Tijuana,
         #[cfg(feature = "binary")]
         #[cfg_attr(feature = "docsrs", doc(cfg(feature = "binary")))]
-        pub const RAW_TIJUANA: &[u8] = raw_tzdata::AMERICA_SANTA_ISABEL;
+        pub const RAW_TIJUANA: &[u8] = raw_tzdata::AMERICA_ENSENADA;
 
         /// Raw, unparsed time zone data for America/Toronto,
         #[cfg(feature = "binary")]
         #[cfg_attr(feature = "docsrs", doc(cfg(feature = "binary")))]
-        pub const RAW_TORONTO: &[u8] = raw_tzdata::AMERICA_TORONTO;
+        pub const RAW_TORONTO: &[u8] = raw_tzdata::AMERICA_MONTREAL;
 
         /// Raw, unparsed time zone data for America/Tortola,
         #[cfg(feature = "binary")]
@@ -1777,10 +1777,10 @@ pub mod time_zone {
         pub const CHOIBALSAN: TimeZoneRef<'static> = tzdata::ASIA_CHOIBALSAN;
 
         /// Time zone data for Asia/Chongqing,
-        pub const CHONGQING: TimeZoneRef<'static> = tzdata::ASIA_CHONGQING;
+        pub const CHONGQING: TimeZoneRef<'static> = tzdata::PRC;
 
         /// Time zone data for Asia/Chungking,
-        pub const CHUNGKING: TimeZoneRef<'static> = tzdata::ASIA_CHONGQING;
+        pub const CHUNGKING: TimeZoneRef<'static> = tzdata::PRC;
 
         /// Time zone data for Asia/Colombo,
         pub const COLOMBO: TimeZoneRef<'static> = tzdata::ASIA_COLOMBO;
@@ -1809,11 +1809,8 @@ pub mod time_zone {
         /// Time zone data for Asia/Gaza,
         pub const GAZA: TimeZoneRef<'static> = tzdata::ASIA_GAZA;
 
-        /// Time zone data for Asia/Hanoi,
-        pub const HANOI: TimeZoneRef<'static> = tzdata::ASIA_HANOI;
-
         /// Time zone data for Asia/Harbin,
-        pub const HARBIN: TimeZoneRef<'static> = tzdata::ASIA_HARBIN;
+        pub const HARBIN: TimeZoneRef<'static> = tzdata::PRC;
 
         /// Time zone data for Asia/Hebron,
         pub const HEBRON: TimeZoneRef<'static> = tzdata::ASIA_HEBRON;
@@ -1969,7 +1966,7 @@ pub mod time_zone {
         pub const TEHRAN: TimeZoneRef<'static> = tzdata::IRAN;
 
         /// Time zone data for Asia/Tel_Aviv,
-        pub const TEL_AVIV: TimeZoneRef<'static> = tzdata::ASIA_TEL_AVIV;
+        pub const TEL_AVIV: TimeZoneRef<'static> = tzdata::ISRAEL;
 
         /// Time zone data for Asia/Thimbu,
         pub const THIMBU: TimeZoneRef<'static> = tzdata::ASIA_THIMBU;
@@ -1993,7 +1990,7 @@ pub mod time_zone {
         pub const ULAN_BATOR: TimeZoneRef<'static> = tzdata::ASIA_ULAANBAATAR;
 
         /// Time zone data for Asia/Urumqi,
-        pub const URUMQI: TimeZoneRef<'static> = tzdata::ASIA_URUMQI;
+        pub const URUMQI: TimeZoneRef<'static> = tzdata::ASIA_KASHGAR;
 
         /// Time zone data for Asia/Ust-Nera,
         pub const UST_NERA: TimeZoneRef<'static> = tzdata::ASIA_UST_NERA;
@@ -2119,12 +2116,12 @@ pub mod time_zone {
         /// Raw, unparsed time zone data for Asia/Chongqing,
         #[cfg(feature = "binary")]
         #[cfg_attr(feature = "docsrs", doc(cfg(feature = "binary")))]
-        pub const RAW_CHONGQING: &[u8] = raw_tzdata::ASIA_CHONGQING;
+        pub const RAW_CHONGQING: &[u8] = raw_tzdata::PRC;
 
         /// Raw, unparsed time zone data for Asia/Chungking,
         #[cfg(feature = "binary")]
         #[cfg_attr(feature = "docsrs", doc(cfg(feature = "binary")))]
-        pub const RAW_CHUNGKING: &[u8] = raw_tzdata::ASIA_CHONGQING;
+        pub const RAW_CHUNGKING: &[u8] = raw_tzdata::PRC;
 
         /// Raw, unparsed time zone data for Asia/Colombo,
         #[cfg(feature = "binary")]
@@ -2171,15 +2168,10 @@ pub mod time_zone {
         #[cfg_attr(feature = "docsrs", doc(cfg(feature = "binary")))]
         pub const RAW_GAZA: &[u8] = raw_tzdata::ASIA_GAZA;
 
-        /// Raw, unparsed time zone data for Asia/Hanoi,
-        #[cfg(feature = "binary")]
-        #[cfg_attr(feature = "docsrs", doc(cfg(feature = "binary")))]
-        pub const RAW_HANOI: &[u8] = raw_tzdata::ASIA_HANOI;
-
         /// Raw, unparsed time zone data for Asia/Harbin,
         #[cfg(feature = "binary")]
         #[cfg_attr(feature = "docsrs", doc(cfg(feature = "binary")))]
-        pub const RAW_HARBIN: &[u8] = raw_tzdata::ASIA_HARBIN;
+        pub const RAW_HARBIN: &[u8] = raw_tzdata::PRC;
 
         /// Raw, unparsed time zone data for Asia/Hebron,
         #[cfg(feature = "binary")]
@@ -2439,7 +2431,7 @@ pub mod time_zone {
         /// Raw, unparsed time zone data for Asia/Tel_Aviv,
         #[cfg(feature = "binary")]
         #[cfg_attr(feature = "docsrs", doc(cfg(feature = "binary")))]
-        pub const RAW_TEL_AVIV: &[u8] = raw_tzdata::ASIA_TEL_AVIV;
+        pub const RAW_TEL_AVIV: &[u8] = raw_tzdata::ISRAEL;
 
         /// Raw, unparsed time zone data for Asia/Thimbu,
         #[cfg(feature = "binary")]
@@ -2479,7 +2471,7 @@ pub mod time_zone {
         /// Raw, unparsed time zone data for Asia/Urumqi,
         #[cfg(feature = "binary")]
         #[cfg_attr(feature = "docsrs", doc(cfg(feature = "binary")))]
-        pub const RAW_URUMQI: &[u8] = raw_tzdata::ASIA_URUMQI;
+        pub const RAW_URUMQI: &[u8] = raw_tzdata::ASIA_KASHGAR;
 
         /// Raw, unparsed time zone data for Asia/Ust-Nera,
         #[cfg(feature = "binary")]
@@ -2540,7 +2532,7 @@ pub mod time_zone {
         pub const FAROE: TimeZoneRef<'static> = tzdata::ATLANTIC_FAEROE;
 
         /// Time zone data for Atlantic/Jan_Mayen,
-        pub const JAN_MAYEN: TimeZoneRef<'static> = tzdata::ATLANTIC_JAN_MAYEN;
+        pub const JAN_MAYEN: TimeZoneRef<'static> = tzdata::ARCTIC_LONGYEARBYEN;
 
         /// Time zone data for Atlantic/Madeira,
         pub const MADEIRA: TimeZoneRef<'static> = tzdata::ATLANTIC_MADEIRA;
@@ -2590,7 +2582,7 @@ pub mod time_zone {
         /// Raw, unparsed time zone data for Atlantic/Jan_Mayen,
         #[cfg(feature = "binary")]
         #[cfg_attr(feature = "docsrs", doc(cfg(feature = "binary")))]
-        pub const RAW_JAN_MAYEN: &[u8] = raw_tzdata::ATLANTIC_JAN_MAYEN;
+        pub const RAW_JAN_MAYEN: &[u8] = raw_tzdata::ARCTIC_LONGYEARBYEN;
 
         /// Raw, unparsed time zone data for Atlantic/Madeira,
         #[cfg(feature = "binary")]
@@ -2647,7 +2639,7 @@ pub mod time_zone {
         pub const EUCLA: TimeZoneRef<'static> = tzdata::AUSTRALIA_EUCLA;
 
         /// Time zone data for Australia/Hobart,
-        pub const HOBART: TimeZoneRef<'static> = tzdata::AUSTRALIA_HOBART;
+        pub const HOBART: TimeZoneRef<'static> = tzdata::AUSTRALIA_CURRIE;
 
         /// Time zone data for Australia/LHI,
         pub const LHI: TimeZoneRef<'static> = tzdata::AUSTRALIA_LHI;
@@ -2680,7 +2672,7 @@ pub mod time_zone {
         pub const SYDNEY: TimeZoneRef<'static> = tzdata::AUSTRALIA_ACT;
 
         /// Time zone data for Australia/Tasmania,
-        pub const TASMANIA: TimeZoneRef<'static> = tzdata::AUSTRALIA_HOBART;
+        pub const TASMANIA: TimeZoneRef<'static> = tzdata::AUSTRALIA_CURRIE;
 
         /// Time zone data for Australia/Victoria,
         pub const VICTORIA: TimeZoneRef<'static> = tzdata::AUSTRALIA_MELBOURNE;
@@ -2734,7 +2726,7 @@ pub mod time_zone {
         /// Raw, unparsed time zone data for Australia/Hobart,
         #[cfg(feature = "binary")]
         #[cfg_attr(feature = "docsrs", doc(cfg(feature = "binary")))]
-        pub const RAW_HOBART: &[u8] = raw_tzdata::AUSTRALIA_HOBART;
+        pub const RAW_HOBART: &[u8] = raw_tzdata::AUSTRALIA_CURRIE;
 
         /// Raw, unparsed time zone data for Australia/LHI,
         #[cfg(feature = "binary")]
@@ -2789,7 +2781,7 @@ pub mod time_zone {
         /// Raw, unparsed time zone data for Australia/Tasmania,
         #[cfg(feature = "binary")]
         #[cfg_attr(feature = "docsrs", doc(cfg(feature = "binary")))]
-        pub const RAW_TASMANIA: &[u8] = raw_tzdata::AUSTRALIA_HOBART;
+        pub const RAW_TASMANIA: &[u8] = raw_tzdata::AUSTRALIA_CURRIE;
 
         /// Raw, unparsed time zone data for Australia/Victoria,
         #[cfg(feature = "binary")]
@@ -2855,7 +2847,7 @@ pub mod time_zone {
         pub const CENTRAL: TimeZoneRef<'static> = tzdata::AMERICA_WINNIPEG;
 
         /// Time zone data for Canada/Eastern,
-        pub const EASTERN: TimeZoneRef<'static> = tzdata::AMERICA_TORONTO;
+        pub const EASTERN: TimeZoneRef<'static> = tzdata::AMERICA_MONTREAL;
 
         /// Time zone data for Canada/Mountain,
         pub const MOUNTAIN: TimeZoneRef<'static> = tzdata::AMERICA_EDMONTON;
@@ -2885,7 +2877,7 @@ pub mod time_zone {
         /// Raw, unparsed time zone data for Canada/Eastern,
         #[cfg(feature = "binary")]
         #[cfg_attr(feature = "docsrs", doc(cfg(feature = "binary")))]
-        pub const RAW_EASTERN: &[u8] = raw_tzdata::AMERICA_TORONTO;
+        pub const RAW_EASTERN: &[u8] = raw_tzdata::AMERICA_MONTREAL;
 
         /// Raw, unparsed time zone data for Canada/Mountain,
         #[cfg(feature = "binary")]
@@ -2993,7 +2985,7 @@ pub mod time_zone {
         pub const GMT_PLUS_0: TimeZoneRef<'static> = tzdata::GMT;
 
         /// Time zone data for Etc/GMT+1,
-        pub const GMT_PLUS_1: TimeZoneRef<'static> = tzdata::ATLANTIC_JAN_MAYEN;
+        pub const GMT_PLUS_1: TimeZoneRef<'static> = tzdata::ETC_GMT_PLUS_1;
 
         /// Time zone data for Etc/GMT+10,
         pub const GMT_PLUS_10: TimeZoneRef<'static> = tzdata::ETC_GMT_PLUS_10;
@@ -3139,7 +3131,7 @@ pub mod time_zone {
         /// Raw, unparsed time zone data for Etc/GMT+1,
         #[cfg(feature = "binary")]
         #[cfg_attr(feature = "docsrs", doc(cfg(feature = "binary")))]
-        pub const RAW_GMT_PLUS_1: &[u8] = raw_tzdata::ATLANTIC_JAN_MAYEN;
+        pub const RAW_GMT_PLUS_1: &[u8] = raw_tzdata::ETC_GMT_PLUS_1;
 
         /// Raw, unparsed time zone data for Etc/GMT+10,
         #[cfg(feature = "binary")]
@@ -3244,7 +3236,7 @@ pub mod time_zone {
         pub const ATHENS: TimeZoneRef<'static> = tzdata::EUROPE_ATHENS;
 
         /// Time zone data for Europe/Belfast,
-        pub const BELFAST: TimeZoneRef<'static> = tzdata::EUROPE_BELFAST;
+        pub const BELFAST: TimeZoneRef<'static> = tzdata::GB;
 
         /// Time zone data for Europe/Belgrade,
         pub const BELGRADE: TimeZoneRef<'static> = tzdata::EUROPE_BELGRADE;
@@ -3388,7 +3380,7 @@ pub mod time_zone {
         pub const TIRANE: TimeZoneRef<'static> = tzdata::EUROPE_TIRANE;
 
         /// Time zone data for Europe/Tiraspol,
-        pub const TIRASPOL: TimeZoneRef<'static> = tzdata::EUROPE_TIRASPOL;
+        pub const TIRASPOL: TimeZoneRef<'static> = tzdata::EUROPE_CHISINAU;
 
         /// Time zone data for Europe/Ulyanovsk,
         pub const ULYANOVSK: TimeZoneRef<'static> = tzdata::EUROPE_ULYANOVSK;
@@ -3446,7 +3438,7 @@ pub mod time_zone {
         /// Raw, unparsed time zone data for Europe/Belfast,
         #[cfg(feature = "binary")]
         #[cfg_attr(feature = "docsrs", doc(cfg(feature = "binary")))]
-        pub const RAW_BELFAST: &[u8] = raw_tzdata::EUROPE_BELFAST;
+        pub const RAW_BELFAST: &[u8] = raw_tzdata::GB;
 
         /// Raw, unparsed time zone data for Europe/Belgrade,
         #[cfg(feature = "binary")]
@@ -3686,7 +3678,7 @@ pub mod time_zone {
         /// Raw, unparsed time zone data for Europe/Tiraspol,
         #[cfg(feature = "binary")]
         #[cfg_attr(feature = "docsrs", doc(cfg(feature = "binary")))]
-        pub const RAW_TIRASPOL: &[u8] = raw_tzdata::EUROPE_TIRASPOL;
+        pub const RAW_TIRASPOL: &[u8] = raw_tzdata::EUROPE_CHISINAU;
 
         /// Raw, unparsed time zone data for Europe/Ulyanovsk,
         #[cfg(feature = "binary")]
@@ -3842,7 +3834,7 @@ pub mod time_zone {
         use super::*;
 
         /// Time zone data for Mexico/BajaNorte,
-        pub const BAJA_NORTE: TimeZoneRef<'static> = tzdata::AMERICA_SANTA_ISABEL;
+        pub const BAJA_NORTE: TimeZoneRef<'static> = tzdata::AMERICA_ENSENADA;
 
         /// Time zone data for Mexico/BajaSur,
         pub const BAJA_SUR: TimeZoneRef<'static> = tzdata::AMERICA_MAZATLAN;
@@ -3853,7 +3845,7 @@ pub mod time_zone {
         /// Raw, unparsed time zone data for Mexico/BajaNorte,
         #[cfg(feature = "binary")]
         #[cfg_attr(feature = "docsrs", doc(cfg(feature = "binary")))]
-        pub const RAW_BAJA_NORTE: &[u8] = raw_tzdata::AMERICA_SANTA_ISABEL;
+        pub const RAW_BAJA_NORTE: &[u8] = raw_tzdata::AMERICA_ENSENADA;
 
         /// Raw, unparsed time zone data for Mexico/BajaSur,
         #[cfg(feature = "binary")]
@@ -3919,10 +3911,10 @@ pub mod time_zone {
         pub const HONOLULU: TimeZoneRef<'static> = tzdata::PACIFIC_HONOLULU;
 
         /// Time zone data for Pacific/Johnston,
-        pub const JOHNSTON: TimeZoneRef<'static> = tzdata::HST;
+        pub const JOHNSTON: TimeZoneRef<'static> = tzdata::PACIFIC_HONOLULU;
 
         /// Time zone data for Pacific/Kanton,
-        pub const KANTON: TimeZoneRef<'static> = tzdata::PACIFIC_KANTON;
+        pub const KANTON: TimeZoneRef<'static> = tzdata::PACIFIC_ENDERBURY;
 
         /// Time zone data for Pacific/Kiritimati,
         pub const KIRITIMATI: TimeZoneRef<'static> = tzdata::PACIFIC_KIRITIMATI;
@@ -4085,12 +4077,12 @@ pub mod time_zone {
         /// Raw, unparsed time zone data for Pacific/Johnston,
         #[cfg(feature = "binary")]
         #[cfg_attr(feature = "docsrs", doc(cfg(feature = "binary")))]
-        pub const RAW_JOHNSTON: &[u8] = raw_tzdata::HST;
+        pub const RAW_JOHNSTON: &[u8] = raw_tzdata::PACIFIC_HONOLULU;
 
         /// Raw, unparsed time zone data for Pacific/Kanton,
         #[cfg(feature = "binary")]
         #[cfg_attr(feature = "docsrs", doc(cfg(feature = "binary")))]
-        pub const RAW_KANTON: &[u8] = raw_tzdata::PACIFIC_KANTON;
+        pub const RAW_KANTON: &[u8] = raw_tzdata::PACIFIC_ENDERBURY;
 
         /// Raw, unparsed time zone data for Pacific/Kiritimati,
         #[cfg(feature = "binary")]
@@ -4690,643 +4682,157 @@ pub(crate) const TIME_ZONES_BY_NAME: phf::Map<Lower, &'static TimeZoneRef<'stati
     key: 12913932095322966823,
     disps: &[
         (0, 0),
-        (0, 0),
-        (0, 59),
-        (0, 3),
-        (0, 0),
-        (1, 128),
-        (0, 1),
-        (0, 2),
-        (1, 75),
-        (0, 17),
-        (0, 503),
-        (0, 112),
-        (0, 166),
-        (0, 570),
-        (0, 1),
-        (0, 13),
-        (0, 269),
-        (0, 452),
-        (0, 122),
-        (0, 147),
-        (0, 217),
-        (0, 141),
-        (0, 92),
-        (0, 1),
-        (0, 7),
-        (0, 63),
-        (0, 10),
-        (0, 1),
-        (0, 16),
-        (0, 127),
-        (0, 17),
-        (0, 6),
         (0, 12),
-        (0, 6),
-        (0, 260),
-        (0, 102),
-        (0, 49),
-        (0, 310),
-        (1, 198),
-        (0, 112),
-        (0, 5),
-        (0, 7),
-        (0, 43),
-        (4, 7),
-        (0, 243),
-        (0, 138),
-        (0, 53),
-        (0, 0),
-        (0, 132),
-        (0, 0),
-        (0, 408),
-        (0, 116),
-        (0, 105),
-        (0, 166),
-        (0, 100),
-        (0, 418),
-        (0, 52),
-        (0, 9),
-        (0, 87),
-        (1, 248),
-        (0, 134),
-        (0, 93),
-        (0, 0),
-        (0, 217),
-        (0, 107),
-        (0, 135),
-        (1, 17),
-        (0, 22),
-        (0, 7),
-        (0, 0),
-        (1, 192),
-        (1, 441),
-        (0, 52),
-        (1, 20),
-        (1, 531),
-        (0, 6),
-        (4, 545),
-        (0, 14),
-        (0, 2),
-        (3, 464),
-        (0, 360),
-        (1, 14),
-        (0, 59),
-        (3, 215),
-        (0, 12),
-        (4, 511),
-        (6, 523),
         (0, 74),
-        (0, 499),
-        (2, 244),
-        (0, 10),
-        (9, 206),
-        (0, 1),
-        (0, 354),
-        (9, 296),
-        (6, 234),
-        (0, 70),
-        (9, 131),
-        (1, 2),
-        (2, 419),
-        (0, 29),
-        (0, 292),
+        (0, 0),
+        (0, 187),
+        (0, 4),
+        (0, 4),
+        (0, 6),
+        (0, 375),
+        (0, 55),
+        (0, 178),
         (0, 17),
-        (1, 46),
-        (1, 471),
-        (1, 227),
+        (0, 298),
+        (0, 284),
+        (0, 0),
+        (0, 0),
+        (1, 196),
+        (0, 439),
+        (0, 22),
+        (0, 9),
+        (0, 188),
+        (1, 73),
+        (0, 25),
         (0, 2),
+        (0, 12),
+        (0, 4),
+        (0, 14),
+        (0, 0),
+        (0, 50),
+        (0, 134),
+        (1, 2),
+        (0, 4),
+        (0, 6),
+        (0, 5),
+        (0, 148),
+        (0, 49),
+        (0, 212),
+        (11, 58),
+        (1, 10),
+        (0, 428),
+        (0, 87),
+        (0, 18),
+        (0, 79),
+        (3, 15),
+        (4, 533),
+        (0, 9),
+        (0, 409),
+        (0, 0),
+        (0, 8),
+        (0, 0),
+        (0, 367),
+        (2, 388),
+        (0, 58),
+        (0, 21),
+        (3, 29),
+        (0, 4),
+        (0, 40),
+        (0, 6),
+        (0, 114),
+        (3, 43),
+        (1, 350),
+        (0, 40),
+        (0, 0),
+        (0, 128),
+        (0, 134),
+        (0, 397),
+        (0, 197),
+        (0, 5),
+        (0, 3),
+        (1, 0),
+        (0, 280),
+        (1, 249),
+        (0, 8),
+        (0, 155),
+        (4, 8),
+        (0, 0),
         (0, 112),
-        (0, 136),
-        (4, 351),
-        (52, 503),
-        (12, 306),
-        (1, 162),
-        (5, 283),
-        (5, 197),
+        (0, 67),
+        (0, 0),
+        (2, 458),
+        (0, 168),
+        (0, 60),
+        (0, 10),
+        (0, 555),
+        (0, 2),
+        (0, 472),
+        (2, 458),
+        (0, 35),
+        (1, 292),
+        (0, 135),
+        (0, 164),
+        (0, 92),
+        (0, 50),
+        (0, 183),
+        (7, 250),
+        (62, 447),
+        (0, 90),
+        (20, 407),
+        (0, 0),
+        (25, 51),
+        (0, 131),
+        (1, 50),
+        (0, 108),
+        (1, 18),
+        (3, 39),
+        (3, 44),
+        (0, 0),
+        (0, 0),
+        (0, 239),
+        (0, 389),
+        (9, 33),
+        (70, 308),
+        (0, 3),
+        (3, 337),
+        (8, 492),
     ],
     entries: &[
         (
             Lower([
-                0x2d747361652f7375,
-                0x616e6169646e69,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_FORT_WAYNE,
-        ),
-        (
-            Lower([
-                0x6a2f616369726661,
-                0x2020202000616275,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AFRICA_JUBA,
-        ),
-        (
-            Lower([
-                0x6369746e616c7461,
-                0x656c65687f74732f,
-                0x202020202000616e,
-                0x2020202020202020,
-            ]),
-            &tzdata::ATLANTIC_ST_HELENA,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x61627f65736f6f67,
-                0x2020202020200079,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_GOOSE_BAY,
-        ),
-        (
-            Lower([
-                0x696c617274737561,
-                0x776f636e61792f61,
-                0x20202000616e6e69,
-                0x2020202020202020,
-            ]),
-            &tzdata::AUSTRALIA_BROKEN_HILL,
-        ),
-        (
-            Lower([
-                0x6b61792f61697361,
-                0x202020006b737475,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ASIA_YAKUTSK,
-        ),
-        (
-            Lower([
-                0x7261622f61697361,
-                0x202020006c75616e,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ASIA_BARNAUL,
-        ),
-        (
-            Lower([
                 0x2f63696669636170,
-                0x6f676170616c6167,
-                0x2020202020200073,
+                0x726f6d7f74726f70,
+                0x2020200079627365,
                 0x2020202020202020,
             ]),
-            &tzdata::PACIFIC_GALAPAGOS,
+            &tzdata::PACIFIC_PORT_MORESBY,
         ),
         (
             Lower([
-                0x79616a2f61697361,
-                0x2020006172757061,
+                0x6168732f61697361,
+                0x202000696168676e,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::ASIA_JAYAPURA,
+            &tzdata::PRC,
         ),
         (
             Lower([
-                0x2020202000746563,
-                0x2020202020202020,
+                0x6d6c612f61697361,
+                0x2020202000797461,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::CET,
+            &tzdata::ASIA_ALMATY,
         ),
         (
             Lower([
-                0x6c2f616369726661,
-                0x20202000736f6761,
+                0x6d2f65706f727565,
+                0x202020006b736e69,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::AFRICA_LAGOS,
-        ),
-        (
-            Lower([
-                0x6c2f616369726661,
-                0x2020202000656d6f,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AFRICA_LOME,
-        ),
-        (
-            Lower([
-                0x6d2f616369726661,
-                0x2000656e61626162,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AFRICA_MBABANE,
-        ),
-        (
-            Lower([
-                0x6374752f637465,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::UCT,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x617567616e616d,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_MANAGUA,
-        ),
-        (
-            Lower([
-                0x742f616369726661,
-                0x2000696c6f706972,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::LIBYA,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x6f697261736f72,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_ROSARIO,
-        ),
-        (
-            Lower([
-                0x7475656c612f7375,
-                0x20202020006e6169,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_ADAK,
-        ),
-        (
-            Lower([
-                0x2f63696669636170,
-                0x6965706e686f70,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::PACIFIC_POHNPEI,
-        ),
-        (
-            Lower([
-                0x2f63696669636170,
-                0x20006f72756a616d,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::PACIFIC_MAJURO,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x202000616b746973,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_SITKA,
-        ),
-        (
-            Lower([
-                0x6f632f656c696863,
-                0x61746e656e69746e,
-                0x202020202020006c,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_SANTIAGO,
-        ),
-        (
-            Lower([
-                0x2f63696669636170,
-                0x7275627265646e65,
-                0x2020202020200079,
-                0x2020202020202020,
-            ]),
-            &tzdata::PACIFIC_ENDERBURY,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x6975716179617567,
-                0x202020202020006c,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_GUAYAQUIL,
-        ),
-        (
-            Lower([
-                0x2d746d672f637465,
-                0x2020202020003131,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ETC_GMT_MINUS_11,
-        ),
-        (
-            Lower([
-                0x61686b2f61697361,
-                0x202000616779646e,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ASIA_KHANDYGA,
-        ),
-        (
-            Lower([
-                0x20006c6561727369,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ISRAEL,
-        ),
-        (
-            Lower([
-                0x7a2f65706f727565,
-                0x2020006863697275,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::EUROPE_BUSINGEN,
-        ),
-        (
-            Lower([
-                0x6c2f65706f727565,
-                0x2020006e6f646e6f,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::GB,
-        ),
-        (
-            Lower([
-                0x7463752f637465,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::UCT,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x727f6f7472657570,
-                0x20202020006f6369,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_PUERTO_RICO,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x6163696e696d6f64,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_DOMINICA,
-        ),
-        (
-            Lower([
-                0x7261682f61697361,
-                0x20202020006e6962,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ASIA_HARBIN,
-        ),
-        (
-            Lower([
-                0x652f6c697a617262,
-                0x2020202000747361,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_SAO_PAULO,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x61686e6f726f6e,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_NORONHA,
-        ),
-        (
-            Lower([
-                0x72616b2f61697361,
-                0x2020200069686361,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ASIA_KARACHI,
-        ),
-        (
-            Lower([
-                0x762f65706f727565,
-                0x20007375696e6c69,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::EUROPE_VILNIUS,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x61687f6c61726f63,
-                0x20200072756f6272,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_CORAL_HARBOUR,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x20006e6f73776164,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_DAWSON,
-        ),
-        (
-            Lower([
-                0x2f63696669636170,
-                0x200079617764696d,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::PACIFIC_MIDWAY,
-        ),
-        (
-            Lower([
-                0x2f63696669636170,
-                0x202020006b757274,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::PACIFIC_CHUUK,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x6c616d6574617567,
-                0x2020202020200061,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_GUATEMALA,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x20006b6976756e69,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_INUVIK,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x7a656c6174726f66,
-                0x2020202020200061,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_FORTALEZA,
-        ),
-        (
-            Lower([
-                0x6369746e616c7461,
-                0x6172696564616d2f,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            &tzdata::ATLANTIC_MADEIRA,
-        ),
-        (
-            Lower([
-                0x2d746d672f637465,
-                0x2020202020200030,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::GMT,
-        ),
-        (
-            Lower([
-                0x642f6c697a617262,
-                0x61686e6f726f6e65,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_NORONHA,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x7f7265646e756874,
-                0x2020202000796162,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_THUNDER_BAY,
-        ),
-        (
-            Lower([
-                0x6e2f616369726661,
-                0x20200079656d6169,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AFRICA_NIAMEY,
-        ),
-        (
-            Lower([
-                0x6f68632f61697361,
-                0x6e61736c616269,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ASIA_CHOIBALSAN,
-        ),
-        (
-            Lower([
-                0x622f65706f727565,
-                0x7473657261686375,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            &tzdata::EUROPE_BUCHAREST,
-        ),
-        (
-            Lower([
-                0x6369746e616c7461,
-                0x65767f657061632f,
-                0x2020202000656472,
-                0x2020202020202020,
-            ]),
-            &tzdata::ATLANTIC_CAPE_VERDE,
-        ),
-        (
-            Lower([
-                0x73756d2f61697361,
-                0x2020202000746163,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ASIA_MUSCAT,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x756f6c6564617567,
-                0x2020202020006570,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_GUADELOUPE,
-        ),
-        (
-            Lower([
-                0x74646535747365,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::EST_5_EDT,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x736e686f6a7f7473,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_ST_JOHNS,
-        ),
-        (
-            Lower([
-                0x616c762f61697361,
-                0x6b6f74736f766964,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            &tzdata::ASIA_VLADIVOSTOK,
-        ),
-        (
-            Lower([
-                0x6e2f6164616e6163,
-                0x6c646e756f667765,
-                0x2020202000646e61,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_ST_JOHNS,
+            &tzdata::EUROPE_MINSK,
         ),
         (
             Lower([
@@ -5339,12 +4845,219 @@ pub(crate) const TIME_ZONES_BY_NAME: phf::Map<Lower, &'static TimeZoneRef<'stati
         ),
         (
             Lower([
-                0x200079656b727574,
+                0x2020202020006267,
                 0x2020202020202020,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::TURKEY,
+            &tzdata::GB,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x20202000656d6f6e,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_NOME,
+        ),
+        (
+            Lower([
+                0x622f616369726661,
+                0x2020006f6b616d61,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AFRICA_BAMAKO,
+        ),
+        (
+            Lower([
+                0x61636f6c2f637465,
+                0x202000656d69746c,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::FACTORY,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x202020006b75756e,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_GODTHAB,
+        ),
+        (
+            Lower([
+                0x6a2f65706f727565,
+                0x2020007965737265,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::EUROPE_JERSEY,
+        ),
+        (
+            Lower([
+                0x616c762f61697361,
+                0x6b6f74736f766964,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            &tzdata::ASIA_VLADIVOSTOK,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x6c616d6574617567,
+                0x2020202020200061,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_GUATEMALA,
+        ),
+        (
+            Lower([
+                0x702f65706f727565,
+                0x2020200073697261,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::EUROPE_PARIS,
+        ),
+        (
+            Lower([
+                0x2020202000636f72,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ROC,
+        ),
+        (
+            Lower([
+                0x2f63696669636170,
+                0x20006e6170696173,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::PACIFIC_SAIPAN,
+        ),
+        (
+            Lower([
+                0x762f65706f727565,
+                0x202000616e6e6569,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::EUROPE_VIENNA,
+        ),
+        (
+            Lower([
+                0x702f65706f727565,
+                0x616369726f67646f,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            &tzdata::EUROPE_BELGRADE,
+        ),
+        (
+            Lower([
+                0x2f63696669636170,
+                0x676e6f746f726172,
+                0x2020202020200061,
+                0x2020202020202020,
+            ]),
+            &tzdata::PACIFIC_RAROTONGA,
+        ),
+        (
+            Lower([
+                0x6974637261746e61,
+                0x6568746f722f6163,
+                0x2020202020006172,
+                0x2020202020202020,
+            ]),
+            &tzdata::ANTARCTICA_ROTHERA,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x73697f61746e6173,
+                0x202020006c656261,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_ENSENADA,
+        ),
+        (
+            Lower([
+                0x696c617274737561,
+                0x736e656575712f61,
+                0x20202000646e616c,
+                0x2020202020202020,
+            ]),
+            &tzdata::AUSTRALIA_BRISBANE,
+        ),
+        (
+            Lower([
+                0x6b2f616369726661,
+                0x2000616c61706d61,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AFRICA_KAMPALA,
+        ),
+        (
+            Lower([
+                0x642f616369726661,
+                0x202000616c61756f,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AFRICA_DOUALA,
+        ),
+        (
+            Lower([
+                0x2020006e6170616a,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::JAPAN,
+        ),
+        (
+            Lower([
+                0x752f65706f727565,
+                0x646f726f67687a,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::EUROPE_UZHGOROD,
+        ),
+        (
+            Lower([
+                0x2f63696669636170,
+                0x2000726574736165,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::CHILE_EASTER_ISLAND,
+        ),
+        (
+            Lower([
+                0x6d61642f61697361,
+                0x2020007375637361,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ASIA_DAMASCUS,
+        ),
+        (
+            Lower([
+                0x2020202000746563,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::CET,
         ),
         (
             Lower([
@@ -5357,390 +5070,12 @@ pub(crate) const TIME_ZONES_BY_NAME: phf::Map<Lower, &'static TimeZoneRef<'stati
         ),
         (
             Lower([
-                0x2f61636972656d61,
-                0x6167616e696a6f,
+                0x652f6c697a617262,
+                0x2020202000747361,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::AMERICA_OJINAGA,
-        ),
-        (
-            Lower([
-                0x7572622f61697361,
-                0x202020200069656e,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ASIA_BRUNEI,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x786166696c6168,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_HALIFAX,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x20007561656e756a,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_JUNEAU,
-        ),
-        (
-            Lower([
-                0x6c2f636974637261,
-                0x6272616579676e6f,
-                0x20202020006e6579,
-                0x2020202020202020,
-            ]),
-            &tzdata::ARCTIC_LONGYEARBYEN,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x20007265766e6564,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::NAVAJO,
-        ),
-        (
-            Lower([
-                0x756c757a2f637465,
-                0x2020202020202000,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::UCT,
-        ),
-        (
-            Lower([
-                0x6369746e616c7461,
-                0x7365726f7a612f,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ATLANTIC_AZORES,
-        ),
-        (
-            Lower([
-                0x2f63696669636170,
-                0x6f666f616b6166,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::PACIFIC_FAKAOFO,
-        ),
-        (
-            Lower([
-                0x6c2f616369726661,
-                0x202000616b617375,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AFRICA_LUSAKA,
-        ),
-        (
-            Lower([
-                0x6974637261746e61,
-                0x72756d636d2f6163,
-                0x2020202020006f64,
-                0x2020202020202020,
-            ]),
-            &tzdata::ANTARCTICA_MC_MURDO,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x74696f72746564,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_DETROIT,
-        ),
-        (
-            Lower([
-                0x612f616369726661,
-                0x2020200061726363,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AFRICA_ACCRA,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x72617f61746e7570,
-                0x2020200073616e65,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_PUNTA_ARENAS,
-        ),
-        (
-            Lower([
-                0x612f616369726661,
-                0x6162617f73696464,
-                0x2020202020006162,
-                0x2020202020202020,
-            ]),
-            &tzdata::AFRICA_ADDIS_ABABA,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x6e6172627f6f6972,
-                0x2020202020006f63,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_PORTO_ACRE,
-        ),
-        (
-            Lower([
-                0x682f616369726661,
-                0x2020006572617261,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AFRICA_HARARE,
-        ),
-        (
-            Lower([
-                0x6e2f616369726661,
-                0x746f68636b61756f,
-                0x2020202020200074,
-                0x2020202020202020,
-            ]),
-            &tzdata::AFRICA_NOUAKCHOTT,
-        ),
-        (
-            Lower([
-                0x622f616369726661,
-                0x2020006c756a6e61,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AFRICA_BANJUL,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x61627f6563616c67,
-                0x2020202020200079,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_GLACE_BAY,
-        ),
-        (
-            Lower([
-                0x632f65706f727565,
-                0x656761686e65706f,
-                0x202020202020006e,
-                0x2020202020202020,
-            ]),
-            &tzdata::EUROPE_COPENHAGEN,
-        ),
-        (
-            Lower([
-                0x69656c616a61776b,
-                0x202020202020006e,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::KWAJALEIN,
-        ),
-        (
-            Lower([
-                0x2020202000747368,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::HST,
-        ),
-        (
-            Lower([
-                0x6c65742f61697361,
-                0x202000766976617f,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ASIA_TEL_AVIV,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x737474696b7f7473,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_ST_KITTS,
-        ),
-        (
-            Lower([
-                0x72656a2f61697361,
-                0x20006d656c617375,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ISRAEL,
-        ),
-        (
-            Lower([
-                0x2f63696669636170,
-                0x726569626d6167,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::PACIFIC_GAMBIER,
-        ),
-        (
-            Lower([
-                0x616c752f61697361,
-                0x7261746161626e61,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            &tzdata::ASIA_ULAANBAATAR,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x72707f7265776f6c,
-                0x2020007365636e69,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_CURACAO,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x75747f646e617267,
-                0x2020202020006b72,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_GRAND_TURK,
-        ),
-        (
-            Lower([
-                0x2b746d672f637465,
-                0x2020202020200038,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ETC_GMT_PLUS_8,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x20006e616d796163,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_CAYMAN,
-        ),
-        (
-            Lower([
-                0x2b746d672f637465,
-                0x2020202020200031,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ATLANTIC_JAN_MAYEN,
-        ),
-        (
-            Lower([
-                0x616e612f61697361,
-                0x2020202000727964,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ASIA_ANADYR,
-        ),
-        (
-            Lower([
-                0x6f65732f61697361,
-                0x2020202020006c75,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ROK,
-        ),
-        (
-            Lower([
-                0x6e2f65706f727565,
-                0x20006169736f6369,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ASIA_NICOSIA,
-        ),
-        (
-            Lower([
-                0x696c617274737561,
-                0x616c6375652f61,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AUSTRALIA_EUCLA,
-        ),
-        (
-            Lower([
-                0x2f63696669636170,
-                0x6e6f74736e686f6a,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            &tzdata::HST,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x65636e69767f7473,
-                0x202020202000746e,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_ST_VINCENT,
-        ),
-        (
-            Lower([
-                0x612f6164616e6163,
-                0x6369746e616c74,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_HALIFAX,
-        ),
-        (
-            Lower([
-                0x2020202000746375,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::UCT,
-        ),
-        (
-            Lower([
-                0x632f6e6169646e69,
-                0x202000736f676168,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::INDIAN_CHAGOS,
-        ),
-        (
-            Lower([
-                0x612f616369726661,
-                0x2020006172616d73,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AFRICA_ASMARA,
+            &tzdata::AMERICA_SAO_PAULO,
         ),
         (
             Lower([
@@ -5754,569 +5089,83 @@ pub(crate) const TIME_ZONES_BY_NAME: phf::Map<Lower, &'static TimeZoneRef<'stati
         (
             Lower([
                 0x2f61636972656d61,
-                0x736b72616d6e6164,
-                0x202020006e766168,
+                0x202020006b616461,
+                0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::AMERICA_DANMARKSHAVN,
+            &tzdata::AMERICA_ADAK,
+        ),
+        (
+            Lower([
+                0x6c69642f61697361,
+                0x2020202020200069,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ASIA_DILI,
+        ),
+        (
+            Lower([
+                0x2020202020007a6e,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::NZ,
+        ),
+        (
+            Lower([
+                0x6a2f616369726661,
+                0x6273656e6e61686f,
+                0x2020202000677275,
+                0x2020202020202020,
+            ]),
+            &tzdata::AFRICA_JOHANNESBURG,
+        ),
+        (
+            Lower([
+                0x736f712f61697361,
+                0x20200079616e6174,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ASIA_QOSTANAY,
         ),
         (
             Lower([
                 0x2f61636972656d61,
-                0x6e616c74617a616d,
+                0x2000616e61766168,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::CUBA,
+        ),
+        (
+            Lower([
+                0x742f616369726661,
+                0x75746b75626d69,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AFRICA_BAMAKO,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x6164616e65736e65,
                 0x2020202020202000,
                 0x2020202020202020,
             ]),
-            &tzdata::AMERICA_MAZATLAN,
+            &tzdata::AMERICA_ENSENADA,
         ),
         (
             Lower([
-                0x2f63696669636170,
-                0x69747566616e7566,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            &tzdata::PACIFIC_FUNAFUTI,
-        ),
-        (
-            Lower([
-                0x612f6e6169646e69,
-                0x72616e616e61746e,
-                0x20202020006f7669,
-                0x2020202020202020,
-            ]),
-            &tzdata::INDIAN_ANTANANARIVO,
-        ),
-        (
-            Lower([
-                0x6861622f61697361,
-                0x202020006e696172,
+                0x6b61622f61697361,
+                0x2020202020200075,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::ASIA_BAHRAIN,
-        ),
-        (
-            Lower([
-                0x657269652d6267,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::GB,
-        ),
-        (
-            Lower([
-                0x766f6e2f61697361,
-                0x7374656e7a756b6f,
-                0x202020202020006b,
-                0x2020202020202020,
-            ]),
-            &tzdata::ASIA_NOVOKUZNETSK,
-        ),
-        (
-            Lower([
-                0x2d746d672f637465,
-                0x2020202020200034,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ETC_GMT_MINUS_4,
-        ),
-        (
-            Lower([
-                0x642f616369726661,
-                0x2020200072616b61,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AFRICA_DAKAR,
-        ),
-        (
-            Lower([
-                0x6b2f6e6169646e69,
-                0x6e656c6575677265,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            &tzdata::INDIAN_KERGUELEN,
-        ),
-        (
-            Lower([
-                0x792f6164616e6163,
-                0x202020006e6f6b75,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_WHITEHORSE,
-        ),
-        (
-            Lower([
-                0x7568632f61697361,
-                0x2000676e696b676e,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ASIA_CHONGQING,
-        ),
-        (
-            Lower([
-                0x2b746d672f637465,
-                0x2020202020200035,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ETC_GMT_PLUS_5,
-        ),
-        (
-            Lower([
-                0x2020202020006267,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::GB,
-        ),
-        (
-            Lower([
-                0x61726b2f61697361,
-                0x6b737261796f6e73,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            &tzdata::ASIA_KRASNOYARSK,
-        ),
-        (
-            Lower([
-                0x6b2f616369726661,
-                0x6d756f74726168,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AFRICA_KHARTOUM,
-        ),
-        (
-            Lower([
-                0x6d61732f61697361,
-                0x2000646e616b7261,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ASIA_SAMARKAND,
-        ),
-        (
-            Lower([
-                0x2d746d672f637465,
-                0x2020202020200037,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ETC_GMT_MINUS_7,
-        ),
-        (
-            Lower([
-                0x6f79702f61697361,
-                0x2000676e6179676e,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ASIA_PYONGYANG,
-        ),
-        (
-            Lower([
-                0x2020200075732d77,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::W_SU,
-        ),
-        (
-            Lower([
-                0x30746d672f637465,
-                0x2020202020202000,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::GMT,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x72677f6f706d6163,
-                0x2020200065646e61,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_CAMPO_GRANDE,
-        ),
-        (
-            Lower([
-                0x6873612f61697361,
-                0x2020007461626167,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ASIA_ASHGABAT,
-        ),
-        (
-            Lower([
-                0x632f616369726661,
-                0x2020200061747565,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AFRICA_CEUTA,
-        ),
-        (
-            Lower([
-                0x7f6f682f61697361,
-                0x686e696d7f696863,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            &tzdata::ASIA_HO_CHI_MINH,
-        ),
-        (
-            Lower([
-                0x732f6164616e6163,
-                0x65686374616b7361,
-                0x20202020006e6177,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_REGINA,
-        ),
-        (
-            Lower([
-                0x742f65706f727565,
-                0x6c6f7073617269,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::EUROPE_TIRASPOL,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x6e6f746e6f6d6465,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_EDMONTON,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x6c69767369756f6c,
-                0x202020202000656c,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_LOUISVILLE,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x697f6e696b6e6172,
-                0x2020200074656c6e,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_RANKIN_INLET,
-        ),
-        (
-            Lower([
-                0x2f63696669636170,
-                0x6b6c6f66726f6e,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::PACIFIC_NORFOLK,
-        ),
-        (
-            Lower([
-                0x6d2f6164616e6163,
-                0x6e6961746e756f,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_EDMONTON,
-        ),
-        (
-            Lower([
-                0x622f616369726661,
-                0x6c6976617a7a6172,
-                0x202020202000656c,
-                0x2020202020202020,
-            ]),
-            &tzdata::AFRICA_BRAZZAVILLE,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x68747261627f7473,
-                0x202000796d656c65,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_MARIGOT,
-        ),
-        (
-            Lower([
-                0x6d2f65706f727565,
-                0x202020006b736e69,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::EUROPE_MINSK,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x6972616d61726170,
-                0x2020202020006f62,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_PARAMARIBO,
-        ),
-        (
-            Lower([
-                0x6e6f682f61697361,
-                0x2000676e6f6b7f67,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::HONGKONG,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x64697665746e6f6d,
-                0x2020202020006f65,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_MONTEVIDEO,
-        ),
-        (
-            Lower([
-                0x696863696d2f7375,
-                0x20202020006e6167,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_DETROIT,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x72726573746e6f6d,
-                0x2020202020007461,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_MONTSERRAT,
-        ),
-        (
-            Lower([
-                0x63756b2f61697361,
-                0x20202000676e6968,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ASIA_KUCHING,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x7472696e676e6170,
-                0x2020202000676e75,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_PANGNIRTUNG,
-        ),
-        (
-            Lower([
-                0x61636f6c2f637465,
-                0x202000656d69746c,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::FACTORY,
-        ),
-        (
-            Lower([
-                0x676e6f6b676e6f68,
-                0x2020202020202000,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::HONGKONG,
-        ),
-        (
-            Lower([
-                0x6c2f616369726661,
-                0x6c6c697665726269,
-                0x2020202020200065,
-                0x2020202020202020,
-            ]),
-            &tzdata::AFRICA_LIBREVILLE,
-        ),
-        (
-            Lower([
-                0x2d746d672f637465,
-                0x2020202020200031,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ETC_GMT_MINUS_1,
-        ),
-        (
-            Lower([
-                0x692f65706f727565,
-                0x6d7f666f7f656c73,
-                0x2020202020006e61,
-                0x2020202020202020,
-            ]),
-            &tzdata::EUROPE_ISLE_OF_MAN,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x6c616572746e6f6d,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_MONTREAL,
-        ),
-        (
-            Lower([
-                0x6b616a2f61697361,
-                0x2020200061747261,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ASIA_JAKARTA,
-        ),
-        (
-            Lower([
-                0x63696e2f61697361,
-                0x202020006169736f,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ASIA_NICOSIA,
-        ),
-        (
-            Lower([
-                0x632f6164616e6163,
-                0x20006c6172746e65,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_WINNIPEG,
-        ),
-        (
-            Lower([
-                0x702f6164616e6163,
-                0x2000636966696361,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_VANCOUVER,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x6f676169746e6173,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_SANTIAGO,
-        ),
-        (
-            Lower([
-                0x6369746e616c7461,
-                0x677f6874756f732f,
-                0x2000616967726f65,
-                0x2020202020202020,
-            ]),
-            &tzdata::ATLANTIC_SOUTH_GEORGIA,
-        ),
-        (
-            Lower([
-                0x61726f2f61697361,
-                0x202020202020006c,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ASIA_ORAL,
-        ),
-        (
-            Lower([
-                0x672f616369726661,
-                0x656e6f726f6261,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AFRICA_GABORONE,
-        ),
-        (
-            Lower([
-                0x2f63696669636170,
-                0x676e6f746f726172,
-                0x2020202020200061,
-                0x2020202020202020,
-            ]),
-            &tzdata::PACIFIC_RAROTONGA,
-        ),
-        (
-            Lower([
-                0x682f65706f727565,
-                0x696b6e69736c65,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::EUROPE_HELSINKI,
-        ),
-        (
-            Lower([
-                0x6974637261746e61,
-                0x61776f79732f6163,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            &tzdata::ANTARCTICA_SYOWA,
-        ),
-        (
-            Lower([
-                0x6d2f616369726661,
-                0x2020006f74757061,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AFRICA_MAPUTO,
-        ),
-        (
-            Lower([
-                0x6d2f616369726661,
-                0x6169766f726e6f,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AFRICA_MONROVIA,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x20202000656d6f6e,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_NOME,
-        ),
-        (
-            Lower([
-                0x6569762f61697361,
-                0x2000656e6169746e,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ASIA_VIENTIANE,
+            &tzdata::ASIA_BAKU,
         ),
         (
             Lower([
@@ -6329,174 +5178,165 @@ pub(crate) const TIME_ZONES_BY_NAME: phf::Map<Lower, &'static TimeZoneRef<'stati
         ),
         (
             Lower([
-                0x2f63696669636170,
-                0x616d69746972696b,
-                0x2020202020006974,
+                0x6974637261746e61,
+                0x61776f79732f6163,
+                0x2020202020202000,
                 0x2020202020202020,
             ]),
-            &tzdata::PACIFIC_KIRITIMATI,
+            &tzdata::ANTARCTICA_SYOWA,
         ),
         (
             Lower([
-                0x622f65706f727565,
-                0x76616c7369746172,
+                0x6275642f61697361,
+                0x2020202020006961,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ASIA_DUBAI,
+        ),
+        (
+            Lower([
+                0x6961742f61697361,
+                0x2020202000696570,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ROC,
+        ),
+        (
+            Lower([
+                0x6b2f616369726661,
+                0x61736168736e69,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AFRICA_KINSHASA,
+        ),
+        (
+            Lower([
+                0x7261622f61697361,
+                0x202020006c75616e,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ASIA_BARNAUL,
+        ),
+        (
+            Lower([
+                0x2f63696669636170,
+                0x20202000696a6966,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::PACIFIC_FIJI,
+        ),
+        (
+            Lower([
+                0x2f63696669636170,
+                0x69747566616e7566,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            &tzdata::PACIFIC_FUNAFUTI,
+        ),
+        (
+            Lower([
+                0x6965622f61697361,
+                0x2020202000747572,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ASIA_BEIRUT,
+        ),
+        (
+            Lower([
+                0x2020202000747365,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::EST,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x637f6e6f73776164,
+                0x202020006b656572,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_DAWSON_CREEK,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x69727f796e696172,
+                0x2020202000726576,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_RAINY_RIVER,
+        ),
+        (
+            Lower([
+                0x6b2f65706f727565,
+                0x20202000766f7269,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::EUROPE_KIROV,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x7a656c6174726f66,
                 0x2020202020200061,
                 0x2020202020202020,
             ]),
-            &tzdata::EUROPE_BRATISLAVA,
-        ),
-        (
-            Lower([
-                0x2f63696669636170,
-                0x202020006575696e,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::PACIFIC_NIUE,
+            &tzdata::AMERICA_FORTALEZA,
         ),
         (
             Lower([
                 0x2f61636972656d61,
-                0x616e61756a6974,
+                0x202000616b746973,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::AMERICA_SANTA_ISABEL,
+            &tzdata::AMERICA_SITKA,
         ),
         (
             Lower([
-                0x2d746d672f637465,
-                0x2020202020003331,
-                0x2020202020202020,
+                0x622f616369726661,
+                0x617275626d756a75,
+                0x2020202020202000,
                 0x2020202020202020,
             ]),
-            &tzdata::ETC_GMT_MINUS_13,
+            &tzdata::AFRICA_BUJUMBURA,
         ),
         (
             Lower([
-                0x2d746d672f637465,
-                0x2020202020200033,
+                0x6b72692f61697361,
+                0x202020006b737475,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::ETC_GMT_MINUS_3,
+            &tzdata::ASIA_IRKUTSK,
         ),
         (
             Lower([
-                0x2f61636972656d61,
-                0x20006f696563616d,
+                0x746168632d7a6e,
+                0x2020202020202020,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::AMERICA_MACEIO,
+            &tzdata::NZ_CHAT,
         ),
         (
             Lower([
-                0x6369746e616c7461,
-                0x7972616e61632f,
+                0x6c2f616369726661,
+                0x2020202000656d6f,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::ATLANTIC_CANARY,
-        ),
-        (
-            Lower([
-                0x6369746e616c7461,
-                0x2000656f7261662f,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ATLANTIC_FAEROE,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x20202000616d696c,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_LIMA,
-        ),
-        (
-            Lower([
-                0x6b65792f61697361,
-                0x75626e6972657461,
-                0x2020202020006772,
-                0x2020202020202020,
-            ]),
-            &tzdata::ASIA_YEKATERINBURG,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x2000616d616e6170,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_PANAMA,
-        ),
-        (
-            Lower([
-                0x6265682f61697361,
-                0x20202020006e6f72,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ASIA_HEBRON,
-        ),
-        (
-            Lower([
-                0x6b6f742f61697361,
-                0x2020202020006f79,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::JAPAN,
-        ),
-        (
-            Lower([
-                0x702f65706f727565,
-                0x2020006575676172,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::EUROPE_BRATISLAVA,
-        ),
-        (
-            Lower([
-                0x6d2f65706f727565,
-                0x2020006f63616e6f,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::EUROPE_MONACO,
-        ),
-        (
-            Lower([
-                0x2f63696669636170,
-                0x200061656d756f6e,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::PACIFIC_NOUMEA,
-        ),
-        (
-            Lower([
-                0x6c2f65706f727565,
-                0x72756f626d657875,
-                0x2020202020200067,
-                0x2020202020202020,
-            ]),
-            &tzdata::EUROPE_LUXEMBOURG,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x78696e656f6870,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_PHOENIX,
+            &tzdata::AFRICA_LOME,
         ),
         (
             Lower([
@@ -6510,11 +5350,452 @@ pub(crate) const TIME_ZONES_BY_NAME: phf::Map<Lower, &'static TimeZoneRef<'stati
         (
             Lower([
                 0x2f61636972656d61,
-                0x7f666f7f74726f70,
-                0x2020006e69617073,
+                0x6c69767369756f6c,
+                0x202020202000656c,
                 0x2020202020202020,
             ]),
-            &tzdata::AMERICA_MARIGOT,
+            &tzdata::AMERICA_LOUISVILLE,
+        ),
+        (
+            Lower([
+                0x2020202000746d67,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::GMT,
+        ),
+        (
+            Lower([
+                0x7475656c612f7375,
+                0x20202020006e6169,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_ADAK,
+        ),
+        (
+            Lower([
+                0x69617761682f7375,
+                0x2020202020200069,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::PACIFIC_HONOLULU,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x616e61756a6974,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_ENSENADA,
+        ),
+        (
+            Lower([
+                0x6564612f61697361,
+                0x202020202020006e,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ASIA_ADEN,
+        ),
+        (
+            Lower([
+                0x2f63696669636170,
+                0x6f676170616c6167,
+                0x2020202020200073,
+                0x2020202020202020,
+            ]),
+            &tzdata::PACIFIC_GALAPAGOS,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x62616874646f67,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_GODTHAB,
+        ),
+        (
+            Lower([
+                0x6d2f65706f727565,
+                0x6e6d616865697261,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            &tzdata::EUROPE_HELSINKI,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x6972616d61726170,
+                0x2020202020006f62,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_PARAMARIBO,
+        ),
+        (
+            Lower([
+                0x2d746d672f637465,
+                0x2020202020200030,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::GMT,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x6167616e696a6f,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_OJINAGA,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x200075617373616e,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_NASSAU,
+        ),
+        (
+            Lower([
+                0x6974637261746e61,
+                0x6c6c6f72742f6163,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            &tzdata::ANTARCTICA_TROLL,
+        ),
+        (
+            Lower([
+                0x7361742f61697361,
+                0x202000746e656b68,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ASIA_TASHKENT,
+        ),
+        (
+            Lower([
+                0x657269652d6267,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::GB,
+        ),
+        (
+            Lower([
+                0x2f63696669636170,
+                0x7275627265646e65,
+                0x2020202020200079,
+                0x2020202020202020,
+            ]),
+            &tzdata::PACIFIC_ENDERBURY,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x79627365726f6373,
+                0x20202000646e7573,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_SCORESBYSUND,
+        ),
+        (
+            Lower([
+                0x6962742f61697361,
+                0x202020006973696c,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ASIA_TBILISI,
+        ),
+        (
+            Lower([
+                0x61686b2f61697361,
+                0x202000616779646e,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ASIA_KHANDYGA,
+        ),
+        (
+            Lower([
+                0x722f6e6169646e69,
+                0x20006e6f696e7565,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::INDIAN_REUNION,
+        ),
+        (
+            Lower([
+                0x6c2f65706f727565,
+                0x2020006e6f627369,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::PORTUGAL,
+        ),
+        (
+            Lower([
+                0x622f65706f727565,
+                0x736c6573737572,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::EUROPE_BRUSSELS,
+        ),
+        (
+            Lower([
+                0x2b746d672f637465,
+                0x2020202020003031,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ETC_GMT_PLUS_10,
+        ),
+        (
+            Lower([
+                0x6c2f616369726661,
+                0x202000616b617375,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AFRICA_LUSAKA,
+        ),
+        (
+            Lower([
+                0x732f6164616e6163,
+                0x65686374616b7361,
+                0x20202020006e6177,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_REGINA,
+        ),
+        (
+            Lower([
+                0x202000617962696c,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::LIBYA,
+        ),
+        (
+            Lower([
+                0x6c2f65706f727565,
+                0x2020006e6f646e6f,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::GB,
+        ),
+        (
+            Lower([
+                0x20202020006b6f72,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ROK,
+        ),
+        (
+            Lower([
+                0x632f65706f727565,
+                0x656761686e65706f,
+                0x202020202020006e,
+                0x2020202020202020,
+            ]),
+            &tzdata::EUROPE_COPENHAGEN,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x20006e75636e6163,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_CANCUN,
+        ),
+        (
+            Lower([
+                0x2b746d672f637465,
+                0x2020202020003131,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ETC_GMT_PLUS_11,
+        ),
+        (
+            Lower([
+                0x742f616369726661,
+                0x2020200073696e75,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AFRICA_TUNIS,
+        ),
+        (
+            Lower([
+                0x6d6f742f61697361,
+                0x2020202020006b73,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ASIA_TOMSK,
+        ),
+        (
+            Lower([
+                0x61756b2f61697361,
+                0x75706d756c7f616c,
+                0x2020202020200072,
+                0x2020202020202020,
+            ]),
+            &tzdata::ASIA_KUALA_LUMPUR,
+        ),
+        (
+            Lower([
+                0x732f65706f727565,
+                0x2020006172616d61,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::EUROPE_SAMARA,
+        ),
+        (
+            Lower([
+                0x612f6e6169646e69,
+                0x72616e616e61746e,
+                0x20202020006f7669,
+                0x2020202020202020,
+            ]),
+            &tzdata::INDIAN_ANTANANARIVO,
+        ),
+        (
+            Lower([
+                0x73616b2f61697361,
+                0x2020200072616768,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ASIA_KASHGAR,
+        ),
+        (
+            Lower([
+                0x72656a2f61697361,
+                0x20006d656c617375,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ISRAEL,
+        ),
+        (
+            Lower([
+                0x200079656b727574,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::TURKEY,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x637f6f636978656d,
+                0x2020202000797469,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_MEXICO_CITY,
+        ),
+        (
+            Lower([
+                0x696c617274737561,
+                0x20200077736e2f61,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AUSTRALIA_ACT,
+        ),
+        (
+            Lower([
+                0x2020202000637270,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::PRC,
+        ),
+        (
+            Lower([
+                0x6e69732f61697361,
+                0x200065726f706167,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::SINGAPORE,
+        ),
+        (
+            Lower([
+                0x696c617274737561,
+                0x2020007463612f61,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AUSTRALIA_ACT,
+        ),
+        (
+            Lower([
+                0x7369622f61697361,
+                0x202020006b656b68,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ASIA_BISHKEK,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x72707f7265776f6c,
+                0x2020007365636e69,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_CURACAO,
+        ),
+        (
+            Lower([
+                0x7471612f61697361,
+                0x202020200065626f,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ASIA_AQTOBE,
+        ),
+        (
+            Lower([
+                0x6c65742f61697361,
+                0x202000766976617f,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ISRAEL,
+        ),
+        (
+            Lower([
+                0x6e2f616369726661,
+                0x200069626f726961,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AFRICA_NAIROBI,
         ),
         (
             Lower([
@@ -6528,119 +5809,11 @@ pub(crate) const TIME_ZONES_BY_NAME: phf::Map<Lower, &'static TimeZoneRef<'stati
         (
             Lower([
                 0x2f61636972656d61,
-                0x71696e697472616d,
-                0x2020202020006575,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_MARTINIQUE,
-        ),
-        (
-            Lower([
-                0x7969722f61697361,
-                0x2020202000686461,
+                0x78696e656f6870,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::ASIA_RIYADH,
-        ),
-        (
-            Lower([
-                0x746d672f637465,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::GMT,
-        ),
-        (
-            Lower([
-                0x72746e65632f7375,
-                0x2020202020006c61,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_CHICAGO,
-        ),
-        (
-            Lower([
-                0x7473692f61697361,
-                0x2020006c75626e61,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::TURKEY,
-        ),
-        (
-            Lower([
-                0x2f63696669636170,
-                0x2020006b75756863,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::PACIFIC_CHUUK,
-        ),
-        (
-            Lower([
-                0x2f63696669636170,
-                0x200073696c6c6177,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::PACIFIC_WALLIS,
-        ),
-        (
-            Lower([
-                0x6d2f65706f727565,
-                0x202000776f63736f,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::W_SU,
-        ),
-        (
-            Lower([
-                0x2d746d672f637465,
-                0x2020202020200036,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ETC_GMT_MINUS_6,
-        ),
-        (
-            Lower([
-                0x642f616369726661,
-                0x6974756f62696a,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AFRICA_DJIBOUTI,
-        ),
-        (
-            Lower([
-                0x6962742f61697361,
-                0x202020006973696c,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ASIA_TBILISI,
-        ),
-        (
-            Lower([
-                0x672f6f636978656d,
-                0x20006c6172656e65,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_MEXICO_CITY,
-        ),
-        (
-            Lower([
-                0x612f65706f727565,
-                0x20006172726f646e,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::EUROPE_ANDORRA,
+            &tzdata::AMERICA_PHOENIX,
         ),
         (
             Lower([
@@ -6653,66 +5826,21 @@ pub(crate) const TIME_ZONES_BY_NAME: phf::Map<Lower, &'static TimeZoneRef<'stati
         ),
         (
             Lower([
-                0x622f6f636978656d,
-                0x6574726f6e616a61,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_SANTA_ISABEL,
-        ),
-        (
-            Lower([
-                0x6968632f61697361,
-                0x2020202020006174,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ASIA_CHITA,
-        ),
-        (
-            Lower([
-                0x6369746e616c7461,
-                0x656f726561662f,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ATLANTIC_FAEROE,
-        ),
-        (
-            Lower([
-                0x696c617274737561,
-                0x2000747365772f61,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AUSTRALIA_PERTH,
-        ),
-        (
-            Lower([
-                0x2f63696669636170,
-                0x69656c616a61776b,
-                0x202020202020006e,
-                0x2020202020202020,
-            ]),
-            &tzdata::KWAJALEIN,
-        ),
-        (
-            Lower([
                 0x2f61636972656d61,
-                0x70616e6169646e69,
-                0x2020200073696c6f,
+                0x2000656669636572,
+                0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::AMERICA_FORT_WAYNE,
+            &tzdata::AMERICA_RECIFE,
         ),
         (
             Lower([
-                0x6361642f61697361,
-                0x2020202020006163,
+                0x2b746d672f637465,
+                0x2020202020200032,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::ASIA_DACCA,
+            &tzdata::ETC_GMT_PLUS_2,
         ),
         (
             Lower([
@@ -6725,462 +5853,174 @@ pub(crate) const TIME_ZONES_BY_NAME: phf::Map<Lower, &'static TimeZoneRef<'stati
         ),
         (
             Lower([
-                0x2f63696669636170,
-                0x202020006d617567,
-                0x2020202020202020,
+                0x6f2f616369726661,
+                0x67756f6461676175,
+                0x202020202000756f,
                 0x2020202020202020,
             ]),
-            &tzdata::PACIFIC_GUAM,
+            &tzdata::AFRICA_OUAGADOUGOU,
         ),
         (
             Lower([
-                0x2f61636972656d61,
-                0x6574756c6f736572,
-                0x2020202020202000,
+                0x612f616369726661,
+                0x6162617f73696464,
+                0x2020202020006162,
                 0x2020202020202020,
             ]),
-            &tzdata::AMERICA_RESOLUTE,
+            &tzdata::AFRICA_ADDIS_ABABA,
         ),
         (
             Lower([
-                0x2f61636972656d61,
-                0x2000616e61797567,
+                0x612f65706f727565,
+                0x20006172726f646e,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::AMERICA_GUYANA,
+            &tzdata::EUROPE_ANDORRA,
         ),
         (
             Lower([
-                0x6b2f65706f727565,
-                0x2020202000766569,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::EUROPE_KIEV,
-        ),
-        (
-            Lower([
-                0x202020006e617269,
-                0x2020202020202020,
-                0x2020202020202020,
+                0x6974637261746e61,
+                0x6f7377616d2f6163,
+                0x202020202020006e,
                 0x2020202020202020,
             ]),
-            &tzdata::IRAN,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x200061646972656d,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_MERIDA,
-        ),
-        (
-            Lower([
-                0x6e69732f61697361,
-                0x200065726f706167,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::SINGAPORE,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x6b726f797f77656e,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_NEW_YORK,
-        ),
-        (
-            Lower([
-                0x6369746e616c7461,
-                0x6164756d7265622f,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            &tzdata::ATLANTIC_BERMUDA,
-        ),
-        (
-            Lower([
-                0x2020200061627563,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::CUBA,
-        ),
-        (
-            Lower([
-                0x61756b2f61697361,
-                0x75706d756c7f616c,
-                0x2020202020200072,
-                0x2020202020202020,
-            ]),
-            &tzdata::ASIA_KUALA_LUMPUR,
-        ),
-        (
-            Lower([
-                0x74646336747363,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::CST_6_CDT,
-        ),
-        (
-            Lower([
-                0x762f65706f727565,
-                0x202020007a756461,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::EUROPE_VADUZ,
-        ),
-        (
-            Lower([
-                0x696c617274737561,
-                0x2020007463612f61,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AUSTRALIA_ACT,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x200061746f676f62,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_BOGOTA,
-        ),
-        (
-            Lower([
-                0x646e616c656369,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ICELAND,
-        ),
-        (
-            Lower([
-                0x202000617962696c,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::LIBYA,
-        ),
-        (
-            Lower([
-                0x6168732f61697361,
-                0x202000696168676e,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::PRC,
-        ),
-        (
-            Lower([
-                0x6369776e65657267,
-                0x2020202020200068,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::GMT,
-        ),
-        (
-            Lower([
-                0x2f63696669636170,
-                0x2020006574616665,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::PACIFIC_EFATE,
+            &tzdata::ANTARCTICA_MAWSON,
         ),
         (
             Lower([
                 0x2d746d672f637465,
-                0x2020202020003231,
+                0x2020202020200031,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::ETC_GMT_MINUS_12,
-        ),
-        (
-            Lower([
-                0x622f65706f727565,
-                0x74736570616475,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::EUROPE_BUDAPEST,
-        ),
-        (
-            Lower([
-                0x6f68632f61697361,
-                0x2000676e6971676e,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ASIA_CHONGQING,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x6f676163696863,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_CHICAGO,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x656e6e65796163,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_CAYENNE,
+            &tzdata::ETC_GMT_MINUS_1,
         ),
         (
             Lower([
                 0x6c2f65706f727565,
-                0x616e616a6c62756a,
+                0x72756f626d657875,
+                0x2020202020200067,
+                0x2020202020202020,
+            ]),
+            &tzdata::EUROPE_LUXEMBOURG,
+        ),
+        (
+            Lower([
+                0x622f65706f727565,
+                0x65646172676c65,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::EUROPE_BELGRADE,
+        ),
+        (
+            Lower([
+                0x202020200074656d,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::MET,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x6975716179617567,
+                0x202020202020006c,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_GUAYAQUIL,
+        ),
+        (
+            Lower([
+                0x702f6164616e6163,
+                0x2000636966696361,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_VANCOUVER,
+        ),
+        (
+            Lower([
+                0x6761622f61697361,
+                0x2020200064616468,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ASIA_BAGHDAD,
+        ),
+        (
+            Lower([
+                0x6961732f61697361,
+                0x20202020006e6f67,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ASIA_HO_CHI_MINH,
+        ),
+        (
+            Lower([
+                0x756c757a2f637465,
                 0x2020202020202000,
                 0x2020202020202020,
-            ]),
-            &tzdata::EUROPE_LJUBLJANA,
-        ),
-        (
-            Lower([
-                0x622f616369726661,
-                0x2020006f6b616d61,
-                0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::AFRICA_BAMAKO,
-        ),
-        (
-            Lower([
-                0x6e2f616369726661,
-                0x616e656d616a64,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AFRICA_NDJAMENA,
+            &tzdata::UCT,
         ),
         (
             Lower([
                 0x2f61636972656d61,
-                0x2020006169686162,
+                0x20006b6976756e69,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::AMERICA_BAHIA,
+            &tzdata::AMERICA_INUVIK,
         ),
         (
             Lower([
-                0x732f65706f727565,
-                0x202020006169666f,
+                0x632f616369726661,
+                0x200079726b616e6f,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::EUROPE_SOFIA,
-        ),
-        (
-            Lower([
-                0x732f616369726661,
-                0x656d6f747f6f61,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AFRICA_SAO_TOME,
-        ),
-        (
-            Lower([
-                0x632f6e6169646e69,
-                0x2020006f726f6d6f,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::INDIAN_COMORO,
-        ),
-        (
-            Lower([
-                0x736d6f2f61697361,
-                0x202020202020006b,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ASIA_OMSK,
+            &tzdata::AFRICA_CONAKRY,
         ),
         (
             Lower([
                 0x2f61636972656d61,
-                0x6f746e6f726f74,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_TORONTO,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x2000656669636572,
-                0x2020202020202020,
+                0x61627f65736f6f67,
+                0x2020202020200079,
                 0x2020202020202020,
             ]),
-            &tzdata::AMERICA_RECIFE,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x2020006162757261,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_ARUBA,
-        ),
-        (
-            Lower([
-                0x2020200065726965,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::EIRE,
-        ),
-        (
-            Lower([
-                0x6d61662f61697361,
-                0x2000617473756761,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ASIA_FAMAGUSTA,
-        ),
-        (
-            Lower([
-                0x702f65706f727565,
-                0x2020200073697261,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::EUROPE_PARIS,
-        ),
-        (
-            Lower([
-                0x622f616369726661,
-                0x2020006975676e61,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AFRICA_BANGUI,
-        ),
-        (
-            Lower([
-                0x732f65706f727565,
-                0x202000656a706f6b,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::EUROPE_SKOPJE,
-        ),
-        (
-            Lower([
-                0x2020202000746565,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::EET,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x20007375616e616d,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_MANAUS,
-        ),
-        (
-            Lower([
-                0x7471612f61697361,
-                0x202020200065626f,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ASIA_AQTOBE,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x62616874646f67,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_GODTHAB,
-        ),
-        (
-            Lower([
-                0x632f6e6169646e69,
-                0x20202000736f636f,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::INDIAN_COCOS,
-        ),
-        (
-            Lower([
-                0x6d6c612f61697361,
-                0x2020202000797461,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ASIA_ALMATY,
-        ),
-        (
-            Lower([
-                0x7572752f61697361,
-                0x202020200069716d,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ASIA_URUMQI,
-        ),
-        (
-            Lower([
-                0x6b2f65706f727565,
-                0x20202000766f7269,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::EUROPE_KIROV,
+            &tzdata::AMERICA_GOOSE_BAY,
         ),
         (
             Lower([
                 0x696c617274737561,
-                0x747261626f682f61,
-                0x2020202020202000,
+                0x20200069686c2f61,
+                0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::AUSTRALIA_HOBART,
+            &tzdata::AUSTRALIA_LHI,
         ),
         (
             Lower([
-                0x612f6c697a617262,
-                0x2020202000657263,
-                0x2020202020202020,
+                0x2f61636972656d61,
+                0x6e616c74617a616d,
+                0x2020202020202000,
                 0x2020202020202020,
             ]),
-            &tzdata::AMERICA_PORTO_ACRE,
+            &tzdata::AMERICA_MAZATLAN,
+        ),
+        (
+            Lower([
+                0x696c617274737561,
+                0x6162736972622f61,
+                0x202020202000656e,
+                0x2020202020202020,
+            ]),
+            &tzdata::AUSTRALIA_BRISBANE,
         ),
         (
             Lower([
@@ -7194,231 +6034,6 @@ pub(crate) const TIME_ZONES_BY_NAME: phf::Map<Lower, &'static TimeZoneRef<'stati
         (
             Lower([
                 0x2f61636972656d61,
-                0x6d657261746e6173,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_SANTAREM,
-        ),
-        (
-            Lower([
-                0x2d746d672f637465,
-                0x2020202020200035,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ETC_GMT_MINUS_5,
-        ),
-        (
-            Lower([
-                0x622f65706f727565,
-                0x65646172676c65,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::EUROPE_BELGRADE,
-        ),
-        (
-            Lower([
-                0x7a61672f61697361,
-                0x2020202020200061,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ASIA_GAZA,
-        ),
-        (
-            Lower([
-                0x642f616369726661,
-                0x61737f73657f7261,
-                0x202020006d61616c,
-                0x2020202020202020,
-            ]),
-            &tzdata::AFRICA_DAR_ES_SALAAM,
-        ),
-        (
-            Lower([
-                0x6369746e616c7461,
-                0x76616a6b7965722f,
-                0x2020202020006b69,
-                0x2020202020202020,
-            ]),
-            &tzdata::ICELAND,
-        ),
-        (
-            Lower([
-                0x202000302d746d67,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::GMT,
-        ),
-        (
-            Lower([
-                0x696c617274737561,
-                0x6d65646e696c2f61,
-                0x2020202020006e61,
-                0x2020202020202020,
-            ]),
-            &tzdata::AUSTRALIA_LINDEMAN,
-        ),
-        (
-            Lower([
-                0x732f65706f727565,
-                0x2020006172616d61,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::EUROPE_SAMARA,
-        ),
-        (
-            Lower([
-                0x2b746d672f637465,
-                0x2020202020200037,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ETC_GMT_PLUS_7,
-        ),
-        (
-            Lower([
-                0x6169646e692f7375,
-                0x6b726174732d616e,
-                0x2020202020200065,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_KNOX_IN,
-        ),
-        (
-            Lower([
-                0x612f616369726661,
-                0x20006e616a646962,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AFRICA_ABIDJAN,
-        ),
-        (
-            Lower([
-                0x622f616369726661,
-                0x657279746e616c,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AFRICA_BLANTYRE,
-        ),
-        (
-            Lower([
-                0x696c617274737561,
-                0x20200077736e2f61,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AUSTRALIA_ACT,
-        ),
-        (
-            Lower([
-                0x732f65706f727565,
-                0x6f76656a617261,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::EUROPE_SARAJEVO,
-        ),
-        (
-            Lower([
-                0x2f63696669636170,
-                0x2000656172736f6b,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::PACIFIC_KOSRAE,
-        ),
-        (
-            Lower([
-                0x65747361652f7375,
-                0x2020202020006e72,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_NEW_YORK,
-        ),
-        (
-            Lower([
-                0x2f63696669636170,
-                0x756c756c6f6e6f68,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            &tzdata::PACIFIC_HONOLULU,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x7961777f74726f66,
-                0x202020202000656e,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_FORT_WAYNE,
-        ),
-        (
-            Lower([
-                0x7369622f61697361,
-                0x202020006b656b68,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ASIA_BISHKEK,
-        ),
-        (
-            Lower([
-                0x2f63696669636170,
-                0x726f6d7f74726f70,
-                0x2020200079627365,
-                0x2020202020202020,
-            ]),
-            &tzdata::PACIFIC_PORT_MORESBY,
-        ),
-        (
-            Lower([
-                0x762f65706f727565,
-                0x646172676f676c6f,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            &tzdata::EUROPE_VOLGOGRAD,
-        ),
-        (
-            Lower([
-                0x2f63696669636170,
-                0x20006e6f746e616b,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::PACIFIC_KANTON,
-        ),
-        (
-            Lower([
-                0x766f6e2f61697361,
-                0x6b7372696269736f,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            &tzdata::ASIA_NOVOSIBIRSK,
-        ),
-        (
-            Lower([
-                0x612f65706f727565,
-                0x6e61686b61727473,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            &tzdata::EUROPE_ASTRAKHAN,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
                 0x2d75612d74726f70,
                 0x200065636e697270,
                 0x2020202020202020,
@@ -7427,84 +6042,75 @@ pub(crate) const TIME_ZONES_BY_NAME: phf::Map<Lower, &'static TimeZoneRef<'stati
         ),
         (
             Lower([
-                0x696c617274737561,
-                0x6874726f6e2f61,
+                0x73756d2f61697361,
+                0x2020202000746163,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::AUSTRALIA_DARWIN,
+            &tzdata::ASIA_MUSCAT,
         ),
         (
             Lower([
-                0x69617761682f7375,
-                0x2020202020200069,
+                0x772f616369726661,
+                0x6b656f68646e69,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::PACIFIC_HONOLULU,
+            &tzdata::AFRICA_WINDHOEK,
         ),
         (
             Lower([
-                0x2b746d672f637465,
-                0x2020202020200032,
+                0x7473752f61697361,
+                0x2020006172656e2d,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::ETC_GMT_PLUS_2,
+            &tzdata::ASIA_UST_NERA,
+        ),
+        (
+            Lower([
+                0x63696e2f61697361,
+                0x202020006169736f,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ASIA_NICOSIA,
+        ),
+        (
+            Lower([
+                0x6e68702f61697361,
+                0x686e65707f6d6f,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ASIA_PHNOM_PENH,
         ),
         (
             Lower([
                 0x2f61636972656d61,
-                0x746174756b6179,
+                0x617a6f646e656d,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::AMERICA_YAKUTAT,
-        ),
-        (
-            Lower([
-                0x2020200030746d67,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::GMT,
+            &tzdata::AMERICA_MENDOZA,
         ),
         (
             Lower([
                 0x2f61636972656d61,
-                0x20202000616b7461,
-                0x2020202020202020,
+                0x6e6f746e6f6d6465,
+                0x2020202020202000,
                 0x2020202020202020,
             ]),
-            &tzdata::AMERICA_ADAK,
+            &tzdata::AMERICA_EDMONTON,
         ),
         (
             Lower([
-                0x692f65706f727565,
-                0x6c75626e617473,
+                0x742f65706f727565,
+                0x202000656e617269,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::TURKEY,
-        ),
-        (
-            Lower([
-                0x6d6f742f61697361,
-                0x2020202020006b73,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ASIA_TOMSK,
-        ),
-        (
-            Lower([
-                0x6865742f61697361,
-                0x20202020006e6172,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::IRAN,
+            &tzdata::EUROPE_TIRANE,
         ),
         (
             Lower([
@@ -7518,236 +6124,101 @@ pub(crate) const TIME_ZONES_BY_NAME: phf::Map<Lower, &'static TimeZoneRef<'stati
         (
             Lower([
                 0x2f61636972656d61,
-                0x6570656e75726965,
-                0x2020202020202000,
+                0x200061746f676f62,
+                0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::AMERICA_EIRUNEPE,
+            &tzdata::AMERICA_BOGOTA,
         ),
         (
             Lower([
-                0x6e616d2f61697361,
-                0x2020202000616c69,
+                0x2d746d672f637465,
+                0x2020202020200038,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::ASIA_MANILA,
-        ),
-        (
-            Lower([
-                0x696c617274737561,
-                0x6162736972622f61,
-                0x202020202000656e,
-                0x2020202020202020,
-            ]),
-            &tzdata::AUSTRALIA_BRISBANE,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x69727f796e696172,
-                0x2020202000726576,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_RAINY_RIVER,
-        ),
-        (
-            Lower([
-                0x622f65706f727565,
-                0x6e65676e697375,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::EUROPE_BUSINGEN,
-        ),
-        (
-            Lower([
-                0x2b746d672f637465,
-                0x2020202020003131,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ETC_GMT_PLUS_11,
-        ),
-        (
-            Lower([
-                0x6c2f65706f727565,
-                0x2020006e6f627369,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::PORTUGAL,
-        ),
-        (
-            Lower([
-                0x6e61722f61697361,
-                0x202020006e6f6f67,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ASIA_RANGOON,
-        ),
-        (
-            Lower([
-                0x2b746d672f637465,
-                0x2020202020200036,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ETC_GMT_PLUS_6,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x2000616261697563,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_CUIABA,
-        ),
-        (
-            Lower([
-                0x652f616369726661,
-                0x6e756961617f6c,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AFRICA_EL_AAIUN,
+            &tzdata::ETC_GMT_MINUS_8,
         ),
         (
             Lower([
                 0x2f63696669636170,
-                0x20202000696a6966,
+                0x6b6c6f66726f6e,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::PACIFIC_FIJI,
+            &tzdata::PACIFIC_NORFOLK,
+        ),
+        (
+            Lower([
+                0x79616a2f61697361,
+                0x2020006172757061,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ASIA_JAYAPURA,
+        ),
+        (
+            Lower([
+                0x682f616369726661,
+                0x2020006572617261,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AFRICA_HARARE,
+        ),
+        (
+            Lower([
+                0x6b2f65706f727565,
+                0x2020202000766569,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::EUROPE_KIEV,
+        ),
+        (
+            Lower([
+                0x6b6f742f61697361,
+                0x2020202020006f79,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::JAPAN,
+        ),
+        (
+            Lower([
+                0x79726f74636166,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::FACTORY,
         ),
         (
             Lower([
                 0x2f61636972656d61,
-                0x637f6f636978656d,
-                0x2020202000797469,
+                0x74616b616c74656d,
+                0x202020202000616c,
                 0x2020202020202020,
             ]),
-            &tzdata::AMERICA_MEXICO_CITY,
+            &tzdata::AMERICA_METLAKATLA,
         ),
         (
             Lower([
-                0x6961742f61697361,
-                0x2020202000696570,
-                0x2020202020202020,
+                0x766f6e2f61697361,
+                0x7374656e7a756b6f,
+                0x202020202020006b,
                 0x2020202020202020,
             ]),
-            &tzdata::ROC,
+            &tzdata::ASIA_NOVOKUZNETSK,
         ),
         (
             Lower([
-                0x7265792f61697361,
-                0x202020006e617665,
+                0x2f63696669636170,
+                0x20006e6f746e616b,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::ASIA_YEREVAN,
-        ),
-        (
-            Lower([
-                0x62616b2f61697361,
-                0x2020202020006c75,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ASIA_KABUL,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x6e6f7473657263,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_CRESTON,
-        ),
-        (
-            Lower([
-                0x61652f656c696863,
-                0x616c736972657473,
-                0x202020202000646e,
-                0x2020202020202020,
-            ]),
-            &tzdata::CHILE_EASTER_ISLAND,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x6164616e65736e65,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_ENSENADA,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x6f726f6d6174616d,
-                0x2020202020200073,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_MATAMOROS,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x656e696d6f6e656d,
-                0x2020202020200065,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_MENOMINEE,
-        ),
-        (
-            Lower([
-                0x6173726576696e75,
-                0x202020202020006c,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::UCT,
-        ),
-        (
-            Lower([
-                0x6e61792f61697361,
-                0x20202020006e6f67,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ASIA_RANGOON,
-        ),
-        (
-            Lower([
-                0x74616b2f61697361,
-                0x200075646e616d68,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ASIA_KATHMANDU,
-        ),
-        (
-            Lower([
-                0x6e61682f61697361,
-                0x202020202000696f,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ASIA_HANOI,
-        ),
-        (
-            Lower([
-                0x6b2f616369726661,
-                0x61736168736e69,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AFRICA_KINSHASA,
+            &tzdata::PACIFIC_ENDERBURY,
         ),
         (
             Lower([
@@ -7757,186 +6228,6 @@ pub(crate) const TIME_ZONES_BY_NAME: phf::Map<Lower, &'static TimeZoneRef<'stati
                 0x2020202020202020,
             ]),
             &tzdata::PACIFIC_APIA,
-        ),
-        (
-            Lower([
-                0x762f65706f727565,
-                0x202000616e6e6569,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::EUROPE_VIENNA,
-        ),
-        (
-            Lower([
-                0x616369616d616a,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::JAMAICA,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x20200079756a756a,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_JUJUY,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x6e697f786f6e6b,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_KNOX_IN,
-        ),
-        (
-            Lower([
-                0x2f63696669636170,
-                0x646e616c6b637561,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            &tzdata::NZ,
-        ),
-        (
-            Lower([
-                0x696c617274737561,
-                0x6e69777261642f61,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            &tzdata::AUSTRALIA_DARWIN,
-        ),
-        (
-            Lower([
-                0x2f63696669636170,
-                0x20200075616c6170,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::PACIFIC_PALAU,
-        ),
-        (
-            Lower([
-                0x6d2f6e6169646e69,
-                0x2020202000656861,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::INDIAN_MAHE,
-        ),
-        (
-            Lower([
-                0x742f65706f727565,
-                0x20006e6e696c6c61,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::EUROPE_TALLINN,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x616c6f74726f74,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_TORTOLA,
-        ),
-        (
-            Lower([
-                0x2020202000746577,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::WET,
-        ),
-        (
-            Lower([
-                0x6968742f61697361,
-                0x202020007568706d,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ASIA_THIMBU,
-        ),
-        (
-            Lower([
-                0x696c617274737561,
-                0x736e656575712f61,
-                0x20202000646e616c,
-                0x2020202020202020,
-            ]),
-            &tzdata::AUSTRALIA_BRISBANE,
-        ),
-        (
-            Lower([
-                0x6974637261746e61,
-                0x6f7377616d2f6163,
-                0x202020202020006e,
-                0x2020202020202020,
-            ]),
-            &tzdata::ANTARCTICA_MAWSON,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x6167696375676574,
-                0x202020200061706c,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_TEGUCIGALPA,
-        ),
-        (
-            Lower([
-                0x616f6d61732f7375,
-                0x2020202020202000,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::PACIFIC_PAGO_PAGO,
-        ),
-        (
-            Lower([
-                0x746168632d7a6e,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::NZ_CHAT,
-        ),
-        (
-            Lower([
-                0x2f63696669636170,
-                0x2000726574736165,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::CHILE_EASTER_ISLAND,
-        ),
-        (
-            Lower([
-                0x2020006e6170616a,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::JAPAN,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x67646972626d6163,
-                0x2020007961627f65,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_CAMBRIDGE_BAY,
         ),
         (
             Lower([
@@ -7950,155 +6241,83 @@ pub(crate) const TIME_ZONES_BY_NAME: phf::Map<Lower, &'static TimeZoneRef<'stati
         (
             Lower([
                 0x2f63696669636170,
-                0x20006e6170696173,
+                0x200061656d756f6e,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::PACIFIC_SAIPAN,
+            &tzdata::PACIFIC_NOUMEA,
         ),
         (
             Lower([
-                0x2f63696669636170,
-                0x6d616874616863,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::NZ_CHAT,
-        ),
-        (
-            Lower([
-                0x2b746d672f637465,
-                0x2020202020003231,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ETC_GMT_PLUS_12,
-        ),
-        (
-            Lower([
-                0x732f65706f727565,
-                0x2000766f74617261,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::EUROPE_SARATOV,
-        ),
-        (
-            Lower([
-                0x6d2f65706f727565,
-                0x6e6d616865697261,
+                0x6c2f65706f727565,
+                0x616e616a6c62756a,
                 0x2020202020202000,
                 0x2020202020202020,
             ]),
-            &tzdata::EUROPE_HELSINKI,
-        ),
-        (
-            Lower([
-                0x722f65706f727565,
-                0x2020202000656d6f,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::EUROPE_ROME,
-        ),
-        (
-            Lower([
-                0x652f6164616e6163,
-                0x20006e7265747361,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_TORONTO,
-        ),
-        (
-            Lower([
-                0x2b746d672f637465,
-                0x2020202020200034,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ETC_GMT_PLUS_4,
-        ),
-        (
-            Lower([
-                0x79726f74636166,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::FACTORY,
-        ),
-        (
-            Lower([
-                0x696c617274737561,
-                0x69616c6564612f61,
-                0x2020202020006564,
-                0x2020202020202020,
-            ]),
-            &tzdata::AUSTRALIA_ADELAIDE,
-        ),
-        (
-            Lower([
-                0x6e68702f61697361,
-                0x686e65707f6d6f,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ASIA_PHNOM_PENH,
-        ),
-        (
-            Lower([
-                0x2f63696669636170,
-                0x70617461676e6f74,
-                0x2020202020200075,
-                0x2020202020202020,
-            ]),
-            &tzdata::PACIFIC_TONGATAPU,
-        ),
-        (
-            Lower([
-                0x632f616369726661,
-                0x636e616c62617361,
-                0x2020202020200061,
-                0x2020202020202020,
-            ]),
-            &tzdata::AFRICA_CASABLANCA,
+            &tzdata::EUROPE_LJUBLJANA,
         ),
         (
             Lower([
                 0x2f61636972656d61,
-                0x6e6f676970696e,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_NIPIGON,
-        ),
-        (
-            Lower([
-                0x6c69642f61697361,
-                0x2020202020200069,
-                0x2020202020202020,
+                0x6167696375676574,
+                0x202020200061706c,
                 0x2020202020202020,
             ]),
-            &tzdata::ASIA_DILI,
-        ),
-        (
-            Lower([
-                0x6c6f6b2f61697361,
-                0x202020006174616b,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ASIA_CALCUTTA,
+            &tzdata::AMERICA_TEGUCIGALPA,
         ),
         (
             Lower([
                 0x2f61636972656d61,
-                0x6372616d61746163,
-                0x2020202020200061,
+                0x61687f6c61726f63,
+                0x20200072756f6272,
                 0x2020202020202020,
             ]),
-            &tzdata::AMERICA_CATAMARCA,
+            &tzdata::AMERICA_ATIKOKAN,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x63617f6f74726f70,
+                0x2020202020006572,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_PORTO_ACRE,
+        ),
+        (
+            Lower([
+                0x6974637261746e61,
+                0x656d6c61702f6163,
+                0x2020202020200072,
+                0x2020202020202020,
+            ]),
+            &tzdata::ANTARCTICA_PALMER,
+        ),
+        (
+            Lower([
+                0x2020200075732d77,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::W_SU,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x6576756f636e6176,
+                0x2020202020200072,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_VANCOUVER,
+        ),
+        (
+            Lower([
+                0x766f682f61697361,
+                0x2020202020200064,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ASIA_HOVD,
         ),
         (
             Lower([
@@ -8111,39 +6330,165 @@ pub(crate) const TIME_ZONES_BY_NAME: phf::Map<Lower, &'static TimeZoneRef<'stati
         ),
         (
             Lower([
-                0x6d6d612f61697361,
-                0x2020202020006e61,
+                0x792f6164616e6163,
+                0x202020006e6f6b75,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::ASIA_AMMAN,
-        ),
-        (
-            Lower([
-                0x696c617274737561,
-                0x6e656b6f72622f61,
-                0x2020006c6c69687f,
-                0x2020202020202020,
-            ]),
-            &tzdata::AUSTRALIA_BROKEN_HILL,
+            &tzdata::AMERICA_WHITEHORSE,
         ),
         (
             Lower([
                 0x2f61636972656d61,
-                0x6f647f6f746e6173,
-                0x2020006f676e696d,
+                0x786166696c6168,
+                0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::AMERICA_SANTO_DOMINGO,
+            &tzdata::AMERICA_HALIFAX,
         ),
         (
             Lower([
-                0x696c617274737561,
-                0x6e616d7361742f61,
-                0x2020202020006169,
+                0x6369746e616c7461,
+                0x7365726f7a612f,
+                0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::AUSTRALIA_HOBART,
+            &tzdata::ATLANTIC_AZORES,
+        ),
+        (
+            Lower([
+                0x702f616369726661,
+                0x766f6e2d6f74726f,
+                0x202020202020006f,
+                0x2020202020202020,
+            ]),
+            &tzdata::AFRICA_PORTO_NOVO,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x6164616e657267,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_GRENADA,
+        ),
+        (
+            Lower([
+                0x642f616369726661,
+                0x61737f73657f7261,
+                0x202020006d61616c,
+                0x2020202020202020,
+            ]),
+            &tzdata::AFRICA_DAR_ES_SALAAM,
+        ),
+        (
+            Lower([
+                0x6c2f616369726661,
+                0x20202000736f6761,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AFRICA_LAGOS,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x617567616e616d,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_MANAGUA,
+        ),
+        (
+            Lower([
+                0x696863696d2f7375,
+                0x20202020006e6167,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_DETROIT,
+        ),
+        (
+            Lower([
+                0x6b2f65706f727565,
+                0x72676e696e696c61,
+                0x2020202020006461,
+                0x2020202020202020,
+            ]),
+            &tzdata::EUROPE_KALININGRAD,
+        ),
+        (
+            Lower([
+                0x702f65706f727565,
+                0x2020006575676172,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::EUROPE_BRATISLAVA,
+        ),
+        (
+            Lower([
+                0x6873612f61697361,
+                0x2020007461626167,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ASIA_ASHGABAT,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x727f6f7472657570,
+                0x20202020006f6369,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_PUERTO_RICO,
+        ),
+        (
+            Lower([
+                0x7463752f637465,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::UCT,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x6372616d61746163,
+                0x2020202020200061,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_CATAMARCA,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x75637f7466697773,
+                0x202000746e657272,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_SWIFT_CURRENT,
+        ),
+        (
+            Lower([
+                0x6369746e616c7461,
+                0x65767f657061632f,
+                0x2020202000656472,
+                0x2020202020202020,
+            ]),
+            &tzdata::ATLANTIC_CAPE_VERDE,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x69727f6174736f63,
+                0x2020202020006163,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_COSTA_RICA,
         ),
         (
             Lower([
@@ -8156,12 +6501,192 @@ pub(crate) const TIME_ZONES_BY_NAME: phf::Map<Lower, &'static TimeZoneRef<'stati
         ),
         (
             Lower([
+                0x7969722f61697361,
+                0x2020202000686461,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ASIA_RIYADH,
+        ),
+        (
+            Lower([
+                0x2f63696669636170,
+                0x61636c6164617567,
+                0x20202020006c616e,
+                0x2020202020202020,
+            ]),
+            &tzdata::PACIFIC_GUADALCANAL,
+        ),
+        (
+            Lower([
+                0x732f65706f727565,
+                0x2000766f74617261,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::EUROPE_SARATOV,
+        ),
+        (
+            Lower([
                 0x2f61636972656d61,
-                0x6b636f7270696873,
+                0x7472696e676e6170,
+                0x2020202000676e75,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_PANGNIRTUNG,
+        ),
+        (
+            Lower([
+                0x742f616369726661,
+                0x2000696c6f706972,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::LIBYA,
+        ),
+        (
+            Lower([
+                0x622f6f636978656d,
+                0x6574726f6e616a61,
                 0x2020202020202000,
                 0x2020202020202020,
             ]),
-            &tzdata::NAVAJO,
+            &tzdata::AMERICA_ENSENADA,
+        ),
+        (
+            Lower([
+                0x74647038747370,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::PST_8_PDT,
+        ),
+        (
+            Lower([
+                0x732f65706f727565,
+                0x202020006169666f,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::EUROPE_SOFIA,
+        ),
+        (
+            Lower([
+                0x772f65706f727565,
+                0x2020007761737261,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::POLAND,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x7568617568696863,
+                0x2020202020200061,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_CHIHUAHUA,
+        ),
+        (
+            Lower([
+                0x6e2f616369726661,
+                0x616e656d616a64,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AFRICA_NDJAMENA,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x6e6f7473657263,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_CRESTON,
+        ),
+        (
+            Lower([
+                0x6d2f616369726661,
+                0x2000656e61626162,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AFRICA_MBABANE,
+        ),
+        (
+            Lower([
+                0x656572672f637465,
+                0x202000686369776e,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::GMT,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x71696e697472616d,
+                0x2020202020006575,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_MARTINIQUE,
+        ),
+        (
+            Lower([
+                0x6e616d2f61697361,
+                0x2020202000616c69,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ASIA_MANILA,
+        ),
+        (
+            Lower([
+                0x6873612f61697361,
+                0x200064616261686b,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ASIA_ASHGABAT,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x72726573746e6f6d,
+                0x2020202020007461,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_MONTSERRAT,
+        ),
+        (
+            Lower([
+                0x2f63696669636170,
+                0x20200075616c6170,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::PACIFIC_PALAU,
+        ),
+        (
+            Lower([
+                0x2f63696669636170,
+                0x6761707f6f676170,
+                0x202020202020006f,
+                0x2020202020202020,
+            ]),
+            &tzdata::PACIFIC_PAGO_PAGO,
+        ),
+        (
+            Lower([
+                0x2d746d672f637465,
+                0x2020202020200033,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ETC_GMT_MINUS_3,
         ),
         (
             Lower([
@@ -8175,11 +6700,38 @@ pub(crate) const TIME_ZONES_BY_NAME: phf::Map<Lower, &'static TimeZoneRef<'stati
         (
             Lower([
                 0x2f61636972656d61,
-                0x202020006b616461,
+                0x746f676972616d,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::AMERICA_ADAK,
+            &tzdata::AMERICA_MARIGOT,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x616c6c6975676e61,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_ANGUILLA,
+        ),
+        (
+            Lower([
+                0x6e61792f61697361,
+                0x20202020006e6f67,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ASIA_RANGOON,
+        ),
+        (
+            Lower([
+                0x612f65706f727565,
+                0x202000736e656874,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::EUROPE_ATHENS,
         ),
         (
             Lower([
@@ -8193,101 +6745,443 @@ pub(crate) const TIME_ZONES_BY_NAME: phf::Map<Lower, &'static TimeZoneRef<'stati
         (
             Lower([
                 0x2f61636972656d61,
-                0x61627f6169686162,
-                0x200073617265646e,
+                0x2020006169686162,
+                0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::AMERICA_BAHIA_BANDERAS,
+            &tzdata::AMERICA_BAHIA,
         ),
         (
             Lower([
-                0x2f63696669636170,
-                0x202000616f6d6173,
+                0x612f616369726661,
+                0x20006e616a646962,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::PACIFIC_PAGO_PAGO,
+            &tzdata::AFRICA_ABIDJAN,
         ),
         (
             Lower([
-                0x2f61636972656d61,
-                0x202000656c756874,
-                0x2020202020202020,
+                0x696c617274737561,
+                0x776f636e61792f61,
+                0x20202000616e6e69,
                 0x2020202020202020,
             ]),
-            &tzdata::AMERICA_THULE,
+            &tzdata::AUSTRALIA_BROKEN_HILL,
         ),
         (
             Lower([
-                0x2d746d672f637465,
-                0x2020202020200032,
+                0x66696361702f7375,
+                0x2020202020006369,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::ETC_GMT_MINUS_2,
+            &tzdata::AMERICA_LOS_ANGELES,
         ),
         (
             Lower([
-                0x2f61636972656d61,
-                0x61626f64726f63,
+                0x61726f2f61697361,
+                0x202020202020006c,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::AMERICA_CORDOBA,
+            &tzdata::ASIA_ORAL,
         ),
         (
             Lower([
-                0x74647038747370,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::PST_8_PDT,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x202020006b75756e,
+                0x632f6e6169646e69,
+                0x2020006f726f6d6f,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::AMERICA_GODTHAB,
-        ),
-        (
-            Lower([
-                0x6369746e616c7461,
-                0x79616d7f6e616a2f,
-                0x2020202020006e65,
-                0x2020202020202020,
-            ]),
-            &tzdata::ATLANTIC_JAN_MAYEN,
+            &tzdata::INDIAN_COMORO,
         ),
         (
             Lower([
                 0x2b746d672f637465,
-                0x2020202020200033,
+                0x2020202020200038,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::ETC_GMT_PLUS_3,
+            &tzdata::ETC_GMT_PLUS_8,
         ),
         (
             Lower([
-                0x6b61622f61697361,
-                0x2020202020200075,
+                0x7471612f61697361,
+                0x2020202020007561,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::ASIA_BAKU,
+            &tzdata::ASIA_AQTAU,
+        ),
+        (
+            Lower([
+                0x742f65706f727565,
+                0x6c6f7073617269,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::EUROPE_CHISINAU,
+        ),
+        (
+            Lower([
+                0x6369746e616c7461,
+                0x677f6874756f732f,
+                0x2000616967726f65,
+                0x2020202020202020,
+            ]),
+            &tzdata::ATLANTIC_SOUTH_GEORGIA,
+        ),
+        (
+            Lower([
+                0x672f65706f727565,
+                0x7261746c61726269,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            &tzdata::EUROPE_GIBRALTAR,
+        ),
+        (
+            Lower([
+                0x622f616369726661,
+                0x657279746e616c,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AFRICA_BLANTYRE,
+        ),
+        (
+            Lower([
+                0x6369746e616c7461,
+                0x79656c6e6174732f,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            &tzdata::ATLANTIC_STANLEY,
+        ),
+        (
+            Lower([
+                0x7261682f61697361,
+                0x20202020006e6962,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::PRC,
+        ),
+        (
+            Lower([
+                0x72616b2f61697361,
+                0x2020200069686361,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ASIA_KARACHI,
+        ),
+        (
+            Lower([
+                0x632f616369726661,
+                0x2020200061747565,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AFRICA_CEUTA,
+        ),
+        (
+            Lower([
+                0x2f63696669636170,
+                0x202000757275616e,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::PACIFIC_NAURU,
+        ),
+        (
+            Lower([
+                0x69656c616a61776b,
+                0x202020202020006e,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::KWAJALEIN,
+        ),
+        (
+            Lower([
+                0x2d746d672f637465,
+                0x2020202020200036,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ETC_GMT_MINUS_6,
+        ),
+        (
+            Lower([
+                0x692f65706f727565,
+                0x6c75626e617473,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::TURKEY,
+        ),
+        (
+            Lower([
+                0x2d746d672f637465,
+                0x2020202020200037,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ETC_GMT_MINUS_7,
+        ),
+        (
+            Lower([
+                0x612f616369726661,
+                0x200073726569676c,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AFRICA_ALGIERS,
+        ),
+        (
+            Lower([
+                0x622f65706f727565,
+                0x2000747361666c65,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::GB,
+        ),
+        (
+            Lower([
+                0x736d6f2f61697361,
+                0x202020202020006b,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ASIA_OMSK,
+        ),
+        (
+            Lower([
+                0x2b746d672f637465,
+                0x2020202020200035,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ETC_GMT_PLUS_5,
         ),
         (
             Lower([
                 0x2f61636972656d61,
-                0x20006e75636e6163,
+                0x20202000616b7461,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::AMERICA_CANCUN,
+            &tzdata::AMERICA_ADAK,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x616963756c7f7473,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_ST_LUCIA,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x6e697f786f6e6b,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_KNOX_IN,
+        ),
+        (
+            Lower([
+                0x672f65706f727565,
+                0x7965736e726575,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::EUROPE_GUERNSEY,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x726f686574696877,
+                0x2020202020006573,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_WHITEHORSE,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x617f736f6e657562,
+                0x2020200073657269,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_BUENOS_AIRES,
+        ),
+        (
+            Lower([
+                0x6b616d2f61697361,
+                0x2020007261737361,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ASIA_MAKASSAR,
+        ),
+        (
+            Lower([
+                0x2f63696669636170,
+                0x6e72696163746970,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            &tzdata::PACIFIC_PITCAIRN,
+        ),
+        (
+            Lower([
+                0x752f65706f727565,
+                0x6b73766f6e61796c,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            &tzdata::EUROPE_ULYANOVSK,
+        ),
+        (
+            Lower([
+                0x2020202000747368,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::HST,
+        ),
+        (
+            Lower([
+                0x2020007470796765,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::EGYPT,
+        ),
+        (
+            Lower([
+                0x7572622f61697361,
+                0x202020200069656e,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ASIA_BRUNEI,
+        ),
+        (
+            Lower([
+                0x762f65706f727565,
+                0x202020007a756461,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::EUROPE_VADUZ,
+        ),
+        (
+            Lower([
+                0x72746e65632f7375,
+                0x2020202020006c61,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_CHICAGO,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x756f6c6564617567,
+                0x2020202020006570,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_GUADELOUPE,
+        ),
+        (
+            Lower([
+                0x6569762f61697361,
+                0x2000656e6169746e,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ASIA_VIENTIANE,
+        ),
+        (
+            Lower([
+                0x6861622f61697361,
+                0x202020006e696172,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ASIA_BAHRAIN,
+        ),
+        (
+            Lower([
+                0x6d2f6164616e6163,
+                0x6e6961746e756f,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_EDMONTON,
+        ),
+        (
+            Lower([
+                0x616c752f61697361,
+                0x7261746161626e61,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            &tzdata::ASIA_ULAANBAATAR,
+        ),
+        (
+            Lower([
+                0x6d6d612f61697361,
+                0x2020202020006e61,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ASIA_AMMAN,
+        ),
+        (
+            Lower([
+                0x732f65706f727565,
+                0x6e6972616d7f6e61,
+                0x202020202020006f,
+                0x2020202020202020,
+            ]),
+            &tzdata::EUROPE_ROME,
+        ),
+        (
+            Lower([
+                0x63756b2f61697361,
+                0x20202000676e6968,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ASIA_KUCHING,
+        ),
+        (
+            Lower([
+                0x642f65706f727565,
+                0x2020006e696c6275,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::EIRE,
+        ),
+        (
+            Lower([
+                0x6374752f637465,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::UCT,
         ),
         (
             Lower([
@@ -8301,6 +7195,1176 @@ pub(crate) const TIME_ZONES_BY_NAME: phf::Map<Lower, &'static TimeZoneRef<'stati
         (
             Lower([
                 0x2f61636972656d61,
+                0x20006e6967726976,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_ST_THOMAS,
+        ),
+        (
+            Lower([
+                0x6c2f616369726661,
+                0x687361626d756275,
+                0x2020202020200069,
+                0x2020202020202020,
+            ]),
+            &tzdata::AFRICA_LUBUMBASHI,
+        ),
+        (
+            Lower([
+                0x2f63696669636170,
+                0x616d69746972696b,
+                0x2020202020006974,
+                0x2020202020202020,
+            ]),
+            &tzdata::PACIFIC_KIRITIMATI,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x2000616d616e6170,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_PANAMA,
+        ),
+        (
+            Lower([
+                0x732f65706f727565,
+                0x6f76656a617261,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::EUROPE_SARAJEVO,
+        ),
+        (
+            Lower([
+                0x2d746d672f637465,
+                0x2020202020200032,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ETC_GMT_MINUS_2,
+        ),
+        (
+            Lower([
+                0x2f63696669636170,
+                0x20006f72756a616d,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::PACIFIC_MAJURO,
+        ),
+        (
+            Lower([
+                0x76696e752f637465,
+                0x2020006c61737265,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::UCT,
+        ),
+        (
+            Lower([
+                0x2d746d672f637465,
+                0x2020202020003331,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ETC_GMT_MINUS_13,
+        ),
+        (
+            Lower([
+                0x6865742f61697361,
+                0x20202020006e6172,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::IRAN,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x6d657261746e6173,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_SANTAREM,
+        ),
+        (
+            Lower([
+                0x6b73616c612f7375,
+                0x2020202020200061,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_ANCHORAGE,
+        ),
+        (
+            Lower([
+                0x2b746d672f637465,
+                0x2020202020200034,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ETC_GMT_PLUS_4,
+        ),
+        (
+            Lower([
+                0x2f63696669636170,
+                0x2020006574616665,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::PACIFIC_EFATE,
+        ),
+        (
+            Lower([
+                0x676e6f6b676e6f68,
+                0x2020202020202000,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::HONGKONG,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x2000616261697563,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_CUIABA,
+        ),
+        (
+            Lower([
+                0x202000302b746d67,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::GMT,
+        ),
+        (
+            Lower([
+                0x74646336747363,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::CST_6_CDT,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x61627f6169686162,
+                0x200073617265646e,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_BAHIA_BANDERAS,
+        ),
+        (
+            Lower([
+                0x20006c6561727369,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ISRAEL,
+        ),
+        (
+            Lower([
+                0x642f6c697a617262,
+                0x61686e6f726f6e65,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_NORONHA,
+        ),
+        (
+            Lower([
+                0x6e2f6164616e6163,
+                0x6c646e756f667765,
+                0x2020202000646e61,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_ST_JOHNS,
+        ),
+        (
+            Lower([
+                0x622f6f636978656d,
+                0x2000727573616a61,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_MAZATLAN,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x20006f696563616d,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_MACEIO,
+        ),
+        (
+            Lower([
+                0x2020200061627563,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::CUBA,
+        ),
+        (
+            Lower([
+                0x6e61622f61697361,
+                0x202020006b6f6b67,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ASIA_BANGKOK,
+        ),
+        (
+            Lower([
+                0x6d2f6e6169646e69,
+                0x73657669646c61,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::INDIAN_MALDIVES,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x6f647f6f746e6173,
+                0x2020006f676e696d,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_SANTO_DOMINGO,
+        ),
+        (
+            Lower([
+                0x77756b2f61697361,
+                0x2020202000746961,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ASIA_KUWAIT,
+        ),
+        (
+            Lower([
+                0x2020202000746375,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::UCT,
+        ),
+        (
+            Lower([
+                0x652f616369726661,
+                0x6e756961617f6c,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AFRICA_EL_AAIUN,
+        ),
+        (
+            Lower([
+                0x6369746e616c7461,
+                0x6172696564616d2f,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            &tzdata::ATLANTIC_MADEIRA,
+        ),
+        (
+            Lower([
+                0x61726b2f61697361,
+                0x6b737261796f6e73,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            &tzdata::ASIA_KRASNOYARSK,
+        ),
+        (
+            Lower([
+                0x732f616369726661,
+                0x656d6f747f6f61,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AFRICA_SAO_TOME,
+        ),
+        (
+            Lower([
+                0x30746d672f637465,
+                0x2020202020202000,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::GMT,
+        ),
+        (
+            Lower([
+                0x6c61677574726f70,
+                0x2020202020202000,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::PORTUGAL,
+        ),
+        (
+            Lower([
+                0x6d2f6e6169646e69,
+                0x7375697469727561,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            &tzdata::INDIAN_MAURITIUS,
+        ),
+        (
+            Lower([
+                0x65747361652f7375,
+                0x2020202020006e72,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_NEW_YORK,
+        ),
+        (
+            Lower([
+                0x6173726576696e75,
+                0x202020202020006c,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::UCT,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x616c6f74726f74,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_TORTOLA,
+        ),
+        (
+            Lower([
+                0x7a2f65706f727565,
+                0x2020006863697275,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::EUROPE_BUSINGEN,
+        ),
+        (
+            Lower([
+                0x202020200074736d,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::MST,
+        ),
+        (
+            Lower([
+                0x642f616369726661,
+                0x6974756f62696a,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AFRICA_DJIBOUTI,
+        ),
+        (
+            Lower([
+                0x622f616369726661,
+                0x2020006c756a6e61,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AFRICA_BANJUL,
+        ),
+        (
+            Lower([
+                0x6f68632f61697361,
+                0x6e61736c616269,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ASIA_CHOIBALSAN,
+        ),
+        (
+            Lower([
+                0x6d61732f61697361,
+                0x2000646e616b7261,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ASIA_SAMARKAND,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x6c7561707f6f6173,
+                0x202020202020006f,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_SAO_PAULO,
+        ),
+        (
+            Lower([
+                0x6b65792f61697361,
+                0x75626e6972657461,
+                0x2020202020006772,
+                0x2020202020202020,
+            ]),
+            &tzdata::ASIA_YEKATERINBURG,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x6b726f797f77656e,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_NEW_YORK,
+        ),
+        (
+            Lower([
+                0x6369746e616c7461,
+                0x656f726561662f,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ATLANTIC_FAEROE,
+        ),
+        (
+            Lower([
+                0x616f6d61732f7375,
+                0x2020202020202000,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::PACIFIC_PAGO_PAGO,
+        ),
+        (
+            Lower([
+                0x6f68632f61697361,
+                0x2000676e6971676e,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::PRC,
+        ),
+        (
+            Lower([
+                0x6e2f616369726661,
+                0x20200079656d6169,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AFRICA_NIAMEY,
+        ),
+        (
+            Lower([
+                0x696c617274737561,
+                0x616c6375652f61,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AUSTRALIA_EUCLA,
+        ),
+        (
+            Lower([
+                0x632f6e6169646e69,
+                0x202000736f676168,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::INDIAN_CHAGOS,
+        ),
+        (
+            Lower([
+                0x2f63696669636170,
+                0x617365757172616d,
+                0x2020202020200073,
+                0x2020202020202020,
+            ]),
+            &tzdata::PACIFIC_MARQUESAS,
+        ),
+        (
+            Lower([
+                0x612f616369726661,
+                0x2020200061726363,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AFRICA_ACCRA,
+        ),
+        (
+            Lower([
+                0x2f63696669636170,
+                0x20006570616e6f70,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::PACIFIC_POHNPEI,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x6163696e696d6f64,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_DOMINICA,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x2020006162757261,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_ARUBA,
+        ),
+        (
+            Lower([
+                0x622f65706f727565,
+                0x76616c7369746172,
+                0x2020202020200061,
+                0x2020202020202020,
+            ]),
+            &tzdata::EUROPE_BRATISLAVA,
+        ),
+        (
+            Lower([
+                0x2f63696669636170,
+                0x6965706e686f70,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::PACIFIC_POHNPEI,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x61627f6563616c67,
+                0x2020202020200079,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_GLACE_BAY,
+        ),
+        (
+            Lower([
+                0x2f63696669636170,
+                0x6e6f74736e686f6a,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            &tzdata::PACIFIC_HONOLULU,
+        ),
+        (
+            Lower([
+                0x2f63696669636170,
+                0x200073696c6c6177,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::PACIFIC_WALLIS,
+        ),
+        (
+            Lower([
+                0x6c2f636974637261,
+                0x6272616579676e6f,
+                0x20202020006e6579,
+                0x2020202020202020,
+            ]),
+            &tzdata::ARCTIC_LONGYEARBYEN,
+        ),
+        (
+            Lower([
+                0x762f65706f727565,
+                0x20006e6163697461,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::EUROPE_ROME,
+        ),
+        (
+            Lower([
+                0x2f63696669636170,
+                0x2020006b75756863,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::PACIFIC_CHUUK,
+        ),
+        (
+            Lower([
+                0x2f63696669636170,
+                0x202020006b757274,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::PACIFIC_CHUUK,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x697f6e696b6e6172,
+                0x2020200074656c6e,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_RANKIN_INLET,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x65727265746e6f6d,
+                0x2020202020200079,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_MONTERREY,
+        ),
+        (
+            Lower([
+                0x696c617274737561,
+                0x68747265702f61,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AUSTRALIA_PERTH,
+        ),
+        (
+            Lower([
+                0x2f63696669636170,
+                0x6d616874616863,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::NZ_CHAT,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x6f726f6d6174616d,
+                0x2020202020200073,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_MATAMOROS,
+        ),
+        (
+            Lower([
+                0x6b61732f61697361,
+                0x2020006e696c6168,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ASIA_SAKHALIN,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x7469756c617169,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_IQALUIT,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x736f646162726162,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_BARBADOS,
+        ),
+        (
+            Lower([
+                0x696c617274737561,
+                0x69616c6564612f61,
+                0x2020202020006564,
+                0x2020202020202020,
+            ]),
+            &tzdata::AUSTRALIA_ADELAIDE,
+        ),
+        (
+            Lower([
+                0x696c617274737561,
+                0x756f626c656d2f61,
+                0x2020202000656e72,
+                0x2020202020202020,
+            ]),
+            &tzdata::AUSTRALIA_MELBOURNE,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x64697665746e6f6d,
+                0x2020202020006f65,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_MONTEVIDEO,
+        ),
+        (
+            Lower([
+                0x622f65706f727565,
+                0x6e65676e697375,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::EUROPE_BUSINGEN,
+        ),
+        (
+            Lower([
+                0x696c617274737561,
+                0x747261626f682f61,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            &tzdata::AUSTRALIA_CURRIE,
+        ),
+        (
+            Lower([
+                0x6369746e616c7461,
+                0x6164756d7265622f,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            &tzdata::ATLANTIC_BERMUDA,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x72677f6f706d6163,
+                0x2020200065646e61,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_CAMPO_GRANDE,
+        ),
+        (
+            Lower([
+                0x6d2f65706f727565,
+                0x2020006f63616e6f,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::EUROPE_MONACO,
+        ),
+        (
+            Lower([
+                0x61652f656c696863,
+                0x616c736972657473,
+                0x202020202000646e,
+                0x2020202020202020,
+            ]),
+            &tzdata::CHILE_EASTER_ISLAND,
+        ),
+        (
+            Lower([
+                0x2f63696669636170,
+                0x200079617764696d,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::PACIFIC_MIDWAY,
+        ),
+        (
+            Lower([
+                0x2020200030746d67,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::GMT,
+        ),
+        (
+            Lower([
+                0x6c2f616369726661,
+                0x20200061646e6175,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AFRICA_LUANDA,
+        ),
+        (
+            Lower([
+                0x2020202000746577,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::WET,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x20202000616d696c,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_LIMA,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x2020006573696f62,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_BOISE,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x737474696b7f7473,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_ST_KITTS,
+        ),
+        (
+            Lower([
+                0x6974637261746e61,
+                0x757163616d2f6163,
+                0x2020200065697261,
+                0x2020202020202020,
+            ]),
+            &tzdata::ANTARCTICA_MACQUARIE,
+        ),
+        (
+            Lower([
+                0x2b746d672f637465,
+                0x2020202020200031,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ETC_GMT_PLUS_1,
+        ),
+        (
+            Lower([
+                0x20202000756c757a,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::UCT,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x61626f64726f63,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_CORDOBA,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x20007561656e756a,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_JUNEAU,
+        ),
+        (
+            Lower([
+                0x6265682f61697361,
+                0x20202020006e6f72,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ASIA_HEBRON,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x202000656c756874,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_THULE,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x6e616b6f6b697461,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_ATIKOKAN,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x65676e617f736f6c,
+                0x202020200073656c,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_LOS_ANGELES,
+        ),
+        (
+            Lower([
+                0x6a2f616369726661,
+                0x2020202000616275,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AFRICA_JUBA,
+        ),
+        (
+            Lower([
+                0x6d2f616369726661,
+                0x756873696461676f,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            &tzdata::AFRICA_MOGADISHU,
+        ),
+        (
+            Lower([
+                0x766f6e2f61697361,
+                0x6b7372696269736f,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            &tzdata::ASIA_NOVOSIBIRSK,
+        ),
+        (
+            Lower([
+                0x6169646e692f7375,
+                0x6b726174732d616e,
+                0x2020202020200065,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_KNOX_IN,
+        ),
+        (
+            Lower([
+                0x7568632f61697361,
+                0x2000676e696b676e,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::PRC,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x6c656e7f74726f66,
+                0x20202020006e6f73,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_FORT_NELSON,
+        ),
+        (
+            Lower([
+                0x74616b2f61697361,
+                0x200075646e616d68,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ASIA_KATHMANDU,
+        ),
+        (
+            Lower([
+                0x6b2f616369726661,
+                0x6d756f74726168,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AFRICA_KHARTOUM,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x747369767f616f62,
+                0x2020202020200061,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_BOA_VISTA,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x6761726f68636e61,
+                0x2020202020200065,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_ANCHORAGE,
+        ),
+        (
+            Lower([
+                0x7473692f61697361,
+                0x2020006c75626e61,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::TURKEY,
+        ),
+        (
+            Lower([
+                0x622f65706f727565,
+                0x74736570616475,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::EUROPE_BUDAPEST,
+        ),
+        (
+            Lower([
+                0x696c617274737561,
+                0x6d65646e696c2f61,
+                0x2020202020006e61,
+                0x2020202020202020,
+            ]),
+            &tzdata::AUSTRALIA_LINDEMAN,
+        ),
+        (
+            Lower([
+                0x612f616369726661,
+                0x2020006172616d73,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AFRICA_ASMARA,
+        ),
+        (
+            Lower([
+                0x20006f6a6176616e,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::NAVAJO,
+        ),
+        (
+            Lower([
+                0x7f6f682f61697361,
+                0x686e696d7f696863,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            &tzdata::ASIA_HO_CHI_MINH,
+        ),
+        (
+            Lower([
+                0x6369746e616c7461,
+                0x2000656f7261662f,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ATLANTIC_FAEROE,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x20007375616e616d,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_MANAUS,
+        ),
+        (
+            Lower([
+                0x6d2f65706f727565,
+                0x2020006469726461,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::EUROPE_MADRID,
+        ),
+        (
+            Lower([
+                0x7a79712f61697361,
+                0x20006164726f6c79,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ASIA_QYZYLORDA,
+        ),
+        (
+            Lower([
+                0x6b61792f61697361,
+                0x202020006b737475,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ASIA_YAKUTSK,
+        ),
+        (
+            Lower([
+                0x2d747361652f7375,
+                0x616e6169646e69,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_FORT_WAYNE,
+        ),
+        (
+            Lower([
+                0x7974612f61697361,
+                0x2020202000756172,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ASIA_ATYRAU,
+        ),
+        (
+            Lower([
+                0x2d746d672f637465,
+                0x2020202020003231,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ETC_GMT_MINUS_12,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x7f666f7f74726f70,
+                0x2020006e69617073,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_MARIGOT,
+        ),
+        (
+            Lower([
+                0x2f63696669636170,
+                0x756c756c6f6e6f68,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            &tzdata::PACIFIC_HONOLULU,
+        ),
+        (
+            Lower([
+                0x632f6e6169646e69,
+                0x20202000736f636f,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::INDIAN_COCOS,
+        ),
+        (
+            Lower([
+                0x6f632f656c696863,
+                0x61746e656e69746e,
+                0x202020202020006c,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_SANTIAGO,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
                 0x6e6f74636e6f6d,
                 0x2020202020202020,
                 0x2020202020202020,
@@ -8309,21 +8373,300 @@ pub(crate) const TIME_ZONES_BY_NAME: phf::Map<Lower, &'static TimeZoneRef<'stati
         ),
         (
             Lower([
-                0x2f61636972656d61,
-                0x616369616d616a,
+                0x7461712f61697361,
+                0x2020202020007261,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::JAMAICA,
+            &tzdata::ASIA_QATAR,
+        ),
+        (
+            Lower([
+                0x622f616369726661,
+                0x6c6976617a7a6172,
+                0x202020202000656c,
+                0x2020202020202020,
+            ]),
+            &tzdata::AFRICA_BRAZZAVILLE,
+        ),
+        (
+            Lower([
+                0x646e616c656369,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ICELAND,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x68747261627f7473,
+                0x202000796d656c65,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_MARIGOT,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x6e6172627f6f6972,
+                0x2020202020006f63,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_PORTO_ACRE,
+        ),
+        (
+            Lower([
+                0x612f65706f727565,
+                0x6e61686b61727473,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            &tzdata::EUROPE_ASTRAKHAN,
+        ),
+        (
+            Lower([
+                0x682f65706f727565,
+                0x696b6e69736c65,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::EUROPE_HELSINKI,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x6b636f7270696873,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            &tzdata::NAVAJO,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x656e6e65796163,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_CAYENNE,
+        ),
+        (
+            Lower([
+                0x7a61672f61697361,
+                0x2020202020200061,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ASIA_GAZA,
+        ),
+        (
+            Lower([
+                0x6e2f616369726661,
+                0x746f68636b61756f,
+                0x2020202020200074,
+                0x2020202020202020,
+            ]),
+            &tzdata::AFRICA_NOUAKCHOTT,
+        ),
+        (
+            Lower([
+                0x632f6164616e6163,
+                0x20006c6172746e65,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_WINNIPEG,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x6f697261736f72,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_CORDOBA,
+        ),
+        (
+            Lower([
+                0x2f63696669636170,
+                0x2000697469686174,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::PACIFIC_TAHITI,
+        ),
+        (
+            Lower([
+                0x6c2f616369726661,
+                0x6c6c697665726269,
+                0x2020202020200065,
+                0x2020202020202020,
+            ]),
+            &tzdata::AFRICA_LIBREVILLE,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x200061646972656d,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_MERIDA,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x6c616572746e6f6d,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_MONTREAL,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x6c69736f6d726568,
+                0x2020202020006f6c,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_HERMOSILLO,
         ),
         (
             Lower([
                 0x696c617274737561,
-                0x6569727275632f61,
+                0x6874726f6e2f61,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AUSTRALIA_DARWIN,
+        ),
+        (
+            Lower([
+                0x202020006e617269,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::IRAN,
+        ),
+        (
+            Lower([
+                0x696c617274737561,
+                0x79656e6479732f61,
                 0x2020202020202000,
                 0x2020202020202020,
             ]),
-            &tzdata::AUSTRALIA_CURRIE,
+            &tzdata::AUSTRALIA_ACT,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x65636e69767f7473,
+                0x202020202000746e,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_ST_VINCENT,
+        ),
+        (
+            Lower([
+                0x2b746d672f637465,
+                0x2020202020200039,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ETC_GMT_PLUS_9,
+        ),
+        (
+            Lower([
+                0x746d672f637465,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::GMT,
+        ),
+        (
+            Lower([
+                0x612f6164616e6163,
+                0x6369746e616c74,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_HALIFAX,
+        ),
+        (
+            Lower([
+                0x622f616369726661,
+                0x2020007561737369,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AFRICA_BISSAU,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x6e6b776f6c6c6579,
+                0x2020202000656669,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_YELLOWKNIFE,
+        ),
+        (
+            Lower([
+                0x6974637261746e61,
+                0x73697661642f6163,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            &tzdata::ANTARCTICA_DAVIS,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x6e6f69636e757361,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_ASUNCION,
+        ),
+        (
+            Lower([
+                0x2b746d672f637465,
+                0x2020202020200036,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ETC_GMT_PLUS_6,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x6e6f676970696e,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_NIPIGON,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x746174756b6179,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_YAKUTAT,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x72617f61746e7570,
+                0x2020200073616e65,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_PUNTA_ARENAS,
         ),
         (
             Lower([
@@ -8345,750 +8688,75 @@ pub(crate) const TIME_ZONES_BY_NAME: phf::Map<Lower, &'static TimeZoneRef<'stati
         ),
         (
             Lower([
-                0x736f712f61697361,
-                0x20200079616e6174,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ASIA_QOSTANAY,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x616963756c7f7473,
+                0x622f65706f727565,
+                0x7473657261686375,
                 0x2020202020202000,
                 0x2020202020202020,
             ]),
-            &tzdata::AMERICA_ST_LUCIA,
-        ),
-        (
-            Lower([
-                0x2f63696669636170,
-                0x6761707f6f676170,
-                0x202020202020006f,
-                0x2020202020202020,
-            ]),
-            &tzdata::PACIFIC_PAGO_PAGO,
-        ),
-        (
-            Lower([
-                0x696c617274737561,
-                0x6874756f732f61,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AUSTRALIA_ADELAIDE,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x6c69736f6d726568,
-                0x2020202020006f6c,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_HERMOSILLO,
-        ),
-        (
-            Lower([
-                0x6275642f61697361,
-                0x2020202020006961,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ASIA_DUBAI,
-        ),
-        (
-            Lower([
-                0x726f7061676e6973,
-                0x2020202020200065,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::SINGAPORE,
-        ),
-        (
-            Lower([
-                0x6369746e616c7461,
-                0x79656c6e6174732f,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            &tzdata::ATLANTIC_STANLEY,
-        ),
-        (
-            Lower([
-                0x6c61632f61697361,
-                0x2020006174747563,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ASIA_CALCUTTA,
-        ),
-        (
-            Lower([
-                0x7a2f65706f727565,
-                0x79687a6f726f7061,
-                0x2020202020200065,
-                0x2020202020202020,
-            ]),
-            &tzdata::EUROPE_ZAPOROZHYE,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x6c7561707f6f6173,
-                0x202020202020006f,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_SAO_PAULO,
-        ),
-        (
-            Lower([
-                0x656572672f637465,
-                0x202000686369776e,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::GMT,
+            &tzdata::EUROPE_BUCHAREST,
         ),
         (
             Lower([
                 0x6d2f616369726661,
-                0x756873696461676f,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            &tzdata::AFRICA_MOGADISHU,
-        ),
-        (
-            Lower([
-                0x672f65706f727565,
-                0x7965736e726575,
+                0x2020006f62616c61,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::EUROPE_GUERNSEY,
-        ),
-        (
-            Lower([
-                0x6a2f616369726661,
-                0x6273656e6e61686f,
-                0x2020202000677275,
-                0x2020202020202020,
-            ]),
-            &tzdata::AFRICA_JOHANNESBURG,
-        ),
-        (
-            Lower([
-                0x6d2f65706f727565,
-                0x2020006469726461,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::EUROPE_MADRID,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x2000616e61766168,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::CUBA,
-        ),
-        (
-            Lower([
-                0x6564612f61697361,
-                0x202020202020006e,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ASIA_ADEN,
-        ),
-        (
-            Lower([
-                0x696c617274737561,
-                0x687f64726f6c2f61,
-                0x202020200065776f,
-                0x2020202020202020,
-            ]),
-            &tzdata::AUSTRALIA_LHI,
-        ),
-        (
-            Lower([
-                0x6b61732f61697361,
-                0x2020006e696c6168,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ASIA_SAKHALIN,
-        ),
-        (
-            Lower([
-                0x77756b2f61697361,
-                0x2020202000746961,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ASIA_KUWAIT,
+            &tzdata::AFRICA_MALABO,
         ),
         (
             Lower([
                 0x2d746d672f637465,
-                0x2020202020003431,
+                0x2020202020200034,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::ETC_GMT_MINUS_14,
+            &tzdata::ETC_GMT_MINUS_4,
         ),
         (
             Lower([
-                0x6974637261746e61,
-                0x73697661642f6163,
-                0x2020202020202000,
+                0x652f6164616e6163,
+                0x20006e7265747361,
+                0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::ANTARCTICA_DAVIS,
+            &tzdata::AMERICA_MONTREAL,
         ),
         (
             Lower([
-                0x2d746d672f637465,
-                0x2020202020200038,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ETC_GMT_MINUS_8,
-        ),
-        (
-            Lower([
-                0x2b746d672f637465,
-                0x2020202020003031,
-                0x2020202020202020,
+                0x692f65706f727565,
+                0x6d7f666f7f656c73,
+                0x2020202020006e61,
                 0x2020202020202020,
             ]),
-            &tzdata::ETC_GMT_PLUS_10,
-        ),
-        (
-            Lower([
-                0x6d2f6e6169646e69,
-                0x73657669646c61,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::INDIAN_MALDIVES,
-        ),
-        (
-            Lower([
-                0x7473752f61697361,
-                0x2020006172656e2d,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ASIA_UST_NERA,
-        ),
-        (
-            Lower([
-                0x6b73616c612f7375,
-                0x2020202020200061,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_ANCHORAGE,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x6761726f68636e61,
-                0x2020202020200065,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_ANCHORAGE,
-        ),
-        (
-            Lower([
-                0x622f6f636978656d,
-                0x2000727573616a61,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_MAZATLAN,
-        ),
-        (
-            Lower([
-                0x6d2f6e6169646e69,
-                0x7375697469727561,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            &tzdata::INDIAN_MAURITIUS,
-        ),
-        (
-            Lower([
-                0x632f616369726661,
-                0x202020006f726961,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::EGYPT,
-        ),
-        (
-            Lower([
-                0x63616d2f61697361,
-                0x2020202020006f61,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ASIA_MACAO,
-        ),
-        (
-            Lower([
-                0x76696e752f637465,
-                0x2020006c61737265,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::UCT,
-        ),
-        (
-            Lower([
-                0x612f65706f727565,
-                0x202000736e656874,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::EUROPE_ATHENS,
-        ),
-        (
-            Lower([
-                0x20202000756c757a,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::UCT,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x6e6b776f6c6c6579,
-                0x2020202000656669,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_YELLOWKNIFE,
-        ),
-        (
-            Lower([
-                0x696c617274737561,
-                0x7265626e61632f61,
-                0x2020202020006172,
-                0x2020202020202020,
-            ]),
-            &tzdata::AUSTRALIA_ACT,
+            &tzdata::EUROPE_ISLE_OF_MAN,
         ),
         (
             Lower([
                 0x2f63696669636170,
-                0x2020202000706179,
+                0x202020006d617567,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::PACIFIC_CHUUK,
+            &tzdata::PACIFIC_GUAM,
         ),
         (
             Lower([
-                0x622f65706f727565,
-                0x736c6573737572,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::EUROPE_BRUSSELS,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x616c6c6975676e61,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_ANGUILLA,
-        ),
-        (
-            Lower([
-                0x632f616369726661,
-                0x200079726b616e6f,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AFRICA_CONAKRY,
-        ),
-        (
-            Lower([
-                0x20202020006b6f72,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ROK,
-        ),
-        (
-            Lower([
-                0x696c617274737561,
-                0x726f746369762f61,
-                0x2020202020006169,
-                0x2020202020202020,
-            ]),
-            &tzdata::AUSTRALIA_MELBOURNE,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x676570696e6e6977,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_WINNIPEG,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x6c656e7f74726f66,
-                0x20202020006e6f73,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_FORT_NELSON,
-        ),
-        (
-            Lower([
-                0x696c617274737561,
-                0x20200069686c2f61,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AUSTRALIA_LHI,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x79627365726f6373,
-                0x20202000646e7573,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_SCORESBYSUND,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x2020006d656c6562,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_BELEM,
-        ),
-        (
-            Lower([
-                0x722f65706f727565,
-                0x2020202000616769,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::EUROPE_RIGA,
-        ),
-        (
-            Lower([
-                0x2f63696669636170,
-                0x20202000656b6177,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::PACIFIC_WAKE,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x6e6f6c657571696d,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_MIQUELON,
-        ),
-        (
-            Lower([
-                0x6873612f61697361,
-                0x200064616261686b,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ASIA_ASHGABAT,
-        ),
-        (
-            Lower([
-                0x2020202020007a6e,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::NZ,
-        ),
-        (
-            Lower([
-                0x6974637261746e61,
-                0x6f74736f762f6163,
-                0x202020202020006b,
-                0x2020202020202020,
-            ]),
-            &tzdata::ANTARCTICA_VOSTOK,
-        ),
-        (
-            Lower([
-                0x6d2f6e6169646e69,
-                0x20006574746f7961,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::INDIAN_MAYOTTE,
-        ),
-        (
-            Lower([
-                0x732f65706f727565,
-                0x6d6c6f686b636f74,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            &tzdata::EUROPE_STOCKHOLM,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x200075617373616e,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_NASSAU,
-        ),
-        (
-            Lower([
-                0x6974637261746e61,
-                0x656d6c61702f6163,
-                0x2020202020200072,
-                0x2020202020202020,
-            ]),
-            &tzdata::ANTARCTICA_PALMER,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x63617f6f74726f70,
-                0x2020202020006572,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_PORTO_ACRE,
-        ),
-        (
-            Lower([
-                0x2f63696669636170,
-                0x617365757172616d,
-                0x2020202020200073,
-                0x2020202020202020,
-            ]),
-            &tzdata::PACIFIC_MARQUESAS,
-        ),
-        (
-            Lower([
-                0x622f616369726661,
-                0x617275626d756a75,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            &tzdata::AFRICA_BUJUMBURA,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x69727f6174736f63,
+                0x6361642f61697361,
                 0x2020202020006163,
                 0x2020202020202020,
+                0x2020202020202020,
             ]),
-            &tzdata::AMERICA_COSTA_RICA,
+            &tzdata::ASIA_DACCA,
         ),
         (
             Lower([
-                0x6974637261746e61,
-                0x6c6c6f72742f6163,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            &tzdata::ANTARCTICA_TROLL,
-        ),
-        (
-            Lower([
-                0x6d61642f61697361,
-                0x2020007375637361,
+                0x62616b2f61697361,
+                0x2020202020006c75,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::ASIA_DAMASCUS,
-        ),
-        (
-            Lower([
-                0x2f63696669636170,
-                0x61636c6164617567,
-                0x20202020006c616e,
-                0x2020202020202020,
-            ]),
-            &tzdata::PACIFIC_GUADALCANAL,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x69646e656c61726b,
-                0x2020202020006b6a,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_CURACAO,
-        ),
-        (
-            Lower([
-                0x622f65706f727565,
-                0x2000747361666c65,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::EUROPE_BELFAST,
-        ),
-        (
-            Lower([
-                0x772f65706f727565,
-                0x2020007761737261,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::POLAND,
-        ),
-        (
-            Lower([
-                0x2f63696669636170,
-                0x2000617761726174,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::PACIFIC_TARAWA,
-        ),
-        (
-            Lower([
-                0x6761622f61697361,
-                0x2020200064616468,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ASIA_BAGHDAD,
-        ),
-        (
-            Lower([
-                0x6e6f702f61697361,
-                0x20006b616e616974,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ASIA_PONTIANAK,
-        ),
-        (
-            Lower([
-                0x696c617274737561,
-                0x68747265702f61,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AUSTRALIA_PERTH,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x637f6e6f73776164,
-                0x202020006b656572,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_DAWSON_CREEK,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x61732d636e616c62,
-                0x202020006e6f6c62,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_BLANC_SABLON,
-        ),
-        (
-            Lower([
-                0x732f65706f727565,
-                0x6e6972616d7f6e61,
-                0x202020202020006f,
-                0x2020202020202020,
-            ]),
-            &tzdata::EUROPE_ROME,
-        ),
-        (
-            Lower([
-                0x2000646e616c6f70,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::POLAND,
-        ),
-        (
-            Lower([
-                0x202020200074736d,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::MST,
-        ),
-        (
-            Lower([
-                0x2020202000636f72,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ROC,
-        ),
-        (
-            Lower([
-                0x6f2f65706f727565,
-                0x20202020006f6c73,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ARCTIC_LONGYEARBYEN,
-        ),
-        (
-            Lower([
-                0x672f65706f727565,
-                0x7261746c61726269,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            &tzdata::EUROPE_GIBRALTAR,
-        ),
-        (
-            Lower([
-                0x6974637261746e61,
-                0x79657361632f6163,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            &tzdata::ANTARCTICA_CASEY,
-        ),
-        (
-            Lower([
-                0x662f616369726661,
-                0x6e776f74656572,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AFRICA_FREETOWN,
+            &tzdata::ASIA_KABUL,
         ),
         (
             Lower([
@@ -9101,264 +8769,48 @@ pub(crate) const TIME_ZONES_BY_NAME: phf::Map<Lower, &'static TimeZoneRef<'stati
         ),
         (
             Lower([
-                0x6b2f65706f727565,
-                0x72676e696e696c61,
-                0x2020202020006461,
+                0x632f616369726661,
+                0x202020006f726961,
+                0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::EUROPE_KALININGRAD,
+            &tzdata::EGYPT,
         ),
         (
             Lower([
-                0x2f61636972656d61,
-                0x7568617568696863,
-                0x2020202020200061,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_CHIHUAHUA,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x6576756f636e6176,
-                0x2020202020200072,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_VANCOUVER,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x75637f7466697773,
-                0x202000746e657272,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_SWIFT_CURRENT,
-        ),
-        (
-            Lower([
-                0x2d746d672f637465,
-                0x2020202020200039,
+                0x612f6c697a617262,
+                0x2020202000657263,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::ETC_GMT_MINUS_9,
-        ),
-        (
-            Lower([
-                0x2f63696669636170,
-                0x6e72696163746970,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            &tzdata::PACIFIC_PITCAIRN,
-        ),
-        (
-            Lower([
-                0x2020202000637270,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::PRC,
-        ),
-        (
-            Lower([
-                0x642f616369726661,
-                0x202000616c61756f,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AFRICA_DOUALA,
-        ),
-        (
-            Lower([
-                0x202000302b746d67,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::GMT,
-        ),
-        (
-            Lower([
-                0x73616b2f61697361,
-                0x2020200072616768,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ASIA_KASHGAR,
-        ),
-        (
-            Lower([
-                0x6c2f616369726661,
-                0x687361626d756275,
-                0x2020202020200069,
-                0x2020202020202020,
-            ]),
-            &tzdata::AFRICA_LUBUMBASHI,
-        ),
-        (
-            Lower([
-                0x2020202000747365,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::EST,
-        ),
-        (
-            Lower([
-                0x742f616369726661,
-                0x2020200073696e75,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AFRICA_TUNIS,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x6f616361727563,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_CURACAO,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x6e6f69636e757361,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_ASUNCION,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x73616361726163,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_CARACAS,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x74616b616c74656d,
-                0x202020202000616c,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_METLAKATLA,
-        ),
-        (
-            Lower([
-                0x7974612f61697361,
-                0x2020202000756172,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ASIA_ATYRAU,
+            &tzdata::AMERICA_PORTO_ACRE,
         ),
         (
             Lower([
                 0x6974637261746e61,
-                0x6568746f722f6163,
-                0x2020202020006172,
+                0x6f74736f762f6163,
+                0x202020202020006b,
                 0x2020202020202020,
             ]),
-            &tzdata::ANTARCTICA_ROTHERA,
+            &tzdata::ANTARCTICA_VOSTOK,
         ),
         (
             Lower([
-                0x2f61636972656d61,
-                0x2020006573696f62,
+                0x74616b2f61697361,
+                0x20200075646e616d,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::AMERICA_BOISE,
-        ),
-        (
-            Lower([
-                0x746e756f6d2f7375,
-                0x20202020006e6961,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::NAVAJO,
-        ),
-        (
-            Lower([
-                0x202020200074656d,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::MET,
-        ),
-        (
-            Lower([
-                0x752f65706f727565,
-                0x6b73766f6e61796c,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            &tzdata::EUROPE_ULYANOVSK,
-        ),
-        (
-            Lower([
-                0x6b616d2f61697361,
-                0x2020007261737361,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ASIA_MAKASSAR,
+            &tzdata::ASIA_KATHMANDU,
         ),
         (
             Lower([
                 0x2f63696669636170,
-                0x202000757275616e,
+                0x2000656172736f6b,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::PACIFIC_NAURU,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x747369767f616f62,
-                0x2020202020200061,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_BOA_VISTA,
-        ),
-        (
-            Lower([
-                0x74646d3774736d,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::MST_7_MDT,
-        ),
-        (
-            Lower([
-                0x6b2f616369726661,
-                0x2000616c61706d61,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AFRICA_KAMPALA,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x6164616e657267,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_GRENADA,
+            &tzdata::PACIFIC_KOSRAE,
         ),
         (
             Lower([
@@ -9371,93 +8823,30 @@ pub(crate) const TIME_ZONES_BY_NAME: phf::Map<Lower, &'static TimeZoneRef<'stati
         ),
         (
             Lower([
-                0x2f61636972656d61,
-                0x617f736f6e657562,
-                0x2020200073657269,
+                0x6168642f61697361,
+                0x202020202000616b,
+                0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::AMERICA_BUENOS_AIRES,
+            &tzdata::ASIA_DACCA,
         ),
         (
             Lower([
-                0x66696361702f7375,
-                0x2020202020006369,
+                0x6e61722f61697361,
+                0x202020006e6f6f67,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::AMERICA_LOS_ANGELES,
+            &tzdata::ASIA_RANGOON,
         ),
         (
             Lower([
                 0x696c617274737561,
-                0x756f626c656d2f61,
-                0x2020202000656e72,
-                0x2020202020202020,
-            ]),
-            &tzdata::AUSTRALIA_MELBOURNE,
-        ),
-        (
-            Lower([
-                0x762f65706f727565,
-                0x20006e6163697461,
+                0x6874756f732f61,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::EUROPE_ROME,
-        ),
-        (
-            Lower([
-                0x6974637261746e61,
-                0x6874756f732f6163,
-                0x202000656c6f707f,
-                0x2020202020202020,
-            ]),
-            &tzdata::ANTARCTICA_MC_MURDO,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x746f676972616d,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_MARIGOT,
-        ),
-        (
-            Lower([
-                0x2f63696669636170,
-                0x20006570616e6f70,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::PACIFIC_POHNPEI,
-        ),
-        (
-            Lower([
-                0x2f63696669636170,
-                0x2000697469686174,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::PACIFIC_TAHITI,
-        ),
-        (
-            Lower([
-                0x6974637261746e61,
-                0x757163616d2f6163,
-                0x2020200065697261,
-                0x2020202020202020,
-            ]),
-            &tzdata::ANTARCTICA_MACQUARIE,
-        ),
-        (
-            Lower([
-                0x642f65706f727565,
-                0x2020006e696c6275,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::EIRE,
+            &tzdata::AUSTRALIA_ADELAIDE,
         ),
         (
             Lower([
@@ -9470,174 +8859,165 @@ pub(crate) const TIME_ZONES_BY_NAME: phf::Map<Lower, &'static TimeZoneRef<'stati
         ),
         (
             Lower([
-                0x6b72692f61697361,
-                0x202020006b737475,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ASIA_IRKUTSK,
-        ),
-        (
-            Lower([
                 0x2f61636972656d61,
-                0x2000657a696c6562,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_BELIZE,
-        ),
-        (
-            Lower([
-                0x6f7a6972612f7375,
-                0x202020202000616e,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_PHOENIX,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x736f646162726162,
+                0x676570696e6e6977,
                 0x2020202020202000,
                 0x2020202020202020,
             ]),
-            &tzdata::AMERICA_BARBADOS,
+            &tzdata::AMERICA_WINNIPEG,
+        ),
+        (
+            Lower([
+                0x6968742f61697361,
+                0x202020007568706d,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ASIA_THIMBU,
         ),
         (
             Lower([
                 0x2f61636972656d61,
-                0x20007a61707f616c,
+                0x6f676163696863,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::AMERICA_LA_PAZ,
+            &tzdata::AMERICA_CHICAGO,
         ),
         (
             Lower([
-                0x766f682f61697361,
-                0x2020202020200064,
+                0x2f63696669636170,
+                0x202000616f6d6173,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::ASIA_HOVD,
+            &tzdata::PACIFIC_PAGO_PAGO,
         ),
         (
             Lower([
-                0x2f61636972656d61,
-                0x617a6f646e656d,
+                0x2000646e616c6f70,
+                0x2020202020202020,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::AMERICA_MENDOZA,
+            &tzdata::POLAND,
         ),
         (
             Lower([
-                0x6f2f616369726661,
-                0x67756f6461676175,
-                0x202020202000756f,
-                0x2020202020202020,
-            ]),
-            &tzdata::AFRICA_OUAGADOUGOU,
-        ),
-        (
-            Lower([
-                0x6e61622f61697361,
-                0x202020006b6f6b67,
+                0x6c6f6b2f61697361,
+                0x202020006174616b,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::ASIA_BANGKOK,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x726f686574696877,
-                0x2020202020006573,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_WHITEHORSE,
-        ),
-        (
-            Lower([
-                0x6c2f616369726661,
-                0x20200061646e6175,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AFRICA_LUANDA,
+            &tzdata::ASIA_CALCUTTA,
         ),
         (
             Lower([
                 0x2b746d672f637465,
-                0x2020202020200039,
+                0x2020202020200037,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::ETC_GMT_PLUS_9,
+            &tzdata::ETC_GMT_PLUS_7,
+        ),
+        (
+            Lower([
+                0x6d2f616369726661,
+                0x6169766f726e6f,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AFRICA_MONROVIA,
+        ),
+        (
+            Lower([
+                0x2b746d672f637465,
+                0x2020202020200033,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ETC_GMT_PLUS_3,
         ),
         (
             Lower([
                 0x2f61636972656d61,
-                0x6e616b6f6b697461,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_ATIKOKAN,
-        ),
-        (
-            Lower([
-                0x6a2f65706f727565,
-                0x2020007965737265,
+                0x73616361726163,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::EUROPE_JERSEY,
+            &tzdata::AMERICA_CARACAS,
         ),
         (
             Lower([
-                0x2f61636972656d61,
-                0x2000616e69676572,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AMERICA_REGINA,
-        ),
-        (
-            Lower([
-                0x2020202000637475,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::UCT,
-        ),
-        (
-            Lower([
-                0x742f616369726661,
-                0x75746b75626d69,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AFRICA_TIMBUKTU,
-        ),
-        (
-            Lower([
-                0x7375642f61697361,
-                0x20200065626e6168,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ASIA_DUSHANBE,
-        ),
-        (
-            Lower([
-                0x20006f6a6176616e,
-                0x2020202020202020,
+                0x746e756f6d2f7375,
+                0x20202020006e6961,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
             &tzdata::NAVAJO,
+        ),
+        (
+            Lower([
+                0x662f616369726661,
+                0x6e776f74656572,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AFRICA_FREETOWN,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x2000616e61797567,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_GUYANA,
+        ),
+        (
+            Lower([
+                0x6d2f6e6169646e69,
+                0x20006574746f7961,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::INDIAN_MAYOTTE,
+        ),
+        (
+            Lower([
+                0x2020202000746565,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::EET,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x61686e6f726f6e,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_NORONHA,
+        ),
+        (
+            Lower([
+                0x732f65706f727565,
+                0x202000656a706f6b,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::EUROPE_SKOPJE,
+        ),
+        (
+            Lower([
+                0x6369746e616c7461,
+                0x656c65687f74732f,
+                0x202020202000616e,
+                0x2020202020202020,
+            ]),
+            &tzdata::ATLANTIC_ST_HELENA,
         ),
         (
             Lower([
@@ -9651,92 +9031,20 @@ pub(crate) const TIME_ZONES_BY_NAME: phf::Map<Lower, &'static TimeZoneRef<'stati
         (
             Lower([
                 0x2f61636972656d61,
-                0x65676e617f736f6c,
-                0x202020200073656c,
+                0x61732d636e616c62,
+                0x202020006e6f6c62,
                 0x2020202020202020,
             ]),
-            &tzdata::AMERICA_LOS_ANGELES,
+            &tzdata::AMERICA_BLANC_SABLON,
         ),
         (
             Lower([
-                0x612f65706f727565,
-                0x6d6164726574736d,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            &tzdata::EUROPE_AMSTERDAM,
-        ),
-        (
-            Lower([
-                0x6168642f61697361,
-                0x202020202000616b,
+                0x6e6f682f61697361,
+                0x2000676e6f6b7f67,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::ASIA_DACCA,
-        ),
-        (
-            Lower([
-                0x7361742f61697361,
-                0x202000746e656b68,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ASIA_TASHKENT,
-        ),
-        (
-            Lower([
-                0x2020007470796765,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::EGYPT,
-        ),
-        (
-            Lower([
-                0x772f616369726661,
-                0x6b656f68646e69,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::AFRICA_WINDHOEK,
-        ),
-        (
-            Lower([
-                0x7461712f61697361,
-                0x2020202020007261,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ASIA_QATAR,
-        ),
-        (
-            Lower([
-                0x696c617274737561,
-                0x79656e6479732f61,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            &tzdata::AUSTRALIA_ACT,
-        ),
-        (
-            Lower([
-                0x6965622f61697361,
-                0x2020202000747572,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ASIA_BEIRUT,
-        ),
-        (
-            Lower([
-                0x6974637261746e61,
-                0x6e6f6d75642f6163,
-                0x6c6c697672756474,
-                0x2020202020200065,
-            ]),
-            &tzdata::ANTARCTICA_DUMONT_D_URVILLE,
+            &tzdata::HONGKONG,
         ),
         (
             Lower([
@@ -9749,147 +9057,219 @@ pub(crate) const TIME_ZONES_BY_NAME: phf::Map<Lower, &'static TimeZoneRef<'stati
         ),
         (
             Lower([
-                0x7a79712f61697361,
-                0x20006164726f6c79,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ASIA_QYZYLORDA,
-        ),
-        (
-            Lower([
-                0x6c61677574726f70,
-                0x2020202020202000,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::PORTUGAL,
-        ),
-        (
-            Lower([
                 0x622f616369726661,
-                0x2020007561737369,
+                0x2020006975676e61,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::AFRICA_BISSAU,
+            &tzdata::AFRICA_BANGUI,
         ),
         (
             Lower([
-                0x6d2f616369726661,
-                0x2020006f62616c61,
+                0x696c617274737561,
+                0x687f64726f6c2f61,
+                0x202020200065776f,
+                0x2020202020202020,
+            ]),
+            &tzdata::AUSTRALIA_LHI,
+        ),
+        (
+            Lower([
+                0x6f2f65706f727565,
+                0x20202020006f6c73,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::AFRICA_MALABO,
+            &tzdata::ARCTIC_LONGYEARBYEN,
         ),
         (
             Lower([
-                0x612f616369726661,
-                0x200073726569676c,
+                0x2f61636972656d61,
+                0x20006e6f73776164,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::AFRICA_ALGIERS,
+            &tzdata::AMERICA_DAWSON,
         ),
         (
             Lower([
-                0x74616b2f61697361,
-                0x20200075646e616d,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ASIA_KATHMANDU,
-        ),
-        (
-            Lower([
-                0x6961732f61697361,
-                0x20202020006e6f67,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            &tzdata::ASIA_HO_CHI_MINH,
-        ),
-        (
-            Lower([
-                0x632f6e6169646e69,
-                0x73616d7473697268,
+                0x696c617274737561,
+                0x6569727275632f61,
                 0x2020202020202000,
                 0x2020202020202020,
             ]),
-            &tzdata::INDIAN_CHRISTMAS,
+            &tzdata::AUSTRALIA_CURRIE,
+        ),
+        (
+            Lower([
+                0x6d2f6e6169646e69,
+                0x2020202000656861,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::INDIAN_MAHE,
+        ),
+        (
+            Lower([
+                0x616e612f61697361,
+                0x2020202000727964,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ASIA_ANADYR,
+        ),
+        (
+            Lower([
+                0x672f6f636978656d,
+                0x20006c6172656e65,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_MEXICO_CITY,
+        ),
+        (
+            Lower([
+                0x63616d2f61697361,
+                0x2020202020006f61,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ASIA_MACAO,
+        ),
+        (
+            Lower([
+                0x762f65706f727565,
+                0x20007375696e6c69,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::EUROPE_VILNIUS,
         ),
         (
             Lower([
                 0x2f61636972656d61,
-                0x73697f61746e6173,
-                0x202020006c656261,
+                0x6f746e6f726f74,
+                0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::AMERICA_SANTA_ISABEL,
+            &tzdata::AMERICA_MONTREAL,
+        ),
+        (
+            Lower([
+                0x6974637261746e61,
+                0x72756d636d2f6163,
+                0x2020202020006f64,
+                0x2020202020202020,
+            ]),
+            &tzdata::ANTARCTICA_MC_MURDO,
         ),
         (
             Lower([
                 0x2f61636972656d61,
-                0x65727265746e6f6d,
-                0x2020202020200079,
+                0x20007265766e6564,
+                0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::AMERICA_MONTERREY,
+            &tzdata::NAVAJO,
+        ),
+        (
+            Lower([
+                0x696c617274737561,
+                0x6e69777261642f61,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            &tzdata::AUSTRALIA_DARWIN,
+        ),
+        (
+            Lower([
+                0x6d2f65706f727565,
+                0x202000776f63736f,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::W_SU,
+        ),
+        (
+            Lower([
+                0x2d746d672f637465,
+                0x2020202020003431,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ETC_GMT_MINUS_14,
         ),
         (
             Lower([
                 0x2f61636972656d61,
-                0x20006e6967726976,
-                0x2020202020202020,
+                0x656e696d6f6e656d,
+                0x2020202020200065,
                 0x2020202020202020,
             ]),
-            &tzdata::AMERICA_ST_THOMAS,
+            &tzdata::AMERICA_MENOMINEE,
         ),
         (
             Lower([
-                0x2020202000746d67,
-                0x2020202020202020,
+                0x2f61636972656d61,
+                0x2000657a696c6562,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::GMT,
+            &tzdata::AMERICA_BELIZE,
         ),
         (
             Lower([
-                0x6d616b2f61697361,
-                0x2000616b74616863,
+                0x6e2f65706f727565,
+                0x20006169736f6369,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::ASIA_KAMCHATKA,
+            &tzdata::ASIA_NICOSIA,
         ),
         (
             Lower([
-                0x702f616369726661,
-                0x766f6e2d6f74726f,
-                0x202020202020006f,
+                0x632f616369726661,
+                0x636e616c62617361,
+                0x2020202020200061,
                 0x2020202020202020,
             ]),
-            &tzdata::AFRICA_PORTO_NOVO,
+            &tzdata::AFRICA_CASABLANCA,
         ),
         (
             Lower([
-                0x742f65706f727565,
-                0x202000656e617269,
-                0x2020202020202020,
+                0x2f61636972656d61,
+                0x6574756c6f736572,
+                0x2020202020202000,
                 0x2020202020202020,
             ]),
-            &tzdata::EUROPE_TIRANE,
+            &tzdata::AMERICA_RESOLUTE,
         ),
         (
             Lower([
-                0x752f65706f727565,
-                0x646f726f67687a,
+                0x2f61636972656d61,
+                0x75747f646e617267,
+                0x2020202020006b72,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_GRAND_TURK,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x7f7265646e756874,
+                0x2020202000796162,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_THUNDER_BAY,
+        ),
+        (
+            Lower([
+                0x2f63696669636170,
+                0x2000617761726174,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::EUROPE_UZHGOROD,
+            &tzdata::PACIFIC_TARAWA,
         ),
         (
             Lower([
@@ -9902,12 +9282,183 @@ pub(crate) const TIME_ZONES_BY_NAME: phf::Map<Lower, &'static TimeZoneRef<'stati
         ),
         (
             Lower([
-                0x6e2f616369726661,
-                0x200069626f726961,
+                0x6f65732f61697361,
+                0x2020202020006c75,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::AFRICA_NAIROBI,
+            &tzdata::ROK,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x616369616d616a,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::JAMAICA,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x6f616361727563,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_CURACAO,
+        ),
+        (
+            Lower([
+                0x6b2f6e6169646e69,
+                0x6e656c6575677265,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            &tzdata::INDIAN_KERGUELEN,
+        ),
+        (
+            Lower([
+                0x2d746d672f637465,
+                0x2020202020200035,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ETC_GMT_MINUS_5,
+        ),
+        (
+            Lower([
+                0x6e6f702f61697361,
+                0x20006b616e616974,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ASIA_PONTIANAK,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x70616e6169646e69,
+                0x2020200073696c6f,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_FORT_WAYNE,
+        ),
+        (
+            Lower([
+                0x2d746d672f637465,
+                0x2020202020200039,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ETC_GMT_MINUS_9,
+        ),
+        (
+            Lower([
+                0x6974637261746e61,
+                0x79657361632f6163,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            &tzdata::ANTARCTICA_CASEY,
+        ),
+        (
+            Lower([
+                0x6d2f616369726661,
+                0x2020006f74757061,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AFRICA_MAPUTO,
+        ),
+        (
+            Lower([
+                0x6c61632f61697361,
+                0x2020006174747563,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ASIA_CALCUTTA,
+        ),
+        (
+            Lower([
+                0x7572752f61697361,
+                0x202020200069716d,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ASIA_KASHGAR,
+        ),
+        (
+            Lower([
+                0x6f79702f61697361,
+                0x2000676e6179676e,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ASIA_PYONGYANG,
+        ),
+        (
+            Lower([
+                0x696c617274737561,
+                0x6e656b6f72622f61,
+                0x2020006c6c69687f,
+                0x2020202020202020,
+            ]),
+            &tzdata::AUSTRALIA_BROKEN_HILL,
+        ),
+        (
+            Lower([
+                0x6968632f61697361,
+                0x2020202020006174,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ASIA_CHITA,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x7961777f74726f66,
+                0x202020202000656e,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_FORT_WAYNE,
+        ),
+        (
+            Lower([
+                0x726f7061676e6973,
+                0x2020202020200065,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::SINGAPORE,
+        ),
+        (
+            Lower([
+                0x742f65706f727565,
+                0x20006e6e696c6c61,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::EUROPE_TALLINN,
+        ),
+        (
+            Lower([
+                0x2b746d672f637465,
+                0x2020202020003231,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ETC_GMT_PLUS_12,
+        ),
+        (
+            Lower([
+                0x2020202000637475,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::UCT,
         ),
         (
             Lower([
@@ -9920,39 +9471,471 @@ pub(crate) const TIME_ZONES_BY_NAME: phf::Map<Lower, &'static TimeZoneRef<'stati
         ),
         (
             Lower([
-                0x722f6e6169646e69,
-                0x20006e6f696e7565,
-                0x2020202020202020,
+                0x696c617274737561,
+                0x726f746369762f61,
+                0x2020202020006169,
                 0x2020202020202020,
             ]),
-            &tzdata::INDIAN_REUNION,
+            &tzdata::AUSTRALIA_MELBOURNE,
         ),
         (
             Lower([
-                0x702f65706f727565,
-                0x616369726f67646f,
+                0x6369746e616c7461,
+                0x76616a6b7965722f,
+                0x2020202020006b69,
+                0x2020202020202020,
+            ]),
+            &tzdata::ICELAND,
+        ),
+        (
+            Lower([
+                0x6369746e616c7461,
+                0x79616d7f6e616a2f,
+                0x2020202020006e65,
+                0x2020202020202020,
+            ]),
+            &tzdata::ARCTIC_LONGYEARBYEN,
+        ),
+        (
+            Lower([
+                0x696c617274737561,
+                0x7265626e61632f61,
+                0x2020202020006172,
+                0x2020202020202020,
+            ]),
+            &tzdata::AUSTRALIA_ACT,
+        ),
+        (
+            Lower([
+                0x6369776e65657267,
+                0x2020202020200068,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::GMT,
+        ),
+        (
+            Lower([
+                0x762f65706f727565,
+                0x646172676f676c6f,
                 0x2020202020202000,
                 0x2020202020202020,
             ]),
-            &tzdata::EUROPE_BELGRADE,
+            &tzdata::EUROPE_VOLGOGRAD,
         ),
         (
             Lower([
-                0x7471612f61697361,
-                0x2020202020007561,
+                0x7375642f61697361,
+                0x20200065626e6168,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::ASIA_AQTAU,
+            &tzdata::ASIA_DUSHANBE,
         ),
         (
             Lower([
                 0x2f61636972656d61,
-                0x7469756c617169,
+                0x67646972626d6163,
+                0x2020007961627f65,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_CAMBRIDGE_BAY,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x6570656e75726965,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_EIRUNEPE,
+        ),
+        (
+            Lower([
+                0x672f616369726661,
+                0x656e6f726f6261,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            &tzdata::AMERICA_IQALUIT,
+            &tzdata::AFRICA_GABORONE,
+        ),
+        (
+            Lower([
+                0x6369746e616c7461,
+                0x7972616e61632f,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ATLANTIC_CANARY,
+        ),
+        (
+            Lower([
+                0x2020200065726965,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::EIRE,
+        ),
+        (
+            Lower([
+                0x632f6e6169646e69,
+                0x73616d7473697268,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            &tzdata::INDIAN_CHRISTMAS,
+        ),
+        (
+            Lower([
+                0x6d616b2f61697361,
+                0x2000616b74616863,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ASIA_KAMCHATKA,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x736b72616d6e6164,
+                0x202020006e766168,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_DANMARKSHAVN,
+        ),
+        (
+            Lower([
+                0x74646d3774736d,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::MST_7_MDT,
+        ),
+        (
+            Lower([
+                0x6d61662f61697361,
+                0x2000617473756761,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ASIA_FAMAGUSTA,
+        ),
+        (
+            Lower([
+                0x2d746d672f637465,
+                0x2020202020003131,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ETC_GMT_MINUS_11,
+        ),
+        (
+            Lower([
+                0x202000302d746d67,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::GMT,
+        ),
+        (
+            Lower([
+                0x74646535747365,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::EST_5_EDT,
+        ),
+        (
+            Lower([
+                0x6b616a2f61697361,
+                0x2020200061747261,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ASIA_JAKARTA,
+        ),
+        (
+            Lower([
+                0x7a2f65706f727565,
+                0x79687a6f726f7061,
+                0x2020202020200065,
+                0x2020202020202020,
+            ]),
+            &tzdata::EUROPE_ZAPOROZHYE,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x2000616e69676572,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_REGINA,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x20200079756a756a,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_JUJUY,
+        ),
+        (
+            Lower([
+                0x2f63696669636170,
+                0x646e616c6b637561,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            &tzdata::NZ,
+        ),
+        (
+            Lower([
+                0x2f63696669636170,
+                0x202020006575696e,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::PACIFIC_NIUE,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x20007a61707f616c,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_LA_PAZ,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x6e6f6c657571696d,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_MIQUELON,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x74696f72746564,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_DETROIT,
+        ),
+        (
+            Lower([
+                0x696c617274737561,
+                0x6e616d7361742f61,
+                0x2020202020006169,
+                0x2020202020202020,
+            ]),
+            &tzdata::AUSTRALIA_CURRIE,
+        ),
+        (
+            Lower([
+                0x2f63696669636170,
+                0x69656c616a61776b,
+                0x202020202020006e,
+                0x2020202020202020,
+            ]),
+            &tzdata::KWAJALEIN,
+        ),
+        (
+            Lower([
+                0x2f63696669636170,
+                0x20202000656b6177,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::PACIFIC_WAKE,
+        ),
+        (
+            Lower([
+                0x7265792f61697361,
+                0x202020006e617665,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::ASIA_YEREVAN,
+        ),
+        (
+            Lower([
+                0x2f63696669636170,
+                0x70617461676e6f74,
+                0x2020202020200075,
+                0x2020202020202020,
+            ]),
+            &tzdata::PACIFIC_TONGATAPU,
+        ),
+        (
+            Lower([
+                0x616369616d616a,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::JAMAICA,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x69646e656c61726b,
+                0x2020202020006b6a,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_CURACAO,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x20006e616d796163,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_CAYMAN,
+        ),
+        (
+            Lower([
+                0x696c617274737561,
+                0x2000747365772f61,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AUSTRALIA_PERTH,
+        ),
+        (
+            Lower([
+                0x2f63696669636170,
+                0x6f666f616b6166,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::PACIFIC_FAKAOFO,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x6f676169746e6173,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_SANTIAGO,
+        ),
+        (
+            Lower([
+                0x2f63696669636170,
+                0x2020202000706179,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::PACIFIC_CHUUK,
+        ),
+        (
+            Lower([
+                0x722f65706f727565,
+                0x2020202000616769,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::EUROPE_RIGA,
+        ),
+        (
+            Lower([
+                0x722f65706f727565,
+                0x2020202000656d6f,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::EUROPE_ROME,
+        ),
+        (
+            Lower([
+                0x6974637261746e61,
+                0x6e6f6d75642f6163,
+                0x6c6c697672756474,
+                0x2020202020200065,
+            ]),
+            &tzdata::ANTARCTICA_DUMONT_D_URVILLE,
+        ),
+        (
+            Lower([
+                0x732f65706f727565,
+                0x6d6c6f686b636f74,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            &tzdata::EUROPE_STOCKHOLM,
+        ),
+        (
+            Lower([
+                0x6974637261746e61,
+                0x6874756f732f6163,
+                0x202000656c6f707f,
+                0x2020202020202020,
+            ]),
+            &tzdata::ANTARCTICA_MC_MURDO,
+        ),
+        (
+            Lower([
+                0x642f616369726661,
+                0x2020200072616b61,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AFRICA_DAKAR,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x2020006d656c6562,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_BELEM,
+        ),
+        (
+            Lower([
+                0x612f65706f727565,
+                0x6d6164726574736d,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            &tzdata::EUROPE_AMSTERDAM,
+        ),
+        (
+            Lower([
+                0x6f7a6972612f7375,
+                0x202020202000616e,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_PHOENIX,
+        ),
+        (
+            Lower([
+                0x2f63696669636170,
+                0x726569626d6167,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            &tzdata::PACIFIC_GAMBIER,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x736e686f6a7f7473,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            &tzdata::AMERICA_ST_JOHNS,
         ),
     ],
 };
@@ -9962,643 +9945,157 @@ pub(crate) const RAW_TIME_ZONES_BY_NAME: phf::Map<Lower, &'static [u8]> = ::phf:
     key: 12913932095322966823,
     disps: &[
         (0, 0),
-        (0, 0),
-        (0, 59),
-        (0, 3),
-        (0, 0),
-        (1, 128),
-        (0, 1),
-        (0, 2),
-        (1, 75),
-        (0, 17),
-        (0, 503),
-        (0, 112),
-        (0, 166),
-        (0, 570),
-        (0, 1),
-        (0, 13),
-        (0, 269),
-        (0, 452),
-        (0, 122),
-        (0, 147),
-        (0, 217),
-        (0, 141),
-        (0, 92),
-        (0, 1),
-        (0, 7),
-        (0, 63),
-        (0, 10),
-        (0, 1),
-        (0, 16),
-        (0, 127),
-        (0, 17),
-        (0, 6),
         (0, 12),
-        (0, 6),
-        (0, 260),
-        (0, 102),
-        (0, 49),
-        (0, 310),
-        (1, 198),
-        (0, 112),
-        (0, 5),
-        (0, 7),
-        (0, 43),
-        (4, 7),
-        (0, 243),
-        (0, 138),
-        (0, 53),
-        (0, 0),
-        (0, 132),
-        (0, 0),
-        (0, 408),
-        (0, 116),
-        (0, 105),
-        (0, 166),
-        (0, 100),
-        (0, 418),
-        (0, 52),
-        (0, 9),
-        (0, 87),
-        (1, 248),
-        (0, 134),
-        (0, 93),
-        (0, 0),
-        (0, 217),
-        (0, 107),
-        (0, 135),
-        (1, 17),
-        (0, 22),
-        (0, 7),
-        (0, 0),
-        (1, 192),
-        (1, 441),
-        (0, 52),
-        (1, 20),
-        (1, 531),
-        (0, 6),
-        (4, 545),
-        (0, 14),
-        (0, 2),
-        (3, 464),
-        (0, 360),
-        (1, 14),
-        (0, 59),
-        (3, 215),
-        (0, 12),
-        (4, 511),
-        (6, 523),
         (0, 74),
-        (0, 499),
-        (2, 244),
-        (0, 10),
-        (9, 206),
-        (0, 1),
-        (0, 354),
-        (9, 296),
-        (6, 234),
-        (0, 70),
-        (9, 131),
-        (1, 2),
-        (2, 419),
-        (0, 29),
-        (0, 292),
+        (0, 0),
+        (0, 187),
+        (0, 4),
+        (0, 4),
+        (0, 6),
+        (0, 375),
+        (0, 55),
+        (0, 178),
         (0, 17),
-        (1, 46),
-        (1, 471),
-        (1, 227),
+        (0, 298),
+        (0, 284),
+        (0, 0),
+        (0, 0),
+        (1, 196),
+        (0, 439),
+        (0, 22),
+        (0, 9),
+        (0, 188),
+        (1, 73),
+        (0, 25),
         (0, 2),
+        (0, 12),
+        (0, 4),
+        (0, 14),
+        (0, 0),
+        (0, 50),
+        (0, 134),
+        (1, 2),
+        (0, 4),
+        (0, 6),
+        (0, 5),
+        (0, 148),
+        (0, 49),
+        (0, 212),
+        (11, 58),
+        (1, 10),
+        (0, 428),
+        (0, 87),
+        (0, 18),
+        (0, 79),
+        (3, 15),
+        (4, 533),
+        (0, 9),
+        (0, 409),
+        (0, 0),
+        (0, 8),
+        (0, 0),
+        (0, 367),
+        (2, 388),
+        (0, 58),
+        (0, 21),
+        (3, 29),
+        (0, 4),
+        (0, 40),
+        (0, 6),
+        (0, 114),
+        (3, 43),
+        (1, 350),
+        (0, 40),
+        (0, 0),
+        (0, 128),
+        (0, 134),
+        (0, 397),
+        (0, 197),
+        (0, 5),
+        (0, 3),
+        (1, 0),
+        (0, 280),
+        (1, 249),
+        (0, 8),
+        (0, 155),
+        (4, 8),
+        (0, 0),
         (0, 112),
-        (0, 136),
-        (4, 351),
-        (52, 503),
-        (12, 306),
-        (1, 162),
-        (5, 283),
-        (5, 197),
+        (0, 67),
+        (0, 0),
+        (2, 458),
+        (0, 168),
+        (0, 60),
+        (0, 10),
+        (0, 555),
+        (0, 2),
+        (0, 472),
+        (2, 458),
+        (0, 35),
+        (1, 292),
+        (0, 135),
+        (0, 164),
+        (0, 92),
+        (0, 50),
+        (0, 183),
+        (7, 250),
+        (62, 447),
+        (0, 90),
+        (20, 407),
+        (0, 0),
+        (25, 51),
+        (0, 131),
+        (1, 50),
+        (0, 108),
+        (1, 18),
+        (3, 39),
+        (3, 44),
+        (0, 0),
+        (0, 0),
+        (0, 239),
+        (0, 389),
+        (9, 33),
+        (70, 308),
+        (0, 3),
+        (3, 337),
+        (8, 492),
     ],
     entries: &[
         (
             Lower([
-                0x2d747361652f7375,
-                0x616e6169646e69,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_FORT_WAYNE,
-        ),
-        (
-            Lower([
-                0x6a2f616369726661,
-                0x2020202000616275,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AFRICA_JUBA,
-        ),
-        (
-            Lower([
-                0x6369746e616c7461,
-                0x656c65687f74732f,
-                0x202020202000616e,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ATLANTIC_ST_HELENA,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x61627f65736f6f67,
-                0x2020202020200079,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_GOOSE_BAY,
-        ),
-        (
-            Lower([
-                0x696c617274737561,
-                0x776f636e61792f61,
-                0x20202000616e6e69,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AUSTRALIA_BROKEN_HILL,
-        ),
-        (
-            Lower([
-                0x6b61792f61697361,
-                0x202020006b737475,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ASIA_YAKUTSK,
-        ),
-        (
-            Lower([
-                0x7261622f61697361,
-                0x202020006c75616e,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ASIA_BARNAUL,
-        ),
-        (
-            Lower([
                 0x2f63696669636170,
-                0x6f676170616c6167,
-                0x2020202020200073,
+                0x726f6d7f74726f70,
+                0x2020200079627365,
                 0x2020202020202020,
             ]),
-            raw_tzdata::PACIFIC_GALAPAGOS,
+            raw_tzdata::PACIFIC_PORT_MORESBY,
         ),
         (
             Lower([
-                0x79616a2f61697361,
-                0x2020006172757061,
+                0x6168732f61697361,
+                0x202000696168676e,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::ASIA_JAYAPURA,
+            raw_tzdata::PRC,
         ),
         (
             Lower([
-                0x2020202000746563,
-                0x2020202020202020,
+                0x6d6c612f61697361,
+                0x2020202000797461,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::CET,
+            raw_tzdata::ASIA_ALMATY,
         ),
         (
             Lower([
-                0x6c2f616369726661,
-                0x20202000736f6761,
+                0x6d2f65706f727565,
+                0x202020006b736e69,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::AFRICA_LAGOS,
-        ),
-        (
-            Lower([
-                0x6c2f616369726661,
-                0x2020202000656d6f,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AFRICA_LOME,
-        ),
-        (
-            Lower([
-                0x6d2f616369726661,
-                0x2000656e61626162,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AFRICA_MBABANE,
-        ),
-        (
-            Lower([
-                0x6374752f637465,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::UCT,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x617567616e616d,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_MANAGUA,
-        ),
-        (
-            Lower([
-                0x742f616369726661,
-                0x2000696c6f706972,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::LIBYA,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x6f697261736f72,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_ROSARIO,
-        ),
-        (
-            Lower([
-                0x7475656c612f7375,
-                0x20202020006e6169,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_ADAK,
-        ),
-        (
-            Lower([
-                0x2f63696669636170,
-                0x6965706e686f70,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::PACIFIC_POHNPEI,
-        ),
-        (
-            Lower([
-                0x2f63696669636170,
-                0x20006f72756a616d,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::PACIFIC_MAJURO,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x202000616b746973,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_SITKA,
-        ),
-        (
-            Lower([
-                0x6f632f656c696863,
-                0x61746e656e69746e,
-                0x202020202020006c,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_SANTIAGO,
-        ),
-        (
-            Lower([
-                0x2f63696669636170,
-                0x7275627265646e65,
-                0x2020202020200079,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::PACIFIC_ENDERBURY,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x6975716179617567,
-                0x202020202020006c,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_GUAYAQUIL,
-        ),
-        (
-            Lower([
-                0x2d746d672f637465,
-                0x2020202020003131,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ETC_GMT_MINUS_11,
-        ),
-        (
-            Lower([
-                0x61686b2f61697361,
-                0x202000616779646e,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ASIA_KHANDYGA,
-        ),
-        (
-            Lower([
-                0x20006c6561727369,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ISRAEL,
-        ),
-        (
-            Lower([
-                0x7a2f65706f727565,
-                0x2020006863697275,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::EUROPE_BUSINGEN,
-        ),
-        (
-            Lower([
-                0x6c2f65706f727565,
-                0x2020006e6f646e6f,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::GB,
-        ),
-        (
-            Lower([
-                0x7463752f637465,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::UCT,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x727f6f7472657570,
-                0x20202020006f6369,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_PUERTO_RICO,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x6163696e696d6f64,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_DOMINICA,
-        ),
-        (
-            Lower([
-                0x7261682f61697361,
-                0x20202020006e6962,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ASIA_HARBIN,
-        ),
-        (
-            Lower([
-                0x652f6c697a617262,
-                0x2020202000747361,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_SAO_PAULO,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x61686e6f726f6e,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_NORONHA,
-        ),
-        (
-            Lower([
-                0x72616b2f61697361,
-                0x2020200069686361,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ASIA_KARACHI,
-        ),
-        (
-            Lower([
-                0x762f65706f727565,
-                0x20007375696e6c69,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::EUROPE_VILNIUS,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x61687f6c61726f63,
-                0x20200072756f6272,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_CORAL_HARBOUR,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x20006e6f73776164,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_DAWSON,
-        ),
-        (
-            Lower([
-                0x2f63696669636170,
-                0x200079617764696d,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::PACIFIC_MIDWAY,
-        ),
-        (
-            Lower([
-                0x2f63696669636170,
-                0x202020006b757274,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::PACIFIC_CHUUK,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x6c616d6574617567,
-                0x2020202020200061,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_GUATEMALA,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x20006b6976756e69,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_INUVIK,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x7a656c6174726f66,
-                0x2020202020200061,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_FORTALEZA,
-        ),
-        (
-            Lower([
-                0x6369746e616c7461,
-                0x6172696564616d2f,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ATLANTIC_MADEIRA,
-        ),
-        (
-            Lower([
-                0x2d746d672f637465,
-                0x2020202020200030,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::GMT,
-        ),
-        (
-            Lower([
-                0x642f6c697a617262,
-                0x61686e6f726f6e65,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_NORONHA,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x7f7265646e756874,
-                0x2020202000796162,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_THUNDER_BAY,
-        ),
-        (
-            Lower([
-                0x6e2f616369726661,
-                0x20200079656d6169,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AFRICA_NIAMEY,
-        ),
-        (
-            Lower([
-                0x6f68632f61697361,
-                0x6e61736c616269,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ASIA_CHOIBALSAN,
-        ),
-        (
-            Lower([
-                0x622f65706f727565,
-                0x7473657261686375,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::EUROPE_BUCHAREST,
-        ),
-        (
-            Lower([
-                0x6369746e616c7461,
-                0x65767f657061632f,
-                0x2020202000656472,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ATLANTIC_CAPE_VERDE,
-        ),
-        (
-            Lower([
-                0x73756d2f61697361,
-                0x2020202000746163,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ASIA_MUSCAT,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x756f6c6564617567,
-                0x2020202020006570,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_GUADELOUPE,
-        ),
-        (
-            Lower([
-                0x74646535747365,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::EST_5_EDT,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x736e686f6a7f7473,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_ST_JOHNS,
-        ),
-        (
-            Lower([
-                0x616c762f61697361,
-                0x6b6f74736f766964,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ASIA_VLADIVOSTOK,
-        ),
-        (
-            Lower([
-                0x6e2f6164616e6163,
-                0x6c646e756f667765,
-                0x2020202000646e61,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_ST_JOHNS,
+            raw_tzdata::EUROPE_MINSK,
         ),
         (
             Lower([
@@ -10611,12 +10108,219 @@ pub(crate) const RAW_TIME_ZONES_BY_NAME: phf::Map<Lower, &'static [u8]> = ::phf:
         ),
         (
             Lower([
-                0x200079656b727574,
+                0x2020202020006267,
                 0x2020202020202020,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::TURKEY,
+            raw_tzdata::GB,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x20202000656d6f6e,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_NOME,
+        ),
+        (
+            Lower([
+                0x622f616369726661,
+                0x2020006f6b616d61,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AFRICA_BAMAKO,
+        ),
+        (
+            Lower([
+                0x61636f6c2f637465,
+                0x202000656d69746c,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::FACTORY,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x202020006b75756e,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_GODTHAB,
+        ),
+        (
+            Lower([
+                0x6a2f65706f727565,
+                0x2020007965737265,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::EUROPE_JERSEY,
+        ),
+        (
+            Lower([
+                0x616c762f61697361,
+                0x6b6f74736f766964,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ASIA_VLADIVOSTOK,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x6c616d6574617567,
+                0x2020202020200061,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_GUATEMALA,
+        ),
+        (
+            Lower([
+                0x702f65706f727565,
+                0x2020200073697261,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::EUROPE_PARIS,
+        ),
+        (
+            Lower([
+                0x2020202000636f72,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ROC,
+        ),
+        (
+            Lower([
+                0x2f63696669636170,
+                0x20006e6170696173,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::PACIFIC_SAIPAN,
+        ),
+        (
+            Lower([
+                0x762f65706f727565,
+                0x202000616e6e6569,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::EUROPE_VIENNA,
+        ),
+        (
+            Lower([
+                0x702f65706f727565,
+                0x616369726f67646f,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::EUROPE_BELGRADE,
+        ),
+        (
+            Lower([
+                0x2f63696669636170,
+                0x676e6f746f726172,
+                0x2020202020200061,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::PACIFIC_RAROTONGA,
+        ),
+        (
+            Lower([
+                0x6974637261746e61,
+                0x6568746f722f6163,
+                0x2020202020006172,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ANTARCTICA_ROTHERA,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x73697f61746e6173,
+                0x202020006c656261,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_ENSENADA,
+        ),
+        (
+            Lower([
+                0x696c617274737561,
+                0x736e656575712f61,
+                0x20202000646e616c,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AUSTRALIA_BRISBANE,
+        ),
+        (
+            Lower([
+                0x6b2f616369726661,
+                0x2000616c61706d61,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AFRICA_KAMPALA,
+        ),
+        (
+            Lower([
+                0x642f616369726661,
+                0x202000616c61756f,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AFRICA_DOUALA,
+        ),
+        (
+            Lower([
+                0x2020006e6170616a,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::JAPAN,
+        ),
+        (
+            Lower([
+                0x752f65706f727565,
+                0x646f726f67687a,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::EUROPE_UZHGOROD,
+        ),
+        (
+            Lower([
+                0x2f63696669636170,
+                0x2000726574736165,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::CHILE_EASTER_ISLAND,
+        ),
+        (
+            Lower([
+                0x6d61642f61697361,
+                0x2020007375637361,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ASIA_DAMASCUS,
+        ),
+        (
+            Lower([
+                0x2020202000746563,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::CET,
         ),
         (
             Lower([
@@ -10629,390 +10333,12 @@ pub(crate) const RAW_TIME_ZONES_BY_NAME: phf::Map<Lower, &'static [u8]> = ::phf:
         ),
         (
             Lower([
-                0x2f61636972656d61,
-                0x6167616e696a6f,
+                0x652f6c697a617262,
+                0x2020202000747361,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::AMERICA_OJINAGA,
-        ),
-        (
-            Lower([
-                0x7572622f61697361,
-                0x202020200069656e,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ASIA_BRUNEI,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x786166696c6168,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_HALIFAX,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x20007561656e756a,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_JUNEAU,
-        ),
-        (
-            Lower([
-                0x6c2f636974637261,
-                0x6272616579676e6f,
-                0x20202020006e6579,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ARCTIC_LONGYEARBYEN,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x20007265766e6564,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::NAVAJO,
-        ),
-        (
-            Lower([
-                0x756c757a2f637465,
-                0x2020202020202000,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::UCT,
-        ),
-        (
-            Lower([
-                0x6369746e616c7461,
-                0x7365726f7a612f,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ATLANTIC_AZORES,
-        ),
-        (
-            Lower([
-                0x2f63696669636170,
-                0x6f666f616b6166,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::PACIFIC_FAKAOFO,
-        ),
-        (
-            Lower([
-                0x6c2f616369726661,
-                0x202000616b617375,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AFRICA_LUSAKA,
-        ),
-        (
-            Lower([
-                0x6974637261746e61,
-                0x72756d636d2f6163,
-                0x2020202020006f64,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ANTARCTICA_MC_MURDO,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x74696f72746564,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_DETROIT,
-        ),
-        (
-            Lower([
-                0x612f616369726661,
-                0x2020200061726363,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AFRICA_ACCRA,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x72617f61746e7570,
-                0x2020200073616e65,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_PUNTA_ARENAS,
-        ),
-        (
-            Lower([
-                0x612f616369726661,
-                0x6162617f73696464,
-                0x2020202020006162,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AFRICA_ADDIS_ABABA,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x6e6172627f6f6972,
-                0x2020202020006f63,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_PORTO_ACRE,
-        ),
-        (
-            Lower([
-                0x682f616369726661,
-                0x2020006572617261,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AFRICA_HARARE,
-        ),
-        (
-            Lower([
-                0x6e2f616369726661,
-                0x746f68636b61756f,
-                0x2020202020200074,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AFRICA_NOUAKCHOTT,
-        ),
-        (
-            Lower([
-                0x622f616369726661,
-                0x2020006c756a6e61,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AFRICA_BANJUL,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x61627f6563616c67,
-                0x2020202020200079,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_GLACE_BAY,
-        ),
-        (
-            Lower([
-                0x632f65706f727565,
-                0x656761686e65706f,
-                0x202020202020006e,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::EUROPE_COPENHAGEN,
-        ),
-        (
-            Lower([
-                0x69656c616a61776b,
-                0x202020202020006e,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::KWAJALEIN,
-        ),
-        (
-            Lower([
-                0x2020202000747368,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::HST,
-        ),
-        (
-            Lower([
-                0x6c65742f61697361,
-                0x202000766976617f,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ASIA_TEL_AVIV,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x737474696b7f7473,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_ST_KITTS,
-        ),
-        (
-            Lower([
-                0x72656a2f61697361,
-                0x20006d656c617375,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ISRAEL,
-        ),
-        (
-            Lower([
-                0x2f63696669636170,
-                0x726569626d6167,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::PACIFIC_GAMBIER,
-        ),
-        (
-            Lower([
-                0x616c752f61697361,
-                0x7261746161626e61,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ASIA_ULAANBAATAR,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x72707f7265776f6c,
-                0x2020007365636e69,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_CURACAO,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x75747f646e617267,
-                0x2020202020006b72,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_GRAND_TURK,
-        ),
-        (
-            Lower([
-                0x2b746d672f637465,
-                0x2020202020200038,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ETC_GMT_PLUS_8,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x20006e616d796163,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_CAYMAN,
-        ),
-        (
-            Lower([
-                0x2b746d672f637465,
-                0x2020202020200031,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ATLANTIC_JAN_MAYEN,
-        ),
-        (
-            Lower([
-                0x616e612f61697361,
-                0x2020202000727964,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ASIA_ANADYR,
-        ),
-        (
-            Lower([
-                0x6f65732f61697361,
-                0x2020202020006c75,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ROK,
-        ),
-        (
-            Lower([
-                0x6e2f65706f727565,
-                0x20006169736f6369,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ASIA_NICOSIA,
-        ),
-        (
-            Lower([
-                0x696c617274737561,
-                0x616c6375652f61,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AUSTRALIA_EUCLA,
-        ),
-        (
-            Lower([
-                0x2f63696669636170,
-                0x6e6f74736e686f6a,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::HST,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x65636e69767f7473,
-                0x202020202000746e,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_ST_VINCENT,
-        ),
-        (
-            Lower([
-                0x612f6164616e6163,
-                0x6369746e616c74,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_HALIFAX,
-        ),
-        (
-            Lower([
-                0x2020202000746375,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::UCT,
-        ),
-        (
-            Lower([
-                0x632f6e6169646e69,
-                0x202000736f676168,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::INDIAN_CHAGOS,
-        ),
-        (
-            Lower([
-                0x612f616369726661,
-                0x2020006172616d73,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AFRICA_ASMARA,
+            raw_tzdata::AMERICA_SAO_PAULO,
         ),
         (
             Lower([
@@ -11026,569 +10352,83 @@ pub(crate) const RAW_TIME_ZONES_BY_NAME: phf::Map<Lower, &'static [u8]> = ::phf:
         (
             Lower([
                 0x2f61636972656d61,
-                0x736b72616d6e6164,
-                0x202020006e766168,
+                0x202020006b616461,
+                0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::AMERICA_DANMARKSHAVN,
+            raw_tzdata::AMERICA_ADAK,
+        ),
+        (
+            Lower([
+                0x6c69642f61697361,
+                0x2020202020200069,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ASIA_DILI,
+        ),
+        (
+            Lower([
+                0x2020202020007a6e,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::NZ,
+        ),
+        (
+            Lower([
+                0x6a2f616369726661,
+                0x6273656e6e61686f,
+                0x2020202000677275,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AFRICA_JOHANNESBURG,
+        ),
+        (
+            Lower([
+                0x736f712f61697361,
+                0x20200079616e6174,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ASIA_QOSTANAY,
         ),
         (
             Lower([
                 0x2f61636972656d61,
-                0x6e616c74617a616d,
+                0x2000616e61766168,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::CUBA,
+        ),
+        (
+            Lower([
+                0x742f616369726661,
+                0x75746b75626d69,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AFRICA_BAMAKO,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x6164616e65736e65,
                 0x2020202020202000,
                 0x2020202020202020,
             ]),
-            raw_tzdata::AMERICA_MAZATLAN,
+            raw_tzdata::AMERICA_ENSENADA,
         ),
         (
             Lower([
-                0x2f63696669636170,
-                0x69747566616e7566,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::PACIFIC_FUNAFUTI,
-        ),
-        (
-            Lower([
-                0x612f6e6169646e69,
-                0x72616e616e61746e,
-                0x20202020006f7669,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::INDIAN_ANTANANARIVO,
-        ),
-        (
-            Lower([
-                0x6861622f61697361,
-                0x202020006e696172,
+                0x6b61622f61697361,
+                0x2020202020200075,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::ASIA_BAHRAIN,
-        ),
-        (
-            Lower([
-                0x657269652d6267,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::GB,
-        ),
-        (
-            Lower([
-                0x766f6e2f61697361,
-                0x7374656e7a756b6f,
-                0x202020202020006b,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ASIA_NOVOKUZNETSK,
-        ),
-        (
-            Lower([
-                0x2d746d672f637465,
-                0x2020202020200034,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ETC_GMT_MINUS_4,
-        ),
-        (
-            Lower([
-                0x642f616369726661,
-                0x2020200072616b61,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AFRICA_DAKAR,
-        ),
-        (
-            Lower([
-                0x6b2f6e6169646e69,
-                0x6e656c6575677265,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::INDIAN_KERGUELEN,
-        ),
-        (
-            Lower([
-                0x792f6164616e6163,
-                0x202020006e6f6b75,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_WHITEHORSE,
-        ),
-        (
-            Lower([
-                0x7568632f61697361,
-                0x2000676e696b676e,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ASIA_CHONGQING,
-        ),
-        (
-            Lower([
-                0x2b746d672f637465,
-                0x2020202020200035,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ETC_GMT_PLUS_5,
-        ),
-        (
-            Lower([
-                0x2020202020006267,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::GB,
-        ),
-        (
-            Lower([
-                0x61726b2f61697361,
-                0x6b737261796f6e73,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ASIA_KRASNOYARSK,
-        ),
-        (
-            Lower([
-                0x6b2f616369726661,
-                0x6d756f74726168,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AFRICA_KHARTOUM,
-        ),
-        (
-            Lower([
-                0x6d61732f61697361,
-                0x2000646e616b7261,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ASIA_SAMARKAND,
-        ),
-        (
-            Lower([
-                0x2d746d672f637465,
-                0x2020202020200037,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ETC_GMT_MINUS_7,
-        ),
-        (
-            Lower([
-                0x6f79702f61697361,
-                0x2000676e6179676e,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ASIA_PYONGYANG,
-        ),
-        (
-            Lower([
-                0x2020200075732d77,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::W_SU,
-        ),
-        (
-            Lower([
-                0x30746d672f637465,
-                0x2020202020202000,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::GMT,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x72677f6f706d6163,
-                0x2020200065646e61,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_CAMPO_GRANDE,
-        ),
-        (
-            Lower([
-                0x6873612f61697361,
-                0x2020007461626167,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ASIA_ASHGABAT,
-        ),
-        (
-            Lower([
-                0x632f616369726661,
-                0x2020200061747565,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AFRICA_CEUTA,
-        ),
-        (
-            Lower([
-                0x7f6f682f61697361,
-                0x686e696d7f696863,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ASIA_HO_CHI_MINH,
-        ),
-        (
-            Lower([
-                0x732f6164616e6163,
-                0x65686374616b7361,
-                0x20202020006e6177,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_REGINA,
-        ),
-        (
-            Lower([
-                0x742f65706f727565,
-                0x6c6f7073617269,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::EUROPE_TIRASPOL,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x6e6f746e6f6d6465,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_EDMONTON,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x6c69767369756f6c,
-                0x202020202000656c,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_LOUISVILLE,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x697f6e696b6e6172,
-                0x2020200074656c6e,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_RANKIN_INLET,
-        ),
-        (
-            Lower([
-                0x2f63696669636170,
-                0x6b6c6f66726f6e,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::PACIFIC_NORFOLK,
-        ),
-        (
-            Lower([
-                0x6d2f6164616e6163,
-                0x6e6961746e756f,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_EDMONTON,
-        ),
-        (
-            Lower([
-                0x622f616369726661,
-                0x6c6976617a7a6172,
-                0x202020202000656c,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AFRICA_BRAZZAVILLE,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x68747261627f7473,
-                0x202000796d656c65,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_MARIGOT,
-        ),
-        (
-            Lower([
-                0x6d2f65706f727565,
-                0x202020006b736e69,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::EUROPE_MINSK,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x6972616d61726170,
-                0x2020202020006f62,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_PARAMARIBO,
-        ),
-        (
-            Lower([
-                0x6e6f682f61697361,
-                0x2000676e6f6b7f67,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::HONGKONG,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x64697665746e6f6d,
-                0x2020202020006f65,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_MONTEVIDEO,
-        ),
-        (
-            Lower([
-                0x696863696d2f7375,
-                0x20202020006e6167,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_DETROIT,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x72726573746e6f6d,
-                0x2020202020007461,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_MONTSERRAT,
-        ),
-        (
-            Lower([
-                0x63756b2f61697361,
-                0x20202000676e6968,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ASIA_KUCHING,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x7472696e676e6170,
-                0x2020202000676e75,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_PANGNIRTUNG,
-        ),
-        (
-            Lower([
-                0x61636f6c2f637465,
-                0x202000656d69746c,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::FACTORY,
-        ),
-        (
-            Lower([
-                0x676e6f6b676e6f68,
-                0x2020202020202000,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::HONGKONG,
-        ),
-        (
-            Lower([
-                0x6c2f616369726661,
-                0x6c6c697665726269,
-                0x2020202020200065,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AFRICA_LIBREVILLE,
-        ),
-        (
-            Lower([
-                0x2d746d672f637465,
-                0x2020202020200031,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ETC_GMT_MINUS_1,
-        ),
-        (
-            Lower([
-                0x692f65706f727565,
-                0x6d7f666f7f656c73,
-                0x2020202020006e61,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::EUROPE_ISLE_OF_MAN,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x6c616572746e6f6d,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_MONTREAL,
-        ),
-        (
-            Lower([
-                0x6b616a2f61697361,
-                0x2020200061747261,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ASIA_JAKARTA,
-        ),
-        (
-            Lower([
-                0x63696e2f61697361,
-                0x202020006169736f,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ASIA_NICOSIA,
-        ),
-        (
-            Lower([
-                0x632f6164616e6163,
-                0x20006c6172746e65,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_WINNIPEG,
-        ),
-        (
-            Lower([
-                0x702f6164616e6163,
-                0x2000636966696361,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_VANCOUVER,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x6f676169746e6173,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_SANTIAGO,
-        ),
-        (
-            Lower([
-                0x6369746e616c7461,
-                0x677f6874756f732f,
-                0x2000616967726f65,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ATLANTIC_SOUTH_GEORGIA,
-        ),
-        (
-            Lower([
-                0x61726f2f61697361,
-                0x202020202020006c,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ASIA_ORAL,
-        ),
-        (
-            Lower([
-                0x672f616369726661,
-                0x656e6f726f6261,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AFRICA_GABORONE,
-        ),
-        (
-            Lower([
-                0x2f63696669636170,
-                0x676e6f746f726172,
-                0x2020202020200061,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::PACIFIC_RAROTONGA,
-        ),
-        (
-            Lower([
-                0x682f65706f727565,
-                0x696b6e69736c65,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::EUROPE_HELSINKI,
-        ),
-        (
-            Lower([
-                0x6974637261746e61,
-                0x61776f79732f6163,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ANTARCTICA_SYOWA,
-        ),
-        (
-            Lower([
-                0x6d2f616369726661,
-                0x2020006f74757061,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AFRICA_MAPUTO,
-        ),
-        (
-            Lower([
-                0x6d2f616369726661,
-                0x6169766f726e6f,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AFRICA_MONROVIA,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x20202000656d6f6e,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_NOME,
-        ),
-        (
-            Lower([
-                0x6569762f61697361,
-                0x2000656e6169746e,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ASIA_VIENTIANE,
+            raw_tzdata::ASIA_BAKU,
         ),
         (
             Lower([
@@ -11601,174 +10441,165 @@ pub(crate) const RAW_TIME_ZONES_BY_NAME: phf::Map<Lower, &'static [u8]> = ::phf:
         ),
         (
             Lower([
-                0x2f63696669636170,
-                0x616d69746972696b,
-                0x2020202020006974,
+                0x6974637261746e61,
+                0x61776f79732f6163,
+                0x2020202020202000,
                 0x2020202020202020,
             ]),
-            raw_tzdata::PACIFIC_KIRITIMATI,
+            raw_tzdata::ANTARCTICA_SYOWA,
         ),
         (
             Lower([
-                0x622f65706f727565,
-                0x76616c7369746172,
+                0x6275642f61697361,
+                0x2020202020006961,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ASIA_DUBAI,
+        ),
+        (
+            Lower([
+                0x6961742f61697361,
+                0x2020202000696570,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ROC,
+        ),
+        (
+            Lower([
+                0x6b2f616369726661,
+                0x61736168736e69,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AFRICA_KINSHASA,
+        ),
+        (
+            Lower([
+                0x7261622f61697361,
+                0x202020006c75616e,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ASIA_BARNAUL,
+        ),
+        (
+            Lower([
+                0x2f63696669636170,
+                0x20202000696a6966,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::PACIFIC_FIJI,
+        ),
+        (
+            Lower([
+                0x2f63696669636170,
+                0x69747566616e7566,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::PACIFIC_FUNAFUTI,
+        ),
+        (
+            Lower([
+                0x6965622f61697361,
+                0x2020202000747572,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ASIA_BEIRUT,
+        ),
+        (
+            Lower([
+                0x2020202000747365,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::EST,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x637f6e6f73776164,
+                0x202020006b656572,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_DAWSON_CREEK,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x69727f796e696172,
+                0x2020202000726576,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_RAINY_RIVER,
+        ),
+        (
+            Lower([
+                0x6b2f65706f727565,
+                0x20202000766f7269,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::EUROPE_KIROV,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x7a656c6174726f66,
                 0x2020202020200061,
                 0x2020202020202020,
             ]),
-            raw_tzdata::EUROPE_BRATISLAVA,
-        ),
-        (
-            Lower([
-                0x2f63696669636170,
-                0x202020006575696e,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::PACIFIC_NIUE,
+            raw_tzdata::AMERICA_FORTALEZA,
         ),
         (
             Lower([
                 0x2f61636972656d61,
-                0x616e61756a6974,
+                0x202000616b746973,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::AMERICA_SANTA_ISABEL,
+            raw_tzdata::AMERICA_SITKA,
         ),
         (
             Lower([
-                0x2d746d672f637465,
-                0x2020202020003331,
-                0x2020202020202020,
+                0x622f616369726661,
+                0x617275626d756a75,
+                0x2020202020202000,
                 0x2020202020202020,
             ]),
-            raw_tzdata::ETC_GMT_MINUS_13,
+            raw_tzdata::AFRICA_BUJUMBURA,
         ),
         (
             Lower([
-                0x2d746d672f637465,
-                0x2020202020200033,
+                0x6b72692f61697361,
+                0x202020006b737475,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::ETC_GMT_MINUS_3,
+            raw_tzdata::ASIA_IRKUTSK,
         ),
         (
             Lower([
-                0x2f61636972656d61,
-                0x20006f696563616d,
+                0x746168632d7a6e,
+                0x2020202020202020,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::AMERICA_MACEIO,
+            raw_tzdata::NZ_CHAT,
         ),
         (
             Lower([
-                0x6369746e616c7461,
-                0x7972616e61632f,
+                0x6c2f616369726661,
+                0x2020202000656d6f,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::ATLANTIC_CANARY,
-        ),
-        (
-            Lower([
-                0x6369746e616c7461,
-                0x2000656f7261662f,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ATLANTIC_FAEROE,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x20202000616d696c,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_LIMA,
-        ),
-        (
-            Lower([
-                0x6b65792f61697361,
-                0x75626e6972657461,
-                0x2020202020006772,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ASIA_YEKATERINBURG,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x2000616d616e6170,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_PANAMA,
-        ),
-        (
-            Lower([
-                0x6265682f61697361,
-                0x20202020006e6f72,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ASIA_HEBRON,
-        ),
-        (
-            Lower([
-                0x6b6f742f61697361,
-                0x2020202020006f79,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::JAPAN,
-        ),
-        (
-            Lower([
-                0x702f65706f727565,
-                0x2020006575676172,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::EUROPE_BRATISLAVA,
-        ),
-        (
-            Lower([
-                0x6d2f65706f727565,
-                0x2020006f63616e6f,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::EUROPE_MONACO,
-        ),
-        (
-            Lower([
-                0x2f63696669636170,
-                0x200061656d756f6e,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::PACIFIC_NOUMEA,
-        ),
-        (
-            Lower([
-                0x6c2f65706f727565,
-                0x72756f626d657875,
-                0x2020202020200067,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::EUROPE_LUXEMBOURG,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x78696e656f6870,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_PHOENIX,
+            raw_tzdata::AFRICA_LOME,
         ),
         (
             Lower([
@@ -11782,11 +10613,452 @@ pub(crate) const RAW_TIME_ZONES_BY_NAME: phf::Map<Lower, &'static [u8]> = ::phf:
         (
             Lower([
                 0x2f61636972656d61,
-                0x7f666f7f74726f70,
-                0x2020006e69617073,
+                0x6c69767369756f6c,
+                0x202020202000656c,
                 0x2020202020202020,
             ]),
-            raw_tzdata::AMERICA_MARIGOT,
+            raw_tzdata::AMERICA_LOUISVILLE,
+        ),
+        (
+            Lower([
+                0x2020202000746d67,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::GMT,
+        ),
+        (
+            Lower([
+                0x7475656c612f7375,
+                0x20202020006e6169,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_ADAK,
+        ),
+        (
+            Lower([
+                0x69617761682f7375,
+                0x2020202020200069,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::PACIFIC_HONOLULU,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x616e61756a6974,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_ENSENADA,
+        ),
+        (
+            Lower([
+                0x6564612f61697361,
+                0x202020202020006e,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ASIA_ADEN,
+        ),
+        (
+            Lower([
+                0x2f63696669636170,
+                0x6f676170616c6167,
+                0x2020202020200073,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::PACIFIC_GALAPAGOS,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x62616874646f67,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_GODTHAB,
+        ),
+        (
+            Lower([
+                0x6d2f65706f727565,
+                0x6e6d616865697261,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::EUROPE_HELSINKI,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x6972616d61726170,
+                0x2020202020006f62,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_PARAMARIBO,
+        ),
+        (
+            Lower([
+                0x2d746d672f637465,
+                0x2020202020200030,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::GMT,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x6167616e696a6f,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_OJINAGA,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x200075617373616e,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_NASSAU,
+        ),
+        (
+            Lower([
+                0x6974637261746e61,
+                0x6c6c6f72742f6163,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ANTARCTICA_TROLL,
+        ),
+        (
+            Lower([
+                0x7361742f61697361,
+                0x202000746e656b68,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ASIA_TASHKENT,
+        ),
+        (
+            Lower([
+                0x657269652d6267,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::GB,
+        ),
+        (
+            Lower([
+                0x2f63696669636170,
+                0x7275627265646e65,
+                0x2020202020200079,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::PACIFIC_ENDERBURY,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x79627365726f6373,
+                0x20202000646e7573,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_SCORESBYSUND,
+        ),
+        (
+            Lower([
+                0x6962742f61697361,
+                0x202020006973696c,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ASIA_TBILISI,
+        ),
+        (
+            Lower([
+                0x61686b2f61697361,
+                0x202000616779646e,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ASIA_KHANDYGA,
+        ),
+        (
+            Lower([
+                0x722f6e6169646e69,
+                0x20006e6f696e7565,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::INDIAN_REUNION,
+        ),
+        (
+            Lower([
+                0x6c2f65706f727565,
+                0x2020006e6f627369,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::PORTUGAL,
+        ),
+        (
+            Lower([
+                0x622f65706f727565,
+                0x736c6573737572,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::EUROPE_BRUSSELS,
+        ),
+        (
+            Lower([
+                0x2b746d672f637465,
+                0x2020202020003031,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ETC_GMT_PLUS_10,
+        ),
+        (
+            Lower([
+                0x6c2f616369726661,
+                0x202000616b617375,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AFRICA_LUSAKA,
+        ),
+        (
+            Lower([
+                0x732f6164616e6163,
+                0x65686374616b7361,
+                0x20202020006e6177,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_REGINA,
+        ),
+        (
+            Lower([
+                0x202000617962696c,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::LIBYA,
+        ),
+        (
+            Lower([
+                0x6c2f65706f727565,
+                0x2020006e6f646e6f,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::GB,
+        ),
+        (
+            Lower([
+                0x20202020006b6f72,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ROK,
+        ),
+        (
+            Lower([
+                0x632f65706f727565,
+                0x656761686e65706f,
+                0x202020202020006e,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::EUROPE_COPENHAGEN,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x20006e75636e6163,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_CANCUN,
+        ),
+        (
+            Lower([
+                0x2b746d672f637465,
+                0x2020202020003131,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ETC_GMT_PLUS_11,
+        ),
+        (
+            Lower([
+                0x742f616369726661,
+                0x2020200073696e75,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AFRICA_TUNIS,
+        ),
+        (
+            Lower([
+                0x6d6f742f61697361,
+                0x2020202020006b73,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ASIA_TOMSK,
+        ),
+        (
+            Lower([
+                0x61756b2f61697361,
+                0x75706d756c7f616c,
+                0x2020202020200072,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ASIA_KUALA_LUMPUR,
+        ),
+        (
+            Lower([
+                0x732f65706f727565,
+                0x2020006172616d61,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::EUROPE_SAMARA,
+        ),
+        (
+            Lower([
+                0x612f6e6169646e69,
+                0x72616e616e61746e,
+                0x20202020006f7669,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::INDIAN_ANTANANARIVO,
+        ),
+        (
+            Lower([
+                0x73616b2f61697361,
+                0x2020200072616768,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ASIA_KASHGAR,
+        ),
+        (
+            Lower([
+                0x72656a2f61697361,
+                0x20006d656c617375,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ISRAEL,
+        ),
+        (
+            Lower([
+                0x200079656b727574,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::TURKEY,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x637f6f636978656d,
+                0x2020202000797469,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_MEXICO_CITY,
+        ),
+        (
+            Lower([
+                0x696c617274737561,
+                0x20200077736e2f61,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AUSTRALIA_ACT,
+        ),
+        (
+            Lower([
+                0x2020202000637270,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::PRC,
+        ),
+        (
+            Lower([
+                0x6e69732f61697361,
+                0x200065726f706167,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::SINGAPORE,
+        ),
+        (
+            Lower([
+                0x696c617274737561,
+                0x2020007463612f61,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AUSTRALIA_ACT,
+        ),
+        (
+            Lower([
+                0x7369622f61697361,
+                0x202020006b656b68,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ASIA_BISHKEK,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x72707f7265776f6c,
+                0x2020007365636e69,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_CURACAO,
+        ),
+        (
+            Lower([
+                0x7471612f61697361,
+                0x202020200065626f,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ASIA_AQTOBE,
+        ),
+        (
+            Lower([
+                0x6c65742f61697361,
+                0x202000766976617f,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ISRAEL,
+        ),
+        (
+            Lower([
+                0x6e2f616369726661,
+                0x200069626f726961,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AFRICA_NAIROBI,
         ),
         (
             Lower([
@@ -11800,119 +11072,11 @@ pub(crate) const RAW_TIME_ZONES_BY_NAME: phf::Map<Lower, &'static [u8]> = ::phf:
         (
             Lower([
                 0x2f61636972656d61,
-                0x71696e697472616d,
-                0x2020202020006575,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_MARTINIQUE,
-        ),
-        (
-            Lower([
-                0x7969722f61697361,
-                0x2020202000686461,
+                0x78696e656f6870,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::ASIA_RIYADH,
-        ),
-        (
-            Lower([
-                0x746d672f637465,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::GMT,
-        ),
-        (
-            Lower([
-                0x72746e65632f7375,
-                0x2020202020006c61,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_CHICAGO,
-        ),
-        (
-            Lower([
-                0x7473692f61697361,
-                0x2020006c75626e61,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::TURKEY,
-        ),
-        (
-            Lower([
-                0x2f63696669636170,
-                0x2020006b75756863,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::PACIFIC_CHUUK,
-        ),
-        (
-            Lower([
-                0x2f63696669636170,
-                0x200073696c6c6177,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::PACIFIC_WALLIS,
-        ),
-        (
-            Lower([
-                0x6d2f65706f727565,
-                0x202000776f63736f,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::W_SU,
-        ),
-        (
-            Lower([
-                0x2d746d672f637465,
-                0x2020202020200036,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ETC_GMT_MINUS_6,
-        ),
-        (
-            Lower([
-                0x642f616369726661,
-                0x6974756f62696a,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AFRICA_DJIBOUTI,
-        ),
-        (
-            Lower([
-                0x6962742f61697361,
-                0x202020006973696c,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ASIA_TBILISI,
-        ),
-        (
-            Lower([
-                0x672f6f636978656d,
-                0x20006c6172656e65,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_MEXICO_CITY,
-        ),
-        (
-            Lower([
-                0x612f65706f727565,
-                0x20006172726f646e,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::EUROPE_ANDORRA,
+            raw_tzdata::AMERICA_PHOENIX,
         ),
         (
             Lower([
@@ -11925,66 +11089,21 @@ pub(crate) const RAW_TIME_ZONES_BY_NAME: phf::Map<Lower, &'static [u8]> = ::phf:
         ),
         (
             Lower([
-                0x622f6f636978656d,
-                0x6574726f6e616a61,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_SANTA_ISABEL,
-        ),
-        (
-            Lower([
-                0x6968632f61697361,
-                0x2020202020006174,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ASIA_CHITA,
-        ),
-        (
-            Lower([
-                0x6369746e616c7461,
-                0x656f726561662f,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ATLANTIC_FAEROE,
-        ),
-        (
-            Lower([
-                0x696c617274737561,
-                0x2000747365772f61,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AUSTRALIA_PERTH,
-        ),
-        (
-            Lower([
-                0x2f63696669636170,
-                0x69656c616a61776b,
-                0x202020202020006e,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::KWAJALEIN,
-        ),
-        (
-            Lower([
                 0x2f61636972656d61,
-                0x70616e6169646e69,
-                0x2020200073696c6f,
+                0x2000656669636572,
+                0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::AMERICA_FORT_WAYNE,
+            raw_tzdata::AMERICA_RECIFE,
         ),
         (
             Lower([
-                0x6361642f61697361,
-                0x2020202020006163,
+                0x2b746d672f637465,
+                0x2020202020200032,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::ASIA_DACCA,
+            raw_tzdata::ETC_GMT_PLUS_2,
         ),
         (
             Lower([
@@ -11997,462 +11116,174 @@ pub(crate) const RAW_TIME_ZONES_BY_NAME: phf::Map<Lower, &'static [u8]> = ::phf:
         ),
         (
             Lower([
-                0x2f63696669636170,
-                0x202020006d617567,
-                0x2020202020202020,
+                0x6f2f616369726661,
+                0x67756f6461676175,
+                0x202020202000756f,
                 0x2020202020202020,
             ]),
-            raw_tzdata::PACIFIC_GUAM,
+            raw_tzdata::AFRICA_OUAGADOUGOU,
         ),
         (
             Lower([
-                0x2f61636972656d61,
-                0x6574756c6f736572,
-                0x2020202020202000,
+                0x612f616369726661,
+                0x6162617f73696464,
+                0x2020202020006162,
                 0x2020202020202020,
             ]),
-            raw_tzdata::AMERICA_RESOLUTE,
+            raw_tzdata::AFRICA_ADDIS_ABABA,
         ),
         (
             Lower([
-                0x2f61636972656d61,
-                0x2000616e61797567,
+                0x612f65706f727565,
+                0x20006172726f646e,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::AMERICA_GUYANA,
+            raw_tzdata::EUROPE_ANDORRA,
         ),
         (
             Lower([
-                0x6b2f65706f727565,
-                0x2020202000766569,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::EUROPE_KIEV,
-        ),
-        (
-            Lower([
-                0x202020006e617269,
-                0x2020202020202020,
-                0x2020202020202020,
+                0x6974637261746e61,
+                0x6f7377616d2f6163,
+                0x202020202020006e,
                 0x2020202020202020,
             ]),
-            raw_tzdata::IRAN,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x200061646972656d,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_MERIDA,
-        ),
-        (
-            Lower([
-                0x6e69732f61697361,
-                0x200065726f706167,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::SINGAPORE,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x6b726f797f77656e,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_NEW_YORK,
-        ),
-        (
-            Lower([
-                0x6369746e616c7461,
-                0x6164756d7265622f,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ATLANTIC_BERMUDA,
-        ),
-        (
-            Lower([
-                0x2020200061627563,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::CUBA,
-        ),
-        (
-            Lower([
-                0x61756b2f61697361,
-                0x75706d756c7f616c,
-                0x2020202020200072,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ASIA_KUALA_LUMPUR,
-        ),
-        (
-            Lower([
-                0x74646336747363,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::CST_6_CDT,
-        ),
-        (
-            Lower([
-                0x762f65706f727565,
-                0x202020007a756461,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::EUROPE_VADUZ,
-        ),
-        (
-            Lower([
-                0x696c617274737561,
-                0x2020007463612f61,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AUSTRALIA_ACT,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x200061746f676f62,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_BOGOTA,
-        ),
-        (
-            Lower([
-                0x646e616c656369,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ICELAND,
-        ),
-        (
-            Lower([
-                0x202000617962696c,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::LIBYA,
-        ),
-        (
-            Lower([
-                0x6168732f61697361,
-                0x202000696168676e,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::PRC,
-        ),
-        (
-            Lower([
-                0x6369776e65657267,
-                0x2020202020200068,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::GMT,
-        ),
-        (
-            Lower([
-                0x2f63696669636170,
-                0x2020006574616665,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::PACIFIC_EFATE,
+            raw_tzdata::ANTARCTICA_MAWSON,
         ),
         (
             Lower([
                 0x2d746d672f637465,
-                0x2020202020003231,
+                0x2020202020200031,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::ETC_GMT_MINUS_12,
-        ),
-        (
-            Lower([
-                0x622f65706f727565,
-                0x74736570616475,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::EUROPE_BUDAPEST,
-        ),
-        (
-            Lower([
-                0x6f68632f61697361,
-                0x2000676e6971676e,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ASIA_CHONGQING,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x6f676163696863,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_CHICAGO,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x656e6e65796163,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_CAYENNE,
+            raw_tzdata::ETC_GMT_MINUS_1,
         ),
         (
             Lower([
                 0x6c2f65706f727565,
-                0x616e616a6c62756a,
+                0x72756f626d657875,
+                0x2020202020200067,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::EUROPE_LUXEMBOURG,
+        ),
+        (
+            Lower([
+                0x622f65706f727565,
+                0x65646172676c65,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::EUROPE_BELGRADE,
+        ),
+        (
+            Lower([
+                0x202020200074656d,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::MET,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x6975716179617567,
+                0x202020202020006c,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_GUAYAQUIL,
+        ),
+        (
+            Lower([
+                0x702f6164616e6163,
+                0x2000636966696361,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_VANCOUVER,
+        ),
+        (
+            Lower([
+                0x6761622f61697361,
+                0x2020200064616468,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ASIA_BAGHDAD,
+        ),
+        (
+            Lower([
+                0x6961732f61697361,
+                0x20202020006e6f67,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ASIA_HO_CHI_MINH,
+        ),
+        (
+            Lower([
+                0x756c757a2f637465,
                 0x2020202020202000,
                 0x2020202020202020,
-            ]),
-            raw_tzdata::EUROPE_LJUBLJANA,
-        ),
-        (
-            Lower([
-                0x622f616369726661,
-                0x2020006f6b616d61,
-                0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::AFRICA_BAMAKO,
-        ),
-        (
-            Lower([
-                0x6e2f616369726661,
-                0x616e656d616a64,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AFRICA_NDJAMENA,
+            raw_tzdata::UCT,
         ),
         (
             Lower([
                 0x2f61636972656d61,
-                0x2020006169686162,
+                0x20006b6976756e69,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::AMERICA_BAHIA,
+            raw_tzdata::AMERICA_INUVIK,
         ),
         (
             Lower([
-                0x732f65706f727565,
-                0x202020006169666f,
+                0x632f616369726661,
+                0x200079726b616e6f,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::EUROPE_SOFIA,
-        ),
-        (
-            Lower([
-                0x732f616369726661,
-                0x656d6f747f6f61,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AFRICA_SAO_TOME,
-        ),
-        (
-            Lower([
-                0x632f6e6169646e69,
-                0x2020006f726f6d6f,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::INDIAN_COMORO,
-        ),
-        (
-            Lower([
-                0x736d6f2f61697361,
-                0x202020202020006b,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ASIA_OMSK,
+            raw_tzdata::AFRICA_CONAKRY,
         ),
         (
             Lower([
                 0x2f61636972656d61,
-                0x6f746e6f726f74,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_TORONTO,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x2000656669636572,
-                0x2020202020202020,
+                0x61627f65736f6f67,
+                0x2020202020200079,
                 0x2020202020202020,
             ]),
-            raw_tzdata::AMERICA_RECIFE,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x2020006162757261,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_ARUBA,
-        ),
-        (
-            Lower([
-                0x2020200065726965,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::EIRE,
-        ),
-        (
-            Lower([
-                0x6d61662f61697361,
-                0x2000617473756761,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ASIA_FAMAGUSTA,
-        ),
-        (
-            Lower([
-                0x702f65706f727565,
-                0x2020200073697261,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::EUROPE_PARIS,
-        ),
-        (
-            Lower([
-                0x622f616369726661,
-                0x2020006975676e61,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AFRICA_BANGUI,
-        ),
-        (
-            Lower([
-                0x732f65706f727565,
-                0x202000656a706f6b,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::EUROPE_SKOPJE,
-        ),
-        (
-            Lower([
-                0x2020202000746565,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::EET,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x20007375616e616d,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_MANAUS,
-        ),
-        (
-            Lower([
-                0x7471612f61697361,
-                0x202020200065626f,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ASIA_AQTOBE,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x62616874646f67,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_GODTHAB,
-        ),
-        (
-            Lower([
-                0x632f6e6169646e69,
-                0x20202000736f636f,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::INDIAN_COCOS,
-        ),
-        (
-            Lower([
-                0x6d6c612f61697361,
-                0x2020202000797461,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ASIA_ALMATY,
-        ),
-        (
-            Lower([
-                0x7572752f61697361,
-                0x202020200069716d,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ASIA_URUMQI,
-        ),
-        (
-            Lower([
-                0x6b2f65706f727565,
-                0x20202000766f7269,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::EUROPE_KIROV,
+            raw_tzdata::AMERICA_GOOSE_BAY,
         ),
         (
             Lower([
                 0x696c617274737561,
-                0x747261626f682f61,
-                0x2020202020202000,
+                0x20200069686c2f61,
+                0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::AUSTRALIA_HOBART,
+            raw_tzdata::AUSTRALIA_LHI,
         ),
         (
             Lower([
-                0x612f6c697a617262,
-                0x2020202000657263,
-                0x2020202020202020,
+                0x2f61636972656d61,
+                0x6e616c74617a616d,
+                0x2020202020202000,
                 0x2020202020202020,
             ]),
-            raw_tzdata::AMERICA_PORTO_ACRE,
+            raw_tzdata::AMERICA_MAZATLAN,
+        ),
+        (
+            Lower([
+                0x696c617274737561,
+                0x6162736972622f61,
+                0x202020202000656e,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AUSTRALIA_BRISBANE,
         ),
         (
             Lower([
@@ -12466,231 +11297,6 @@ pub(crate) const RAW_TIME_ZONES_BY_NAME: phf::Map<Lower, &'static [u8]> = ::phf:
         (
             Lower([
                 0x2f61636972656d61,
-                0x6d657261746e6173,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_SANTAREM,
-        ),
-        (
-            Lower([
-                0x2d746d672f637465,
-                0x2020202020200035,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ETC_GMT_MINUS_5,
-        ),
-        (
-            Lower([
-                0x622f65706f727565,
-                0x65646172676c65,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::EUROPE_BELGRADE,
-        ),
-        (
-            Lower([
-                0x7a61672f61697361,
-                0x2020202020200061,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ASIA_GAZA,
-        ),
-        (
-            Lower([
-                0x642f616369726661,
-                0x61737f73657f7261,
-                0x202020006d61616c,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AFRICA_DAR_ES_SALAAM,
-        ),
-        (
-            Lower([
-                0x6369746e616c7461,
-                0x76616a6b7965722f,
-                0x2020202020006b69,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ICELAND,
-        ),
-        (
-            Lower([
-                0x202000302d746d67,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::GMT,
-        ),
-        (
-            Lower([
-                0x696c617274737561,
-                0x6d65646e696c2f61,
-                0x2020202020006e61,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AUSTRALIA_LINDEMAN,
-        ),
-        (
-            Lower([
-                0x732f65706f727565,
-                0x2020006172616d61,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::EUROPE_SAMARA,
-        ),
-        (
-            Lower([
-                0x2b746d672f637465,
-                0x2020202020200037,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ETC_GMT_PLUS_7,
-        ),
-        (
-            Lower([
-                0x6169646e692f7375,
-                0x6b726174732d616e,
-                0x2020202020200065,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_KNOX_IN,
-        ),
-        (
-            Lower([
-                0x612f616369726661,
-                0x20006e616a646962,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AFRICA_ABIDJAN,
-        ),
-        (
-            Lower([
-                0x622f616369726661,
-                0x657279746e616c,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AFRICA_BLANTYRE,
-        ),
-        (
-            Lower([
-                0x696c617274737561,
-                0x20200077736e2f61,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AUSTRALIA_ACT,
-        ),
-        (
-            Lower([
-                0x732f65706f727565,
-                0x6f76656a617261,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::EUROPE_SARAJEVO,
-        ),
-        (
-            Lower([
-                0x2f63696669636170,
-                0x2000656172736f6b,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::PACIFIC_KOSRAE,
-        ),
-        (
-            Lower([
-                0x65747361652f7375,
-                0x2020202020006e72,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_NEW_YORK,
-        ),
-        (
-            Lower([
-                0x2f63696669636170,
-                0x756c756c6f6e6f68,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::PACIFIC_HONOLULU,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x7961777f74726f66,
-                0x202020202000656e,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_FORT_WAYNE,
-        ),
-        (
-            Lower([
-                0x7369622f61697361,
-                0x202020006b656b68,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ASIA_BISHKEK,
-        ),
-        (
-            Lower([
-                0x2f63696669636170,
-                0x726f6d7f74726f70,
-                0x2020200079627365,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::PACIFIC_PORT_MORESBY,
-        ),
-        (
-            Lower([
-                0x762f65706f727565,
-                0x646172676f676c6f,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::EUROPE_VOLGOGRAD,
-        ),
-        (
-            Lower([
-                0x2f63696669636170,
-                0x20006e6f746e616b,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::PACIFIC_KANTON,
-        ),
-        (
-            Lower([
-                0x766f6e2f61697361,
-                0x6b7372696269736f,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ASIA_NOVOSIBIRSK,
-        ),
-        (
-            Lower([
-                0x612f65706f727565,
-                0x6e61686b61727473,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::EUROPE_ASTRAKHAN,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
                 0x2d75612d74726f70,
                 0x200065636e697270,
                 0x2020202020202020,
@@ -12699,84 +11305,75 @@ pub(crate) const RAW_TIME_ZONES_BY_NAME: phf::Map<Lower, &'static [u8]> = ::phf:
         ),
         (
             Lower([
-                0x696c617274737561,
-                0x6874726f6e2f61,
+                0x73756d2f61697361,
+                0x2020202000746163,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::AUSTRALIA_DARWIN,
+            raw_tzdata::ASIA_MUSCAT,
         ),
         (
             Lower([
-                0x69617761682f7375,
-                0x2020202020200069,
+                0x772f616369726661,
+                0x6b656f68646e69,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::PACIFIC_HONOLULU,
+            raw_tzdata::AFRICA_WINDHOEK,
         ),
         (
             Lower([
-                0x2b746d672f637465,
-                0x2020202020200032,
+                0x7473752f61697361,
+                0x2020006172656e2d,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::ETC_GMT_PLUS_2,
+            raw_tzdata::ASIA_UST_NERA,
+        ),
+        (
+            Lower([
+                0x63696e2f61697361,
+                0x202020006169736f,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ASIA_NICOSIA,
+        ),
+        (
+            Lower([
+                0x6e68702f61697361,
+                0x686e65707f6d6f,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ASIA_PHNOM_PENH,
         ),
         (
             Lower([
                 0x2f61636972656d61,
-                0x746174756b6179,
+                0x617a6f646e656d,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::AMERICA_YAKUTAT,
-        ),
-        (
-            Lower([
-                0x2020200030746d67,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::GMT,
+            raw_tzdata::AMERICA_MENDOZA,
         ),
         (
             Lower([
                 0x2f61636972656d61,
-                0x20202000616b7461,
-                0x2020202020202020,
+                0x6e6f746e6f6d6465,
+                0x2020202020202000,
                 0x2020202020202020,
             ]),
-            raw_tzdata::AMERICA_ADAK,
+            raw_tzdata::AMERICA_EDMONTON,
         ),
         (
             Lower([
-                0x692f65706f727565,
-                0x6c75626e617473,
+                0x742f65706f727565,
+                0x202000656e617269,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::TURKEY,
-        ),
-        (
-            Lower([
-                0x6d6f742f61697361,
-                0x2020202020006b73,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ASIA_TOMSK,
-        ),
-        (
-            Lower([
-                0x6865742f61697361,
-                0x20202020006e6172,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::IRAN,
+            raw_tzdata::EUROPE_TIRANE,
         ),
         (
             Lower([
@@ -12790,236 +11387,101 @@ pub(crate) const RAW_TIME_ZONES_BY_NAME: phf::Map<Lower, &'static [u8]> = ::phf:
         (
             Lower([
                 0x2f61636972656d61,
-                0x6570656e75726965,
-                0x2020202020202000,
+                0x200061746f676f62,
+                0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::AMERICA_EIRUNEPE,
+            raw_tzdata::AMERICA_BOGOTA,
         ),
         (
             Lower([
-                0x6e616d2f61697361,
-                0x2020202000616c69,
+                0x2d746d672f637465,
+                0x2020202020200038,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::ASIA_MANILA,
-        ),
-        (
-            Lower([
-                0x696c617274737561,
-                0x6162736972622f61,
-                0x202020202000656e,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AUSTRALIA_BRISBANE,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x69727f796e696172,
-                0x2020202000726576,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_RAINY_RIVER,
-        ),
-        (
-            Lower([
-                0x622f65706f727565,
-                0x6e65676e697375,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::EUROPE_BUSINGEN,
-        ),
-        (
-            Lower([
-                0x2b746d672f637465,
-                0x2020202020003131,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ETC_GMT_PLUS_11,
-        ),
-        (
-            Lower([
-                0x6c2f65706f727565,
-                0x2020006e6f627369,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::PORTUGAL,
-        ),
-        (
-            Lower([
-                0x6e61722f61697361,
-                0x202020006e6f6f67,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ASIA_RANGOON,
-        ),
-        (
-            Lower([
-                0x2b746d672f637465,
-                0x2020202020200036,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ETC_GMT_PLUS_6,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x2000616261697563,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_CUIABA,
-        ),
-        (
-            Lower([
-                0x652f616369726661,
-                0x6e756961617f6c,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AFRICA_EL_AAIUN,
+            raw_tzdata::ETC_GMT_MINUS_8,
         ),
         (
             Lower([
                 0x2f63696669636170,
-                0x20202000696a6966,
+                0x6b6c6f66726f6e,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::PACIFIC_FIJI,
+            raw_tzdata::PACIFIC_NORFOLK,
+        ),
+        (
+            Lower([
+                0x79616a2f61697361,
+                0x2020006172757061,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ASIA_JAYAPURA,
+        ),
+        (
+            Lower([
+                0x682f616369726661,
+                0x2020006572617261,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AFRICA_HARARE,
+        ),
+        (
+            Lower([
+                0x6b2f65706f727565,
+                0x2020202000766569,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::EUROPE_KIEV,
+        ),
+        (
+            Lower([
+                0x6b6f742f61697361,
+                0x2020202020006f79,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::JAPAN,
+        ),
+        (
+            Lower([
+                0x79726f74636166,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::FACTORY,
         ),
         (
             Lower([
                 0x2f61636972656d61,
-                0x637f6f636978656d,
-                0x2020202000797469,
+                0x74616b616c74656d,
+                0x202020202000616c,
                 0x2020202020202020,
             ]),
-            raw_tzdata::AMERICA_MEXICO_CITY,
+            raw_tzdata::AMERICA_METLAKATLA,
         ),
         (
             Lower([
-                0x6961742f61697361,
-                0x2020202000696570,
-                0x2020202020202020,
+                0x766f6e2f61697361,
+                0x7374656e7a756b6f,
+                0x202020202020006b,
                 0x2020202020202020,
             ]),
-            raw_tzdata::ROC,
+            raw_tzdata::ASIA_NOVOKUZNETSK,
         ),
         (
             Lower([
-                0x7265792f61697361,
-                0x202020006e617665,
+                0x2f63696669636170,
+                0x20006e6f746e616b,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::ASIA_YEREVAN,
-        ),
-        (
-            Lower([
-                0x62616b2f61697361,
-                0x2020202020006c75,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ASIA_KABUL,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x6e6f7473657263,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_CRESTON,
-        ),
-        (
-            Lower([
-                0x61652f656c696863,
-                0x616c736972657473,
-                0x202020202000646e,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::CHILE_EASTER_ISLAND,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x6164616e65736e65,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_ENSENADA,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x6f726f6d6174616d,
-                0x2020202020200073,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_MATAMOROS,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x656e696d6f6e656d,
-                0x2020202020200065,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_MENOMINEE,
-        ),
-        (
-            Lower([
-                0x6173726576696e75,
-                0x202020202020006c,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::UCT,
-        ),
-        (
-            Lower([
-                0x6e61792f61697361,
-                0x20202020006e6f67,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ASIA_RANGOON,
-        ),
-        (
-            Lower([
-                0x74616b2f61697361,
-                0x200075646e616d68,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ASIA_KATHMANDU,
-        ),
-        (
-            Lower([
-                0x6e61682f61697361,
-                0x202020202000696f,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ASIA_HANOI,
-        ),
-        (
-            Lower([
-                0x6b2f616369726661,
-                0x61736168736e69,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AFRICA_KINSHASA,
+            raw_tzdata::PACIFIC_ENDERBURY,
         ),
         (
             Lower([
@@ -13029,186 +11491,6 @@ pub(crate) const RAW_TIME_ZONES_BY_NAME: phf::Map<Lower, &'static [u8]> = ::phf:
                 0x2020202020202020,
             ]),
             raw_tzdata::PACIFIC_APIA,
-        ),
-        (
-            Lower([
-                0x762f65706f727565,
-                0x202000616e6e6569,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::EUROPE_VIENNA,
-        ),
-        (
-            Lower([
-                0x616369616d616a,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::JAMAICA,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x20200079756a756a,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_JUJUY,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x6e697f786f6e6b,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_KNOX_IN,
-        ),
-        (
-            Lower([
-                0x2f63696669636170,
-                0x646e616c6b637561,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::NZ,
-        ),
-        (
-            Lower([
-                0x696c617274737561,
-                0x6e69777261642f61,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AUSTRALIA_DARWIN,
-        ),
-        (
-            Lower([
-                0x2f63696669636170,
-                0x20200075616c6170,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::PACIFIC_PALAU,
-        ),
-        (
-            Lower([
-                0x6d2f6e6169646e69,
-                0x2020202000656861,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::INDIAN_MAHE,
-        ),
-        (
-            Lower([
-                0x742f65706f727565,
-                0x20006e6e696c6c61,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::EUROPE_TALLINN,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x616c6f74726f74,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_TORTOLA,
-        ),
-        (
-            Lower([
-                0x2020202000746577,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::WET,
-        ),
-        (
-            Lower([
-                0x6968742f61697361,
-                0x202020007568706d,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ASIA_THIMBU,
-        ),
-        (
-            Lower([
-                0x696c617274737561,
-                0x736e656575712f61,
-                0x20202000646e616c,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AUSTRALIA_BRISBANE,
-        ),
-        (
-            Lower([
-                0x6974637261746e61,
-                0x6f7377616d2f6163,
-                0x202020202020006e,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ANTARCTICA_MAWSON,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x6167696375676574,
-                0x202020200061706c,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_TEGUCIGALPA,
-        ),
-        (
-            Lower([
-                0x616f6d61732f7375,
-                0x2020202020202000,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::PACIFIC_PAGO_PAGO,
-        ),
-        (
-            Lower([
-                0x746168632d7a6e,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::NZ_CHAT,
-        ),
-        (
-            Lower([
-                0x2f63696669636170,
-                0x2000726574736165,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::CHILE_EASTER_ISLAND,
-        ),
-        (
-            Lower([
-                0x2020006e6170616a,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::JAPAN,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x67646972626d6163,
-                0x2020007961627f65,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_CAMBRIDGE_BAY,
         ),
         (
             Lower([
@@ -13222,155 +11504,83 @@ pub(crate) const RAW_TIME_ZONES_BY_NAME: phf::Map<Lower, &'static [u8]> = ::phf:
         (
             Lower([
                 0x2f63696669636170,
-                0x20006e6170696173,
+                0x200061656d756f6e,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::PACIFIC_SAIPAN,
+            raw_tzdata::PACIFIC_NOUMEA,
         ),
         (
             Lower([
-                0x2f63696669636170,
-                0x6d616874616863,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::NZ_CHAT,
-        ),
-        (
-            Lower([
-                0x2b746d672f637465,
-                0x2020202020003231,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ETC_GMT_PLUS_12,
-        ),
-        (
-            Lower([
-                0x732f65706f727565,
-                0x2000766f74617261,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::EUROPE_SARATOV,
-        ),
-        (
-            Lower([
-                0x6d2f65706f727565,
-                0x6e6d616865697261,
+                0x6c2f65706f727565,
+                0x616e616a6c62756a,
                 0x2020202020202000,
                 0x2020202020202020,
             ]),
-            raw_tzdata::EUROPE_HELSINKI,
-        ),
-        (
-            Lower([
-                0x722f65706f727565,
-                0x2020202000656d6f,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::EUROPE_ROME,
-        ),
-        (
-            Lower([
-                0x652f6164616e6163,
-                0x20006e7265747361,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_TORONTO,
-        ),
-        (
-            Lower([
-                0x2b746d672f637465,
-                0x2020202020200034,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ETC_GMT_PLUS_4,
-        ),
-        (
-            Lower([
-                0x79726f74636166,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::FACTORY,
-        ),
-        (
-            Lower([
-                0x696c617274737561,
-                0x69616c6564612f61,
-                0x2020202020006564,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AUSTRALIA_ADELAIDE,
-        ),
-        (
-            Lower([
-                0x6e68702f61697361,
-                0x686e65707f6d6f,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ASIA_PHNOM_PENH,
-        ),
-        (
-            Lower([
-                0x2f63696669636170,
-                0x70617461676e6f74,
-                0x2020202020200075,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::PACIFIC_TONGATAPU,
-        ),
-        (
-            Lower([
-                0x632f616369726661,
-                0x636e616c62617361,
-                0x2020202020200061,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AFRICA_CASABLANCA,
+            raw_tzdata::EUROPE_LJUBLJANA,
         ),
         (
             Lower([
                 0x2f61636972656d61,
-                0x6e6f676970696e,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_NIPIGON,
-        ),
-        (
-            Lower([
-                0x6c69642f61697361,
-                0x2020202020200069,
-                0x2020202020202020,
+                0x6167696375676574,
+                0x202020200061706c,
                 0x2020202020202020,
             ]),
-            raw_tzdata::ASIA_DILI,
-        ),
-        (
-            Lower([
-                0x6c6f6b2f61697361,
-                0x202020006174616b,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ASIA_CALCUTTA,
+            raw_tzdata::AMERICA_TEGUCIGALPA,
         ),
         (
             Lower([
                 0x2f61636972656d61,
-                0x6372616d61746163,
-                0x2020202020200061,
+                0x61687f6c61726f63,
+                0x20200072756f6272,
                 0x2020202020202020,
             ]),
-            raw_tzdata::AMERICA_CATAMARCA,
+            raw_tzdata::AMERICA_ATIKOKAN,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x63617f6f74726f70,
+                0x2020202020006572,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_PORTO_ACRE,
+        ),
+        (
+            Lower([
+                0x6974637261746e61,
+                0x656d6c61702f6163,
+                0x2020202020200072,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ANTARCTICA_PALMER,
+        ),
+        (
+            Lower([
+                0x2020200075732d77,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::W_SU,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x6576756f636e6176,
+                0x2020202020200072,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_VANCOUVER,
+        ),
+        (
+            Lower([
+                0x766f682f61697361,
+                0x2020202020200064,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ASIA_HOVD,
         ),
         (
             Lower([
@@ -13383,39 +11593,165 @@ pub(crate) const RAW_TIME_ZONES_BY_NAME: phf::Map<Lower, &'static [u8]> = ::phf:
         ),
         (
             Lower([
-                0x6d6d612f61697361,
-                0x2020202020006e61,
+                0x792f6164616e6163,
+                0x202020006e6f6b75,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::ASIA_AMMAN,
-        ),
-        (
-            Lower([
-                0x696c617274737561,
-                0x6e656b6f72622f61,
-                0x2020006c6c69687f,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AUSTRALIA_BROKEN_HILL,
+            raw_tzdata::AMERICA_WHITEHORSE,
         ),
         (
             Lower([
                 0x2f61636972656d61,
-                0x6f647f6f746e6173,
-                0x2020006f676e696d,
+                0x786166696c6168,
+                0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::AMERICA_SANTO_DOMINGO,
+            raw_tzdata::AMERICA_HALIFAX,
         ),
         (
             Lower([
-                0x696c617274737561,
-                0x6e616d7361742f61,
-                0x2020202020006169,
+                0x6369746e616c7461,
+                0x7365726f7a612f,
+                0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::AUSTRALIA_HOBART,
+            raw_tzdata::ATLANTIC_AZORES,
+        ),
+        (
+            Lower([
+                0x702f616369726661,
+                0x766f6e2d6f74726f,
+                0x202020202020006f,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AFRICA_PORTO_NOVO,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x6164616e657267,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_GRENADA,
+        ),
+        (
+            Lower([
+                0x642f616369726661,
+                0x61737f73657f7261,
+                0x202020006d61616c,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AFRICA_DAR_ES_SALAAM,
+        ),
+        (
+            Lower([
+                0x6c2f616369726661,
+                0x20202000736f6761,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AFRICA_LAGOS,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x617567616e616d,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_MANAGUA,
+        ),
+        (
+            Lower([
+                0x696863696d2f7375,
+                0x20202020006e6167,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_DETROIT,
+        ),
+        (
+            Lower([
+                0x6b2f65706f727565,
+                0x72676e696e696c61,
+                0x2020202020006461,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::EUROPE_KALININGRAD,
+        ),
+        (
+            Lower([
+                0x702f65706f727565,
+                0x2020006575676172,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::EUROPE_BRATISLAVA,
+        ),
+        (
+            Lower([
+                0x6873612f61697361,
+                0x2020007461626167,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ASIA_ASHGABAT,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x727f6f7472657570,
+                0x20202020006f6369,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_PUERTO_RICO,
+        ),
+        (
+            Lower([
+                0x7463752f637465,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::UCT,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x6372616d61746163,
+                0x2020202020200061,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_CATAMARCA,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x75637f7466697773,
+                0x202000746e657272,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_SWIFT_CURRENT,
+        ),
+        (
+            Lower([
+                0x6369746e616c7461,
+                0x65767f657061632f,
+                0x2020202000656472,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ATLANTIC_CAPE_VERDE,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x69727f6174736f63,
+                0x2020202020006163,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_COSTA_RICA,
         ),
         (
             Lower([
@@ -13428,12 +11764,192 @@ pub(crate) const RAW_TIME_ZONES_BY_NAME: phf::Map<Lower, &'static [u8]> = ::phf:
         ),
         (
             Lower([
+                0x7969722f61697361,
+                0x2020202000686461,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ASIA_RIYADH,
+        ),
+        (
+            Lower([
+                0x2f63696669636170,
+                0x61636c6164617567,
+                0x20202020006c616e,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::PACIFIC_GUADALCANAL,
+        ),
+        (
+            Lower([
+                0x732f65706f727565,
+                0x2000766f74617261,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::EUROPE_SARATOV,
+        ),
+        (
+            Lower([
                 0x2f61636972656d61,
-                0x6b636f7270696873,
+                0x7472696e676e6170,
+                0x2020202000676e75,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_PANGNIRTUNG,
+        ),
+        (
+            Lower([
+                0x742f616369726661,
+                0x2000696c6f706972,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::LIBYA,
+        ),
+        (
+            Lower([
+                0x622f6f636978656d,
+                0x6574726f6e616a61,
                 0x2020202020202000,
                 0x2020202020202020,
             ]),
-            raw_tzdata::NAVAJO,
+            raw_tzdata::AMERICA_ENSENADA,
+        ),
+        (
+            Lower([
+                0x74647038747370,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::PST_8_PDT,
+        ),
+        (
+            Lower([
+                0x732f65706f727565,
+                0x202020006169666f,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::EUROPE_SOFIA,
+        ),
+        (
+            Lower([
+                0x772f65706f727565,
+                0x2020007761737261,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::POLAND,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x7568617568696863,
+                0x2020202020200061,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_CHIHUAHUA,
+        ),
+        (
+            Lower([
+                0x6e2f616369726661,
+                0x616e656d616a64,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AFRICA_NDJAMENA,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x6e6f7473657263,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_CRESTON,
+        ),
+        (
+            Lower([
+                0x6d2f616369726661,
+                0x2000656e61626162,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AFRICA_MBABANE,
+        ),
+        (
+            Lower([
+                0x656572672f637465,
+                0x202000686369776e,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::GMT,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x71696e697472616d,
+                0x2020202020006575,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_MARTINIQUE,
+        ),
+        (
+            Lower([
+                0x6e616d2f61697361,
+                0x2020202000616c69,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ASIA_MANILA,
+        ),
+        (
+            Lower([
+                0x6873612f61697361,
+                0x200064616261686b,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ASIA_ASHGABAT,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x72726573746e6f6d,
+                0x2020202020007461,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_MONTSERRAT,
+        ),
+        (
+            Lower([
+                0x2f63696669636170,
+                0x20200075616c6170,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::PACIFIC_PALAU,
+        ),
+        (
+            Lower([
+                0x2f63696669636170,
+                0x6761707f6f676170,
+                0x202020202020006f,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::PACIFIC_PAGO_PAGO,
+        ),
+        (
+            Lower([
+                0x2d746d672f637465,
+                0x2020202020200033,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ETC_GMT_MINUS_3,
         ),
         (
             Lower([
@@ -13447,11 +11963,38 @@ pub(crate) const RAW_TIME_ZONES_BY_NAME: phf::Map<Lower, &'static [u8]> = ::phf:
         (
             Lower([
                 0x2f61636972656d61,
-                0x202020006b616461,
+                0x746f676972616d,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::AMERICA_ADAK,
+            raw_tzdata::AMERICA_MARIGOT,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x616c6c6975676e61,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_ANGUILLA,
+        ),
+        (
+            Lower([
+                0x6e61792f61697361,
+                0x20202020006e6f67,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ASIA_RANGOON,
+        ),
+        (
+            Lower([
+                0x612f65706f727565,
+                0x202000736e656874,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::EUROPE_ATHENS,
         ),
         (
             Lower([
@@ -13465,101 +12008,443 @@ pub(crate) const RAW_TIME_ZONES_BY_NAME: phf::Map<Lower, &'static [u8]> = ::phf:
         (
             Lower([
                 0x2f61636972656d61,
-                0x61627f6169686162,
-                0x200073617265646e,
+                0x2020006169686162,
+                0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::AMERICA_BAHIA_BANDERAS,
+            raw_tzdata::AMERICA_BAHIA,
         ),
         (
             Lower([
-                0x2f63696669636170,
-                0x202000616f6d6173,
+                0x612f616369726661,
+                0x20006e616a646962,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::PACIFIC_PAGO_PAGO,
+            raw_tzdata::AFRICA_ABIDJAN,
         ),
         (
             Lower([
-                0x2f61636972656d61,
-                0x202000656c756874,
-                0x2020202020202020,
+                0x696c617274737561,
+                0x776f636e61792f61,
+                0x20202000616e6e69,
                 0x2020202020202020,
             ]),
-            raw_tzdata::AMERICA_THULE,
+            raw_tzdata::AUSTRALIA_BROKEN_HILL,
         ),
         (
             Lower([
-                0x2d746d672f637465,
-                0x2020202020200032,
+                0x66696361702f7375,
+                0x2020202020006369,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::ETC_GMT_MINUS_2,
+            raw_tzdata::AMERICA_LOS_ANGELES,
         ),
         (
             Lower([
-                0x2f61636972656d61,
-                0x61626f64726f63,
+                0x61726f2f61697361,
+                0x202020202020006c,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::AMERICA_CORDOBA,
+            raw_tzdata::ASIA_ORAL,
         ),
         (
             Lower([
-                0x74647038747370,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::PST_8_PDT,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x202020006b75756e,
+                0x632f6e6169646e69,
+                0x2020006f726f6d6f,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::AMERICA_GODTHAB,
-        ),
-        (
-            Lower([
-                0x6369746e616c7461,
-                0x79616d7f6e616a2f,
-                0x2020202020006e65,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ATLANTIC_JAN_MAYEN,
+            raw_tzdata::INDIAN_COMORO,
         ),
         (
             Lower([
                 0x2b746d672f637465,
-                0x2020202020200033,
+                0x2020202020200038,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::ETC_GMT_PLUS_3,
+            raw_tzdata::ETC_GMT_PLUS_8,
         ),
         (
             Lower([
-                0x6b61622f61697361,
-                0x2020202020200075,
+                0x7471612f61697361,
+                0x2020202020007561,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::ASIA_BAKU,
+            raw_tzdata::ASIA_AQTAU,
+        ),
+        (
+            Lower([
+                0x742f65706f727565,
+                0x6c6f7073617269,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::EUROPE_CHISINAU,
+        ),
+        (
+            Lower([
+                0x6369746e616c7461,
+                0x677f6874756f732f,
+                0x2000616967726f65,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ATLANTIC_SOUTH_GEORGIA,
+        ),
+        (
+            Lower([
+                0x672f65706f727565,
+                0x7261746c61726269,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::EUROPE_GIBRALTAR,
+        ),
+        (
+            Lower([
+                0x622f616369726661,
+                0x657279746e616c,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AFRICA_BLANTYRE,
+        ),
+        (
+            Lower([
+                0x6369746e616c7461,
+                0x79656c6e6174732f,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ATLANTIC_STANLEY,
+        ),
+        (
+            Lower([
+                0x7261682f61697361,
+                0x20202020006e6962,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::PRC,
+        ),
+        (
+            Lower([
+                0x72616b2f61697361,
+                0x2020200069686361,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ASIA_KARACHI,
+        ),
+        (
+            Lower([
+                0x632f616369726661,
+                0x2020200061747565,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AFRICA_CEUTA,
+        ),
+        (
+            Lower([
+                0x2f63696669636170,
+                0x202000757275616e,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::PACIFIC_NAURU,
+        ),
+        (
+            Lower([
+                0x69656c616a61776b,
+                0x202020202020006e,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::KWAJALEIN,
+        ),
+        (
+            Lower([
+                0x2d746d672f637465,
+                0x2020202020200036,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ETC_GMT_MINUS_6,
+        ),
+        (
+            Lower([
+                0x692f65706f727565,
+                0x6c75626e617473,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::TURKEY,
+        ),
+        (
+            Lower([
+                0x2d746d672f637465,
+                0x2020202020200037,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ETC_GMT_MINUS_7,
+        ),
+        (
+            Lower([
+                0x612f616369726661,
+                0x200073726569676c,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AFRICA_ALGIERS,
+        ),
+        (
+            Lower([
+                0x622f65706f727565,
+                0x2000747361666c65,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::GB,
+        ),
+        (
+            Lower([
+                0x736d6f2f61697361,
+                0x202020202020006b,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ASIA_OMSK,
+        ),
+        (
+            Lower([
+                0x2b746d672f637465,
+                0x2020202020200035,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ETC_GMT_PLUS_5,
         ),
         (
             Lower([
                 0x2f61636972656d61,
-                0x20006e75636e6163,
+                0x20202000616b7461,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::AMERICA_CANCUN,
+            raw_tzdata::AMERICA_ADAK,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x616963756c7f7473,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_ST_LUCIA,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x6e697f786f6e6b,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_KNOX_IN,
+        ),
+        (
+            Lower([
+                0x672f65706f727565,
+                0x7965736e726575,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::EUROPE_GUERNSEY,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x726f686574696877,
+                0x2020202020006573,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_WHITEHORSE,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x617f736f6e657562,
+                0x2020200073657269,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_BUENOS_AIRES,
+        ),
+        (
+            Lower([
+                0x6b616d2f61697361,
+                0x2020007261737361,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ASIA_MAKASSAR,
+        ),
+        (
+            Lower([
+                0x2f63696669636170,
+                0x6e72696163746970,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::PACIFIC_PITCAIRN,
+        ),
+        (
+            Lower([
+                0x752f65706f727565,
+                0x6b73766f6e61796c,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::EUROPE_ULYANOVSK,
+        ),
+        (
+            Lower([
+                0x2020202000747368,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::HST,
+        ),
+        (
+            Lower([
+                0x2020007470796765,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::EGYPT,
+        ),
+        (
+            Lower([
+                0x7572622f61697361,
+                0x202020200069656e,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ASIA_BRUNEI,
+        ),
+        (
+            Lower([
+                0x762f65706f727565,
+                0x202020007a756461,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::EUROPE_VADUZ,
+        ),
+        (
+            Lower([
+                0x72746e65632f7375,
+                0x2020202020006c61,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_CHICAGO,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x756f6c6564617567,
+                0x2020202020006570,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_GUADELOUPE,
+        ),
+        (
+            Lower([
+                0x6569762f61697361,
+                0x2000656e6169746e,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ASIA_VIENTIANE,
+        ),
+        (
+            Lower([
+                0x6861622f61697361,
+                0x202020006e696172,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ASIA_BAHRAIN,
+        ),
+        (
+            Lower([
+                0x6d2f6164616e6163,
+                0x6e6961746e756f,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_EDMONTON,
+        ),
+        (
+            Lower([
+                0x616c752f61697361,
+                0x7261746161626e61,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ASIA_ULAANBAATAR,
+        ),
+        (
+            Lower([
+                0x6d6d612f61697361,
+                0x2020202020006e61,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ASIA_AMMAN,
+        ),
+        (
+            Lower([
+                0x732f65706f727565,
+                0x6e6972616d7f6e61,
+                0x202020202020006f,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::EUROPE_ROME,
+        ),
+        (
+            Lower([
+                0x63756b2f61697361,
+                0x20202000676e6968,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ASIA_KUCHING,
+        ),
+        (
+            Lower([
+                0x642f65706f727565,
+                0x2020006e696c6275,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::EIRE,
+        ),
+        (
+            Lower([
+                0x6374752f637465,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::UCT,
         ),
         (
             Lower([
@@ -13573,6 +12458,1176 @@ pub(crate) const RAW_TIME_ZONES_BY_NAME: phf::Map<Lower, &'static [u8]> = ::phf:
         (
             Lower([
                 0x2f61636972656d61,
+                0x20006e6967726976,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_ST_THOMAS,
+        ),
+        (
+            Lower([
+                0x6c2f616369726661,
+                0x687361626d756275,
+                0x2020202020200069,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AFRICA_LUBUMBASHI,
+        ),
+        (
+            Lower([
+                0x2f63696669636170,
+                0x616d69746972696b,
+                0x2020202020006974,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::PACIFIC_KIRITIMATI,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x2000616d616e6170,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_PANAMA,
+        ),
+        (
+            Lower([
+                0x732f65706f727565,
+                0x6f76656a617261,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::EUROPE_SARAJEVO,
+        ),
+        (
+            Lower([
+                0x2d746d672f637465,
+                0x2020202020200032,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ETC_GMT_MINUS_2,
+        ),
+        (
+            Lower([
+                0x2f63696669636170,
+                0x20006f72756a616d,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::PACIFIC_MAJURO,
+        ),
+        (
+            Lower([
+                0x76696e752f637465,
+                0x2020006c61737265,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::UCT,
+        ),
+        (
+            Lower([
+                0x2d746d672f637465,
+                0x2020202020003331,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ETC_GMT_MINUS_13,
+        ),
+        (
+            Lower([
+                0x6865742f61697361,
+                0x20202020006e6172,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::IRAN,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x6d657261746e6173,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_SANTAREM,
+        ),
+        (
+            Lower([
+                0x6b73616c612f7375,
+                0x2020202020200061,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_ANCHORAGE,
+        ),
+        (
+            Lower([
+                0x2b746d672f637465,
+                0x2020202020200034,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ETC_GMT_PLUS_4,
+        ),
+        (
+            Lower([
+                0x2f63696669636170,
+                0x2020006574616665,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::PACIFIC_EFATE,
+        ),
+        (
+            Lower([
+                0x676e6f6b676e6f68,
+                0x2020202020202000,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::HONGKONG,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x2000616261697563,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_CUIABA,
+        ),
+        (
+            Lower([
+                0x202000302b746d67,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::GMT,
+        ),
+        (
+            Lower([
+                0x74646336747363,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::CST_6_CDT,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x61627f6169686162,
+                0x200073617265646e,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_BAHIA_BANDERAS,
+        ),
+        (
+            Lower([
+                0x20006c6561727369,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ISRAEL,
+        ),
+        (
+            Lower([
+                0x642f6c697a617262,
+                0x61686e6f726f6e65,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_NORONHA,
+        ),
+        (
+            Lower([
+                0x6e2f6164616e6163,
+                0x6c646e756f667765,
+                0x2020202000646e61,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_ST_JOHNS,
+        ),
+        (
+            Lower([
+                0x622f6f636978656d,
+                0x2000727573616a61,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_MAZATLAN,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x20006f696563616d,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_MACEIO,
+        ),
+        (
+            Lower([
+                0x2020200061627563,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::CUBA,
+        ),
+        (
+            Lower([
+                0x6e61622f61697361,
+                0x202020006b6f6b67,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ASIA_BANGKOK,
+        ),
+        (
+            Lower([
+                0x6d2f6e6169646e69,
+                0x73657669646c61,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::INDIAN_MALDIVES,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x6f647f6f746e6173,
+                0x2020006f676e696d,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_SANTO_DOMINGO,
+        ),
+        (
+            Lower([
+                0x77756b2f61697361,
+                0x2020202000746961,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ASIA_KUWAIT,
+        ),
+        (
+            Lower([
+                0x2020202000746375,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::UCT,
+        ),
+        (
+            Lower([
+                0x652f616369726661,
+                0x6e756961617f6c,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AFRICA_EL_AAIUN,
+        ),
+        (
+            Lower([
+                0x6369746e616c7461,
+                0x6172696564616d2f,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ATLANTIC_MADEIRA,
+        ),
+        (
+            Lower([
+                0x61726b2f61697361,
+                0x6b737261796f6e73,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ASIA_KRASNOYARSK,
+        ),
+        (
+            Lower([
+                0x732f616369726661,
+                0x656d6f747f6f61,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AFRICA_SAO_TOME,
+        ),
+        (
+            Lower([
+                0x30746d672f637465,
+                0x2020202020202000,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::GMT,
+        ),
+        (
+            Lower([
+                0x6c61677574726f70,
+                0x2020202020202000,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::PORTUGAL,
+        ),
+        (
+            Lower([
+                0x6d2f6e6169646e69,
+                0x7375697469727561,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::INDIAN_MAURITIUS,
+        ),
+        (
+            Lower([
+                0x65747361652f7375,
+                0x2020202020006e72,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_NEW_YORK,
+        ),
+        (
+            Lower([
+                0x6173726576696e75,
+                0x202020202020006c,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::UCT,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x616c6f74726f74,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_TORTOLA,
+        ),
+        (
+            Lower([
+                0x7a2f65706f727565,
+                0x2020006863697275,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::EUROPE_BUSINGEN,
+        ),
+        (
+            Lower([
+                0x202020200074736d,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::MST,
+        ),
+        (
+            Lower([
+                0x642f616369726661,
+                0x6974756f62696a,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AFRICA_DJIBOUTI,
+        ),
+        (
+            Lower([
+                0x622f616369726661,
+                0x2020006c756a6e61,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AFRICA_BANJUL,
+        ),
+        (
+            Lower([
+                0x6f68632f61697361,
+                0x6e61736c616269,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ASIA_CHOIBALSAN,
+        ),
+        (
+            Lower([
+                0x6d61732f61697361,
+                0x2000646e616b7261,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ASIA_SAMARKAND,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x6c7561707f6f6173,
+                0x202020202020006f,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_SAO_PAULO,
+        ),
+        (
+            Lower([
+                0x6b65792f61697361,
+                0x75626e6972657461,
+                0x2020202020006772,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ASIA_YEKATERINBURG,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x6b726f797f77656e,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_NEW_YORK,
+        ),
+        (
+            Lower([
+                0x6369746e616c7461,
+                0x656f726561662f,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ATLANTIC_FAEROE,
+        ),
+        (
+            Lower([
+                0x616f6d61732f7375,
+                0x2020202020202000,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::PACIFIC_PAGO_PAGO,
+        ),
+        (
+            Lower([
+                0x6f68632f61697361,
+                0x2000676e6971676e,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::PRC,
+        ),
+        (
+            Lower([
+                0x6e2f616369726661,
+                0x20200079656d6169,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AFRICA_NIAMEY,
+        ),
+        (
+            Lower([
+                0x696c617274737561,
+                0x616c6375652f61,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AUSTRALIA_EUCLA,
+        ),
+        (
+            Lower([
+                0x632f6e6169646e69,
+                0x202000736f676168,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::INDIAN_CHAGOS,
+        ),
+        (
+            Lower([
+                0x2f63696669636170,
+                0x617365757172616d,
+                0x2020202020200073,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::PACIFIC_MARQUESAS,
+        ),
+        (
+            Lower([
+                0x612f616369726661,
+                0x2020200061726363,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AFRICA_ACCRA,
+        ),
+        (
+            Lower([
+                0x2f63696669636170,
+                0x20006570616e6f70,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::PACIFIC_POHNPEI,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x6163696e696d6f64,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_DOMINICA,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x2020006162757261,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_ARUBA,
+        ),
+        (
+            Lower([
+                0x622f65706f727565,
+                0x76616c7369746172,
+                0x2020202020200061,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::EUROPE_BRATISLAVA,
+        ),
+        (
+            Lower([
+                0x2f63696669636170,
+                0x6965706e686f70,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::PACIFIC_POHNPEI,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x61627f6563616c67,
+                0x2020202020200079,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_GLACE_BAY,
+        ),
+        (
+            Lower([
+                0x2f63696669636170,
+                0x6e6f74736e686f6a,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::PACIFIC_HONOLULU,
+        ),
+        (
+            Lower([
+                0x2f63696669636170,
+                0x200073696c6c6177,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::PACIFIC_WALLIS,
+        ),
+        (
+            Lower([
+                0x6c2f636974637261,
+                0x6272616579676e6f,
+                0x20202020006e6579,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ARCTIC_LONGYEARBYEN,
+        ),
+        (
+            Lower([
+                0x762f65706f727565,
+                0x20006e6163697461,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::EUROPE_ROME,
+        ),
+        (
+            Lower([
+                0x2f63696669636170,
+                0x2020006b75756863,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::PACIFIC_CHUUK,
+        ),
+        (
+            Lower([
+                0x2f63696669636170,
+                0x202020006b757274,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::PACIFIC_CHUUK,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x697f6e696b6e6172,
+                0x2020200074656c6e,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_RANKIN_INLET,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x65727265746e6f6d,
+                0x2020202020200079,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_MONTERREY,
+        ),
+        (
+            Lower([
+                0x696c617274737561,
+                0x68747265702f61,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AUSTRALIA_PERTH,
+        ),
+        (
+            Lower([
+                0x2f63696669636170,
+                0x6d616874616863,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::NZ_CHAT,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x6f726f6d6174616d,
+                0x2020202020200073,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_MATAMOROS,
+        ),
+        (
+            Lower([
+                0x6b61732f61697361,
+                0x2020006e696c6168,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ASIA_SAKHALIN,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x7469756c617169,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_IQALUIT,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x736f646162726162,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_BARBADOS,
+        ),
+        (
+            Lower([
+                0x696c617274737561,
+                0x69616c6564612f61,
+                0x2020202020006564,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AUSTRALIA_ADELAIDE,
+        ),
+        (
+            Lower([
+                0x696c617274737561,
+                0x756f626c656d2f61,
+                0x2020202000656e72,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AUSTRALIA_MELBOURNE,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x64697665746e6f6d,
+                0x2020202020006f65,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_MONTEVIDEO,
+        ),
+        (
+            Lower([
+                0x622f65706f727565,
+                0x6e65676e697375,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::EUROPE_BUSINGEN,
+        ),
+        (
+            Lower([
+                0x696c617274737561,
+                0x747261626f682f61,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AUSTRALIA_CURRIE,
+        ),
+        (
+            Lower([
+                0x6369746e616c7461,
+                0x6164756d7265622f,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ATLANTIC_BERMUDA,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x72677f6f706d6163,
+                0x2020200065646e61,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_CAMPO_GRANDE,
+        ),
+        (
+            Lower([
+                0x6d2f65706f727565,
+                0x2020006f63616e6f,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::EUROPE_MONACO,
+        ),
+        (
+            Lower([
+                0x61652f656c696863,
+                0x616c736972657473,
+                0x202020202000646e,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::CHILE_EASTER_ISLAND,
+        ),
+        (
+            Lower([
+                0x2f63696669636170,
+                0x200079617764696d,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::PACIFIC_MIDWAY,
+        ),
+        (
+            Lower([
+                0x2020200030746d67,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::GMT,
+        ),
+        (
+            Lower([
+                0x6c2f616369726661,
+                0x20200061646e6175,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AFRICA_LUANDA,
+        ),
+        (
+            Lower([
+                0x2020202000746577,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::WET,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x20202000616d696c,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_LIMA,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x2020006573696f62,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_BOISE,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x737474696b7f7473,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_ST_KITTS,
+        ),
+        (
+            Lower([
+                0x6974637261746e61,
+                0x757163616d2f6163,
+                0x2020200065697261,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ANTARCTICA_MACQUARIE,
+        ),
+        (
+            Lower([
+                0x2b746d672f637465,
+                0x2020202020200031,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ETC_GMT_PLUS_1,
+        ),
+        (
+            Lower([
+                0x20202000756c757a,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::UCT,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x61626f64726f63,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_CORDOBA,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x20007561656e756a,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_JUNEAU,
+        ),
+        (
+            Lower([
+                0x6265682f61697361,
+                0x20202020006e6f72,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ASIA_HEBRON,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x202000656c756874,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_THULE,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x6e616b6f6b697461,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_ATIKOKAN,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x65676e617f736f6c,
+                0x202020200073656c,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_LOS_ANGELES,
+        ),
+        (
+            Lower([
+                0x6a2f616369726661,
+                0x2020202000616275,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AFRICA_JUBA,
+        ),
+        (
+            Lower([
+                0x6d2f616369726661,
+                0x756873696461676f,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AFRICA_MOGADISHU,
+        ),
+        (
+            Lower([
+                0x766f6e2f61697361,
+                0x6b7372696269736f,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ASIA_NOVOSIBIRSK,
+        ),
+        (
+            Lower([
+                0x6169646e692f7375,
+                0x6b726174732d616e,
+                0x2020202020200065,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_KNOX_IN,
+        ),
+        (
+            Lower([
+                0x7568632f61697361,
+                0x2000676e696b676e,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::PRC,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x6c656e7f74726f66,
+                0x20202020006e6f73,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_FORT_NELSON,
+        ),
+        (
+            Lower([
+                0x74616b2f61697361,
+                0x200075646e616d68,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ASIA_KATHMANDU,
+        ),
+        (
+            Lower([
+                0x6b2f616369726661,
+                0x6d756f74726168,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AFRICA_KHARTOUM,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x747369767f616f62,
+                0x2020202020200061,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_BOA_VISTA,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x6761726f68636e61,
+                0x2020202020200065,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_ANCHORAGE,
+        ),
+        (
+            Lower([
+                0x7473692f61697361,
+                0x2020006c75626e61,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::TURKEY,
+        ),
+        (
+            Lower([
+                0x622f65706f727565,
+                0x74736570616475,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::EUROPE_BUDAPEST,
+        ),
+        (
+            Lower([
+                0x696c617274737561,
+                0x6d65646e696c2f61,
+                0x2020202020006e61,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AUSTRALIA_LINDEMAN,
+        ),
+        (
+            Lower([
+                0x612f616369726661,
+                0x2020006172616d73,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AFRICA_ASMARA,
+        ),
+        (
+            Lower([
+                0x20006f6a6176616e,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::NAVAJO,
+        ),
+        (
+            Lower([
+                0x7f6f682f61697361,
+                0x686e696d7f696863,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ASIA_HO_CHI_MINH,
+        ),
+        (
+            Lower([
+                0x6369746e616c7461,
+                0x2000656f7261662f,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ATLANTIC_FAEROE,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x20007375616e616d,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_MANAUS,
+        ),
+        (
+            Lower([
+                0x6d2f65706f727565,
+                0x2020006469726461,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::EUROPE_MADRID,
+        ),
+        (
+            Lower([
+                0x7a79712f61697361,
+                0x20006164726f6c79,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ASIA_QYZYLORDA,
+        ),
+        (
+            Lower([
+                0x6b61792f61697361,
+                0x202020006b737475,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ASIA_YAKUTSK,
+        ),
+        (
+            Lower([
+                0x2d747361652f7375,
+                0x616e6169646e69,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_FORT_WAYNE,
+        ),
+        (
+            Lower([
+                0x7974612f61697361,
+                0x2020202000756172,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ASIA_ATYRAU,
+        ),
+        (
+            Lower([
+                0x2d746d672f637465,
+                0x2020202020003231,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ETC_GMT_MINUS_12,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x7f666f7f74726f70,
+                0x2020006e69617073,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_MARIGOT,
+        ),
+        (
+            Lower([
+                0x2f63696669636170,
+                0x756c756c6f6e6f68,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::PACIFIC_HONOLULU,
+        ),
+        (
+            Lower([
+                0x632f6e6169646e69,
+                0x20202000736f636f,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::INDIAN_COCOS,
+        ),
+        (
+            Lower([
+                0x6f632f656c696863,
+                0x61746e656e69746e,
+                0x202020202020006c,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_SANTIAGO,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
                 0x6e6f74636e6f6d,
                 0x2020202020202020,
                 0x2020202020202020,
@@ -13581,21 +13636,300 @@ pub(crate) const RAW_TIME_ZONES_BY_NAME: phf::Map<Lower, &'static [u8]> = ::phf:
         ),
         (
             Lower([
-                0x2f61636972656d61,
-                0x616369616d616a,
+                0x7461712f61697361,
+                0x2020202020007261,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::JAMAICA,
+            raw_tzdata::ASIA_QATAR,
+        ),
+        (
+            Lower([
+                0x622f616369726661,
+                0x6c6976617a7a6172,
+                0x202020202000656c,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AFRICA_BRAZZAVILLE,
+        ),
+        (
+            Lower([
+                0x646e616c656369,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ICELAND,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x68747261627f7473,
+                0x202000796d656c65,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_MARIGOT,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x6e6172627f6f6972,
+                0x2020202020006f63,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_PORTO_ACRE,
+        ),
+        (
+            Lower([
+                0x612f65706f727565,
+                0x6e61686b61727473,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::EUROPE_ASTRAKHAN,
+        ),
+        (
+            Lower([
+                0x682f65706f727565,
+                0x696b6e69736c65,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::EUROPE_HELSINKI,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x6b636f7270696873,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::NAVAJO,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x656e6e65796163,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_CAYENNE,
+        ),
+        (
+            Lower([
+                0x7a61672f61697361,
+                0x2020202020200061,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ASIA_GAZA,
+        ),
+        (
+            Lower([
+                0x6e2f616369726661,
+                0x746f68636b61756f,
+                0x2020202020200074,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AFRICA_NOUAKCHOTT,
+        ),
+        (
+            Lower([
+                0x632f6164616e6163,
+                0x20006c6172746e65,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_WINNIPEG,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x6f697261736f72,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_CORDOBA,
+        ),
+        (
+            Lower([
+                0x2f63696669636170,
+                0x2000697469686174,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::PACIFIC_TAHITI,
+        ),
+        (
+            Lower([
+                0x6c2f616369726661,
+                0x6c6c697665726269,
+                0x2020202020200065,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AFRICA_LIBREVILLE,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x200061646972656d,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_MERIDA,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x6c616572746e6f6d,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_MONTREAL,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x6c69736f6d726568,
+                0x2020202020006f6c,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_HERMOSILLO,
         ),
         (
             Lower([
                 0x696c617274737561,
-                0x6569727275632f61,
+                0x6874726f6e2f61,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AUSTRALIA_DARWIN,
+        ),
+        (
+            Lower([
+                0x202020006e617269,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::IRAN,
+        ),
+        (
+            Lower([
+                0x696c617274737561,
+                0x79656e6479732f61,
                 0x2020202020202000,
                 0x2020202020202020,
             ]),
-            raw_tzdata::AUSTRALIA_CURRIE,
+            raw_tzdata::AUSTRALIA_ACT,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x65636e69767f7473,
+                0x202020202000746e,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_ST_VINCENT,
+        ),
+        (
+            Lower([
+                0x2b746d672f637465,
+                0x2020202020200039,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ETC_GMT_PLUS_9,
+        ),
+        (
+            Lower([
+                0x746d672f637465,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::GMT,
+        ),
+        (
+            Lower([
+                0x612f6164616e6163,
+                0x6369746e616c74,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_HALIFAX,
+        ),
+        (
+            Lower([
+                0x622f616369726661,
+                0x2020007561737369,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AFRICA_BISSAU,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x6e6b776f6c6c6579,
+                0x2020202000656669,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_YELLOWKNIFE,
+        ),
+        (
+            Lower([
+                0x6974637261746e61,
+                0x73697661642f6163,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ANTARCTICA_DAVIS,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x6e6f69636e757361,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_ASUNCION,
+        ),
+        (
+            Lower([
+                0x2b746d672f637465,
+                0x2020202020200036,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ETC_GMT_PLUS_6,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x6e6f676970696e,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_NIPIGON,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x746174756b6179,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_YAKUTAT,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x72617f61746e7570,
+                0x2020200073616e65,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_PUNTA_ARENAS,
         ),
         (
             Lower([
@@ -13617,750 +13951,75 @@ pub(crate) const RAW_TIME_ZONES_BY_NAME: phf::Map<Lower, &'static [u8]> = ::phf:
         ),
         (
             Lower([
-                0x736f712f61697361,
-                0x20200079616e6174,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ASIA_QOSTANAY,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x616963756c7f7473,
+                0x622f65706f727565,
+                0x7473657261686375,
                 0x2020202020202000,
                 0x2020202020202020,
             ]),
-            raw_tzdata::AMERICA_ST_LUCIA,
-        ),
-        (
-            Lower([
-                0x2f63696669636170,
-                0x6761707f6f676170,
-                0x202020202020006f,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::PACIFIC_PAGO_PAGO,
-        ),
-        (
-            Lower([
-                0x696c617274737561,
-                0x6874756f732f61,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AUSTRALIA_ADELAIDE,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x6c69736f6d726568,
-                0x2020202020006f6c,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_HERMOSILLO,
-        ),
-        (
-            Lower([
-                0x6275642f61697361,
-                0x2020202020006961,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ASIA_DUBAI,
-        ),
-        (
-            Lower([
-                0x726f7061676e6973,
-                0x2020202020200065,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::SINGAPORE,
-        ),
-        (
-            Lower([
-                0x6369746e616c7461,
-                0x79656c6e6174732f,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ATLANTIC_STANLEY,
-        ),
-        (
-            Lower([
-                0x6c61632f61697361,
-                0x2020006174747563,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ASIA_CALCUTTA,
-        ),
-        (
-            Lower([
-                0x7a2f65706f727565,
-                0x79687a6f726f7061,
-                0x2020202020200065,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::EUROPE_ZAPOROZHYE,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x6c7561707f6f6173,
-                0x202020202020006f,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_SAO_PAULO,
-        ),
-        (
-            Lower([
-                0x656572672f637465,
-                0x202000686369776e,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::GMT,
+            raw_tzdata::EUROPE_BUCHAREST,
         ),
         (
             Lower([
                 0x6d2f616369726661,
-                0x756873696461676f,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AFRICA_MOGADISHU,
-        ),
-        (
-            Lower([
-                0x672f65706f727565,
-                0x7965736e726575,
+                0x2020006f62616c61,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::EUROPE_GUERNSEY,
-        ),
-        (
-            Lower([
-                0x6a2f616369726661,
-                0x6273656e6e61686f,
-                0x2020202000677275,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AFRICA_JOHANNESBURG,
-        ),
-        (
-            Lower([
-                0x6d2f65706f727565,
-                0x2020006469726461,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::EUROPE_MADRID,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x2000616e61766168,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::CUBA,
-        ),
-        (
-            Lower([
-                0x6564612f61697361,
-                0x202020202020006e,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ASIA_ADEN,
-        ),
-        (
-            Lower([
-                0x696c617274737561,
-                0x687f64726f6c2f61,
-                0x202020200065776f,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AUSTRALIA_LHI,
-        ),
-        (
-            Lower([
-                0x6b61732f61697361,
-                0x2020006e696c6168,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ASIA_SAKHALIN,
-        ),
-        (
-            Lower([
-                0x77756b2f61697361,
-                0x2020202000746961,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ASIA_KUWAIT,
+            raw_tzdata::AFRICA_MALABO,
         ),
         (
             Lower([
                 0x2d746d672f637465,
-                0x2020202020003431,
+                0x2020202020200034,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::ETC_GMT_MINUS_14,
+            raw_tzdata::ETC_GMT_MINUS_4,
         ),
         (
             Lower([
-                0x6974637261746e61,
-                0x73697661642f6163,
-                0x2020202020202000,
+                0x652f6164616e6163,
+                0x20006e7265747361,
+                0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::ANTARCTICA_DAVIS,
+            raw_tzdata::AMERICA_MONTREAL,
         ),
         (
             Lower([
-                0x2d746d672f637465,
-                0x2020202020200038,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ETC_GMT_MINUS_8,
-        ),
-        (
-            Lower([
-                0x2b746d672f637465,
-                0x2020202020003031,
-                0x2020202020202020,
+                0x692f65706f727565,
+                0x6d7f666f7f656c73,
+                0x2020202020006e61,
                 0x2020202020202020,
             ]),
-            raw_tzdata::ETC_GMT_PLUS_10,
-        ),
-        (
-            Lower([
-                0x6d2f6e6169646e69,
-                0x73657669646c61,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::INDIAN_MALDIVES,
-        ),
-        (
-            Lower([
-                0x7473752f61697361,
-                0x2020006172656e2d,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ASIA_UST_NERA,
-        ),
-        (
-            Lower([
-                0x6b73616c612f7375,
-                0x2020202020200061,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_ANCHORAGE,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x6761726f68636e61,
-                0x2020202020200065,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_ANCHORAGE,
-        ),
-        (
-            Lower([
-                0x622f6f636978656d,
-                0x2000727573616a61,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_MAZATLAN,
-        ),
-        (
-            Lower([
-                0x6d2f6e6169646e69,
-                0x7375697469727561,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::INDIAN_MAURITIUS,
-        ),
-        (
-            Lower([
-                0x632f616369726661,
-                0x202020006f726961,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::EGYPT,
-        ),
-        (
-            Lower([
-                0x63616d2f61697361,
-                0x2020202020006f61,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ASIA_MACAO,
-        ),
-        (
-            Lower([
-                0x76696e752f637465,
-                0x2020006c61737265,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::UCT,
-        ),
-        (
-            Lower([
-                0x612f65706f727565,
-                0x202000736e656874,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::EUROPE_ATHENS,
-        ),
-        (
-            Lower([
-                0x20202000756c757a,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::UCT,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x6e6b776f6c6c6579,
-                0x2020202000656669,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_YELLOWKNIFE,
-        ),
-        (
-            Lower([
-                0x696c617274737561,
-                0x7265626e61632f61,
-                0x2020202020006172,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AUSTRALIA_ACT,
+            raw_tzdata::EUROPE_ISLE_OF_MAN,
         ),
         (
             Lower([
                 0x2f63696669636170,
-                0x2020202000706179,
+                0x202020006d617567,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::PACIFIC_CHUUK,
+            raw_tzdata::PACIFIC_GUAM,
         ),
         (
             Lower([
-                0x622f65706f727565,
-                0x736c6573737572,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::EUROPE_BRUSSELS,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x616c6c6975676e61,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_ANGUILLA,
-        ),
-        (
-            Lower([
-                0x632f616369726661,
-                0x200079726b616e6f,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AFRICA_CONAKRY,
-        ),
-        (
-            Lower([
-                0x20202020006b6f72,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ROK,
-        ),
-        (
-            Lower([
-                0x696c617274737561,
-                0x726f746369762f61,
-                0x2020202020006169,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AUSTRALIA_MELBOURNE,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x676570696e6e6977,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_WINNIPEG,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x6c656e7f74726f66,
-                0x20202020006e6f73,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_FORT_NELSON,
-        ),
-        (
-            Lower([
-                0x696c617274737561,
-                0x20200069686c2f61,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AUSTRALIA_LHI,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x79627365726f6373,
-                0x20202000646e7573,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_SCORESBYSUND,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x2020006d656c6562,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_BELEM,
-        ),
-        (
-            Lower([
-                0x722f65706f727565,
-                0x2020202000616769,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::EUROPE_RIGA,
-        ),
-        (
-            Lower([
-                0x2f63696669636170,
-                0x20202000656b6177,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::PACIFIC_WAKE,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x6e6f6c657571696d,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_MIQUELON,
-        ),
-        (
-            Lower([
-                0x6873612f61697361,
-                0x200064616261686b,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ASIA_ASHGABAT,
-        ),
-        (
-            Lower([
-                0x2020202020007a6e,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::NZ,
-        ),
-        (
-            Lower([
-                0x6974637261746e61,
-                0x6f74736f762f6163,
-                0x202020202020006b,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ANTARCTICA_VOSTOK,
-        ),
-        (
-            Lower([
-                0x6d2f6e6169646e69,
-                0x20006574746f7961,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::INDIAN_MAYOTTE,
-        ),
-        (
-            Lower([
-                0x732f65706f727565,
-                0x6d6c6f686b636f74,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::EUROPE_STOCKHOLM,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x200075617373616e,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_NASSAU,
-        ),
-        (
-            Lower([
-                0x6974637261746e61,
-                0x656d6c61702f6163,
-                0x2020202020200072,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ANTARCTICA_PALMER,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x63617f6f74726f70,
-                0x2020202020006572,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_PORTO_ACRE,
-        ),
-        (
-            Lower([
-                0x2f63696669636170,
-                0x617365757172616d,
-                0x2020202020200073,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::PACIFIC_MARQUESAS,
-        ),
-        (
-            Lower([
-                0x622f616369726661,
-                0x617275626d756a75,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AFRICA_BUJUMBURA,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x69727f6174736f63,
+                0x6361642f61697361,
                 0x2020202020006163,
                 0x2020202020202020,
+                0x2020202020202020,
             ]),
-            raw_tzdata::AMERICA_COSTA_RICA,
+            raw_tzdata::ASIA_DACCA,
         ),
         (
             Lower([
-                0x6974637261746e61,
-                0x6c6c6f72742f6163,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ANTARCTICA_TROLL,
-        ),
-        (
-            Lower([
-                0x6d61642f61697361,
-                0x2020007375637361,
+                0x62616b2f61697361,
+                0x2020202020006c75,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::ASIA_DAMASCUS,
-        ),
-        (
-            Lower([
-                0x2f63696669636170,
-                0x61636c6164617567,
-                0x20202020006c616e,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::PACIFIC_GUADALCANAL,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x69646e656c61726b,
-                0x2020202020006b6a,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_CURACAO,
-        ),
-        (
-            Lower([
-                0x622f65706f727565,
-                0x2000747361666c65,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::EUROPE_BELFAST,
-        ),
-        (
-            Lower([
-                0x772f65706f727565,
-                0x2020007761737261,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::POLAND,
-        ),
-        (
-            Lower([
-                0x2f63696669636170,
-                0x2000617761726174,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::PACIFIC_TARAWA,
-        ),
-        (
-            Lower([
-                0x6761622f61697361,
-                0x2020200064616468,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ASIA_BAGHDAD,
-        ),
-        (
-            Lower([
-                0x6e6f702f61697361,
-                0x20006b616e616974,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ASIA_PONTIANAK,
-        ),
-        (
-            Lower([
-                0x696c617274737561,
-                0x68747265702f61,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AUSTRALIA_PERTH,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x637f6e6f73776164,
-                0x202020006b656572,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_DAWSON_CREEK,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x61732d636e616c62,
-                0x202020006e6f6c62,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_BLANC_SABLON,
-        ),
-        (
-            Lower([
-                0x732f65706f727565,
-                0x6e6972616d7f6e61,
-                0x202020202020006f,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::EUROPE_ROME,
-        ),
-        (
-            Lower([
-                0x2000646e616c6f70,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::POLAND,
-        ),
-        (
-            Lower([
-                0x202020200074736d,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::MST,
-        ),
-        (
-            Lower([
-                0x2020202000636f72,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ROC,
-        ),
-        (
-            Lower([
-                0x6f2f65706f727565,
-                0x20202020006f6c73,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ARCTIC_LONGYEARBYEN,
-        ),
-        (
-            Lower([
-                0x672f65706f727565,
-                0x7261746c61726269,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::EUROPE_GIBRALTAR,
-        ),
-        (
-            Lower([
-                0x6974637261746e61,
-                0x79657361632f6163,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ANTARCTICA_CASEY,
-        ),
-        (
-            Lower([
-                0x662f616369726661,
-                0x6e776f74656572,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AFRICA_FREETOWN,
+            raw_tzdata::ASIA_KABUL,
         ),
         (
             Lower([
@@ -14373,264 +14032,48 @@ pub(crate) const RAW_TIME_ZONES_BY_NAME: phf::Map<Lower, &'static [u8]> = ::phf:
         ),
         (
             Lower([
-                0x6b2f65706f727565,
-                0x72676e696e696c61,
-                0x2020202020006461,
+                0x632f616369726661,
+                0x202020006f726961,
+                0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::EUROPE_KALININGRAD,
+            raw_tzdata::EGYPT,
         ),
         (
             Lower([
-                0x2f61636972656d61,
-                0x7568617568696863,
-                0x2020202020200061,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_CHIHUAHUA,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x6576756f636e6176,
-                0x2020202020200072,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_VANCOUVER,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x75637f7466697773,
-                0x202000746e657272,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_SWIFT_CURRENT,
-        ),
-        (
-            Lower([
-                0x2d746d672f637465,
-                0x2020202020200039,
+                0x612f6c697a617262,
+                0x2020202000657263,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::ETC_GMT_MINUS_9,
-        ),
-        (
-            Lower([
-                0x2f63696669636170,
-                0x6e72696163746970,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::PACIFIC_PITCAIRN,
-        ),
-        (
-            Lower([
-                0x2020202000637270,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::PRC,
-        ),
-        (
-            Lower([
-                0x642f616369726661,
-                0x202000616c61756f,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AFRICA_DOUALA,
-        ),
-        (
-            Lower([
-                0x202000302b746d67,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::GMT,
-        ),
-        (
-            Lower([
-                0x73616b2f61697361,
-                0x2020200072616768,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ASIA_KASHGAR,
-        ),
-        (
-            Lower([
-                0x6c2f616369726661,
-                0x687361626d756275,
-                0x2020202020200069,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AFRICA_LUBUMBASHI,
-        ),
-        (
-            Lower([
-                0x2020202000747365,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::EST,
-        ),
-        (
-            Lower([
-                0x742f616369726661,
-                0x2020200073696e75,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AFRICA_TUNIS,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x6f616361727563,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_CURACAO,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x6e6f69636e757361,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_ASUNCION,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x73616361726163,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_CARACAS,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x74616b616c74656d,
-                0x202020202000616c,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_METLAKATLA,
-        ),
-        (
-            Lower([
-                0x7974612f61697361,
-                0x2020202000756172,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ASIA_ATYRAU,
+            raw_tzdata::AMERICA_PORTO_ACRE,
         ),
         (
             Lower([
                 0x6974637261746e61,
-                0x6568746f722f6163,
-                0x2020202020006172,
+                0x6f74736f762f6163,
+                0x202020202020006b,
                 0x2020202020202020,
             ]),
-            raw_tzdata::ANTARCTICA_ROTHERA,
+            raw_tzdata::ANTARCTICA_VOSTOK,
         ),
         (
             Lower([
-                0x2f61636972656d61,
-                0x2020006573696f62,
+                0x74616b2f61697361,
+                0x20200075646e616d,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::AMERICA_BOISE,
-        ),
-        (
-            Lower([
-                0x746e756f6d2f7375,
-                0x20202020006e6961,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::NAVAJO,
-        ),
-        (
-            Lower([
-                0x202020200074656d,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::MET,
-        ),
-        (
-            Lower([
-                0x752f65706f727565,
-                0x6b73766f6e61796c,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::EUROPE_ULYANOVSK,
-        ),
-        (
-            Lower([
-                0x6b616d2f61697361,
-                0x2020007261737361,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ASIA_MAKASSAR,
+            raw_tzdata::ASIA_KATHMANDU,
         ),
         (
             Lower([
                 0x2f63696669636170,
-                0x202000757275616e,
+                0x2000656172736f6b,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::PACIFIC_NAURU,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x747369767f616f62,
-                0x2020202020200061,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_BOA_VISTA,
-        ),
-        (
-            Lower([
-                0x74646d3774736d,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::MST_7_MDT,
-        ),
-        (
-            Lower([
-                0x6b2f616369726661,
-                0x2000616c61706d61,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AFRICA_KAMPALA,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x6164616e657267,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_GRENADA,
+            raw_tzdata::PACIFIC_KOSRAE,
         ),
         (
             Lower([
@@ -14643,93 +14086,30 @@ pub(crate) const RAW_TIME_ZONES_BY_NAME: phf::Map<Lower, &'static [u8]> = ::phf:
         ),
         (
             Lower([
-                0x2f61636972656d61,
-                0x617f736f6e657562,
-                0x2020200073657269,
+                0x6168642f61697361,
+                0x202020202000616b,
+                0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::AMERICA_BUENOS_AIRES,
+            raw_tzdata::ASIA_DACCA,
         ),
         (
             Lower([
-                0x66696361702f7375,
-                0x2020202020006369,
+                0x6e61722f61697361,
+                0x202020006e6f6f67,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::AMERICA_LOS_ANGELES,
+            raw_tzdata::ASIA_RANGOON,
         ),
         (
             Lower([
                 0x696c617274737561,
-                0x756f626c656d2f61,
-                0x2020202000656e72,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AUSTRALIA_MELBOURNE,
-        ),
-        (
-            Lower([
-                0x762f65706f727565,
-                0x20006e6163697461,
+                0x6874756f732f61,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::EUROPE_ROME,
-        ),
-        (
-            Lower([
-                0x6974637261746e61,
-                0x6874756f732f6163,
-                0x202000656c6f707f,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ANTARCTICA_MC_MURDO,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x746f676972616d,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_MARIGOT,
-        ),
-        (
-            Lower([
-                0x2f63696669636170,
-                0x20006570616e6f70,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::PACIFIC_POHNPEI,
-        ),
-        (
-            Lower([
-                0x2f63696669636170,
-                0x2000697469686174,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::PACIFIC_TAHITI,
-        ),
-        (
-            Lower([
-                0x6974637261746e61,
-                0x757163616d2f6163,
-                0x2020200065697261,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ANTARCTICA_MACQUARIE,
-        ),
-        (
-            Lower([
-                0x642f65706f727565,
-                0x2020006e696c6275,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::EIRE,
+            raw_tzdata::AUSTRALIA_ADELAIDE,
         ),
         (
             Lower([
@@ -14742,174 +14122,165 @@ pub(crate) const RAW_TIME_ZONES_BY_NAME: phf::Map<Lower, &'static [u8]> = ::phf:
         ),
         (
             Lower([
-                0x6b72692f61697361,
-                0x202020006b737475,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ASIA_IRKUTSK,
-        ),
-        (
-            Lower([
                 0x2f61636972656d61,
-                0x2000657a696c6562,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_BELIZE,
-        ),
-        (
-            Lower([
-                0x6f7a6972612f7375,
-                0x202020202000616e,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_PHOENIX,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x736f646162726162,
+                0x676570696e6e6977,
                 0x2020202020202000,
                 0x2020202020202020,
             ]),
-            raw_tzdata::AMERICA_BARBADOS,
+            raw_tzdata::AMERICA_WINNIPEG,
+        ),
+        (
+            Lower([
+                0x6968742f61697361,
+                0x202020007568706d,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ASIA_THIMBU,
         ),
         (
             Lower([
                 0x2f61636972656d61,
-                0x20007a61707f616c,
+                0x6f676163696863,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::AMERICA_LA_PAZ,
+            raw_tzdata::AMERICA_CHICAGO,
         ),
         (
             Lower([
-                0x766f682f61697361,
-                0x2020202020200064,
+                0x2f63696669636170,
+                0x202000616f6d6173,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::ASIA_HOVD,
+            raw_tzdata::PACIFIC_PAGO_PAGO,
         ),
         (
             Lower([
-                0x2f61636972656d61,
-                0x617a6f646e656d,
+                0x2000646e616c6f70,
+                0x2020202020202020,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::AMERICA_MENDOZA,
+            raw_tzdata::POLAND,
         ),
         (
             Lower([
-                0x6f2f616369726661,
-                0x67756f6461676175,
-                0x202020202000756f,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AFRICA_OUAGADOUGOU,
-        ),
-        (
-            Lower([
-                0x6e61622f61697361,
-                0x202020006b6f6b67,
+                0x6c6f6b2f61697361,
+                0x202020006174616b,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::ASIA_BANGKOK,
-        ),
-        (
-            Lower([
-                0x2f61636972656d61,
-                0x726f686574696877,
-                0x2020202020006573,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_WHITEHORSE,
-        ),
-        (
-            Lower([
-                0x6c2f616369726661,
-                0x20200061646e6175,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AFRICA_LUANDA,
+            raw_tzdata::ASIA_CALCUTTA,
         ),
         (
             Lower([
                 0x2b746d672f637465,
-                0x2020202020200039,
+                0x2020202020200037,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::ETC_GMT_PLUS_9,
+            raw_tzdata::ETC_GMT_PLUS_7,
+        ),
+        (
+            Lower([
+                0x6d2f616369726661,
+                0x6169766f726e6f,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AFRICA_MONROVIA,
+        ),
+        (
+            Lower([
+                0x2b746d672f637465,
+                0x2020202020200033,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ETC_GMT_PLUS_3,
         ),
         (
             Lower([
                 0x2f61636972656d61,
-                0x6e616b6f6b697461,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_ATIKOKAN,
-        ),
-        (
-            Lower([
-                0x6a2f65706f727565,
-                0x2020007965737265,
+                0x73616361726163,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::EUROPE_JERSEY,
+            raw_tzdata::AMERICA_CARACAS,
         ),
         (
             Lower([
-                0x2f61636972656d61,
-                0x2000616e69676572,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AMERICA_REGINA,
-        ),
-        (
-            Lower([
-                0x2020202000637475,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::UCT,
-        ),
-        (
-            Lower([
-                0x742f616369726661,
-                0x75746b75626d69,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AFRICA_TIMBUKTU,
-        ),
-        (
-            Lower([
-                0x7375642f61697361,
-                0x20200065626e6168,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ASIA_DUSHANBE,
-        ),
-        (
-            Lower([
-                0x20006f6a6176616e,
-                0x2020202020202020,
+                0x746e756f6d2f7375,
+                0x20202020006e6961,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
             raw_tzdata::NAVAJO,
+        ),
+        (
+            Lower([
+                0x662f616369726661,
+                0x6e776f74656572,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AFRICA_FREETOWN,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x2000616e61797567,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_GUYANA,
+        ),
+        (
+            Lower([
+                0x6d2f6e6169646e69,
+                0x20006574746f7961,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::INDIAN_MAYOTTE,
+        ),
+        (
+            Lower([
+                0x2020202000746565,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::EET,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x61686e6f726f6e,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_NORONHA,
+        ),
+        (
+            Lower([
+                0x732f65706f727565,
+                0x202000656a706f6b,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::EUROPE_SKOPJE,
+        ),
+        (
+            Lower([
+                0x6369746e616c7461,
+                0x656c65687f74732f,
+                0x202020202000616e,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ATLANTIC_ST_HELENA,
         ),
         (
             Lower([
@@ -14923,92 +14294,20 @@ pub(crate) const RAW_TIME_ZONES_BY_NAME: phf::Map<Lower, &'static [u8]> = ::phf:
         (
             Lower([
                 0x2f61636972656d61,
-                0x65676e617f736f6c,
-                0x202020200073656c,
+                0x61732d636e616c62,
+                0x202020006e6f6c62,
                 0x2020202020202020,
             ]),
-            raw_tzdata::AMERICA_LOS_ANGELES,
+            raw_tzdata::AMERICA_BLANC_SABLON,
         ),
         (
             Lower([
-                0x612f65706f727565,
-                0x6d6164726574736d,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::EUROPE_AMSTERDAM,
-        ),
-        (
-            Lower([
-                0x6168642f61697361,
-                0x202020202000616b,
+                0x6e6f682f61697361,
+                0x2000676e6f6b7f67,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::ASIA_DACCA,
-        ),
-        (
-            Lower([
-                0x7361742f61697361,
-                0x202000746e656b68,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ASIA_TASHKENT,
-        ),
-        (
-            Lower([
-                0x2020007470796765,
-                0x2020202020202020,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::EGYPT,
-        ),
-        (
-            Lower([
-                0x772f616369726661,
-                0x6b656f68646e69,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AFRICA_WINDHOEK,
-        ),
-        (
-            Lower([
-                0x7461712f61697361,
-                0x2020202020007261,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ASIA_QATAR,
-        ),
-        (
-            Lower([
-                0x696c617274737561,
-                0x79656e6479732f61,
-                0x2020202020202000,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::AUSTRALIA_ACT,
-        ),
-        (
-            Lower([
-                0x6965622f61697361,
-                0x2020202000747572,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ASIA_BEIRUT,
-        ),
-        (
-            Lower([
-                0x6974637261746e61,
-                0x6e6f6d75642f6163,
-                0x6c6c697672756474,
-                0x2020202020200065,
-            ]),
-            raw_tzdata::ANTARCTICA_DUMONT_D_URVILLE,
+            raw_tzdata::HONGKONG,
         ),
         (
             Lower([
@@ -15021,147 +14320,219 @@ pub(crate) const RAW_TIME_ZONES_BY_NAME: phf::Map<Lower, &'static [u8]> = ::phf:
         ),
         (
             Lower([
-                0x7a79712f61697361,
-                0x20006164726f6c79,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ASIA_QYZYLORDA,
-        ),
-        (
-            Lower([
-                0x6c61677574726f70,
-                0x2020202020202000,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::PORTUGAL,
-        ),
-        (
-            Lower([
                 0x622f616369726661,
-                0x2020007561737369,
+                0x2020006975676e61,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::AFRICA_BISSAU,
+            raw_tzdata::AFRICA_BANGUI,
         ),
         (
             Lower([
-                0x6d2f616369726661,
-                0x2020006f62616c61,
+                0x696c617274737561,
+                0x687f64726f6c2f61,
+                0x202020200065776f,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AUSTRALIA_LHI,
+        ),
+        (
+            Lower([
+                0x6f2f65706f727565,
+                0x20202020006f6c73,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::AFRICA_MALABO,
+            raw_tzdata::ARCTIC_LONGYEARBYEN,
         ),
         (
             Lower([
-                0x612f616369726661,
-                0x200073726569676c,
+                0x2f61636972656d61,
+                0x20006e6f73776164,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::AFRICA_ALGIERS,
+            raw_tzdata::AMERICA_DAWSON,
         ),
         (
             Lower([
-                0x74616b2f61697361,
-                0x20200075646e616d,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ASIA_KATHMANDU,
-        ),
-        (
-            Lower([
-                0x6961732f61697361,
-                0x20202020006e6f67,
-                0x2020202020202020,
-                0x2020202020202020,
-            ]),
-            raw_tzdata::ASIA_HO_CHI_MINH,
-        ),
-        (
-            Lower([
-                0x632f6e6169646e69,
-                0x73616d7473697268,
+                0x696c617274737561,
+                0x6569727275632f61,
                 0x2020202020202000,
                 0x2020202020202020,
             ]),
-            raw_tzdata::INDIAN_CHRISTMAS,
+            raw_tzdata::AUSTRALIA_CURRIE,
+        ),
+        (
+            Lower([
+                0x6d2f6e6169646e69,
+                0x2020202000656861,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::INDIAN_MAHE,
+        ),
+        (
+            Lower([
+                0x616e612f61697361,
+                0x2020202000727964,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ASIA_ANADYR,
+        ),
+        (
+            Lower([
+                0x672f6f636978656d,
+                0x20006c6172656e65,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_MEXICO_CITY,
+        ),
+        (
+            Lower([
+                0x63616d2f61697361,
+                0x2020202020006f61,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ASIA_MACAO,
+        ),
+        (
+            Lower([
+                0x762f65706f727565,
+                0x20007375696e6c69,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::EUROPE_VILNIUS,
         ),
         (
             Lower([
                 0x2f61636972656d61,
-                0x73697f61746e6173,
-                0x202020006c656261,
+                0x6f746e6f726f74,
+                0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::AMERICA_SANTA_ISABEL,
+            raw_tzdata::AMERICA_MONTREAL,
+        ),
+        (
+            Lower([
+                0x6974637261746e61,
+                0x72756d636d2f6163,
+                0x2020202020006f64,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ANTARCTICA_MC_MURDO,
         ),
         (
             Lower([
                 0x2f61636972656d61,
-                0x65727265746e6f6d,
-                0x2020202020200079,
+                0x20007265766e6564,
+                0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::AMERICA_MONTERREY,
+            raw_tzdata::NAVAJO,
+        ),
+        (
+            Lower([
+                0x696c617274737561,
+                0x6e69777261642f61,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AUSTRALIA_DARWIN,
+        ),
+        (
+            Lower([
+                0x6d2f65706f727565,
+                0x202000776f63736f,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::W_SU,
+        ),
+        (
+            Lower([
+                0x2d746d672f637465,
+                0x2020202020003431,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ETC_GMT_MINUS_14,
         ),
         (
             Lower([
                 0x2f61636972656d61,
-                0x20006e6967726976,
-                0x2020202020202020,
+                0x656e696d6f6e656d,
+                0x2020202020200065,
                 0x2020202020202020,
             ]),
-            raw_tzdata::AMERICA_ST_THOMAS,
+            raw_tzdata::AMERICA_MENOMINEE,
         ),
         (
             Lower([
-                0x2020202000746d67,
-                0x2020202020202020,
+                0x2f61636972656d61,
+                0x2000657a696c6562,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::GMT,
+            raw_tzdata::AMERICA_BELIZE,
         ),
         (
             Lower([
-                0x6d616b2f61697361,
-                0x2000616b74616863,
+                0x6e2f65706f727565,
+                0x20006169736f6369,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::ASIA_KAMCHATKA,
+            raw_tzdata::ASIA_NICOSIA,
         ),
         (
             Lower([
-                0x702f616369726661,
-                0x766f6e2d6f74726f,
-                0x202020202020006f,
+                0x632f616369726661,
+                0x636e616c62617361,
+                0x2020202020200061,
                 0x2020202020202020,
             ]),
-            raw_tzdata::AFRICA_PORTO_NOVO,
+            raw_tzdata::AFRICA_CASABLANCA,
         ),
         (
             Lower([
-                0x742f65706f727565,
-                0x202000656e617269,
-                0x2020202020202020,
+                0x2f61636972656d61,
+                0x6574756c6f736572,
+                0x2020202020202000,
                 0x2020202020202020,
             ]),
-            raw_tzdata::EUROPE_TIRANE,
+            raw_tzdata::AMERICA_RESOLUTE,
         ),
         (
             Lower([
-                0x752f65706f727565,
-                0x646f726f67687a,
+                0x2f61636972656d61,
+                0x75747f646e617267,
+                0x2020202020006b72,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_GRAND_TURK,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x7f7265646e756874,
+                0x2020202000796162,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_THUNDER_BAY,
+        ),
+        (
+            Lower([
+                0x2f63696669636170,
+                0x2000617761726174,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::EUROPE_UZHGOROD,
+            raw_tzdata::PACIFIC_TARAWA,
         ),
         (
             Lower([
@@ -15174,12 +14545,183 @@ pub(crate) const RAW_TIME_ZONES_BY_NAME: phf::Map<Lower, &'static [u8]> = ::phf:
         ),
         (
             Lower([
-                0x6e2f616369726661,
-                0x200069626f726961,
+                0x6f65732f61697361,
+                0x2020202020006c75,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::AFRICA_NAIROBI,
+            raw_tzdata::ROK,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x616369616d616a,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::JAMAICA,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x6f616361727563,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_CURACAO,
+        ),
+        (
+            Lower([
+                0x6b2f6e6169646e69,
+                0x6e656c6575677265,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::INDIAN_KERGUELEN,
+        ),
+        (
+            Lower([
+                0x2d746d672f637465,
+                0x2020202020200035,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ETC_GMT_MINUS_5,
+        ),
+        (
+            Lower([
+                0x6e6f702f61697361,
+                0x20006b616e616974,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ASIA_PONTIANAK,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x70616e6169646e69,
+                0x2020200073696c6f,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_FORT_WAYNE,
+        ),
+        (
+            Lower([
+                0x2d746d672f637465,
+                0x2020202020200039,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ETC_GMT_MINUS_9,
+        ),
+        (
+            Lower([
+                0x6974637261746e61,
+                0x79657361632f6163,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ANTARCTICA_CASEY,
+        ),
+        (
+            Lower([
+                0x6d2f616369726661,
+                0x2020006f74757061,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AFRICA_MAPUTO,
+        ),
+        (
+            Lower([
+                0x6c61632f61697361,
+                0x2020006174747563,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ASIA_CALCUTTA,
+        ),
+        (
+            Lower([
+                0x7572752f61697361,
+                0x202020200069716d,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ASIA_KASHGAR,
+        ),
+        (
+            Lower([
+                0x6f79702f61697361,
+                0x2000676e6179676e,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ASIA_PYONGYANG,
+        ),
+        (
+            Lower([
+                0x696c617274737561,
+                0x6e656b6f72622f61,
+                0x2020006c6c69687f,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AUSTRALIA_BROKEN_HILL,
+        ),
+        (
+            Lower([
+                0x6968632f61697361,
+                0x2020202020006174,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ASIA_CHITA,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x7961777f74726f66,
+                0x202020202000656e,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_FORT_WAYNE,
+        ),
+        (
+            Lower([
+                0x726f7061676e6973,
+                0x2020202020200065,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::SINGAPORE,
+        ),
+        (
+            Lower([
+                0x742f65706f727565,
+                0x20006e6e696c6c61,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::EUROPE_TALLINN,
+        ),
+        (
+            Lower([
+                0x2b746d672f637465,
+                0x2020202020003231,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ETC_GMT_PLUS_12,
+        ),
+        (
+            Lower([
+                0x2020202000637475,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::UCT,
         ),
         (
             Lower([
@@ -15192,45 +14734,477 @@ pub(crate) const RAW_TIME_ZONES_BY_NAME: phf::Map<Lower, &'static [u8]> = ::phf:
         ),
         (
             Lower([
-                0x722f6e6169646e69,
-                0x20006e6f696e7565,
-                0x2020202020202020,
+                0x696c617274737561,
+                0x726f746369762f61,
+                0x2020202020006169,
                 0x2020202020202020,
             ]),
-            raw_tzdata::INDIAN_REUNION,
+            raw_tzdata::AUSTRALIA_MELBOURNE,
         ),
         (
             Lower([
-                0x702f65706f727565,
-                0x616369726f67646f,
+                0x6369746e616c7461,
+                0x76616a6b7965722f,
+                0x2020202020006b69,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ICELAND,
+        ),
+        (
+            Lower([
+                0x6369746e616c7461,
+                0x79616d7f6e616a2f,
+                0x2020202020006e65,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ARCTIC_LONGYEARBYEN,
+        ),
+        (
+            Lower([
+                0x696c617274737561,
+                0x7265626e61632f61,
+                0x2020202020006172,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AUSTRALIA_ACT,
+        ),
+        (
+            Lower([
+                0x6369776e65657267,
+                0x2020202020200068,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::GMT,
+        ),
+        (
+            Lower([
+                0x762f65706f727565,
+                0x646172676f676c6f,
                 0x2020202020202000,
                 0x2020202020202020,
             ]),
-            raw_tzdata::EUROPE_BELGRADE,
+            raw_tzdata::EUROPE_VOLGOGRAD,
         ),
         (
             Lower([
-                0x7471612f61697361,
-                0x2020202020007561,
+                0x7375642f61697361,
+                0x20200065626e6168,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::ASIA_AQTAU,
+            raw_tzdata::ASIA_DUSHANBE,
         ),
         (
             Lower([
                 0x2f61636972656d61,
-                0x7469756c617169,
+                0x67646972626d6163,
+                0x2020007961627f65,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_CAMBRIDGE_BAY,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x6570656e75726965,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_EIRUNEPE,
+        ),
+        (
+            Lower([
+                0x672f616369726661,
+                0x656e6f726f6261,
                 0x2020202020202020,
                 0x2020202020202020,
             ]),
-            raw_tzdata::AMERICA_IQALUIT,
+            raw_tzdata::AFRICA_GABORONE,
+        ),
+        (
+            Lower([
+                0x6369746e616c7461,
+                0x7972616e61632f,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ATLANTIC_CANARY,
+        ),
+        (
+            Lower([
+                0x2020200065726965,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::EIRE,
+        ),
+        (
+            Lower([
+                0x632f6e6169646e69,
+                0x73616d7473697268,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::INDIAN_CHRISTMAS,
+        ),
+        (
+            Lower([
+                0x6d616b2f61697361,
+                0x2000616b74616863,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ASIA_KAMCHATKA,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x736b72616d6e6164,
+                0x202020006e766168,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_DANMARKSHAVN,
+        ),
+        (
+            Lower([
+                0x74646d3774736d,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::MST_7_MDT,
+        ),
+        (
+            Lower([
+                0x6d61662f61697361,
+                0x2000617473756761,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ASIA_FAMAGUSTA,
+        ),
+        (
+            Lower([
+                0x2d746d672f637465,
+                0x2020202020003131,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ETC_GMT_MINUS_11,
+        ),
+        (
+            Lower([
+                0x202000302d746d67,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::GMT,
+        ),
+        (
+            Lower([
+                0x74646535747365,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::EST_5_EDT,
+        ),
+        (
+            Lower([
+                0x6b616a2f61697361,
+                0x2020200061747261,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ASIA_JAKARTA,
+        ),
+        (
+            Lower([
+                0x7a2f65706f727565,
+                0x79687a6f726f7061,
+                0x2020202020200065,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::EUROPE_ZAPOROZHYE,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x2000616e69676572,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_REGINA,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x20200079756a756a,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_JUJUY,
+        ),
+        (
+            Lower([
+                0x2f63696669636170,
+                0x646e616c6b637561,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::NZ,
+        ),
+        (
+            Lower([
+                0x2f63696669636170,
+                0x202020006575696e,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::PACIFIC_NIUE,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x20007a61707f616c,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_LA_PAZ,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x6e6f6c657571696d,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_MIQUELON,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x74696f72746564,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_DETROIT,
+        ),
+        (
+            Lower([
+                0x696c617274737561,
+                0x6e616d7361742f61,
+                0x2020202020006169,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AUSTRALIA_CURRIE,
+        ),
+        (
+            Lower([
+                0x2f63696669636170,
+                0x69656c616a61776b,
+                0x202020202020006e,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::KWAJALEIN,
+        ),
+        (
+            Lower([
+                0x2f63696669636170,
+                0x20202000656b6177,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::PACIFIC_WAKE,
+        ),
+        (
+            Lower([
+                0x7265792f61697361,
+                0x202020006e617665,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ASIA_YEREVAN,
+        ),
+        (
+            Lower([
+                0x2f63696669636170,
+                0x70617461676e6f74,
+                0x2020202020200075,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::PACIFIC_TONGATAPU,
+        ),
+        (
+            Lower([
+                0x616369616d616a,
+                0x2020202020202020,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::JAMAICA,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x69646e656c61726b,
+                0x2020202020006b6a,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_CURACAO,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x20006e616d796163,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_CAYMAN,
+        ),
+        (
+            Lower([
+                0x696c617274737561,
+                0x2000747365772f61,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AUSTRALIA_PERTH,
+        ),
+        (
+            Lower([
+                0x2f63696669636170,
+                0x6f666f616b6166,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::PACIFIC_FAKAOFO,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x6f676169746e6173,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_SANTIAGO,
+        ),
+        (
+            Lower([
+                0x2f63696669636170,
+                0x2020202000706179,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::PACIFIC_CHUUK,
+        ),
+        (
+            Lower([
+                0x722f65706f727565,
+                0x2020202000616769,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::EUROPE_RIGA,
+        ),
+        (
+            Lower([
+                0x722f65706f727565,
+                0x2020202000656d6f,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::EUROPE_ROME,
+        ),
+        (
+            Lower([
+                0x6974637261746e61,
+                0x6e6f6d75642f6163,
+                0x6c6c697672756474,
+                0x2020202020200065,
+            ]),
+            raw_tzdata::ANTARCTICA_DUMONT_D_URVILLE,
+        ),
+        (
+            Lower([
+                0x732f65706f727565,
+                0x6d6c6f686b636f74,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::EUROPE_STOCKHOLM,
+        ),
+        (
+            Lower([
+                0x6974637261746e61,
+                0x6874756f732f6163,
+                0x202000656c6f707f,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::ANTARCTICA_MC_MURDO,
+        ),
+        (
+            Lower([
+                0x642f616369726661,
+                0x2020200072616b61,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AFRICA_DAKAR,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x2020006d656c6562,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_BELEM,
+        ),
+        (
+            Lower([
+                0x612f65706f727565,
+                0x6d6164726574736d,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::EUROPE_AMSTERDAM,
+        ),
+        (
+            Lower([
+                0x6f7a6972612f7375,
+                0x202020202000616e,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_PHOENIX,
+        ),
+        (
+            Lower([
+                0x2f63696669636170,
+                0x726569626d6167,
+                0x2020202020202020,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::PACIFIC_GAMBIER,
+        ),
+        (
+            Lower([
+                0x2f61636972656d61,
+                0x736e686f6a7f7473,
+                0x2020202020202000,
+                0x2020202020202020,
+            ]),
+            raw_tzdata::AMERICA_ST_JOHNS,
         ),
     ],
 };
 
 #[cfg(feature = "list")]
-pub(crate) const TIME_ZONES_LIST: [&str; 572] = [
+pub(crate) const TIME_ZONES_LIST: [&str; 571] = [
     "Africa/Abidjan",
     "Africa/Accra",
     "Africa/Addis_Ababa",
@@ -15470,7 +15444,6 @@ pub(crate) const TIME_ZONES_LIST: [&str; 572] = [
     "Asia/Dushanbe",
     "Asia/Famagusta",
     "Asia/Gaza",
-    "Asia/Hanoi",
     "Asia/Harbin",
     "Asia/Hebron",
     "Asia/Ho_Chi_Minh",
@@ -18200,35 +18173,6 @@ mod tzdata {
         Err(e) => panic!("{}", e.0),
     };
 
-    pub(crate) const AFRICA_TIMBUKTU: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
-        &[Transition::new(-1830383276, 1)],
-        &{
-            const V: [LocalTimeType; 2] = [
-                match LocalTimeType::new(-724, false, Some(b"LMT")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-                match LocalTimeType::new(0, false, Some(b"GMT")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-            ];
-            V
-        },
-        &[],
-        &Some({
-            const V: TransitionRule =
-                TransitionRule::Fixed(match LocalTimeType::new(0, false, Some(b"GMT")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                });
-            V
-        }),
-    ) {
-        Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
-    };
-
     pub(crate) const AFRICA_TUNIS: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
         &[
             Transition::new(-2797202444, 1),
@@ -20890,56 +20834,6 @@ mod tzdata {
         Err(e) => panic!("{}", e.0),
     };
 
-    pub(crate) const AMERICA_CORAL_HARBOUR: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
-        &[
-            Transition::new(-2713890440, 2),
-            Transition::new(-1632070800, 1),
-            Transition::new(-1615140000, 2),
-            Transition::new(-1596992400, 1),
-            Transition::new(-1583179200, 2),
-            Transition::new(-880218000, 3),
-            Transition::new(-769395600, 4),
-            Transition::new(-765396000, 2),
-        ],
-        &{
-            const V: [LocalTimeType; 5] = [
-                match LocalTimeType::new(-19960, false, Some(b"LMT")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-                match LocalTimeType::new(-14400, true, Some(b"EDT")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-                match LocalTimeType::new(-18000, false, Some(b"EST")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-                match LocalTimeType::new(-14400, true, Some(b"EWT")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-                match LocalTimeType::new(-14400, true, Some(b"EPT")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-            ];
-            V
-        },
-        &[],
-        &Some({
-            const V: TransitionRule =
-                TransitionRule::Fixed(match LocalTimeType::new(-18000, false, Some(b"EST")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                });
-            V
-        }),
-    ) {
-        Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
-    };
-
     pub(crate) const AMERICA_CORDOBA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
         &[
             Transition::new(-2372096592, 1),
@@ -22057,31 +21951,103 @@ mod tzdata {
     pub(crate) const AMERICA_ENSENADA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
         &[
             Transition::new(-1514736000, 1),
-            Transition::new(-1343062800, 2),
-            Transition::new(-1234717200, 1),
-            Transition::new(-875808000, 2),
-            Transition::new(-661539600, 1),
+            Transition::new(-1451667600, 2),
+            Transition::new(-1343062800, 1),
+            Transition::new(-1234803600, 2),
+            Transition::new(-1222963200, 3),
+            Transition::new(-1207242000, 2),
+            Transition::new(-873820800, 4),
+            Transition::new(-769395600, 5),
+            Transition::new(-761677200, 2),
+            Transition::new(-686073600, 3),
+            Transition::new(-661539600, 2),
+            Transition::new(-495039600, 3),
+            Transition::new(-481734000, 2),
+            Transition::new(-463590000, 3),
+            Transition::new(-450284400, 2),
+            Transition::new(-431535600, 3),
+            Transition::new(-418230000, 2),
+            Transition::new(-400086000, 3),
+            Transition::new(-386780400, 2),
+            Transition::new(-368636400, 3),
+            Transition::new(-355330800, 2),
+            Transition::new(-337186800, 3),
+            Transition::new(-323881200, 2),
+            Transition::new(-305737200, 3),
+            Transition::new(-292431600, 2),
+            Transition::new(199274400, 3),
+            Transition::new(215600400, 2),
+            Transition::new(230724000, 3),
+            Transition::new(247050000, 2),
+            Transition::new(262778400, 3),
+            Transition::new(278499600, 2),
+            Transition::new(294228000, 3),
+            Transition::new(309949200, 2),
+            Transition::new(325677600, 3),
+            Transition::new(341398800, 2),
+            Transition::new(357127200, 3),
+            Transition::new(372848400, 2),
+            Transition::new(388576800, 3),
+            Transition::new(404902800, 2),
+            Transition::new(420026400, 3),
+            Transition::new(436352400, 2),
+            Transition::new(452080800, 3),
+            Transition::new(467802000, 2),
+            Transition::new(483530400, 3),
+            Transition::new(499251600, 2),
+            Transition::new(514980000, 3),
+            Transition::new(530701200, 2),
+            Transition::new(544615200, 3),
+            Transition::new(562150800, 2),
+            Transition::new(576064800, 3),
+            Transition::new(594205200, 2),
+            Transition::new(607514400, 3),
+            Transition::new(625654800, 2),
+            Transition::new(638964000, 3),
+            Transition::new(657104400, 2),
+            Transition::new(671018400, 3),
+            Transition::new(688554000, 2),
+            Transition::new(702468000, 3),
+            Transition::new(720003600, 2),
+            Transition::new(733917600, 3),
+            Transition::new(752058000, 2),
+            Transition::new(765367200, 3),
+            Transition::new(783507600, 2),
+            Transition::new(796816800, 3),
+            Transition::new(814957200, 2),
             Transition::new(828871200, 3),
-            Transition::new(846406800, 1),
+            Transition::new(846406800, 2),
             Transition::new(860320800, 3),
-            Transition::new(877856400, 1),
+            Transition::new(877856400, 2),
             Transition::new(891770400, 3),
-            Transition::new(909306000, 1),
+            Transition::new(909306000, 2),
             Transition::new(923220000, 3),
-            Transition::new(941360400, 1),
+            Transition::new(941360400, 2),
             Transition::new(954669600, 3),
-            Transition::new(972810000, 1),
-            Transition::new(989143200, 3),
-            Transition::new(1001840400, 1),
+            Transition::new(972810000, 2),
+            Transition::new(986119200, 3),
+            Transition::new(1004259600, 2),
             Transition::new(1018173600, 3),
+            Transition::new(1035709200, 2),
+            Transition::new(1049623200, 3),
+            Transition::new(1067158800, 2),
+            Transition::new(1081072800, 3),
+            Transition::new(1099213200, 2),
+            Transition::new(1112522400, 3),
+            Transition::new(1130662800, 2),
+            Transition::new(1143972000, 3),
+            Transition::new(1162112400, 2),
+            Transition::new(1175421600, 3),
+            Transition::new(1193562000, 2),
+            Transition::new(1207476000, 3),
+            Transition::new(1225011600, 2),
+            Transition::new(1238925600, 3),
+            Transition::new(1256461200, 2),
+            Transition::new(1268560800, 3),
         ],
         &{
-            const V: [LocalTimeType; 4] = [
-                match LocalTimeType::new(-27988, false, Some(b"LMT")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-                match LocalTimeType::new(-28800, false, Some(b"PST")) {
+            const V: [LocalTimeType; 6] = [
+                match LocalTimeType::new(-28084, false, Some(b"LMT")) {
                     Ok(v) => v,
                     Err(e) => panic!("{}", e.0),
                 },
@@ -22089,7 +22055,19 @@ mod tzdata {
                     Ok(v) => v,
                     Err(e) => panic!("{}", e.0),
                 },
+                match LocalTimeType::new(-28800, false, Some(b"PST")) {
+                    Ok(v) => v,
+                    Err(e) => panic!("{}", e.0),
+                },
                 match LocalTimeType::new(-25200, true, Some(b"PDT")) {
+                    Ok(v) => v,
+                    Err(e) => panic!("{}", e.0),
+                },
+                match LocalTimeType::new(-25200, true, Some(b"PWT")) {
+                    Ok(v) => v,
+                    Err(e) => panic!("{}", e.0),
+                },
+                match LocalTimeType::new(-25200, true, Some(b"PPT")) {
                     Ok(v) => v,
                     Err(e) => panic!("{}", e.0),
                 },
@@ -22108,12 +22086,12 @@ mod tzdata {
                         Ok(v) => v,
                         Err(e) => panic!("{}", e.0),
                     },
-                    RuleDay::MonthWeekDay(match MonthWeekDay::new(4, 1, 0) {
+                    RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 2, 0) {
                         Ok(v) => v,
                         Err(e) => panic!("{}", e.0),
                     }),
                     7200,
-                    RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 0) {
+                    RuleDay::MonthWeekDay(match MonthWeekDay::new(11, 1, 0) {
                         Ok(v) => v,
                         Err(e) => panic!("{}", e.0),
                     }),
@@ -26229,65 +26207,65 @@ mod tzdata {
 
     pub(crate) const AMERICA_MONTREAL: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
         &[
-            Transition::new(-2713892744, 2),
-            Transition::new(-1665334800, 1),
-            Transition::new(-1662753600, 2),
+            Transition::new(-2366736148, 2),
             Transition::new(-1632070800, 1),
             Transition::new(-1615140000, 2),
-            Transition::new(-1601742600, 1),
-            Transition::new(-1583775000, 2),
-            Transition::new(-1567355400, 1),
-            Transition::new(-1554053400, 2),
-            Transition::new(-1535907600, 1),
-            Transition::new(-1522603800, 2),
-            Transition::new(-1504458000, 1),
-            Transition::new(-1491154200, 2),
-            Transition::new(-1439830800, 1),
-            Transition::new(-1428255000, 2),
+            Transition::new(-1601753400, 1),
+            Transition::new(-1583697600, 2),
+            Transition::new(-1567357200, 1),
+            Transition::new(-1554667200, 2),
+            Transition::new(-1534698000, 1),
+            Transition::new(-1524074400, 2),
+            Transition::new(-1503248400, 1),
+            Transition::new(-1492365600, 2),
+            Transition::new(-1471798800, 1),
+            Transition::new(-1460916000, 2),
+            Transition::new(-1440954000, 1),
+            Transition::new(-1428861600, 2),
             Transition::new(-1409504400, 1),
-            Transition::new(-1396805400, 2),
+            Transition::new(-1397412000, 2),
             Transition::new(-1378054800, 1),
-            Transition::new(-1365355800, 2),
-            Transition::new(-1346612400, 1),
-            Transition::new(-1333915200, 2),
-            Transition::new(-1315162800, 1),
-            Transition::new(-1301860800, 2),
-            Transition::new(-1283713200, 1),
-            Transition::new(-1270411200, 2),
-            Transition::new(-1252263600, 1),
-            Transition::new(-1238961600, 2),
-            Transition::new(-1220814000, 1),
-            Transition::new(-1207512000, 2),
-            Transition::new(-1188759600, 1),
-            Transition::new(-1176062400, 2),
-            Transition::new(-1157310000, 1),
-            Transition::new(-1144008000, 2),
-            Transition::new(-1125860400, 1),
-            Transition::new(-1112558400, 2),
-            Transition::new(-1094410800, 1),
-            Transition::new(-1081108800, 2),
-            Transition::new(-1062961200, 1),
-            Transition::new(-1049659200, 2),
-            Transition::new(-1031511600, 1),
-            Transition::new(-1018209600, 2),
-            Transition::new(-1000062000, 1),
-            Transition::new(-986760000, 2),
-            Transition::new(-968007600, 1),
-            Transition::new(-955310400, 2),
-            Transition::new(-936558000, 1),
+            Transition::new(-1365962400, 2),
+            Transition::new(-1346605200, 1),
+            Transition::new(-1333908000, 2),
+            Transition::new(-1315155600, 1),
+            Transition::new(-1301853600, 2),
+            Transition::new(-1283706000, 1),
+            Transition::new(-1270404000, 2),
+            Transition::new(-1252256400, 1),
+            Transition::new(-1238954400, 2),
+            Transition::new(-1220806800, 1),
+            Transition::new(-1207504800, 2),
+            Transition::new(-1188752400, 1),
+            Transition::new(-1176055200, 2),
+            Transition::new(-1157302800, 1),
+            Transition::new(-1144000800, 2),
+            Transition::new(-1125853200, 1),
+            Transition::new(-1112551200, 2),
+            Transition::new(-1094403600, 1),
+            Transition::new(-1081101600, 2),
+            Transition::new(-1062954000, 1),
+            Transition::new(-1049652000, 2),
+            Transition::new(-1031504400, 1),
+            Transition::new(-1018202400, 2),
+            Transition::new(-1000054800, 1),
+            Transition::new(-986752800, 2),
+            Transition::new(-968000400, 1),
+            Transition::new(-955303200, 2),
+            Transition::new(-936550800, 1),
             Transition::new(-880218000, 3),
             Transition::new(-769395600, 4),
             Transition::new(-765396000, 2),
             Transition::new(-747248400, 1),
             Transition::new(-733946400, 2),
-            Transition::new(-715798800, 1),
-            Transition::new(-702496800, 2),
-            Transition::new(-684349200, 1),
-            Transition::new(-671047200, 2),
-            Transition::new(-652899600, 1),
-            Transition::new(-636573600, 2),
+            Transition::new(-715806000, 1),
+            Transition::new(-702504000, 2),
+            Transition::new(-684356400, 1),
+            Transition::new(-671054400, 2),
+            Transition::new(-652906800, 1),
+            Transition::new(-634161600, 2),
             Transition::new(-620845200, 1),
-            Transition::new(-605124000, 2),
+            Transition::new(-602704800, 2),
             Transition::new(-589395600, 1),
             Transition::new(-576093600, 2),
             Transition::new(-557946000, 1),
@@ -26404,7 +26382,7 @@ mod tzdata {
         ],
         &{
             const V: [LocalTimeType; 5] = [
-                match LocalTimeType::new(-17656, false, Some(b"LMT")) {
+                match LocalTimeType::new(-19052, false, Some(b"LMT")) {
                     Ok(v) => v,
                     Err(e) => panic!("{}", e.0),
                 },
@@ -28621,105 +28599,6 @@ mod tzdata {
         Err(e) => panic!("{}", e.0),
     };
 
-    pub(crate) const AMERICA_ROSARIO: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
-        &[
-            Transition::new(-2372011040, 1),
-            Transition::new(-1567453396, 2),
-            Transition::new(-1233432000, 3),
-            Transition::new(-1222981200, 2),
-            Transition::new(-1205956800, 3),
-            Transition::new(-1194037200, 2),
-            Transition::new(-1172865600, 3),
-            Transition::new(-1162501200, 2),
-            Transition::new(-1141329600, 3),
-            Transition::new(-1130965200, 2),
-            Transition::new(-1109793600, 3),
-            Transition::new(-1099429200, 2),
-            Transition::new(-1078257600, 3),
-            Transition::new(-1067806800, 2),
-            Transition::new(-1046635200, 3),
-            Transition::new(-1036270800, 2),
-            Transition::new(-1015099200, 3),
-            Transition::new(-1004734800, 2),
-            Transition::new(-983563200, 3),
-            Transition::new(-973198800, 2),
-            Transition::new(-952027200, 3),
-            Transition::new(-941576400, 2),
-            Transition::new(-931032000, 3),
-            Transition::new(-900882000, 2),
-            Transition::new(-890337600, 3),
-            Transition::new(-833749200, 2),
-            Transition::new(-827265600, 3),
-            Transition::new(-752274000, 2),
-            Transition::new(-733780800, 3),
-            Transition::new(-197326800, 2),
-            Transition::new(-190843200, 3),
-            Transition::new(-184194000, 2),
-            Transition::new(-164491200, 3),
-            Transition::new(-152658000, 2),
-            Transition::new(-132955200, 3),
-            Transition::new(-121122000, 2),
-            Transition::new(-101419200, 3),
-            Transition::new(-86821200, 2),
-            Transition::new(-71092800, 3),
-            Transition::new(-54766800, 2),
-            Transition::new(-39038400, 3),
-            Transition::new(-23317200, 2),
-            Transition::new(-7588800, 5),
-            Transition::new(128142000, 4),
-            Transition::new(136605600, 5),
-            Transition::new(596948400, 4),
-            Transition::new(605066400, 5),
-            Transition::new(624423600, 4),
-            Transition::new(636516000, 5),
-            Transition::new(656478000, 4),
-            Transition::new(667965600, 5),
-            Transition::new(938919600, 3),
-            Transition::new(952052400, 5),
-        ],
-        &{
-            const V: [LocalTimeType; 6] = [
-                match LocalTimeType::new(-14560, false, Some(b"LMT")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-                match LocalTimeType::new(-15404, false, Some(b"CMT")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-                match LocalTimeType::new(-14400, false, Some(b"-04")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-                match LocalTimeType::new(-10800, true, Some(b"-03")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-                match LocalTimeType::new(-7200, true, Some(b"-02")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-                match LocalTimeType::new(-10800, false, Some(b"-03")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-            ];
-            V
-        },
-        &[],
-        &Some({
-            const V: TransitionRule =
-                TransitionRule::Fixed(match LocalTimeType::new(-10800, false, Some(b"-03")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                });
-            V
-        }),
-    ) {
-        Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
-    };
-
     pub(crate) const AMERICA_SANTAREM: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
         &[
             Transition::new(-1767212472, 2),
@@ -28781,166 +28660,6 @@ mod tzdata {
                     Ok(v) => v,
                     Err(e) => panic!("{}", e.0),
                 });
-            V
-        }),
-    ) {
-        Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
-    };
-
-    pub(crate) const AMERICA_SANTA_ISABEL: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
-        &[
-            Transition::new(-1514736000, 1),
-            Transition::new(-1451667600, 2),
-            Transition::new(-1343062800, 1),
-            Transition::new(-1234803600, 2),
-            Transition::new(-1222963200, 3),
-            Transition::new(-1207242000, 2),
-            Transition::new(-873820800, 4),
-            Transition::new(-769395600, 5),
-            Transition::new(-761677200, 2),
-            Transition::new(-686073600, 3),
-            Transition::new(-661539600, 2),
-            Transition::new(-495039600, 3),
-            Transition::new(-481734000, 2),
-            Transition::new(-463590000, 3),
-            Transition::new(-450284400, 2),
-            Transition::new(-431535600, 3),
-            Transition::new(-418230000, 2),
-            Transition::new(-400086000, 3),
-            Transition::new(-386780400, 2),
-            Transition::new(-368636400, 3),
-            Transition::new(-355330800, 2),
-            Transition::new(-337186800, 3),
-            Transition::new(-323881200, 2),
-            Transition::new(-305737200, 3),
-            Transition::new(-292431600, 2),
-            Transition::new(199274400, 3),
-            Transition::new(215600400, 2),
-            Transition::new(230724000, 3),
-            Transition::new(247050000, 2),
-            Transition::new(262778400, 3),
-            Transition::new(278499600, 2),
-            Transition::new(294228000, 3),
-            Transition::new(309949200, 2),
-            Transition::new(325677600, 3),
-            Transition::new(341398800, 2),
-            Transition::new(357127200, 3),
-            Transition::new(372848400, 2),
-            Transition::new(388576800, 3),
-            Transition::new(404902800, 2),
-            Transition::new(420026400, 3),
-            Transition::new(436352400, 2),
-            Transition::new(452080800, 3),
-            Transition::new(467802000, 2),
-            Transition::new(483530400, 3),
-            Transition::new(499251600, 2),
-            Transition::new(514980000, 3),
-            Transition::new(530701200, 2),
-            Transition::new(544615200, 3),
-            Transition::new(562150800, 2),
-            Transition::new(576064800, 3),
-            Transition::new(594205200, 2),
-            Transition::new(607514400, 3),
-            Transition::new(625654800, 2),
-            Transition::new(638964000, 3),
-            Transition::new(657104400, 2),
-            Transition::new(671018400, 3),
-            Transition::new(688554000, 2),
-            Transition::new(702468000, 3),
-            Transition::new(720003600, 2),
-            Transition::new(733917600, 3),
-            Transition::new(752058000, 2),
-            Transition::new(765367200, 3),
-            Transition::new(783507600, 2),
-            Transition::new(796816800, 3),
-            Transition::new(814957200, 2),
-            Transition::new(828871200, 3),
-            Transition::new(846406800, 2),
-            Transition::new(860320800, 3),
-            Transition::new(877856400, 2),
-            Transition::new(891770400, 3),
-            Transition::new(909306000, 2),
-            Transition::new(923220000, 3),
-            Transition::new(941360400, 2),
-            Transition::new(954669600, 3),
-            Transition::new(972810000, 2),
-            Transition::new(986119200, 3),
-            Transition::new(1004259600, 2),
-            Transition::new(1018173600, 3),
-            Transition::new(1035709200, 2),
-            Transition::new(1049623200, 3),
-            Transition::new(1067158800, 2),
-            Transition::new(1081072800, 3),
-            Transition::new(1099213200, 2),
-            Transition::new(1112522400, 3),
-            Transition::new(1130662800, 2),
-            Transition::new(1143972000, 3),
-            Transition::new(1162112400, 2),
-            Transition::new(1175421600, 3),
-            Transition::new(1193562000, 2),
-            Transition::new(1207476000, 3),
-            Transition::new(1225011600, 2),
-            Transition::new(1238925600, 3),
-            Transition::new(1256461200, 2),
-            Transition::new(1268560800, 3),
-        ],
-        &{
-            const V: [LocalTimeType; 6] = [
-                match LocalTimeType::new(-28084, false, Some(b"LMT")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-                match LocalTimeType::new(-25200, false, Some(b"MST")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-                match LocalTimeType::new(-28800, false, Some(b"PST")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-                match LocalTimeType::new(-25200, true, Some(b"PDT")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-                match LocalTimeType::new(-25200, true, Some(b"PWT")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-                match LocalTimeType::new(-25200, true, Some(b"PPT")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-            ];
-            V
-        },
-        &[],
-        &Some({
-            const V: TransitionRule = TransitionRule::Alternate(
-                match AlternateTime::new(
-                    match LocalTimeType::new(-28800, false, Some(b"PST")) {
-                        Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
-                    },
-                    match LocalTimeType::new(-25200, true, Some(b"PDT")) {
-                        Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
-                    },
-                    RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 2, 0) {
-                        Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
-                    }),
-                    7200,
-                    RuleDay::MonthWeekDay(match MonthWeekDay::new(11, 1, 0) {
-                        Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
-                    }),
-                    7200,
-                ) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-            );
             V
         }),
     ) {
@@ -30282,240 +30001,6 @@ mod tzdata {
                     Err(e) => panic!("{}", e.0),
                 },
                 match LocalTimeType::new(-14400, true, Some(b"EDT")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-            ];
-            V
-        },
-        &[],
-        &Some({
-            const V: TransitionRule = TransitionRule::Alternate(
-                match AlternateTime::new(
-                    match LocalTimeType::new(-18000, false, Some(b"EST")) {
-                        Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
-                    },
-                    match LocalTimeType::new(-14400, true, Some(b"EDT")) {
-                        Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
-                    },
-                    RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 2, 0) {
-                        Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
-                    }),
-                    7200,
-                    RuleDay::MonthWeekDay(match MonthWeekDay::new(11, 1, 0) {
-                        Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
-                    }),
-                    7200,
-                ) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-            );
-            V
-        }),
-    ) {
-        Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
-    };
-
-    pub(crate) const AMERICA_TORONTO: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
-        &[
-            Transition::new(-2366736148, 2),
-            Transition::new(-1632070800, 1),
-            Transition::new(-1615140000, 2),
-            Transition::new(-1601753400, 1),
-            Transition::new(-1583697600, 2),
-            Transition::new(-1567357200, 1),
-            Transition::new(-1554667200, 2),
-            Transition::new(-1534698000, 1),
-            Transition::new(-1524074400, 2),
-            Transition::new(-1503248400, 1),
-            Transition::new(-1492365600, 2),
-            Transition::new(-1471798800, 1),
-            Transition::new(-1460916000, 2),
-            Transition::new(-1440954000, 1),
-            Transition::new(-1428861600, 2),
-            Transition::new(-1409504400, 1),
-            Transition::new(-1397412000, 2),
-            Transition::new(-1378054800, 1),
-            Transition::new(-1365962400, 2),
-            Transition::new(-1346605200, 1),
-            Transition::new(-1333908000, 2),
-            Transition::new(-1315155600, 1),
-            Transition::new(-1301853600, 2),
-            Transition::new(-1283706000, 1),
-            Transition::new(-1270404000, 2),
-            Transition::new(-1252256400, 1),
-            Transition::new(-1238954400, 2),
-            Transition::new(-1220806800, 1),
-            Transition::new(-1207504800, 2),
-            Transition::new(-1188752400, 1),
-            Transition::new(-1176055200, 2),
-            Transition::new(-1157302800, 1),
-            Transition::new(-1144000800, 2),
-            Transition::new(-1125853200, 1),
-            Transition::new(-1112551200, 2),
-            Transition::new(-1094403600, 1),
-            Transition::new(-1081101600, 2),
-            Transition::new(-1062954000, 1),
-            Transition::new(-1049652000, 2),
-            Transition::new(-1031504400, 1),
-            Transition::new(-1018202400, 2),
-            Transition::new(-1000054800, 1),
-            Transition::new(-986752800, 2),
-            Transition::new(-968000400, 1),
-            Transition::new(-955303200, 2),
-            Transition::new(-936550800, 1),
-            Transition::new(-880218000, 3),
-            Transition::new(-769395600, 4),
-            Transition::new(-765396000, 2),
-            Transition::new(-747248400, 1),
-            Transition::new(-733946400, 2),
-            Transition::new(-715806000, 1),
-            Transition::new(-702504000, 2),
-            Transition::new(-684356400, 1),
-            Transition::new(-671054400, 2),
-            Transition::new(-652906800, 1),
-            Transition::new(-634161600, 2),
-            Transition::new(-620845200, 1),
-            Transition::new(-602704800, 2),
-            Transition::new(-589395600, 1),
-            Transition::new(-576093600, 2),
-            Transition::new(-557946000, 1),
-            Transition::new(-544644000, 2),
-            Transition::new(-526496400, 1),
-            Transition::new(-513194400, 2),
-            Transition::new(-495046800, 1),
-            Transition::new(-481744800, 2),
-            Transition::new(-463597200, 1),
-            Transition::new(-450295200, 2),
-            Transition::new(-431542800, 1),
-            Transition::new(-418240800, 2),
-            Transition::new(-400093200, 1),
-            Transition::new(-384372000, 2),
-            Transition::new(-368643600, 1),
-            Transition::new(-352922400, 2),
-            Transition::new(-337194000, 1),
-            Transition::new(-321472800, 2),
-            Transition::new(-305744400, 1),
-            Transition::new(-289418400, 2),
-            Transition::new(-273690000, 1),
-            Transition::new(-257968800, 2),
-            Transition::new(-242240400, 1),
-            Transition::new(-226519200, 2),
-            Transition::new(-210790800, 1),
-            Transition::new(-195069600, 2),
-            Transition::new(-179341200, 1),
-            Transition::new(-163620000, 2),
-            Transition::new(-147891600, 1),
-            Transition::new(-131565600, 2),
-            Transition::new(-116442000, 1),
-            Transition::new(-100116000, 2),
-            Transition::new(-84387600, 1),
-            Transition::new(-68666400, 2),
-            Transition::new(-52938000, 1),
-            Transition::new(-37216800, 2),
-            Transition::new(-21488400, 1),
-            Transition::new(-5767200, 2),
-            Transition::new(9961200, 1),
-            Transition::new(25682400, 2),
-            Transition::new(41410800, 1),
-            Transition::new(57736800, 2),
-            Transition::new(73465200, 1),
-            Transition::new(89186400, 2),
-            Transition::new(104914800, 1),
-            Transition::new(120636000, 2),
-            Transition::new(136364400, 1),
-            Transition::new(152085600, 2),
-            Transition::new(167814000, 1),
-            Transition::new(183535200, 2),
-            Transition::new(199263600, 1),
-            Transition::new(215589600, 2),
-            Transition::new(230713200, 1),
-            Transition::new(247039200, 2),
-            Transition::new(262767600, 1),
-            Transition::new(278488800, 2),
-            Transition::new(294217200, 1),
-            Transition::new(309938400, 2),
-            Transition::new(325666800, 1),
-            Transition::new(341388000, 2),
-            Transition::new(357116400, 1),
-            Transition::new(372837600, 2),
-            Transition::new(388566000, 1),
-            Transition::new(404892000, 2),
-            Transition::new(420015600, 1),
-            Transition::new(436341600, 2),
-            Transition::new(452070000, 1),
-            Transition::new(467791200, 2),
-            Transition::new(483519600, 1),
-            Transition::new(499240800, 2),
-            Transition::new(514969200, 1),
-            Transition::new(530690400, 2),
-            Transition::new(544604400, 1),
-            Transition::new(562140000, 2),
-            Transition::new(576054000, 1),
-            Transition::new(594194400, 2),
-            Transition::new(607503600, 1),
-            Transition::new(625644000, 2),
-            Transition::new(638953200, 1),
-            Transition::new(657093600, 2),
-            Transition::new(671007600, 1),
-            Transition::new(688543200, 2),
-            Transition::new(702457200, 1),
-            Transition::new(719992800, 2),
-            Transition::new(733906800, 1),
-            Transition::new(752047200, 2),
-            Transition::new(765356400, 1),
-            Transition::new(783496800, 2),
-            Transition::new(796806000, 1),
-            Transition::new(814946400, 2),
-            Transition::new(828860400, 1),
-            Transition::new(846396000, 2),
-            Transition::new(860310000, 1),
-            Transition::new(877845600, 2),
-            Transition::new(891759600, 1),
-            Transition::new(909295200, 2),
-            Transition::new(923209200, 1),
-            Transition::new(941349600, 2),
-            Transition::new(954658800, 1),
-            Transition::new(972799200, 2),
-            Transition::new(986108400, 1),
-            Transition::new(1004248800, 2),
-            Transition::new(1018162800, 1),
-            Transition::new(1035698400, 2),
-            Transition::new(1049612400, 1),
-            Transition::new(1067148000, 2),
-            Transition::new(1081062000, 1),
-            Transition::new(1099202400, 2),
-            Transition::new(1112511600, 1),
-            Transition::new(1130652000, 2),
-            Transition::new(1143961200, 1),
-            Transition::new(1162101600, 2),
-            Transition::new(1173596400, 1),
-        ],
-        &{
-            const V: [LocalTimeType; 5] = [
-                match LocalTimeType::new(-19052, false, Some(b"LMT")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-                match LocalTimeType::new(-14400, true, Some(b"EDT")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-                match LocalTimeType::new(-18000, false, Some(b"EST")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-                match LocalTimeType::new(-14400, true, Some(b"EWT")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-                match LocalTimeType::new(-14400, true, Some(b"EPT")) {
                     Ok(v) => v,
                     Err(e) => panic!("{}", e.0),
                 },
@@ -33828,58 +33313,6 @@ mod tzdata {
         Err(e) => panic!("{}", e.0),
     };
 
-    pub(crate) const ASIA_CHONGQING: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
-        &[
-            Transition::new(-1325487980, 1),
-            Transition::new(325962000, 3),
-            Transition::new(515527200, 2),
-            Transition::new(527014800, 3),
-            Transition::new(545162400, 2),
-            Transition::new(558464400, 3),
-            Transition::new(577216800, 2),
-            Transition::new(589914000, 3),
-            Transition::new(608666400, 2),
-            Transition::new(621968400, 3),
-            Transition::new(640116000, 2),
-            Transition::new(653418000, 3),
-            Transition::new(671565600, 2),
-            Transition::new(684867600, 3),
-        ],
-        &{
-            const V: [LocalTimeType; 4] = [
-                match LocalTimeType::new(25580, false, Some(b"LMT")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-                match LocalTimeType::new(25200, false, Some(b"+07")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-                match LocalTimeType::new(32400, true, Some(b"CDT")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-                match LocalTimeType::new(28800, false, Some(b"CST")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-            ];
-            V
-        },
-        &[],
-        &Some({
-            const V: TransitionRule =
-                TransitionRule::Fixed(match LocalTimeType::new(28800, false, Some(b"CST")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                });
-            V
-        }),
-    ) {
-        Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
-    };
-
     pub(crate) const ASIA_COLOMBO: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
         &[
             Transition::new(-2840159964, 1),
@@ -34594,114 +34027,6 @@ mod tzdata {
                     Err(e) => panic!("{}", e.0),
                 },
             );
-            V
-        }),
-    ) {
-        Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
-    };
-
-    pub(crate) const ASIA_HANOI: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
-        &[
-            Transition::new(-2004073404, 1),
-            Transition::new(-1851577590, 2),
-            Transition::new(-852105600, 3),
-            Transition::new(-782643600, 4),
-            Transition::new(-767869200, 2),
-            Transition::new(-718095600, 3),
-            Transition::new(-481363200, 2),
-        ],
-        &{
-            const V: [LocalTimeType; 5] = [
-                match LocalTimeType::new(25404, false, Some(b"LMT")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-                match LocalTimeType::new(25590, false, Some(b"PLMT")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-                match LocalTimeType::new(25200, false, Some(b"+07")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-                match LocalTimeType::new(28800, false, Some(b"+08")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-                match LocalTimeType::new(32400, false, Some(b"+09")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-            ];
-            V
-        },
-        &[],
-        &Some({
-            const V: TransitionRule =
-                TransitionRule::Fixed(match LocalTimeType::new(25200, false, Some(b"+07")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                });
-            V
-        }),
-    ) {
-        Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
-    };
-
-    pub(crate) const ASIA_HARBIN: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
-        &[
-            Transition::new(-1325492804, 1),
-            Transition::new(-1194078600, 2),
-            Transition::new(-946800000, 3),
-            Transition::new(-115894800, 1),
-            Transition::new(325956600, 2),
-            Transition::new(515527200, 4),
-            Transition::new(527014800, 2),
-            Transition::new(545162400, 4),
-            Transition::new(558464400, 2),
-            Transition::new(577216800, 4),
-            Transition::new(589914000, 2),
-            Transition::new(608666400, 4),
-            Transition::new(621968400, 2),
-            Transition::new(640116000, 4),
-            Transition::new(653418000, 2),
-            Transition::new(671565600, 4),
-            Transition::new(684867600, 2),
-        ],
-        &{
-            const V: [LocalTimeType; 5] = [
-                match LocalTimeType::new(30404, false, Some(b"LMT")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-                match LocalTimeType::new(30600, false, Some(b"+0830")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-                match LocalTimeType::new(28800, false, Some(b"CST")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-                match LocalTimeType::new(32400, false, Some(b"+09")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-                match LocalTimeType::new(32400, true, Some(b"CDT")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-            ];
-            V
-        },
-        &[],
-        &Some({
-            const V: TransitionRule =
-                TransitionRule::Fixed(match LocalTimeType::new(28800, false, Some(b"CST")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                });
             V
         }),
     ) {
@@ -35445,42 +34770,14 @@ mod tzdata {
     };
 
     pub(crate) const ASIA_KASHGAR: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
-        &[
-            Transition::new(-1325480636, 1),
-            Transition::new(-946791000, 2),
-            Transition::new(325969200, 4),
-            Transition::new(515527200, 3),
-            Transition::new(527014800, 4),
-            Transition::new(545162400, 3),
-            Transition::new(558464400, 4),
-            Transition::new(577216800, 3),
-            Transition::new(589914000, 4),
-            Transition::new(608666400, 3),
-            Transition::new(621968400, 4),
-            Transition::new(640116000, 3),
-            Transition::new(653418000, 4),
-            Transition::new(671565600, 3),
-            Transition::new(684867600, 4),
-        ],
+        &[Transition::new(-1325483420, 1)],
         &{
-            const V: [LocalTimeType; 5] = [
-                match LocalTimeType::new(18236, false, Some(b"LMT")) {
+            const V: [LocalTimeType; 2] = [
+                match LocalTimeType::new(21020, false, Some(b"LMT")) {
                     Ok(v) => v,
                     Err(e) => panic!("{}", e.0),
                 },
-                match LocalTimeType::new(19800, false, Some(b"+0530")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-                match LocalTimeType::new(18000, false, Some(b"+05")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-                match LocalTimeType::new(32400, true, Some(b"CDT")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-                match LocalTimeType::new(28800, false, Some(b"CST")) {
+                match LocalTimeType::new(21600, false, Some(b"+06")) {
                     Ok(v) => v,
                     Err(e) => panic!("{}", e.0),
                 },
@@ -35490,7 +34787,7 @@ mod tzdata {
         &[],
         &Some({
             const V: TransitionRule =
-                TransitionRule::Fixed(match LocalTimeType::new(28800, false, Some(b"CST")) {
+                TransitionRule::Fixed(match LocalTimeType::new(21600, false, Some(b"+06")) {
                     Ok(v) => v,
                     Err(e) => panic!("{}", e.0),
                 });
@@ -37705,168 +37002,6 @@ mod tzdata {
         Err(e) => panic!("{}", e.0),
     };
 
-    pub(crate) const ASIA_TEL_AVIV: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
-        &[
-            Transition::new(-2840149144, 1),
-            Transition::new(-1641003660, 3),
-            Transition::new(-933638400, 2),
-            Transition::new(-923097600, 3),
-            Transition::new(-919036800, 2),
-            Transition::new(-857347200, 3),
-            Transition::new(-844300800, 2),
-            Transition::new(-825811200, 3),
-            Transition::new(-812678400, 2),
-            Transition::new(-794188800, 3),
-            Transition::new(-779846400, 2),
-            Transition::new(-762652800, 3),
-            Transition::new(-748310400, 2),
-            Transition::new(-731116800, 3),
-            Transition::new(-681955200, 4),
-            Transition::new(-673228800, 2),
-            Transition::new(-667958400, 3),
-            Transition::new(-652320000, 2),
-            Transition::new(-636422400, 3),
-            Transition::new(-622080000, 2),
-            Transition::new(-608947200, 3),
-            Transition::new(-591840000, 2),
-            Transition::new(-572486400, 3),
-            Transition::new(-558576000, 2),
-            Transition::new(-542851200, 3),
-            Transition::new(-527731200, 2),
-            Transition::new(-514425600, 3),
-            Transition::new(-490838400, 2),
-            Transition::new(-482976000, 3),
-            Transition::new(-459388800, 2),
-            Transition::new(-451526400, 3),
-            Transition::new(-428544000, 2),
-            Transition::new(-418262400, 3),
-            Transition::new(-400118400, 2),
-            Transition::new(-387417600, 3),
-            Transition::new(142380000, 2),
-            Transition::new(150843600, 3),
-            Transition::new(167176800, 2),
-            Transition::new(178664400, 3),
-            Transition::new(334101600, 2),
-            Transition::new(337730400, 3),
-            Transition::new(452642400, 2),
-            Transition::new(462319200, 3),
-            Transition::new(482277600, 2),
-            Transition::new(494370000, 3),
-            Transition::new(516751200, 2),
-            Transition::new(526424400, 3),
-            Transition::new(545436000, 2),
-            Transition::new(558478800, 3),
-            Transition::new(576626400, 2),
-            Transition::new(589323600, 3),
-            Transition::new(609890400, 2),
-            Transition::new(620773200, 3),
-            Transition::new(638316000, 2),
-            Transition::new(651618000, 3),
-            Transition::new(669765600, 2),
-            Transition::new(683672400, 3),
-            Transition::new(701820000, 2),
-            Transition::new(715726800, 3),
-            Transition::new(733701600, 2),
-            Transition::new(747176400, 3),
-            Transition::new(765151200, 2),
-            Transition::new(778021200, 3),
-            Transition::new(796600800, 2),
-            Transition::new(810075600, 3),
-            Transition::new(826840800, 2),
-            Transition::new(842821200, 3),
-            Transition::new(858895200, 2),
-            Transition::new(874184400, 3),
-            Transition::new(890344800, 2),
-            Transition::new(905029200, 3),
-            Transition::new(923011200, 2),
-            Transition::new(936313200, 3),
-            Transition::new(955670400, 2),
-            Transition::new(970783200, 3),
-            Transition::new(986770800, 2),
-            Transition::new(1001282400, 3),
-            Transition::new(1017356400, 2),
-            Transition::new(1033941600, 3),
-            Transition::new(1048806000, 2),
-            Transition::new(1065132000, 3),
-            Transition::new(1081292400, 2),
-            Transition::new(1095804000, 3),
-            Transition::new(1112313600, 2),
-            Transition::new(1128812400, 3),
-            Transition::new(1143763200, 2),
-            Transition::new(1159657200, 3),
-            Transition::new(1175212800, 2),
-            Transition::new(1189897200, 3),
-            Transition::new(1206662400, 2),
-            Transition::new(1223161200, 3),
-            Transition::new(1238112000, 2),
-            Transition::new(1254006000, 3),
-            Transition::new(1269561600, 2),
-            Transition::new(1284246000, 3),
-            Transition::new(1301616000, 2),
-            Transition::new(1317510000, 3),
-            Transition::new(1333065600, 2),
-            Transition::new(1348354800, 3),
-            Transition::new(1364515200, 2),
-        ],
-        &{
-            const V: [LocalTimeType; 5] = [
-                match LocalTimeType::new(8344, false, Some(b"LMT")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-                match LocalTimeType::new(8460, false, Some(b"JMT")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-                match LocalTimeType::new(10800, true, Some(b"IDT")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-                match LocalTimeType::new(7200, false, Some(b"IST")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-                match LocalTimeType::new(14400, true, Some(b"IDDT")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-            ];
-            V
-        },
-        &[],
-        &Some({
-            const V: TransitionRule = TransitionRule::Alternate(
-                match AlternateTime::new(
-                    match LocalTimeType::new(7200, false, Some(b"IST")) {
-                        Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
-                    },
-                    match LocalTimeType::new(10800, true, Some(b"IDT")) {
-                        Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
-                    },
-                    RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 4, 4) {
-                        Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
-                    }),
-                    93600,
-                    RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 0) {
-                        Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
-                    }),
-                    7200,
-                ) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-            );
-            V
-        }),
-    ) {
-        Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
-    };
-
     pub(crate) const ASIA_THIMBU: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
         &[
             Transition::new(-706341516, 1),
@@ -38090,35 +37225,6 @@ mod tzdata {
         &Some({
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(28800, false, Some(b"+08")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                });
-            V
-        }),
-    ) {
-        Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
-    };
-
-    pub(crate) const ASIA_URUMQI: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
-        &[Transition::new(-1325483420, 1)],
-        &{
-            const V: [LocalTimeType; 2] = [
-                match LocalTimeType::new(21020, false, Some(b"LMT")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-                match LocalTimeType::new(21600, false, Some(b"+06")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-            ];
-            V
-        },
-        &[],
-        &Some({
-            const V: TransitionRule =
-                TransitionRule::Fixed(match LocalTimeType::new(21600, false, Some(b"+06")) {
                     Ok(v) => v,
                     Err(e) => panic!("{}", e.0),
                 });
@@ -39328,29 +38434,6 @@ mod tzdata {
         Err(e) => panic!("{}", e.0),
     };
 
-    pub(crate) const ATLANTIC_JAN_MAYEN: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
-        &[],
-        &{
-            const V: [LocalTimeType; 1] = [match LocalTimeType::new(-3600, false, Some(b"-01")) {
-                Ok(v) => v,
-                Err(e) => panic!("{}", e.0),
-            }];
-            V
-        },
-        &[],
-        &Some({
-            const V: TransitionRule =
-                TransitionRule::Fixed(match LocalTimeType::new(-3600, false, Some(b"-01")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                });
-            V
-        }),
-    ) {
-        Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
-    };
-
     pub(crate) const ATLANTIC_MADEIRA: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
         &[
             Transition::new(-2713906344, 1),
@@ -40222,7 +39305,7 @@ mod tzdata {
 
     pub(crate) const AUSTRALIA_CURRIE: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
         &[
-            Transition::new(-2345794528, 2),
+            Transition::new(-2345795356, 2),
             Transition::new(-1680508800, 1),
             Transition::new(-1665388800, 2),
             Transition::new(-1646640000, 1),
@@ -40235,6 +39318,8 @@ mod tzdata {
             Transition::new(-844675200, 2),
             Transition::new(-828345600, 1),
             Transition::new(-813225600, 2),
+            Transition::new(-71136000, 1),
+            Transition::new(-55411200, 2),
             Transition::new(-37267200, 1),
             Transition::new(-25776000, 2),
             Transition::new(-5817600, 1),
@@ -40317,7 +39402,7 @@ mod tzdata {
         ],
         &{
             const V: [LocalTimeType; 3] = [
-                match LocalTimeType::new(34528, false, Some(b"LMT")) {
+                match LocalTimeType::new(35356, false, Some(b"LMT")) {
                     Ok(v) => v,
                     Err(e) => panic!("{}", e.0),
                 },
@@ -40460,154 +39545,6 @@ mod tzdata {
                     Ok(v) => v,
                     Err(e) => panic!("{}", e.0),
                 });
-            V
-        }),
-    ) {
-        Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
-    };
-
-    pub(crate) const AUSTRALIA_HOBART: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
-        &[
-            Transition::new(-2345795356, 2),
-            Transition::new(-1680508800, 1),
-            Transition::new(-1665388800, 2),
-            Transition::new(-1646640000, 1),
-            Transition::new(-1635753600, 2),
-            Transition::new(-1615190400, 1),
-            Transition::new(-1604304000, 2),
-            Transition::new(-883641600, 1),
-            Transition::new(-876124800, 2),
-            Transition::new(-860400000, 1),
-            Transition::new(-844675200, 2),
-            Transition::new(-828345600, 1),
-            Transition::new(-813225600, 2),
-            Transition::new(-71136000, 1),
-            Transition::new(-55411200, 2),
-            Transition::new(-37267200, 1),
-            Transition::new(-25776000, 2),
-            Transition::new(-5817600, 1),
-            Transition::new(5673600, 2),
-            Transition::new(25632000, 1),
-            Transition::new(37728000, 2),
-            Transition::new(57686400, 1),
-            Transition::new(67968000, 2),
-            Transition::new(89136000, 1),
-            Transition::new(100022400, 2),
-            Transition::new(120585600, 1),
-            Transition::new(131472000, 2),
-            Transition::new(152035200, 1),
-            Transition::new(162921600, 2),
-            Transition::new(183484800, 1),
-            Transition::new(194976000, 2),
-            Transition::new(215539200, 1),
-            Transition::new(226425600, 2),
-            Transition::new(246988800, 1),
-            Transition::new(257875200, 2),
-            Transition::new(278438400, 1),
-            Transition::new(289324800, 2),
-            Transition::new(309888000, 1),
-            Transition::new(320774400, 2),
-            Transition::new(341337600, 1),
-            Transition::new(352224000, 2),
-            Transition::new(372787200, 1),
-            Transition::new(386092800, 2),
-            Transition::new(404841600, 1),
-            Transition::new(417542400, 2),
-            Transition::new(436291200, 1),
-            Transition::new(447177600, 2),
-            Transition::new(467740800, 1),
-            Transition::new(478627200, 2),
-            Transition::new(499190400, 1),
-            Transition::new(510076800, 2),
-            Transition::new(530035200, 1),
-            Transition::new(542736000, 2),
-            Transition::new(562089600, 1),
-            Transition::new(574790400, 2),
-            Transition::new(594144000, 1),
-            Transition::new(606240000, 2),
-            Transition::new(625593600, 1),
-            Transition::new(637689600, 2),
-            Transition::new(657043200, 1),
-            Transition::new(670348800, 2),
-            Transition::new(686678400, 1),
-            Transition::new(701798400, 2),
-            Transition::new(718128000, 1),
-            Transition::new(733248000, 2),
-            Transition::new(749577600, 1),
-            Transition::new(764697600, 2),
-            Transition::new(781027200, 1),
-            Transition::new(796147200, 2),
-            Transition::new(812476800, 1),
-            Transition::new(828201600, 2),
-            Transition::new(844531200, 1),
-            Transition::new(859651200, 2),
-            Transition::new(875980800, 1),
-            Transition::new(891100800, 2),
-            Transition::new(907430400, 1),
-            Transition::new(922550400, 2),
-            Transition::new(938880000, 1),
-            Transition::new(954000000, 2),
-            Transition::new(967305600, 1),
-            Transition::new(985449600, 2),
-            Transition::new(1002384000, 1),
-            Transition::new(1017504000, 2),
-            Transition::new(1033833600, 1),
-            Transition::new(1048953600, 2),
-            Transition::new(1065283200, 1),
-            Transition::new(1080403200, 2),
-            Transition::new(1096732800, 1),
-            Transition::new(1111852800, 2),
-            Transition::new(1128182400, 1),
-            Transition::new(1143907200, 2),
-            Transition::new(1159632000, 1),
-            Transition::new(1174752000, 2),
-            Transition::new(1191686400, 1),
-        ],
-        &{
-            const V: [LocalTimeType; 3] = [
-                match LocalTimeType::new(35356, false, Some(b"LMT")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-                match LocalTimeType::new(39600, true, Some(b"AEDT")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-                match LocalTimeType::new(36000, false, Some(b"AEST")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-            ];
-            V
-        },
-        &[],
-        &Some({
-            const V: TransitionRule = TransitionRule::Alternate(
-                match AlternateTime::new(
-                    match LocalTimeType::new(36000, false, Some(b"AEST")) {
-                        Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
-                    },
-                    match LocalTimeType::new(39600, true, Some(b"AEDT")) {
-                        Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
-                    },
-                    RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 1, 0) {
-                        Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
-                    }),
-                    7200,
-                    RuleDay::MonthWeekDay(match MonthWeekDay::new(4, 1, 0) {
-                        Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
-                    }),
-                    10800,
-                ) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-            );
             V
         }),
     ) {
@@ -42527,6 +41464,29 @@ mod tzdata {
         Err(e) => panic!("{}", e.0),
     };
 
+    pub(crate) const ETC_GMT_PLUS_1: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
+        &[],
+        &{
+            const V: [LocalTimeType; 1] = [match LocalTimeType::new(-3600, false, Some(b"-01")) {
+                Ok(v) => v,
+                Err(e) => panic!("{}", e.0),
+            }];
+            V
+        },
+        &[],
+        &Some({
+            const V: TransitionRule =
+                TransitionRule::Fixed(match LocalTimeType::new(-3600, false, Some(b"-01")) {
+                    Ok(v) => v,
+                    Err(e) => panic!("{}", e.0),
+                });
+            V
+        }),
+    ) {
+        Ok(v) => v,
+        Err(e) => panic!("{}", e.0),
+    };
+
     pub(crate) const ETC_GMT_PLUS_10: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
         &[],
         &{
@@ -43245,235 +42205,6 @@ mod tzdata {
                         Err(e) => panic!("{}", e.0),
                     }),
                     14400,
-                ) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-            );
-            V
-        }),
-    ) {
-        Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
-    };
-
-    pub(crate) const EUROPE_BELFAST: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
-        &[
-            Transition::new(-2821649780, 1),
-            Transition::new(-1691962479, 2),
-            Transition::new(-1680471279, 4),
-            Transition::new(-1664143200, 3),
-            Transition::new(-1650146400, 4),
-            Transition::new(-1633903200, 3),
-            Transition::new(-1617487200, 4),
-            Transition::new(-1601848800, 3),
-            Transition::new(-1586037600, 4),
-            Transition::new(-1570399200, 3),
-            Transition::new(-1552168800, 4),
-            Transition::new(-1538344800, 3),
-            Transition::new(-1522533600, 4),
-            Transition::new(-1507500000, 3),
-            Transition::new(-1490565600, 4),
-            Transition::new(-1473631200, 3),
-            Transition::new(-1460930400, 4),
-            Transition::new(-1442786400, 3),
-            Transition::new(-1428876000, 4),
-            Transition::new(-1410732000, 3),
-            Transition::new(-1396216800, 4),
-            Transition::new(-1379282400, 3),
-            Transition::new(-1364767200, 4),
-            Transition::new(-1348437600, 3),
-            Transition::new(-1333317600, 4),
-            Transition::new(-1315778400, 3),
-            Transition::new(-1301263200, 4),
-            Transition::new(-1284328800, 3),
-            Transition::new(-1269813600, 4),
-            Transition::new(-1253484000, 3),
-            Transition::new(-1238364000, 4),
-            Transition::new(-1221429600, 3),
-            Transition::new(-1206914400, 4),
-            Transition::new(-1189980000, 3),
-            Transition::new(-1175464800, 4),
-            Transition::new(-1159135200, 3),
-            Transition::new(-1143410400, 4),
-            Transition::new(-1126476000, 3),
-            Transition::new(-1111960800, 4),
-            Transition::new(-1095631200, 3),
-            Transition::new(-1080511200, 4),
-            Transition::new(-1063576800, 3),
-            Transition::new(-1049061600, 4),
-            Transition::new(-1032127200, 3),
-            Transition::new(-1017612000, 4),
-            Transition::new(-1001282400, 3),
-            Transition::new(-986162400, 4),
-            Transition::new(-969228000, 3),
-            Transition::new(-950479200, 4),
-            Transition::new(-942012000, 3),
-            Transition::new(-904518000, 5),
-            Transition::new(-896050800, 3),
-            Transition::new(-875487600, 5),
-            Transition::new(-864601200, 3),
-            Transition::new(-844038000, 5),
-            Transition::new(-832546800, 3),
-            Transition::new(-812588400, 5),
-            Transition::new(-798073200, 3),
-            Transition::new(-781052400, 5),
-            Transition::new(-772066800, 3),
-            Transition::new(-764805600, 4),
-            Transition::new(-748476000, 3),
-            Transition::new(-733356000, 4),
-            Transition::new(-719445600, 3),
-            Transition::new(-717030000, 5),
-            Transition::new(-706748400, 3),
-            Transition::new(-699487200, 4),
-            Transition::new(-687996000, 3),
-            Transition::new(-668037600, 4),
-            Transition::new(-654732000, 3),
-            Transition::new(-636588000, 4),
-            Transition::new(-622072800, 3),
-            Transition::new(-605743200, 4),
-            Transition::new(-590623200, 3),
-            Transition::new(-574293600, 4),
-            Transition::new(-558568800, 3),
-            Transition::new(-542239200, 4),
-            Transition::new(-527119200, 3),
-            Transition::new(-512604000, 4),
-            Transition::new(-496274400, 3),
-            Transition::new(-481154400, 4),
-            Transition::new(-464220000, 3),
-            Transition::new(-449704800, 4),
-            Transition::new(-432165600, 3),
-            Transition::new(-417650400, 4),
-            Transition::new(-401320800, 3),
-            Transition::new(-386200800, 4),
-            Transition::new(-369266400, 3),
-            Transition::new(-354751200, 4),
-            Transition::new(-337816800, 3),
-            Transition::new(-323301600, 4),
-            Transition::new(-306972000, 3),
-            Transition::new(-291852000, 4),
-            Transition::new(-276732000, 3),
-            Transition::new(-257983200, 4),
-            Transition::new(-245282400, 3),
-            Transition::new(-226533600, 4),
-            Transition::new(-213228000, 3),
-            Transition::new(-195084000, 4),
-            Transition::new(-182383200, 3),
-            Transition::new(-163634400, 4),
-            Transition::new(-150933600, 3),
-            Transition::new(-132184800, 4),
-            Transition::new(-119484000, 3),
-            Transition::new(-100735200, 4),
-            Transition::new(-88034400, 3),
-            Transition::new(-68680800, 4),
-            Transition::new(-59004000, 3),
-            Transition::new(-37242000, 6),
-            Transition::new(57722400, 4),
-            Transition::new(69818400, 3),
-            Transition::new(89172000, 4),
-            Transition::new(101268000, 3),
-            Transition::new(120621600, 4),
-            Transition::new(132717600, 3),
-            Transition::new(152071200, 4),
-            Transition::new(164167200, 3),
-            Transition::new(183520800, 4),
-            Transition::new(196221600, 3),
-            Transition::new(214970400, 4),
-            Transition::new(227671200, 3),
-            Transition::new(246420000, 4),
-            Transition::new(259120800, 3),
-            Transition::new(278474400, 4),
-            Transition::new(290570400, 3),
-            Transition::new(309924000, 4),
-            Transition::new(322020000, 3),
-            Transition::new(341373600, 4),
-            Transition::new(354675600, 3),
-            Transition::new(372819600, 4),
-            Transition::new(386125200, 3),
-            Transition::new(404269200, 4),
-            Transition::new(417574800, 3),
-            Transition::new(435718800, 4),
-            Transition::new(449024400, 3),
-            Transition::new(467773200, 4),
-            Transition::new(481078800, 3),
-            Transition::new(499222800, 4),
-            Transition::new(512528400, 3),
-            Transition::new(530672400, 4),
-            Transition::new(543978000, 3),
-            Transition::new(562122000, 4),
-            Transition::new(575427600, 3),
-            Transition::new(593571600, 4),
-            Transition::new(606877200, 3),
-            Transition::new(625626000, 4),
-            Transition::new(638326800, 3),
-            Transition::new(657075600, 4),
-            Transition::new(670381200, 3),
-            Transition::new(688525200, 4),
-            Transition::new(701830800, 3),
-            Transition::new(719974800, 4),
-            Transition::new(733280400, 3),
-            Transition::new(751424400, 4),
-            Transition::new(764730000, 3),
-            Transition::new(782874000, 4),
-            Transition::new(796179600, 3),
-            Transition::new(814323600, 4),
-            Transition::new(828234000, 3),
-        ],
-        &{
-            const V: [LocalTimeType; 7] = [
-                match LocalTimeType::new(-1420, false, Some(b"LMT")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-                match LocalTimeType::new(-1521, false, Some(b"DMT")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-                match LocalTimeType::new(2079, true, Some(b"IST")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-                match LocalTimeType::new(3600, true, Some(b"BST")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-                match LocalTimeType::new(0, false, Some(b"GMT")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-                match LocalTimeType::new(7200, true, Some(b"BDST")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-                match LocalTimeType::new(3600, false, Some(b"BST")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-            ];
-            V
-        },
-        &[],
-        &Some({
-            const V: TransitionRule = TransitionRule::Alternate(
-                match AlternateTime::new(
-                    match LocalTimeType::new(0, false, Some(b"GMT")) {
-                        Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
-                    },
-                    match LocalTimeType::new(3600, true, Some(b"BST")) {
-                        Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
-                    },
-                    RuleDay::MonthWeekDay(match MonthWeekDay::new(3, 5, 0) {
-                        Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
-                    }),
-                    3600,
-                    RuleDay::MonthWeekDay(match MonthWeekDay::new(10, 5, 0) {
-                        Ok(v) => v,
-                        Err(e) => panic!("{}", e.0),
-                    }),
-                    7200,
                 ) {
                     Ok(v) => v,
                     Err(e) => panic!("{}", e.0),
@@ -48120,151 +46851,6 @@ mod tzdata {
         Err(e) => panic!("{}", e.0),
     };
 
-    pub(crate) const EUROPE_TIRASPOL: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
-        &[
-            Transition::new(-2840147912, 1),
-            Transition::new(-1637114100, 2),
-            Transition::new(-1213148664, 4),
-            Transition::new(-1187056800, 3),
-            Transition::new(-1175479200, 4),
-            Transition::new(-1159754400, 3),
-            Transition::new(-1144029600, 4),
-            Transition::new(-1127700000, 3),
-            Transition::new(-1111975200, 4),
-            Transition::new(-1096250400, 3),
-            Transition::new(-1080525600, 4),
-            Transition::new(-1064800800, 3),
-            Transition::new(-1049076000, 4),
-            Transition::new(-1033351200, 3),
-            Transition::new(-1017626400, 4),
-            Transition::new(-1001901600, 3),
-            Transition::new(-986176800, 4),
-            Transition::new(-970452000, 3),
-            Transition::new(-954727200, 4),
-            Transition::new(-927165600, 3),
-            Transition::new(-898138800, 6),
-            Transition::new(-857257200, 5),
-            Transition::new(-844556400, 6),
-            Transition::new(-828226800, 5),
-            Transition::new(-812502000, 6),
-            Transition::new(-800157600, 8),
-            Transition::new(354920400, 7),
-            Transition::new(370728000, 8),
-            Transition::new(386456400, 7),
-            Transition::new(402264000, 8),
-            Transition::new(417992400, 7),
-            Transition::new(433800000, 8),
-            Transition::new(449614800, 7),
-            Transition::new(465346800, 8),
-            Transition::new(481071600, 7),
-            Transition::new(496796400, 8),
-            Transition::new(512521200, 7),
-            Transition::new(528246000, 8),
-            Transition::new(543970800, 7),
-            Transition::new(559695600, 8),
-            Transition::new(575420400, 7),
-            Transition::new(591145200, 8),
-            Transition::new(606870000, 7),
-            Transition::new(622594800, 8),
-            Transition::new(638319600, 7),
-            Transition::new(654649200, 8),
-            Transition::new(670374000, 3),
-            Transition::new(686102400, 4),
-            Transition::new(695779200, 8),
-            Transition::new(701823600, 7),
-            Transition::new(717548400, 8),
-            Transition::new(733273200, 7),
-            Transition::new(748998000, 8),
-            Transition::new(764722800, 7),
-            Transition::new(780447600, 8),
-            Transition::new(796172400, 7),
-            Transition::new(811897200, 8),
-            Transition::new(828226800, 7),
-            Transition::new(846370800, 8),
-            Transition::new(859676400, 7),
-            Transition::new(877820400, 8),
-            Transition::new(891126000, 7),
-            Transition::new(909270000, 8),
-            Transition::new(922575600, 7),
-            Transition::new(941324400, 8),
-            Transition::new(954025200, 7),
-            Transition::new(972774000, 8),
-            Transition::new(985474800, 7),
-            Transition::new(1004223600, 8),
-            Transition::new(1017529200, 7),
-            Transition::new(1035673200, 8),
-            Transition::new(1048978800, 7),
-            Transition::new(1067122800, 8),
-            Transition::new(1080428400, 7),
-            Transition::new(1099177200, 8),
-            Transition::new(1111878000, 7),
-            Transition::new(1130626800, 8),
-            Transition::new(1143327600, 7),
-            Transition::new(1162076400, 8),
-            Transition::new(1174777200, 7),
-            Transition::new(1193526000, 8),
-            Transition::new(1206831600, 7),
-            Transition::new(1224975600, 8),
-            Transition::new(1238281200, 7),
-            Transition::new(1256425200, 8),
-            Transition::new(1269730800, 7),
-            Transition::new(1288479600, 8),
-        ],
-        &{
-            const V: [LocalTimeType; 9] = [
-                match LocalTimeType::new(7112, false, Some(b"LMT")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-                match LocalTimeType::new(6900, false, Some(b"CMT")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-                match LocalTimeType::new(6264, false, Some(b"BMT")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-                match LocalTimeType::new(10800, true, Some(b"EEST")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-                match LocalTimeType::new(7200, false, Some(b"EET")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-                match LocalTimeType::new(3600, false, Some(b"CET")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-                match LocalTimeType::new(7200, true, Some(b"CEST")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-                match LocalTimeType::new(14400, true, Some(b"MSD")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-                match LocalTimeType::new(10800, false, Some(b"MSK")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-            ];
-            V
-        },
-        &[],
-        &Some({
-            const V: TransitionRule =
-                TransitionRule::Fixed(match LocalTimeType::new(10800, false, Some(b"MSK")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                });
-            V
-        }),
-    ) {
-        Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
-    };
-
     pub(crate) const EUROPE_ULYANOVSK: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
         &[
             Transition::new(-1593820800, 1),
@@ -51437,22 +50023,25 @@ mod tzdata {
 
     pub(crate) const PACIFIC_ENDERBURY: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
         &[
-            Transition::new(-3471292800, 1),
-            Transition::new(-2682246940, 0),
-            Transition::new(-1004313600, 2),
-            Transition::new(-880200000, 0),
+            Transition::new(-1020470400, 1),
+            Transition::new(307627200, 2),
+            Transition::new(788871600, 3),
         ],
         &{
-            const V: [LocalTimeType; 3] = [
+            const V: [LocalTimeType; 4] = [
                 match LocalTimeType::new(0, false, Some(b"-00")) {
                     Ok(v) => v,
                     Err(e) => panic!("{}", e.0),
                 },
-                match LocalTimeType::new(-41060, false, Some(b"LMT")) {
+                match LocalTimeType::new(-43200, false, Some(b"-12")) {
                     Ok(v) => v,
                     Err(e) => panic!("{}", e.0),
                 },
-                match LocalTimeType::new(-43200, false, Some(b"-12")) {
+                match LocalTimeType::new(-39600, false, Some(b"-11")) {
+                    Ok(v) => v,
+                    Err(e) => panic!("{}", e.0),
+                },
+                match LocalTimeType::new(46800, false, Some(b"+13")) {
                     Ok(v) => v,
                     Err(e) => panic!("{}", e.0),
                 },
@@ -51462,7 +50051,7 @@ mod tzdata {
         &[],
         &Some({
             const V: TransitionRule =
-                TransitionRule::Fixed(match LocalTimeType::new(0, false, Some(b"-00")) {
+                TransitionRule::Fixed(match LocalTimeType::new(46800, false, Some(b"+13")) {
                     Ok(v) => v,
                     Err(e) => panic!("{}", e.0),
                 });
@@ -51832,47 +50421,6 @@ mod tzdata {
         &Some({
             const V: TransitionRule =
                 TransitionRule::Fixed(match LocalTimeType::new(-36000, false, Some(b"HST")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                });
-            V
-        }),
-    ) {
-        Ok(v) => v,
-        Err(e) => panic!("{}", e.0),
-    };
-
-    pub(crate) const PACIFIC_KANTON: TimeZoneRef<'static> = match TimeZoneRef::<'static>::new(
-        &[
-            Transition::new(-1020470400, 1),
-            Transition::new(307627200, 2),
-            Transition::new(788871600, 3),
-        ],
-        &{
-            const V: [LocalTimeType; 4] = [
-                match LocalTimeType::new(0, false, Some(b"-00")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-                match LocalTimeType::new(-43200, false, Some(b"-12")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-                match LocalTimeType::new(-39600, false, Some(b"-11")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-                match LocalTimeType::new(46800, false, Some(b"+13")) {
-                    Ok(v) => v,
-                    Err(e) => panic!("{}", e.0),
-                },
-            ];
-            V
-        },
-        &[],
-        &Some({
-            const V: TransitionRule =
-                TransitionRule::Fixed(match LocalTimeType::new(46800, false, Some(b"+13")) {
                     Ok(v) => v,
                     Err(e) => panic!("{}", e.0),
                 });
@@ -54587,13 +53135,6 @@ mod raw_tzdata {
         6, 80, 0, 0, 255, 255, 247, 99, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 14, 16, 0, 8, 76, 77, 84, 0,
         71, 77, 84, 0, 87, 65, 84, 0, 10, 71, 77, 84, 48, 10,
     ];
-    pub(crate) const AFRICA_TIMBUKTU: &[u8] = &[
-        84, 90, 105, 102, 50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 84, 90, 105, 102, 50,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        1, 0, 0, 0, 2, 0, 0, 0, 8, 255, 255, 255, 255, 146, 230, 145, 84, 1, 255, 255, 253, 44, 0,
-        0, 0, 0, 0, 0, 0, 4, 76, 77, 84, 0, 71, 77, 84, 0, 10, 71, 77, 84, 48, 10,
-    ];
     pub(crate) const AFRICA_TUNIS: &[u8] = &[
         84, 90, 105, 102, 50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 84, 90, 105, 102, 50,
@@ -55356,18 +53897,6 @@ mod raw_tzdata {
         160, 1, 16, 76, 77, 84, 0, 77, 83, 84, 0, 67, 83, 84, 0, 67, 68, 84, 0, 77, 68, 84, 0, 10,
         77, 83, 84, 55, 77, 68, 84, 44, 77, 52, 46, 49, 46, 48, 44, 77, 49, 48, 46, 53, 46, 48, 10,
     ];
-    pub(crate) const AMERICA_CORAL_HARBOUR: &[u8] = &[
-        84, 90, 105, 102, 50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 84, 90, 105, 102, 50,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        8, 0, 0, 0, 5, 0, 0, 0, 20, 255, 255, 255, 255, 94, 61, 81, 120, 255, 255, 255, 255, 158,
-        184, 147, 112, 255, 255, 255, 255, 159, 186, 235, 96, 255, 255, 255, 255, 160, 207, 212,
-        112, 255, 255, 255, 255, 161, 162, 154, 64, 255, 255, 255, 255, 203, 136, 240, 112, 255,
-        255, 255, 255, 210, 35, 244, 112, 255, 255, 255, 255, 210, 96, 251, 224, 2, 1, 2, 1, 2, 3,
-        4, 2, 255, 255, 178, 8, 0, 0, 255, 255, 199, 192, 1, 4, 255, 255, 185, 176, 0, 8, 255, 255,
-        199, 192, 1, 12, 255, 255, 199, 192, 1, 16, 76, 77, 84, 0, 69, 68, 84, 0, 69, 83, 84, 0,
-        69, 87, 84, 0, 69, 80, 84, 0, 10, 69, 83, 84, 53, 10,
-    ];
     pub(crate) const AMERICA_CORDOBA: &[u8] = &[
         84, 90, 105, 102, 50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 84, 90, 105, 102, 50,
@@ -55699,17 +54228,47 @@ mod raw_tzdata {
         84, 90, 105, 102, 50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 84, 90, 105, 102, 50,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        18, 0, 0, 0, 4, 0, 0, 0, 16, 255, 255, 255, 255, 165, 182, 246, 128, 255, 255, 255, 255,
-        175, 242, 124, 240, 255, 255, 255, 255, 182, 103, 181, 240, 255, 255, 255, 255, 203, 204,
-        59, 0, 255, 255, 255, 255, 216, 145, 180, 240, 0, 0, 0, 0, 49, 103, 146, 32, 0, 0, 0, 0,
-        50, 115, 36, 144, 0, 0, 0, 0, 51, 71, 116, 32, 0, 0, 0, 0, 52, 83, 6, 144, 0, 0, 0, 0, 53,
-        39, 86, 32, 0, 0, 0, 0, 54, 50, 232, 144, 0, 0, 0, 0, 55, 7, 56, 32, 0, 0, 0, 0, 56, 28, 5,
-        16, 0, 0, 0, 0, 56, 231, 26, 32, 0, 0, 0, 0, 57, 251, 231, 16, 0, 0, 0, 0, 58, 245, 32,
-        160, 0, 0, 0, 0, 59, 182, 223, 16, 0, 0, 0, 0, 60, 176, 24, 160, 1, 2, 1, 2, 1, 3, 1, 3, 1,
-        3, 1, 3, 1, 3, 1, 3, 1, 3, 255, 255, 146, 172, 0, 0, 255, 255, 143, 128, 0, 4, 255, 255,
-        157, 144, 0, 8, 255, 255, 157, 144, 1, 12, 76, 77, 84, 0, 80, 83, 84, 0, 77, 83, 84, 0, 80,
-        68, 84, 0, 10, 80, 83, 84, 56, 80, 68, 84, 44, 77, 52, 46, 49, 46, 48, 44, 77, 49, 48, 46,
-        53, 46, 48, 10,
+        94, 0, 0, 0, 6, 0, 0, 0, 24, 255, 255, 255, 255, 165, 182, 246, 128, 255, 255, 255, 255,
+        169, 121, 79, 112, 255, 255, 255, 255, 175, 242, 124, 240, 255, 255, 255, 255, 182, 102,
+        100, 112, 255, 255, 255, 255, 183, 27, 16, 0, 255, 255, 255, 255, 184, 10, 242, 240, 255,
+        255, 255, 255, 203, 234, 141, 128, 255, 255, 255, 255, 210, 35, 244, 112, 255, 255, 255,
+        255, 210, 153, 186, 112, 255, 255, 255, 255, 215, 27, 89, 0, 255, 255, 255, 255, 216, 145,
+        180, 240, 255, 255, 255, 255, 226, 126, 75, 144, 255, 255, 255, 255, 227, 73, 82, 144, 255,
+        255, 255, 255, 228, 94, 45, 144, 255, 255, 255, 255, 229, 41, 52, 144, 255, 255, 255, 255,
+        230, 71, 74, 16, 255, 255, 255, 255, 231, 18, 81, 16, 255, 255, 255, 255, 232, 39, 44, 16,
+        255, 255, 255, 255, 232, 242, 51, 16, 255, 255, 255, 255, 234, 7, 14, 16, 255, 255, 255,
+        255, 234, 210, 21, 16, 255, 255, 255, 255, 235, 230, 240, 16, 255, 255, 255, 255, 236, 177,
+        247, 16, 255, 255, 255, 255, 237, 198, 210, 16, 255, 255, 255, 255, 238, 145, 217, 16, 0,
+        0, 0, 0, 11, 224, 175, 160, 0, 0, 0, 0, 12, 217, 205, 16, 0, 0, 0, 0, 13, 192, 145, 160, 0,
+        0, 0, 0, 14, 185, 175, 16, 0, 0, 0, 0, 15, 169, 174, 32, 0, 0, 0, 0, 16, 153, 145, 16, 0,
+        0, 0, 0, 17, 137, 144, 32, 0, 0, 0, 0, 18, 121, 115, 16, 0, 0, 0, 0, 19, 105, 114, 32, 0,
+        0, 0, 0, 20, 89, 85, 16, 0, 0, 0, 0, 21, 73, 84, 32, 0, 0, 0, 0, 22, 57, 55, 16, 0, 0, 0,
+        0, 23, 41, 54, 32, 0, 0, 0, 0, 24, 34, 83, 144, 0, 0, 0, 0, 25, 9, 24, 32, 0, 0, 0, 0, 26,
+        2, 53, 144, 0, 0, 0, 0, 26, 242, 52, 160, 0, 0, 0, 0, 27, 226, 23, 144, 0, 0, 0, 0, 28,
+        210, 22, 160, 0, 0, 0, 0, 29, 193, 249, 144, 0, 0, 0, 0, 30, 177, 248, 160, 0, 0, 0, 0, 31,
+        161, 219, 144, 0, 0, 0, 0, 32, 118, 43, 32, 0, 0, 0, 0, 33, 129, 189, 144, 0, 0, 0, 0, 34,
+        86, 13, 32, 0, 0, 0, 0, 35, 106, 218, 16, 0, 0, 0, 0, 36, 53, 239, 32, 0, 0, 0, 0, 37, 74,
+        188, 16, 0, 0, 0, 0, 38, 21, 209, 32, 0, 0, 0, 0, 39, 42, 158, 16, 0, 0, 0, 0, 39, 254,
+        237, 160, 0, 0, 0, 0, 41, 10, 128, 16, 0, 0, 0, 0, 41, 222, 207, 160, 0, 0, 0, 0, 42, 234,
+        98, 16, 0, 0, 0, 0, 43, 190, 177, 160, 0, 0, 0, 0, 44, 211, 126, 144, 0, 0, 0, 0, 45, 158,
+        147, 160, 0, 0, 0, 0, 46, 179, 96, 144, 0, 0, 0, 0, 47, 126, 117, 160, 0, 0, 0, 0, 48, 147,
+        66, 144, 0, 0, 0, 0, 49, 103, 146, 32, 0, 0, 0, 0, 50, 115, 36, 144, 0, 0, 0, 0, 51, 71,
+        116, 32, 0, 0, 0, 0, 52, 83, 6, 144, 0, 0, 0, 0, 53, 39, 86, 32, 0, 0, 0, 0, 54, 50, 232,
+        144, 0, 0, 0, 0, 55, 7, 56, 32, 0, 0, 0, 0, 56, 28, 5, 16, 0, 0, 0, 0, 56, 231, 26, 32, 0,
+        0, 0, 0, 57, 251, 231, 16, 0, 0, 0, 0, 58, 198, 252, 32, 0, 0, 0, 0, 59, 219, 201, 16, 0,
+        0, 0, 0, 60, 176, 24, 160, 0, 0, 0, 0, 61, 187, 171, 16, 0, 0, 0, 0, 62, 143, 250, 160, 0,
+        0, 0, 0, 63, 155, 141, 16, 0, 0, 0, 0, 64, 111, 220, 160, 0, 0, 0, 0, 65, 132, 169, 144, 0,
+        0, 0, 0, 66, 79, 190, 160, 0, 0, 0, 0, 67, 100, 139, 144, 0, 0, 0, 0, 68, 47, 160, 160, 0,
+        0, 0, 0, 69, 68, 109, 144, 0, 0, 0, 0, 70, 15, 130, 160, 0, 0, 0, 0, 71, 36, 79, 144, 0, 0,
+        0, 0, 71, 248, 159, 32, 0, 0, 0, 0, 73, 4, 49, 144, 0, 0, 0, 0, 73, 216, 129, 32, 0, 0, 0,
+        0, 74, 228, 19, 144, 0, 0, 0, 0, 75, 156, 179, 160, 1, 2, 1, 2, 3, 2, 4, 5, 2, 3, 2, 3, 2,
+        3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2,
+        3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2,
+        3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 255, 255, 146, 76, 0, 0,
+        255, 255, 157, 144, 0, 4, 255, 255, 143, 128, 0, 8, 255, 255, 157, 144, 1, 12, 255, 255,
+        157, 144, 1, 16, 255, 255, 157, 144, 1, 20, 76, 77, 84, 0, 77, 83, 84, 0, 80, 83, 84, 0,
+        80, 68, 84, 0, 80, 87, 84, 0, 80, 80, 84, 0, 10, 80, 83, 84, 56, 80, 68, 84, 44, 77, 51,
+        46, 50, 46, 48, 44, 77, 49, 49, 46, 49, 46, 48, 10,
     ];
     pub(crate) const AMERICA_FORTALEZA: &[u8] = &[
         84, 90, 105, 102, 50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -56873,83 +55432,82 @@ mod raw_tzdata {
         84, 90, 105, 102, 50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 84, 90, 105, 102, 50,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        172, 0, 0, 0, 5, 0, 0, 0, 20, 255, 255, 255, 255, 94, 61, 72, 120, 255, 255, 255, 255, 156,
-        189, 1, 240, 255, 255, 255, 255, 156, 228, 100, 192, 255, 255, 255, 255, 158, 184, 147,
-        112, 255, 255, 255, 255, 159, 186, 235, 96, 255, 255, 255, 255, 160, 135, 88, 248, 255,
-        255, 255, 255, 161, 153, 130, 232, 255, 255, 255, 255, 162, 148, 13, 248, 255, 255, 255,
-        255, 163, 95, 6, 232, 255, 255, 255, 255, 164, 115, 232, 240, 255, 255, 255, 255, 165, 62,
-        232, 232, 255, 255, 255, 255, 166, 83, 202, 240, 255, 255, 255, 255, 167, 30, 202, 232,
-        255, 255, 255, 255, 170, 45, 236, 240, 255, 255, 255, 255, 170, 222, 142, 232, 255, 255,
-        255, 255, 171, 252, 171, 112, 255, 255, 255, 255, 172, 190, 112, 232, 255, 255, 255, 255,
-        173, 220, 141, 112, 255, 255, 255, 255, 174, 158, 82, 232, 255, 255, 255, 255, 175, 188,
-        83, 80, 255, 255, 255, 255, 176, 126, 17, 192, 255, 255, 255, 255, 177, 156, 53, 80, 255,
-        255, 255, 255, 178, 103, 46, 64, 255, 255, 255, 255, 179, 124, 23, 80, 255, 255, 255, 255,
-        180, 71, 16, 64, 255, 255, 255, 255, 181, 91, 249, 80, 255, 255, 255, 255, 182, 38, 242,
-        64, 255, 255, 255, 255, 183, 59, 219, 80, 255, 255, 255, 255, 184, 6, 212, 64, 255, 255,
-        255, 255, 185, 36, 247, 208, 255, 255, 255, 255, 185, 230, 182, 64, 255, 255, 255, 255,
-        187, 4, 217, 208, 255, 255, 255, 255, 187, 207, 210, 192, 255, 255, 255, 255, 188, 228,
-        187, 208, 255, 255, 255, 255, 189, 175, 180, 192, 255, 255, 255, 255, 190, 196, 157, 208,
-        255, 255, 255, 255, 191, 143, 150, 192, 255, 255, 255, 255, 192, 164, 127, 208, 255, 255,
-        255, 255, 193, 111, 120, 192, 255, 255, 255, 255, 194, 132, 97, 208, 255, 255, 255, 255,
-        195, 79, 90, 192, 255, 255, 255, 255, 196, 100, 67, 208, 255, 255, 255, 255, 197, 47, 60,
-        192, 255, 255, 255, 255, 198, 77, 96, 80, 255, 255, 255, 255, 199, 15, 30, 192, 255, 255,
-        255, 255, 200, 45, 66, 80, 255, 255, 255, 255, 203, 136, 240, 112, 255, 255, 255, 255, 210,
-        35, 244, 112, 255, 255, 255, 255, 210, 96, 251, 224, 255, 255, 255, 255, 211, 117, 228,
-        240, 255, 255, 255, 255, 212, 64, 221, 224, 255, 255, 255, 255, 213, 85, 198, 240, 255,
-        255, 255, 255, 214, 32, 191, 224, 255, 255, 255, 255, 215, 53, 168, 240, 255, 255, 255,
-        255, 216, 0, 161, 224, 255, 255, 255, 255, 217, 21, 138, 240, 255, 255, 255, 255, 218, 14,
-        168, 96, 255, 255, 255, 255, 218, 254, 167, 112, 255, 255, 255, 255, 219, 238, 138, 96,
-        255, 255, 255, 255, 220, 222, 137, 112, 255, 255, 255, 255, 221, 169, 130, 96, 255, 255,
-        255, 255, 222, 190, 107, 112, 255, 255, 255, 255, 223, 137, 100, 96, 255, 255, 255, 255,
-        224, 158, 77, 112, 255, 255, 255, 255, 225, 105, 70, 96, 255, 255, 255, 255, 226, 126, 47,
-        112, 255, 255, 255, 255, 227, 73, 40, 96, 255, 255, 255, 255, 228, 94, 17, 112, 255, 255,
-        255, 255, 229, 41, 10, 96, 255, 255, 255, 255, 230, 71, 45, 240, 255, 255, 255, 255, 231,
-        18, 38, 224, 255, 255, 255, 255, 232, 39, 15, 240, 255, 255, 255, 255, 233, 22, 242, 224,
-        255, 255, 255, 255, 234, 6, 241, 240, 255, 255, 255, 255, 234, 246, 212, 224, 255, 255,
-        255, 255, 235, 230, 211, 240, 255, 255, 255, 255, 236, 214, 182, 224, 255, 255, 255, 255,
-        237, 198, 181, 240, 255, 255, 255, 255, 238, 191, 211, 96, 255, 255, 255, 255, 239, 175,
-        210, 112, 255, 255, 255, 255, 240, 159, 181, 96, 255, 255, 255, 255, 241, 143, 180, 112,
-        255, 255, 255, 255, 242, 127, 151, 96, 255, 255, 255, 255, 243, 111, 150, 112, 255, 255,
-        255, 255, 244, 95, 121, 96, 255, 255, 255, 255, 245, 79, 120, 112, 255, 255, 255, 255, 246,
-        63, 91, 96, 255, 255, 255, 255, 247, 47, 90, 112, 255, 255, 255, 255, 248, 40, 119, 224,
-        255, 255, 255, 255, 249, 15, 60, 112, 255, 255, 255, 255, 250, 8, 89, 224, 255, 255, 255,
-        255, 250, 248, 88, 240, 255, 255, 255, 255, 251, 232, 59, 224, 255, 255, 255, 255, 252,
-        216, 58, 240, 255, 255, 255, 255, 253, 200, 29, 224, 255, 255, 255, 255, 254, 184, 28, 240,
-        255, 255, 255, 255, 255, 167, 255, 224, 0, 0, 0, 0, 0, 151, 254, 240, 0, 0, 0, 0, 1, 135,
-        225, 224, 0, 0, 0, 0, 2, 119, 224, 240, 0, 0, 0, 0, 3, 112, 254, 96, 0, 0, 0, 0, 4, 96,
-        253, 112, 0, 0, 0, 0, 5, 80, 224, 96, 0, 0, 0, 0, 6, 64, 223, 112, 0, 0, 0, 0, 7, 48, 194,
-        96, 0, 0, 0, 0, 8, 32, 193, 112, 0, 0, 0, 0, 9, 16, 164, 96, 0, 0, 0, 0, 10, 0, 163, 112,
-        0, 0, 0, 0, 10, 240, 134, 96, 0, 0, 0, 0, 11, 224, 133, 112, 0, 0, 0, 0, 12, 217, 162, 224,
-        0, 0, 0, 0, 13, 192, 103, 112, 0, 0, 0, 0, 14, 185, 132, 224, 0, 0, 0, 0, 15, 169, 131,
-        240, 0, 0, 0, 0, 16, 153, 102, 224, 0, 0, 0, 0, 17, 137, 101, 240, 0, 0, 0, 0, 18, 121, 72,
-        224, 0, 0, 0, 0, 19, 105, 71, 240, 0, 0, 0, 0, 20, 89, 42, 224, 0, 0, 0, 0, 21, 73, 41,
-        240, 0, 0, 0, 0, 22, 57, 12, 224, 0, 0, 0, 0, 23, 41, 11, 240, 0, 0, 0, 0, 24, 34, 41, 96,
-        0, 0, 0, 0, 25, 8, 237, 240, 0, 0, 0, 0, 26, 2, 11, 96, 0, 0, 0, 0, 26, 242, 10, 112, 0, 0,
-        0, 0, 27, 225, 237, 96, 0, 0, 0, 0, 28, 209, 236, 112, 0, 0, 0, 0, 29, 193, 207, 96, 0, 0,
-        0, 0, 30, 177, 206, 112, 0, 0, 0, 0, 31, 161, 177, 96, 0, 0, 0, 0, 32, 118, 0, 240, 0, 0,
-        0, 0, 33, 129, 147, 96, 0, 0, 0, 0, 34, 85, 226, 240, 0, 0, 0, 0, 35, 106, 175, 224, 0, 0,
-        0, 0, 36, 53, 196, 240, 0, 0, 0, 0, 37, 74, 145, 224, 0, 0, 0, 0, 38, 21, 166, 240, 0, 0,
-        0, 0, 39, 42, 115, 224, 0, 0, 0, 0, 39, 254, 195, 112, 0, 0, 0, 0, 41, 10, 85, 224, 0, 0,
-        0, 0, 41, 222, 165, 112, 0, 0, 0, 0, 42, 234, 55, 224, 0, 0, 0, 0, 43, 190, 135, 112, 0, 0,
-        0, 0, 44, 211, 84, 96, 0, 0, 0, 0, 45, 158, 105, 112, 0, 0, 0, 0, 46, 179, 54, 96, 0, 0, 0,
-        0, 47, 126, 75, 112, 0, 0, 0, 0, 48, 147, 24, 96, 0, 0, 0, 0, 49, 103, 103, 240, 0, 0, 0,
-        0, 50, 114, 250, 96, 0, 0, 0, 0, 51, 71, 73, 240, 0, 0, 0, 0, 52, 82, 220, 96, 0, 0, 0, 0,
-        53, 39, 43, 240, 0, 0, 0, 0, 54, 50, 190, 96, 0, 0, 0, 0, 55, 7, 13, 240, 0, 0, 0, 0, 56,
-        27, 218, 224, 0, 0, 0, 0, 56, 230, 239, 240, 0, 0, 0, 0, 57, 251, 188, 224, 0, 0, 0, 0, 58,
-        198, 209, 240, 0, 0, 0, 0, 59, 219, 158, 224, 0, 0, 0, 0, 60, 175, 238, 112, 0, 0, 0, 0,
-        61, 187, 128, 224, 0, 0, 0, 0, 62, 143, 208, 112, 0, 0, 0, 0, 63, 155, 98, 224, 0, 0, 0, 0,
-        64, 111, 178, 112, 0, 0, 0, 0, 65, 132, 127, 96, 0, 0, 0, 0, 66, 79, 148, 112, 0, 0, 0, 0,
-        67, 100, 97, 96, 0, 0, 0, 0, 68, 47, 118, 112, 0, 0, 0, 0, 69, 68, 67, 96, 0, 0, 0, 0, 69,
-        243, 168, 240, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2,
-        1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 3, 4, 2, 1, 2, 1, 2, 1, 2,
+        172, 0, 0, 0, 5, 0, 0, 0, 20, 255, 255, 255, 255, 114, 238, 120, 236, 255, 255, 255, 255,
+        158, 184, 147, 112, 255, 255, 255, 255, 159, 186, 235, 96, 255, 255, 255, 255, 160, 135,
+        46, 200, 255, 255, 255, 255, 161, 154, 177, 64, 255, 255, 255, 255, 162, 148, 6, 240, 255,
+        255, 255, 255, 163, 85, 169, 64, 255, 255, 255, 255, 164, 134, 93, 240, 255, 255, 255, 255,
+        165, 40, 120, 96, 255, 255, 255, 255, 166, 102, 63, 240, 255, 255, 255, 255, 167, 12, 78,
+        224, 255, 255, 255, 255, 168, 70, 33, 240, 255, 255, 255, 255, 168, 236, 48, 224, 255, 255,
+        255, 255, 170, 28, 201, 112, 255, 255, 255, 255, 170, 213, 77, 96, 255, 255, 255, 255, 171,
+        252, 171, 112, 255, 255, 255, 255, 172, 181, 47, 96, 255, 255, 255, 255, 173, 220, 141,
+        112, 255, 255, 255, 255, 174, 149, 17, 96, 255, 255, 255, 255, 175, 188, 111, 112, 255,
+        255, 255, 255, 176, 126, 45, 224, 255, 255, 255, 255, 177, 156, 81, 112, 255, 255, 255,
+        255, 178, 103, 74, 96, 255, 255, 255, 255, 179, 124, 51, 112, 255, 255, 255, 255, 180, 71,
+        44, 96, 255, 255, 255, 255, 181, 92, 21, 112, 255, 255, 255, 255, 182, 39, 14, 96, 255,
+        255, 255, 255, 183, 59, 247, 112, 255, 255, 255, 255, 184, 6, 240, 96, 255, 255, 255, 255,
+        185, 37, 19, 240, 255, 255, 255, 255, 185, 230, 210, 96, 255, 255, 255, 255, 187, 4, 245,
+        240, 255, 255, 255, 255, 187, 207, 238, 224, 255, 255, 255, 255, 188, 228, 215, 240, 255,
+        255, 255, 255, 189, 175, 208, 224, 255, 255, 255, 255, 190, 196, 185, 240, 255, 255, 255,
+        255, 191, 143, 178, 224, 255, 255, 255, 255, 192, 164, 155, 240, 255, 255, 255, 255, 193,
+        111, 148, 224, 255, 255, 255, 255, 194, 132, 125, 240, 255, 255, 255, 255, 195, 79, 118,
+        224, 255, 255, 255, 255, 196, 100, 95, 240, 255, 255, 255, 255, 197, 47, 88, 224, 255, 255,
+        255, 255, 198, 77, 124, 112, 255, 255, 255, 255, 199, 15, 58, 224, 255, 255, 255, 255, 200,
+        45, 94, 112, 255, 255, 255, 255, 203, 136, 240, 112, 255, 255, 255, 255, 210, 35, 244, 112,
+        255, 255, 255, 255, 210, 96, 251, 224, 255, 255, 255, 255, 211, 117, 228, 240, 255, 255,
+        255, 255, 212, 64, 221, 224, 255, 255, 255, 255, 213, 85, 170, 208, 255, 255, 255, 255,
+        214, 32, 163, 192, 255, 255, 255, 255, 215, 53, 140, 208, 255, 255, 255, 255, 216, 0, 133,
+        192, 255, 255, 255, 255, 217, 21, 110, 208, 255, 255, 255, 255, 218, 51, 118, 64, 255, 255,
+        255, 255, 218, 254, 167, 112, 255, 255, 255, 255, 220, 19, 116, 96, 255, 255, 255, 255,
+        220, 222, 137, 112, 255, 255, 255, 255, 221, 169, 130, 96, 255, 255, 255, 255, 222, 190,
+        107, 112, 255, 255, 255, 255, 223, 137, 100, 96, 255, 255, 255, 255, 224, 158, 77, 112,
+        255, 255, 255, 255, 225, 105, 70, 96, 255, 255, 255, 255, 226, 126, 47, 112, 255, 255, 255,
+        255, 227, 73, 40, 96, 255, 255, 255, 255, 228, 94, 17, 112, 255, 255, 255, 255, 229, 41,
+        10, 96, 255, 255, 255, 255, 230, 71, 45, 240, 255, 255, 255, 255, 231, 18, 38, 224, 255,
+        255, 255, 255, 232, 39, 15, 240, 255, 255, 255, 255, 233, 22, 242, 224, 255, 255, 255, 255,
+        234, 6, 241, 240, 255, 255, 255, 255, 234, 246, 212, 224, 255, 255, 255, 255, 235, 230,
+        211, 240, 255, 255, 255, 255, 236, 214, 182, 224, 255, 255, 255, 255, 237, 198, 181, 240,
+        255, 255, 255, 255, 238, 191, 211, 96, 255, 255, 255, 255, 239, 175, 210, 112, 255, 255,
+        255, 255, 240, 159, 181, 96, 255, 255, 255, 255, 241, 143, 180, 112, 255, 255, 255, 255,
+        242, 127, 151, 96, 255, 255, 255, 255, 243, 111, 150, 112, 255, 255, 255, 255, 244, 95,
+        121, 96, 255, 255, 255, 255, 245, 79, 120, 112, 255, 255, 255, 255, 246, 63, 91, 96, 255,
+        255, 255, 255, 247, 47, 90, 112, 255, 255, 255, 255, 248, 40, 119, 224, 255, 255, 255, 255,
+        249, 15, 60, 112, 255, 255, 255, 255, 250, 8, 89, 224, 255, 255, 255, 255, 250, 248, 88,
+        240, 255, 255, 255, 255, 251, 232, 59, 224, 255, 255, 255, 255, 252, 216, 58, 240, 255,
+        255, 255, 255, 253, 200, 29, 224, 255, 255, 255, 255, 254, 184, 28, 240, 255, 255, 255,
+        255, 255, 167, 255, 224, 0, 0, 0, 0, 0, 151, 254, 240, 0, 0, 0, 0, 1, 135, 225, 224, 0, 0,
+        0, 0, 2, 119, 224, 240, 0, 0, 0, 0, 3, 112, 254, 96, 0, 0, 0, 0, 4, 96, 253, 112, 0, 0, 0,
+        0, 5, 80, 224, 96, 0, 0, 0, 0, 6, 64, 223, 112, 0, 0, 0, 0, 7, 48, 194, 96, 0, 0, 0, 0, 8,
+        32, 193, 112, 0, 0, 0, 0, 9, 16, 164, 96, 0, 0, 0, 0, 10, 0, 163, 112, 0, 0, 0, 0, 10, 240,
+        134, 96, 0, 0, 0, 0, 11, 224, 133, 112, 0, 0, 0, 0, 12, 217, 162, 224, 0, 0, 0, 0, 13, 192,
+        103, 112, 0, 0, 0, 0, 14, 185, 132, 224, 0, 0, 0, 0, 15, 169, 131, 240, 0, 0, 0, 0, 16,
+        153, 102, 224, 0, 0, 0, 0, 17, 137, 101, 240, 0, 0, 0, 0, 18, 121, 72, 224, 0, 0, 0, 0, 19,
+        105, 71, 240, 0, 0, 0, 0, 20, 89, 42, 224, 0, 0, 0, 0, 21, 73, 41, 240, 0, 0, 0, 0, 22, 57,
+        12, 224, 0, 0, 0, 0, 23, 41, 11, 240, 0, 0, 0, 0, 24, 34, 41, 96, 0, 0, 0, 0, 25, 8, 237,
+        240, 0, 0, 0, 0, 26, 2, 11, 96, 0, 0, 0, 0, 26, 242, 10, 112, 0, 0, 0, 0, 27, 225, 237, 96,
+        0, 0, 0, 0, 28, 209, 236, 112, 0, 0, 0, 0, 29, 193, 207, 96, 0, 0, 0, 0, 30, 177, 206, 112,
+        0, 0, 0, 0, 31, 161, 177, 96, 0, 0, 0, 0, 32, 118, 0, 240, 0, 0, 0, 0, 33, 129, 147, 96, 0,
+        0, 0, 0, 34, 85, 226, 240, 0, 0, 0, 0, 35, 106, 175, 224, 0, 0, 0, 0, 36, 53, 196, 240, 0,
+        0, 0, 0, 37, 74, 145, 224, 0, 0, 0, 0, 38, 21, 166, 240, 0, 0, 0, 0, 39, 42, 115, 224, 0,
+        0, 0, 0, 39, 254, 195, 112, 0, 0, 0, 0, 41, 10, 85, 224, 0, 0, 0, 0, 41, 222, 165, 112, 0,
+        0, 0, 0, 42, 234, 55, 224, 0, 0, 0, 0, 43, 190, 135, 112, 0, 0, 0, 0, 44, 211, 84, 96, 0,
+        0, 0, 0, 45, 158, 105, 112, 0, 0, 0, 0, 46, 179, 54, 96, 0, 0, 0, 0, 47, 126, 75, 112, 0,
+        0, 0, 0, 48, 147, 24, 96, 0, 0, 0, 0, 49, 103, 103, 240, 0, 0, 0, 0, 50, 114, 250, 96, 0,
+        0, 0, 0, 51, 71, 73, 240, 0, 0, 0, 0, 52, 82, 220, 96, 0, 0, 0, 0, 53, 39, 43, 240, 0, 0,
+        0, 0, 54, 50, 190, 96, 0, 0, 0, 0, 55, 7, 13, 240, 0, 0, 0, 0, 56, 27, 218, 224, 0, 0, 0,
+        0, 56, 230, 239, 240, 0, 0, 0, 0, 57, 251, 188, 224, 0, 0, 0, 0, 58, 198, 209, 240, 0, 0,
+        0, 0, 59, 219, 158, 224, 0, 0, 0, 0, 60, 175, 238, 112, 0, 0, 0, 0, 61, 187, 128, 224, 0,
+        0, 0, 0, 62, 143, 208, 112, 0, 0, 0, 0, 63, 155, 98, 224, 0, 0, 0, 0, 64, 111, 178, 112, 0,
+        0, 0, 0, 65, 132, 127, 96, 0, 0, 0, 0, 66, 79, 148, 112, 0, 0, 0, 0, 67, 100, 97, 96, 0, 0,
+        0, 0, 68, 47, 118, 112, 0, 0, 0, 0, 69, 68, 67, 96, 0, 0, 0, 0, 69, 243, 168, 240, 2, 1, 2,
+        1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2,
+        1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 3, 4, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2,
         1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2,
         1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2,
         1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2,
-        1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 255, 255,
-        187, 8, 0, 0, 255, 255, 199, 192, 1, 4, 255, 255, 185, 176, 0, 8, 255, 255, 199, 192, 1,
-        12, 255, 255, 199, 192, 1, 16, 76, 77, 84, 0, 69, 68, 84, 0, 69, 83, 84, 0, 69, 87, 84, 0,
-        69, 80, 84, 0, 10, 69, 83, 84, 53, 69, 68, 84, 44, 77, 51, 46, 50, 46, 48, 44, 77, 49, 49,
-        46, 49, 46, 48, 10,
+        1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 255, 255, 181, 148, 0, 0, 255,
+        255, 199, 192, 1, 4, 255, 255, 185, 176, 0, 8, 255, 255, 199, 192, 1, 12, 255, 255, 199,
+        192, 1, 16, 76, 77, 84, 0, 69, 68, 84, 0, 69, 83, 84, 0, 69, 87, 84, 0, 69, 80, 84, 0, 10,
+        69, 83, 84, 53, 69, 68, 84, 44, 77, 51, 46, 50, 46, 48, 44, 77, 49, 49, 46, 49, 46, 48, 10,
     ];
     pub(crate) const AMERICA_MONTSERRAT: &[u8] = &[
         84, 90, 105, 102, 50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -57559,38 +56117,6 @@ mod raw_tzdata {
         48, 0, 67, 68, 68, 84, 0, 67, 83, 84, 0, 67, 68, 84, 0, 69, 83, 84, 0, 10, 67, 83, 84, 54,
         67, 68, 84, 44, 77, 51, 46, 50, 46, 48, 44, 77, 49, 49, 46, 49, 46, 48, 10,
     ];
-    pub(crate) const AMERICA_ROSARIO: &[u8] = &[
-        84, 90, 105, 102, 50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 84, 90, 105, 102, 50,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        53, 0, 0, 0, 6, 0, 0, 0, 20, 255, 255, 255, 255, 114, 157, 251, 224, 255, 255, 255, 255,
-        162, 146, 143, 44, 255, 255, 255, 255, 182, 123, 82, 64, 255, 255, 255, 255, 183, 26, 201,
-        176, 255, 255, 255, 255, 184, 30, 143, 64, 255, 255, 255, 255, 184, 212, 112, 48, 255, 255,
-        255, 255, 186, 23, 125, 192, 255, 255, 255, 255, 186, 181, 163, 176, 255, 255, 255, 255,
-        187, 248, 177, 64, 255, 255, 255, 255, 188, 150, 215, 48, 255, 255, 255, 255, 189, 217,
-        228, 192, 255, 255, 255, 255, 190, 120, 10, 176, 255, 255, 255, 255, 191, 187, 24, 64, 255,
-        255, 255, 255, 192, 90, 143, 176, 255, 255, 255, 255, 193, 157, 157, 64, 255, 255, 255,
-        255, 194, 59, 195, 48, 255, 255, 255, 255, 195, 126, 208, 192, 255, 255, 255, 255, 196, 28,
-        246, 176, 255, 255, 255, 255, 197, 96, 4, 64, 255, 255, 255, 255, 197, 254, 42, 48, 255,
-        255, 255, 255, 199, 65, 55, 192, 255, 255, 255, 255, 199, 224, 175, 48, 255, 255, 255, 255,
-        200, 129, 148, 64, 255, 255, 255, 255, 202, 77, 161, 176, 255, 255, 255, 255, 202, 238,
-        134, 192, 255, 255, 255, 255, 206, 77, 255, 48, 255, 255, 255, 255, 206, 176, 237, 192,
-        255, 255, 255, 255, 211, 41, 53, 176, 255, 255, 255, 255, 212, 67, 100, 192, 255, 255, 255,
-        255, 244, 61, 8, 48, 255, 255, 255, 255, 244, 159, 246, 192, 255, 255, 255, 255, 245, 5,
-        108, 48, 255, 255, 255, 255, 246, 50, 16, 64, 255, 255, 255, 255, 246, 230, 159, 176, 255,
-        255, 255, 255, 248, 19, 67, 192, 255, 255, 255, 255, 248, 199, 211, 48, 255, 255, 255, 255,
-        249, 244, 119, 64, 255, 255, 255, 255, 250, 211, 54, 176, 255, 255, 255, 255, 251, 195, 53,
-        192, 255, 255, 255, 255, 252, 188, 83, 48, 255, 255, 255, 255, 253, 172, 82, 64, 255, 255,
-        255, 255, 254, 156, 53, 48, 255, 255, 255, 255, 255, 140, 52, 64, 0, 0, 0, 0, 7, 163, 74,
-        176, 0, 0, 0, 0, 8, 36, 111, 160, 0, 0, 0, 0, 35, 148, 181, 176, 0, 0, 0, 0, 36, 16, 148,
-        160, 0, 0, 0, 0, 37, 55, 242, 176, 0, 0, 0, 0, 37, 240, 118, 160, 0, 0, 0, 0, 39, 33, 15,
-        48, 0, 0, 0, 0, 39, 208, 88, 160, 0, 0, 0, 0, 55, 246, 198, 176, 0, 0, 0, 0, 56, 191, 42,
-        176, 1, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3,
-        2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 5, 4, 5, 4, 5, 4, 5, 4, 5, 3, 5, 255, 255, 199, 32,
-        0, 0, 255, 255, 195, 212, 0, 4, 255, 255, 199, 192, 0, 8, 255, 255, 213, 208, 1, 12, 255,
-        255, 227, 224, 1, 16, 255, 255, 213, 208, 0, 12, 76, 77, 84, 0, 67, 77, 84, 0, 45, 48, 52,
-        0, 45, 48, 51, 0, 45, 48, 50, 0, 10, 60, 45, 48, 51, 62, 51, 10,
-    ];
     pub(crate) const AMERICA_SANTAREM: &[u8] = &[
         84, 90, 105, 102, 50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 84, 90, 105, 102, 50,
@@ -57611,52 +56137,6 @@ mod raw_tzdata {
         1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 3, 255, 255, 204, 184, 0, 0, 255, 255, 213, 208, 1, 4,
         255, 255, 199, 192, 0, 8, 255, 255, 213, 208, 0, 4, 76, 77, 84, 0, 45, 48, 51, 0, 45, 48,
         52, 0, 10, 60, 45, 48, 51, 62, 51, 10,
-    ];
-    pub(crate) const AMERICA_SANTA_ISABEL: &[u8] = &[
-        84, 90, 105, 102, 50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 84, 90, 105, 102, 50,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        94, 0, 0, 0, 6, 0, 0, 0, 24, 255, 255, 255, 255, 165, 182, 246, 128, 255, 255, 255, 255,
-        169, 121, 79, 112, 255, 255, 255, 255, 175, 242, 124, 240, 255, 255, 255, 255, 182, 102,
-        100, 112, 255, 255, 255, 255, 183, 27, 16, 0, 255, 255, 255, 255, 184, 10, 242, 240, 255,
-        255, 255, 255, 203, 234, 141, 128, 255, 255, 255, 255, 210, 35, 244, 112, 255, 255, 255,
-        255, 210, 153, 186, 112, 255, 255, 255, 255, 215, 27, 89, 0, 255, 255, 255, 255, 216, 145,
-        180, 240, 255, 255, 255, 255, 226, 126, 75, 144, 255, 255, 255, 255, 227, 73, 82, 144, 255,
-        255, 255, 255, 228, 94, 45, 144, 255, 255, 255, 255, 229, 41, 52, 144, 255, 255, 255, 255,
-        230, 71, 74, 16, 255, 255, 255, 255, 231, 18, 81, 16, 255, 255, 255, 255, 232, 39, 44, 16,
-        255, 255, 255, 255, 232, 242, 51, 16, 255, 255, 255, 255, 234, 7, 14, 16, 255, 255, 255,
-        255, 234, 210, 21, 16, 255, 255, 255, 255, 235, 230, 240, 16, 255, 255, 255, 255, 236, 177,
-        247, 16, 255, 255, 255, 255, 237, 198, 210, 16, 255, 255, 255, 255, 238, 145, 217, 16, 0,
-        0, 0, 0, 11, 224, 175, 160, 0, 0, 0, 0, 12, 217, 205, 16, 0, 0, 0, 0, 13, 192, 145, 160, 0,
-        0, 0, 0, 14, 185, 175, 16, 0, 0, 0, 0, 15, 169, 174, 32, 0, 0, 0, 0, 16, 153, 145, 16, 0,
-        0, 0, 0, 17, 137, 144, 32, 0, 0, 0, 0, 18, 121, 115, 16, 0, 0, 0, 0, 19, 105, 114, 32, 0,
-        0, 0, 0, 20, 89, 85, 16, 0, 0, 0, 0, 21, 73, 84, 32, 0, 0, 0, 0, 22, 57, 55, 16, 0, 0, 0,
-        0, 23, 41, 54, 32, 0, 0, 0, 0, 24, 34, 83, 144, 0, 0, 0, 0, 25, 9, 24, 32, 0, 0, 0, 0, 26,
-        2, 53, 144, 0, 0, 0, 0, 26, 242, 52, 160, 0, 0, 0, 0, 27, 226, 23, 144, 0, 0, 0, 0, 28,
-        210, 22, 160, 0, 0, 0, 0, 29, 193, 249, 144, 0, 0, 0, 0, 30, 177, 248, 160, 0, 0, 0, 0, 31,
-        161, 219, 144, 0, 0, 0, 0, 32, 118, 43, 32, 0, 0, 0, 0, 33, 129, 189, 144, 0, 0, 0, 0, 34,
-        86, 13, 32, 0, 0, 0, 0, 35, 106, 218, 16, 0, 0, 0, 0, 36, 53, 239, 32, 0, 0, 0, 0, 37, 74,
-        188, 16, 0, 0, 0, 0, 38, 21, 209, 32, 0, 0, 0, 0, 39, 42, 158, 16, 0, 0, 0, 0, 39, 254,
-        237, 160, 0, 0, 0, 0, 41, 10, 128, 16, 0, 0, 0, 0, 41, 222, 207, 160, 0, 0, 0, 0, 42, 234,
-        98, 16, 0, 0, 0, 0, 43, 190, 177, 160, 0, 0, 0, 0, 44, 211, 126, 144, 0, 0, 0, 0, 45, 158,
-        147, 160, 0, 0, 0, 0, 46, 179, 96, 144, 0, 0, 0, 0, 47, 126, 117, 160, 0, 0, 0, 0, 48, 147,
-        66, 144, 0, 0, 0, 0, 49, 103, 146, 32, 0, 0, 0, 0, 50, 115, 36, 144, 0, 0, 0, 0, 51, 71,
-        116, 32, 0, 0, 0, 0, 52, 83, 6, 144, 0, 0, 0, 0, 53, 39, 86, 32, 0, 0, 0, 0, 54, 50, 232,
-        144, 0, 0, 0, 0, 55, 7, 56, 32, 0, 0, 0, 0, 56, 28, 5, 16, 0, 0, 0, 0, 56, 231, 26, 32, 0,
-        0, 0, 0, 57, 251, 231, 16, 0, 0, 0, 0, 58, 198, 252, 32, 0, 0, 0, 0, 59, 219, 201, 16, 0,
-        0, 0, 0, 60, 176, 24, 160, 0, 0, 0, 0, 61, 187, 171, 16, 0, 0, 0, 0, 62, 143, 250, 160, 0,
-        0, 0, 0, 63, 155, 141, 16, 0, 0, 0, 0, 64, 111, 220, 160, 0, 0, 0, 0, 65, 132, 169, 144, 0,
-        0, 0, 0, 66, 79, 190, 160, 0, 0, 0, 0, 67, 100, 139, 144, 0, 0, 0, 0, 68, 47, 160, 160, 0,
-        0, 0, 0, 69, 68, 109, 144, 0, 0, 0, 0, 70, 15, 130, 160, 0, 0, 0, 0, 71, 36, 79, 144, 0, 0,
-        0, 0, 71, 248, 159, 32, 0, 0, 0, 0, 73, 4, 49, 144, 0, 0, 0, 0, 73, 216, 129, 32, 0, 0, 0,
-        0, 74, 228, 19, 144, 0, 0, 0, 0, 75, 156, 179, 160, 1, 2, 1, 2, 3, 2, 4, 5, 2, 3, 2, 3, 2,
-        3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2,
-        3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2,
-        3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 255, 255, 146, 76, 0, 0,
-        255, 255, 157, 144, 0, 4, 255, 255, 143, 128, 0, 8, 255, 255, 157, 144, 1, 12, 255, 255,
-        157, 144, 1, 16, 255, 255, 157, 144, 1, 20, 76, 77, 84, 0, 77, 83, 84, 0, 80, 83, 84, 0,
-        80, 68, 84, 0, 80, 87, 84, 0, 80, 80, 84, 0, 10, 80, 83, 84, 56, 80, 68, 84, 44, 77, 51,
-        46, 50, 46, 48, 44, 77, 49, 49, 46, 49, 46, 48, 10,
     ];
     pub(crate) const AMERICA_SANTIAGO: &[u8] = &[
         84, 90, 105, 102, 51, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -58044,87 +56524,6 @@ mod raw_tzdata {
         192, 1, 20, 76, 77, 84, 0, 67, 83, 84, 0, 69, 83, 84, 0, 69, 87, 84, 0, 69, 80, 84, 0, 69,
         68, 84, 0, 10, 69, 83, 84, 53, 69, 68, 84, 44, 77, 51, 46, 50, 46, 48, 44, 77, 49, 49, 46,
         49, 46, 48, 10,
-    ];
-    pub(crate) const AMERICA_TORONTO: &[u8] = &[
-        84, 90, 105, 102, 50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 84, 90, 105, 102, 50,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        172, 0, 0, 0, 5, 0, 0, 0, 20, 255, 255, 255, 255, 114, 238, 120, 236, 255, 255, 255, 255,
-        158, 184, 147, 112, 255, 255, 255, 255, 159, 186, 235, 96, 255, 255, 255, 255, 160, 135,
-        46, 200, 255, 255, 255, 255, 161, 154, 177, 64, 255, 255, 255, 255, 162, 148, 6, 240, 255,
-        255, 255, 255, 163, 85, 169, 64, 255, 255, 255, 255, 164, 134, 93, 240, 255, 255, 255, 255,
-        165, 40, 120, 96, 255, 255, 255, 255, 166, 102, 63, 240, 255, 255, 255, 255, 167, 12, 78,
-        224, 255, 255, 255, 255, 168, 70, 33, 240, 255, 255, 255, 255, 168, 236, 48, 224, 255, 255,
-        255, 255, 170, 28, 201, 112, 255, 255, 255, 255, 170, 213, 77, 96, 255, 255, 255, 255, 171,
-        252, 171, 112, 255, 255, 255, 255, 172, 181, 47, 96, 255, 255, 255, 255, 173, 220, 141,
-        112, 255, 255, 255, 255, 174, 149, 17, 96, 255, 255, 255, 255, 175, 188, 111, 112, 255,
-        255, 255, 255, 176, 126, 45, 224, 255, 255, 255, 255, 177, 156, 81, 112, 255, 255, 255,
-        255, 178, 103, 74, 96, 255, 255, 255, 255, 179, 124, 51, 112, 255, 255, 255, 255, 180, 71,
-        44, 96, 255, 255, 255, 255, 181, 92, 21, 112, 255, 255, 255, 255, 182, 39, 14, 96, 255,
-        255, 255, 255, 183, 59, 247, 112, 255, 255, 255, 255, 184, 6, 240, 96, 255, 255, 255, 255,
-        185, 37, 19, 240, 255, 255, 255, 255, 185, 230, 210, 96, 255, 255, 255, 255, 187, 4, 245,
-        240, 255, 255, 255, 255, 187, 207, 238, 224, 255, 255, 255, 255, 188, 228, 215, 240, 255,
-        255, 255, 255, 189, 175, 208, 224, 255, 255, 255, 255, 190, 196, 185, 240, 255, 255, 255,
-        255, 191, 143, 178, 224, 255, 255, 255, 255, 192, 164, 155, 240, 255, 255, 255, 255, 193,
-        111, 148, 224, 255, 255, 255, 255, 194, 132, 125, 240, 255, 255, 255, 255, 195, 79, 118,
-        224, 255, 255, 255, 255, 196, 100, 95, 240, 255, 255, 255, 255, 197, 47, 88, 224, 255, 255,
-        255, 255, 198, 77, 124, 112, 255, 255, 255, 255, 199, 15, 58, 224, 255, 255, 255, 255, 200,
-        45, 94, 112, 255, 255, 255, 255, 203, 136, 240, 112, 255, 255, 255, 255, 210, 35, 244, 112,
-        255, 255, 255, 255, 210, 96, 251, 224, 255, 255, 255, 255, 211, 117, 228, 240, 255, 255,
-        255, 255, 212, 64, 221, 224, 255, 255, 255, 255, 213, 85, 170, 208, 255, 255, 255, 255,
-        214, 32, 163, 192, 255, 255, 255, 255, 215, 53, 140, 208, 255, 255, 255, 255, 216, 0, 133,
-        192, 255, 255, 255, 255, 217, 21, 110, 208, 255, 255, 255, 255, 218, 51, 118, 64, 255, 255,
-        255, 255, 218, 254, 167, 112, 255, 255, 255, 255, 220, 19, 116, 96, 255, 255, 255, 255,
-        220, 222, 137, 112, 255, 255, 255, 255, 221, 169, 130, 96, 255, 255, 255, 255, 222, 190,
-        107, 112, 255, 255, 255, 255, 223, 137, 100, 96, 255, 255, 255, 255, 224, 158, 77, 112,
-        255, 255, 255, 255, 225, 105, 70, 96, 255, 255, 255, 255, 226, 126, 47, 112, 255, 255, 255,
-        255, 227, 73, 40, 96, 255, 255, 255, 255, 228, 94, 17, 112, 255, 255, 255, 255, 229, 41,
-        10, 96, 255, 255, 255, 255, 230, 71, 45, 240, 255, 255, 255, 255, 231, 18, 38, 224, 255,
-        255, 255, 255, 232, 39, 15, 240, 255, 255, 255, 255, 233, 22, 242, 224, 255, 255, 255, 255,
-        234, 6, 241, 240, 255, 255, 255, 255, 234, 246, 212, 224, 255, 255, 255, 255, 235, 230,
-        211, 240, 255, 255, 255, 255, 236, 214, 182, 224, 255, 255, 255, 255, 237, 198, 181, 240,
-        255, 255, 255, 255, 238, 191, 211, 96, 255, 255, 255, 255, 239, 175, 210, 112, 255, 255,
-        255, 255, 240, 159, 181, 96, 255, 255, 255, 255, 241, 143, 180, 112, 255, 255, 255, 255,
-        242, 127, 151, 96, 255, 255, 255, 255, 243, 111, 150, 112, 255, 255, 255, 255, 244, 95,
-        121, 96, 255, 255, 255, 255, 245, 79, 120, 112, 255, 255, 255, 255, 246, 63, 91, 96, 255,
-        255, 255, 255, 247, 47, 90, 112, 255, 255, 255, 255, 248, 40, 119, 224, 255, 255, 255, 255,
-        249, 15, 60, 112, 255, 255, 255, 255, 250, 8, 89, 224, 255, 255, 255, 255, 250, 248, 88,
-        240, 255, 255, 255, 255, 251, 232, 59, 224, 255, 255, 255, 255, 252, 216, 58, 240, 255,
-        255, 255, 255, 253, 200, 29, 224, 255, 255, 255, 255, 254, 184, 28, 240, 255, 255, 255,
-        255, 255, 167, 255, 224, 0, 0, 0, 0, 0, 151, 254, 240, 0, 0, 0, 0, 1, 135, 225, 224, 0, 0,
-        0, 0, 2, 119, 224, 240, 0, 0, 0, 0, 3, 112, 254, 96, 0, 0, 0, 0, 4, 96, 253, 112, 0, 0, 0,
-        0, 5, 80, 224, 96, 0, 0, 0, 0, 6, 64, 223, 112, 0, 0, 0, 0, 7, 48, 194, 96, 0, 0, 0, 0, 8,
-        32, 193, 112, 0, 0, 0, 0, 9, 16, 164, 96, 0, 0, 0, 0, 10, 0, 163, 112, 0, 0, 0, 0, 10, 240,
-        134, 96, 0, 0, 0, 0, 11, 224, 133, 112, 0, 0, 0, 0, 12, 217, 162, 224, 0, 0, 0, 0, 13, 192,
-        103, 112, 0, 0, 0, 0, 14, 185, 132, 224, 0, 0, 0, 0, 15, 169, 131, 240, 0, 0, 0, 0, 16,
-        153, 102, 224, 0, 0, 0, 0, 17, 137, 101, 240, 0, 0, 0, 0, 18, 121, 72, 224, 0, 0, 0, 0, 19,
-        105, 71, 240, 0, 0, 0, 0, 20, 89, 42, 224, 0, 0, 0, 0, 21, 73, 41, 240, 0, 0, 0, 0, 22, 57,
-        12, 224, 0, 0, 0, 0, 23, 41, 11, 240, 0, 0, 0, 0, 24, 34, 41, 96, 0, 0, 0, 0, 25, 8, 237,
-        240, 0, 0, 0, 0, 26, 2, 11, 96, 0, 0, 0, 0, 26, 242, 10, 112, 0, 0, 0, 0, 27, 225, 237, 96,
-        0, 0, 0, 0, 28, 209, 236, 112, 0, 0, 0, 0, 29, 193, 207, 96, 0, 0, 0, 0, 30, 177, 206, 112,
-        0, 0, 0, 0, 31, 161, 177, 96, 0, 0, 0, 0, 32, 118, 0, 240, 0, 0, 0, 0, 33, 129, 147, 96, 0,
-        0, 0, 0, 34, 85, 226, 240, 0, 0, 0, 0, 35, 106, 175, 224, 0, 0, 0, 0, 36, 53, 196, 240, 0,
-        0, 0, 0, 37, 74, 145, 224, 0, 0, 0, 0, 38, 21, 166, 240, 0, 0, 0, 0, 39, 42, 115, 224, 0,
-        0, 0, 0, 39, 254, 195, 112, 0, 0, 0, 0, 41, 10, 85, 224, 0, 0, 0, 0, 41, 222, 165, 112, 0,
-        0, 0, 0, 42, 234, 55, 224, 0, 0, 0, 0, 43, 190, 135, 112, 0, 0, 0, 0, 44, 211, 84, 96, 0,
-        0, 0, 0, 45, 158, 105, 112, 0, 0, 0, 0, 46, 179, 54, 96, 0, 0, 0, 0, 47, 126, 75, 112, 0,
-        0, 0, 0, 48, 147, 24, 96, 0, 0, 0, 0, 49, 103, 103, 240, 0, 0, 0, 0, 50, 114, 250, 96, 0,
-        0, 0, 0, 51, 71, 73, 240, 0, 0, 0, 0, 52, 82, 220, 96, 0, 0, 0, 0, 53, 39, 43, 240, 0, 0,
-        0, 0, 54, 50, 190, 96, 0, 0, 0, 0, 55, 7, 13, 240, 0, 0, 0, 0, 56, 27, 218, 224, 0, 0, 0,
-        0, 56, 230, 239, 240, 0, 0, 0, 0, 57, 251, 188, 224, 0, 0, 0, 0, 58, 198, 209, 240, 0, 0,
-        0, 0, 59, 219, 158, 224, 0, 0, 0, 0, 60, 175, 238, 112, 0, 0, 0, 0, 61, 187, 128, 224, 0,
-        0, 0, 0, 62, 143, 208, 112, 0, 0, 0, 0, 63, 155, 98, 224, 0, 0, 0, 0, 64, 111, 178, 112, 0,
-        0, 0, 0, 65, 132, 127, 96, 0, 0, 0, 0, 66, 79, 148, 112, 0, 0, 0, 0, 67, 100, 97, 96, 0, 0,
-        0, 0, 68, 47, 118, 112, 0, 0, 0, 0, 69, 68, 67, 96, 0, 0, 0, 0, 69, 243, 168, 240, 2, 1, 2,
-        1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2,
-        1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 3, 4, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2,
-        1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2,
-        1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2,
-        1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2,
-        1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 255, 255, 181, 148, 0, 0, 255,
-        255, 199, 192, 1, 4, 255, 255, 185, 176, 0, 8, 255, 255, 199, 192, 1, 12, 255, 255, 199,
-        192, 1, 16, 76, 77, 84, 0, 69, 68, 84, 0, 69, 83, 84, 0, 69, 87, 84, 0, 69, 80, 84, 0, 10,
-        69, 83, 84, 53, 69, 68, 84, 44, 77, 51, 46, 50, 46, 48, 44, 77, 49, 49, 46, 49, 46, 48, 10,
     ];
     pub(crate) const AMERICA_TORTOLA: &[u8] = &[
         84, 90, 105, 102, 50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -59034,19 +57433,6 @@ mod raw_tzdata {
         0, 140, 160, 1, 16, 0, 0, 126, 144, 1, 12, 76, 77, 84, 0, 43, 48, 55, 0, 43, 48, 56, 0, 43,
         48, 57, 0, 43, 49, 48, 0, 10, 60, 43, 48, 56, 62, 45, 56, 10,
     ];
-    pub(crate) const ASIA_CHONGQING: &[u8] = &[
-        84, 90, 105, 102, 50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 84, 90, 105, 102, 50,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        14, 0, 0, 0, 4, 0, 0, 0, 16, 255, 255, 255, 255, 176, 254, 168, 148, 0, 0, 0, 0, 19, 109,
-        201, 16, 0, 0, 0, 0, 30, 186, 82, 32, 0, 0, 0, 0, 31, 105, 155, 144, 0, 0, 0, 0, 32, 126,
-        132, 160, 0, 0, 0, 0, 33, 73, 125, 144, 0, 0, 0, 0, 34, 103, 161, 32, 0, 0, 0, 0, 35, 41,
-        95, 144, 0, 0, 0, 0, 36, 71, 131, 32, 0, 0, 0, 0, 37, 18, 124, 16, 0, 0, 0, 0, 38, 39, 101,
-        32, 0, 0, 0, 0, 38, 242, 94, 16, 0, 0, 0, 0, 40, 7, 71, 32, 0, 0, 0, 0, 40, 210, 64, 16, 1,
-        3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 0, 0, 99, 236, 0, 0, 0, 0, 98, 112, 0, 4, 0, 0, 126,
-        144, 1, 8, 0, 0, 112, 128, 0, 12, 76, 77, 84, 0, 43, 48, 55, 0, 67, 68, 84, 0, 67, 83, 84,
-        0, 10, 67, 83, 84, 45, 56, 10,
-    ];
     pub(crate) const ASIA_COLOMBO: &[u8] = &[
         84, 90, 105, 102, 50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 84, 90, 105, 102, 50,
@@ -59244,32 +57630,6 @@ mod raw_tzdata {
         0, 0, 42, 48, 1, 13, 0, 0, 28, 32, 0, 17, 76, 77, 84, 0, 69, 69, 83, 84, 0, 69, 69, 84, 0,
         73, 68, 84, 0, 73, 83, 84, 0, 10, 69, 69, 84, 45, 50, 69, 69, 83, 84, 44, 77, 51, 46, 52,
         46, 52, 47, 55, 50, 44, 77, 49, 48, 46, 52, 46, 52, 47, 50, 53, 10,
-    ];
-    pub(crate) const ASIA_HANOI: &[u8] = &[
-        84, 90, 105, 102, 50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 84, 90, 105, 102, 50,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        7, 0, 0, 0, 5, 0, 0, 0, 21, 255, 255, 255, 255, 136, 140, 68, 68, 255, 255, 255, 255, 145,
-        163, 43, 10, 255, 255, 255, 255, 205, 53, 230, 128, 255, 255, 255, 255, 209, 89, 206, 112,
-        255, 255, 255, 255, 210, 59, 62, 240, 255, 255, 255, 255, 213, 50, 187, 16, 255, 255, 255,
-        255, 227, 78, 251, 0, 1, 2, 3, 4, 2, 3, 2, 0, 0, 99, 60, 0, 0, 0, 0, 99, 246, 0, 4, 0, 0,
-        98, 112, 0, 9, 0, 0, 112, 128, 0, 13, 0, 0, 126, 144, 0, 17, 76, 77, 84, 0, 80, 76, 77, 84,
-        0, 43, 48, 55, 0, 43, 48, 56, 0, 43, 48, 57, 0, 10, 60, 43, 48, 55, 62, 45, 55, 10,
-    ];
-    pub(crate) const ASIA_HARBIN: &[u8] = &[
-        84, 90, 105, 102, 50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 84, 90, 105, 102, 50,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        17, 0, 0, 0, 5, 0, 0, 0, 22, 255, 255, 255, 255, 176, 254, 149, 188, 255, 255, 255, 255,
-        184, 211, 206, 120, 255, 255, 255, 255, 199, 144, 250, 128, 255, 255, 255, 255, 249, 23,
-        149, 240, 0, 0, 0, 0, 19, 109, 179, 248, 0, 0, 0, 0, 30, 186, 82, 32, 0, 0, 0, 0, 31, 105,
-        155, 144, 0, 0, 0, 0, 32, 126, 132, 160, 0, 0, 0, 0, 33, 73, 125, 144, 0, 0, 0, 0, 34, 103,
-        161, 32, 0, 0, 0, 0, 35, 41, 95, 144, 0, 0, 0, 0, 36, 71, 131, 32, 0, 0, 0, 0, 37, 18, 124,
-        16, 0, 0, 0, 0, 38, 39, 101, 32, 0, 0, 0, 0, 38, 242, 94, 16, 0, 0, 0, 0, 40, 7, 71, 32, 0,
-        0, 0, 0, 40, 210, 64, 16, 1, 2, 3, 1, 2, 4, 2, 4, 2, 4, 2, 4, 2, 4, 2, 4, 2, 0, 0, 118,
-        196, 0, 0, 0, 0, 119, 136, 0, 4, 0, 0, 112, 128, 0, 10, 0, 0, 126, 144, 0, 14, 0, 0, 126,
-        144, 1, 18, 76, 77, 84, 0, 43, 48, 56, 51, 48, 0, 67, 83, 84, 0, 43, 48, 57, 0, 67, 68, 84,
-        0, 10, 67, 83, 84, 45, 56, 10,
     ];
     pub(crate) const ASIA_HEBRON: &[u8] = &[
         84, 90, 105, 102, 51, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -59477,15 +57837,8 @@ mod raw_tzdata {
         84, 90, 105, 102, 50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 84, 90, 105, 102, 50,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        15, 0, 0, 0, 5, 0, 0, 0, 22, 255, 255, 255, 255, 176, 254, 197, 68, 255, 255, 255, 255,
-        199, 145, 29, 168, 0, 0, 0, 0, 19, 109, 229, 48, 0, 0, 0, 0, 30, 186, 82, 32, 0, 0, 0, 0,
-        31, 105, 155, 144, 0, 0, 0, 0, 32, 126, 132, 160, 0, 0, 0, 0, 33, 73, 125, 144, 0, 0, 0, 0,
-        34, 103, 161, 32, 0, 0, 0, 0, 35, 41, 95, 144, 0, 0, 0, 0, 36, 71, 131, 32, 0, 0, 0, 0, 37,
-        18, 124, 16, 0, 0, 0, 0, 38, 39, 101, 32, 0, 0, 0, 0, 38, 242, 94, 16, 0, 0, 0, 0, 40, 7,
-        71, 32, 0, 0, 0, 0, 40, 210, 64, 16, 1, 2, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 0, 0, 71,
-        60, 0, 0, 0, 0, 77, 88, 0, 4, 0, 0, 70, 80, 0, 10, 0, 0, 126, 144, 1, 14, 0, 0, 112, 128,
-        0, 18, 76, 77, 84, 0, 43, 48, 53, 51, 48, 0, 43, 48, 53, 0, 67, 68, 84, 0, 67, 83, 84, 0,
-        10, 67, 83, 84, 45, 56, 10,
+        1, 0, 0, 0, 2, 0, 0, 0, 8, 255, 255, 255, 255, 176, 254, 186, 100, 1, 0, 0, 82, 28, 0, 0,
+        0, 0, 84, 96, 0, 4, 76, 77, 84, 0, 43, 48, 54, 0, 10, 60, 43, 48, 54, 62, 45, 54, 10,
     ];
     pub(crate) const ASIA_KATHMANDU: &[u8] = &[
         84, 90, 105, 102, 50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -60088,55 +58441,6 @@ mod raw_tzdata {
         0, 70, 80, 1, 13, 0, 0, 56, 64, 0, 17, 0, 0, 56, 64, 1, 17, 76, 77, 84, 0, 84, 66, 77, 84,
         0, 43, 48, 51, 0, 43, 48, 53, 0, 43, 48, 52, 0, 10, 60, 43, 48, 52, 62, 45, 52, 10,
     ];
-    pub(crate) const ASIA_TEL_AVIV: &[u8] = &[
-        84, 90, 105, 102, 51, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 84, 90, 105, 102, 51,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        100, 0, 0, 0, 5, 0, 0, 0, 21, 255, 255, 255, 255, 86, 182, 195, 104, 255, 255, 255, 255,
-        158, 48, 69, 116, 255, 255, 255, 255, 200, 89, 207, 0, 255, 255, 255, 255, 200, 250, 166,
-        0, 255, 255, 255, 255, 201, 56, 156, 128, 255, 255, 255, 255, 204, 229, 235, 128, 255, 255,
-        255, 255, 205, 172, 254, 0, 255, 255, 255, 255, 206, 199, 31, 0, 255, 255, 255, 255, 207,
-        143, 131, 0, 255, 255, 255, 255, 208, 169, 164, 0, 255, 255, 255, 255, 209, 132, 125, 0,
-        255, 255, 255, 255, 210, 138, 215, 128, 255, 255, 255, 255, 211, 101, 176, 128, 255, 255,
-        255, 255, 212, 108, 11, 0, 255, 255, 255, 255, 215, 90, 48, 128, 255, 255, 255, 255, 215,
-        223, 88, 0, 255, 255, 255, 255, 216, 47, 195, 128, 255, 255, 255, 255, 217, 30, 99, 0, 255,
-        255, 255, 255, 218, 16, 247, 0, 255, 255, 255, 255, 218, 235, 208, 0, 255, 255, 255, 255,
-        219, 180, 52, 0, 255, 255, 255, 255, 220, 185, 61, 0, 255, 255, 255, 255, 221, 224, 141, 0,
-        255, 255, 255, 255, 222, 180, 206, 128, 255, 255, 255, 255, 223, 164, 191, 128, 255, 255,
-        255, 255, 224, 139, 118, 0, 255, 255, 255, 255, 225, 86, 125, 0, 255, 255, 255, 255, 226,
-        190, 102, 128, 255, 255, 255, 255, 227, 54, 95, 0, 255, 255, 255, 255, 228, 158, 72, 128,
-        255, 255, 255, 255, 229, 22, 65, 0, 255, 255, 255, 255, 230, 116, 240, 0, 255, 255, 255,
-        255, 231, 17, 210, 128, 255, 255, 255, 255, 232, 38, 173, 128, 255, 255, 255, 255, 232,
-        232, 122, 0, 0, 0, 0, 0, 8, 124, 139, 224, 0, 0, 0, 0, 8, 253, 176, 208, 0, 0, 0, 0, 9,
-        246, 234, 96, 0, 0, 0, 0, 10, 166, 51, 208, 0, 0, 0, 0, 19, 233, 252, 96, 0, 0, 0, 0, 20,
-        33, 91, 96, 0, 0, 0, 0, 26, 250, 198, 96, 0, 0, 0, 0, 27, 142, 110, 96, 0, 0, 0, 0, 28,
-        190, 248, 224, 0, 0, 0, 0, 29, 119, 124, 208, 0, 0, 0, 0, 30, 204, 255, 96, 0, 0, 0, 0, 31,
-        96, 153, 80, 0, 0, 0, 0, 32, 130, 177, 96, 0, 0, 0, 0, 33, 73, 181, 208, 0, 0, 0, 0, 34,
-        94, 158, 224, 0, 0, 0, 0, 35, 32, 93, 80, 0, 0, 0, 0, 36, 90, 48, 96, 0, 0, 0, 0, 37, 0,
-        63, 80, 0, 0, 0, 0, 38, 11, 237, 224, 0, 0, 0, 0, 38, 214, 230, 208, 0, 0, 0, 0, 39, 235,
-        207, 224, 0, 0, 0, 0, 40, 192, 3, 80, 0, 0, 0, 0, 41, 212, 236, 96, 0, 0, 0, 0, 42, 169,
-        31, 208, 0, 0, 0, 0, 43, 187, 101, 224, 0, 0, 0, 0, 44, 137, 1, 208, 0, 0, 0, 0, 45, 155,
-        71, 224, 0, 0, 0, 0, 46, 95, 169, 80, 0, 0, 0, 0, 47, 123, 41, 224, 0, 0, 0, 0, 48, 72,
-        197, 208, 0, 0, 0, 0, 49, 72, 150, 224, 0, 0, 0, 0, 50, 60, 110, 80, 0, 0, 0, 0, 51, 49,
-        179, 96, 0, 0, 0, 0, 52, 26, 254, 208, 0, 0, 0, 0, 53, 17, 149, 96, 0, 0, 0, 0, 53, 241,
-        166, 80, 0, 0, 0, 0, 55, 4, 8, 128, 0, 0, 0, 0, 55, 207, 1, 112, 0, 0, 0, 0, 56, 246, 95,
-        128, 0, 0, 0, 0, 57, 220, 249, 224, 0, 0, 0, 0, 58, 208, 237, 112, 0, 0, 0, 0, 59, 174, 91,
-        96, 0, 0, 0, 0, 60, 163, 160, 112, 0, 0, 0, 0, 61, 160, 178, 96, 0, 0, 0, 0, 62, 131, 130,
-        112, 0, 0, 0, 0, 63, 124, 159, 224, 0, 0, 0, 0, 64, 115, 54, 112, 0, 0, 0, 0, 65, 80, 164,
-        96, 0, 0, 0, 0, 66, 76, 143, 0, 0, 0, 0, 0, 67, 72, 79, 112, 0, 0, 0, 0, 68, 44, 113, 0, 0,
-        0, 0, 0, 69, 30, 246, 240, 0, 0, 0, 0, 70, 12, 83, 0, 0, 0, 0, 0, 70, 236, 99, 240, 0, 0,
-        0, 0, 71, 236, 53, 0, 0, 0, 0, 0, 72, 231, 245, 112, 0, 0, 0, 0, 73, 204, 23, 0, 0, 0, 0,
-        0, 74, 190, 156, 240, 0, 0, 0, 0, 75, 171, 249, 0, 0, 0, 0, 0, 76, 140, 9, 240, 0, 0, 0, 0,
-        77, 149, 21, 128, 0, 0, 0, 0, 78, 135, 155, 112, 0, 0, 0, 0, 79, 116, 247, 128, 0, 0, 0, 0,
-        80, 94, 66, 240, 0, 0, 0, 0, 81, 84, 217, 128, 1, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 4,
-        2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3,
-        2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3,
-        2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 0, 0, 32, 152,
-        0, 0, 0, 0, 33, 12, 0, 4, 0, 0, 42, 48, 1, 8, 0, 0, 28, 32, 0, 12, 0, 0, 56, 64, 1, 16, 76,
-        77, 84, 0, 74, 77, 84, 0, 73, 68, 84, 0, 73, 83, 84, 0, 73, 68, 68, 84, 0, 10, 73, 83, 84,
-        45, 50, 73, 68, 84, 44, 77, 51, 46, 52, 46, 52, 47, 50, 54, 44, 77, 49, 48, 46, 53, 46, 48,
-        10,
-    ];
     pub(crate) const ASIA_THIMBU: &[u8] = &[
         84, 90, 105, 102, 50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 84, 90, 105, 102, 50,
@@ -60203,13 +58507,6 @@ mod raw_tzdata {
         2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 0, 0, 100, 52, 0, 0, 0, 0, 98, 112,
         0, 4, 0, 0, 126, 144, 1, 8, 0, 0, 112, 128, 0, 12, 76, 77, 84, 0, 43, 48, 55, 0, 43, 48,
         57, 0, 43, 48, 56, 0, 10, 60, 43, 48, 56, 62, 45, 56, 10,
-    ];
-    pub(crate) const ASIA_URUMQI: &[u8] = &[
-        84, 90, 105, 102, 50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 84, 90, 105, 102, 50,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        1, 0, 0, 0, 2, 0, 0, 0, 8, 255, 255, 255, 255, 176, 254, 186, 100, 1, 0, 0, 82, 28, 0, 0,
-        0, 0, 84, 96, 0, 4, 76, 77, 84, 0, 43, 48, 54, 0, 10, 60, 43, 48, 54, 62, 45, 54, 10,
     ];
     pub(crate) const ASIA_UST_NERA: &[u8] = &[
         84, 90, 105, 102, 50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -60553,13 +58850,6 @@ mod raw_tzdata {
         69, 84, 0, 87, 69, 83, 84, 0, 10, 87, 69, 84, 48, 87, 69, 83, 84, 44, 77, 51, 46, 53, 46,
         48, 47, 49, 44, 77, 49, 48, 46, 53, 46, 48, 10,
     ];
-    pub(crate) const ATLANTIC_JAN_MAYEN: &[u8] = &[
-        84, 90, 105, 102, 50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 84, 90, 105, 102, 50,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 1, 0, 0, 0, 4, 255, 255, 241, 240, 0, 0, 45, 48, 49, 0, 10, 60, 45, 48, 49, 62,
-        49, 10,
-    ];
     pub(crate) const ATLANTIC_MADEIRA: &[u8] = &[
         84, 90, 105, 102, 50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 84, 90, 105, 102, 50,
@@ -60820,76 +59110,6 @@ mod raw_tzdata {
         84, 90, 105, 102, 50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 84, 90, 105, 102, 50,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        92, 0, 0, 0, 3, 0, 0, 0, 14, 255, 255, 255, 255, 116, 46, 4, 32, 255, 255, 255, 255, 155,
-        213, 120, 128, 255, 255, 255, 255, 156, 188, 47, 0, 255, 255, 255, 255, 157, 218, 68, 128,
-        255, 255, 255, 255, 158, 128, 97, 128, 255, 255, 255, 255, 159, 186, 38, 128, 255, 255,
-        255, 255, 160, 96, 67, 128, 255, 255, 255, 255, 203, 84, 179, 0, 255, 255, 255, 255, 203,
-        199, 101, 128, 255, 255, 255, 255, 204, 183, 86, 128, 255, 255, 255, 255, 205, 167, 71,
-        128, 255, 255, 255, 255, 206, 160, 115, 0, 255, 255, 255, 255, 207, 135, 41, 128, 255, 255,
-        255, 255, 253, 199, 89, 0, 255, 255, 255, 255, 254, 118, 176, 128, 255, 255, 255, 255, 255,
-        167, 59, 0, 0, 0, 0, 0, 0, 86, 146, 128, 0, 0, 0, 0, 1, 135, 29, 0, 0, 0, 0, 0, 2, 63, 175,
-        0, 0, 0, 0, 0, 3, 112, 57, 128, 0, 0, 0, 0, 4, 13, 28, 0, 0, 0, 0, 0, 5, 80, 27, 128, 0, 0,
-        0, 0, 5, 246, 56, 128, 0, 0, 0, 0, 7, 47, 253, 128, 0, 0, 0, 0, 7, 214, 26, 128, 0, 0, 0,
-        0, 9, 15, 223, 128, 0, 0, 0, 0, 9, 181, 252, 128, 0, 0, 0, 0, 10, 239, 193, 128, 0, 0, 0,
-        0, 11, 159, 25, 0, 0, 0, 0, 0, 12, 216, 222, 0, 0, 0, 0, 0, 13, 126, 251, 0, 0, 0, 0, 0,
-        14, 184, 192, 0, 0, 0, 0, 0, 15, 94, 221, 0, 0, 0, 0, 0, 16, 152, 162, 0, 0, 0, 0, 0, 17,
-        62, 191, 0, 0, 0, 0, 0, 18, 120, 132, 0, 0, 0, 0, 0, 19, 30, 161, 0, 0, 0, 0, 0, 20, 88,
-        102, 0, 0, 0, 0, 0, 20, 254, 131, 0, 0, 0, 0, 0, 22, 56, 72, 0, 0, 0, 0, 0, 23, 3, 79, 0,
-        0, 0, 0, 0, 24, 33, 100, 128, 0, 0, 0, 0, 24, 227, 49, 0, 0, 0, 0, 0, 26, 1, 70, 128, 0, 0,
-        0, 0, 26, 167, 99, 128, 0, 0, 0, 0, 27, 225, 40, 128, 0, 0, 0, 0, 28, 135, 69, 128, 0, 0,
-        0, 0, 29, 193, 10, 128, 0, 0, 0, 0, 30, 103, 39, 128, 0, 0, 0, 0, 31, 151, 178, 0, 0, 0, 0,
-        0, 32, 89, 126, 128, 0, 0, 0, 0, 33, 128, 206, 128, 0, 0, 0, 0, 34, 66, 155, 0, 0, 0, 0, 0,
-        35, 105, 235, 0, 0, 0, 0, 0, 36, 34, 125, 0, 0, 0, 0, 0, 37, 73, 205, 0, 0, 0, 0, 0, 38, 2,
-        95, 0, 0, 0, 0, 0, 39, 41, 175, 0, 0, 0, 0, 0, 39, 244, 182, 0, 0, 0, 0, 0, 40, 237, 225,
-        128, 0, 0, 0, 0, 41, 212, 152, 0, 0, 0, 0, 0, 42, 205, 195, 128, 0, 0, 0, 0, 43, 180, 122,
-        0, 0, 0, 0, 0, 44, 173, 165, 128, 0, 0, 0, 0, 45, 148, 92, 0, 0, 0, 0, 0, 46, 141, 135,
-        128, 0, 0, 0, 0, 47, 116, 62, 0, 0, 0, 0, 0, 48, 109, 105, 128, 0, 0, 0, 0, 49, 93, 90,
-        128, 0, 0, 0, 0, 50, 86, 134, 0, 0, 0, 0, 0, 51, 61, 60, 128, 0, 0, 0, 0, 52, 54, 104, 0,
-        0, 0, 0, 0, 53, 29, 30, 128, 0, 0, 0, 0, 54, 22, 74, 0, 0, 0, 0, 0, 54, 253, 0, 128, 0, 0,
-        0, 0, 55, 246, 44, 0, 0, 0, 0, 0, 56, 220, 226, 128, 0, 0, 0, 0, 57, 167, 233, 128, 0, 0,
-        0, 0, 58, 188, 196, 128, 0, 0, 0, 0, 59, 191, 42, 128, 0, 0, 0, 0, 60, 165, 225, 0, 0, 0,
-        0, 0, 61, 159, 12, 128, 0, 0, 0, 0, 62, 133, 195, 0, 0, 0, 0, 0, 63, 126, 238, 128, 0, 0,
-        0, 0, 64, 101, 165, 0, 0, 0, 0, 0, 65, 94, 208, 128, 0, 0, 0, 0, 66, 69, 135, 0, 0, 0, 0,
-        0, 67, 62, 178, 128, 0, 0, 0, 0, 68, 46, 163, 128, 0, 0, 0, 0, 69, 30, 148, 128, 0, 0, 0,
-        0, 70, 5, 75, 0, 0, 0, 0, 0, 71, 7, 177, 0, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1,
-        2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1,
-        2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1,
-        2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 0, 0, 134, 224, 0, 0, 0, 0, 154, 176, 1, 4,
-        0, 0, 140, 160, 0, 9, 76, 77, 84, 0, 65, 69, 68, 84, 0, 65, 69, 83, 84, 0, 10, 65, 69, 83,
-        84, 45, 49, 48, 65, 69, 68, 84, 44, 77, 49, 48, 46, 49, 46, 48, 44, 77, 52, 46, 49, 46, 48,
-        47, 51, 10,
-    ];
-    pub(crate) const AUSTRALIA_DARWIN: &[u8] = &[
-        84, 90, 105, 102, 50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 84, 90, 105, 102, 50,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        10, 0, 0, 0, 4, 0, 0, 0, 14, 255, 255, 255, 255, 115, 22, 146, 88, 255, 255, 255, 255, 123,
-        18, 3, 112, 255, 255, 255, 255, 156, 78, 201, 136, 255, 255, 255, 255, 156, 188, 54, 8,
-        255, 255, 255, 255, 203, 84, 186, 8, 255, 255, 255, 255, 203, 199, 108, 136, 255, 255, 255,
-        255, 204, 183, 93, 136, 255, 255, 255, 255, 205, 167, 78, 136, 255, 255, 255, 255, 206,
-        160, 122, 8, 255, 255, 255, 255, 207, 135, 48, 136, 1, 3, 2, 3, 2, 3, 2, 3, 2, 3, 0, 0,
-        122, 168, 0, 0, 0, 0, 126, 144, 0, 4, 0, 0, 147, 168, 1, 9, 0, 0, 133, 152, 0, 4, 76, 77,
-        84, 0, 65, 67, 83, 84, 0, 65, 67, 68, 84, 0, 10, 65, 67, 83, 84, 45, 57, 58, 51, 48, 10,
-    ];
-    pub(crate) const AUSTRALIA_EUCLA: &[u8] = &[
-        84, 90, 105, 102, 50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 84, 90, 105, 102, 50,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        19, 0, 0, 0, 3, 0, 0, 0, 16, 255, 255, 255, 255, 116, 166, 10, 176, 255, 255, 255, 255,
-        156, 78, 212, 20, 255, 255, 255, 255, 156, 188, 64, 148, 255, 255, 255, 255, 203, 84, 196,
-        148, 255, 255, 255, 255, 203, 199, 119, 20, 255, 255, 255, 255, 204, 183, 104, 20, 255,
-        255, 255, 255, 205, 167, 89, 20, 0, 0, 0, 0, 9, 15, 241, 20, 0, 0, 0, 0, 9, 182, 14, 20, 0,
-        0, 0, 0, 26, 1, 88, 20, 0, 0, 0, 0, 26, 167, 117, 20, 0, 0, 0, 0, 41, 37, 82, 20, 0, 0, 0,
-        0, 41, 175, 191, 148, 0, 0, 0, 0, 69, 113, 180, 148, 0, 0, 0, 0, 70, 5, 92, 148, 0, 0, 0,
-        0, 71, 35, 114, 20, 0, 0, 0, 0, 71, 238, 121, 20, 0, 0, 0, 0, 73, 3, 84, 20, 0, 0, 0, 0,
-        73, 206, 91, 20, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 0, 0, 120, 208,
-        0, 0, 0, 0, 137, 28, 1, 4, 0, 0, 123, 12, 0, 10, 76, 77, 84, 0, 43, 48, 57, 52, 53, 0, 43,
-        48, 56, 52, 53, 0, 10, 60, 43, 48, 56, 52, 53, 62, 45, 56, 58, 52, 53, 10,
-    ];
-    pub(crate) const AUSTRALIA_HOBART: &[u8] = &[
-        84, 90, 105, 102, 50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 84, 90, 105, 102, 50,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         94, 0, 0, 0, 3, 0, 0, 0, 14, 255, 255, 255, 255, 116, 46, 0, 228, 255, 255, 255, 255, 155,
         213, 120, 128, 255, 255, 255, 255, 156, 188, 47, 0, 255, 255, 255, 255, 157, 218, 68, 128,
         255, 255, 255, 255, 158, 128, 97, 128, 255, 255, 255, 255, 159, 186, 38, 128, 255, 255,
@@ -60928,6 +59148,33 @@ mod raw_tzdata {
         1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 0, 0, 138, 28, 0, 0, 0, 0, 154, 176, 1, 4, 0, 0, 140, 160,
         0, 9, 76, 77, 84, 0, 65, 69, 68, 84, 0, 65, 69, 83, 84, 0, 10, 65, 69, 83, 84, 45, 49, 48,
         65, 69, 68, 84, 44, 77, 49, 48, 46, 49, 46, 48, 44, 77, 52, 46, 49, 46, 48, 47, 51, 10,
+    ];
+    pub(crate) const AUSTRALIA_DARWIN: &[u8] = &[
+        84, 90, 105, 102, 50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 84, 90, 105, 102, 50,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        10, 0, 0, 0, 4, 0, 0, 0, 14, 255, 255, 255, 255, 115, 22, 146, 88, 255, 255, 255, 255, 123,
+        18, 3, 112, 255, 255, 255, 255, 156, 78, 201, 136, 255, 255, 255, 255, 156, 188, 54, 8,
+        255, 255, 255, 255, 203, 84, 186, 8, 255, 255, 255, 255, 203, 199, 108, 136, 255, 255, 255,
+        255, 204, 183, 93, 136, 255, 255, 255, 255, 205, 167, 78, 136, 255, 255, 255, 255, 206,
+        160, 122, 8, 255, 255, 255, 255, 207, 135, 48, 136, 1, 3, 2, 3, 2, 3, 2, 3, 2, 3, 0, 0,
+        122, 168, 0, 0, 0, 0, 126, 144, 0, 4, 0, 0, 147, 168, 1, 9, 0, 0, 133, 152, 0, 4, 76, 77,
+        84, 0, 65, 67, 83, 84, 0, 65, 67, 68, 84, 0, 10, 65, 67, 83, 84, 45, 57, 58, 51, 48, 10,
+    ];
+    pub(crate) const AUSTRALIA_EUCLA: &[u8] = &[
+        84, 90, 105, 102, 50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 84, 90, 105, 102, 50,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        19, 0, 0, 0, 3, 0, 0, 0, 16, 255, 255, 255, 255, 116, 166, 10, 176, 255, 255, 255, 255,
+        156, 78, 212, 20, 255, 255, 255, 255, 156, 188, 64, 148, 255, 255, 255, 255, 203, 84, 196,
+        148, 255, 255, 255, 255, 203, 199, 119, 20, 255, 255, 255, 255, 204, 183, 104, 20, 255,
+        255, 255, 255, 205, 167, 89, 20, 0, 0, 0, 0, 9, 15, 241, 20, 0, 0, 0, 0, 9, 182, 14, 20, 0,
+        0, 0, 0, 26, 1, 88, 20, 0, 0, 0, 0, 26, 167, 117, 20, 0, 0, 0, 0, 41, 37, 82, 20, 0, 0, 0,
+        0, 41, 175, 191, 148, 0, 0, 0, 0, 69, 113, 180, 148, 0, 0, 0, 0, 70, 5, 92, 148, 0, 0, 0,
+        0, 71, 35, 114, 20, 0, 0, 0, 0, 71, 238, 121, 20, 0, 0, 0, 0, 73, 3, 84, 20, 0, 0, 0, 0,
+        73, 206, 91, 20, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 0, 0, 120, 208,
+        0, 0, 0, 0, 137, 28, 1, 4, 0, 0, 123, 12, 0, 10, 76, 77, 84, 0, 43, 48, 57, 52, 53, 0, 43,
+        48, 56, 52, 53, 0, 10, 60, 43, 48, 56, 52, 53, 62, 45, 56, 58, 52, 53, 10,
     ];
     pub(crate) const AUSTRALIA_LHI: &[u8] = &[
         84, 90, 105, 102, 50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -61496,6 +59743,13 @@ mod raw_tzdata {
         0, 0, 0, 0, 1, 0, 0, 0, 4, 0, 0, 126, 144, 0, 0, 43, 48, 57, 0, 10, 60, 43, 48, 57, 62, 45,
         57, 10,
     ];
+    pub(crate) const ETC_GMT_PLUS_1: &[u8] = &[
+        84, 90, 105, 102, 50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 84, 90, 105, 102, 50,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 1, 0, 0, 0, 4, 255, 255, 241, 240, 0, 0, 45, 48, 49, 0, 10, 60, 45, 48, 49, 62,
+        49, 10,
+    ];
     pub(crate) const ETC_GMT_PLUS_10: &[u8] = &[
         84, 90, 105, 102, 50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 84, 90, 105, 102, 50,
@@ -61703,84 +59957,6 @@ mod raw_tzdata {
         84, 0, 69, 69, 83, 84, 0, 69, 69, 84, 0, 67, 69, 84, 0, 67, 69, 83, 84, 0, 10, 69, 69, 84,
         45, 50, 69, 69, 83, 84, 44, 77, 51, 46, 53, 46, 48, 47, 51, 44, 77, 49, 48, 46, 53, 46, 48,
         47, 52, 10,
-    ];
-    pub(crate) const EUROPE_BELFAST: &[u8] = &[
-        84, 90, 105, 102, 50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 84, 90, 105, 102, 50,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        159, 0, 0, 0, 7, 0, 0, 0, 25, 255, 255, 255, 255, 87, 209, 10, 140, 255, 255, 255, 255,
-        155, 38, 179, 145, 255, 255, 255, 255, 155, 214, 11, 17, 255, 255, 255, 255, 156, 207, 48,
-        160, 255, 255, 255, 255, 157, 164, 195, 160, 255, 255, 255, 255, 158, 156, 157, 160, 255,
-        255, 255, 255, 159, 151, 26, 160, 255, 255, 255, 255, 160, 133, 186, 32, 255, 255, 255,
-        255, 161, 118, 252, 160, 255, 255, 255, 255, 162, 101, 156, 32, 255, 255, 255, 255, 163,
-        123, 200, 160, 255, 255, 255, 255, 164, 78, 184, 160, 255, 255, 255, 255, 165, 63, 251, 32,
-        255, 255, 255, 255, 166, 37, 96, 32, 255, 255, 255, 255, 167, 39, 198, 32, 255, 255, 255,
-        255, 168, 42, 44, 32, 255, 255, 255, 255, 168, 235, 248, 160, 255, 255, 255, 255, 170, 0,
-        211, 160, 255, 255, 255, 255, 170, 213, 21, 32, 255, 255, 255, 255, 171, 233, 240, 32, 255,
-        255, 255, 255, 172, 199, 108, 32, 255, 255, 255, 255, 173, 201, 210, 32, 255, 255, 255,
-        255, 174, 167, 78, 32, 255, 255, 255, 255, 175, 160, 121, 160, 255, 255, 255, 255, 176,
-        135, 48, 32, 255, 255, 255, 255, 177, 146, 208, 160, 255, 255, 255, 255, 178, 112, 76, 160,
-        255, 255, 255, 255, 179, 114, 178, 160, 255, 255, 255, 255, 180, 80, 46, 160, 255, 255,
-        255, 255, 181, 73, 90, 32, 255, 255, 255, 255, 182, 48, 16, 160, 255, 255, 255, 255, 183,
-        50, 118, 160, 255, 255, 255, 255, 184, 15, 242, 160, 255, 255, 255, 255, 185, 18, 88, 160,
-        255, 255, 255, 255, 185, 239, 212, 160, 255, 255, 255, 255, 186, 233, 0, 32, 255, 255, 255,
-        255, 187, 216, 241, 32, 255, 255, 255, 255, 188, 219, 87, 32, 255, 255, 255, 255, 189, 184,
-        211, 32, 255, 255, 255, 255, 190, 177, 254, 160, 255, 255, 255, 255, 191, 152, 181, 32,
-        255, 255, 255, 255, 192, 155, 27, 32, 255, 255, 255, 255, 193, 120, 151, 32, 255, 255, 255,
-        255, 194, 122, 253, 32, 255, 255, 255, 255, 195, 88, 121, 32, 255, 255, 255, 255, 196, 81,
-        164, 160, 255, 255, 255, 255, 197, 56, 91, 32, 255, 255, 255, 255, 198, 58, 193, 32, 255,
-        255, 255, 255, 199, 88, 214, 160, 255, 255, 255, 255, 199, 218, 9, 160, 255, 255, 255, 255,
-        202, 22, 38, 144, 255, 255, 255, 255, 202, 151, 89, 144, 255, 255, 255, 255, 203, 209, 30,
-        144, 255, 255, 255, 255, 204, 119, 59, 144, 255, 255, 255, 255, 205, 177, 0, 144, 255, 255,
-        255, 255, 206, 96, 88, 16, 255, 255, 255, 255, 207, 144, 226, 144, 255, 255, 255, 255, 208,
-        110, 94, 144, 255, 255, 255, 255, 209, 114, 22, 16, 255, 255, 255, 255, 209, 251, 50, 16,
-        255, 255, 255, 255, 210, 105, 254, 32, 255, 255, 255, 255, 211, 99, 41, 160, 255, 255, 255,
-        255, 212, 73, 224, 32, 255, 255, 255, 255, 213, 30, 33, 160, 255, 255, 255, 255, 213, 66,
-        253, 144, 255, 255, 255, 255, 213, 223, 224, 16, 255, 255, 255, 255, 214, 78, 172, 32, 255,
-        255, 255, 255, 214, 254, 3, 160, 255, 255, 255, 255, 216, 46, 142, 32, 255, 255, 255, 255,
-        216, 249, 149, 32, 255, 255, 255, 255, 218, 14, 112, 32, 255, 255, 255, 255, 218, 235, 236,
-        32, 255, 255, 255, 255, 219, 229, 23, 160, 255, 255, 255, 255, 220, 203, 206, 32, 255, 255,
-        255, 255, 221, 196, 249, 160, 255, 255, 255, 255, 222, 180, 234, 160, 255, 255, 255, 255,
-        223, 174, 22, 32, 255, 255, 255, 255, 224, 148, 204, 160, 255, 255, 255, 255, 225, 114, 72,
-        160, 255, 255, 255, 255, 226, 107, 116, 32, 255, 255, 255, 255, 227, 82, 42, 160, 255, 255,
-        255, 255, 228, 84, 144, 160, 255, 255, 255, 255, 229, 50, 12, 160, 255, 255, 255, 255, 230,
-        61, 173, 32, 255, 255, 255, 255, 231, 27, 41, 32, 255, 255, 255, 255, 232, 20, 84, 160,
-        255, 255, 255, 255, 232, 251, 11, 32, 255, 255, 255, 255, 233, 253, 113, 32, 255, 255, 255,
-        255, 234, 218, 237, 32, 255, 255, 255, 255, 235, 221, 83, 32, 255, 255, 255, 255, 236, 186,
-        207, 32, 255, 255, 255, 255, 237, 179, 250, 160, 255, 255, 255, 255, 238, 154, 177, 32,
-        255, 255, 255, 255, 239, 129, 103, 160, 255, 255, 255, 255, 240, 159, 125, 32, 255, 255,
-        255, 255, 241, 97, 73, 160, 255, 255, 255, 255, 242, 127, 95, 32, 255, 255, 255, 255, 243,
-        74, 102, 32, 255, 255, 255, 255, 244, 95, 65, 32, 255, 255, 255, 255, 245, 33, 13, 160,
-        255, 255, 255, 255, 246, 63, 35, 32, 255, 255, 255, 255, 247, 0, 239, 160, 255, 255, 255,
-        255, 248, 31, 5, 32, 255, 255, 255, 255, 248, 224, 209, 160, 255, 255, 255, 255, 249, 254,
-        231, 32, 255, 255, 255, 255, 250, 192, 179, 160, 255, 255, 255, 255, 251, 232, 3, 160, 255,
-        255, 255, 255, 252, 123, 171, 160, 255, 255, 255, 255, 253, 199, 187, 112, 0, 0, 0, 0, 3,
-        112, 198, 32, 0, 0, 0, 0, 4, 41, 88, 32, 0, 0, 0, 0, 5, 80, 168, 32, 0, 0, 0, 0, 6, 9, 58,
-        32, 0, 0, 0, 0, 7, 48, 138, 32, 0, 0, 0, 0, 7, 233, 28, 32, 0, 0, 0, 0, 9, 16, 108, 32, 0,
-        0, 0, 0, 9, 200, 254, 32, 0, 0, 0, 0, 10, 240, 78, 32, 0, 0, 0, 0, 11, 178, 26, 160, 0, 0,
-        0, 0, 12, 208, 48, 32, 0, 0, 0, 0, 13, 145, 252, 160, 0, 0, 0, 0, 14, 176, 18, 32, 0, 0, 0,
-        0, 15, 113, 222, 160, 0, 0, 0, 0, 16, 153, 46, 160, 0, 0, 0, 0, 17, 81, 192, 160, 0, 0, 0,
-        0, 18, 121, 16, 160, 0, 0, 0, 0, 19, 49, 162, 160, 0, 0, 0, 0, 20, 88, 242, 160, 0, 0, 0,
-        0, 21, 35, 235, 144, 0, 0, 0, 0, 22, 56, 198, 144, 0, 0, 0, 0, 23, 3, 205, 144, 0, 0, 0, 0,
-        24, 24, 168, 144, 0, 0, 0, 0, 24, 227, 175, 144, 0, 0, 0, 0, 25, 248, 138, 144, 0, 0, 0, 0,
-        26, 195, 145, 144, 0, 0, 0, 0, 27, 225, 167, 16, 0, 0, 0, 0, 28, 172, 174, 16, 0, 0, 0, 0,
-        29, 193, 137, 16, 0, 0, 0, 0, 30, 140, 144, 16, 0, 0, 0, 0, 31, 161, 107, 16, 0, 0, 0, 0,
-        32, 108, 114, 16, 0, 0, 0, 0, 33, 129, 77, 16, 0, 0, 0, 0, 34, 76, 84, 16, 0, 0, 0, 0, 35,
-        97, 47, 16, 0, 0, 0, 0, 36, 44, 54, 16, 0, 0, 0, 0, 37, 74, 75, 144, 0, 0, 0, 0, 38, 12,
-        24, 16, 0, 0, 0, 0, 39, 42, 45, 144, 0, 0, 0, 0, 39, 245, 52, 144, 0, 0, 0, 0, 41, 10, 15,
-        144, 0, 0, 0, 0, 41, 213, 22, 144, 0, 0, 0, 0, 42, 233, 241, 144, 0, 0, 0, 0, 43, 180, 248,
-        144, 0, 0, 0, 0, 44, 201, 211, 144, 0, 0, 0, 0, 45, 148, 218, 144, 0, 0, 0, 0, 46, 169,
-        181, 144, 0, 0, 0, 0, 47, 116, 188, 144, 0, 0, 0, 0, 48, 137, 151, 144, 0, 0, 0, 0, 49, 93,
-        217, 16, 1, 2, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4,
-        3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 5, 3, 5, 3, 5, 3, 5,
-        3, 5, 3, 4, 3, 4, 3, 5, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4,
-        3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 6, 4, 3, 4, 3, 4, 3, 4, 3,
-        4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3,
-        4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 255, 255, 250, 116, 0, 0, 255, 255, 250, 15, 0, 4, 0,
-        0, 8, 31, 1, 8, 0, 0, 14, 16, 1, 12, 0, 0, 0, 0, 0, 16, 0, 0, 28, 32, 1, 20, 0, 0, 14, 16,
-        0, 12, 76, 77, 84, 0, 68, 77, 84, 0, 73, 83, 84, 0, 66, 83, 84, 0, 71, 77, 84, 0, 66, 68,
-        83, 84, 0, 10, 71, 77, 84, 48, 66, 83, 84, 44, 77, 51, 46, 53, 46, 48, 47, 49, 44, 77, 49,
-        48, 46, 53, 46, 48, 10,
     ];
     pub(crate) const EUROPE_BELGRADE: &[u8] = &[
         84, 90, 105, 102, 50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -63110,50 +61286,6 @@ mod raw_tzdata {
         83, 84, 0, 10, 67, 69, 84, 45, 49, 67, 69, 83, 84, 44, 77, 51, 46, 53, 46, 48, 44, 77, 49,
         48, 46, 53, 46, 48, 47, 51, 10,
     ];
-    pub(crate) const EUROPE_TIRASPOL: &[u8] = &[
-        84, 90, 105, 102, 50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 84, 90, 105, 102, 50,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        87, 0, 0, 0, 9, 0, 0, 0, 38, 255, 255, 255, 255, 86, 182, 200, 56, 255, 255, 255, 255, 158,
-        107, 159, 12, 255, 255, 255, 255, 183, 176, 210, 8, 255, 255, 255, 255, 185, 62, 243, 96,
-        255, 255, 255, 255, 185, 239, 156, 96, 255, 255, 255, 255, 186, 223, 141, 96, 255, 255,
-        255, 255, 187, 207, 126, 96, 255, 255, 255, 255, 188, 200, 169, 224, 255, 255, 255, 255,
-        189, 184, 154, 224, 255, 255, 255, 255, 190, 168, 139, 224, 255, 255, 255, 255, 191, 152,
-        124, 224, 255, 255, 255, 255, 192, 136, 109, 224, 255, 255, 255, 255, 193, 120, 94, 224,
-        255, 255, 255, 255, 194, 104, 79, 224, 255, 255, 255, 255, 195, 88, 64, 224, 255, 255, 255,
-        255, 196, 72, 49, 224, 255, 255, 255, 255, 197, 56, 34, 224, 255, 255, 255, 255, 198, 40,
-        19, 224, 255, 255, 255, 255, 199, 24, 4, 224, 255, 255, 255, 255, 200, 188, 147, 96, 255,
-        255, 255, 255, 202, 119, 125, 80, 255, 255, 255, 255, 204, 231, 75, 16, 255, 255, 255, 255,
-        205, 169, 23, 144, 255, 255, 255, 255, 206, 162, 67, 16, 255, 255, 255, 255, 207, 146, 52,
-        16, 255, 255, 255, 255, 208, 78, 144, 96, 0, 0, 0, 0, 21, 39, 167, 208, 0, 0, 0, 0, 22, 24,
-        220, 64, 0, 0, 0, 0, 23, 8, 219, 80, 0, 0, 0, 0, 23, 250, 15, 192, 0, 0, 0, 0, 24, 234, 14,
-        208, 0, 0, 0, 0, 25, 219, 67, 64, 0, 0, 0, 0, 26, 204, 147, 208, 0, 0, 0, 0, 27, 188, 160,
-        240, 0, 0, 0, 0, 28, 172, 145, 240, 0, 0, 0, 0, 29, 156, 130, 240, 0, 0, 0, 0, 30, 140,
-        115, 240, 0, 0, 0, 0, 31, 124, 100, 240, 0, 0, 0, 0, 32, 108, 85, 240, 0, 0, 0, 0, 33, 92,
-        70, 240, 0, 0, 0, 0, 34, 76, 55, 240, 0, 0, 0, 0, 35, 60, 40, 240, 0, 0, 0, 0, 36, 44, 25,
-        240, 0, 0, 0, 0, 37, 28, 10, 240, 0, 0, 0, 0, 38, 11, 251, 240, 0, 0, 0, 0, 39, 5, 39, 112,
-        0, 0, 0, 0, 39, 245, 24, 112, 0, 0, 0, 0, 40, 229, 23, 128, 0, 0, 0, 0, 41, 120, 191, 128,
-        0, 0, 0, 0, 41, 212, 250, 112, 0, 0, 0, 0, 42, 196, 235, 112, 0, 0, 0, 0, 43, 180, 220,
-        112, 0, 0, 0, 0, 44, 164, 205, 112, 0, 0, 0, 0, 45, 148, 190, 112, 0, 0, 0, 0, 46, 132,
-        175, 112, 0, 0, 0, 0, 47, 116, 160, 112, 0, 0, 0, 0, 48, 100, 145, 112, 0, 0, 0, 0, 49, 93,
-        188, 240, 0, 0, 0, 0, 50, 114, 151, 240, 0, 0, 0, 0, 51, 61, 158, 240, 0, 0, 0, 0, 52, 82,
-        121, 240, 0, 0, 0, 0, 53, 29, 128, 240, 0, 0, 0, 0, 54, 50, 91, 240, 0, 0, 0, 0, 54, 253,
-        98, 240, 0, 0, 0, 0, 56, 27, 120, 112, 0, 0, 0, 0, 56, 221, 68, 240, 0, 0, 0, 0, 57, 251,
-        90, 112, 0, 0, 0, 0, 58, 189, 38, 240, 0, 0, 0, 0, 59, 219, 60, 112, 0, 0, 0, 0, 60, 166,
-        67, 112, 0, 0, 0, 0, 61, 187, 30, 112, 0, 0, 0, 0, 62, 134, 37, 112, 0, 0, 0, 0, 63, 155,
-        0, 112, 0, 0, 0, 0, 64, 102, 7, 112, 0, 0, 0, 0, 65, 132, 28, 240, 0, 0, 0, 0, 66, 69, 233,
-        112, 0, 0, 0, 0, 67, 99, 254, 240, 0, 0, 0, 0, 68, 37, 203, 112, 0, 0, 0, 0, 69, 67, 224,
-        240, 0, 0, 0, 0, 70, 5, 173, 112, 0, 0, 0, 0, 71, 35, 194, 240, 0, 0, 0, 0, 71, 238, 201,
-        240, 0, 0, 0, 0, 73, 3, 164, 240, 0, 0, 0, 0, 73, 206, 171, 240, 0, 0, 0, 0, 74, 227, 134,
-        240, 0, 0, 0, 0, 75, 174, 141, 240, 0, 0, 0, 0, 76, 204, 163, 112, 1, 2, 4, 3, 4, 3, 4, 3,
-        4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 6, 5, 6, 5, 6, 8, 7, 8, 7, 8, 7, 8, 7, 8, 7, 8, 7, 8,
-        7, 8, 7, 8, 7, 8, 7, 8, 3, 4, 8, 7, 8, 7, 8, 7, 8, 7, 8, 7, 8, 7, 8, 7, 8, 7, 8, 7, 8, 7,
-        8, 7, 8, 7, 8, 7, 8, 7, 8, 7, 8, 7, 8, 7, 8, 7, 8, 7, 8, 0, 0, 27, 200, 0, 0, 0, 0, 26,
-        244, 0, 4, 0, 0, 24, 120, 0, 8, 0, 0, 42, 48, 1, 12, 0, 0, 28, 32, 0, 17, 0, 0, 14, 16, 0,
-        21, 0, 0, 28, 32, 1, 25, 0, 0, 56, 64, 1, 30, 0, 0, 42, 48, 0, 34, 76, 77, 84, 0, 67, 77,
-        84, 0, 66, 77, 84, 0, 69, 69, 83, 84, 0, 69, 69, 84, 0, 67, 69, 84, 0, 67, 69, 83, 84, 0,
-        77, 83, 68, 0, 77, 83, 75, 0, 10, 77, 83, 75, 45, 51, 10,
-    ];
     pub(crate) const EUROPE_ULYANOVSK: &[u8] = &[
         84, 90, 105, 102, 50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 84, 90, 105, 102, 50,
@@ -64037,10 +62169,10 @@ mod raw_tzdata {
         84, 90, 105, 102, 50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 84, 90, 105, 102, 50,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        4, 0, 0, 0, 3, 0, 0, 0, 12, 255, 255, 255, 255, 49, 24, 70, 128, 255, 255, 255, 255, 96,
-        32, 40, 228, 255, 255, 255, 255, 196, 35, 100, 0, 255, 255, 255, 255, 203, 137, 54, 192, 1,
-        0, 2, 0, 0, 0, 0, 0, 0, 0, 255, 255, 95, 156, 0, 4, 255, 255, 87, 64, 0, 8, 45, 48, 48, 0,
-        76, 77, 84, 0, 45, 49, 50, 0, 10, 60, 45, 48, 48, 62, 48, 10,
+        3, 0, 0, 0, 4, 0, 0, 0, 16, 255, 255, 255, 255, 195, 44, 219, 128, 0, 0, 0, 0, 18, 86, 4,
+        192, 0, 0, 0, 0, 47, 5, 57, 176, 1, 2, 3, 0, 0, 0, 0, 0, 0, 255, 255, 87, 64, 0, 4, 255,
+        255, 101, 80, 0, 8, 0, 0, 182, 208, 0, 12, 45, 48, 48, 0, 45, 49, 50, 0, 45, 49, 49, 0, 43,
+        49, 51, 0, 10, 60, 43, 49, 51, 62, 45, 49, 51, 10,
     ];
     pub(crate) const PACIFIC_FAKAOFO: &[u8] = &[
         84, 90, 105, 102, 50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -64127,15 +62259,6 @@ mod raw_tzdata {
         88, 0, 4, 255, 255, 122, 104, 1, 8, 255, 255, 122, 104, 1, 12, 255, 255, 122, 104, 1, 16,
         255, 255, 115, 96, 0, 4, 76, 77, 84, 0, 72, 83, 84, 0, 72, 68, 84, 0, 72, 87, 84, 0, 72,
         80, 84, 0, 10, 72, 83, 84, 49, 48, 10,
-    ];
-    pub(crate) const PACIFIC_KANTON: &[u8] = &[
-        84, 90, 105, 102, 50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 84, 90, 105, 102, 50,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        3, 0, 0, 0, 4, 0, 0, 0, 16, 255, 255, 255, 255, 195, 44, 219, 128, 0, 0, 0, 0, 18, 86, 4,
-        192, 0, 0, 0, 0, 47, 5, 57, 176, 1, 2, 3, 0, 0, 0, 0, 0, 0, 255, 255, 87, 64, 0, 4, 255,
-        255, 101, 80, 0, 8, 0, 0, 182, 208, 0, 12, 45, 48, 48, 0, 45, 49, 50, 0, 45, 49, 49, 0, 43,
-        49, 51, 0, 10, 60, 43, 49, 51, 62, 45, 49, 51, 10,
     ];
     pub(crate) const PACIFIC_KIRITIMATI: &[u8] = &[
         84, 90, 105, 102, 50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
