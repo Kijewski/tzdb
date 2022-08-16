@@ -199,7 +199,7 @@ pub mod time_zone {
         pub const SAO_TOME: TimeZoneRef<'static> = tzdata::AFRICA_SAO_TOME;
 
         /// Time zone data for Africa/Timbuktu,
-        pub const TIMBUKTU: TimeZoneRef<'static> = tzdata::AFRICA_TIMBUKTU;
+        pub const TIMBUKTU: TimeZoneRef<'static> = tzdata::AFRICA_BAMAKO;
 
         /// Time zone data for Africa/Tripoli,
         pub const TRIPOLI: TimeZoneRef<'static> = tzdata::LIBYA;
@@ -463,7 +463,7 @@ pub mod time_zone {
         /// Raw, unparsed time zone data for Africa/Timbuktu,
         #[cfg(feature = "binary")]
         #[cfg_attr(docsrs, doc(cfg(feature = "binary")))]
-        pub const RAW_TIMBUKTU: &[u8] = raw_tzdata::AFRICA_TIMBUKTU;
+        pub const RAW_TIMBUKTU: &[u8] = raw_tzdata::AFRICA_BAMAKO;
 
         /// Raw, unparsed time zone data for Africa/Tripoli,
         #[cfg(feature = "binary")]
@@ -570,7 +570,7 @@ pub mod time_zone {
         pub const CHIHUAHUA: TimeZoneRef<'static> = tzdata::AMERICA_CHIHUAHUA;
 
         /// Time zone data for America/Coral_Harbour,
-        pub const CORAL_HARBOUR: TimeZoneRef<'static> = tzdata::AMERICA_CORAL_HARBOUR;
+        pub const CORAL_HARBOUR: TimeZoneRef<'static> = tzdata::AMERICA_ATIKOKAN;
 
         /// Time zone data for America/Cordoba,
         pub const CORDOBA: TimeZoneRef<'static> = tzdata::AMERICA_CORDOBA;
@@ -825,13 +825,13 @@ pub mod time_zone {
         pub const RIO_BRANCO: TimeZoneRef<'static> = tzdata::AMERICA_PORTO_ACRE;
 
         /// Time zone data for America/Rosario,
-        pub const ROSARIO: TimeZoneRef<'static> = tzdata::AMERICA_ROSARIO;
+        pub const ROSARIO: TimeZoneRef<'static> = tzdata::AMERICA_CORDOBA;
 
         /// Time zone data for America/Santarem,
         pub const SANTAREM: TimeZoneRef<'static> = tzdata::AMERICA_SANTAREM;
 
         /// Time zone data for America/Santa_Isabel,
-        pub const SANTA_ISABEL: TimeZoneRef<'static> = tzdata::AMERICA_SANTA_ISABEL;
+        pub const SANTA_ISABEL: TimeZoneRef<'static> = tzdata::AMERICA_ENSENADA;
 
         /// Time zone data for America/Santiago,
         pub const SANTIAGO: TimeZoneRef<'static> = tzdata::AMERICA_SANTIAGO;
@@ -882,10 +882,10 @@ pub mod time_zone {
         pub const THUNDER_BAY: TimeZoneRef<'static> = tzdata::AMERICA_THUNDER_BAY;
 
         /// Time zone data for America/Tijuana,
-        pub const TIJUANA: TimeZoneRef<'static> = tzdata::AMERICA_SANTA_ISABEL;
+        pub const TIJUANA: TimeZoneRef<'static> = tzdata::AMERICA_ENSENADA;
 
         /// Time zone data for America/Toronto,
-        pub const TORONTO: TimeZoneRef<'static> = tzdata::AMERICA_TORONTO;
+        pub const TORONTO: TimeZoneRef<'static> = tzdata::AMERICA_MONTREAL;
 
         /// Time zone data for America/Tortola,
         pub const TORTOLA: TimeZoneRef<'static> = tzdata::AMERICA_TORTOLA;
@@ -1051,7 +1051,7 @@ pub mod time_zone {
         /// Raw, unparsed time zone data for America/Coral_Harbour,
         #[cfg(feature = "binary")]
         #[cfg_attr(docsrs, doc(cfg(feature = "binary")))]
-        pub const RAW_CORAL_HARBOUR: &[u8] = raw_tzdata::AMERICA_CORAL_HARBOUR;
+        pub const RAW_CORAL_HARBOUR: &[u8] = raw_tzdata::AMERICA_ATIKOKAN;
 
         /// Raw, unparsed time zone data for America/Cordoba,
         #[cfg(feature = "binary")]
@@ -1476,7 +1476,7 @@ pub mod time_zone {
         /// Raw, unparsed time zone data for America/Rosario,
         #[cfg(feature = "binary")]
         #[cfg_attr(docsrs, doc(cfg(feature = "binary")))]
-        pub const RAW_ROSARIO: &[u8] = raw_tzdata::AMERICA_ROSARIO;
+        pub const RAW_ROSARIO: &[u8] = raw_tzdata::AMERICA_CORDOBA;
 
         /// Raw, unparsed time zone data for America/Santarem,
         #[cfg(feature = "binary")]
@@ -1486,7 +1486,7 @@ pub mod time_zone {
         /// Raw, unparsed time zone data for America/Santa_Isabel,
         #[cfg(feature = "binary")]
         #[cfg_attr(docsrs, doc(cfg(feature = "binary")))]
-        pub const RAW_SANTA_ISABEL: &[u8] = raw_tzdata::AMERICA_SANTA_ISABEL;
+        pub const RAW_SANTA_ISABEL: &[u8] = raw_tzdata::AMERICA_ENSENADA;
 
         /// Raw, unparsed time zone data for America/Santiago,
         #[cfg(feature = "binary")]
@@ -1571,12 +1571,12 @@ pub mod time_zone {
         /// Raw, unparsed time zone data for America/Tijuana,
         #[cfg(feature = "binary")]
         #[cfg_attr(docsrs, doc(cfg(feature = "binary")))]
-        pub const RAW_TIJUANA: &[u8] = raw_tzdata::AMERICA_SANTA_ISABEL;
+        pub const RAW_TIJUANA: &[u8] = raw_tzdata::AMERICA_ENSENADA;
 
         /// Raw, unparsed time zone data for America/Toronto,
         #[cfg(feature = "binary")]
         #[cfg_attr(docsrs, doc(cfg(feature = "binary")))]
-        pub const RAW_TORONTO: &[u8] = raw_tzdata::AMERICA_TORONTO;
+        pub const RAW_TORONTO: &[u8] = raw_tzdata::AMERICA_MONTREAL;
 
         /// Raw, unparsed time zone data for America/Tortola,
         #[cfg(feature = "binary")]
@@ -1793,10 +1793,10 @@ pub mod time_zone {
         pub const CHOIBALSAN: TimeZoneRef<'static> = tzdata::ASIA_CHOIBALSAN;
 
         /// Time zone data for Asia/Chongqing,
-        pub const CHONGQING: TimeZoneRef<'static> = tzdata::ASIA_CHONGQING;
+        pub const CHONGQING: TimeZoneRef<'static> = tzdata::PRC;
 
         /// Time zone data for Asia/Chungking,
-        pub const CHUNGKING: TimeZoneRef<'static> = tzdata::ASIA_CHONGQING;
+        pub const CHUNGKING: TimeZoneRef<'static> = tzdata::PRC;
 
         /// Time zone data for Asia/Colombo,
         pub const COLOMBO: TimeZoneRef<'static> = tzdata::ASIA_COLOMBO;
@@ -1825,11 +1825,8 @@ pub mod time_zone {
         /// Time zone data for Asia/Gaza,
         pub const GAZA: TimeZoneRef<'static> = tzdata::ASIA_GAZA;
 
-        /// Time zone data for Asia/Hanoi,
-        pub const HANOI: TimeZoneRef<'static> = tzdata::ASIA_HANOI;
-
         /// Time zone data for Asia/Harbin,
-        pub const HARBIN: TimeZoneRef<'static> = tzdata::ASIA_HARBIN;
+        pub const HARBIN: TimeZoneRef<'static> = tzdata::PRC;
 
         /// Time zone data for Asia/Hebron,
         pub const HEBRON: TimeZoneRef<'static> = tzdata::ASIA_HEBRON;
@@ -1985,7 +1982,7 @@ pub mod time_zone {
         pub const TEHRAN: TimeZoneRef<'static> = tzdata::IRAN;
 
         /// Time zone data for Asia/Tel_Aviv,
-        pub const TEL_AVIV: TimeZoneRef<'static> = tzdata::ASIA_TEL_AVIV;
+        pub const TEL_AVIV: TimeZoneRef<'static> = tzdata::ISRAEL;
 
         /// Time zone data for Asia/Thimbu,
         pub const THIMBU: TimeZoneRef<'static> = tzdata::ASIA_THIMBU;
@@ -2009,7 +2006,7 @@ pub mod time_zone {
         pub const ULAN_BATOR: TimeZoneRef<'static> = tzdata::ASIA_ULAANBAATAR;
 
         /// Time zone data for Asia/Urumqi,
-        pub const URUMQI: TimeZoneRef<'static> = tzdata::ASIA_URUMQI;
+        pub const URUMQI: TimeZoneRef<'static> = tzdata::ASIA_KASHGAR;
 
         /// Time zone data for Asia/Ust-Nera,
         pub const UST_NERA: TimeZoneRef<'static> = tzdata::ASIA_UST_NERA;
@@ -2135,12 +2132,12 @@ pub mod time_zone {
         /// Raw, unparsed time zone data for Asia/Chongqing,
         #[cfg(feature = "binary")]
         #[cfg_attr(docsrs, doc(cfg(feature = "binary")))]
-        pub const RAW_CHONGQING: &[u8] = raw_tzdata::ASIA_CHONGQING;
+        pub const RAW_CHONGQING: &[u8] = raw_tzdata::PRC;
 
         /// Raw, unparsed time zone data for Asia/Chungking,
         #[cfg(feature = "binary")]
         #[cfg_attr(docsrs, doc(cfg(feature = "binary")))]
-        pub const RAW_CHUNGKING: &[u8] = raw_tzdata::ASIA_CHONGQING;
+        pub const RAW_CHUNGKING: &[u8] = raw_tzdata::PRC;
 
         /// Raw, unparsed time zone data for Asia/Colombo,
         #[cfg(feature = "binary")]
@@ -2187,15 +2184,10 @@ pub mod time_zone {
         #[cfg_attr(docsrs, doc(cfg(feature = "binary")))]
         pub const RAW_GAZA: &[u8] = raw_tzdata::ASIA_GAZA;
 
-        /// Raw, unparsed time zone data for Asia/Hanoi,
-        #[cfg(feature = "binary")]
-        #[cfg_attr(docsrs, doc(cfg(feature = "binary")))]
-        pub const RAW_HANOI: &[u8] = raw_tzdata::ASIA_HANOI;
-
         /// Raw, unparsed time zone data for Asia/Harbin,
         #[cfg(feature = "binary")]
         #[cfg_attr(docsrs, doc(cfg(feature = "binary")))]
-        pub const RAW_HARBIN: &[u8] = raw_tzdata::ASIA_HARBIN;
+        pub const RAW_HARBIN: &[u8] = raw_tzdata::PRC;
 
         /// Raw, unparsed time zone data for Asia/Hebron,
         #[cfg(feature = "binary")]
@@ -2455,7 +2447,7 @@ pub mod time_zone {
         /// Raw, unparsed time zone data for Asia/Tel_Aviv,
         #[cfg(feature = "binary")]
         #[cfg_attr(docsrs, doc(cfg(feature = "binary")))]
-        pub const RAW_TEL_AVIV: &[u8] = raw_tzdata::ASIA_TEL_AVIV;
+        pub const RAW_TEL_AVIV: &[u8] = raw_tzdata::ISRAEL;
 
         /// Raw, unparsed time zone data for Asia/Thimbu,
         #[cfg(feature = "binary")]
@@ -2495,7 +2487,7 @@ pub mod time_zone {
         /// Raw, unparsed time zone data for Asia/Urumqi,
         #[cfg(feature = "binary")]
         #[cfg_attr(docsrs, doc(cfg(feature = "binary")))]
-        pub const RAW_URUMQI: &[u8] = raw_tzdata::ASIA_URUMQI;
+        pub const RAW_URUMQI: &[u8] = raw_tzdata::ASIA_KASHGAR;
 
         /// Raw, unparsed time zone data for Asia/Ust-Nera,
         #[cfg(feature = "binary")]
@@ -2556,7 +2548,7 @@ pub mod time_zone {
         pub const FAROE: TimeZoneRef<'static> = tzdata::ATLANTIC_FAEROE;
 
         /// Time zone data for Atlantic/Jan_Mayen,
-        pub const JAN_MAYEN: TimeZoneRef<'static> = tzdata::ATLANTIC_JAN_MAYEN;
+        pub const JAN_MAYEN: TimeZoneRef<'static> = tzdata::ARCTIC_LONGYEARBYEN;
 
         /// Time zone data for Atlantic/Madeira,
         pub const MADEIRA: TimeZoneRef<'static> = tzdata::ATLANTIC_MADEIRA;
@@ -2606,7 +2598,7 @@ pub mod time_zone {
         /// Raw, unparsed time zone data for Atlantic/Jan_Mayen,
         #[cfg(feature = "binary")]
         #[cfg_attr(docsrs, doc(cfg(feature = "binary")))]
-        pub const RAW_JAN_MAYEN: &[u8] = raw_tzdata::ATLANTIC_JAN_MAYEN;
+        pub const RAW_JAN_MAYEN: &[u8] = raw_tzdata::ARCTIC_LONGYEARBYEN;
 
         /// Raw, unparsed time zone data for Atlantic/Madeira,
         #[cfg(feature = "binary")]
@@ -2663,7 +2655,7 @@ pub mod time_zone {
         pub const EUCLA: TimeZoneRef<'static> = tzdata::AUSTRALIA_EUCLA;
 
         /// Time zone data for Australia/Hobart,
-        pub const HOBART: TimeZoneRef<'static> = tzdata::AUSTRALIA_HOBART;
+        pub const HOBART: TimeZoneRef<'static> = tzdata::AUSTRALIA_CURRIE;
 
         /// Time zone data for Australia/LHI,
         pub const LHI: TimeZoneRef<'static> = tzdata::AUSTRALIA_LHI;
@@ -2696,7 +2688,7 @@ pub mod time_zone {
         pub const SYDNEY: TimeZoneRef<'static> = tzdata::AUSTRALIA_ACT;
 
         /// Time zone data for Australia/Tasmania,
-        pub const TASMANIA: TimeZoneRef<'static> = tzdata::AUSTRALIA_HOBART;
+        pub const TASMANIA: TimeZoneRef<'static> = tzdata::AUSTRALIA_CURRIE;
 
         /// Time zone data for Australia/Victoria,
         pub const VICTORIA: TimeZoneRef<'static> = tzdata::AUSTRALIA_MELBOURNE;
@@ -2750,7 +2742,7 @@ pub mod time_zone {
         /// Raw, unparsed time zone data for Australia/Hobart,
         #[cfg(feature = "binary")]
         #[cfg_attr(docsrs, doc(cfg(feature = "binary")))]
-        pub const RAW_HOBART: &[u8] = raw_tzdata::AUSTRALIA_HOBART;
+        pub const RAW_HOBART: &[u8] = raw_tzdata::AUSTRALIA_CURRIE;
 
         /// Raw, unparsed time zone data for Australia/LHI,
         #[cfg(feature = "binary")]
@@ -2805,7 +2797,7 @@ pub mod time_zone {
         /// Raw, unparsed time zone data for Australia/Tasmania,
         #[cfg(feature = "binary")]
         #[cfg_attr(docsrs, doc(cfg(feature = "binary")))]
-        pub const RAW_TASMANIA: &[u8] = raw_tzdata::AUSTRALIA_HOBART;
+        pub const RAW_TASMANIA: &[u8] = raw_tzdata::AUSTRALIA_CURRIE;
 
         /// Raw, unparsed time zone data for Australia/Victoria,
         #[cfg(feature = "binary")]
@@ -2871,7 +2863,7 @@ pub mod time_zone {
         pub const CENTRAL: TimeZoneRef<'static> = tzdata::AMERICA_WINNIPEG;
 
         /// Time zone data for Canada/Eastern,
-        pub const EASTERN: TimeZoneRef<'static> = tzdata::AMERICA_TORONTO;
+        pub const EASTERN: TimeZoneRef<'static> = tzdata::AMERICA_MONTREAL;
 
         /// Time zone data for Canada/Mountain,
         pub const MOUNTAIN: TimeZoneRef<'static> = tzdata::AMERICA_EDMONTON;
@@ -2901,7 +2893,7 @@ pub mod time_zone {
         /// Raw, unparsed time zone data for Canada/Eastern,
         #[cfg(feature = "binary")]
         #[cfg_attr(docsrs, doc(cfg(feature = "binary")))]
-        pub const RAW_EASTERN: &[u8] = raw_tzdata::AMERICA_TORONTO;
+        pub const RAW_EASTERN: &[u8] = raw_tzdata::AMERICA_MONTREAL;
 
         /// Raw, unparsed time zone data for Canada/Mountain,
         #[cfg(feature = "binary")]
@@ -3009,7 +3001,7 @@ pub mod time_zone {
         pub const GMT_PLUS_0: TimeZoneRef<'static> = tzdata::GMT;
 
         /// Time zone data for Etc/GMT+1,
-        pub const GMT_PLUS_1: TimeZoneRef<'static> = tzdata::ATLANTIC_JAN_MAYEN;
+        pub const GMT_PLUS_1: TimeZoneRef<'static> = tzdata::ETC_GMT_PLUS_1;
 
         /// Time zone data for Etc/GMT+10,
         pub const GMT_PLUS_10: TimeZoneRef<'static> = tzdata::ETC_GMT_PLUS_10;
@@ -3155,7 +3147,7 @@ pub mod time_zone {
         /// Raw, unparsed time zone data for Etc/GMT+1,
         #[cfg(feature = "binary")]
         #[cfg_attr(docsrs, doc(cfg(feature = "binary")))]
-        pub const RAW_GMT_PLUS_1: &[u8] = raw_tzdata::ATLANTIC_JAN_MAYEN;
+        pub const RAW_GMT_PLUS_1: &[u8] = raw_tzdata::ETC_GMT_PLUS_1;
 
         /// Raw, unparsed time zone data for Etc/GMT+10,
         #[cfg(feature = "binary")]
@@ -3260,7 +3252,7 @@ pub mod time_zone {
         pub const ATHENS: TimeZoneRef<'static> = tzdata::EUROPE_ATHENS;
 
         /// Time zone data for Europe/Belfast,
-        pub const BELFAST: TimeZoneRef<'static> = tzdata::EUROPE_BELFAST;
+        pub const BELFAST: TimeZoneRef<'static> = tzdata::GB;
 
         /// Time zone data for Europe/Belgrade,
         pub const BELGRADE: TimeZoneRef<'static> = tzdata::EUROPE_BELGRADE;
@@ -3404,7 +3396,7 @@ pub mod time_zone {
         pub const TIRANE: TimeZoneRef<'static> = tzdata::EUROPE_TIRANE;
 
         /// Time zone data for Europe/Tiraspol,
-        pub const TIRASPOL: TimeZoneRef<'static> = tzdata::EUROPE_TIRASPOL;
+        pub const TIRASPOL: TimeZoneRef<'static> = tzdata::EUROPE_CHISINAU;
 
         /// Time zone data for Europe/Ulyanovsk,
         pub const ULYANOVSK: TimeZoneRef<'static> = tzdata::EUROPE_ULYANOVSK;
@@ -3462,7 +3454,7 @@ pub mod time_zone {
         /// Raw, unparsed time zone data for Europe/Belfast,
         #[cfg(feature = "binary")]
         #[cfg_attr(docsrs, doc(cfg(feature = "binary")))]
-        pub const RAW_BELFAST: &[u8] = raw_tzdata::EUROPE_BELFAST;
+        pub const RAW_BELFAST: &[u8] = raw_tzdata::GB;
 
         /// Raw, unparsed time zone data for Europe/Belgrade,
         #[cfg(feature = "binary")]
@@ -3702,7 +3694,7 @@ pub mod time_zone {
         /// Raw, unparsed time zone data for Europe/Tiraspol,
         #[cfg(feature = "binary")]
         #[cfg_attr(docsrs, doc(cfg(feature = "binary")))]
-        pub const RAW_TIRASPOL: &[u8] = raw_tzdata::EUROPE_TIRASPOL;
+        pub const RAW_TIRASPOL: &[u8] = raw_tzdata::EUROPE_CHISINAU;
 
         /// Raw, unparsed time zone data for Europe/Ulyanovsk,
         #[cfg(feature = "binary")]
@@ -3858,7 +3850,7 @@ pub mod time_zone {
         use super::*;
 
         /// Time zone data for Mexico/BajaNorte,
-        pub const BAJA_NORTE: TimeZoneRef<'static> = tzdata::AMERICA_SANTA_ISABEL;
+        pub const BAJA_NORTE: TimeZoneRef<'static> = tzdata::AMERICA_ENSENADA;
 
         /// Time zone data for Mexico/BajaSur,
         pub const BAJA_SUR: TimeZoneRef<'static> = tzdata::AMERICA_MAZATLAN;
@@ -3869,7 +3861,7 @@ pub mod time_zone {
         /// Raw, unparsed time zone data for Mexico/BajaNorte,
         #[cfg(feature = "binary")]
         #[cfg_attr(docsrs, doc(cfg(feature = "binary")))]
-        pub const RAW_BAJA_NORTE: &[u8] = raw_tzdata::AMERICA_SANTA_ISABEL;
+        pub const RAW_BAJA_NORTE: &[u8] = raw_tzdata::AMERICA_ENSENADA;
 
         /// Raw, unparsed time zone data for Mexico/BajaSur,
         #[cfg(feature = "binary")]
@@ -3935,10 +3927,10 @@ pub mod time_zone {
         pub const HONOLULU: TimeZoneRef<'static> = tzdata::PACIFIC_HONOLULU;
 
         /// Time zone data for Pacific/Johnston,
-        pub const JOHNSTON: TimeZoneRef<'static> = tzdata::HST;
+        pub const JOHNSTON: TimeZoneRef<'static> = tzdata::PACIFIC_HONOLULU;
 
         /// Time zone data for Pacific/Kanton,
-        pub const KANTON: TimeZoneRef<'static> = tzdata::PACIFIC_KANTON;
+        pub const KANTON: TimeZoneRef<'static> = tzdata::PACIFIC_ENDERBURY;
 
         /// Time zone data for Pacific/Kiritimati,
         pub const KIRITIMATI: TimeZoneRef<'static> = tzdata::PACIFIC_KIRITIMATI;
@@ -4101,12 +4093,12 @@ pub mod time_zone {
         /// Raw, unparsed time zone data for Pacific/Johnston,
         #[cfg(feature = "binary")]
         #[cfg_attr(docsrs, doc(cfg(feature = "binary")))]
-        pub const RAW_JOHNSTON: &[u8] = raw_tzdata::HST;
+        pub const RAW_JOHNSTON: &[u8] = raw_tzdata::PACIFIC_HONOLULU;
 
         /// Raw, unparsed time zone data for Pacific/Kanton,
         #[cfg(feature = "binary")]
         #[cfg_attr(docsrs, doc(cfg(feature = "binary")))]
-        pub const RAW_KANTON: &[u8] = raw_tzdata::PACIFIC_KANTON;
+        pub const RAW_KANTON: &[u8] = raw_tzdata::PACIFIC_ENDERBURY;
 
         /// Raw, unparsed time zone data for Pacific/Kiritimati,
         #[cfg(feature = "binary")]
@@ -4710,7 +4702,7 @@ pub(crate) const RAW_TIME_ZONES_BY_NAME: phf::Map<Lower, &'static [u8]> =
     include!("raw_time_zones_by_name.inc.rs");
 
 #[cfg(feature = "list")]
-pub(crate) const TIME_ZONES_LIST: [&str; 572] = include!("time_zones_list.inc.rs");
+pub(crate) const TIME_ZONES_LIST: [&str; 571] = include!("time_zones_list.inc.rs");
 
 mod tzdata {
     use tz::timezone::*;
@@ -6412,25 +6404,6 @@ mod tzdata {
                     crate::generated::unwrap!(LocalTimeType::new(-2205, false, Some(b"LMT"))),
                     crate::generated::unwrap!(LocalTimeType::new(0, false, Some(b"GMT"))),
                     crate::generated::unwrap!(LocalTimeType::new(3600, false, Some(b"WAT"))),
-                ];
-                V
-            },
-            &[],
-            &Some({
-                const V: TransitionRule = TransitionRule::Fixed(crate::generated::unwrap!(
-                    LocalTimeType::new(0, false, Some(b"GMT"))
-                ));
-                V
-            })
-        ));
-
-    pub(crate) const AFRICA_TIMBUKTU: TimeZoneRef<'static> =
-        crate::generated::unwrap!(TimeZoneRef::<'static>::new(
-            &[Transition::new(-1830383276, 1),],
-            &{
-                const V: [LocalTimeType; 2] = [
-                    crate::generated::unwrap!(LocalTimeType::new(-724, false, Some(b"LMT"))),
-                    crate::generated::unwrap!(LocalTimeType::new(0, false, Some(b"GMT"))),
                 ];
                 V
             },
@@ -8475,37 +8448,6 @@ mod tzdata {
             })
         ));
 
-    pub(crate) const AMERICA_CORAL_HARBOUR: TimeZoneRef<'static> =
-        crate::generated::unwrap!(TimeZoneRef::<'static>::new(
-            &[
-                Transition::new(-2713890440, 2),
-                Transition::new(-1632070800, 1),
-                Transition::new(-1615140000, 2),
-                Transition::new(-1596992400, 1),
-                Transition::new(-1583179200, 2),
-                Transition::new(-880218000, 3),
-                Transition::new(-769395600, 4),
-                Transition::new(-765396000, 2),
-            ],
-            &{
-                const V: [LocalTimeType; 5] = [
-                    crate::generated::unwrap!(LocalTimeType::new(-19960, false, Some(b"LMT"))),
-                    crate::generated::unwrap!(LocalTimeType::new(-14400, true, Some(b"EDT"))),
-                    crate::generated::unwrap!(LocalTimeType::new(-18000, false, Some(b"EST"))),
-                    crate::generated::unwrap!(LocalTimeType::new(-14400, true, Some(b"EWT"))),
-                    crate::generated::unwrap!(LocalTimeType::new(-14400, true, Some(b"EPT"))),
-                ];
-                V
-            },
-            &[],
-            &Some({
-                const V: TransitionRule = TransitionRule::Fixed(crate::generated::unwrap!(
-                    LocalTimeType::new(-18000, false, Some(b"EST"))
-                ));
-                V
-            })
-        ));
-
     pub(crate) const AMERICA_CORDOBA: TimeZoneRef<'static> =
         crate::generated::unwrap!(TimeZoneRef::<'static>::new(
             &[
@@ -9378,30 +9320,108 @@ mod tzdata {
         crate::generated::unwrap!(TimeZoneRef::<'static>::new(
             &[
                 Transition::new(-1514736000, 1),
-                Transition::new(-1343062800, 2),
-                Transition::new(-1234717200, 1),
-                Transition::new(-875808000, 2),
-                Transition::new(-661539600, 1),
+                Transition::new(-1451667600, 2),
+                Transition::new(-1343062800, 1),
+                Transition::new(-1234803600, 2),
+                Transition::new(-1222963200, 3),
+                Transition::new(-1207242000, 2),
+                Transition::new(-873820800, 4),
+                Transition::new(-769395600, 5),
+                Transition::new(-761677200, 2),
+                Transition::new(-686073600, 3),
+                Transition::new(-661539600, 2),
+                Transition::new(-495039600, 3),
+                Transition::new(-481734000, 2),
+                Transition::new(-463590000, 3),
+                Transition::new(-450284400, 2),
+                Transition::new(-431535600, 3),
+                Transition::new(-418230000, 2),
+                Transition::new(-400086000, 3),
+                Transition::new(-386780400, 2),
+                Transition::new(-368636400, 3),
+                Transition::new(-355330800, 2),
+                Transition::new(-337186800, 3),
+                Transition::new(-323881200, 2),
+                Transition::new(-305737200, 3),
+                Transition::new(-292431600, 2),
+                Transition::new(199274400, 3),
+                Transition::new(215600400, 2),
+                Transition::new(230724000, 3),
+                Transition::new(247050000, 2),
+                Transition::new(262778400, 3),
+                Transition::new(278499600, 2),
+                Transition::new(294228000, 3),
+                Transition::new(309949200, 2),
+                Transition::new(325677600, 3),
+                Transition::new(341398800, 2),
+                Transition::new(357127200, 3),
+                Transition::new(372848400, 2),
+                Transition::new(388576800, 3),
+                Transition::new(404902800, 2),
+                Transition::new(420026400, 3),
+                Transition::new(436352400, 2),
+                Transition::new(452080800, 3),
+                Transition::new(467802000, 2),
+                Transition::new(483530400, 3),
+                Transition::new(499251600, 2),
+                Transition::new(514980000, 3),
+                Transition::new(530701200, 2),
+                Transition::new(544615200, 3),
+                Transition::new(562150800, 2),
+                Transition::new(576064800, 3),
+                Transition::new(594205200, 2),
+                Transition::new(607514400, 3),
+                Transition::new(625654800, 2),
+                Transition::new(638964000, 3),
+                Transition::new(657104400, 2),
+                Transition::new(671018400, 3),
+                Transition::new(688554000, 2),
+                Transition::new(702468000, 3),
+                Transition::new(720003600, 2),
+                Transition::new(733917600, 3),
+                Transition::new(752058000, 2),
+                Transition::new(765367200, 3),
+                Transition::new(783507600, 2),
+                Transition::new(796816800, 3),
+                Transition::new(814957200, 2),
                 Transition::new(828871200, 3),
-                Transition::new(846406800, 1),
+                Transition::new(846406800, 2),
                 Transition::new(860320800, 3),
-                Transition::new(877856400, 1),
+                Transition::new(877856400, 2),
                 Transition::new(891770400, 3),
-                Transition::new(909306000, 1),
+                Transition::new(909306000, 2),
                 Transition::new(923220000, 3),
-                Transition::new(941360400, 1),
+                Transition::new(941360400, 2),
                 Transition::new(954669600, 3),
-                Transition::new(972810000, 1),
-                Transition::new(989143200, 3),
-                Transition::new(1001840400, 1),
+                Transition::new(972810000, 2),
+                Transition::new(986119200, 3),
+                Transition::new(1004259600, 2),
                 Transition::new(1018173600, 3),
+                Transition::new(1035709200, 2),
+                Transition::new(1049623200, 3),
+                Transition::new(1067158800, 2),
+                Transition::new(1081072800, 3),
+                Transition::new(1099213200, 2),
+                Transition::new(1112522400, 3),
+                Transition::new(1130662800, 2),
+                Transition::new(1143972000, 3),
+                Transition::new(1162112400, 2),
+                Transition::new(1175421600, 3),
+                Transition::new(1193562000, 2),
+                Transition::new(1207476000, 3),
+                Transition::new(1225011600, 2),
+                Transition::new(1238925600, 3),
+                Transition::new(1256461200, 2),
+                Transition::new(1268560800, 3),
             ],
             &{
-                const V: [LocalTimeType; 4] = [
-                    crate::generated::unwrap!(LocalTimeType::new(-27988, false, Some(b"LMT"))),
-                    crate::generated::unwrap!(LocalTimeType::new(-28800, false, Some(b"PST"))),
+                const V: [LocalTimeType; 6] = [
+                    crate::generated::unwrap!(LocalTimeType::new(-28084, false, Some(b"LMT"))),
                     crate::generated::unwrap!(LocalTimeType::new(-25200, false, Some(b"MST"))),
+                    crate::generated::unwrap!(LocalTimeType::new(-28800, false, Some(b"PST"))),
                     crate::generated::unwrap!(LocalTimeType::new(-25200, true, Some(b"PDT"))),
+                    crate::generated::unwrap!(LocalTimeType::new(-25200, true, Some(b"PWT"))),
+                    crate::generated::unwrap!(LocalTimeType::new(-25200, true, Some(b"PPT"))),
                 ];
                 V
             },
@@ -9412,11 +9432,11 @@ mod tzdata {
                         crate::generated::unwrap!(LocalTimeType::new(-28800, false, Some(b"PST"))),
                         crate::generated::unwrap!(LocalTimeType::new(-25200, true, Some(b"PDT"))),
                         RuleDay::MonthWeekDay(crate::generated::unwrap!(MonthWeekDay::new(
-                            4, 1, 0
+                            3, 2, 0
                         ))),
                         7200,
                         RuleDay::MonthWeekDay(crate::generated::unwrap!(MonthWeekDay::new(
-                            10, 5, 0
+                            11, 1, 0
                         ))),
                         7200
                     )));
@@ -12573,65 +12593,65 @@ mod tzdata {
     pub(crate) const AMERICA_MONTREAL: TimeZoneRef<'static> =
         crate::generated::unwrap!(TimeZoneRef::<'static>::new(
             &[
-                Transition::new(-2713892744, 2),
-                Transition::new(-1665334800, 1),
-                Transition::new(-1662753600, 2),
+                Transition::new(-2366736148, 2),
                 Transition::new(-1632070800, 1),
                 Transition::new(-1615140000, 2),
-                Transition::new(-1601742600, 1),
-                Transition::new(-1583775000, 2),
-                Transition::new(-1567355400, 1),
-                Transition::new(-1554053400, 2),
-                Transition::new(-1535907600, 1),
-                Transition::new(-1522603800, 2),
-                Transition::new(-1504458000, 1),
-                Transition::new(-1491154200, 2),
-                Transition::new(-1439830800, 1),
-                Transition::new(-1428255000, 2),
+                Transition::new(-1601753400, 1),
+                Transition::new(-1583697600, 2),
+                Transition::new(-1567357200, 1),
+                Transition::new(-1554667200, 2),
+                Transition::new(-1534698000, 1),
+                Transition::new(-1524074400, 2),
+                Transition::new(-1503248400, 1),
+                Transition::new(-1492365600, 2),
+                Transition::new(-1471798800, 1),
+                Transition::new(-1460916000, 2),
+                Transition::new(-1440954000, 1),
+                Transition::new(-1428861600, 2),
                 Transition::new(-1409504400, 1),
-                Transition::new(-1396805400, 2),
+                Transition::new(-1397412000, 2),
                 Transition::new(-1378054800, 1),
-                Transition::new(-1365355800, 2),
-                Transition::new(-1346612400, 1),
-                Transition::new(-1333915200, 2),
-                Transition::new(-1315162800, 1),
-                Transition::new(-1301860800, 2),
-                Transition::new(-1283713200, 1),
-                Transition::new(-1270411200, 2),
-                Transition::new(-1252263600, 1),
-                Transition::new(-1238961600, 2),
-                Transition::new(-1220814000, 1),
-                Transition::new(-1207512000, 2),
-                Transition::new(-1188759600, 1),
-                Transition::new(-1176062400, 2),
-                Transition::new(-1157310000, 1),
-                Transition::new(-1144008000, 2),
-                Transition::new(-1125860400, 1),
-                Transition::new(-1112558400, 2),
-                Transition::new(-1094410800, 1),
-                Transition::new(-1081108800, 2),
-                Transition::new(-1062961200, 1),
-                Transition::new(-1049659200, 2),
-                Transition::new(-1031511600, 1),
-                Transition::new(-1018209600, 2),
-                Transition::new(-1000062000, 1),
-                Transition::new(-986760000, 2),
-                Transition::new(-968007600, 1),
-                Transition::new(-955310400, 2),
-                Transition::new(-936558000, 1),
+                Transition::new(-1365962400, 2),
+                Transition::new(-1346605200, 1),
+                Transition::new(-1333908000, 2),
+                Transition::new(-1315155600, 1),
+                Transition::new(-1301853600, 2),
+                Transition::new(-1283706000, 1),
+                Transition::new(-1270404000, 2),
+                Transition::new(-1252256400, 1),
+                Transition::new(-1238954400, 2),
+                Transition::new(-1220806800, 1),
+                Transition::new(-1207504800, 2),
+                Transition::new(-1188752400, 1),
+                Transition::new(-1176055200, 2),
+                Transition::new(-1157302800, 1),
+                Transition::new(-1144000800, 2),
+                Transition::new(-1125853200, 1),
+                Transition::new(-1112551200, 2),
+                Transition::new(-1094403600, 1),
+                Transition::new(-1081101600, 2),
+                Transition::new(-1062954000, 1),
+                Transition::new(-1049652000, 2),
+                Transition::new(-1031504400, 1),
+                Transition::new(-1018202400, 2),
+                Transition::new(-1000054800, 1),
+                Transition::new(-986752800, 2),
+                Transition::new(-968000400, 1),
+                Transition::new(-955303200, 2),
+                Transition::new(-936550800, 1),
                 Transition::new(-880218000, 3),
                 Transition::new(-769395600, 4),
                 Transition::new(-765396000, 2),
                 Transition::new(-747248400, 1),
                 Transition::new(-733946400, 2),
-                Transition::new(-715798800, 1),
-                Transition::new(-702496800, 2),
-                Transition::new(-684349200, 1),
-                Transition::new(-671047200, 2),
-                Transition::new(-652899600, 1),
-                Transition::new(-636573600, 2),
+                Transition::new(-715806000, 1),
+                Transition::new(-702504000, 2),
+                Transition::new(-684356400, 1),
+                Transition::new(-671054400, 2),
+                Transition::new(-652906800, 1),
+                Transition::new(-634161600, 2),
                 Transition::new(-620845200, 1),
-                Transition::new(-605124000, 2),
+                Transition::new(-602704800, 2),
                 Transition::new(-589395600, 1),
                 Transition::new(-576093600, 2),
                 Transition::new(-557946000, 1),
@@ -12748,7 +12768,7 @@ mod tzdata {
             ],
             &{
                 const V: [LocalTimeType; 5] = [
-                    crate::generated::unwrap!(LocalTimeType::new(-17656, false, Some(b"LMT"))),
+                    crate::generated::unwrap!(LocalTimeType::new(-19052, false, Some(b"LMT"))),
                     crate::generated::unwrap!(LocalTimeType::new(-14400, true, Some(b"EDT"))),
                     crate::generated::unwrap!(LocalTimeType::new(-18000, false, Some(b"EST"))),
                     crate::generated::unwrap!(LocalTimeType::new(-14400, true, Some(b"EWT"))),
@@ -14438,83 +14458,6 @@ mod tzdata {
             })
         ));
 
-    pub(crate) const AMERICA_ROSARIO: TimeZoneRef<'static> =
-        crate::generated::unwrap!(TimeZoneRef::<'static>::new(
-            &[
-                Transition::new(-2372011040, 1),
-                Transition::new(-1567453396, 2),
-                Transition::new(-1233432000, 3),
-                Transition::new(-1222981200, 2),
-                Transition::new(-1205956800, 3),
-                Transition::new(-1194037200, 2),
-                Transition::new(-1172865600, 3),
-                Transition::new(-1162501200, 2),
-                Transition::new(-1141329600, 3),
-                Transition::new(-1130965200, 2),
-                Transition::new(-1109793600, 3),
-                Transition::new(-1099429200, 2),
-                Transition::new(-1078257600, 3),
-                Transition::new(-1067806800, 2),
-                Transition::new(-1046635200, 3),
-                Transition::new(-1036270800, 2),
-                Transition::new(-1015099200, 3),
-                Transition::new(-1004734800, 2),
-                Transition::new(-983563200, 3),
-                Transition::new(-973198800, 2),
-                Transition::new(-952027200, 3),
-                Transition::new(-941576400, 2),
-                Transition::new(-931032000, 3),
-                Transition::new(-900882000, 2),
-                Transition::new(-890337600, 3),
-                Transition::new(-833749200, 2),
-                Transition::new(-827265600, 3),
-                Transition::new(-752274000, 2),
-                Transition::new(-733780800, 3),
-                Transition::new(-197326800, 2),
-                Transition::new(-190843200, 3),
-                Transition::new(-184194000, 2),
-                Transition::new(-164491200, 3),
-                Transition::new(-152658000, 2),
-                Transition::new(-132955200, 3),
-                Transition::new(-121122000, 2),
-                Transition::new(-101419200, 3),
-                Transition::new(-86821200, 2),
-                Transition::new(-71092800, 3),
-                Transition::new(-54766800, 2),
-                Transition::new(-39038400, 3),
-                Transition::new(-23317200, 2),
-                Transition::new(-7588800, 5),
-                Transition::new(128142000, 4),
-                Transition::new(136605600, 5),
-                Transition::new(596948400, 4),
-                Transition::new(605066400, 5),
-                Transition::new(624423600, 4),
-                Transition::new(636516000, 5),
-                Transition::new(656478000, 4),
-                Transition::new(667965600, 5),
-                Transition::new(938919600, 3),
-                Transition::new(952052400, 5),
-            ],
-            &{
-                const V: [LocalTimeType; 6] = [
-                    crate::generated::unwrap!(LocalTimeType::new(-14560, false, Some(b"LMT"))),
-                    crate::generated::unwrap!(LocalTimeType::new(-15404, false, Some(b"CMT"))),
-                    crate::generated::unwrap!(LocalTimeType::new(-14400, false, Some(b"-04"))),
-                    crate::generated::unwrap!(LocalTimeType::new(-10800, true, Some(b"-03"))),
-                    crate::generated::unwrap!(LocalTimeType::new(-7200, true, Some(b"-02"))),
-                    crate::generated::unwrap!(LocalTimeType::new(-10800, false, Some(b"-03"))),
-                ];
-                V
-            },
-            &[],
-            &Some({
-                const V: TransitionRule = TransitionRule::Fixed(crate::generated::unwrap!(
-                    LocalTimeType::new(-10800, false, Some(b"-03"))
-                ));
-                V
-            })
-        ));
-
     pub(crate) const AMERICA_SANTAREM: TimeZoneRef<'static> =
         crate::generated::unwrap!(TimeZoneRef::<'static>::new(
             &[
@@ -14563,134 +14506,6 @@ mod tzdata {
                 const V: TransitionRule = TransitionRule::Fixed(crate::generated::unwrap!(
                     LocalTimeType::new(-10800, false, Some(b"-03"))
                 ));
-                V
-            })
-        ));
-
-    pub(crate) const AMERICA_SANTA_ISABEL: TimeZoneRef<'static> =
-        crate::generated::unwrap!(TimeZoneRef::<'static>::new(
-            &[
-                Transition::new(-1514736000, 1),
-                Transition::new(-1451667600, 2),
-                Transition::new(-1343062800, 1),
-                Transition::new(-1234803600, 2),
-                Transition::new(-1222963200, 3),
-                Transition::new(-1207242000, 2),
-                Transition::new(-873820800, 4),
-                Transition::new(-769395600, 5),
-                Transition::new(-761677200, 2),
-                Transition::new(-686073600, 3),
-                Transition::new(-661539600, 2),
-                Transition::new(-495039600, 3),
-                Transition::new(-481734000, 2),
-                Transition::new(-463590000, 3),
-                Transition::new(-450284400, 2),
-                Transition::new(-431535600, 3),
-                Transition::new(-418230000, 2),
-                Transition::new(-400086000, 3),
-                Transition::new(-386780400, 2),
-                Transition::new(-368636400, 3),
-                Transition::new(-355330800, 2),
-                Transition::new(-337186800, 3),
-                Transition::new(-323881200, 2),
-                Transition::new(-305737200, 3),
-                Transition::new(-292431600, 2),
-                Transition::new(199274400, 3),
-                Transition::new(215600400, 2),
-                Transition::new(230724000, 3),
-                Transition::new(247050000, 2),
-                Transition::new(262778400, 3),
-                Transition::new(278499600, 2),
-                Transition::new(294228000, 3),
-                Transition::new(309949200, 2),
-                Transition::new(325677600, 3),
-                Transition::new(341398800, 2),
-                Transition::new(357127200, 3),
-                Transition::new(372848400, 2),
-                Transition::new(388576800, 3),
-                Transition::new(404902800, 2),
-                Transition::new(420026400, 3),
-                Transition::new(436352400, 2),
-                Transition::new(452080800, 3),
-                Transition::new(467802000, 2),
-                Transition::new(483530400, 3),
-                Transition::new(499251600, 2),
-                Transition::new(514980000, 3),
-                Transition::new(530701200, 2),
-                Transition::new(544615200, 3),
-                Transition::new(562150800, 2),
-                Transition::new(576064800, 3),
-                Transition::new(594205200, 2),
-                Transition::new(607514400, 3),
-                Transition::new(625654800, 2),
-                Transition::new(638964000, 3),
-                Transition::new(657104400, 2),
-                Transition::new(671018400, 3),
-                Transition::new(688554000, 2),
-                Transition::new(702468000, 3),
-                Transition::new(720003600, 2),
-                Transition::new(733917600, 3),
-                Transition::new(752058000, 2),
-                Transition::new(765367200, 3),
-                Transition::new(783507600, 2),
-                Transition::new(796816800, 3),
-                Transition::new(814957200, 2),
-                Transition::new(828871200, 3),
-                Transition::new(846406800, 2),
-                Transition::new(860320800, 3),
-                Transition::new(877856400, 2),
-                Transition::new(891770400, 3),
-                Transition::new(909306000, 2),
-                Transition::new(923220000, 3),
-                Transition::new(941360400, 2),
-                Transition::new(954669600, 3),
-                Transition::new(972810000, 2),
-                Transition::new(986119200, 3),
-                Transition::new(1004259600, 2),
-                Transition::new(1018173600, 3),
-                Transition::new(1035709200, 2),
-                Transition::new(1049623200, 3),
-                Transition::new(1067158800, 2),
-                Transition::new(1081072800, 3),
-                Transition::new(1099213200, 2),
-                Transition::new(1112522400, 3),
-                Transition::new(1130662800, 2),
-                Transition::new(1143972000, 3),
-                Transition::new(1162112400, 2),
-                Transition::new(1175421600, 3),
-                Transition::new(1193562000, 2),
-                Transition::new(1207476000, 3),
-                Transition::new(1225011600, 2),
-                Transition::new(1238925600, 3),
-                Transition::new(1256461200, 2),
-                Transition::new(1268560800, 3),
-            ],
-            &{
-                const V: [LocalTimeType; 6] = [
-                    crate::generated::unwrap!(LocalTimeType::new(-28084, false, Some(b"LMT"))),
-                    crate::generated::unwrap!(LocalTimeType::new(-25200, false, Some(b"MST"))),
-                    crate::generated::unwrap!(LocalTimeType::new(-28800, false, Some(b"PST"))),
-                    crate::generated::unwrap!(LocalTimeType::new(-25200, true, Some(b"PDT"))),
-                    crate::generated::unwrap!(LocalTimeType::new(-25200, true, Some(b"PWT"))),
-                    crate::generated::unwrap!(LocalTimeType::new(-25200, true, Some(b"PPT"))),
-                ];
-                V
-            },
-            &[],
-            &Some({
-                const V: TransitionRule =
-                    TransitionRule::Alternate(crate::generated::unwrap!(AlternateTime::new(
-                        crate::generated::unwrap!(LocalTimeType::new(-28800, false, Some(b"PST"))),
-                        crate::generated::unwrap!(LocalTimeType::new(-25200, true, Some(b"PDT"))),
-                        RuleDay::MonthWeekDay(crate::generated::unwrap!(MonthWeekDay::new(
-                            3, 2, 0
-                        ))),
-                        7200,
-                        RuleDay::MonthWeekDay(crate::generated::unwrap!(MonthWeekDay::new(
-                            11, 1, 0
-                        ))),
-                        7200
-                    )));
                 V
             })
         ));
@@ -15736,211 +15551,6 @@ mod tzdata {
                     crate::generated::unwrap!(LocalTimeType::new(-14400, true, Some(b"EWT"))),
                     crate::generated::unwrap!(LocalTimeType::new(-14400, true, Some(b"EPT"))),
                     crate::generated::unwrap!(LocalTimeType::new(-14400, true, Some(b"EDT"))),
-                ];
-                V
-            },
-            &[],
-            &Some({
-                const V: TransitionRule =
-                    TransitionRule::Alternate(crate::generated::unwrap!(AlternateTime::new(
-                        crate::generated::unwrap!(LocalTimeType::new(-18000, false, Some(b"EST"))),
-                        crate::generated::unwrap!(LocalTimeType::new(-14400, true, Some(b"EDT"))),
-                        RuleDay::MonthWeekDay(crate::generated::unwrap!(MonthWeekDay::new(
-                            3, 2, 0
-                        ))),
-                        7200,
-                        RuleDay::MonthWeekDay(crate::generated::unwrap!(MonthWeekDay::new(
-                            11, 1, 0
-                        ))),
-                        7200
-                    )));
-                V
-            })
-        ));
-
-    pub(crate) const AMERICA_TORONTO: TimeZoneRef<'static> =
-        crate::generated::unwrap!(TimeZoneRef::<'static>::new(
-            &[
-                Transition::new(-2366736148, 2),
-                Transition::new(-1632070800, 1),
-                Transition::new(-1615140000, 2),
-                Transition::new(-1601753400, 1),
-                Transition::new(-1583697600, 2),
-                Transition::new(-1567357200, 1),
-                Transition::new(-1554667200, 2),
-                Transition::new(-1534698000, 1),
-                Transition::new(-1524074400, 2),
-                Transition::new(-1503248400, 1),
-                Transition::new(-1492365600, 2),
-                Transition::new(-1471798800, 1),
-                Transition::new(-1460916000, 2),
-                Transition::new(-1440954000, 1),
-                Transition::new(-1428861600, 2),
-                Transition::new(-1409504400, 1),
-                Transition::new(-1397412000, 2),
-                Transition::new(-1378054800, 1),
-                Transition::new(-1365962400, 2),
-                Transition::new(-1346605200, 1),
-                Transition::new(-1333908000, 2),
-                Transition::new(-1315155600, 1),
-                Transition::new(-1301853600, 2),
-                Transition::new(-1283706000, 1),
-                Transition::new(-1270404000, 2),
-                Transition::new(-1252256400, 1),
-                Transition::new(-1238954400, 2),
-                Transition::new(-1220806800, 1),
-                Transition::new(-1207504800, 2),
-                Transition::new(-1188752400, 1),
-                Transition::new(-1176055200, 2),
-                Transition::new(-1157302800, 1),
-                Transition::new(-1144000800, 2),
-                Transition::new(-1125853200, 1),
-                Transition::new(-1112551200, 2),
-                Transition::new(-1094403600, 1),
-                Transition::new(-1081101600, 2),
-                Transition::new(-1062954000, 1),
-                Transition::new(-1049652000, 2),
-                Transition::new(-1031504400, 1),
-                Transition::new(-1018202400, 2),
-                Transition::new(-1000054800, 1),
-                Transition::new(-986752800, 2),
-                Transition::new(-968000400, 1),
-                Transition::new(-955303200, 2),
-                Transition::new(-936550800, 1),
-                Transition::new(-880218000, 3),
-                Transition::new(-769395600, 4),
-                Transition::new(-765396000, 2),
-                Transition::new(-747248400, 1),
-                Transition::new(-733946400, 2),
-                Transition::new(-715806000, 1),
-                Transition::new(-702504000, 2),
-                Transition::new(-684356400, 1),
-                Transition::new(-671054400, 2),
-                Transition::new(-652906800, 1),
-                Transition::new(-634161600, 2),
-                Transition::new(-620845200, 1),
-                Transition::new(-602704800, 2),
-                Transition::new(-589395600, 1),
-                Transition::new(-576093600, 2),
-                Transition::new(-557946000, 1),
-                Transition::new(-544644000, 2),
-                Transition::new(-526496400, 1),
-                Transition::new(-513194400, 2),
-                Transition::new(-495046800, 1),
-                Transition::new(-481744800, 2),
-                Transition::new(-463597200, 1),
-                Transition::new(-450295200, 2),
-                Transition::new(-431542800, 1),
-                Transition::new(-418240800, 2),
-                Transition::new(-400093200, 1),
-                Transition::new(-384372000, 2),
-                Transition::new(-368643600, 1),
-                Transition::new(-352922400, 2),
-                Transition::new(-337194000, 1),
-                Transition::new(-321472800, 2),
-                Transition::new(-305744400, 1),
-                Transition::new(-289418400, 2),
-                Transition::new(-273690000, 1),
-                Transition::new(-257968800, 2),
-                Transition::new(-242240400, 1),
-                Transition::new(-226519200, 2),
-                Transition::new(-210790800, 1),
-                Transition::new(-195069600, 2),
-                Transition::new(-179341200, 1),
-                Transition::new(-163620000, 2),
-                Transition::new(-147891600, 1),
-                Transition::new(-131565600, 2),
-                Transition::new(-116442000, 1),
-                Transition::new(-100116000, 2),
-                Transition::new(-84387600, 1),
-                Transition::new(-68666400, 2),
-                Transition::new(-52938000, 1),
-                Transition::new(-37216800, 2),
-                Transition::new(-21488400, 1),
-                Transition::new(-5767200, 2),
-                Transition::new(9961200, 1),
-                Transition::new(25682400, 2),
-                Transition::new(41410800, 1),
-                Transition::new(57736800, 2),
-                Transition::new(73465200, 1),
-                Transition::new(89186400, 2),
-                Transition::new(104914800, 1),
-                Transition::new(120636000, 2),
-                Transition::new(136364400, 1),
-                Transition::new(152085600, 2),
-                Transition::new(167814000, 1),
-                Transition::new(183535200, 2),
-                Transition::new(199263600, 1),
-                Transition::new(215589600, 2),
-                Transition::new(230713200, 1),
-                Transition::new(247039200, 2),
-                Transition::new(262767600, 1),
-                Transition::new(278488800, 2),
-                Transition::new(294217200, 1),
-                Transition::new(309938400, 2),
-                Transition::new(325666800, 1),
-                Transition::new(341388000, 2),
-                Transition::new(357116400, 1),
-                Transition::new(372837600, 2),
-                Transition::new(388566000, 1),
-                Transition::new(404892000, 2),
-                Transition::new(420015600, 1),
-                Transition::new(436341600, 2),
-                Transition::new(452070000, 1),
-                Transition::new(467791200, 2),
-                Transition::new(483519600, 1),
-                Transition::new(499240800, 2),
-                Transition::new(514969200, 1),
-                Transition::new(530690400, 2),
-                Transition::new(544604400, 1),
-                Transition::new(562140000, 2),
-                Transition::new(576054000, 1),
-                Transition::new(594194400, 2),
-                Transition::new(607503600, 1),
-                Transition::new(625644000, 2),
-                Transition::new(638953200, 1),
-                Transition::new(657093600, 2),
-                Transition::new(671007600, 1),
-                Transition::new(688543200, 2),
-                Transition::new(702457200, 1),
-                Transition::new(719992800, 2),
-                Transition::new(733906800, 1),
-                Transition::new(752047200, 2),
-                Transition::new(765356400, 1),
-                Transition::new(783496800, 2),
-                Transition::new(796806000, 1),
-                Transition::new(814946400, 2),
-                Transition::new(828860400, 1),
-                Transition::new(846396000, 2),
-                Transition::new(860310000, 1),
-                Transition::new(877845600, 2),
-                Transition::new(891759600, 1),
-                Transition::new(909295200, 2),
-                Transition::new(923209200, 1),
-                Transition::new(941349600, 2),
-                Transition::new(954658800, 1),
-                Transition::new(972799200, 2),
-                Transition::new(986108400, 1),
-                Transition::new(1004248800, 2),
-                Transition::new(1018162800, 1),
-                Transition::new(1035698400, 2),
-                Transition::new(1049612400, 1),
-                Transition::new(1067148000, 2),
-                Transition::new(1081062000, 1),
-                Transition::new(1099202400, 2),
-                Transition::new(1112511600, 1),
-                Transition::new(1130652000, 2),
-                Transition::new(1143961200, 1),
-                Transition::new(1162101600, 2),
-                Transition::new(1173596400, 1),
-            ],
-            &{
-                const V: [LocalTimeType; 5] = [
-                    crate::generated::unwrap!(LocalTimeType::new(-19052, false, Some(b"LMT"))),
-                    crate::generated::unwrap!(LocalTimeType::new(-14400, true, Some(b"EDT"))),
-                    crate::generated::unwrap!(LocalTimeType::new(-18000, false, Some(b"EST"))),
-                    crate::generated::unwrap!(LocalTimeType::new(-14400, true, Some(b"EWT"))),
-                    crate::generated::unwrap!(LocalTimeType::new(-14400, true, Some(b"EPT"))),
                 ];
                 V
             },
@@ -18503,42 +18113,6 @@ mod tzdata {
             })
         ));
 
-    pub(crate) const ASIA_CHONGQING: TimeZoneRef<'static> =
-        crate::generated::unwrap!(TimeZoneRef::<'static>::new(
-            &[
-                Transition::new(-1325487980, 1),
-                Transition::new(325962000, 3),
-                Transition::new(515527200, 2),
-                Transition::new(527014800, 3),
-                Transition::new(545162400, 2),
-                Transition::new(558464400, 3),
-                Transition::new(577216800, 2),
-                Transition::new(589914000, 3),
-                Transition::new(608666400, 2),
-                Transition::new(621968400, 3),
-                Transition::new(640116000, 2),
-                Transition::new(653418000, 3),
-                Transition::new(671565600, 2),
-                Transition::new(684867600, 3),
-            ],
-            &{
-                const V: [LocalTimeType; 4] = [
-                    crate::generated::unwrap!(LocalTimeType::new(25580, false, Some(b"LMT"))),
-                    crate::generated::unwrap!(LocalTimeType::new(25200, false, Some(b"+07"))),
-                    crate::generated::unwrap!(LocalTimeType::new(32400, true, Some(b"CDT"))),
-                    crate::generated::unwrap!(LocalTimeType::new(28800, false, Some(b"CST"))),
-                ];
-                V
-            },
-            &[],
-            &Some({
-                const V: TransitionRule = TransitionRule::Fixed(crate::generated::unwrap!(
-                    LocalTimeType::new(28800, false, Some(b"CST"))
-                ));
-                V
-            })
-        ));
-
     pub(crate) const ASIA_COLOMBO: TimeZoneRef<'static> =
         crate::generated::unwrap!(TimeZoneRef::<'static>::new(
             &[
@@ -19090,76 +18664,6 @@ mod tzdata {
         })
     ));
 
-    pub(crate) const ASIA_HANOI: TimeZoneRef<'static> =
-        crate::generated::unwrap!(TimeZoneRef::<'static>::new(
-            &[
-                Transition::new(-2004073404, 1),
-                Transition::new(-1851577590, 2),
-                Transition::new(-852105600, 3),
-                Transition::new(-782643600, 4),
-                Transition::new(-767869200, 2),
-                Transition::new(-718095600, 3),
-                Transition::new(-481363200, 2),
-            ],
-            &{
-                const V: [LocalTimeType; 5] = [
-                    crate::generated::unwrap!(LocalTimeType::new(25404, false, Some(b"LMT"))),
-                    crate::generated::unwrap!(LocalTimeType::new(25590, false, Some(b"PLMT"))),
-                    crate::generated::unwrap!(LocalTimeType::new(25200, false, Some(b"+07"))),
-                    crate::generated::unwrap!(LocalTimeType::new(28800, false, Some(b"+08"))),
-                    crate::generated::unwrap!(LocalTimeType::new(32400, false, Some(b"+09"))),
-                ];
-                V
-            },
-            &[],
-            &Some({
-                const V: TransitionRule = TransitionRule::Fixed(crate::generated::unwrap!(
-                    LocalTimeType::new(25200, false, Some(b"+07"))
-                ));
-                V
-            })
-        ));
-
-    pub(crate) const ASIA_HARBIN: TimeZoneRef<'static> =
-        crate::generated::unwrap!(TimeZoneRef::<'static>::new(
-            &[
-                Transition::new(-1325492804, 1),
-                Transition::new(-1194078600, 2),
-                Transition::new(-946800000, 3),
-                Transition::new(-115894800, 1),
-                Transition::new(325956600, 2),
-                Transition::new(515527200, 4),
-                Transition::new(527014800, 2),
-                Transition::new(545162400, 4),
-                Transition::new(558464400, 2),
-                Transition::new(577216800, 4),
-                Transition::new(589914000, 2),
-                Transition::new(608666400, 4),
-                Transition::new(621968400, 2),
-                Transition::new(640116000, 4),
-                Transition::new(653418000, 2),
-                Transition::new(671565600, 4),
-                Transition::new(684867600, 2),
-            ],
-            &{
-                const V: [LocalTimeType; 5] = [
-                    crate::generated::unwrap!(LocalTimeType::new(30404, false, Some(b"LMT"))),
-                    crate::generated::unwrap!(LocalTimeType::new(30600, false, Some(b"+0830"))),
-                    crate::generated::unwrap!(LocalTimeType::new(28800, false, Some(b"CST"))),
-                    crate::generated::unwrap!(LocalTimeType::new(32400, false, Some(b"+09"))),
-                    crate::generated::unwrap!(LocalTimeType::new(32400, true, Some(b"CDT"))),
-                ];
-                V
-            },
-            &[],
-            &Some({
-                const V: TransitionRule = TransitionRule::Fixed(crate::generated::unwrap!(
-                    LocalTimeType::new(28800, false, Some(b"CST"))
-                ));
-                V
-            })
-        ));
-
     pub(crate) const ASIA_HEBRON: TimeZoneRef<'static> = crate::generated::unwrap!(TimeZoneRef::<
         'static,
     >::new(
@@ -19710,37 +19214,18 @@ mod tzdata {
 
     pub(crate) const ASIA_KASHGAR: TimeZoneRef<'static> =
         crate::generated::unwrap!(TimeZoneRef::<'static>::new(
-            &[
-                Transition::new(-1325480636, 1),
-                Transition::new(-946791000, 2),
-                Transition::new(325969200, 4),
-                Transition::new(515527200, 3),
-                Transition::new(527014800, 4),
-                Transition::new(545162400, 3),
-                Transition::new(558464400, 4),
-                Transition::new(577216800, 3),
-                Transition::new(589914000, 4),
-                Transition::new(608666400, 3),
-                Transition::new(621968400, 4),
-                Transition::new(640116000, 3),
-                Transition::new(653418000, 4),
-                Transition::new(671565600, 3),
-                Transition::new(684867600, 4),
-            ],
+            &[Transition::new(-1325483420, 1),],
             &{
-                const V: [LocalTimeType; 5] = [
-                    crate::generated::unwrap!(LocalTimeType::new(18236, false, Some(b"LMT"))),
-                    crate::generated::unwrap!(LocalTimeType::new(19800, false, Some(b"+0530"))),
-                    crate::generated::unwrap!(LocalTimeType::new(18000, false, Some(b"+05"))),
-                    crate::generated::unwrap!(LocalTimeType::new(32400, true, Some(b"CDT"))),
-                    crate::generated::unwrap!(LocalTimeType::new(28800, false, Some(b"CST"))),
+                const V: [LocalTimeType; 2] = [
+                    crate::generated::unwrap!(LocalTimeType::new(21020, false, Some(b"LMT"))),
+                    crate::generated::unwrap!(LocalTimeType::new(21600, false, Some(b"+06"))),
                 ];
                 V
             },
             &[],
             &Some({
                 const V: TransitionRule = TransitionRule::Fixed(crate::generated::unwrap!(
-                    LocalTimeType::new(28800, false, Some(b"CST"))
+                    LocalTimeType::new(21600, false, Some(b"+06"))
                 ));
                 V
             })
@@ -21383,139 +20868,6 @@ mod tzdata {
             })
         ));
 
-    pub(crate) const ASIA_TEL_AVIV: TimeZoneRef<'static> =
-        crate::generated::unwrap!(TimeZoneRef::<'static>::new(
-            &[
-                Transition::new(-2840149144, 1),
-                Transition::new(-1641003660, 3),
-                Transition::new(-933638400, 2),
-                Transition::new(-923097600, 3),
-                Transition::new(-919036800, 2),
-                Transition::new(-857347200, 3),
-                Transition::new(-844300800, 2),
-                Transition::new(-825811200, 3),
-                Transition::new(-812678400, 2),
-                Transition::new(-794188800, 3),
-                Transition::new(-779846400, 2),
-                Transition::new(-762652800, 3),
-                Transition::new(-748310400, 2),
-                Transition::new(-731116800, 3),
-                Transition::new(-681955200, 4),
-                Transition::new(-673228800, 2),
-                Transition::new(-667958400, 3),
-                Transition::new(-652320000, 2),
-                Transition::new(-636422400, 3),
-                Transition::new(-622080000, 2),
-                Transition::new(-608947200, 3),
-                Transition::new(-591840000, 2),
-                Transition::new(-572486400, 3),
-                Transition::new(-558576000, 2),
-                Transition::new(-542851200, 3),
-                Transition::new(-527731200, 2),
-                Transition::new(-514425600, 3),
-                Transition::new(-490838400, 2),
-                Transition::new(-482976000, 3),
-                Transition::new(-459388800, 2),
-                Transition::new(-451526400, 3),
-                Transition::new(-428544000, 2),
-                Transition::new(-418262400, 3),
-                Transition::new(-400118400, 2),
-                Transition::new(-387417600, 3),
-                Transition::new(142380000, 2),
-                Transition::new(150843600, 3),
-                Transition::new(167176800, 2),
-                Transition::new(178664400, 3),
-                Transition::new(334101600, 2),
-                Transition::new(337730400, 3),
-                Transition::new(452642400, 2),
-                Transition::new(462319200, 3),
-                Transition::new(482277600, 2),
-                Transition::new(494370000, 3),
-                Transition::new(516751200, 2),
-                Transition::new(526424400, 3),
-                Transition::new(545436000, 2),
-                Transition::new(558478800, 3),
-                Transition::new(576626400, 2),
-                Transition::new(589323600, 3),
-                Transition::new(609890400, 2),
-                Transition::new(620773200, 3),
-                Transition::new(638316000, 2),
-                Transition::new(651618000, 3),
-                Transition::new(669765600, 2),
-                Transition::new(683672400, 3),
-                Transition::new(701820000, 2),
-                Transition::new(715726800, 3),
-                Transition::new(733701600, 2),
-                Transition::new(747176400, 3),
-                Transition::new(765151200, 2),
-                Transition::new(778021200, 3),
-                Transition::new(796600800, 2),
-                Transition::new(810075600, 3),
-                Transition::new(826840800, 2),
-                Transition::new(842821200, 3),
-                Transition::new(858895200, 2),
-                Transition::new(874184400, 3),
-                Transition::new(890344800, 2),
-                Transition::new(905029200, 3),
-                Transition::new(923011200, 2),
-                Transition::new(936313200, 3),
-                Transition::new(955670400, 2),
-                Transition::new(970783200, 3),
-                Transition::new(986770800, 2),
-                Transition::new(1001282400, 3),
-                Transition::new(1017356400, 2),
-                Transition::new(1033941600, 3),
-                Transition::new(1048806000, 2),
-                Transition::new(1065132000, 3),
-                Transition::new(1081292400, 2),
-                Transition::new(1095804000, 3),
-                Transition::new(1112313600, 2),
-                Transition::new(1128812400, 3),
-                Transition::new(1143763200, 2),
-                Transition::new(1159657200, 3),
-                Transition::new(1175212800, 2),
-                Transition::new(1189897200, 3),
-                Transition::new(1206662400, 2),
-                Transition::new(1223161200, 3),
-                Transition::new(1238112000, 2),
-                Transition::new(1254006000, 3),
-                Transition::new(1269561600, 2),
-                Transition::new(1284246000, 3),
-                Transition::new(1301616000, 2),
-                Transition::new(1317510000, 3),
-                Transition::new(1333065600, 2),
-                Transition::new(1348354800, 3),
-                Transition::new(1364515200, 2),
-            ],
-            &{
-                const V: [LocalTimeType; 5] = [
-                    crate::generated::unwrap!(LocalTimeType::new(8344, false, Some(b"LMT"))),
-                    crate::generated::unwrap!(LocalTimeType::new(8460, false, Some(b"JMT"))),
-                    crate::generated::unwrap!(LocalTimeType::new(10800, true, Some(b"IDT"))),
-                    crate::generated::unwrap!(LocalTimeType::new(7200, false, Some(b"IST"))),
-                    crate::generated::unwrap!(LocalTimeType::new(14400, true, Some(b"IDDT"))),
-                ];
-                V
-            },
-            &[],
-            &Some({
-                const V: TransitionRule =
-                    TransitionRule::Alternate(crate::generated::unwrap!(AlternateTime::new(
-                        crate::generated::unwrap!(LocalTimeType::new(7200, false, Some(b"IST"))),
-                        crate::generated::unwrap!(LocalTimeType::new(10800, true, Some(b"IDT"))),
-                        RuleDay::MonthWeekDay(crate::generated::unwrap!(MonthWeekDay::new(
-                            3, 4, 4
-                        ))),
-                        93600,
-                        RuleDay::MonthWeekDay(crate::generated::unwrap!(MonthWeekDay::new(
-                            10, 5, 0
-                        ))),
-                        7200
-                    )));
-                V
-            })
-        ));
-
     pub(crate) const ASIA_THIMBU: TimeZoneRef<'static> =
         crate::generated::unwrap!(TimeZoneRef::<'static>::new(
             &[
@@ -21696,25 +21048,6 @@ mod tzdata {
             &Some({
                 const V: TransitionRule = TransitionRule::Fixed(crate::generated::unwrap!(
                     LocalTimeType::new(28800, false, Some(b"+08"))
-                ));
-                V
-            })
-        ));
-
-    pub(crate) const ASIA_URUMQI: TimeZoneRef<'static> =
-        crate::generated::unwrap!(TimeZoneRef::<'static>::new(
-            &[Transition::new(-1325483420, 1),],
-            &{
-                const V: [LocalTimeType; 2] = [
-                    crate::generated::unwrap!(LocalTimeType::new(21020, false, Some(b"LMT"))),
-                    crate::generated::unwrap!(LocalTimeType::new(21600, false, Some(b"+06"))),
-                ];
-                V
-            },
-            &[],
-            &Some({
-                const V: TransitionRule = TransitionRule::Fixed(crate::generated::unwrap!(
-                    LocalTimeType::new(21600, false, Some(b"+06"))
                 ));
                 V
             })
@@ -22655,26 +21988,6 @@ mod tzdata {
             })
         ));
 
-    pub(crate) const ATLANTIC_JAN_MAYEN: TimeZoneRef<'static> =
-        crate::generated::unwrap!(TimeZoneRef::<'static>::new(
-            &[],
-            &{
-                const V: [LocalTimeType; 1] = [crate::generated::unwrap!(LocalTimeType::new(
-                    -3600,
-                    false,
-                    Some(b"-01")
-                ))];
-                V
-            },
-            &[],
-            &Some({
-                const V: TransitionRule = TransitionRule::Fixed(crate::generated::unwrap!(
-                    LocalTimeType::new(-3600, false, Some(b"-01"))
-                ));
-                V
-            })
-        ));
-
     pub(crate) const ATLANTIC_MADEIRA: TimeZoneRef<'static> =
         crate::generated::unwrap!(TimeZoneRef::<'static>::new(
             &[
@@ -23375,201 +22688,6 @@ mod tzdata {
     pub(crate) const AUSTRALIA_CURRIE: TimeZoneRef<'static> =
         crate::generated::unwrap!(TimeZoneRef::<'static>::new(
             &[
-                Transition::new(-2345794528, 2),
-                Transition::new(-1680508800, 1),
-                Transition::new(-1665388800, 2),
-                Transition::new(-1646640000, 1),
-                Transition::new(-1635753600, 2),
-                Transition::new(-1615190400, 1),
-                Transition::new(-1604304000, 2),
-                Transition::new(-883641600, 1),
-                Transition::new(-876124800, 2),
-                Transition::new(-860400000, 1),
-                Transition::new(-844675200, 2),
-                Transition::new(-828345600, 1),
-                Transition::new(-813225600, 2),
-                Transition::new(-37267200, 1),
-                Transition::new(-25776000, 2),
-                Transition::new(-5817600, 1),
-                Transition::new(5673600, 2),
-                Transition::new(25632000, 1),
-                Transition::new(37728000, 2),
-                Transition::new(57686400, 1),
-                Transition::new(67968000, 2),
-                Transition::new(89136000, 1),
-                Transition::new(100022400, 2),
-                Transition::new(120585600, 1),
-                Transition::new(131472000, 2),
-                Transition::new(152035200, 1),
-                Transition::new(162921600, 2),
-                Transition::new(183484800, 1),
-                Transition::new(194976000, 2),
-                Transition::new(215539200, 1),
-                Transition::new(226425600, 2),
-                Transition::new(246988800, 1),
-                Transition::new(257875200, 2),
-                Transition::new(278438400, 1),
-                Transition::new(289324800, 2),
-                Transition::new(309888000, 1),
-                Transition::new(320774400, 2),
-                Transition::new(341337600, 1),
-                Transition::new(352224000, 2),
-                Transition::new(372787200, 1),
-                Transition::new(386092800, 2),
-                Transition::new(404841600, 1),
-                Transition::new(417542400, 2),
-                Transition::new(436291200, 1),
-                Transition::new(447177600, 2),
-                Transition::new(467740800, 1),
-                Transition::new(478627200, 2),
-                Transition::new(499190400, 1),
-                Transition::new(510076800, 2),
-                Transition::new(530035200, 1),
-                Transition::new(542736000, 2),
-                Transition::new(562089600, 1),
-                Transition::new(574790400, 2),
-                Transition::new(594144000, 1),
-                Transition::new(606240000, 2),
-                Transition::new(625593600, 1),
-                Transition::new(637689600, 2),
-                Transition::new(657043200, 1),
-                Transition::new(670348800, 2),
-                Transition::new(686678400, 1),
-                Transition::new(701798400, 2),
-                Transition::new(718128000, 1),
-                Transition::new(733248000, 2),
-                Transition::new(749577600, 1),
-                Transition::new(764697600, 2),
-                Transition::new(781027200, 1),
-                Transition::new(796147200, 2),
-                Transition::new(812476800, 1),
-                Transition::new(828201600, 2),
-                Transition::new(844531200, 1),
-                Transition::new(859651200, 2),
-                Transition::new(875980800, 1),
-                Transition::new(891100800, 2),
-                Transition::new(907430400, 1),
-                Transition::new(922550400, 2),
-                Transition::new(938880000, 1),
-                Transition::new(954000000, 2),
-                Transition::new(967305600, 1),
-                Transition::new(985449600, 2),
-                Transition::new(1002384000, 1),
-                Transition::new(1017504000, 2),
-                Transition::new(1033833600, 1),
-                Transition::new(1048953600, 2),
-                Transition::new(1065283200, 1),
-                Transition::new(1080403200, 2),
-                Transition::new(1096732800, 1),
-                Transition::new(1111852800, 2),
-                Transition::new(1128182400, 1),
-                Transition::new(1143907200, 2),
-                Transition::new(1159632000, 1),
-                Transition::new(1174752000, 2),
-                Transition::new(1191686400, 1),
-            ],
-            &{
-                const V: [LocalTimeType; 3] = [
-                    crate::generated::unwrap!(LocalTimeType::new(34528, false, Some(b"LMT"))),
-                    crate::generated::unwrap!(LocalTimeType::new(39600, true, Some(b"AEDT"))),
-                    crate::generated::unwrap!(LocalTimeType::new(36000, false, Some(b"AEST"))),
-                ];
-                V
-            },
-            &[],
-            &Some({
-                const V: TransitionRule =
-                    TransitionRule::Alternate(crate::generated::unwrap!(AlternateTime::new(
-                        crate::generated::unwrap!(LocalTimeType::new(36000, false, Some(b"AEST"))),
-                        crate::generated::unwrap!(LocalTimeType::new(39600, true, Some(b"AEDT"))),
-                        RuleDay::MonthWeekDay(crate::generated::unwrap!(MonthWeekDay::new(
-                            10, 1, 0
-                        ))),
-                        7200,
-                        RuleDay::MonthWeekDay(crate::generated::unwrap!(MonthWeekDay::new(
-                            4, 1, 0
-                        ))),
-                        10800
-                    )));
-                V
-            })
-        ));
-
-    pub(crate) const AUSTRALIA_DARWIN: TimeZoneRef<'static> =
-        crate::generated::unwrap!(TimeZoneRef::<'static>::new(
-            &[
-                Transition::new(-2364108200, 1),
-                Transition::new(-2230189200, 3),
-                Transition::new(-1672558200, 2),
-                Transition::new(-1665387000, 3),
-                Transition::new(-883639800, 2),
-                Transition::new(-876123000, 3),
-                Transition::new(-860398200, 2),
-                Transition::new(-844673400, 3),
-                Transition::new(-828343800, 2),
-                Transition::new(-813223800, 3),
-            ],
-            &{
-                const V: [LocalTimeType; 4] = [
-                    crate::generated::unwrap!(LocalTimeType::new(31400, false, Some(b"LMT"))),
-                    crate::generated::unwrap!(LocalTimeType::new(32400, false, Some(b"ACST"))),
-                    crate::generated::unwrap!(LocalTimeType::new(37800, true, Some(b"ACDT"))),
-                    crate::generated::unwrap!(LocalTimeType::new(34200, false, Some(b"ACST"))),
-                ];
-                V
-            },
-            &[],
-            &Some({
-                const V: TransitionRule = TransitionRule::Fixed(crate::generated::unwrap!(
-                    LocalTimeType::new(34200, false, Some(b"ACST"))
-                ));
-                V
-            })
-        ));
-
-    pub(crate) const AUSTRALIA_EUCLA: TimeZoneRef<'static> =
-        crate::generated::unwrap!(TimeZoneRef::<'static>::new(
-            &[
-                Transition::new(-2337928528, 2),
-                Transition::new(-1672555500, 1),
-                Transition::new(-1665384300, 2),
-                Transition::new(-883637100, 1),
-                Transition::new(-876120300, 2),
-                Transition::new(-860395500, 1),
-                Transition::new(-844670700, 2),
-                Transition::new(152039700, 1),
-                Transition::new(162926100, 2),
-                Transition::new(436295700, 1),
-                Transition::new(447182100, 2),
-                Transition::new(690311700, 1),
-                Transition::new(699383700, 2),
-                Transition::new(1165079700, 1),
-                Transition::new(1174756500, 2),
-                Transition::new(1193505300, 1),
-                Transition::new(1206810900, 2),
-                Transition::new(1224954900, 1),
-                Transition::new(1238260500, 2),
-            ],
-            &{
-                const V: [LocalTimeType; 3] = [
-                    crate::generated::unwrap!(LocalTimeType::new(30928, false, Some(b"LMT"))),
-                    crate::generated::unwrap!(LocalTimeType::new(35100, true, Some(b"+0945"))),
-                    crate::generated::unwrap!(LocalTimeType::new(31500, false, Some(b"+0845"))),
-                ];
-                V
-            },
-            &[],
-            &Some({
-                const V: TransitionRule = TransitionRule::Fixed(crate::generated::unwrap!(
-                    LocalTimeType::new(31500, false, Some(b"+0845"))
-                ));
-                V
-            })
-        ));
-
-    pub(crate) const AUSTRALIA_HOBART: TimeZoneRef<'static> =
-        crate::generated::unwrap!(TimeZoneRef::<'static>::new(
-            &[
                 Transition::new(-2345795356, 2),
                 Transition::new(-1680508800, 1),
                 Transition::new(-1665388800, 2),
@@ -23688,6 +22806,78 @@ mod tzdata {
                         ))),
                         10800
                     )));
+                V
+            })
+        ));
+
+    pub(crate) const AUSTRALIA_DARWIN: TimeZoneRef<'static> =
+        crate::generated::unwrap!(TimeZoneRef::<'static>::new(
+            &[
+                Transition::new(-2364108200, 1),
+                Transition::new(-2230189200, 3),
+                Transition::new(-1672558200, 2),
+                Transition::new(-1665387000, 3),
+                Transition::new(-883639800, 2),
+                Transition::new(-876123000, 3),
+                Transition::new(-860398200, 2),
+                Transition::new(-844673400, 3),
+                Transition::new(-828343800, 2),
+                Transition::new(-813223800, 3),
+            ],
+            &{
+                const V: [LocalTimeType; 4] = [
+                    crate::generated::unwrap!(LocalTimeType::new(31400, false, Some(b"LMT"))),
+                    crate::generated::unwrap!(LocalTimeType::new(32400, false, Some(b"ACST"))),
+                    crate::generated::unwrap!(LocalTimeType::new(37800, true, Some(b"ACDT"))),
+                    crate::generated::unwrap!(LocalTimeType::new(34200, false, Some(b"ACST"))),
+                ];
+                V
+            },
+            &[],
+            &Some({
+                const V: TransitionRule = TransitionRule::Fixed(crate::generated::unwrap!(
+                    LocalTimeType::new(34200, false, Some(b"ACST"))
+                ));
+                V
+            })
+        ));
+
+    pub(crate) const AUSTRALIA_EUCLA: TimeZoneRef<'static> =
+        crate::generated::unwrap!(TimeZoneRef::<'static>::new(
+            &[
+                Transition::new(-2337928528, 2),
+                Transition::new(-1672555500, 1),
+                Transition::new(-1665384300, 2),
+                Transition::new(-883637100, 1),
+                Transition::new(-876120300, 2),
+                Transition::new(-860395500, 1),
+                Transition::new(-844670700, 2),
+                Transition::new(152039700, 1),
+                Transition::new(162926100, 2),
+                Transition::new(436295700, 1),
+                Transition::new(447182100, 2),
+                Transition::new(690311700, 1),
+                Transition::new(699383700, 2),
+                Transition::new(1165079700, 1),
+                Transition::new(1174756500, 2),
+                Transition::new(1193505300, 1),
+                Transition::new(1206810900, 2),
+                Transition::new(1224954900, 1),
+                Transition::new(1238260500, 2),
+            ],
+            &{
+                const V: [LocalTimeType; 3] = [
+                    crate::generated::unwrap!(LocalTimeType::new(30928, false, Some(b"LMT"))),
+                    crate::generated::unwrap!(LocalTimeType::new(35100, true, Some(b"+0945"))),
+                    crate::generated::unwrap!(LocalTimeType::new(31500, false, Some(b"+0845"))),
+                ];
+                V
+            },
+            &[],
+            &Some({
+                const V: TransitionRule = TransitionRule::Fixed(crate::generated::unwrap!(
+                    LocalTimeType::new(31500, false, Some(b"+0845"))
+                ));
                 V
             })
         ));
@@ -25274,6 +24464,26 @@ mod tzdata {
             })
         ));
 
+    pub(crate) const ETC_GMT_PLUS_1: TimeZoneRef<'static> =
+        crate::generated::unwrap!(TimeZoneRef::<'static>::new(
+            &[],
+            &{
+                const V: [LocalTimeType; 1] = [crate::generated::unwrap!(LocalTimeType::new(
+                    -3600,
+                    false,
+                    Some(b"-01")
+                ))];
+                V
+            },
+            &[],
+            &Some({
+                const V: TransitionRule = TransitionRule::Fixed(crate::generated::unwrap!(
+                    LocalTimeType::new(-3600, false, Some(b"-01"))
+                ));
+                V
+            })
+        ));
+
     pub(crate) const ETC_GMT_PLUS_10: TimeZoneRef<'static> =
         crate::generated::unwrap!(TimeZoneRef::<'static>::new(
             &[],
@@ -25854,200 +25064,6 @@ mod tzdata {
                             10, 5, 0
                         ))),
                         14400
-                    )));
-                V
-            })
-        ));
-
-    pub(crate) const EUROPE_BELFAST: TimeZoneRef<'static> =
-        crate::generated::unwrap!(TimeZoneRef::<'static>::new(
-            &[
-                Transition::new(-2821649780, 1),
-                Transition::new(-1691962479, 2),
-                Transition::new(-1680471279, 4),
-                Transition::new(-1664143200, 3),
-                Transition::new(-1650146400, 4),
-                Transition::new(-1633903200, 3),
-                Transition::new(-1617487200, 4),
-                Transition::new(-1601848800, 3),
-                Transition::new(-1586037600, 4),
-                Transition::new(-1570399200, 3),
-                Transition::new(-1552168800, 4),
-                Transition::new(-1538344800, 3),
-                Transition::new(-1522533600, 4),
-                Transition::new(-1507500000, 3),
-                Transition::new(-1490565600, 4),
-                Transition::new(-1473631200, 3),
-                Transition::new(-1460930400, 4),
-                Transition::new(-1442786400, 3),
-                Transition::new(-1428876000, 4),
-                Transition::new(-1410732000, 3),
-                Transition::new(-1396216800, 4),
-                Transition::new(-1379282400, 3),
-                Transition::new(-1364767200, 4),
-                Transition::new(-1348437600, 3),
-                Transition::new(-1333317600, 4),
-                Transition::new(-1315778400, 3),
-                Transition::new(-1301263200, 4),
-                Transition::new(-1284328800, 3),
-                Transition::new(-1269813600, 4),
-                Transition::new(-1253484000, 3),
-                Transition::new(-1238364000, 4),
-                Transition::new(-1221429600, 3),
-                Transition::new(-1206914400, 4),
-                Transition::new(-1189980000, 3),
-                Transition::new(-1175464800, 4),
-                Transition::new(-1159135200, 3),
-                Transition::new(-1143410400, 4),
-                Transition::new(-1126476000, 3),
-                Transition::new(-1111960800, 4),
-                Transition::new(-1095631200, 3),
-                Transition::new(-1080511200, 4),
-                Transition::new(-1063576800, 3),
-                Transition::new(-1049061600, 4),
-                Transition::new(-1032127200, 3),
-                Transition::new(-1017612000, 4),
-                Transition::new(-1001282400, 3),
-                Transition::new(-986162400, 4),
-                Transition::new(-969228000, 3),
-                Transition::new(-950479200, 4),
-                Transition::new(-942012000, 3),
-                Transition::new(-904518000, 5),
-                Transition::new(-896050800, 3),
-                Transition::new(-875487600, 5),
-                Transition::new(-864601200, 3),
-                Transition::new(-844038000, 5),
-                Transition::new(-832546800, 3),
-                Transition::new(-812588400, 5),
-                Transition::new(-798073200, 3),
-                Transition::new(-781052400, 5),
-                Transition::new(-772066800, 3),
-                Transition::new(-764805600, 4),
-                Transition::new(-748476000, 3),
-                Transition::new(-733356000, 4),
-                Transition::new(-719445600, 3),
-                Transition::new(-717030000, 5),
-                Transition::new(-706748400, 3),
-                Transition::new(-699487200, 4),
-                Transition::new(-687996000, 3),
-                Transition::new(-668037600, 4),
-                Transition::new(-654732000, 3),
-                Transition::new(-636588000, 4),
-                Transition::new(-622072800, 3),
-                Transition::new(-605743200, 4),
-                Transition::new(-590623200, 3),
-                Transition::new(-574293600, 4),
-                Transition::new(-558568800, 3),
-                Transition::new(-542239200, 4),
-                Transition::new(-527119200, 3),
-                Transition::new(-512604000, 4),
-                Transition::new(-496274400, 3),
-                Transition::new(-481154400, 4),
-                Transition::new(-464220000, 3),
-                Transition::new(-449704800, 4),
-                Transition::new(-432165600, 3),
-                Transition::new(-417650400, 4),
-                Transition::new(-401320800, 3),
-                Transition::new(-386200800, 4),
-                Transition::new(-369266400, 3),
-                Transition::new(-354751200, 4),
-                Transition::new(-337816800, 3),
-                Transition::new(-323301600, 4),
-                Transition::new(-306972000, 3),
-                Transition::new(-291852000, 4),
-                Transition::new(-276732000, 3),
-                Transition::new(-257983200, 4),
-                Transition::new(-245282400, 3),
-                Transition::new(-226533600, 4),
-                Transition::new(-213228000, 3),
-                Transition::new(-195084000, 4),
-                Transition::new(-182383200, 3),
-                Transition::new(-163634400, 4),
-                Transition::new(-150933600, 3),
-                Transition::new(-132184800, 4),
-                Transition::new(-119484000, 3),
-                Transition::new(-100735200, 4),
-                Transition::new(-88034400, 3),
-                Transition::new(-68680800, 4),
-                Transition::new(-59004000, 3),
-                Transition::new(-37242000, 6),
-                Transition::new(57722400, 4),
-                Transition::new(69818400, 3),
-                Transition::new(89172000, 4),
-                Transition::new(101268000, 3),
-                Transition::new(120621600, 4),
-                Transition::new(132717600, 3),
-                Transition::new(152071200, 4),
-                Transition::new(164167200, 3),
-                Transition::new(183520800, 4),
-                Transition::new(196221600, 3),
-                Transition::new(214970400, 4),
-                Transition::new(227671200, 3),
-                Transition::new(246420000, 4),
-                Transition::new(259120800, 3),
-                Transition::new(278474400, 4),
-                Transition::new(290570400, 3),
-                Transition::new(309924000, 4),
-                Transition::new(322020000, 3),
-                Transition::new(341373600, 4),
-                Transition::new(354675600, 3),
-                Transition::new(372819600, 4),
-                Transition::new(386125200, 3),
-                Transition::new(404269200, 4),
-                Transition::new(417574800, 3),
-                Transition::new(435718800, 4),
-                Transition::new(449024400, 3),
-                Transition::new(467773200, 4),
-                Transition::new(481078800, 3),
-                Transition::new(499222800, 4),
-                Transition::new(512528400, 3),
-                Transition::new(530672400, 4),
-                Transition::new(543978000, 3),
-                Transition::new(562122000, 4),
-                Transition::new(575427600, 3),
-                Transition::new(593571600, 4),
-                Transition::new(606877200, 3),
-                Transition::new(625626000, 4),
-                Transition::new(638326800, 3),
-                Transition::new(657075600, 4),
-                Transition::new(670381200, 3),
-                Transition::new(688525200, 4),
-                Transition::new(701830800, 3),
-                Transition::new(719974800, 4),
-                Transition::new(733280400, 3),
-                Transition::new(751424400, 4),
-                Transition::new(764730000, 3),
-                Transition::new(782874000, 4),
-                Transition::new(796179600, 3),
-                Transition::new(814323600, 4),
-                Transition::new(828234000, 3),
-            ],
-            &{
-                const V: [LocalTimeType; 7] = [
-                    crate::generated::unwrap!(LocalTimeType::new(-1420, false, Some(b"LMT"))),
-                    crate::generated::unwrap!(LocalTimeType::new(-1521, false, Some(b"DMT"))),
-                    crate::generated::unwrap!(LocalTimeType::new(2079, true, Some(b"IST"))),
-                    crate::generated::unwrap!(LocalTimeType::new(3600, true, Some(b"BST"))),
-                    crate::generated::unwrap!(LocalTimeType::new(0, false, Some(b"GMT"))),
-                    crate::generated::unwrap!(LocalTimeType::new(7200, true, Some(b"BDST"))),
-                    crate::generated::unwrap!(LocalTimeType::new(3600, false, Some(b"BST"))),
-                ];
-                V
-            },
-            &[],
-            &Some({
-                const V: TransitionRule =
-                    TransitionRule::Alternate(crate::generated::unwrap!(AlternateTime::new(
-                        crate::generated::unwrap!(LocalTimeType::new(0, false, Some(b"GMT"))),
-                        crate::generated::unwrap!(LocalTimeType::new(3600, true, Some(b"BST"))),
-                        RuleDay::MonthWeekDay(crate::generated::unwrap!(MonthWeekDay::new(
-                            3, 5, 0
-                        ))),
-                        3600,
-                        RuleDay::MonthWeekDay(crate::generated::unwrap!(MonthWeekDay::new(
-                            10, 5, 0
-                        ))),
-                        7200
                     )));
                 V
             })
@@ -29657,120 +28673,6 @@ mod tzdata {
             })
         ));
 
-    pub(crate) const EUROPE_TIRASPOL: TimeZoneRef<'static> =
-        crate::generated::unwrap!(TimeZoneRef::<'static>::new(
-            &[
-                Transition::new(-2840147912, 1),
-                Transition::new(-1637114100, 2),
-                Transition::new(-1213148664, 4),
-                Transition::new(-1187056800, 3),
-                Transition::new(-1175479200, 4),
-                Transition::new(-1159754400, 3),
-                Transition::new(-1144029600, 4),
-                Transition::new(-1127700000, 3),
-                Transition::new(-1111975200, 4),
-                Transition::new(-1096250400, 3),
-                Transition::new(-1080525600, 4),
-                Transition::new(-1064800800, 3),
-                Transition::new(-1049076000, 4),
-                Transition::new(-1033351200, 3),
-                Transition::new(-1017626400, 4),
-                Transition::new(-1001901600, 3),
-                Transition::new(-986176800, 4),
-                Transition::new(-970452000, 3),
-                Transition::new(-954727200, 4),
-                Transition::new(-927165600, 3),
-                Transition::new(-898138800, 6),
-                Transition::new(-857257200, 5),
-                Transition::new(-844556400, 6),
-                Transition::new(-828226800, 5),
-                Transition::new(-812502000, 6),
-                Transition::new(-800157600, 8),
-                Transition::new(354920400, 7),
-                Transition::new(370728000, 8),
-                Transition::new(386456400, 7),
-                Transition::new(402264000, 8),
-                Transition::new(417992400, 7),
-                Transition::new(433800000, 8),
-                Transition::new(449614800, 7),
-                Transition::new(465346800, 8),
-                Transition::new(481071600, 7),
-                Transition::new(496796400, 8),
-                Transition::new(512521200, 7),
-                Transition::new(528246000, 8),
-                Transition::new(543970800, 7),
-                Transition::new(559695600, 8),
-                Transition::new(575420400, 7),
-                Transition::new(591145200, 8),
-                Transition::new(606870000, 7),
-                Transition::new(622594800, 8),
-                Transition::new(638319600, 7),
-                Transition::new(654649200, 8),
-                Transition::new(670374000, 3),
-                Transition::new(686102400, 4),
-                Transition::new(695779200, 8),
-                Transition::new(701823600, 7),
-                Transition::new(717548400, 8),
-                Transition::new(733273200, 7),
-                Transition::new(748998000, 8),
-                Transition::new(764722800, 7),
-                Transition::new(780447600, 8),
-                Transition::new(796172400, 7),
-                Transition::new(811897200, 8),
-                Transition::new(828226800, 7),
-                Transition::new(846370800, 8),
-                Transition::new(859676400, 7),
-                Transition::new(877820400, 8),
-                Transition::new(891126000, 7),
-                Transition::new(909270000, 8),
-                Transition::new(922575600, 7),
-                Transition::new(941324400, 8),
-                Transition::new(954025200, 7),
-                Transition::new(972774000, 8),
-                Transition::new(985474800, 7),
-                Transition::new(1004223600, 8),
-                Transition::new(1017529200, 7),
-                Transition::new(1035673200, 8),
-                Transition::new(1048978800, 7),
-                Transition::new(1067122800, 8),
-                Transition::new(1080428400, 7),
-                Transition::new(1099177200, 8),
-                Transition::new(1111878000, 7),
-                Transition::new(1130626800, 8),
-                Transition::new(1143327600, 7),
-                Transition::new(1162076400, 8),
-                Transition::new(1174777200, 7),
-                Transition::new(1193526000, 8),
-                Transition::new(1206831600, 7),
-                Transition::new(1224975600, 8),
-                Transition::new(1238281200, 7),
-                Transition::new(1256425200, 8),
-                Transition::new(1269730800, 7),
-                Transition::new(1288479600, 8),
-            ],
-            &{
-                const V: [LocalTimeType; 9] = [
-                    crate::generated::unwrap!(LocalTimeType::new(7112, false, Some(b"LMT"))),
-                    crate::generated::unwrap!(LocalTimeType::new(6900, false, Some(b"CMT"))),
-                    crate::generated::unwrap!(LocalTimeType::new(6264, false, Some(b"BMT"))),
-                    crate::generated::unwrap!(LocalTimeType::new(10800, true, Some(b"EEST"))),
-                    crate::generated::unwrap!(LocalTimeType::new(7200, false, Some(b"EET"))),
-                    crate::generated::unwrap!(LocalTimeType::new(3600, false, Some(b"CET"))),
-                    crate::generated::unwrap!(LocalTimeType::new(7200, true, Some(b"CEST"))),
-                    crate::generated::unwrap!(LocalTimeType::new(14400, true, Some(b"MSD"))),
-                    crate::generated::unwrap!(LocalTimeType::new(10800, false, Some(b"MSK"))),
-                ];
-                V
-            },
-            &[],
-            &Some({
-                const V: TransitionRule = TransitionRule::Fixed(crate::generated::unwrap!(
-                    LocalTimeType::new(10800, false, Some(b"MSK"))
-                ));
-                V
-            })
-        ));
-
     pub(crate) const EUROPE_ULYANOVSK: TimeZoneRef<'static> =
         crate::generated::unwrap!(TimeZoneRef::<'static>::new(
             &[
@@ -32186,23 +31088,23 @@ mod tzdata {
     pub(crate) const PACIFIC_ENDERBURY: TimeZoneRef<'static> =
         crate::generated::unwrap!(TimeZoneRef::<'static>::new(
             &[
-                Transition::new(-3471292800, 1),
-                Transition::new(-2682246940, 0),
-                Transition::new(-1004313600, 2),
-                Transition::new(-880200000, 0),
+                Transition::new(-1020470400, 1),
+                Transition::new(307627200, 2),
+                Transition::new(788871600, 3),
             ],
             &{
-                const V: [LocalTimeType; 3] = [
+                const V: [LocalTimeType; 4] = [
                     crate::generated::unwrap!(LocalTimeType::new(0, false, Some(b"-00"))),
-                    crate::generated::unwrap!(LocalTimeType::new(-41060, false, Some(b"LMT"))),
                     crate::generated::unwrap!(LocalTimeType::new(-43200, false, Some(b"-12"))),
+                    crate::generated::unwrap!(LocalTimeType::new(-39600, false, Some(b"-11"))),
+                    crate::generated::unwrap!(LocalTimeType::new(46800, false, Some(b"+13"))),
                 ];
                 V
             },
             &[],
             &Some({
                 const V: TransitionRule = TransitionRule::Fixed(crate::generated::unwrap!(
-                    LocalTimeType::new(0, false, Some(b"-00"))
+                    LocalTimeType::new(46800, false, Some(b"+13"))
                 ));
                 V
             })
@@ -32443,31 +31345,6 @@ mod tzdata {
             &Some({
                 const V: TransitionRule = TransitionRule::Fixed(crate::generated::unwrap!(
                     LocalTimeType::new(-36000, false, Some(b"HST"))
-                ));
-                V
-            })
-        ));
-
-    pub(crate) const PACIFIC_KANTON: TimeZoneRef<'static> =
-        crate::generated::unwrap!(TimeZoneRef::<'static>::new(
-            &[
-                Transition::new(-1020470400, 1),
-                Transition::new(307627200, 2),
-                Transition::new(788871600, 3),
-            ],
-            &{
-                const V: [LocalTimeType; 4] = [
-                    crate::generated::unwrap!(LocalTimeType::new(0, false, Some(b"-00"))),
-                    crate::generated::unwrap!(LocalTimeType::new(-43200, false, Some(b"-12"))),
-                    crate::generated::unwrap!(LocalTimeType::new(-39600, false, Some(b"-11"))),
-                    crate::generated::unwrap!(LocalTimeType::new(46800, false, Some(b"+13"))),
-                ];
-                V
-            },
-            &[],
-            &Some({
-                const V: TransitionRule = TransitionRule::Fixed(crate::generated::unwrap!(
-                    LocalTimeType::new(46800, false, Some(b"+13"))
                 ));
                 V
             })
