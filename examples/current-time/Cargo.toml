@@ -1,0 +1,11 @@
+[package]
+name = "current-time"
+version = "0.0.0"
+edition = "2018"
+authors = ["René Kijewski <crates.io@k6i.de>"]
+repository = "https://github.com/Kijewski/tzdb"
+license = "MIT OR Apache-2.0"
+publish = false
+
+[dependencies]
+tzdb = { path = "../.." }

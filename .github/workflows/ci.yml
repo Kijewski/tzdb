@@ -28,7 +28,6 @@ jobs:
       - name: Setup Rust
         uses: ./.github/actions/setup-rust
         with:
-          key: fmt
           toolchain: nightly
           components: rustfmt
 
@@ -46,6 +45,9 @@ jobs:
           - ubuntu-20.04
           - windows-2022
           - macos-12
+        versions:
+          - ""
+          - "-Zminimal-versions"
 
     runs-on: ${{ matrix.platform }}
     steps:
@@ -55,13 +57,18 @@ jobs:
       - name: Setup Rust
         uses: ./.github/actions/setup-rust
         with:
-          key: test
           toolchain: ${{ matrix.toolchain }}
           components: clippy
+
+      - name: Update lockfile
+        env:
+          RUSTC_BOOTSTRAP: 1
+        run: cargo generate-lockfile ${{ matrix.versions }}
 
       - run: cargo check --package tzdb --all-targets
       - run: cargo clippy --package tzdb --all-targets -- -D warnings
       - run: cargo test --package tzdb --all-targets -- --show-output
+      - run: cargo run --package current-time
 
   clippy-pedantic:
     runs-on: ubuntu-20.04
@@ -72,7 +79,6 @@ jobs:
       - name: Setup Rust
         uses: ./.github/actions/setup-rust
         with:
-          key: pedantic
           components: clippy
 
       - run: cargo clippy --package tzdb --all-targets -- -D clippy::pedantic
@@ -85,8 +91,6 @@ jobs:
 
       - name: Setup Rust
         uses: ./.github/actions/setup-rust
-        with:
-          key: shadow
 
       - run: cd test-shadow && cargo run
 
@@ -98,42 +102,8 @@ jobs:
 
       - name: Setup Rust
         uses: ./.github/actions/setup-rust
-        with:
-          key: artichoke
 
       - run: cd test-artichoke && cargo run
-
-  minimum-versions:
-    strategy:
-      fail-fast: false
-      matrix:
-        toolchain:
-          - "1.60"
-          - stable
-          - nightly
-        platform:
-          - ubuntu-20.04
-          - windows-2022
-          - macos-12
-
-    runs-on: ${{ matrix.platform }}
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Setup Rust
-        uses: ./.github/actions/setup-rust
-        with:
-          key: minimum-versions
-          toolchain: ${{ matrix.toolchain }}
-
-      - name: Update lockfile
-        env:
-          RUSTC_BOOTSTRAP: 1
-        run: cargo generate-lockfile -Zminimal-versions
-
-      - name: Test
-        run: cargo test --all-targets -- --show-output
 
   miri:
     name: "Miri"
@@ -145,7 +115,6 @@ jobs:
       - name: Setup Rust
         uses: ./.github/actions/setup-rust
         with:
-          key: miri
           toolchain: nightly
           components: miri
 
@@ -173,7 +142,6 @@ jobs:
       - name: Setup Rust
         uses: ./.github/actions/setup-rust
         with:
-          key: cross-miri
           toolchain: nightly
           components: miri
           target: ${{ matrix.target }}
@@ -182,7 +150,6 @@ jobs:
         run: cargo miri test --package tzdb --no-default-features --features by-name --target ${{ matrix.target }} -- --show-output
 
   doc:
-    name: "Documentation"
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
@@ -191,14 +158,21 @@ jobs:
       - name: Setup Rust
         uses: ./.github/actions/setup-rust
         with:
-          key: name
           toolchain: nightly
           components: rust-docs
 
-      - run: RUSTDOCFLAGS="-D warnings --cfg docsrs" cargo doc --package tzdb --all-features --no-deps
+      - run: cargo doc --package tzdb --all-features --no-deps
+        env:
+          RUSTDOCFLAGS: -D warnings --cfg docsrs
 
   audit:
-    name: "Cargo audit"
+    strategy:
+      fail-fast: false
+      matrix:
+        versions:
+          - ""
+          - "-Zminimal-versions"
+
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
@@ -206,29 +180,32 @@ jobs:
 
       - name: Setup Rust
         uses: ./.github/actions/setup-rust
-        with:
-          key: audit
 
       - name: Update lockfile
-        run: cargo generate-lockfile
+        run: cargo generate-lockfile ${{ matrix.versions }}
+        env:
+          RUSTC_BOOTSTRAP: 1
 
       - name: Audit
         uses: actions-rs/audit-check@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
-  powerset-docs:
+  powerset:
     strategy:
       fail-fast: false
       matrix:
         toolchain:
           - "1.60"
-          # - stable
-          # - nightly
+          - stable
+          - nightly
         platform:
           - ubuntu-20.04
           # - windows-2022
           # - macos-12
+        versions:
+          - ""
+          - "-Zminimal-versions"
 
     runs-on: ${{ matrix.platform }}
     steps:
@@ -238,44 +215,17 @@ jobs:
       - name: Setup Rust
         uses: ./.github/actions/setup-rust
         with:
-          key: powerset-docs
           toolchain: ${{ matrix.toolchain }}
 
       - name: Install hack
         run: cargo hack --version || cargo +stable install cargo-hack --force
 
-      - name: Powerset
-        run: cargo hack test --feature-powerset --exclude-features default --ignore-private --doc
-
-  powerset-tests:
-    strategy:
-      fail-fast: false
-      matrix:
-        toolchain:
-          - "1.60"
-          # - stable
-          # - nightly
-        platform:
-          - ubuntu-20.04
-          # - windows-2022
-          # - macos-12
-
-    runs-on: ${{ matrix.platform }}
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Setup Rust
-        uses: ./.github/actions/setup-rust
-        with:
-          key: powerset-tests
-          toolchain: ${{ matrix.toolchain }}
-
-      - name: Install hack
-        run: cargo hack --version || cargo +stable install cargo-hack --force
+      - run: cargo generate-lockfile ${{ matrix.versions }}
+        env:
+          RUSTC_BOOTSTRAP: 1
 
       - name: Powerset
-        run: cargo hack test --feature-powerset --exclude-features default --ignore-private --tests --lib
+        run: cargo hack test --feature-powerset --exclude-features default --ignore-private
 
   build-cross:
     strategy:
@@ -297,7 +247,6 @@ jobs:
       - name: Setup Rust
         uses: ./.github/actions/setup-rust
         with:
-          key: cross
           toolchain: stable
           target: ${{ matrix.target }}
           components: clippy
@@ -324,7 +273,6 @@ jobs:
       - name: Setup Rust
         uses: ./.github/actions/setup-rust
         with:
-          key: ios
           toolchain: stable
           target: ${{ matrix.target }}
           components: clippy
@@ -344,7 +292,6 @@ jobs:
       - name: Setup Rust
         uses: ./.github/actions/setup-rust
         with:
-          key: package
           toolchain: stable
 
       - run: cargo package --package tzdb

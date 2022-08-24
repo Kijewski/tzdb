@@ -4,14 +4,10 @@ version = "0.1.0"
 edition = "2018"
 
 [dependencies]
-shadow-rs = "^0.16.1"
-
-# FIXME: Remove explicit dependency when 0.4 is released.
-#        Shadow-rs then should use tzdb with `features = "std"`.
-tzdb = { version = "0.3.0", features = ["std"] }
+shadow-rs = "^0.16.3"
 
 [build-dependencies]
-shadow-rs = "^0.16.1"
+shadow-rs = "^0.16.3"
 
 [patch.crates-io]
 tzdb = { path = ".." }

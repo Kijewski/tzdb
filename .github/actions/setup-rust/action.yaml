@@ -41,17 +41,3 @@ runs:
     - name: Update
       run: rustup update || true
       shell: bash
-
-    - name: Build Cache
-      uses: actions/cache@v3
-      with:
-        path: |
-          ~/.cargo/registry/index/
-          ~/.cargo/registry/cache/
-          ~/.cargo/git/db/
-          ~/.cargo/bin/
-          target/
-        key: |
-          v6-${{ inputs.key }}-${{ runner.os }}-${{ inputs.toolchain }}-${{ inputs.target }}-${{ steps.toolchain-install.outputs.cachekey }}-${{ hashFiles('**/Cargo.toml', '**/Cargo.lock') }}
-        restore-keys: |
-          v6-${{ inputs.key }}-${{ runner.os }}-${{ inputs.toolchain }}-${{ inputs.target }}-${{ steps.toolchain-install.outputs.cachekey }}-
