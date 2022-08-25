@@ -4,9 +4,7 @@ version = "0.1.0"
 edition = "2018"
 
 [dependencies]
-spinoso-time = { version = "0.5.0", git = "https://github.com/artichoke/artichoke", default-features = false, features = ["tzrs-local"] }
-
-anyhow = "1.0.59"
+spinoso-time = { version = "0.6.0", git = "https://github.com/artichoke/artichoke", default-features = false, features = ["tzrs-local"] }
 
 [patch.crates-io]
 tzdb = { path = ".." }
