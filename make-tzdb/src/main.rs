@@ -14,22 +14,21 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-mod lower;
 mod parse;
 
 use std::cmp::Ordering;
-use std::env::args;
+use std::env::{args, var_os};
 use std::fmt::Write as _;
-use std::fs::{create_dir_all, read_dir};
+use std::fs::{create_dir_all, read_dir, OpenOptions};
 use std::io::Write as _;
 use std::path::PathBuf;
 
+use anyhow::anyhow;
 use convert_case::{Case, Casing};
 use indexmap::IndexMap;
 use itertools::Itertools;
+use subprocess::{Popen, PopenConfig, Redirection};
 use tz::TimeZone;
-
-use crate::lower::full_to_lower;
 
 struct TzName {
     /// to_pascal("Europe/Belfast")
@@ -203,9 +202,10 @@ pub fn main() -> anyhow::Result<()> {
 
 #![allow(clippy::pedantic)]
 
-use tz::TimeZoneRef;
 #[cfg(feature = "by-name")]
-use crate::lower::Lower;
+pub(crate) mod by_name;
+
+use tz::TimeZoneRef;
 
 macro_rules! unwrap {{
     ($($tt:tt)*) => {{
@@ -222,6 +222,37 @@ macro_rules! unwrap {{
 pub(crate) use unwrap;
 "#
     )?;
+
+    {
+        let mut keywords = String::new();
+        writeln!(
+            keywords,
+            "struct keyword {{ const char* name; const char* canon; }}"
+        )?;
+        writeln!(keywords, "%%")?;
+        for entries in entries_by_bytes.values() {
+            for entry in entries {
+                writeln!(keywords, "{:?}, {:?}", entry.full, entry.canon)?;
+            }
+        }
+        writeln!(keywords, "%%")?;
+
+        let file = OpenOptions::new()
+            .create(true)
+            .write(true)
+            .truncate(true)
+            .open(target_dir.join("by_name.rs"))?;
+        let mut gperf = Popen::create(
+            &["/usr/bin/env", "python3", "generate_lookup_table.py"],
+            PopenConfig {
+                stdin: Redirection::Pipe,
+                stdout: Redirection::File(file),
+                cwd: Some(var_os("CARGO_MANIFEST_DIR").ok_or(anyhow!("!CARGO_MANIFEST_DIR"))?),
+                ..PopenConfig::default()
+            },
+        )?;
+        gperf.communicate(Some(&keywords))?;
+    }
 
     // all known time zones as reference to (raw_)tzdata
     writeln!(f, "/// All defined time zones statically accessible")?;
@@ -266,50 +297,6 @@ pub(crate) use unwrap;
     }
     writeln!(f, "}}")?;
     writeln!(f)?;
-
-    // map of time zone name to parsed data
-    let mut phf = phf_codegen::Map::new();
-    for entries in entries_by_bytes.values() {
-        for entry in entries {
-            phf.entry(
-                full_to_lower(entry.full.as_bytes()),
-                &format!("&tzdata::{}", entry.canon),
-            );
-        }
-    }
-    writeln!(f, r#"#[cfg(feature = "by-name")]"#)?;
-    writeln!(
-        f,
-        "pub(crate) const TIME_ZONES_BY_NAME: phf::Map<Lower, &'static TimeZoneRef<'static>> = \
-        include!(\"time_zones_by_name.inc.rs\");",
-    )?;
-    writeln!(f)?;
-    write_string(
-        phf.build().to_string(),
-        target_dir.join("time_zones_by_name.inc.rs"),
-    )?;
-
-    // map of time zone name to its unparsed, binary data
-    let mut phf = phf_codegen::Map::new();
-    for entries in entries_by_bytes.values() {
-        for entry in entries {
-            phf.entry(
-                full_to_lower(entry.full.as_bytes()),
-                &format!("raw_tzdata::{}", entry.canon),
-            );
-        }
-    }
-    writeln!(f, r#"#[cfg(all(feature = "binary", feature = "by-name"))]"#)?;
-    writeln!(
-        f,
-        "pub(crate) const RAW_TIME_ZONES_BY_NAME: phf::Map<Lower, &'static [u8]> = \
-        include!(\"raw_time_zones_by_name.inc.rs\");"
-    )?;
-    writeln!(f)?;
-    write_string(
-        phf.build().to_string(),
-        target_dir.join("raw_time_zones_by_name.inc.rs"),
-    )?;
 
     // list of known time zone names
     let mut time_zones_list = entries_by_major

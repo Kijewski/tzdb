@@ -21,10 +21,10 @@
 
 #![allow(clippy::pedantic)]
 
-use tz::TimeZoneRef;
-
 #[cfg(feature = "by-name")]
-use crate::lower::Lower;
+pub(crate) mod by_name;
+
+use tz::TimeZoneRef;
 
 macro_rules! unwrap {
     ($($tt:tt)*) => {
@@ -4692,14 +4692,6 @@ pub mod time_zone {
     #[cfg_attr(docsrs, doc(cfg(feature = "binary")))]
     pub const RAW_ZULU: &[u8] = raw_tzdata::UCT;
 }
-
-#[cfg(feature = "by-name")]
-pub(crate) const TIME_ZONES_BY_NAME: phf::Map<Lower, &'static TimeZoneRef<'static>> =
-    include!("time_zones_by_name.inc.rs");
-
-#[cfg(all(feature = "binary", feature = "by-name"))]
-pub(crate) const RAW_TIME_ZONES_BY_NAME: phf::Map<Lower, &'static [u8]> =
-    include!("raw_time_zones_by_name.inc.rs");
 
 #[cfg(feature = "list")]
 pub(crate) const TIME_ZONES_LIST: [&str; 571] = include!("time_zones_list.inc.rs");

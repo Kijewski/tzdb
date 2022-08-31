@@ -16,8 +16,6 @@ tz-rs = { version = "^0.6.14", default-features = false, features = ["const"] }
 
 # optional dependencies
 iana-time-zone = { version = "^0.1.46", default-features = false, optional = true }
-phf = { version = "^0.11.0", default-features = false, optional = true }
-phf_shared = { version = "^0.11.0", default-features = false, optional = true }
 utcnow = { version = "^0.2.0", default-features = false, optional = true }
 
 [dev-dependencies]
@@ -29,7 +27,7 @@ structmeta = "^0.1.5"
 default = ["by-name", "list", "local", "std", "fallback", "now"]
 
 # Enables [`tz_by_name()`] to get a time zone at runtime by name:
-by-name = ["phf", "phf_shared"]
+by-name = []
 
 # Enables [`TZ_NAMES`] to get a list of all shipped time zones:
 list = []
