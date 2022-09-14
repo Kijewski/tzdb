@@ -219,17 +219,17 @@ def convert(stdin, stdout):
     match hash_switch.get('finally'):
         case (idx, offs):
             print(f'    {hash_add(idx, offs)}', file=stdout)
-    match hash_switch.get('default'):
-        case (idx, offs):
-            print(f'    if len > {hash_switch_fst_idx} {{', file=stdout)
-            print(f'        {hash_add(idx, offs)}', file=stdout)
-            print('    }', file=stdout)
-    for item in hash_switch.items():
+    for item in reversed(hash_switch.items()):
         match item:
             case (int(key), (idx, offs)):
                 print(f'    if len >= {key} {{', file=stdout)
                 print(f'        {hash_add(idx, offs)}', file=stdout)
                 print('    }', file=stdout)
+    match hash_switch.get('default'):
+        case (idx, offs):
+            print(f'    if len > {hash_switch_fst_idx} {{', file=stdout)
+            print(f'        {hash_add(idx, offs)}', file=stdout)
+            print('    }', file=stdout)
     print(file=stdout)
 
     print(f'    if key > {max_hash_value} {{', file=stdout)

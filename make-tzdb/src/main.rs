@@ -287,7 +287,7 @@ pub(crate) use unwrap;
             for f in [
                 |s: &str| s.to_owned(),
                 |s: &str| s.to_ascii_lowercase(),
-                |s: &str| s.to_uppercase(),
+                |s: &str| s.to_ascii_uppercase(),
                 |s: &str| {
                     s.chars()
                         .map(|c| match c {

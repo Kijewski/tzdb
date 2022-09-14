@@ -5796,29 +5796,29 @@ fn find_item(s: &[u8]) -> Option<&'static Item> {
 
     let mut key: usize = len;
     key = key.wrapping_add(ASSO_VALUES[s[len - 1] as usize] as usize);
-    if len > 11 {
-        key = key.wrapping_add(ASSO_VALUES[s[11] as usize] as usize);
-    }
-    if len >= 11 {
-        key = key.wrapping_add(ASSO_VALUES[s[10] as usize] as usize);
-    }
-    if len >= 9 {
-        key = key.wrapping_add(ASSO_VALUES[s[8] as usize] as usize);
-    }
-    if len >= 8 {
-        key = key.wrapping_add(ASSO_VALUES[s[7].wrapping_add(1) as usize] as usize);
-    }
-    if len >= 6 {
-        key = key.wrapping_add(ASSO_VALUES[s[5].wrapping_add(1) as usize] as usize);
-    }
-    if len >= 4 {
-        key = key.wrapping_add(ASSO_VALUES[s[3] as usize] as usize);
+    if len >= 1 {
+        key = key.wrapping_add(ASSO_VALUES[s[0] as usize] as usize);
     }
     if len >= 2 {
         key = key.wrapping_add(ASSO_VALUES[s[1].wrapping_add(1) as usize] as usize);
     }
-    if len >= 1 {
-        key = key.wrapping_add(ASSO_VALUES[s[0] as usize] as usize);
+    if len >= 4 {
+        key = key.wrapping_add(ASSO_VALUES[s[3] as usize] as usize);
+    }
+    if len >= 6 {
+        key = key.wrapping_add(ASSO_VALUES[s[5].wrapping_add(1) as usize] as usize);
+    }
+    if len >= 8 {
+        key = key.wrapping_add(ASSO_VALUES[s[7].wrapping_add(1) as usize] as usize);
+    }
+    if len >= 9 {
+        key = key.wrapping_add(ASSO_VALUES[s[8] as usize] as usize);
+    }
+    if len >= 11 {
+        key = key.wrapping_add(ASSO_VALUES[s[10] as usize] as usize);
+    }
+    if len > 11 {
+        key = key.wrapping_add(ASSO_VALUES[s[11] as usize] as usize);
     }
 
     if key > 2323 {
