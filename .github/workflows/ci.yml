@@ -68,7 +68,7 @@ jobs:
 
       - run: cargo check --package tzdb --all-targets
       - run: cargo clippy --package tzdb --all-targets -- -D warnings
-      - run: cargo test --package tzdb --all-targets -- --show-output
+      - run: cargo test --package tzdb --all-targets
       - run: cargo run --package current-time
 
   clippy-pedantic:
@@ -120,7 +120,7 @@ jobs:
           components: miri
 
       - name: Test
-        run: cargo miri test --package tzdb --all-targets -- --show-output
+        run: cargo miri test --package tzdb --all-targets
 
   cross-miri:
     strategy:
@@ -148,7 +148,7 @@ jobs:
           target: ${{ matrix.target }}
 
       - name: Test
-        run: cargo miri test --package tzdb --target ${{ matrix.target }} -- --show-output
+        run: cargo miri test --package tzdb --target ${{ matrix.target }}
 
   doc:
     runs-on: ubuntu-20.04
