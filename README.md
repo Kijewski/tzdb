@@ -2,7 +2,7 @@
 
 [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/Kijewski/tzdb/CI?logo=github)](https://github.com/Kijewski/tzdb/actions/workflows/ci.yml)
 [![Crates.io](https://img.shields.io/crates/v/tzdb?logo=rust)](https://crates.io/crates/tzdb)
-![Minimum supported Rust version](https://img.shields.io/badge/rustc-1.60+-important?logo=rust "Minimum Supported Rust Version")
+![Minimum supported Rust version](https://img.shields.io/badge/rustc-1.55+-important?logo=rust "Minimum Supported Rust Version")
 [![License](https://img.shields.io/crates/l/tzdb?color=informational&logo=apache)](/LICENSES)
 
 Static time zone information for [tz-rs](https://crates.io/crates/tz-rs).
@@ -37,16 +37,6 @@ let current_time = tzdb::now::in_named_or(tzdb::time_zone::GMT, "Some/City")?;
 ```
 
 ## Feature flags
-
-* `by-name` <sup>(enabled by default, enabled by `local`)</sup> — enables `tz_by_name()` to get a time zone at runtime by name
-
-* `list` <sup>(enabled by default)</sup> — enables `TZ_NAMES` to get a list of all shipped time zones
-
-* `local` <sup>(enabled by default)</sup> — enables `local_tz()` to get the system time zone
-
-* `now` <sup>(enabled by default)</sup> — enables the module `now` to get the current time
-
-* `binary` – make the unparsed, binary tzdata of a time zone available
 
 * `std` <sup>(enabled by default)</sup> – enable features that need the standard library `std`
 
