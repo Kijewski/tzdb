@@ -202,7 +202,7 @@ pub fn main() -> anyhow::Result<()> {
 
 #![allow(clippy::pedantic)]
 
-#[cfg(test)]
+#[cfg(all(test, not(miri)))]
 mod test_all_names;
 pub(crate) mod by_name;
 

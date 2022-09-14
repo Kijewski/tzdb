@@ -1,13 +1,12 @@
 use std::convert::TryInto;
 use std::time::{Duration, Instant};
 
-use criterion::{black_box, criterion_group, criterion_main, Criterion};
 use rand::rngs::SmallRng;
 use rand::seq::SliceRandom;
 use rand::SeedableRng;
 use tzdb::{raw_tz_by_name, TZ_NAMES};
 
-fn benchmark_by_name(c: &mut Criterion) {
+fn benchmark_by_name(c: &mut criterion::Criterion) {
     let mut names: Vec<(String, usize)> = TZ_NAMES
         .iter()
         .flat_map(|&name| {
@@ -62,7 +61,7 @@ fn benchmark_by_name(c: &mut Criterion) {
                 names.shuffle(&mut SmallRng::seed_from_u64(i));
 
                 let start = Instant::now();
-                let names = black_box(&*names);
+                let names = criterion::black_box(&*names);
                 for &(ref name, raw_len) in names {
                     assert_eq!(raw_len, crate::raw_tz_by_name(name).unwrap().len());
                 }
@@ -77,5 +76,14 @@ fn benchmark_by_name(c: &mut Criterion) {
     });
 }
 
-criterion_group!(benches, benchmark_by_name);
-criterion_main!(benches);
+fn main() {
+    #[cfg(not(miri))]
+    {
+        criterion::criterion_group!(benches, benchmark_by_name);
+        benches();
+
+        criterion::Criterion::default()
+            .configure_from_args()
+            .final_summary();
+    }
+}

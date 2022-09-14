@@ -22,7 +22,7 @@
 #![allow(clippy::pedantic)]
 
 pub(crate) mod by_name;
-#[cfg(test)]
+#[cfg(all(test, not(miri)))]
 mod test_all_names;
 
 use tz::TimeZoneRef;
