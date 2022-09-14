@@ -8,6 +8,7 @@ on:
       - v0.2.x
       - v0.3.x
       - v0.4.x
+      - v0.5.x
   pull_request:
     branches:
       - main
@@ -15,6 +16,7 @@ on:
       - v0.2.x
       - v0.3.x
       - v0.4.x
+      - v0.5.x
   schedule:
     - cron: "58 7 * * 3"
 
@@ -38,7 +40,8 @@ jobs:
       fail-fast: false
       matrix:
         toolchain:
-          - "1.60"
+          - "1.55"
+          - "1.56"
           - stable
           - nightly
         platform:
@@ -67,7 +70,7 @@ jobs:
 
       - run: cargo check --package tzdb --all-targets
       - run: cargo clippy --package tzdb --all-targets -- -D warnings
-      - run: cargo test --package tzdb --all-targets -- --show-output
+      - run: cargo test --package tzdb --all-targets
       - run: cargo run --package current-time
 
   clippy-pedantic:
@@ -119,7 +122,7 @@ jobs:
           components: miri
 
       - name: Test
-        run: cargo miri test --package tzdb --all-targets -- --show-output
+        run: cargo miri test --package tzdb --all-targets
 
   cross-miri:
     strategy:
@@ -147,7 +150,7 @@ jobs:
           target: ${{ matrix.target }}
 
       - name: Test
-        run: cargo miri test --package tzdb --no-default-features --features by-name --target ${{ matrix.target }} -- --show-output
+        run: cargo miri test --package tzdb --target ${{ matrix.target }}
 
   doc:
     runs-on: ubuntu-20.04
@@ -190,42 +193,6 @@ jobs:
         uses: actions-rs/audit-check@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-
-  powerset:
-    strategy:
-      fail-fast: false
-      matrix:
-        toolchain:
-          - "1.60"
-          - stable
-          - nightly
-        platform:
-          - ubuntu-20.04
-          # - windows-2022
-          # - macos-12
-        versions:
-          - ""
-          - "-Zminimal-versions"
-
-    runs-on: ${{ matrix.platform }}
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Setup Rust
-        uses: ./.github/actions/setup-rust
-        with:
-          toolchain: ${{ matrix.toolchain }}
-
-      - name: Install hack
-        run: cargo hack --version || cargo +stable install cargo-hack --force
-
-      - run: cargo generate-lockfile ${{ matrix.versions }}
-        env:
-          RUSTC_BOOTSTRAP: 1
-
-      - name: Powerset
-        run: cargo hack test --feature-powerset --exclude-features default --ignore-private
 
   build-cross:
     strategy:

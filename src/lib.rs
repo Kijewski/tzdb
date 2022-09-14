@@ -37,7 +37,7 @@
 //!
 //! [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/Kijewski/tzdb/CI?logo=github)](https://github.com/Kijewski/tzdb/actions/workflows/ci.yml)
 //! [![Crates.io](https://img.shields.io/crates/v/tzdb?logo=rust)](https://crates.io/crates/tzdb)
-//! ![Minimum supported Rust version](https://img.shields.io/badge/rustc-1.60+-important?logo=rust "Minimum Supported Rust Version")
+//! ![Minimum supported Rust version](https://img.shields.io/badge/rustc-1.55+-important?logo=rust "Minimum Supported Rust Version")
 //! [![License](https://img.shields.io/crates/l/tzdb?color=informational&logo=apache)](/LICENSES)
 //!
 //! Static time zone information for [tz-rs](https://crates.io/crates/tz-rs).
@@ -51,7 +51,6 @@
 //! ## Usage examples
 //!
 //! ```rust
-//! # #[cfg(all(feature = "local", feature = "now"))] let _: () = {
 //! // get the system time zone
 //! let time_zone = tzdb::local_tz().unwrap();       // tz::TimeZoneRef<'_>
 //! let current_time = tzdb::now::local().unwrap();  // tz::DateTime
@@ -71,20 +70,9 @@
 //! // provide a default time zone
 //! let current_time = tzdb::now::local_or(tzdb::time_zone::GMT).unwrap();
 //! let current_time = tzdb::now::in_named_or(tzdb::time_zone::GMT, "Some/City").unwrap();
-//! # };
 //! ```
 //!
 //! ## Feature flags
-//!
-//! * `by-name` <sup>*(enabled by default, enabled by* `local`*)*</sup> — enables [`tz_by_name()`] to get a time zone at runtime by name
-//!
-//! * `list` <sup>*(enabled by default)*</sup> — enables [`TZ_NAMES`] to get a list of all shipped time zones
-//!
-//! * `local` <sup>*(enabled by default)*</sup> — enables [`local_tz()`] to get the system time zone
-//!
-//! * `now` <sup>*(enabled by default)*</sup> — enables the module [`now`] to get the current time
-//!
-//! * `binary` — make the unparsed, binary tzdata of a time zone available
 //!
 //! * `std` <sup>*(enabled by default)*</sup> — enable features that need the standard library [`std`]
 //!
@@ -99,15 +87,12 @@ extern crate alloc;
 extern crate std;
 
 mod generated;
-#[cfg(feature = "now")]
-#[cfg_attr(docsrs, doc(cfg(feature = "now")))]
 pub mod now;
-#[cfg(all(test, feature = "by-name"))]
+#[cfg(test)]
 mod test_by_name;
-#[cfg(all(test, not(miri), feature = "by-name"))]
+#[cfg(all(test, not(miri)))]
 mod test_proptest;
 
-#[cfg(feature = "local")]
 use iana_time_zone::get_timezone;
 
 pub use crate::generated::time_zone;
@@ -128,16 +113,12 @@ pub const VERSION_HASH: &str = "e51a9044da116a52906bc0fc22a3dde0e1a6d4e486f9e610
 /// # Example
 ///
 /// ```
-/// # #[cfg(feature = "by-name")] let _: () = {
 /// assert_eq!(
 ///     tzdb::time_zone::europe::BERLIN,
 ///     tzdb::tz_by_name("Europe/Berlin").unwrap(),
 /// );
-/// # };
 /// ```
 #[inline]
-#[cfg(feature = "by-name")]
-#[cfg_attr(docsrs, doc(cfg(feature = "by-name")))]
 pub fn tz_by_name<S: AsRef<[u8]>>(s: S) -> Option<tz::TimeZoneRef<'static>> {
     generated::by_name::find_tz(s.as_ref())
 }
@@ -147,23 +128,17 @@ pub fn tz_by_name<S: AsRef<[u8]>>(s: S) -> Option<tz::TimeZoneRef<'static>> {
 /// # Example
 ///
 /// ```
-/// # #[cfg(all(feature = "binary", feature = "by-name"))] let _: () = {
 /// assert_eq!(
 ///     tzdb::time_zone::europe::RAW_BERLIN,
 ///     tzdb::raw_tz_by_name("Europe/Berlin").unwrap(),
 /// );
-/// # };
 /// ```
 #[inline]
-#[cfg(all(feature = "binary", feature = "by-name"))]
-#[cfg_attr(docsrs, doc(cfg(all(feature = "binary", feature = "by-name"))))]
 pub fn raw_tz_by_name<S: AsRef<[u8]>>(s: S) -> Option<&'static [u8]> {
     generated::by_name::find_raw(s.as_ref())
 }
 
 /// A list of all known time zones
-#[cfg(feature = "list")]
-#[cfg_attr(docsrs, doc(cfg(feature = "list")))]
 pub const TZ_NAMES: &[&str] = &crate::generated::TIME_ZONES_LIST;
 
 /// Find the time zone of the current system
@@ -174,23 +149,17 @@ pub const TZ_NAMES: &[&str] = &crate::generated::TIME_ZONES_LIST;
 /// # Example
 ///
 /// ```rust
-/// # #[cfg(feature = "local")] let _: () = {
 /// // Query the time zone of the local system:
 /// let time_zone = tzdb::local_tz().unwrap();
-/// # };
 /// ```
 ///
 /// Most likely you will want to fallback to a default time zone,
 /// if the system time zone could not be determined or was not found in the database:
 ///
 /// ```rust
-/// # #[cfg(feature = "local")] let _: () = {
 /// // Query the time zone of the local system:
 /// let time_zone = tzdb::local_tz().unwrap_or(tzdb::time_zone::GMT);
-/// # };
 /// ```
-#[cfg(feature = "local")]
-#[cfg_attr(docsrs, doc(cfg(feature = "local")))]
 #[must_use]
 pub fn local_tz() -> Option<tz::TimeZoneRef<'static>> {
     tz_by_name(&get_timezone().ok()?)

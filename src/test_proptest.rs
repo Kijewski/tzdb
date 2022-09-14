@@ -17,41 +17,35 @@ fn random_bytes(size: impl Into<SizeRange>) -> impl Strategy<Value = Vec<u8>> {
 #[proptest]
 fn test_short_ascii_string(#[strategy(ascii_string(0..8))] s: String) {
     let _ = crate::tz_by_name(&s);
-    #[cfg(feature = "binary")]
     let _ = crate::raw_tz_by_name(&s);
 }
 
 #[proptest]
 fn test_ascii_string(#[strategy(ascii_string(8..40))] s: String) {
     let _ = crate::tz_by_name(&s);
-    #[cfg(feature = "binary")]
     let _ = crate::raw_tz_by_name(&s);
 }
 
 #[proptest]
 fn test_short_string(#[strategy(random_string(0..8))] s: String) {
     let _ = crate::tz_by_name(&s);
-    #[cfg(feature = "binary")]
     let _ = crate::raw_tz_by_name(&s);
 }
 
 #[proptest]
 fn test_string(#[strategy(random_string(8..40))] s: String) {
     let _ = crate::tz_by_name(&s);
-    #[cfg(feature = "binary")]
     let _ = crate::raw_tz_by_name(&s);
 }
 
 #[proptest]
 fn test_short_bytes(#[strategy(random_bytes(0..8))] s: Vec<u8>) {
     let _ = crate::tz_by_name(&s);
-    #[cfg(feature = "binary")]
     let _ = crate::raw_tz_by_name(&s);
 }
 
 #[proptest]
 fn test_bytes(#[strategy(random_bytes(8..40))] s: Vec<u8>) {
     let _ = crate::tz_by_name(&s);
-    #[cfg(feature = "binary")]
     let _ = crate::raw_tz_by_name(&s);
 }
