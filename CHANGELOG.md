@@ -1,5 +1,9 @@
 ## Changes between the versions
 
+### 0.5.0-pre.1 (2022-09-14)
+
+*  Simplify a lot by removing feature gates [[#123](https://github.com/Kijewski/tzdb/pull/123)]
+
 ### 0.4.5 (2022-08-31)
 
 * Remove [phf](https://crates.io/crates/phf) dependency
