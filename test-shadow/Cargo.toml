@@ -10,7 +10,7 @@ shadow-rs = "^0.16.3"
 shadow-rs = "^0.16.3"
 
 [patch.crates-io]
-tzdb = { path = ".." }
+tzdb = { path = "./tzdb/" }
 
 [workspace]
-members = ["."]
+members = [".", "tzdb"]
