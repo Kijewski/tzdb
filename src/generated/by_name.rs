@@ -2,9 +2,7 @@ use core::mem::transmute;
 
 use tz::TimeZoneRef;
 
-#[cfg(feature = "binary")]
-use super::raw_tzdata;
-use super::tzdata;
+use super::{raw_tzdata, tzdata};
 
 #[derive(Clone, Copy)]
 #[repr(u16)]
@@ -2909,4582 +2907,2870 @@ const WORDLIST: [Option<Index>; 2324] = [
     Some(Index::V570),
 ];
 
-struct Item(
-    TimeZoneRef<'static>,
-    #[cfg(feature = "binary")] &'static [u8],
-);
-const ITEMS: [(&[u8], Item); 571] = [
-    (
-        b"EST",
-        Item(
-            tzdata::EST,
-            #[cfg(feature = "binary")]
-            raw_tzdata::EST,
-        ),
-    ),
-    (
-        b"EST5EDT",
-        Item(
-            tzdata::EST_5_EDT,
-            #[cfg(feature = "binary")]
-            raw_tzdata::EST_5_EDT,
-        ),
-    ),
-    (
-        b"GMT",
-        Item(
-            tzdata::GMT,
-            #[cfg(feature = "binary")]
-            raw_tzdata::GMT,
-        ),
-    ),
-    (
-        b"GMT0",
-        Item(
-            tzdata::GMT,
-            #[cfg(feature = "binary")]
-            raw_tzdata::GMT,
-        ),
-    ),
-    (
-        b"GMT+0",
-        Item(
-            tzdata::GMT,
-            #[cfg(feature = "binary")]
-            raw_tzdata::GMT,
-        ),
-    ),
-    (
-        b"GMT-0",
-        Item(
-            tzdata::GMT,
-            #[cfg(feature = "binary")]
-            raw_tzdata::GMT,
-        ),
-    ),
-    (
-        b"Asia/Macao",
-        Item(
-            tzdata::ASIA_MACAO,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_MACAO,
-        ),
-    ),
-    (
-        b"Asia/Manila",
-        Item(
-            tzdata::ASIA_MANILA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_MANILA,
-        ),
-    ),
-    (
-        b"Asia/Amman",
-        Item(
-            tzdata::ASIA_AMMAN,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_AMMAN,
-        ),
-    ),
-    (
-        b"America/Tortola",
-        Item(
-            tzdata::AMERICA_TORTOLA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_TORTOLA,
-        ),
-    ),
-    (
-        b"America/Noronha",
-        Item(
-            tzdata::AMERICA_NORONHA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_NORONHA,
-        ),
-    ),
-    (
-        b"Asia/Nicosia",
-        Item(
-            tzdata::ASIA_NICOSIA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_NICOSIA,
-        ),
-    ),
-    (
-        b"America/Toronto",
-        Item(
-            tzdata::AMERICA_MONTREAL,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_MONTREAL,
-        ),
-    ),
-    (
-        b"America/Antigua",
-        Item(
-            tzdata::AMERICA_ANTIGUA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_ANTIGUA,
-        ),
-    ),
-    (
-        b"Indian/Mahe",
-        Item(
-            tzdata::INDIAN_MAHE,
-            #[cfg(feature = "binary")]
-            raw_tzdata::INDIAN_MAHE,
-        ),
-    ),
-    (
-        b"America/Ojinaga",
-        Item(
-            tzdata::AMERICA_OJINAGA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_OJINAGA,
-        ),
-    ),
-    (
-        b"America/Detroit",
-        Item(
-            tzdata::AMERICA_DETROIT,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_DETROIT,
-        ),
-    ),
-    (
-        b"Indian/Mayotte",
-        Item(
-            tzdata::INDIAN_MAYOTTE,
-            #[cfg(feature = "binary")]
-            raw_tzdata::INDIAN_MAYOTTE,
-        ),
-    ),
-    (
-        b"America/Araguaina",
-        Item(
-            tzdata::AMERICA_ARAGUAINA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_ARAGUAINA,
-        ),
-    ),
-    (
-        b"America/Guatemala",
-        Item(
-            tzdata::AMERICA_GUATEMALA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_GUATEMALA,
-        ),
-    ),
-    (
-        b"Iran",
-        Item(
-            tzdata::IRAN,
-            #[cfg(feature = "binary")]
-            raw_tzdata::IRAN,
-        ),
-    ),
-    (
-        b"America/Grenada",
-        Item(
-            tzdata::AMERICA_GRENADA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_GRENADA,
-        ),
-    ),
-    (
-        b"America/Blanc-Sablon",
-        Item(
-            tzdata::AMERICA_BLANC_SABLON,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_BLANC_SABLON,
-        ),
-    ),
-    (
-        b"America/Rainy_River",
-        Item(
-            tzdata::AMERICA_RAINY_RIVER,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_RAINY_RIVER,
-        ),
-    ),
-    (
-        b"America/Guadeloupe",
-        Item(
-            tzdata::AMERICA_GUADELOUPE,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_GUADELOUPE,
-        ),
-    ),
-    (
-        b"America/Regina",
-        Item(
-            tzdata::AMERICA_REGINA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_REGINA,
-        ),
-    ),
-    (
-        b"Indian/Comoro",
-        Item(
-            tzdata::INDIAN_COMORO,
-            #[cfg(feature = "binary")]
-            raw_tzdata::INDIAN_COMORO,
-        ),
-    ),
-    (
-        b"Indian/Antananarivo",
-        Item(
-            tzdata::INDIAN_ANTANANARIVO,
-            #[cfg(feature = "binary")]
-            raw_tzdata::INDIAN_ANTANANARIVO,
-        ),
-    ),
-    (
-        b"America/Bogota",
-        Item(
-            tzdata::AMERICA_BOGOTA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_BOGOTA,
-        ),
-    ),
-    (
-        b"Asia/Anadyr",
-        Item(
-            tzdata::ASIA_ANADYR,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_ANADYR,
-        ),
-    ),
-    (
-        b"Asia/Muscat",
-        Item(
-            tzdata::ASIA_MUSCAT,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_MUSCAT,
-        ),
-    ),
-    (
-        b"CST6CDT",
-        Item(
-            tzdata::CST_6_CDT,
-            #[cfg(feature = "binary")]
-            raw_tzdata::CST_6_CDT,
-        ),
-    ),
-    (
-        b"Africa/Monrovia",
-        Item(
-            tzdata::AFRICA_MONROVIA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AFRICA_MONROVIA,
-        ),
-    ),
-    (
-        b"Africa/Ceuta",
-        Item(
-            tzdata::AFRICA_CEUTA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AFRICA_CEUTA,
-        ),
-    ),
-    (
-        b"Africa/Dakar",
-        Item(
-            tzdata::AFRICA_DAKAR,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AFRICA_DAKAR,
-        ),
-    ),
-    (
-        b"America/Santiago",
-        Item(
-            tzdata::AMERICA_SANTIAGO,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_SANTIAGO,
-        ),
-    ),
-    (
-        b"America/Godthab",
-        Item(
-            tzdata::AMERICA_GODTHAB,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_GODTHAB,
-        ),
-    ),
-    (
-        b"America/Ensenada",
-        Item(
-            tzdata::AMERICA_ENSENADA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_ENSENADA,
-        ),
-    ),
-    (
-        b"America/Santo_Domingo",
-        Item(
-            tzdata::AMERICA_SANTO_DOMINGO,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_SANTO_DOMINGO,
-        ),
-    ),
-    (
-        b"Asia/Dacca",
-        Item(
-            tzdata::ASIA_DACCA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_DACCA,
-        ),
-    ),
-    (
-        b"Asia/Rangoon",
-        Item(
-            tzdata::ASIA_RANGOON,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_RANGOON,
-        ),
-    ),
-    (
-        b"America/Rosario",
-        Item(
-            tzdata::AMERICA_CORDOBA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_CORDOBA,
-        ),
-    ),
-    (
-        b"Asia/Dubai",
-        Item(
-            tzdata::ASIA_DUBAI,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_DUBAI,
-        ),
-    ),
-    (
-        b"Africa/Harare",
-        Item(
-            tzdata::AFRICA_HARARE,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AFRICA_HARARE,
-        ),
-    ),
-    (
-        b"Africa/Cairo",
-        Item(
-            tzdata::EGYPT,
-            #[cfg(feature = "binary")]
-            raw_tzdata::EGYPT,
-        ),
-    ),
-    (
-        b"America/Resolute",
-        Item(
-            tzdata::AMERICA_RESOLUTE,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_RESOLUTE,
-        ),
-    ),
-    (
-        b"Asia/Ashgabat",
-        Item(
-            tzdata::ASIA_ASHGABAT,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_ASHGABAT,
-        ),
-    ),
-    (
-        b"Asia/Harbin",
-        Item(
-            tzdata::PRC,
-            #[cfg(feature = "binary")]
-            raw_tzdata::PRC,
-        ),
-    ),
-    (
-        b"Africa/Nairobi",
-        Item(
-            tzdata::AFRICA_NAIROBI,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AFRICA_NAIROBI,
-        ),
-    ),
-    (
-        b"Africa/Malabo",
-        Item(
-            tzdata::AFRICA_MALABO,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AFRICA_MALABO,
-        ),
-    ),
-    (
-        b"Asia/Hebron",
-        Item(
-            tzdata::ASIA_HEBRON,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_HEBRON,
-        ),
-    ),
-    (
-        b"NZ-CHAT",
-        Item(
-            tzdata::NZ_CHAT,
-            #[cfg(feature = "binary")]
-            raw_tzdata::NZ_CHAT,
-        ),
-    ),
-    (
-        b"GB",
-        Item(
-            tzdata::GB,
-            #[cfg(feature = "binary")]
-            raw_tzdata::GB,
-        ),
-    ),
-    (
-        b"Africa/Freetown",
-        Item(
-            tzdata::AFRICA_FREETOWN,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AFRICA_FREETOWN,
-        ),
-    ),
-    (
-        b"America/Catamarca",
-        Item(
-            tzdata::AMERICA_CATAMARCA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_CATAMARCA,
-        ),
-    ),
-    (
-        b"America/Scoresbysund",
-        Item(
-            tzdata::AMERICA_SCORESBYSUND,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_SCORESBYSUND,
-        ),
-    ),
-    (
-        b"Africa/Casablanca",
-        Item(
-            tzdata::AFRICA_CASABLANCA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AFRICA_CASABLANCA,
-        ),
-    ),
-    (
-        b"America/Curacao",
-        Item(
-            tzdata::AMERICA_CURACAO,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_CURACAO,
-        ),
-    ),
-    (
-        b"America/Buenos_Aires",
-        Item(
-            tzdata::AMERICA_BUENOS_AIRES,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_BUENOS_AIRES,
-        ),
-    ),
-    (
-        b"Indian/Reunion",
-        Item(
-            tzdata::INDIAN_REUNION,
-            #[cfg(feature = "binary")]
-            raw_tzdata::INDIAN_REUNION,
-        ),
-    ),
-    (
-        b"America/Cuiaba",
-        Item(
-            tzdata::AMERICA_CUIABA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_CUIABA,
-        ),
-    ),
-    (
-        b"UCT",
-        Item(
-            tzdata::UCT,
-            #[cfg(feature = "binary")]
-            raw_tzdata::UCT,
-        ),
-    ),
-    (
-        b"Asia/Bahrain",
-        Item(
-            tzdata::ASIA_BAHRAIN,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_BAHRAIN,
-        ),
-    ),
-    (
-        b"Indian/Mauritius",
-        Item(
-            tzdata::INDIAN_MAURITIUS,
-            #[cfg(feature = "binary")]
-            raw_tzdata::INDIAN_MAURITIUS,
-        ),
-    ),
-    (
-        b"America/Coral_Harbour",
-        Item(
-            tzdata::AMERICA_ATIKOKAN,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_ATIKOKAN,
-        ),
-    ),
-    (
-        b"America/Cordoba",
-        Item(
-            tzdata::AMERICA_CORDOBA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_CORDOBA,
-        ),
-    ),
-    (
-        b"America/Boise",
-        Item(
-            tzdata::AMERICA_BOISE,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_BOISE,
-        ),
-    ),
-    (
-        b"Indian/Maldives",
-        Item(
-            tzdata::INDIAN_MALDIVES,
-            #[cfg(feature = "binary")]
-            raw_tzdata::INDIAN_MALDIVES,
-        ),
-    ),
-    (
-        b"Africa/Mbabane",
-        Item(
-            tzdata::AFRICA_MBABANE,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AFRICA_MBABANE,
-        ),
-    ),
-    (
-        b"America/Indianapolis",
-        Item(
-            tzdata::AMERICA_FORT_WAYNE,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_FORT_WAYNE,
-        ),
-    ),
-    (
-        b"America/Recife",
-        Item(
-            tzdata::AMERICA_RECIFE,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_RECIFE,
-        ),
-    ),
-    (
-        b"Asia/Hovd",
-        Item(
-            tzdata::ASIA_HOVD,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_HOVD,
-        ),
-    ),
-    (
-        b"MST",
-        Item(
-            tzdata::MST,
-            #[cfg(feature = "binary")]
-            raw_tzdata::MST,
-        ),
-    ),
-    (
-        b"Africa/Porto-Novo",
-        Item(
-            tzdata::AFRICA_PORTO_NOVO,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AFRICA_PORTO_NOVO,
-        ),
-    ),
-    (
-        b"Asia/Macau",
-        Item(
-            tzdata::ASIA_MACAO,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_MACAO,
-        ),
-    ),
-    (
-        b"Asia/Qatar",
-        Item(
-            tzdata::ASIA_QATAR,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_QATAR,
-        ),
-    ),
-    (
-        b"Eire",
-        Item(
-            tzdata::EIRE,
-            #[cfg(feature = "binary")]
-            raw_tzdata::EIRE,
-        ),
-    ),
-    (
-        b"Canada/Mountain",
-        Item(
-            tzdata::AMERICA_EDMONTON,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_EDMONTON,
-        ),
-    ),
-    (
-        b"America/Barbados",
-        Item(
-            tzdata::AMERICA_BARBADOS,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_BARBADOS,
-        ),
-    ),
-    (
-        b"America/Whitehorse",
-        Item(
-            tzdata::AMERICA_WHITEHORSE,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_WHITEHORSE,
-        ),
-    ),
-    (
-        b"America/Winnipeg",
-        Item(
-            tzdata::AMERICA_WINNIPEG,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_WINNIPEG,
-        ),
-    ),
-    (
-        b"Asia/Tehran",
-        Item(
-            tzdata::IRAN,
-            #[cfg(feature = "binary")]
-            raw_tzdata::IRAN,
-        ),
-    ),
-    (
-        b"GB-Eire",
-        Item(
-            tzdata::GB,
-            #[cfg(feature = "binary")]
-            raw_tzdata::GB,
-        ),
-    ),
-    (
-        b"MST7MDT",
-        Item(
-            tzdata::MST_7_MDT,
-            #[cfg(feature = "binary")]
-            raw_tzdata::MST_7_MDT,
-        ),
-    ),
-    (
-        b"America/Asuncion",
-        Item(
-            tzdata::AMERICA_ASUNCION,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_ASUNCION,
-        ),
-    ),
-    (
-        b"Japan",
-        Item(
-            tzdata::JAPAN,
-            #[cfg(feature = "binary")]
-            raw_tzdata::JAPAN,
-        ),
-    ),
-    (
-        b"Asia/Chita",
-        Item(
-            tzdata::ASIA_CHITA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_CHITA,
-        ),
-    ),
-    (
-        b"Africa/Asmara",
-        Item(
-            tzdata::AFRICA_ASMARA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AFRICA_ASMARA,
-        ),
-    ),
-    (
-        b"Africa/Asmera",
-        Item(
-            tzdata::AFRICA_ASMARA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AFRICA_ASMARA,
-        ),
-    ),
-    (
-        b"America/Costa_Rica",
-        Item(
-            tzdata::AMERICA_COSTA_RICA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_COSTA_RICA,
-        ),
-    ),
-    (
-        b"America/Creston",
-        Item(
-            tzdata::AMERICA_CRESTON,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_CRESTON,
-        ),
-    ),
-    (
-        b"Asia/Aqtobe",
-        Item(
-            tzdata::ASIA_AQTOBE,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_AQTOBE,
-        ),
-    ),
-    (
-        b"America/Caracas",
-        Item(
-            tzdata::AMERICA_CARACAS,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_CARACAS,
-        ),
-    ),
-    (
-        b"America/Eirunepe",
-        Item(
-            tzdata::AMERICA_EIRUNEPE,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_EIRUNEPE,
-        ),
-    ),
-    (
-        b"Indian/Cocos",
-        Item(
-            tzdata::INDIAN_COCOS,
-            #[cfg(feature = "binary")]
-            raw_tzdata::INDIAN_COCOS,
-        ),
-    ),
-    (
-        b"Asia/Saigon",
-        Item(
-            tzdata::ASIA_HO_CHI_MINH,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_HO_CHI_MINH,
-        ),
-    ),
-    (
-        b"Jamaica",
-        Item(
-            tzdata::JAMAICA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::JAMAICA,
-        ),
-    ),
-    (
-        b"America/Anguilla",
-        Item(
-            tzdata::AMERICA_ANGUILLA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_ANGUILLA,
-        ),
-    ),
-    (
-        b"America/Aruba",
-        Item(
-            tzdata::AMERICA_ARUBA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_ARUBA,
-        ),
-    ),
-    (
-        b"Africa/Accra",
-        Item(
-            tzdata::AFRICA_ACCRA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AFRICA_ACCRA,
-        ),
-    ),
-    (
-        b"America/Tegucigalpa",
-        Item(
-            tzdata::AMERICA_TEGUCIGALPA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_TEGUCIGALPA,
-        ),
-    ),
-    (
-        b"America/Cancun",
-        Item(
-            tzdata::AMERICA_CANCUN,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_CANCUN,
-        ),
-    ),
-    (
-        b"Africa/Addis_Ababa",
-        Item(
-            tzdata::AFRICA_ADDIS_ABABA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AFRICA_ADDIS_ABABA,
-        ),
-    ),
-    (
-        b"America/Managua",
-        Item(
-            tzdata::AMERICA_MANAGUA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_MANAGUA,
-        ),
-    ),
-    (
-        b"PST8PDT",
-        Item(
-            tzdata::PST_8_PDT,
-            #[cfg(feature = "binary")]
-            raw_tzdata::PST_8_PDT,
-        ),
-    ),
-    (
-        b"US/East-Indiana",
-        Item(
-            tzdata::AMERICA_FORT_WAYNE,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_FORT_WAYNE,
-        ),
-    ),
-    (
-        b"Asia/Dili",
-        Item(
-            tzdata::ASIA_DILI,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_DILI,
-        ),
-    ),
-    (
-        b"America/Montserrat",
-        Item(
-            tzdata::AMERICA_MONTSERRAT,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_MONTSERRAT,
-        ),
-    ),
-    (
-        b"America/Nome",
-        Item(
-            tzdata::AMERICA_NOME,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_NOME,
-        ),
-    ),
-    (
-        b"America/Montevideo",
-        Item(
-            tzdata::AMERICA_MONTEVIDEO,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_MONTEVIDEO,
-        ),
-    ),
-    (
-        b"America/Edmonton",
-        Item(
-            tzdata::AMERICA_EDMONTON,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_EDMONTON,
-        ),
-    ),
-    (
-        b"America/Menominee",
-        Item(
-            tzdata::AMERICA_MENOMINEE,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_MENOMINEE,
-        ),
-    ),
-    (
-        b"America/Dawson",
-        Item(
-            tzdata::AMERICA_DAWSON,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_DAWSON,
-        ),
-    ),
-    (
-        b"America/Mendoza",
-        Item(
-            tzdata::AMERICA_MENDOZA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_MENDOZA,
-        ),
-    ),
-    (
-        b"America/Martinique",
-        Item(
-            tzdata::AMERICA_MARTINIQUE,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_MARTINIQUE,
-        ),
-    ),
-    (
-        b"America/Danmarkshavn",
-        Item(
-            tzdata::AMERICA_DANMARKSHAVN,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_DANMARKSHAVN,
-        ),
-    ),
-    (
-        b"America/Chicago",
-        Item(
-            tzdata::AMERICA_CHICAGO,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_CHICAGO,
-        ),
-    ),
-    (
-        b"Navajo",
-        Item(
-            tzdata::NAVAJO,
-            #[cfg(feature = "binary")]
-            raw_tzdata::NAVAJO,
-        ),
-    ),
-    (
-        b"Africa/Maputo",
-        Item(
-            tzdata::AFRICA_MAPUTO,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AFRICA_MAPUTO,
-        ),
-    ),
-    (
-        b"US/Samoa",
-        Item(
-            tzdata::PACIFIC_PAGO_PAGO,
-            #[cfg(feature = "binary")]
-            raw_tzdata::PACIFIC_PAGO_PAGO,
-        ),
-    ),
-    (
-        b"America/Merida",
-        Item(
-            tzdata::AMERICA_MERIDA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_MERIDA,
-        ),
-    ),
-    (
-        b"America/Marigot",
-        Item(
-            tzdata::AMERICA_MARIGOT,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_MARIGOT,
-        ),
-    ),
-    (
-        b"America/Denver",
-        Item(
-            tzdata::NAVAJO,
-            #[cfg(feature = "binary")]
-            raw_tzdata::NAVAJO,
-        ),
-    ),
-    (
-        b"Africa/Maseru",
-        Item(
-            tzdata::AFRICA_MASERU,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AFRICA_MASERU,
-        ),
-    ),
-    (
-        b"America/Panama",
-        Item(
-            tzdata::AMERICA_PANAMA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_PANAMA,
-        ),
-    ),
-    (
-        b"America/Dominica",
-        Item(
-            tzdata::AMERICA_DOMINICA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_DOMINICA,
-        ),
-    ),
-    (
-        b"Asia/Colombo",
-        Item(
-            tzdata::ASIA_COLOMBO,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_COLOMBO,
-        ),
-    ),
-    (
-        b"Asia/Famagusta",
-        Item(
-            tzdata::ASIA_FAMAGUSTA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_FAMAGUSTA,
-        ),
-    ),
-    (
-        b"Africa/Mogadishu",
-        Item(
-            tzdata::AFRICA_MOGADISHU,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AFRICA_MOGADISHU,
-        ),
-    ),
-    (
-        b"America/Virgin",
-        Item(
-            tzdata::AMERICA_ST_THOMAS,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_ST_THOMAS,
-        ),
-    ),
-    (
-        b"Cuba",
-        Item(
-            tzdata::CUBA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::CUBA,
-        ),
-    ),
-    (
-        b"America/Port_of_Spain",
-        Item(
-            tzdata::AMERICA_MARIGOT,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_MARIGOT,
-        ),
-    ),
-    (
-        b"America/Paramaribo",
-        Item(
-            tzdata::AMERICA_PARAMARIBO,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_PARAMARIBO,
-        ),
-    ),
-    (
-        b"America/Porto_Acre",
-        Item(
-            tzdata::AMERICA_PORTO_ACRE,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_PORTO_ACRE,
-        ),
-    ),
-    (
-        b"America/Porto_Velho",
-        Item(
-            tzdata::AMERICA_PORTO_VELHO,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_PORTO_VELHO,
-        ),
-    ),
-    (
-        b"America/Nipigon",
-        Item(
-            tzdata::AMERICA_NIPIGON,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_NIPIGON,
-        ),
-    ),
-    (
-        b"Asia/Singapore",
-        Item(
-            tzdata::SINGAPORE,
-            #[cfg(feature = "binary")]
-            raw_tzdata::SINGAPORE,
-        ),
-    ),
-    (
-        b"America/Port-au-Prince",
-        Item(
-            tzdata::AMERICA_PORT_AU_PRINCE,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_PORT_AU_PRINCE,
-        ),
-    ),
-    (
-        b"America/Puerto_Rico",
-        Item(
-            tzdata::AMERICA_PUERTO_RICO,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_PUERTO_RICO,
-        ),
-    ),
-    (
-        b"Asia/Ulan_Bator",
-        Item(
-            tzdata::ASIA_ULAANBAATAR,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_ULAANBAATAR,
-        ),
-    ),
-    (
-        b"Asia/Ulaanbaatar",
-        Item(
-            tzdata::ASIA_ULAANBAATAR,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_ULAANBAATAR,
-        ),
-    ),
-    (
-        b"Africa/Lome",
-        Item(
-            tzdata::AFRICA_LOME,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AFRICA_LOME,
-        ),
-    ),
-    (
-        b"EET",
-        Item(
-            tzdata::EET,
-            #[cfg(feature = "binary")]
-            raw_tzdata::EET,
-        ),
-    ),
-    (
-        b"Asia/Beirut",
-        Item(
-            tzdata::ASIA_BEIRUT,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_BEIRUT,
-        ),
-    ),
-    (
-        b"America/Manaus",
-        Item(
-            tzdata::AMERICA_MANAUS,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_MANAUS,
-        ),
-    ),
-    (
-        b"America/Santarem",
-        Item(
-            tzdata::AMERICA_SANTAREM,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_SANTAREM,
-        ),
-    ),
-    (
-        b"America/Matamoros",
-        Item(
-            tzdata::AMERICA_MATAMOROS,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_MATAMOROS,
-        ),
-    ),
-    (
-        b"US/Indiana-Starke",
-        Item(
-            tzdata::AMERICA_KNOX_IN,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_KNOX_IN,
-        ),
-    ),
-    (
-        b"Canada/Atlantic",
-        Item(
-            tzdata::AMERICA_HALIFAX,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_HALIFAX,
-        ),
-    ),
-    (
-        b"Africa/Ndjamena",
-        Item(
-            tzdata::AFRICA_NDJAMENA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AFRICA_NDJAMENA,
-        ),
-    ),
-    (
-        b"ROC",
-        Item(
-            tzdata::ROC,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ROC,
-        ),
-    ),
-    (
-        b"Asia/Calcutta",
-        Item(
-            tzdata::ASIA_CALCUTTA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_CALCUTTA,
-        ),
-    ),
-    (
-        b"Africa/Libreville",
-        Item(
-            tzdata::AFRICA_LIBREVILLE,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AFRICA_LIBREVILLE,
-        ),
-    ),
-    (
-        b"America/Phoenix",
-        Item(
-            tzdata::AMERICA_PHOENIX,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_PHOENIX,
-        ),
-    ),
-    (
-        b"America/Pangnirtung",
-        Item(
-            tzdata::AMERICA_PANGNIRTUNG,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_PANGNIRTUNG,
-        ),
-    ),
-    (
-        b"America/Moncton",
-        Item(
-            tzdata::AMERICA_MONCTON,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_MONCTON,
-        ),
-    ),
-    (
-        b"America/Rio_Branco",
-        Item(
-            tzdata::AMERICA_PORTO_ACRE,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_PORTO_ACRE,
-        ),
-    ),
-    (
-        b"America/Nassau",
-        Item(
-            tzdata::AMERICA_NASSAU,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_NASSAU,
-        ),
-    ),
-    (
-        b"Africa/Djibouti",
-        Item(
-            tzdata::AFRICA_DJIBOUTI,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AFRICA_DJIBOUTI,
-        ),
-    ),
-    (
-        b"America/Maceio",
-        Item(
-            tzdata::AMERICA_MACEIO,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_MACEIO,
-        ),
-    ),
-    (
-        b"Asia/Brunei",
-        Item(
-            tzdata::ASIA_BRUNEI,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_BRUNEI,
-        ),
-    ),
-    (
-        b"America/Punta_Arenas",
-        Item(
-            tzdata::AMERICA_PUNTA_ARENAS,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_PUNTA_ARENAS,
-        ),
-    ),
-    (
-        b"Asia/Damascus",
-        Item(
-            tzdata::ASIA_DAMASCUS,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_DAMASCUS,
-        ),
-    ),
-    (
-        b"America/Vancouver",
-        Item(
-            tzdata::AMERICA_VANCOUVER,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_VANCOUVER,
-        ),
-    ),
-    (
-        b"Asia/Aden",
-        Item(
-            tzdata::ASIA_ADEN,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_ADEN,
-        ),
-    ),
-    (
-        b"America/Boa_Vista",
-        Item(
-            tzdata::AMERICA_BOA_VISTA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_BOA_VISTA,
-        ),
-    ),
-    (
-        b"Asia/Aqtau",
-        Item(
-            tzdata::ASIA_AQTAU,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_AQTAU,
-        ),
-    ),
-    (
-        b"Africa/Abidjan",
-        Item(
-            tzdata::AFRICA_ABIDJAN,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AFRICA_ABIDJAN,
-        ),
-    ),
-    (
-        b"America/Fortaleza",
-        Item(
-            tzdata::AMERICA_FORTALEZA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_FORTALEZA,
-        ),
-    ),
-    (
-        b"America/Fort_Nelson",
-        Item(
-            tzdata::AMERICA_FORT_NELSON,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_FORT_NELSON,
-        ),
-    ),
-    (
-        b"America/Fort_Wayne",
-        Item(
-            tzdata::AMERICA_FORT_WAYNE,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_FORT_WAYNE,
-        ),
-    ),
-    (
-        b"Asia/Chongqing",
-        Item(
-            tzdata::PRC,
-            #[cfg(feature = "binary")]
-            raw_tzdata::PRC,
-        ),
-    ),
-    (
-        b"PRC",
-        Item(
-            tzdata::PRC,
-            #[cfg(feature = "binary")]
-            raw_tzdata::PRC,
-        ),
-    ),
-    (
-        b"Africa/Sao_Tome",
-        Item(
-            tzdata::AFRICA_SAO_TOME,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AFRICA_SAO_TOME,
-        ),
-    ),
-    (
-        b"America/Tijuana",
-        Item(
-            tzdata::AMERICA_ENSENADA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_ENSENADA,
-        ),
-    ),
-    (
-        b"America/Juneau",
-        Item(
-            tzdata::AMERICA_JUNEAU,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_JUNEAU,
-        ),
-    ),
-    (
-        b"Asia/Ust-Nera",
-        Item(
-            tzdata::ASIA_UST_NERA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_UST_NERA,
-        ),
-    ),
-    (
-        b"CET",
-        Item(
-            tzdata::CET,
-            #[cfg(feature = "binary")]
-            raw_tzdata::CET,
-        ),
-    ),
-    (
-        b"UTC",
-        Item(
-            tzdata::UCT,
-            #[cfg(feature = "binary")]
-            raw_tzdata::UCT,
-        ),
-    ),
-    (
-        b"America/Sao_Paulo",
-        Item(
-            tzdata::AMERICA_SAO_PAULO,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_SAO_PAULO,
-        ),
-    ),
-    (
-        b"Africa/Bangui",
-        Item(
-            tzdata::AFRICA_BANGUI,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AFRICA_BANGUI,
-        ),
-    ),
-    (
-        b"Asia/Samarkand",
-        Item(
-            tzdata::ASIA_SAMARKAND,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_SAMARKAND,
-        ),
-    ),
-    (
-        b"America/El_Salvador",
-        Item(
-            tzdata::AMERICA_EL_SALVADOR,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_EL_SALVADOR,
-        ),
-    ),
-    (
-        b"America/Atka",
-        Item(
-            tzdata::AMERICA_ADAK,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_ADAK,
-        ),
-    ),
-    (
-        b"Asia/Dhaka",
-        Item(
-            tzdata::ASIA_DACCA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_DACCA,
-        ),
-    ),
-    (
-        b"WET",
-        Item(
-            tzdata::WET,
-            #[cfg(feature = "binary")]
-            raw_tzdata::WET,
-        ),
-    ),
-    (
-        b"America/Jamaica",
-        Item(
-            tzdata::JAMAICA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::JAMAICA,
-        ),
-    ),
-    (
-        b"America/Rankin_Inlet",
-        Item(
-            tzdata::AMERICA_RANKIN_INLET,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_RANKIN_INLET,
-        ),
-    ),
-    (
-        b"America/Atikokan",
-        Item(
-            tzdata::AMERICA_ATIKOKAN,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_ATIKOKAN,
-        ),
-    ),
-    (
-        b"Singapore",
-        Item(
-            tzdata::SINGAPORE,
-            #[cfg(feature = "binary")]
-            raw_tzdata::SINGAPORE,
-        ),
-    ),
-    (
-        b"W-SU",
-        Item(
-            tzdata::W_SU,
-            #[cfg(feature = "binary")]
-            raw_tzdata::W_SU,
-        ),
-    ),
-    (
-        b"Africa/Lagos",
-        Item(
-            tzdata::AFRICA_LAGOS,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AFRICA_LAGOS,
-        ),
-    ),
-    (
-        b"Australia/Tasmania",
-        Item(
-            tzdata::AUSTRALIA_CURRIE,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AUSTRALIA_CURRIE,
-        ),
-    ),
-    (
-        b"Africa/Bissau",
-        Item(
-            tzdata::AFRICA_BISSAU,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AFRICA_BISSAU,
-        ),
-    ),
-    (
-        b"America/Grand_Turk",
-        Item(
-            tzdata::AMERICA_GRAND_TURK,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_GRAND_TURK,
-        ),
-    ),
-    (
-        b"America/Swift_Current",
-        Item(
-            tzdata::AMERICA_SWIFT_CURRENT,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_SWIFT_CURRENT,
-        ),
-    ),
-    (
-        b"Asia/Qostanay",
-        Item(
-            tzdata::ASIA_QOSTANAY,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_QOSTANAY,
-        ),
-    ),
-    (
-        b"Australia/Darwin",
-        Item(
-            tzdata::AUSTRALIA_DARWIN,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AUSTRALIA_DARWIN,
-        ),
-    ),
-    (
-        b"Asia/Pontianak",
-        Item(
-            tzdata::ASIA_PONTIANAK,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_PONTIANAK,
-        ),
-    ),
-    (
-        b"Australia/Adelaide",
-        Item(
-            tzdata::AUSTRALIA_ADELAIDE,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AUSTRALIA_ADELAIDE,
-        ),
-    ),
-    (
-        b"America/St_Thomas",
-        Item(
-            tzdata::AMERICA_ST_THOMAS,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_ST_THOMAS,
-        ),
-    ),
-    (
-        b"America/Miquelon",
-        Item(
-            tzdata::AMERICA_MIQUELON,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_MIQUELON,
-        ),
-    ),
-    (
-        b"America/Knox_IN",
-        Item(
-            tzdata::AMERICA_KNOX_IN,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_KNOX_IN,
-        ),
-    ),
-    (
-        b"Africa/Luanda",
-        Item(
-            tzdata::AFRICA_LUANDA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AFRICA_LUANDA,
-        ),
-    ),
-    (
-        b"Asia/Hong_Kong",
-        Item(
-            tzdata::HONGKONG,
-            #[cfg(feature = "binary")]
-            raw_tzdata::HONGKONG,
-        ),
-    ),
-    (
-        b"Poland",
-        Item(
-            tzdata::POLAND,
-            #[cfg(feature = "binary")]
-            raw_tzdata::POLAND,
-        ),
-    ),
-    (
-        b"Asia/Qyzylorda",
-        Item(
-            tzdata::ASIA_QYZYLORDA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_QYZYLORDA,
-        ),
-    ),
-    (
-        b"Asia/Vientiane",
-        Item(
-            tzdata::ASIA_VIENTIANE,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_VIENTIANE,
-        ),
-    ),
-    (
-        b"Africa/Nouakchott",
-        Item(
-            tzdata::AFRICA_NOUAKCHOTT,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AFRICA_NOUAKCHOTT,
-        ),
-    ),
-    (
-        b"America/Sitka",
-        Item(
-            tzdata::AMERICA_SITKA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_SITKA,
-        ),
-    ),
-    (
-        b"Australia/Brisbane",
-        Item(
-            tzdata::AUSTRALIA_BRISBANE,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AUSTRALIA_BRISBANE,
-        ),
-    ),
-    (
-        b"Asia/Ashkhabad",
-        Item(
-            tzdata::ASIA_ASHGABAT,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_ASHGABAT,
-        ),
-    ),
-    (
-        b"Pacific/Efate",
-        Item(
-            tzdata::PACIFIC_EFATE,
-            #[cfg(feature = "binary")]
-            raw_tzdata::PACIFIC_EFATE,
-        ),
-    ),
-    (
-        b"Pacific/Tarawa",
-        Item(
-            tzdata::PACIFIC_TARAWA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::PACIFIC_TARAWA,
-        ),
-    ),
-    (
-        b"MET",
-        Item(
-            tzdata::MET,
-            #[cfg(feature = "binary")]
-            raw_tzdata::MET,
-        ),
-    ),
-    (
-        b"US/Eastern",
-        Item(
-            tzdata::AMERICA_NEW_YORK,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_NEW_YORK,
-        ),
-    ),
-    (
-        b"America/Guyana",
-        Item(
-            tzdata::AMERICA_GUYANA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_GUYANA,
-        ),
-    ),
-    (
-        b"Pacific/Apia",
-        Item(
-            tzdata::PACIFIC_APIA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::PACIFIC_APIA,
-        ),
-    ),
-    (
-        b"Canada/Eastern",
-        Item(
-            tzdata::AMERICA_MONTREAL,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_MONTREAL,
-        ),
-    ),
-    (
-        b"Africa/Johannesburg",
-        Item(
-            tzdata::AFRICA_JOHANNESBURG,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AFRICA_JOHANNESBURG,
-        ),
-    ),
-    (
-        b"Pacific/Rarotonga",
-        Item(
-            tzdata::PACIFIC_RAROTONGA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::PACIFIC_RAROTONGA,
-        ),
-    ),
-    (
-        b"Iceland",
-        Item(
-            tzdata::ICELAND,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ICELAND,
-        ),
-    ),
-    (
-        b"NZ",
-        Item(
-            tzdata::NZ,
-            #[cfg(feature = "binary")]
-            raw_tzdata::NZ,
-        ),
-    ),
-    (
-        b"Africa/Tripoli",
-        Item(
-            tzdata::LIBYA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::LIBYA,
-        ),
-    ),
-    (
-        b"America/Iqaluit",
-        Item(
-            tzdata::AMERICA_IQALUIT,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_IQALUIT,
-        ),
-    ),
-    (
-        b"Canada/Newfoundland",
-        Item(
-            tzdata::AMERICA_ST_JOHNS,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_ST_JOHNS,
-        ),
-    ),
-    (
-        b"Asia/Kuwait",
-        Item(
-            tzdata::ASIA_KUWAIT,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_KUWAIT,
-        ),
-    ),
-    (
-        b"Australia/ACT",
-        Item(
-            tzdata::AUSTRALIA_ACT,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AUSTRALIA_ACT,
-        ),
-    ),
-    (
-        b"Australia/Canberra",
-        Item(
-            tzdata::AUSTRALIA_ACT,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AUSTRALIA_ACT,
-        ),
-    ),
-    (
-        b"Europe/Malta",
-        Item(
-            tzdata::EUROPE_MALTA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::EUROPE_MALTA,
-        ),
-    ),
-    (
-        b"Europe/Samara",
-        Item(
-            tzdata::EUROPE_SAMARA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::EUROPE_SAMARA,
-        ),
-    ),
-    (
-        b"Canada/Saskatchewan",
-        Item(
-            tzdata::AMERICA_REGINA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_REGINA,
-        ),
-    ),
-    (
-        b"US/Pacific",
-        Item(
-            tzdata::AMERICA_LOS_ANGELES,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_LOS_ANGELES,
-        ),
-    ),
-    (
-        b"Asia/Makassar",
-        Item(
-            tzdata::ASIA_MAKASSAR,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_MAKASSAR,
-        ),
-    ),
-    (
-        b"America/Belize",
-        Item(
-            tzdata::AMERICA_BELIZE,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_BELIZE,
-        ),
-    ),
-    (
-        b"Europe/Sofia",
-        Item(
-            tzdata::EUROPE_SOFIA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::EUROPE_SOFIA,
-        ),
-    ),
-    (
-        b"Australia/West",
-        Item(
-            tzdata::AUSTRALIA_PERTH,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AUSTRALIA_PERTH,
-        ),
-    ),
-    (
-        b"Europe/Mariehamn",
-        Item(
-            tzdata::EUROPE_HELSINKI,
-            #[cfg(feature = "binary")]
-            raw_tzdata::EUROPE_HELSINKI,
-        ),
-    ),
-    (
-        b"Pacific/Easter",
-        Item(
-            tzdata::CHILE_EASTER_ISLAND,
-            #[cfg(feature = "binary")]
-            raw_tzdata::CHILE_EASTER_ISLAND,
-        ),
-    ),
-    (
-        b"Africa/Bamako",
-        Item(
-            tzdata::AFRICA_BAMAKO,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AFRICA_BAMAKO,
-        ),
-    ),
-    (
-        b"Europe/Copenhagen",
-        Item(
-            tzdata::EUROPE_COPENHAGEN,
-            #[cfg(feature = "binary")]
-            raw_tzdata::EUROPE_COPENHAGEN,
-        ),
-    ),
-    (
-        b"Asia/Yangon",
-        Item(
-            tzdata::ASIA_RANGOON,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_RANGOON,
-        ),
-    ),
-    (
-        b"Africa/Douala",
-        Item(
-            tzdata::AFRICA_DOUALA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AFRICA_DOUALA,
-        ),
-    ),
-    (
-        b"Asia/Novosibirsk",
-        Item(
-            tzdata::ASIA_NOVOSIBIRSK,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_NOVOSIBIRSK,
-        ),
-    ),
-    (
-        b"America/Goose_Bay",
-        Item(
-            tzdata::AMERICA_GOOSE_BAY,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_GOOSE_BAY,
-        ),
-    ),
-    (
-        b"America/Cayenne",
-        Item(
-            tzdata::AMERICA_CAYENNE,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_CAYENNE,
-        ),
-    ),
-    (
-        b"Africa/Tunis",
-        Item(
-            tzdata::AFRICA_TUNIS,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AFRICA_TUNIS,
-        ),
-    ),
-    (
-        b"Europe/Zaporozhye",
-        Item(
-            tzdata::EUROPE_ZAPOROZHYE,
-            #[cfg(feature = "binary")]
-            raw_tzdata::EUROPE_ZAPOROZHYE,
-        ),
-    ),
-    (
-        b"America/Campo_Grande",
-        Item(
-            tzdata::AMERICA_CAMPO_GRANDE,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_CAMPO_GRANDE,
-        ),
-    ),
-    (
-        b"US/Arizona",
-        Item(
-            tzdata::AMERICA_PHOENIX,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_PHOENIX,
-        ),
-    ),
-    (
-        b"Asia/Kamchatka",
-        Item(
-            tzdata::ASIA_KAMCHATKA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_KAMCHATKA,
-        ),
-    ),
-    (
-        b"America/Santa_Isabel",
-        Item(
-            tzdata::AMERICA_ENSENADA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_ENSENADA,
-        ),
-    ),
-    (
-        b"Europe/Madrid",
-        Item(
-            tzdata::EUROPE_MADRID,
-            #[cfg(feature = "binary")]
-            raw_tzdata::EUROPE_MADRID,
-        ),
-    ),
-    (
-        b"Africa/Dar_es_Salaam",
-        Item(
-            tzdata::AFRICA_DAR_ES_SALAAM,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AFRICA_DAR_ES_SALAAM,
-        ),
-    ),
-    (
-        b"Europe/Andorra",
-        Item(
-            tzdata::EUROPE_ANDORRA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::EUROPE_ANDORRA,
-        ),
-    ),
-    (
-        b"ROK",
-        Item(
-            tzdata::ROK,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ROK,
-        ),
-    ),
-    (
-        b"America/St_Vincent",
-        Item(
-            tzdata::AMERICA_ST_VINCENT,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_ST_VINCENT,
-        ),
-    ),
-    (
-        b"America/Glace_Bay",
-        Item(
-            tzdata::AMERICA_GLACE_BAY,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_GLACE_BAY,
-        ),
-    ),
-    (
-        b"US/Michigan",
-        Item(
-            tzdata::AMERICA_DETROIT,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_DETROIT,
-        ),
-    ),
-    (
-        b"Europe/Zagreb",
-        Item(
-            tzdata::EUROPE_ZAGREB,
-            #[cfg(feature = "binary")]
-            raw_tzdata::EUROPE_ZAGREB,
-        ),
-    ),
-    (
-        b"Australia/Eucla",
-        Item(
-            tzdata::AUSTRALIA_EUCLA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AUSTRALIA_EUCLA,
-        ),
-    ),
-    (
-        b"Asia/Tomsk",
-        Item(
-            tzdata::ASIA_TOMSK,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_TOMSK,
-        ),
-    ),
-    (
-        b"HST",
-        Item(
-            tzdata::HST,
-            #[cfg(feature = "binary")]
-            raw_tzdata::HST,
-        ),
-    ),
-    (
-        b"Asia/Yerevan",
-        Item(
-            tzdata::ASIA_YEREVAN,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_YEREVAN,
-        ),
-    ),
-    (
-        b"Europe/Rome",
-        Item(
-            tzdata::EUROPE_ROME,
-            #[cfg(feature = "binary")]
-            raw_tzdata::EUROPE_ROME,
-        ),
-    ),
-    (
-        b"Africa/Juba",
-        Item(
-            tzdata::AFRICA_JUBA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AFRICA_JUBA,
-        ),
-    ),
-    (
-        b"Asia/Taipei",
-        Item(
-            tzdata::ROC,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ROC,
-        ),
-    ),
-    (
-        b"Europe/Riga",
-        Item(
-            tzdata::EUROPE_RIGA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::EUROPE_RIGA,
-        ),
-    ),
-    (
-        b"America/Dawson_Creek",
-        Item(
-            tzdata::AMERICA_DAWSON_CREEK,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_DAWSON_CREEK,
-        ),
-    ),
-    (
-        b"Australia/NSW",
-        Item(
-            tzdata::AUSTRALIA_ACT,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AUSTRALIA_ACT,
-        ),
-    ),
-    (
-        b"Africa/Timbuktu",
-        Item(
-            tzdata::AFRICA_BAMAKO,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AFRICA_BAMAKO,
-        ),
-    ),
-    (
-        b"America/Thunder_Bay",
-        Item(
-            tzdata::AMERICA_THUNDER_BAY,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_THUNDER_BAY,
-        ),
-    ),
-    (
-        b"Europe/Nicosia",
-        Item(
-            tzdata::ASIA_NICOSIA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_NICOSIA,
-        ),
-    ),
-    (
-        b"Asia/Magadan",
-        Item(
-            tzdata::ASIA_MAGADAN,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_MAGADAN,
-        ),
-    ),
-    (
-        b"Asia/Gaza",
-        Item(
-            tzdata::ASIA_GAZA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_GAZA,
-        ),
-    ),
-    (
-        b"America/St_Johns",
-        Item(
-            tzdata::AMERICA_ST_JOHNS,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_ST_JOHNS,
-        ),
-    ),
-    (
-        b"Australia/Melbourne",
-        Item(
-            tzdata::AUSTRALIA_MELBOURNE,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AUSTRALIA_MELBOURNE,
-        ),
-    ),
-    (
-        b"Asia/Urumqi",
-        Item(
-            tzdata::ASIA_KASHGAR,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_KASHGAR,
-        ),
-    ),
-    (
-        b"Europe/Monaco",
-        Item(
-            tzdata::EUROPE_MONACO,
-            #[cfg(feature = "binary")]
-            raw_tzdata::EUROPE_MONACO,
-        ),
-    ),
-    (
-        b"Europe/Podgorica",
-        Item(
-            tzdata::EUROPE_BELGRADE,
-            #[cfg(feature = "binary")]
-            raw_tzdata::EUROPE_BELGRADE,
-        ),
-    ),
-    (
-        b"Europe/Athens",
-        Item(
-            tzdata::EUROPE_ATHENS,
-            #[cfg(feature = "binary")]
-            raw_tzdata::EUROPE_ATHENS,
-        ),
-    ),
-    (
-        b"Pacific/Niue",
-        Item(
-            tzdata::PACIFIC_NIUE,
-            #[cfg(feature = "binary")]
-            raw_tzdata::PACIFIC_NIUE,
-        ),
-    ),
-    (
-        b"Asia/Chungking",
-        Item(
-            tzdata::PRC,
-            #[cfg(feature = "binary")]
-            raw_tzdata::PRC,
-        ),
-    ),
-    (
-        b"Europe/Astrakhan",
-        Item(
-            tzdata::EUROPE_ASTRAKHAN,
-            #[cfg(feature = "binary")]
-            raw_tzdata::EUROPE_ASTRAKHAN,
-        ),
-    ),
-    (
-        b"Australia/Victoria",
-        Item(
-            tzdata::AUSTRALIA_MELBOURNE,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AUSTRALIA_MELBOURNE,
-        ),
-    ),
-    (
-        b"US/Alaska",
-        Item(
-            tzdata::AMERICA_ANCHORAGE,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_ANCHORAGE,
-        ),
-    ),
-    (
-        b"US/Aleutian",
-        Item(
-            tzdata::AMERICA_ADAK,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_ADAK,
-        ),
-    ),
-    (
-        b"America/Monterrey",
-        Item(
-            tzdata::AMERICA_MONTERREY,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_MONTERREY,
-        ),
-    ),
-    (
-        b"Africa/Blantyre",
-        Item(
-            tzdata::AFRICA_BLANTYRE,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AFRICA_BLANTYRE,
-        ),
-    ),
-    (
-        b"Europe/Bratislava",
-        Item(
-            tzdata::EUROPE_BRATISLAVA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::EUROPE_BRATISLAVA,
-        ),
-    ),
-    (
-        b"America/Thule",
-        Item(
-            tzdata::AMERICA_THULE,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_THULE,
-        ),
-    ),
-    (
-        b"Europe/Helsinki",
-        Item(
-            tzdata::EUROPE_HELSINKI,
-            #[cfg(feature = "binary")]
-            raw_tzdata::EUROPE_HELSINKI,
-        ),
-    ),
-    (
-        b"Israel",
-        Item(
-            tzdata::ISRAEL,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ISRAEL,
-        ),
-    ),
-    (
-        b"Canada/Central",
-        Item(
-            tzdata::AMERICA_WINNIPEG,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_WINNIPEG,
-        ),
-    ),
-    (
-        b"Pacific/Tongatapu",
-        Item(
-            tzdata::PACIFIC_TONGATAPU,
-            #[cfg(feature = "binary")]
-            raw_tzdata::PACIFIC_TONGATAPU,
-        ),
-    ),
-    (
-        b"Canada/Pacific",
-        Item(
-            tzdata::AMERICA_VANCOUVER,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_VANCOUVER,
-        ),
-    ),
-    (
-        b"Africa/Ouagadougou",
-        Item(
-            tzdata::AFRICA_OUAGADOUGOU,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AFRICA_OUAGADOUGOU,
-        ),
-    ),
-    (
-        b"Europe/Vienna",
-        Item(
-            tzdata::EUROPE_VIENNA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::EUROPE_VIENNA,
-        ),
-    ),
-    (
-        b"Australia/Queensland",
-        Item(
-            tzdata::AUSTRALIA_BRISBANE,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AUSTRALIA_BRISBANE,
-        ),
-    ),
-    (
-        b"Asia/Dushanbe",
-        Item(
-            tzdata::ASIA_DUSHANBE,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_DUSHANBE,
-        ),
-    ),
-    (
-        b"Europe/Belgrade",
-        Item(
-            tzdata::EUROPE_BELGRADE,
-            #[cfg(feature = "binary")]
-            raw_tzdata::EUROPE_BELGRADE,
-        ),
-    ),
-    (
-        b"Africa/Algiers",
-        Item(
-            tzdata::AFRICA_ALGIERS,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AFRICA_ALGIERS,
-        ),
-    ),
-    (
-        b"America/Louisville",
-        Item(
-            tzdata::AMERICA_LOUISVILLE,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_LOUISVILLE,
-        ),
-    ),
-    (
-        b"Asia/Shanghai",
-        Item(
-            tzdata::PRC,
-            #[cfg(feature = "binary")]
-            raw_tzdata::PRC,
-        ),
-    ),
-    (
-        b"Australia/Currie",
-        Item(
-            tzdata::AUSTRALIA_CURRIE,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AUSTRALIA_CURRIE,
-        ),
-    ),
-    (
-        b"America/Lima",
-        Item(
-            tzdata::AMERICA_LIMA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_LIMA,
-        ),
-    ),
-    (
-        b"America/Montreal",
-        Item(
-            tzdata::AMERICA_MONTREAL,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_MONTREAL,
-        ),
-    ),
-    (
-        b"America/Metlakatla",
-        Item(
-            tzdata::AMERICA_METLAKATLA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_METLAKATLA,
-        ),
-    ),
-    (
-        b"America/Lower_Princes",
-        Item(
-            tzdata::AMERICA_CURACAO,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_CURACAO,
-        ),
-    ),
-    (
-        b"Africa/Bujumbura",
-        Item(
-            tzdata::AFRICA_BUJUMBURA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AFRICA_BUJUMBURA,
-        ),
-    ),
-    (
-        b"Pacific/Bougainville",
-        Item(
-            tzdata::PACIFIC_BOUGAINVILLE,
-            #[cfg(feature = "binary")]
-            raw_tzdata::PACIFIC_BOUGAINVILLE,
-        ),
-    ),
-    (
-        b"America/Bahia",
-        Item(
-            tzdata::AMERICA_BAHIA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_BAHIA,
-        ),
-    ),
-    (
-        b"Pacific/Ponape",
-        Item(
-            tzdata::PACIFIC_POHNPEI,
-            #[cfg(feature = "binary")]
-            raw_tzdata::PACIFIC_POHNPEI,
-        ),
-    ),
-    (
-        b"Europe/Volgograd",
-        Item(
-            tzdata::EUROPE_VOLGOGRAD,
-            #[cfg(feature = "binary")]
-            raw_tzdata::EUROPE_VOLGOGRAD,
-        ),
-    ),
-    (
-        b"Indian/Kerguelen",
-        Item(
-            tzdata::INDIAN_KERGUELEN,
-            #[cfg(feature = "binary")]
-            raw_tzdata::INDIAN_KERGUELEN,
-        ),
-    ),
-    (
-        b"Europe/Tirane",
-        Item(
-            tzdata::EUROPE_TIRANE,
-            #[cfg(feature = "binary")]
-            raw_tzdata::EUROPE_TIRANE,
-        ),
-    ),
-    (
-        b"US/Mountain",
-        Item(
-            tzdata::NAVAJO,
-            #[cfg(feature = "binary")]
-            raw_tzdata::NAVAJO,
-        ),
-    ),
-    (
-        b"America/Shiprock",
-        Item(
-            tzdata::NAVAJO,
-            #[cfg(feature = "binary")]
-            raw_tzdata::NAVAJO,
-        ),
-    ),
-    (
-        b"Europe/Sarajevo",
-        Item(
-            tzdata::EUROPE_SARAJEVO,
-            #[cfg(feature = "binary")]
-            raw_tzdata::EUROPE_SARAJEVO,
-        ),
-    ),
-    (
-        b"Chile/EasterIsland",
-        Item(
-            tzdata::CHILE_EASTER_ISLAND,
-            #[cfg(feature = "binary")]
-            raw_tzdata::CHILE_EASTER_ISLAND,
-        ),
-    ),
-    (
-        b"America/Mexico_City",
-        Item(
-            tzdata::AMERICA_MEXICO_CITY,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_MEXICO_CITY,
-        ),
-    ),
-    (
-        b"America/Belem",
-        Item(
-            tzdata::AMERICA_BELEM,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_BELEM,
-        ),
-    ),
-    (
-        b"Africa/Gaborone",
-        Item(
-            tzdata::AFRICA_GABORONE,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AFRICA_GABORONE,
-        ),
-    ),
-    (
-        b"Africa/Niamey",
-        Item(
-            tzdata::AFRICA_NIAMEY,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AFRICA_NIAMEY,
-        ),
-    ),
-    (
-        b"Europe/Saratov",
-        Item(
-            tzdata::EUROPE_SARATOV,
-            #[cfg(feature = "binary")]
-            raw_tzdata::EUROPE_SARATOV,
-        ),
-    ),
-    (
-        b"Asia/Choibalsan",
-        Item(
-            tzdata::ASIA_CHOIBALSAN,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_CHOIBALSAN,
-        ),
-    ),
-    (
-        b"Pacific/Gambier",
-        Item(
-            tzdata::PACIFIC_GAMBIER,
-            #[cfg(feature = "binary")]
-            raw_tzdata::PACIFIC_GAMBIER,
-        ),
-    ),
-    (
-        b"Pacific/Samoa",
-        Item(
-            tzdata::PACIFIC_PAGO_PAGO,
-            #[cfg(feature = "binary")]
-            raw_tzdata::PACIFIC_PAGO_PAGO,
-        ),
-    ),
-    (
-        b"Pacific/Pago_Pago",
-        Item(
-            tzdata::PACIFIC_PAGO_PAGO,
-            #[cfg(feature = "binary")]
-            raw_tzdata::PACIFIC_PAGO_PAGO,
-        ),
-    ),
-    (
-        b"America/Cayman",
-        Item(
-            tzdata::AMERICA_CAYMAN,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_CAYMAN,
-        ),
-    ),
-    (
-        b"Europe/London",
-        Item(
-            tzdata::GB,
-            #[cfg(feature = "binary")]
-            raw_tzdata::GB,
-        ),
-    ),
-    (
-        b"Arctic/Longyearbyen",
-        Item(
-            tzdata::ARCTIC_LONGYEARBYEN,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ARCTIC_LONGYEARBYEN,
-        ),
-    ),
-    (
-        b"America/Mazatlan",
-        Item(
-            tzdata::AMERICA_MAZATLAN,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_MAZATLAN,
-        ),
-    ),
-    (
-        b"Europe/Paris",
-        Item(
-            tzdata::EUROPE_PARIS,
-            #[cfg(feature = "binary")]
-            raw_tzdata::EUROPE_PARIS,
-        ),
-    ),
-    (
-        b"Asia/Vladivostok",
-        Item(
-            tzdata::ASIA_VLADIVOSTOK,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_VLADIVOSTOK,
-        ),
-    ),
-    (
-        b"Asia/Pyongyang",
-        Item(
-            tzdata::ASIA_PYONGYANG,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_PYONGYANG,
-        ),
-    ),
-    (
-        b"Europe/Moscow",
-        Item(
-            tzdata::W_SU,
-            #[cfg(feature = "binary")]
-            raw_tzdata::W_SU,
-        ),
-    ),
-    (
-        b"Europe/Vilnius",
-        Item(
-            tzdata::EUROPE_VILNIUS,
-            #[cfg(feature = "binary")]
-            raw_tzdata::EUROPE_VILNIUS,
-        ),
-    ),
-    (
-        b"America/Anchorage",
-        Item(
-            tzdata::AMERICA_ANCHORAGE,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_ANCHORAGE,
-        ),
-    ),
-    (
-        b"America/Adak",
-        Item(
-            tzdata::AMERICA_ADAK,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_ADAK,
-        ),
-    ),
-    (
-        b"Pacific/Chatham",
-        Item(
-            tzdata::NZ_CHAT,
-            #[cfg(feature = "binary")]
-            raw_tzdata::NZ_CHAT,
-        ),
-    ),
-    (
-        b"Europe/Vatican",
-        Item(
-            tzdata::EUROPE_ROME,
-            #[cfg(feature = "binary")]
-            raw_tzdata::EUROPE_ROME,
-        ),
-    ),
-    (
-        b"Europe/Warsaw",
-        Item(
-            tzdata::POLAND,
-            #[cfg(feature = "binary")]
-            raw_tzdata::POLAND,
-        ),
-    ),
-    (
-        b"America/Chihuahua",
-        Item(
-            tzdata::AMERICA_CHIHUAHUA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_CHIHUAHUA,
-        ),
-    ),
-    (
-        b"America/Inuvik",
-        Item(
-            tzdata::AMERICA_INUVIK,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_INUVIK,
-        ),
-    ),
-    (
-        b"Europe/Lisbon",
-        Item(
-            tzdata::PORTUGAL,
-            #[cfg(feature = "binary")]
-            raw_tzdata::PORTUGAL,
-        ),
-    ),
-    (
-        b"Africa/Kampala",
-        Item(
-            tzdata::AFRICA_KAMPALA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AFRICA_KAMPALA,
-        ),
-    ),
-    (
-        b"America/Bahia_Banderas",
-        Item(
-            tzdata::AMERICA_BAHIA_BANDERAS,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_BAHIA_BANDERAS,
-        ),
-    ),
-    (
-        b"Etc/GMT",
-        Item(
-            tzdata::GMT,
-            #[cfg(feature = "binary")]
-            raw_tzdata::GMT,
-        ),
-    ),
-    (
-        b"America/Cambridge_Bay",
-        Item(
-            tzdata::AMERICA_CAMBRIDGE_BAY,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_CAMBRIDGE_BAY,
-        ),
-    ),
-    (
-        b"Pacific/Saipan",
-        Item(
-            tzdata::PACIFIC_SAIPAN,
-            #[cfg(feature = "binary")]
-            raw_tzdata::PACIFIC_SAIPAN,
-        ),
-    ),
-    (
-        b"US/Central",
-        Item(
-            tzdata::AMERICA_CHICAGO,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_CHICAGO,
-        ),
-    ),
-    (
-        b"Indian/Chagos",
-        Item(
-            tzdata::INDIAN_CHAGOS,
-            #[cfg(feature = "binary")]
-            raw_tzdata::INDIAN_CHAGOS,
-        ),
-    ),
-    (
-        b"Etc/GMT+0",
-        Item(
-            tzdata::GMT,
-            #[cfg(feature = "binary")]
-            raw_tzdata::GMT,
-        ),
-    ),
-    (
-        b"Asia/Tashkent",
-        Item(
-            tzdata::ASIA_TASHKENT,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_TASHKENT,
-        ),
-    ),
-    (
-        b"Europe/Prague",
-        Item(
-            tzdata::EUROPE_BRATISLAVA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::EUROPE_BRATISLAVA,
-        ),
-    ),
-    (
-        b"Pacific/Nauru",
-        Item(
-            tzdata::PACIFIC_NAURU,
-            #[cfg(feature = "binary")]
-            raw_tzdata::PACIFIC_NAURU,
-        ),
-    ),
-    (
-        b"Etc/GMT-0",
-        Item(
-            tzdata::GMT,
-            #[cfg(feature = "binary")]
-            raw_tzdata::GMT,
-        ),
-    ),
-    (
-        b"America/New_York",
-        Item(
-            tzdata::AMERICA_NEW_YORK,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_NEW_YORK,
-        ),
-    ),
-    (
-        b"Etc/UCT",
-        Item(
-            tzdata::UCT,
-            #[cfg(feature = "binary")]
-            raw_tzdata::UCT,
-        ),
-    ),
-    (
-        b"Pacific/Pitcairn",
-        Item(
-            tzdata::PACIFIC_PITCAIRN,
-            #[cfg(feature = "binary")]
-            raw_tzdata::PACIFIC_PITCAIRN,
-        ),
-    ),
-    (
-        b"Etc/GMT0",
-        Item(
-            tzdata::GMT,
-            #[cfg(feature = "binary")]
-            raw_tzdata::GMT,
-        ),
-    ),
-    (
-        b"Etc/GMT+7",
-        Item(
-            tzdata::ETC_GMT_PLUS_7,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ETC_GMT_PLUS_7,
-        ),
-    ),
-    (
-        b"Pacific/Funafuti",
-        Item(
-            tzdata::PACIFIC_FUNAFUTI,
-            #[cfg(feature = "binary")]
-            raw_tzdata::PACIFIC_FUNAFUTI,
-        ),
-    ),
-    (
-        b"Europe/Busingen",
-        Item(
-            tzdata::EUROPE_BUSINGEN,
-            #[cfg(feature = "binary")]
-            raw_tzdata::EUROPE_BUSINGEN,
-        ),
-    ),
-    (
-        b"Etc/GMT+5",
-        Item(
-            tzdata::ETC_GMT_PLUS_5,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ETC_GMT_PLUS_5,
-        ),
-    ),
-    (
-        b"Etc/GMT-7",
-        Item(
-            tzdata::ETC_GMT_MINUS_7,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ETC_GMT_MINUS_7,
-        ),
-    ),
-    (
-        b"Etc/GMT+10",
-        Item(
-            tzdata::ETC_GMT_PLUS_10,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ETC_GMT_PLUS_10,
-        ),
-    ),
-    (
-        b"Africa/Lusaka",
-        Item(
-            tzdata::AFRICA_LUSAKA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AFRICA_LUSAKA,
-        ),
-    ),
-    (
-        b"Etc/GMT-5",
-        Item(
-            tzdata::ETC_GMT_MINUS_5,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ETC_GMT_MINUS_5,
-        ),
-    ),
-    (
-        b"Etc/GMT+8",
-        Item(
-            tzdata::ETC_GMT_PLUS_8,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ETC_GMT_PLUS_8,
-        ),
-    ),
-    (
-        b"Etc/GMT-10",
-        Item(
-            tzdata::ETC_GMT_MINUS_10,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ETC_GMT_MINUS_10,
-        ),
-    ),
-    (
-        b"Pacific/Marquesas",
-        Item(
-            tzdata::PACIFIC_MARQUESAS,
-            #[cfg(feature = "binary")]
-            raw_tzdata::PACIFIC_MARQUESAS,
-        ),
-    ),
-    (
-        b"Etc/GMT+2",
-        Item(
-            tzdata::ETC_GMT_PLUS_2,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ETC_GMT_PLUS_2,
-        ),
-    ),
-    (
-        b"Etc/GMT-8",
-        Item(
-            tzdata::ETC_GMT_MINUS_8,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ETC_GMT_MINUS_8,
-        ),
-    ),
-    (
-        b"America/St_Kitts",
-        Item(
-            tzdata::AMERICA_ST_KITTS,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_ST_KITTS,
-        ),
-    ),
-    (
-        b"Africa/Lubumbashi",
-        Item(
-            tzdata::AFRICA_LUBUMBASHI,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AFRICA_LUBUMBASHI,
-        ),
-    ),
-    (
-        b"Etc/GMT+12",
-        Item(
-            tzdata::ETC_GMT_PLUS_12,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ETC_GMT_PLUS_12,
-        ),
-    ),
-    (
-        b"Etc/GMT-2",
-        Item(
-            tzdata::ETC_GMT_MINUS_2,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ETC_GMT_MINUS_2,
-        ),
-    ),
-    (
-        b"Etc/GMT+1",
-        Item(
-            tzdata::ETC_GMT_PLUS_1,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ETC_GMT_PLUS_1,
-        ),
-    ),
-    (
-        b"Etc/GMT+11",
-        Item(
-            tzdata::ETC_GMT_PLUS_11,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ETC_GMT_PLUS_11,
-        ),
-    ),
-    (
-        b"Etc/GMT-12",
-        Item(
-            tzdata::ETC_GMT_MINUS_12,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ETC_GMT_MINUS_12,
-        ),
-    ),
-    (
-        b"Factory",
-        Item(
-            tzdata::FACTORY,
-            #[cfg(feature = "binary")]
-            raw_tzdata::FACTORY,
-        ),
-    ),
-    (
-        b"Etc/GMT-1",
-        Item(
-            tzdata::ETC_GMT_MINUS_1,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ETC_GMT_MINUS_1,
-        ),
-    ),
-    (
-        b"Etc/GMT-11",
-        Item(
-            tzdata::ETC_GMT_MINUS_11,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ETC_GMT_MINUS_11,
-        ),
-    ),
-    (
-        b"Pacific/Noumea",
-        Item(
-            tzdata::PACIFIC_NOUMEA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::PACIFIC_NOUMEA,
-        ),
-    ),
-    (
-        b"Etc/GMT+6",
-        Item(
-            tzdata::ETC_GMT_PLUS_6,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ETC_GMT_PLUS_6,
-        ),
-    ),
-    (
-        b"Etc/GMT+9",
-        Item(
-            tzdata::ETC_GMT_PLUS_9,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ETC_GMT_PLUS_9,
-        ),
-    ),
-    (
-        b"Europe/Oslo",
-        Item(
-            tzdata::ARCTIC_LONGYEARBYEN,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ARCTIC_LONGYEARBYEN,
-        ),
-    ),
-    (
-        b"Etc/GMT-6",
-        Item(
-            tzdata::ETC_GMT_MINUS_6,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ETC_GMT_MINUS_6,
-        ),
-    ),
-    (
-        b"Etc/GMT-14",
-        Item(
-            tzdata::ETC_GMT_MINUS_14,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ETC_GMT_MINUS_14,
-        ),
-    ),
-    (
-        b"Etc/GMT-9",
-        Item(
-            tzdata::ETC_GMT_MINUS_9,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ETC_GMT_MINUS_9,
-        ),
-    ),
-    (
-        b"Etc/GMT-13",
-        Item(
-            tzdata::ETC_GMT_MINUS_13,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ETC_GMT_MINUS_13,
-        ),
-    ),
-    (
-        b"Egypt",
-        Item(
-            tzdata::EGYPT,
-            #[cfg(feature = "binary")]
-            raw_tzdata::EGYPT,
-        ),
-    ),
-    (
-        b"Etc/GMT+4",
-        Item(
-            tzdata::ETC_GMT_PLUS_4,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ETC_GMT_PLUS_4,
-        ),
-    ),
-    (
-        b"Asia/Jakarta",
-        Item(
-            tzdata::ASIA_JAKARTA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_JAKARTA,
-        ),
-    ),
-    (
-        b"America/St_Barthelemy",
-        Item(
-            tzdata::AMERICA_MARIGOT,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_MARIGOT,
-        ),
-    ),
-    (
-        b"Pacific/Kanton",
-        Item(
-            tzdata::PACIFIC_ENDERBURY,
-            #[cfg(feature = "binary")]
-            raw_tzdata::PACIFIC_ENDERBURY,
-        ),
-    ),
-    (
-        b"Etc/GMT+3",
-        Item(
-            tzdata::ETC_GMT_PLUS_3,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ETC_GMT_PLUS_3,
-        ),
-    ),
-    (
-        b"Etc/GMT-4",
-        Item(
-            tzdata::ETC_GMT_MINUS_4,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ETC_GMT_MINUS_4,
-        ),
-    ),
-    (
-        b"America/St_Lucia",
-        Item(
-            tzdata::AMERICA_ST_LUCIA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_ST_LUCIA,
-        ),
-    ),
-    (
-        b"Etc/GMT-3",
-        Item(
-            tzdata::ETC_GMT_MINUS_3,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ETC_GMT_MINUS_3,
-        ),
-    ),
-    (
-        b"Europe/Brussels",
-        Item(
-            tzdata::EUROPE_BRUSSELS,
-            #[cfg(feature = "binary")]
-            raw_tzdata::EUROPE_BRUSSELS,
-        ),
-    ),
-    (
-        b"Asia/Seoul",
-        Item(
-            tzdata::ROK,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ROK,
-        ),
-    ),
-    (
-        b"Indian/Christmas",
-        Item(
-            tzdata::INDIAN_CHRISTMAS,
-            #[cfg(feature = "binary")]
-            raw_tzdata::INDIAN_CHRISTMAS,
-        ),
-    ),
-    (
-        b"Brazil/DeNoronha",
-        Item(
-            tzdata::AMERICA_NORONHA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_NORONHA,
-        ),
-    ),
-    (
-        b"Australia/Yancowinna",
-        Item(
-            tzdata::AUSTRALIA_BROKEN_HILL,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AUSTRALIA_BROKEN_HILL,
-        ),
-    ),
-    (
-        b"Canada/Yukon",
-        Item(
-            tzdata::AMERICA_WHITEHORSE,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_WHITEHORSE,
-        ),
-    ),
-    (
-        b"America/Havana",
-        Item(
-            tzdata::CUBA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::CUBA,
-        ),
-    ),
-    (
-        b"Asia/Thimbu",
-        Item(
-            tzdata::ASIA_THIMBU,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_THIMBU,
-        ),
-    ),
-    (
-        b"Africa/El_Aaiun",
-        Item(
-            tzdata::AFRICA_EL_AAIUN,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AFRICA_EL_AAIUN,
-        ),
-    ),
-    (
-        b"America/Hermosillo",
-        Item(
-            tzdata::AMERICA_HERMOSILLO,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_HERMOSILLO,
-        ),
-    ),
-    (
-        b"Mexico/BajaNorte",
-        Item(
-            tzdata::AMERICA_ENSENADA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_ENSENADA,
-        ),
-    ),
-    (
-        b"Asia/Baku",
-        Item(
-            tzdata::ASIA_BAKU,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_BAKU,
-        ),
-    ),
-    (
-        b"Asia/Bangkok",
-        Item(
-            tzdata::ASIA_BANGKOK,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_BANGKOK,
-        ),
-    ),
-    (
-        b"Brazil/West",
-        Item(
-            tzdata::AMERICA_MANAUS,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_MANAUS,
-        ),
-    ),
-    (
-        b"Asia/Almaty",
-        Item(
-            tzdata::ASIA_ALMATY,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_ALMATY,
-        ),
-    ),
-    (
-        b"Asia/Atyrau",
-        Item(
-            tzdata::ASIA_ATYRAU,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_ATYRAU,
-        ),
-    ),
-    (
-        b"Pacific/Kiritimati",
-        Item(
-            tzdata::PACIFIC_KIRITIMATI,
-            #[cfg(feature = "binary")]
-            raw_tzdata::PACIFIC_KIRITIMATI,
-        ),
-    ),
-    (
-        b"Pacific/Guam",
-        Item(
-            tzdata::PACIFIC_GUAM,
-            #[cfg(feature = "binary")]
-            raw_tzdata::PACIFIC_GUAM,
-        ),
-    ),
-    (
-        b"Africa/Conakry",
-        Item(
-            tzdata::AFRICA_CONAKRY,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AFRICA_CONAKRY,
-        ),
-    ),
-    (
-        b"Australia/Lord_Howe",
-        Item(
-            tzdata::AUSTRALIA_LHI,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AUSTRALIA_LHI,
-        ),
-    ),
-    (
-        b"Australia/Lindeman",
-        Item(
-            tzdata::AUSTRALIA_LINDEMAN,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AUSTRALIA_LINDEMAN,
-        ),
-    ),
-    (
-        b"America/Los_Angeles",
-        Item(
-            tzdata::AMERICA_LOS_ANGELES,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_LOS_ANGELES,
-        ),
-    ),
-    (
-        b"Asia/Tbilisi",
-        Item(
-            tzdata::ASIA_TBILISI,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_TBILISI,
-        ),
-    ),
-    (
-        b"Pacific/Enderbury",
-        Item(
-            tzdata::PACIFIC_ENDERBURY,
-            #[cfg(feature = "binary")]
-            raw_tzdata::PACIFIC_ENDERBURY,
-        ),
-    ),
-    (
-        b"Pacific/Kosrae",
-        Item(
-            tzdata::PACIFIC_KOSRAE,
-            #[cfg(feature = "binary")]
-            raw_tzdata::PACIFIC_KOSRAE,
-        ),
-    ),
-    (
-        b"America/Nuuk",
-        Item(
-            tzdata::AMERICA_GODTHAB,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_GODTHAB,
-        ),
-    ),
-    (
-        b"Australia/Broken_Hill",
-        Item(
-            tzdata::AUSTRALIA_BROKEN_HILL,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AUSTRALIA_BROKEN_HILL,
-        ),
-    ),
-    (
-        b"Mexico/BajaSur",
-        Item(
-            tzdata::AMERICA_MAZATLAN,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_MAZATLAN,
-        ),
-    ),
-    (
-        b"Europe/Belfast",
-        Item(
-            tzdata::GB,
-            #[cfg(feature = "binary")]
-            raw_tzdata::GB,
-        ),
-    ),
-    (
-        b"Asia/Ujung_Pandang",
-        Item(
-            tzdata::ASIA_MAKASSAR,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_MAKASSAR,
-        ),
-    ),
-    (
-        b"America/Guayaquil",
-        Item(
-            tzdata::AMERICA_GUAYAQUIL,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_GUAYAQUIL,
-        ),
-    ),
-    (
-        b"Pacific/Auckland",
-        Item(
-            tzdata::NZ,
-            #[cfg(feature = "binary")]
-            raw_tzdata::NZ,
-        ),
-    ),
-    (
-        b"Asia/Khandyga",
-        Item(
-            tzdata::ASIA_KHANDYGA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_KHANDYGA,
-        ),
-    ),
-    (
-        b"Antarctica/Rothera",
-        Item(
-            tzdata::ANTARCTICA_ROTHERA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ANTARCTICA_ROTHERA,
-        ),
-    ),
-    (
-        b"Brazil/Acre",
-        Item(
-            tzdata::AMERICA_PORTO_ACRE,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_PORTO_ACRE,
-        ),
-    ),
-    (
-        b"Europe/Amsterdam",
-        Item(
-            tzdata::EUROPE_AMSTERDAM,
-            #[cfg(feature = "binary")]
-            raw_tzdata::EUROPE_AMSTERDAM,
-        ),
-    ),
-    (
-        b"Asia/Omsk",
-        Item(
-            tzdata::ASIA_OMSK,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_OMSK,
-        ),
-    ),
-    (
-        b"Pacific/Wake",
-        Item(
-            tzdata::PACIFIC_WAKE,
-            #[cfg(feature = "binary")]
-            raw_tzdata::PACIFIC_WAKE,
-        ),
-    ),
-    (
-        b"Antarctica/DumontDUrville",
-        Item(
-            tzdata::ANTARCTICA_DUMONT_D_URVILLE,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ANTARCTICA_DUMONT_D_URVILLE,
-        ),
-    ),
-    (
-        b"Kwajalein",
-        Item(
-            tzdata::KWAJALEIN,
-            #[cfg(feature = "binary")]
-            raw_tzdata::KWAJALEIN,
-        ),
-    ),
-    (
-        b"America/Jujuy",
-        Item(
-            tzdata::AMERICA_JUJUY,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_JUJUY,
-        ),
-    ),
-    (
-        b"Atlantic/Jan_Mayen",
-        Item(
-            tzdata::ARCTIC_LONGYEARBYEN,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ARCTIC_LONGYEARBYEN,
-        ),
-    ),
-    (
-        b"America/Yakutat",
-        Item(
-            tzdata::AMERICA_YAKUTAT,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_YAKUTAT,
-        ),
-    ),
-    (
-        b"Pacific/Guadalcanal",
-        Item(
-            tzdata::PACIFIC_GUADALCANAL,
-            #[cfg(feature = "binary")]
-            raw_tzdata::PACIFIC_GUADALCANAL,
-        ),
-    ),
-    (
-        b"Atlantic/Faeroe",
-        Item(
-            tzdata::ATLANTIC_FAEROE,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ATLANTIC_FAEROE,
-        ),
-    ),
-    (
-        b"Africa/Banjul",
-        Item(
-            tzdata::AFRICA_BANJUL,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AFRICA_BANJUL,
-        ),
-    ),
-    (
-        b"Atlantic/Faroe",
-        Item(
-            tzdata::ATLANTIC_FAEROE,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ATLANTIC_FAEROE,
-        ),
-    ),
-    (
-        b"Atlantic/Bermuda",
-        Item(
-            tzdata::ATLANTIC_BERMUDA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ATLANTIC_BERMUDA,
-        ),
-    ),
-    (
-        b"Atlantic/Madeira",
-        Item(
-            tzdata::ATLANTIC_MADEIRA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ATLANTIC_MADEIRA,
-        ),
-    ),
-    (
-        b"Asia/Katmandu",
-        Item(
-            tzdata::ASIA_KATHMANDU,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_KATHMANDU,
-        ),
-    ),
-    (
-        b"Pacific/Fiji",
-        Item(
-            tzdata::PACIFIC_FIJI,
-            #[cfg(feature = "binary")]
-            raw_tzdata::PACIFIC_FIJI,
-        ),
-    ),
-    (
-        b"Asia/Istanbul",
-        Item(
-            tzdata::TURKEY,
-            #[cfg(feature = "binary")]
-            raw_tzdata::TURKEY,
-        ),
-    ),
-    (
-        b"Europe/San_Marino",
-        Item(
-            tzdata::EUROPE_ROME,
-            #[cfg(feature = "binary")]
-            raw_tzdata::EUROPE_ROME,
-        ),
-    ),
-    (
-        b"Pacific/Majuro",
-        Item(
-            tzdata::PACIFIC_MAJURO,
-            #[cfg(feature = "binary")]
-            raw_tzdata::PACIFIC_MAJURO,
-        ),
-    ),
-    (
-        b"Antarctica/Syowa",
-        Item(
-            tzdata::ANTARCTICA_SYOWA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ANTARCTICA_SYOWA,
-        ),
-    ),
-    (
-        b"Europe/Budapest",
-        Item(
-            tzdata::EUROPE_BUDAPEST,
-            #[cfg(feature = "binary")]
-            raw_tzdata::EUROPE_BUDAPEST,
-        ),
-    ),
-    (
-        b"Zulu",
-        Item(
-            tzdata::UCT,
-            #[cfg(feature = "binary")]
-            raw_tzdata::UCT,
-        ),
-    ),
-    (
-        b"Antarctica/South_Pole",
-        Item(
-            tzdata::ANTARCTICA_MC_MURDO,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ANTARCTICA_MC_MURDO,
-        ),
-    ),
-    (
-        b"Pacific/Kwajalein",
-        Item(
-            tzdata::KWAJALEIN,
-            #[cfg(feature = "binary")]
-            raw_tzdata::KWAJALEIN,
-        ),
-    ),
-    (
-        b"Europe/Kaliningrad",
-        Item(
-            tzdata::EUROPE_KALININGRAD,
-            #[cfg(feature = "binary")]
-            raw_tzdata::EUROPE_KALININGRAD,
-        ),
-    ),
-    (
-        b"Antarctica/Davis",
-        Item(
-            tzdata::ANTARCTICA_DAVIS,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ANTARCTICA_DAVIS,
-        ),
-    ),
-    (
-        b"Asia/Kolkata",
-        Item(
-            tzdata::ASIA_CALCUTTA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_CALCUTTA,
-        ),
-    ),
-    (
-        b"Pacific/Galapagos",
-        Item(
-            tzdata::PACIFIC_GALAPAGOS,
-            #[cfg(feature = "binary")]
-            raw_tzdata::PACIFIC_GALAPAGOS,
-        ),
-    ),
-    (
-        b"Asia/Yekaterinburg",
-        Item(
-            tzdata::ASIA_YEKATERINBURG,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_YEKATERINBURG,
-        ),
-    ),
-    (
-        b"Etc/UTC",
-        Item(
-            tzdata::UCT,
-            #[cfg(feature = "binary")]
-            raw_tzdata::UCT,
-        ),
-    ),
-    (
-        b"Asia/Ho_Chi_Minh",
-        Item(
-            tzdata::ASIA_HO_CHI_MINH,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_HO_CHI_MINH,
-        ),
-    ),
-    (
-        b"Asia/Tokyo",
-        Item(
-            tzdata::JAPAN,
-            #[cfg(feature = "binary")]
-            raw_tzdata::JAPAN,
-        ),
-    ),
-    (
-        b"Libya",
-        Item(
-            tzdata::LIBYA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::LIBYA,
-        ),
-    ),
-    (
-        b"US/Hawaii",
-        Item(
-            tzdata::PACIFIC_HONOLULU,
-            #[cfg(feature = "binary")]
-            raw_tzdata::PACIFIC_HONOLULU,
-        ),
-    ),
-    (
-        b"Africa/Kigali",
-        Item(
-            tzdata::AFRICA_KIGALI,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AFRICA_KIGALI,
-        ),
-    ),
-    (
-        b"Australia/North",
-        Item(
-            tzdata::AUSTRALIA_DARWIN,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AUSTRALIA_DARWIN,
-        ),
-    ),
-    (
-        b"Australia/Hobart",
-        Item(
-            tzdata::AUSTRALIA_CURRIE,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AUSTRALIA_CURRIE,
-        ),
-    ),
-    (
-        b"Asia/Tel_Aviv",
-        Item(
-            tzdata::ISRAEL,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ISRAEL,
-        ),
-    ),
-    (
-        b"Asia/Jayapura",
-        Item(
-            tzdata::ASIA_JAYAPURA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_JAYAPURA,
-        ),
-    ),
-    (
-        b"Europe/Isle_of_Man",
-        Item(
-            tzdata::EUROPE_ISLE_OF_MAN,
-            #[cfg(feature = "binary")]
-            raw_tzdata::EUROPE_ISLE_OF_MAN,
-        ),
-    ),
-    (
-        b"Asia/Srednekolymsk",
-        Item(
-            tzdata::ASIA_SREDNEKOLYMSK,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_SREDNEKOLYMSK,
-        ),
-    ),
-    (
-        b"Asia/Kashgar",
-        Item(
-            tzdata::ASIA_KASHGAR,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_KASHGAR,
-        ),
-    ),
-    (
-        b"Europe/Berlin",
-        Item(
-            tzdata::EUROPE_BERLIN,
-            #[cfg(feature = "binary")]
-            raw_tzdata::EUROPE_BERLIN,
-        ),
-    ),
-    (
-        b"Europe/Luxembourg",
-        Item(
-            tzdata::EUROPE_LUXEMBOURG,
-            #[cfg(feature = "binary")]
-            raw_tzdata::EUROPE_LUXEMBOURG,
-        ),
-    ),
-    (
-        b"Australia/South",
-        Item(
-            tzdata::AUSTRALIA_ADELAIDE,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AUSTRALIA_ADELAIDE,
-        ),
-    ),
-    (
-        b"Pacific/Tahiti",
-        Item(
-            tzdata::PACIFIC_TAHITI,
-            #[cfg(feature = "binary")]
-            raw_tzdata::PACIFIC_TAHITI,
-        ),
-    ),
-    (
-        b"Brazil/East",
-        Item(
-            tzdata::AMERICA_SAO_PAULO,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_SAO_PAULO,
-        ),
-    ),
-    (
-        b"Pacific/Port_Moresby",
-        Item(
-            tzdata::PACIFIC_PORT_MORESBY,
-            #[cfg(feature = "binary")]
-            raw_tzdata::PACIFIC_PORT_MORESBY,
-        ),
-    ),
-    (
-        b"Antarctica/Mawson",
-        Item(
-            tzdata::ANTARCTICA_MAWSON,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ANTARCTICA_MAWSON,
-        ),
-    ),
-    (
-        b"Antarctica/McMurdo",
-        Item(
-            tzdata::ANTARCTICA_MC_MURDO,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ANTARCTICA_MC_MURDO,
-        ),
-    ),
-    (
-        b"Atlantic/South_Georgia",
-        Item(
-            tzdata::ATLANTIC_SOUTH_GEORGIA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ATLANTIC_SOUTH_GEORGIA,
-        ),
-    ),
-    (
-        b"Antarctica/Macquarie",
-        Item(
-            tzdata::ANTARCTICA_MACQUARIE,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ANTARCTICA_MACQUARIE,
-        ),
-    ),
-    (
-        b"Pacific/Fakaofo",
-        Item(
-            tzdata::PACIFIC_FAKAOFO,
-            #[cfg(feature = "binary")]
-            raw_tzdata::PACIFIC_FAKAOFO,
-        ),
-    ),
-    (
-        b"Pacific/Norfolk",
-        Item(
-            tzdata::PACIFIC_NORFOLK,
-            #[cfg(feature = "binary")]
-            raw_tzdata::PACIFIC_NORFOLK,
-        ),
-    ),
-    (
-        b"Africa/Windhoek",
-        Item(
-            tzdata::AFRICA_WINDHOEK,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AFRICA_WINDHOEK,
-        ),
-    ),
-    (
-        b"Asia/Kuching",
-        Item(
-            tzdata::ASIA_KUCHING,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_KUCHING,
-        ),
-    ),
-    (
-        b"Europe/Tallinn",
-        Item(
-            tzdata::EUROPE_TALLINN,
-            #[cfg(feature = "binary")]
-            raw_tzdata::EUROPE_TALLINN,
-        ),
-    ),
-    (
-        b"Europe/Dublin",
-        Item(
-            tzdata::EIRE,
-            #[cfg(feature = "binary")]
-            raw_tzdata::EIRE,
-        ),
-    ),
-    (
-        b"Asia/Kabul",
-        Item(
-            tzdata::ASIA_KABUL,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_KABUL,
-        ),
-    ),
-    (
-        b"Asia/Oral",
-        Item(
-            tzdata::ASIA_ORAL,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_ORAL,
-        ),
-    ),
-    (
-        b"Antarctica/Palmer",
-        Item(
-            tzdata::ANTARCTICA_PALMER,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ANTARCTICA_PALMER,
-        ),
-    ),
-    (
-        b"America/Halifax",
-        Item(
-            tzdata::AMERICA_HALIFAX,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_HALIFAX,
-        ),
-    ),
-    (
-        b"Europe/Gibraltar",
-        Item(
-            tzdata::EUROPE_GIBRALTAR,
-            #[cfg(feature = "binary")]
-            raw_tzdata::EUROPE_GIBRALTAR,
-        ),
-    ),
-    (
-        b"Asia/Novokuznetsk",
-        Item(
-            tzdata::ASIA_NOVOKUZNETSK,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_NOVOKUZNETSK,
-        ),
-    ),
-    (
-        b"Europe/Stockholm",
-        Item(
-            tzdata::EUROPE_STOCKHOLM,
-            #[cfg(feature = "binary")]
-            raw_tzdata::EUROPE_STOCKHOLM,
-        ),
-    ),
-    (
-        b"Asia/Karachi",
-        Item(
-            tzdata::ASIA_KARACHI,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_KARACHI,
-        ),
-    ),
-    (
-        b"Asia/Phnom_Penh",
-        Item(
-            tzdata::ASIA_PHNOM_PENH,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_PHNOM_PENH,
-        ),
-    ),
-    (
-        b"Atlantic/Cape_Verde",
-        Item(
-            tzdata::ATLANTIC_CAPE_VERDE,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ATLANTIC_CAPE_VERDE,
-        ),
-    ),
-    (
-        b"Pacific/Midway",
-        Item(
-            tzdata::PACIFIC_MIDWAY,
-            #[cfg(feature = "binary")]
-            raw_tzdata::PACIFIC_MIDWAY,
-        ),
-    ),
-    (
-        b"America/Kralendijk",
-        Item(
-            tzdata::AMERICA_CURACAO,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_CURACAO,
-        ),
-    ),
-    (
-        b"Europe/Tiraspol",
-        Item(
-            tzdata::EUROPE_CHISINAU,
-            #[cfg(feature = "binary")]
-            raw_tzdata::EUROPE_CHISINAU,
-        ),
-    ),
-    (
-        b"Africa/Brazzaville",
-        Item(
-            tzdata::AFRICA_BRAZZAVILLE,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AFRICA_BRAZZAVILLE,
-        ),
-    ),
-    (
-        b"Europe/Istanbul",
-        Item(
-            tzdata::TURKEY,
-            #[cfg(feature = "binary")]
-            raw_tzdata::TURKEY,
-        ),
-    ),
-    (
-        b"Pacific/Chuuk",
-        Item(
-            tzdata::PACIFIC_CHUUK,
-            #[cfg(feature = "binary")]
-            raw_tzdata::PACIFIC_CHUUK,
-        ),
-    ),
-    (
-        b"Atlantic/St_Helena",
-        Item(
-            tzdata::ATLANTIC_ST_HELENA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ATLANTIC_ST_HELENA,
-        ),
-    ),
-    (
-        b"Asia/Barnaul",
-        Item(
-            tzdata::ASIA_BARNAUL,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_BARNAUL,
-        ),
-    ),
-    (
-        b"Pacific/Honolulu",
-        Item(
-            tzdata::PACIFIC_HONOLULU,
-            #[cfg(feature = "binary")]
-            raw_tzdata::PACIFIC_HONOLULU,
-        ),
-    ),
-    (
-        b"Africa/Kinshasa",
-        Item(
-            tzdata::AFRICA_KINSHASA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AFRICA_KINSHASA,
-        ),
-    ),
-    (
-        b"Asia/Jerusalem",
-        Item(
-            tzdata::ISRAEL,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ISRAEL,
-        ),
-    ),
-    (
-        b"Pacific/Johnston",
-        Item(
-            tzdata::PACIFIC_HONOLULU,
-            #[cfg(feature = "binary")]
-            raw_tzdata::PACIFIC_HONOLULU,
-        ),
-    ),
-    (
-        b"Australia/Perth",
-        Item(
-            tzdata::AUSTRALIA_PERTH,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AUSTRALIA_PERTH,
-        ),
-    ),
-    (
-        b"Chile/Continental",
-        Item(
-            tzdata::AMERICA_SANTIAGO,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_SANTIAGO,
-        ),
-    ),
-    (
-        b"Europe/Uzhgorod",
-        Item(
-            tzdata::EUROPE_UZHGOROD,
-            #[cfg(feature = "binary")]
-            raw_tzdata::EUROPE_UZHGOROD,
-        ),
-    ),
-    (
-        b"Europe/Skopje",
-        Item(
-            tzdata::EUROPE_SKOPJE,
-            #[cfg(feature = "binary")]
-            raw_tzdata::EUROPE_SKOPJE,
-        ),
-    ),
-    (
-        b"Pacific/Palau",
-        Item(
-            tzdata::PACIFIC_PALAU,
-            #[cfg(feature = "binary")]
-            raw_tzdata::PACIFIC_PALAU,
-        ),
-    ),
-    (
-        b"Europe/Simferopol",
-        Item(
-            tzdata::EUROPE_SIMFEROPOL,
-            #[cfg(feature = "binary")]
-            raw_tzdata::EUROPE_SIMFEROPOL,
-        ),
-    ),
-    (
-        b"Australia/Sydney",
-        Item(
-            tzdata::AUSTRALIA_ACT,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AUSTRALIA_ACT,
-        ),
-    ),
-    (
-        b"Pacific/Pohnpei",
-        Item(
-            tzdata::PACIFIC_POHNPEI,
-            #[cfg(feature = "binary")]
-            raw_tzdata::PACIFIC_POHNPEI,
-        ),
-    ),
-    (
-        b"Pacific/Yap",
-        Item(
-            tzdata::PACIFIC_CHUUK,
-            #[cfg(feature = "binary")]
-            raw_tzdata::PACIFIC_CHUUK,
-        ),
-    ),
-    (
-        b"Etc/Zulu",
-        Item(
-            tzdata::UCT,
-            #[cfg(feature = "binary")]
-            raw_tzdata::UCT,
-        ),
-    ),
-    (
-        b"Europe/Minsk",
-        Item(
-            tzdata::EUROPE_MINSK,
-            #[cfg(feature = "binary")]
-            raw_tzdata::EUROPE_MINSK,
-        ),
-    ),
-    (
-        b"Pacific/Truk",
-        Item(
-            tzdata::PACIFIC_CHUUK,
-            #[cfg(feature = "binary")]
-            raw_tzdata::PACIFIC_CHUUK,
-        ),
-    ),
-    (
-        b"Asia/Krasnoyarsk",
-        Item(
-            tzdata::ASIA_KRASNOYARSK,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_KRASNOYARSK,
-        ),
-    ),
-    (
-        b"Africa/Khartoum",
-        Item(
-            tzdata::AFRICA_KHARTOUM,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AFRICA_KHARTOUM,
-        ),
-    ),
-    (
-        b"Asia/Baghdad",
-        Item(
-            tzdata::ASIA_BAGHDAD,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_BAGHDAD,
-        ),
-    ),
-    (
-        b"Universal",
-        Item(
-            tzdata::UCT,
-            #[cfg(feature = "binary")]
-            raw_tzdata::UCT,
-        ),
-    ),
-    (
-        b"America/Yellowknife",
-        Item(
-            tzdata::AMERICA_YELLOWKNIFE,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_YELLOWKNIFE,
-        ),
-    ),
-    (
-        b"Europe/Jersey",
-        Item(
-            tzdata::EUROPE_JERSEY,
-            #[cfg(feature = "binary")]
-            raw_tzdata::EUROPE_JERSEY,
-        ),
-    ),
-    (
-        b"Atlantic/Canary",
-        Item(
-            tzdata::ATLANTIC_CANARY,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ATLANTIC_CANARY,
-        ),
-    ),
-    (
-        b"Atlantic/Stanley",
-        Item(
-            tzdata::ATLANTIC_STANLEY,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ATLANTIC_STANLEY,
-        ),
-    ),
-    (
-        b"Europe/Kiev",
-        Item(
-            tzdata::EUROPE_KIEV,
-            #[cfg(feature = "binary")]
-            raw_tzdata::EUROPE_KIEV,
-        ),
-    ),
-    (
-        b"Europe/Ljubljana",
-        Item(
-            tzdata::EUROPE_LJUBLJANA,
-            #[cfg(feature = "binary")]
-            raw_tzdata::EUROPE_LJUBLJANA,
-        ),
-    ),
-    (
-        b"Antarctica/Troll",
-        Item(
-            tzdata::ANTARCTICA_TROLL,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ANTARCTICA_TROLL,
-        ),
-    ),
-    (
-        b"Greenwich",
-        Item(
-            tzdata::GMT,
-            #[cfg(feature = "binary")]
-            raw_tzdata::GMT,
-        ),
-    ),
-    (
-        b"Europe/Bucharest",
-        Item(
-            tzdata::EUROPE_BUCHAREST,
-            #[cfg(feature = "binary")]
-            raw_tzdata::EUROPE_BUCHAREST,
-        ),
-    ),
-    (
-        b"Asia/Kathmandu",
-        Item(
-            tzdata::ASIA_KATHMANDU,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_KATHMANDU,
-        ),
-    ),
-    (
-        b"Europe/Kirov",
-        Item(
-            tzdata::EUROPE_KIROV,
-            #[cfg(feature = "binary")]
-            raw_tzdata::EUROPE_KIROV,
-        ),
-    ),
-    (
-        b"Europe/Chisinau",
-        Item(
-            tzdata::EUROPE_CHISINAU,
-            #[cfg(feature = "binary")]
-            raw_tzdata::EUROPE_CHISINAU,
-        ),
-    ),
-    (
-        b"Europe/Zurich",
-        Item(
-            tzdata::EUROPE_BUSINGEN,
-            #[cfg(feature = "binary")]
-            raw_tzdata::EUROPE_BUSINGEN,
-        ),
-    ),
-    (
-        b"Antarctica/Casey",
-        Item(
-            tzdata::ANTARCTICA_CASEY,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ANTARCTICA_CASEY,
-        ),
-    ),
-    (
-        b"Asia/Bishkek",
-        Item(
-            tzdata::ASIA_BISHKEK,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_BISHKEK,
-        ),
-    ),
-    (
-        b"Etc/Universal",
-        Item(
-            tzdata::UCT,
-            #[cfg(feature = "binary")]
-            raw_tzdata::UCT,
-        ),
-    ),
-    (
-        b"Asia/Thimphu",
-        Item(
-            tzdata::ASIA_THIMBU,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_THIMBU,
-        ),
-    ),
-    (
-        b"Turkey",
-        Item(
-            tzdata::TURKEY,
-            #[cfg(feature = "binary")]
-            raw_tzdata::TURKEY,
-        ),
-    ),
-    (
-        b"Antarctica/Vostok",
-        Item(
-            tzdata::ANTARCTICA_VOSTOK,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ANTARCTICA_VOSTOK,
-        ),
-    ),
-    (
-        b"America/La_Paz",
-        Item(
-            tzdata::AMERICA_LA_PAZ,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_LA_PAZ,
-        ),
-    ),
-    (
-        b"Australia/LHI",
-        Item(
-            tzdata::AUSTRALIA_LHI,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AUSTRALIA_LHI,
-        ),
-    ),
-    (
-        b"Europe/Ulyanovsk",
-        Item(
-            tzdata::EUROPE_ULYANOVSK,
-            #[cfg(feature = "binary")]
-            raw_tzdata::EUROPE_ULYANOVSK,
-        ),
-    ),
-    (
-        b"Atlantic/Azores",
-        Item(
-            tzdata::ATLANTIC_AZORES,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ATLANTIC_AZORES,
-        ),
-    ),
-    (
-        b"Asia/Sakhalin",
-        Item(
-            tzdata::ASIA_SAKHALIN,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_SAKHALIN,
-        ),
-    ),
-    (
-        b"Pacific/Wallis",
-        Item(
-            tzdata::PACIFIC_WALLIS,
-            #[cfg(feature = "binary")]
-            raw_tzdata::PACIFIC_WALLIS,
-        ),
-    ),
-    (
-        b"Asia/Irkutsk",
-        Item(
-            tzdata::ASIA_IRKUTSK,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_IRKUTSK,
-        ),
-    ),
-    (
-        b"Asia/Kuala_Lumpur",
-        Item(
-            tzdata::ASIA_KUALA_LUMPUR,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_KUALA_LUMPUR,
-        ),
-    ),
-    (
-        b"Portugal",
-        Item(
-            tzdata::PORTUGAL,
-            #[cfg(feature = "binary")]
-            raw_tzdata::PORTUGAL,
-        ),
-    ),
-    (
-        b"Europe/Guernsey",
-        Item(
-            tzdata::EUROPE_GUERNSEY,
-            #[cfg(feature = "binary")]
-            raw_tzdata::EUROPE_GUERNSEY,
-        ),
-    ),
-    (
-        b"etc/localtime",
-        Item(
-            tzdata::FACTORY,
-            #[cfg(feature = "binary")]
-            raw_tzdata::FACTORY,
-        ),
-    ),
-    (
-        b"Hongkong",
-        Item(
-            tzdata::HONGKONG,
-            #[cfg(feature = "binary")]
-            raw_tzdata::HONGKONG,
-        ),
-    ),
-    (
-        b"Atlantic/Reykjavik",
-        Item(
-            tzdata::ICELAND,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ICELAND,
-        ),
-    ),
-    (
-        b"Europe/Kyiv",
-        Item(
-            tzdata::EUROPE_KIEV,
-            #[cfg(feature = "binary")]
-            raw_tzdata::EUROPE_KIEV,
-        ),
-    ),
-    (
-        b"Asia/Riyadh",
-        Item(
-            tzdata::ASIA_RIYADH,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_RIYADH,
-        ),
-    ),
-    (
-        b"Europe/Vaduz",
-        Item(
-            tzdata::EUROPE_VADUZ,
-            #[cfg(feature = "binary")]
-            raw_tzdata::EUROPE_VADUZ,
-        ),
-    ),
-    (
-        b"Mexico/General",
-        Item(
-            tzdata::AMERICA_MEXICO_CITY,
-            #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_MEXICO_CITY,
-        ),
-    ),
-    (
-        b"Etc/Greenwich",
-        Item(
-            tzdata::GMT,
-            #[cfg(feature = "binary")]
-            raw_tzdata::GMT,
-        ),
-    ),
-    (
-        b"Asia/Yakutsk",
-        Item(
-            tzdata::ASIA_YAKUTSK,
-            #[cfg(feature = "binary")]
-            raw_tzdata::ASIA_YAKUTSK,
-        ),
-    ),
+struct Item {
+    name: &'static [u8],
+    tz: TimeZoneRef<'static>,
+    binary: &'static [u8],
+}
+const ITEMS: [Item; 571] = [
+    Item {
+        name: b"EST",
+        tz: tzdata::EST,
+        binary: raw_tzdata::EST,
+    },
+    Item {
+        name: b"EST5EDT",
+        tz: tzdata::EST_5_EDT,
+        binary: raw_tzdata::EST_5_EDT,
+    },
+    Item {
+        name: b"GMT",
+        tz: tzdata::GMT,
+        binary: raw_tzdata::GMT,
+    },
+    Item {
+        name: b"GMT0",
+        tz: tzdata::GMT,
+        binary: raw_tzdata::GMT,
+    },
+    Item {
+        name: b"GMT+0",
+        tz: tzdata::GMT,
+        binary: raw_tzdata::GMT,
+    },
+    Item {
+        name: b"GMT-0",
+        tz: tzdata::GMT,
+        binary: raw_tzdata::GMT,
+    },
+    Item {
+        name: b"Asia/Macao",
+        tz: tzdata::ASIA_MACAO,
+        binary: raw_tzdata::ASIA_MACAO,
+    },
+    Item {
+        name: b"Asia/Manila",
+        tz: tzdata::ASIA_MANILA,
+        binary: raw_tzdata::ASIA_MANILA,
+    },
+    Item {
+        name: b"Asia/Amman",
+        tz: tzdata::ASIA_AMMAN,
+        binary: raw_tzdata::ASIA_AMMAN,
+    },
+    Item {
+        name: b"America/Tortola",
+        tz: tzdata::AMERICA_TORTOLA,
+        binary: raw_tzdata::AMERICA_TORTOLA,
+    },
+    Item {
+        name: b"America/Noronha",
+        tz: tzdata::AMERICA_NORONHA,
+        binary: raw_tzdata::AMERICA_NORONHA,
+    },
+    Item {
+        name: b"Asia/Nicosia",
+        tz: tzdata::ASIA_NICOSIA,
+        binary: raw_tzdata::ASIA_NICOSIA,
+    },
+    Item {
+        name: b"America/Toronto",
+        tz: tzdata::AMERICA_MONTREAL,
+        binary: raw_tzdata::AMERICA_MONTREAL,
+    },
+    Item {
+        name: b"America/Antigua",
+        tz: tzdata::AMERICA_ANTIGUA,
+        binary: raw_tzdata::AMERICA_ANTIGUA,
+    },
+    Item {
+        name: b"Indian/Mahe",
+        tz: tzdata::INDIAN_MAHE,
+        binary: raw_tzdata::INDIAN_MAHE,
+    },
+    Item {
+        name: b"America/Ojinaga",
+        tz: tzdata::AMERICA_OJINAGA,
+        binary: raw_tzdata::AMERICA_OJINAGA,
+    },
+    Item {
+        name: b"America/Detroit",
+        tz: tzdata::AMERICA_DETROIT,
+        binary: raw_tzdata::AMERICA_DETROIT,
+    },
+    Item {
+        name: b"Indian/Mayotte",
+        tz: tzdata::INDIAN_MAYOTTE,
+        binary: raw_tzdata::INDIAN_MAYOTTE,
+    },
+    Item {
+        name: b"America/Araguaina",
+        tz: tzdata::AMERICA_ARAGUAINA,
+        binary: raw_tzdata::AMERICA_ARAGUAINA,
+    },
+    Item {
+        name: b"America/Guatemala",
+        tz: tzdata::AMERICA_GUATEMALA,
+        binary: raw_tzdata::AMERICA_GUATEMALA,
+    },
+    Item {
+        name: b"Iran",
+        tz: tzdata::IRAN,
+        binary: raw_tzdata::IRAN,
+    },
+    Item {
+        name: b"America/Grenada",
+        tz: tzdata::AMERICA_GRENADA,
+        binary: raw_tzdata::AMERICA_GRENADA,
+    },
+    Item {
+        name: b"America/Blanc-Sablon",
+        tz: tzdata::AMERICA_BLANC_SABLON,
+        binary: raw_tzdata::AMERICA_BLANC_SABLON,
+    },
+    Item {
+        name: b"America/Rainy_River",
+        tz: tzdata::AMERICA_RAINY_RIVER,
+        binary: raw_tzdata::AMERICA_RAINY_RIVER,
+    },
+    Item {
+        name: b"America/Guadeloupe",
+        tz: tzdata::AMERICA_GUADELOUPE,
+        binary: raw_tzdata::AMERICA_GUADELOUPE,
+    },
+    Item {
+        name: b"America/Regina",
+        tz: tzdata::AMERICA_REGINA,
+        binary: raw_tzdata::AMERICA_REGINA,
+    },
+    Item {
+        name: b"Indian/Comoro",
+        tz: tzdata::INDIAN_COMORO,
+        binary: raw_tzdata::INDIAN_COMORO,
+    },
+    Item {
+        name: b"Indian/Antananarivo",
+        tz: tzdata::INDIAN_ANTANANARIVO,
+        binary: raw_tzdata::INDIAN_ANTANANARIVO,
+    },
+    Item {
+        name: b"America/Bogota",
+        tz: tzdata::AMERICA_BOGOTA,
+        binary: raw_tzdata::AMERICA_BOGOTA,
+    },
+    Item {
+        name: b"Asia/Anadyr",
+        tz: tzdata::ASIA_ANADYR,
+        binary: raw_tzdata::ASIA_ANADYR,
+    },
+    Item {
+        name: b"Asia/Muscat",
+        tz: tzdata::ASIA_MUSCAT,
+        binary: raw_tzdata::ASIA_MUSCAT,
+    },
+    Item {
+        name: b"CST6CDT",
+        tz: tzdata::CST_6_CDT,
+        binary: raw_tzdata::CST_6_CDT,
+    },
+    Item {
+        name: b"Africa/Monrovia",
+        tz: tzdata::AFRICA_MONROVIA,
+        binary: raw_tzdata::AFRICA_MONROVIA,
+    },
+    Item {
+        name: b"Africa/Ceuta",
+        tz: tzdata::AFRICA_CEUTA,
+        binary: raw_tzdata::AFRICA_CEUTA,
+    },
+    Item {
+        name: b"Africa/Dakar",
+        tz: tzdata::AFRICA_DAKAR,
+        binary: raw_tzdata::AFRICA_DAKAR,
+    },
+    Item {
+        name: b"America/Santiago",
+        tz: tzdata::AMERICA_SANTIAGO,
+        binary: raw_tzdata::AMERICA_SANTIAGO,
+    },
+    Item {
+        name: b"America/Godthab",
+        tz: tzdata::AMERICA_GODTHAB,
+        binary: raw_tzdata::AMERICA_GODTHAB,
+    },
+    Item {
+        name: b"America/Ensenada",
+        tz: tzdata::AMERICA_ENSENADA,
+        binary: raw_tzdata::AMERICA_ENSENADA,
+    },
+    Item {
+        name: b"America/Santo_Domingo",
+        tz: tzdata::AMERICA_SANTO_DOMINGO,
+        binary: raw_tzdata::AMERICA_SANTO_DOMINGO,
+    },
+    Item {
+        name: b"Asia/Dacca",
+        tz: tzdata::ASIA_DACCA,
+        binary: raw_tzdata::ASIA_DACCA,
+    },
+    Item {
+        name: b"Asia/Rangoon",
+        tz: tzdata::ASIA_RANGOON,
+        binary: raw_tzdata::ASIA_RANGOON,
+    },
+    Item {
+        name: b"America/Rosario",
+        tz: tzdata::AMERICA_CORDOBA,
+        binary: raw_tzdata::AMERICA_CORDOBA,
+    },
+    Item {
+        name: b"Asia/Dubai",
+        tz: tzdata::ASIA_DUBAI,
+        binary: raw_tzdata::ASIA_DUBAI,
+    },
+    Item {
+        name: b"Africa/Harare",
+        tz: tzdata::AFRICA_HARARE,
+        binary: raw_tzdata::AFRICA_HARARE,
+    },
+    Item {
+        name: b"Africa/Cairo",
+        tz: tzdata::EGYPT,
+        binary: raw_tzdata::EGYPT,
+    },
+    Item {
+        name: b"America/Resolute",
+        tz: tzdata::AMERICA_RESOLUTE,
+        binary: raw_tzdata::AMERICA_RESOLUTE,
+    },
+    Item {
+        name: b"Asia/Ashgabat",
+        tz: tzdata::ASIA_ASHGABAT,
+        binary: raw_tzdata::ASIA_ASHGABAT,
+    },
+    Item {
+        name: b"Asia/Harbin",
+        tz: tzdata::PRC,
+        binary: raw_tzdata::PRC,
+    },
+    Item {
+        name: b"Africa/Nairobi",
+        tz: tzdata::AFRICA_NAIROBI,
+        binary: raw_tzdata::AFRICA_NAIROBI,
+    },
+    Item {
+        name: b"Africa/Malabo",
+        tz: tzdata::AFRICA_MALABO,
+        binary: raw_tzdata::AFRICA_MALABO,
+    },
+    Item {
+        name: b"Asia/Hebron",
+        tz: tzdata::ASIA_HEBRON,
+        binary: raw_tzdata::ASIA_HEBRON,
+    },
+    Item {
+        name: b"NZ-CHAT",
+        tz: tzdata::NZ_CHAT,
+        binary: raw_tzdata::NZ_CHAT,
+    },
+    Item {
+        name: b"GB",
+        tz: tzdata::GB,
+        binary: raw_tzdata::GB,
+    },
+    Item {
+        name: b"Africa/Freetown",
+        tz: tzdata::AFRICA_FREETOWN,
+        binary: raw_tzdata::AFRICA_FREETOWN,
+    },
+    Item {
+        name: b"America/Catamarca",
+        tz: tzdata::AMERICA_CATAMARCA,
+        binary: raw_tzdata::AMERICA_CATAMARCA,
+    },
+    Item {
+        name: b"America/Scoresbysund",
+        tz: tzdata::AMERICA_SCORESBYSUND,
+        binary: raw_tzdata::AMERICA_SCORESBYSUND,
+    },
+    Item {
+        name: b"Africa/Casablanca",
+        tz: tzdata::AFRICA_CASABLANCA,
+        binary: raw_tzdata::AFRICA_CASABLANCA,
+    },
+    Item {
+        name: b"America/Curacao",
+        tz: tzdata::AMERICA_CURACAO,
+        binary: raw_tzdata::AMERICA_CURACAO,
+    },
+    Item {
+        name: b"America/Buenos_Aires",
+        tz: tzdata::AMERICA_BUENOS_AIRES,
+        binary: raw_tzdata::AMERICA_BUENOS_AIRES,
+    },
+    Item {
+        name: b"Indian/Reunion",
+        tz: tzdata::INDIAN_REUNION,
+        binary: raw_tzdata::INDIAN_REUNION,
+    },
+    Item {
+        name: b"America/Cuiaba",
+        tz: tzdata::AMERICA_CUIABA,
+        binary: raw_tzdata::AMERICA_CUIABA,
+    },
+    Item {
+        name: b"UCT",
+        tz: tzdata::UCT,
+        binary: raw_tzdata::UCT,
+    },
+    Item {
+        name: b"Asia/Bahrain",
+        tz: tzdata::ASIA_BAHRAIN,
+        binary: raw_tzdata::ASIA_BAHRAIN,
+    },
+    Item {
+        name: b"Indian/Mauritius",
+        tz: tzdata::INDIAN_MAURITIUS,
+        binary: raw_tzdata::INDIAN_MAURITIUS,
+    },
+    Item {
+        name: b"America/Coral_Harbour",
+        tz: tzdata::AMERICA_ATIKOKAN,
+        binary: raw_tzdata::AMERICA_ATIKOKAN,
+    },
+    Item {
+        name: b"America/Cordoba",
+        tz: tzdata::AMERICA_CORDOBA,
+        binary: raw_tzdata::AMERICA_CORDOBA,
+    },
+    Item {
+        name: b"America/Boise",
+        tz: tzdata::AMERICA_BOISE,
+        binary: raw_tzdata::AMERICA_BOISE,
+    },
+    Item {
+        name: b"Indian/Maldives",
+        tz: tzdata::INDIAN_MALDIVES,
+        binary: raw_tzdata::INDIAN_MALDIVES,
+    },
+    Item {
+        name: b"Africa/Mbabane",
+        tz: tzdata::AFRICA_MBABANE,
+        binary: raw_tzdata::AFRICA_MBABANE,
+    },
+    Item {
+        name: b"America/Indianapolis",
+        tz: tzdata::AMERICA_FORT_WAYNE,
+        binary: raw_tzdata::AMERICA_FORT_WAYNE,
+    },
+    Item {
+        name: b"America/Recife",
+        tz: tzdata::AMERICA_RECIFE,
+        binary: raw_tzdata::AMERICA_RECIFE,
+    },
+    Item {
+        name: b"Asia/Hovd",
+        tz: tzdata::ASIA_HOVD,
+        binary: raw_tzdata::ASIA_HOVD,
+    },
+    Item {
+        name: b"MST",
+        tz: tzdata::MST,
+        binary: raw_tzdata::MST,
+    },
+    Item {
+        name: b"Africa/Porto-Novo",
+        tz: tzdata::AFRICA_PORTO_NOVO,
+        binary: raw_tzdata::AFRICA_PORTO_NOVO,
+    },
+    Item {
+        name: b"Asia/Macau",
+        tz: tzdata::ASIA_MACAO,
+        binary: raw_tzdata::ASIA_MACAO,
+    },
+    Item {
+        name: b"Asia/Qatar",
+        tz: tzdata::ASIA_QATAR,
+        binary: raw_tzdata::ASIA_QATAR,
+    },
+    Item {
+        name: b"Eire",
+        tz: tzdata::EIRE,
+        binary: raw_tzdata::EIRE,
+    },
+    Item {
+        name: b"Canada/Mountain",
+        tz: tzdata::AMERICA_EDMONTON,
+        binary: raw_tzdata::AMERICA_EDMONTON,
+    },
+    Item {
+        name: b"America/Barbados",
+        tz: tzdata::AMERICA_BARBADOS,
+        binary: raw_tzdata::AMERICA_BARBADOS,
+    },
+    Item {
+        name: b"America/Whitehorse",
+        tz: tzdata::AMERICA_WHITEHORSE,
+        binary: raw_tzdata::AMERICA_WHITEHORSE,
+    },
+    Item {
+        name: b"America/Winnipeg",
+        tz: tzdata::AMERICA_WINNIPEG,
+        binary: raw_tzdata::AMERICA_WINNIPEG,
+    },
+    Item {
+        name: b"Asia/Tehran",
+        tz: tzdata::IRAN,
+        binary: raw_tzdata::IRAN,
+    },
+    Item {
+        name: b"GB-Eire",
+        tz: tzdata::GB,
+        binary: raw_tzdata::GB,
+    },
+    Item {
+        name: b"MST7MDT",
+        tz: tzdata::MST_7_MDT,
+        binary: raw_tzdata::MST_7_MDT,
+    },
+    Item {
+        name: b"America/Asuncion",
+        tz: tzdata::AMERICA_ASUNCION,
+        binary: raw_tzdata::AMERICA_ASUNCION,
+    },
+    Item {
+        name: b"Japan",
+        tz: tzdata::JAPAN,
+        binary: raw_tzdata::JAPAN,
+    },
+    Item {
+        name: b"Asia/Chita",
+        tz: tzdata::ASIA_CHITA,
+        binary: raw_tzdata::ASIA_CHITA,
+    },
+    Item {
+        name: b"Africa/Asmara",
+        tz: tzdata::AFRICA_ASMARA,
+        binary: raw_tzdata::AFRICA_ASMARA,
+    },
+    Item {
+        name: b"Africa/Asmera",
+        tz: tzdata::AFRICA_ASMARA,
+        binary: raw_tzdata::AFRICA_ASMARA,
+    },
+    Item {
+        name: b"America/Costa_Rica",
+        tz: tzdata::AMERICA_COSTA_RICA,
+        binary: raw_tzdata::AMERICA_COSTA_RICA,
+    },
+    Item {
+        name: b"America/Creston",
+        tz: tzdata::AMERICA_CRESTON,
+        binary: raw_tzdata::AMERICA_CRESTON,
+    },
+    Item {
+        name: b"Asia/Aqtobe",
+        tz: tzdata::ASIA_AQTOBE,
+        binary: raw_tzdata::ASIA_AQTOBE,
+    },
+    Item {
+        name: b"America/Caracas",
+        tz: tzdata::AMERICA_CARACAS,
+        binary: raw_tzdata::AMERICA_CARACAS,
+    },
+    Item {
+        name: b"America/Eirunepe",
+        tz: tzdata::AMERICA_EIRUNEPE,
+        binary: raw_tzdata::AMERICA_EIRUNEPE,
+    },
+    Item {
+        name: b"Indian/Cocos",
+        tz: tzdata::INDIAN_COCOS,
+        binary: raw_tzdata::INDIAN_COCOS,
+    },
+    Item {
+        name: b"Asia/Saigon",
+        tz: tzdata::ASIA_HO_CHI_MINH,
+        binary: raw_tzdata::ASIA_HO_CHI_MINH,
+    },
+    Item {
+        name: b"Jamaica",
+        tz: tzdata::JAMAICA,
+        binary: raw_tzdata::JAMAICA,
+    },
+    Item {
+        name: b"America/Anguilla",
+        tz: tzdata::AMERICA_ANGUILLA,
+        binary: raw_tzdata::AMERICA_ANGUILLA,
+    },
+    Item {
+        name: b"America/Aruba",
+        tz: tzdata::AMERICA_ARUBA,
+        binary: raw_tzdata::AMERICA_ARUBA,
+    },
+    Item {
+        name: b"Africa/Accra",
+        tz: tzdata::AFRICA_ACCRA,
+        binary: raw_tzdata::AFRICA_ACCRA,
+    },
+    Item {
+        name: b"America/Tegucigalpa",
+        tz: tzdata::AMERICA_TEGUCIGALPA,
+        binary: raw_tzdata::AMERICA_TEGUCIGALPA,
+    },
+    Item {
+        name: b"America/Cancun",
+        tz: tzdata::AMERICA_CANCUN,
+        binary: raw_tzdata::AMERICA_CANCUN,
+    },
+    Item {
+        name: b"Africa/Addis_Ababa",
+        tz: tzdata::AFRICA_ADDIS_ABABA,
+        binary: raw_tzdata::AFRICA_ADDIS_ABABA,
+    },
+    Item {
+        name: b"America/Managua",
+        tz: tzdata::AMERICA_MANAGUA,
+        binary: raw_tzdata::AMERICA_MANAGUA,
+    },
+    Item {
+        name: b"PST8PDT",
+        tz: tzdata::PST_8_PDT,
+        binary: raw_tzdata::PST_8_PDT,
+    },
+    Item {
+        name: b"US/East-Indiana",
+        tz: tzdata::AMERICA_FORT_WAYNE,
+        binary: raw_tzdata::AMERICA_FORT_WAYNE,
+    },
+    Item {
+        name: b"Asia/Dili",
+        tz: tzdata::ASIA_DILI,
+        binary: raw_tzdata::ASIA_DILI,
+    },
+    Item {
+        name: b"America/Montserrat",
+        tz: tzdata::AMERICA_MONTSERRAT,
+        binary: raw_tzdata::AMERICA_MONTSERRAT,
+    },
+    Item {
+        name: b"America/Nome",
+        tz: tzdata::AMERICA_NOME,
+        binary: raw_tzdata::AMERICA_NOME,
+    },
+    Item {
+        name: b"America/Montevideo",
+        tz: tzdata::AMERICA_MONTEVIDEO,
+        binary: raw_tzdata::AMERICA_MONTEVIDEO,
+    },
+    Item {
+        name: b"America/Edmonton",
+        tz: tzdata::AMERICA_EDMONTON,
+        binary: raw_tzdata::AMERICA_EDMONTON,
+    },
+    Item {
+        name: b"America/Menominee",
+        tz: tzdata::AMERICA_MENOMINEE,
+        binary: raw_tzdata::AMERICA_MENOMINEE,
+    },
+    Item {
+        name: b"America/Dawson",
+        tz: tzdata::AMERICA_DAWSON,
+        binary: raw_tzdata::AMERICA_DAWSON,
+    },
+    Item {
+        name: b"America/Mendoza",
+        tz: tzdata::AMERICA_MENDOZA,
+        binary: raw_tzdata::AMERICA_MENDOZA,
+    },
+    Item {
+        name: b"America/Martinique",
+        tz: tzdata::AMERICA_MARTINIQUE,
+        binary: raw_tzdata::AMERICA_MARTINIQUE,
+    },
+    Item {
+        name: b"America/Danmarkshavn",
+        tz: tzdata::AMERICA_DANMARKSHAVN,
+        binary: raw_tzdata::AMERICA_DANMARKSHAVN,
+    },
+    Item {
+        name: b"America/Chicago",
+        tz: tzdata::AMERICA_CHICAGO,
+        binary: raw_tzdata::AMERICA_CHICAGO,
+    },
+    Item {
+        name: b"Navajo",
+        tz: tzdata::NAVAJO,
+        binary: raw_tzdata::NAVAJO,
+    },
+    Item {
+        name: b"Africa/Maputo",
+        tz: tzdata::AFRICA_MAPUTO,
+        binary: raw_tzdata::AFRICA_MAPUTO,
+    },
+    Item {
+        name: b"US/Samoa",
+        tz: tzdata::PACIFIC_PAGO_PAGO,
+        binary: raw_tzdata::PACIFIC_PAGO_PAGO,
+    },
+    Item {
+        name: b"America/Merida",
+        tz: tzdata::AMERICA_MERIDA,
+        binary: raw_tzdata::AMERICA_MERIDA,
+    },
+    Item {
+        name: b"America/Marigot",
+        tz: tzdata::AMERICA_MARIGOT,
+        binary: raw_tzdata::AMERICA_MARIGOT,
+    },
+    Item {
+        name: b"America/Denver",
+        tz: tzdata::NAVAJO,
+        binary: raw_tzdata::NAVAJO,
+    },
+    Item {
+        name: b"Africa/Maseru",
+        tz: tzdata::AFRICA_MASERU,
+        binary: raw_tzdata::AFRICA_MASERU,
+    },
+    Item {
+        name: b"America/Panama",
+        tz: tzdata::AMERICA_PANAMA,
+        binary: raw_tzdata::AMERICA_PANAMA,
+    },
+    Item {
+        name: b"America/Dominica",
+        tz: tzdata::AMERICA_DOMINICA,
+        binary: raw_tzdata::AMERICA_DOMINICA,
+    },
+    Item {
+        name: b"Asia/Colombo",
+        tz: tzdata::ASIA_COLOMBO,
+        binary: raw_tzdata::ASIA_COLOMBO,
+    },
+    Item {
+        name: b"Asia/Famagusta",
+        tz: tzdata::ASIA_FAMAGUSTA,
+        binary: raw_tzdata::ASIA_FAMAGUSTA,
+    },
+    Item {
+        name: b"Africa/Mogadishu",
+        tz: tzdata::AFRICA_MOGADISHU,
+        binary: raw_tzdata::AFRICA_MOGADISHU,
+    },
+    Item {
+        name: b"America/Virgin",
+        tz: tzdata::AMERICA_ST_THOMAS,
+        binary: raw_tzdata::AMERICA_ST_THOMAS,
+    },
+    Item {
+        name: b"Cuba",
+        tz: tzdata::CUBA,
+        binary: raw_tzdata::CUBA,
+    },
+    Item {
+        name: b"America/Port_of_Spain",
+        tz: tzdata::AMERICA_MARIGOT,
+        binary: raw_tzdata::AMERICA_MARIGOT,
+    },
+    Item {
+        name: b"America/Paramaribo",
+        tz: tzdata::AMERICA_PARAMARIBO,
+        binary: raw_tzdata::AMERICA_PARAMARIBO,
+    },
+    Item {
+        name: b"America/Porto_Acre",
+        tz: tzdata::AMERICA_PORTO_ACRE,
+        binary: raw_tzdata::AMERICA_PORTO_ACRE,
+    },
+    Item {
+        name: b"America/Porto_Velho",
+        tz: tzdata::AMERICA_PORTO_VELHO,
+        binary: raw_tzdata::AMERICA_PORTO_VELHO,
+    },
+    Item {
+        name: b"America/Nipigon",
+        tz: tzdata::AMERICA_NIPIGON,
+        binary: raw_tzdata::AMERICA_NIPIGON,
+    },
+    Item {
+        name: b"Asia/Singapore",
+        tz: tzdata::SINGAPORE,
+        binary: raw_tzdata::SINGAPORE,
+    },
+    Item {
+        name: b"America/Port-au-Prince",
+        tz: tzdata::AMERICA_PORT_AU_PRINCE,
+        binary: raw_tzdata::AMERICA_PORT_AU_PRINCE,
+    },
+    Item {
+        name: b"America/Puerto_Rico",
+        tz: tzdata::AMERICA_PUERTO_RICO,
+        binary: raw_tzdata::AMERICA_PUERTO_RICO,
+    },
+    Item {
+        name: b"Asia/Ulan_Bator",
+        tz: tzdata::ASIA_ULAANBAATAR,
+        binary: raw_tzdata::ASIA_ULAANBAATAR,
+    },
+    Item {
+        name: b"Asia/Ulaanbaatar",
+        tz: tzdata::ASIA_ULAANBAATAR,
+        binary: raw_tzdata::ASIA_ULAANBAATAR,
+    },
+    Item {
+        name: b"Africa/Lome",
+        tz: tzdata::AFRICA_LOME,
+        binary: raw_tzdata::AFRICA_LOME,
+    },
+    Item {
+        name: b"EET",
+        tz: tzdata::EET,
+        binary: raw_tzdata::EET,
+    },
+    Item {
+        name: b"Asia/Beirut",
+        tz: tzdata::ASIA_BEIRUT,
+        binary: raw_tzdata::ASIA_BEIRUT,
+    },
+    Item {
+        name: b"America/Manaus",
+        tz: tzdata::AMERICA_MANAUS,
+        binary: raw_tzdata::AMERICA_MANAUS,
+    },
+    Item {
+        name: b"America/Santarem",
+        tz: tzdata::AMERICA_SANTAREM,
+        binary: raw_tzdata::AMERICA_SANTAREM,
+    },
+    Item {
+        name: b"America/Matamoros",
+        tz: tzdata::AMERICA_MATAMOROS,
+        binary: raw_tzdata::AMERICA_MATAMOROS,
+    },
+    Item {
+        name: b"US/Indiana-Starke",
+        tz: tzdata::AMERICA_KNOX_IN,
+        binary: raw_tzdata::AMERICA_KNOX_IN,
+    },
+    Item {
+        name: b"Canada/Atlantic",
+        tz: tzdata::AMERICA_HALIFAX,
+        binary: raw_tzdata::AMERICA_HALIFAX,
+    },
+    Item {
+        name: b"Africa/Ndjamena",
+        tz: tzdata::AFRICA_NDJAMENA,
+        binary: raw_tzdata::AFRICA_NDJAMENA,
+    },
+    Item {
+        name: b"ROC",
+        tz: tzdata::ROC,
+        binary: raw_tzdata::ROC,
+    },
+    Item {
+        name: b"Asia/Calcutta",
+        tz: tzdata::ASIA_CALCUTTA,
+        binary: raw_tzdata::ASIA_CALCUTTA,
+    },
+    Item {
+        name: b"Africa/Libreville",
+        tz: tzdata::AFRICA_LIBREVILLE,
+        binary: raw_tzdata::AFRICA_LIBREVILLE,
+    },
+    Item {
+        name: b"America/Phoenix",
+        tz: tzdata::AMERICA_PHOENIX,
+        binary: raw_tzdata::AMERICA_PHOENIX,
+    },
+    Item {
+        name: b"America/Pangnirtung",
+        tz: tzdata::AMERICA_PANGNIRTUNG,
+        binary: raw_tzdata::AMERICA_PANGNIRTUNG,
+    },
+    Item {
+        name: b"America/Moncton",
+        tz: tzdata::AMERICA_MONCTON,
+        binary: raw_tzdata::AMERICA_MONCTON,
+    },
+    Item {
+        name: b"America/Rio_Branco",
+        tz: tzdata::AMERICA_PORTO_ACRE,
+        binary: raw_tzdata::AMERICA_PORTO_ACRE,
+    },
+    Item {
+        name: b"America/Nassau",
+        tz: tzdata::AMERICA_NASSAU,
+        binary: raw_tzdata::AMERICA_NASSAU,
+    },
+    Item {
+        name: b"Africa/Djibouti",
+        tz: tzdata::AFRICA_DJIBOUTI,
+        binary: raw_tzdata::AFRICA_DJIBOUTI,
+    },
+    Item {
+        name: b"America/Maceio",
+        tz: tzdata::AMERICA_MACEIO,
+        binary: raw_tzdata::AMERICA_MACEIO,
+    },
+    Item {
+        name: b"Asia/Brunei",
+        tz: tzdata::ASIA_BRUNEI,
+        binary: raw_tzdata::ASIA_BRUNEI,
+    },
+    Item {
+        name: b"America/Punta_Arenas",
+        tz: tzdata::AMERICA_PUNTA_ARENAS,
+        binary: raw_tzdata::AMERICA_PUNTA_ARENAS,
+    },
+    Item {
+        name: b"Asia/Damascus",
+        tz: tzdata::ASIA_DAMASCUS,
+        binary: raw_tzdata::ASIA_DAMASCUS,
+    },
+    Item {
+        name: b"America/Vancouver",
+        tz: tzdata::AMERICA_VANCOUVER,
+        binary: raw_tzdata::AMERICA_VANCOUVER,
+    },
+    Item {
+        name: b"Asia/Aden",
+        tz: tzdata::ASIA_ADEN,
+        binary: raw_tzdata::ASIA_ADEN,
+    },
+    Item {
+        name: b"America/Boa_Vista",
+        tz: tzdata::AMERICA_BOA_VISTA,
+        binary: raw_tzdata::AMERICA_BOA_VISTA,
+    },
+    Item {
+        name: b"Asia/Aqtau",
+        tz: tzdata::ASIA_AQTAU,
+        binary: raw_tzdata::ASIA_AQTAU,
+    },
+    Item {
+        name: b"Africa/Abidjan",
+        tz: tzdata::AFRICA_ABIDJAN,
+        binary: raw_tzdata::AFRICA_ABIDJAN,
+    },
+    Item {
+        name: b"America/Fortaleza",
+        tz: tzdata::AMERICA_FORTALEZA,
+        binary: raw_tzdata::AMERICA_FORTALEZA,
+    },
+    Item {
+        name: b"America/Fort_Nelson",
+        tz: tzdata::AMERICA_FORT_NELSON,
+        binary: raw_tzdata::AMERICA_FORT_NELSON,
+    },
+    Item {
+        name: b"America/Fort_Wayne",
+        tz: tzdata::AMERICA_FORT_WAYNE,
+        binary: raw_tzdata::AMERICA_FORT_WAYNE,
+    },
+    Item {
+        name: b"Asia/Chongqing",
+        tz: tzdata::PRC,
+        binary: raw_tzdata::PRC,
+    },
+    Item {
+        name: b"PRC",
+        tz: tzdata::PRC,
+        binary: raw_tzdata::PRC,
+    },
+    Item {
+        name: b"Africa/Sao_Tome",
+        tz: tzdata::AFRICA_SAO_TOME,
+        binary: raw_tzdata::AFRICA_SAO_TOME,
+    },
+    Item {
+        name: b"America/Tijuana",
+        tz: tzdata::AMERICA_ENSENADA,
+        binary: raw_tzdata::AMERICA_ENSENADA,
+    },
+    Item {
+        name: b"America/Juneau",
+        tz: tzdata::AMERICA_JUNEAU,
+        binary: raw_tzdata::AMERICA_JUNEAU,
+    },
+    Item {
+        name: b"Asia/Ust-Nera",
+        tz: tzdata::ASIA_UST_NERA,
+        binary: raw_tzdata::ASIA_UST_NERA,
+    },
+    Item {
+        name: b"CET",
+        tz: tzdata::CET,
+        binary: raw_tzdata::CET,
+    },
+    Item {
+        name: b"UTC",
+        tz: tzdata::UCT,
+        binary: raw_tzdata::UCT,
+    },
+    Item {
+        name: b"America/Sao_Paulo",
+        tz: tzdata::AMERICA_SAO_PAULO,
+        binary: raw_tzdata::AMERICA_SAO_PAULO,
+    },
+    Item {
+        name: b"Africa/Bangui",
+        tz: tzdata::AFRICA_BANGUI,
+        binary: raw_tzdata::AFRICA_BANGUI,
+    },
+    Item {
+        name: b"Asia/Samarkand",
+        tz: tzdata::ASIA_SAMARKAND,
+        binary: raw_tzdata::ASIA_SAMARKAND,
+    },
+    Item {
+        name: b"America/El_Salvador",
+        tz: tzdata::AMERICA_EL_SALVADOR,
+        binary: raw_tzdata::AMERICA_EL_SALVADOR,
+    },
+    Item {
+        name: b"America/Atka",
+        tz: tzdata::AMERICA_ADAK,
+        binary: raw_tzdata::AMERICA_ADAK,
+    },
+    Item {
+        name: b"Asia/Dhaka",
+        tz: tzdata::ASIA_DACCA,
+        binary: raw_tzdata::ASIA_DACCA,
+    },
+    Item {
+        name: b"WET",
+        tz: tzdata::WET,
+        binary: raw_tzdata::WET,
+    },
+    Item {
+        name: b"America/Jamaica",
+        tz: tzdata::JAMAICA,
+        binary: raw_tzdata::JAMAICA,
+    },
+    Item {
+        name: b"America/Rankin_Inlet",
+        tz: tzdata::AMERICA_RANKIN_INLET,
+        binary: raw_tzdata::AMERICA_RANKIN_INLET,
+    },
+    Item {
+        name: b"America/Atikokan",
+        tz: tzdata::AMERICA_ATIKOKAN,
+        binary: raw_tzdata::AMERICA_ATIKOKAN,
+    },
+    Item {
+        name: b"Singapore",
+        tz: tzdata::SINGAPORE,
+        binary: raw_tzdata::SINGAPORE,
+    },
+    Item {
+        name: b"W-SU",
+        tz: tzdata::W_SU,
+        binary: raw_tzdata::W_SU,
+    },
+    Item {
+        name: b"Africa/Lagos",
+        tz: tzdata::AFRICA_LAGOS,
+        binary: raw_tzdata::AFRICA_LAGOS,
+    },
+    Item {
+        name: b"Australia/Tasmania",
+        tz: tzdata::AUSTRALIA_CURRIE,
+        binary: raw_tzdata::AUSTRALIA_CURRIE,
+    },
+    Item {
+        name: b"Africa/Bissau",
+        tz: tzdata::AFRICA_BISSAU,
+        binary: raw_tzdata::AFRICA_BISSAU,
+    },
+    Item {
+        name: b"America/Grand_Turk",
+        tz: tzdata::AMERICA_GRAND_TURK,
+        binary: raw_tzdata::AMERICA_GRAND_TURK,
+    },
+    Item {
+        name: b"America/Swift_Current",
+        tz: tzdata::AMERICA_SWIFT_CURRENT,
+        binary: raw_tzdata::AMERICA_SWIFT_CURRENT,
+    },
+    Item {
+        name: b"Asia/Qostanay",
+        tz: tzdata::ASIA_QOSTANAY,
+        binary: raw_tzdata::ASIA_QOSTANAY,
+    },
+    Item {
+        name: b"Australia/Darwin",
+        tz: tzdata::AUSTRALIA_DARWIN,
+        binary: raw_tzdata::AUSTRALIA_DARWIN,
+    },
+    Item {
+        name: b"Asia/Pontianak",
+        tz: tzdata::ASIA_PONTIANAK,
+        binary: raw_tzdata::ASIA_PONTIANAK,
+    },
+    Item {
+        name: b"Australia/Adelaide",
+        tz: tzdata::AUSTRALIA_ADELAIDE,
+        binary: raw_tzdata::AUSTRALIA_ADELAIDE,
+    },
+    Item {
+        name: b"America/St_Thomas",
+        tz: tzdata::AMERICA_ST_THOMAS,
+        binary: raw_tzdata::AMERICA_ST_THOMAS,
+    },
+    Item {
+        name: b"America/Miquelon",
+        tz: tzdata::AMERICA_MIQUELON,
+        binary: raw_tzdata::AMERICA_MIQUELON,
+    },
+    Item {
+        name: b"America/Knox_IN",
+        tz: tzdata::AMERICA_KNOX_IN,
+        binary: raw_tzdata::AMERICA_KNOX_IN,
+    },
+    Item {
+        name: b"Africa/Luanda",
+        tz: tzdata::AFRICA_LUANDA,
+        binary: raw_tzdata::AFRICA_LUANDA,
+    },
+    Item {
+        name: b"Asia/Hong_Kong",
+        tz: tzdata::HONGKONG,
+        binary: raw_tzdata::HONGKONG,
+    },
+    Item {
+        name: b"Poland",
+        tz: tzdata::POLAND,
+        binary: raw_tzdata::POLAND,
+    },
+    Item {
+        name: b"Asia/Qyzylorda",
+        tz: tzdata::ASIA_QYZYLORDA,
+        binary: raw_tzdata::ASIA_QYZYLORDA,
+    },
+    Item {
+        name: b"Asia/Vientiane",
+        tz: tzdata::ASIA_VIENTIANE,
+        binary: raw_tzdata::ASIA_VIENTIANE,
+    },
+    Item {
+        name: b"Africa/Nouakchott",
+        tz: tzdata::AFRICA_NOUAKCHOTT,
+        binary: raw_tzdata::AFRICA_NOUAKCHOTT,
+    },
+    Item {
+        name: b"America/Sitka",
+        tz: tzdata::AMERICA_SITKA,
+        binary: raw_tzdata::AMERICA_SITKA,
+    },
+    Item {
+        name: b"Australia/Brisbane",
+        tz: tzdata::AUSTRALIA_BRISBANE,
+        binary: raw_tzdata::AUSTRALIA_BRISBANE,
+    },
+    Item {
+        name: b"Asia/Ashkhabad",
+        tz: tzdata::ASIA_ASHGABAT,
+        binary: raw_tzdata::ASIA_ASHGABAT,
+    },
+    Item {
+        name: b"Pacific/Efate",
+        tz: tzdata::PACIFIC_EFATE,
+        binary: raw_tzdata::PACIFIC_EFATE,
+    },
+    Item {
+        name: b"Pacific/Tarawa",
+        tz: tzdata::PACIFIC_TARAWA,
+        binary: raw_tzdata::PACIFIC_TARAWA,
+    },
+    Item {
+        name: b"MET",
+        tz: tzdata::MET,
+        binary: raw_tzdata::MET,
+    },
+    Item {
+        name: b"US/Eastern",
+        tz: tzdata::AMERICA_NEW_YORK,
+        binary: raw_tzdata::AMERICA_NEW_YORK,
+    },
+    Item {
+        name: b"America/Guyana",
+        tz: tzdata::AMERICA_GUYANA,
+        binary: raw_tzdata::AMERICA_GUYANA,
+    },
+    Item {
+        name: b"Pacific/Apia",
+        tz: tzdata::PACIFIC_APIA,
+        binary: raw_tzdata::PACIFIC_APIA,
+    },
+    Item {
+        name: b"Canada/Eastern",
+        tz: tzdata::AMERICA_MONTREAL,
+        binary: raw_tzdata::AMERICA_MONTREAL,
+    },
+    Item {
+        name: b"Africa/Johannesburg",
+        tz: tzdata::AFRICA_JOHANNESBURG,
+        binary: raw_tzdata::AFRICA_JOHANNESBURG,
+    },
+    Item {
+        name: b"Pacific/Rarotonga",
+        tz: tzdata::PACIFIC_RAROTONGA,
+        binary: raw_tzdata::PACIFIC_RAROTONGA,
+    },
+    Item {
+        name: b"Iceland",
+        tz: tzdata::ICELAND,
+        binary: raw_tzdata::ICELAND,
+    },
+    Item {
+        name: b"NZ",
+        tz: tzdata::NZ,
+        binary: raw_tzdata::NZ,
+    },
+    Item {
+        name: b"Africa/Tripoli",
+        tz: tzdata::LIBYA,
+        binary: raw_tzdata::LIBYA,
+    },
+    Item {
+        name: b"America/Iqaluit",
+        tz: tzdata::AMERICA_IQALUIT,
+        binary: raw_tzdata::AMERICA_IQALUIT,
+    },
+    Item {
+        name: b"Canada/Newfoundland",
+        tz: tzdata::AMERICA_ST_JOHNS,
+        binary: raw_tzdata::AMERICA_ST_JOHNS,
+    },
+    Item {
+        name: b"Asia/Kuwait",
+        tz: tzdata::ASIA_KUWAIT,
+        binary: raw_tzdata::ASIA_KUWAIT,
+    },
+    Item {
+        name: b"Australia/ACT",
+        tz: tzdata::AUSTRALIA_ACT,
+        binary: raw_tzdata::AUSTRALIA_ACT,
+    },
+    Item {
+        name: b"Australia/Canberra",
+        tz: tzdata::AUSTRALIA_ACT,
+        binary: raw_tzdata::AUSTRALIA_ACT,
+    },
+    Item {
+        name: b"Europe/Malta",
+        tz: tzdata::EUROPE_MALTA,
+        binary: raw_tzdata::EUROPE_MALTA,
+    },
+    Item {
+        name: b"Europe/Samara",
+        tz: tzdata::EUROPE_SAMARA,
+        binary: raw_tzdata::EUROPE_SAMARA,
+    },
+    Item {
+        name: b"Canada/Saskatchewan",
+        tz: tzdata::AMERICA_REGINA,
+        binary: raw_tzdata::AMERICA_REGINA,
+    },
+    Item {
+        name: b"US/Pacific",
+        tz: tzdata::AMERICA_LOS_ANGELES,
+        binary: raw_tzdata::AMERICA_LOS_ANGELES,
+    },
+    Item {
+        name: b"Asia/Makassar",
+        tz: tzdata::ASIA_MAKASSAR,
+        binary: raw_tzdata::ASIA_MAKASSAR,
+    },
+    Item {
+        name: b"America/Belize",
+        tz: tzdata::AMERICA_BELIZE,
+        binary: raw_tzdata::AMERICA_BELIZE,
+    },
+    Item {
+        name: b"Europe/Sofia",
+        tz: tzdata::EUROPE_SOFIA,
+        binary: raw_tzdata::EUROPE_SOFIA,
+    },
+    Item {
+        name: b"Australia/West",
+        tz: tzdata::AUSTRALIA_PERTH,
+        binary: raw_tzdata::AUSTRALIA_PERTH,
+    },
+    Item {
+        name: b"Europe/Mariehamn",
+        tz: tzdata::EUROPE_HELSINKI,
+        binary: raw_tzdata::EUROPE_HELSINKI,
+    },
+    Item {
+        name: b"Pacific/Easter",
+        tz: tzdata::CHILE_EASTER_ISLAND,
+        binary: raw_tzdata::CHILE_EASTER_ISLAND,
+    },
+    Item {
+        name: b"Africa/Bamako",
+        tz: tzdata::AFRICA_BAMAKO,
+        binary: raw_tzdata::AFRICA_BAMAKO,
+    },
+    Item {
+        name: b"Europe/Copenhagen",
+        tz: tzdata::EUROPE_COPENHAGEN,
+        binary: raw_tzdata::EUROPE_COPENHAGEN,
+    },
+    Item {
+        name: b"Asia/Yangon",
+        tz: tzdata::ASIA_RANGOON,
+        binary: raw_tzdata::ASIA_RANGOON,
+    },
+    Item {
+        name: b"Africa/Douala",
+        tz: tzdata::AFRICA_DOUALA,
+        binary: raw_tzdata::AFRICA_DOUALA,
+    },
+    Item {
+        name: b"Asia/Novosibirsk",
+        tz: tzdata::ASIA_NOVOSIBIRSK,
+        binary: raw_tzdata::ASIA_NOVOSIBIRSK,
+    },
+    Item {
+        name: b"America/Goose_Bay",
+        tz: tzdata::AMERICA_GOOSE_BAY,
+        binary: raw_tzdata::AMERICA_GOOSE_BAY,
+    },
+    Item {
+        name: b"America/Cayenne",
+        tz: tzdata::AMERICA_CAYENNE,
+        binary: raw_tzdata::AMERICA_CAYENNE,
+    },
+    Item {
+        name: b"Africa/Tunis",
+        tz: tzdata::AFRICA_TUNIS,
+        binary: raw_tzdata::AFRICA_TUNIS,
+    },
+    Item {
+        name: b"Europe/Zaporozhye",
+        tz: tzdata::EUROPE_ZAPOROZHYE,
+        binary: raw_tzdata::EUROPE_ZAPOROZHYE,
+    },
+    Item {
+        name: b"America/Campo_Grande",
+        tz: tzdata::AMERICA_CAMPO_GRANDE,
+        binary: raw_tzdata::AMERICA_CAMPO_GRANDE,
+    },
+    Item {
+        name: b"US/Arizona",
+        tz: tzdata::AMERICA_PHOENIX,
+        binary: raw_tzdata::AMERICA_PHOENIX,
+    },
+    Item {
+        name: b"Asia/Kamchatka",
+        tz: tzdata::ASIA_KAMCHATKA,
+        binary: raw_tzdata::ASIA_KAMCHATKA,
+    },
+    Item {
+        name: b"America/Santa_Isabel",
+        tz: tzdata::AMERICA_ENSENADA,
+        binary: raw_tzdata::AMERICA_ENSENADA,
+    },
+    Item {
+        name: b"Europe/Madrid",
+        tz: tzdata::EUROPE_MADRID,
+        binary: raw_tzdata::EUROPE_MADRID,
+    },
+    Item {
+        name: b"Africa/Dar_es_Salaam",
+        tz: tzdata::AFRICA_DAR_ES_SALAAM,
+        binary: raw_tzdata::AFRICA_DAR_ES_SALAAM,
+    },
+    Item {
+        name: b"Europe/Andorra",
+        tz: tzdata::EUROPE_ANDORRA,
+        binary: raw_tzdata::EUROPE_ANDORRA,
+    },
+    Item {
+        name: b"ROK",
+        tz: tzdata::ROK,
+        binary: raw_tzdata::ROK,
+    },
+    Item {
+        name: b"America/St_Vincent",
+        tz: tzdata::AMERICA_ST_VINCENT,
+        binary: raw_tzdata::AMERICA_ST_VINCENT,
+    },
+    Item {
+        name: b"America/Glace_Bay",
+        tz: tzdata::AMERICA_GLACE_BAY,
+        binary: raw_tzdata::AMERICA_GLACE_BAY,
+    },
+    Item {
+        name: b"US/Michigan",
+        tz: tzdata::AMERICA_DETROIT,
+        binary: raw_tzdata::AMERICA_DETROIT,
+    },
+    Item {
+        name: b"Europe/Zagreb",
+        tz: tzdata::EUROPE_ZAGREB,
+        binary: raw_tzdata::EUROPE_ZAGREB,
+    },
+    Item {
+        name: b"Australia/Eucla",
+        tz: tzdata::AUSTRALIA_EUCLA,
+        binary: raw_tzdata::AUSTRALIA_EUCLA,
+    },
+    Item {
+        name: b"Asia/Tomsk",
+        tz: tzdata::ASIA_TOMSK,
+        binary: raw_tzdata::ASIA_TOMSK,
+    },
+    Item {
+        name: b"HST",
+        tz: tzdata::HST,
+        binary: raw_tzdata::HST,
+    },
+    Item {
+        name: b"Asia/Yerevan",
+        tz: tzdata::ASIA_YEREVAN,
+        binary: raw_tzdata::ASIA_YEREVAN,
+    },
+    Item {
+        name: b"Europe/Rome",
+        tz: tzdata::EUROPE_ROME,
+        binary: raw_tzdata::EUROPE_ROME,
+    },
+    Item {
+        name: b"Africa/Juba",
+        tz: tzdata::AFRICA_JUBA,
+        binary: raw_tzdata::AFRICA_JUBA,
+    },
+    Item {
+        name: b"Asia/Taipei",
+        tz: tzdata::ROC,
+        binary: raw_tzdata::ROC,
+    },
+    Item {
+        name: b"Europe/Riga",
+        tz: tzdata::EUROPE_RIGA,
+        binary: raw_tzdata::EUROPE_RIGA,
+    },
+    Item {
+        name: b"America/Dawson_Creek",
+        tz: tzdata::AMERICA_DAWSON_CREEK,
+        binary: raw_tzdata::AMERICA_DAWSON_CREEK,
+    },
+    Item {
+        name: b"Australia/NSW",
+        tz: tzdata::AUSTRALIA_ACT,
+        binary: raw_tzdata::AUSTRALIA_ACT,
+    },
+    Item {
+        name: b"Africa/Timbuktu",
+        tz: tzdata::AFRICA_BAMAKO,
+        binary: raw_tzdata::AFRICA_BAMAKO,
+    },
+    Item {
+        name: b"America/Thunder_Bay",
+        tz: tzdata::AMERICA_THUNDER_BAY,
+        binary: raw_tzdata::AMERICA_THUNDER_BAY,
+    },
+    Item {
+        name: b"Europe/Nicosia",
+        tz: tzdata::ASIA_NICOSIA,
+        binary: raw_tzdata::ASIA_NICOSIA,
+    },
+    Item {
+        name: b"Asia/Magadan",
+        tz: tzdata::ASIA_MAGADAN,
+        binary: raw_tzdata::ASIA_MAGADAN,
+    },
+    Item {
+        name: b"Asia/Gaza",
+        tz: tzdata::ASIA_GAZA,
+        binary: raw_tzdata::ASIA_GAZA,
+    },
+    Item {
+        name: b"America/St_Johns",
+        tz: tzdata::AMERICA_ST_JOHNS,
+        binary: raw_tzdata::AMERICA_ST_JOHNS,
+    },
+    Item {
+        name: b"Australia/Melbourne",
+        tz: tzdata::AUSTRALIA_MELBOURNE,
+        binary: raw_tzdata::AUSTRALIA_MELBOURNE,
+    },
+    Item {
+        name: b"Asia/Urumqi",
+        tz: tzdata::ASIA_KASHGAR,
+        binary: raw_tzdata::ASIA_KASHGAR,
+    },
+    Item {
+        name: b"Europe/Monaco",
+        tz: tzdata::EUROPE_MONACO,
+        binary: raw_tzdata::EUROPE_MONACO,
+    },
+    Item {
+        name: b"Europe/Podgorica",
+        tz: tzdata::EUROPE_BELGRADE,
+        binary: raw_tzdata::EUROPE_BELGRADE,
+    },
+    Item {
+        name: b"Europe/Athens",
+        tz: tzdata::EUROPE_ATHENS,
+        binary: raw_tzdata::EUROPE_ATHENS,
+    },
+    Item {
+        name: b"Pacific/Niue",
+        tz: tzdata::PACIFIC_NIUE,
+        binary: raw_tzdata::PACIFIC_NIUE,
+    },
+    Item {
+        name: b"Asia/Chungking",
+        tz: tzdata::PRC,
+        binary: raw_tzdata::PRC,
+    },
+    Item {
+        name: b"Europe/Astrakhan",
+        tz: tzdata::EUROPE_ASTRAKHAN,
+        binary: raw_tzdata::EUROPE_ASTRAKHAN,
+    },
+    Item {
+        name: b"Australia/Victoria",
+        tz: tzdata::AUSTRALIA_MELBOURNE,
+        binary: raw_tzdata::AUSTRALIA_MELBOURNE,
+    },
+    Item {
+        name: b"US/Alaska",
+        tz: tzdata::AMERICA_ANCHORAGE,
+        binary: raw_tzdata::AMERICA_ANCHORAGE,
+    },
+    Item {
+        name: b"US/Aleutian",
+        tz: tzdata::AMERICA_ADAK,
+        binary: raw_tzdata::AMERICA_ADAK,
+    },
+    Item {
+        name: b"America/Monterrey",
+        tz: tzdata::AMERICA_MONTERREY,
+        binary: raw_tzdata::AMERICA_MONTERREY,
+    },
+    Item {
+        name: b"Africa/Blantyre",
+        tz: tzdata::AFRICA_BLANTYRE,
+        binary: raw_tzdata::AFRICA_BLANTYRE,
+    },
+    Item {
+        name: b"Europe/Bratislava",
+        tz: tzdata::EUROPE_BRATISLAVA,
+        binary: raw_tzdata::EUROPE_BRATISLAVA,
+    },
+    Item {
+        name: b"America/Thule",
+        tz: tzdata::AMERICA_THULE,
+        binary: raw_tzdata::AMERICA_THULE,
+    },
+    Item {
+        name: b"Europe/Helsinki",
+        tz: tzdata::EUROPE_HELSINKI,
+        binary: raw_tzdata::EUROPE_HELSINKI,
+    },
+    Item {
+        name: b"Israel",
+        tz: tzdata::ISRAEL,
+        binary: raw_tzdata::ISRAEL,
+    },
+    Item {
+        name: b"Canada/Central",
+        tz: tzdata::AMERICA_WINNIPEG,
+        binary: raw_tzdata::AMERICA_WINNIPEG,
+    },
+    Item {
+        name: b"Pacific/Tongatapu",
+        tz: tzdata::PACIFIC_TONGATAPU,
+        binary: raw_tzdata::PACIFIC_TONGATAPU,
+    },
+    Item {
+        name: b"Canada/Pacific",
+        tz: tzdata::AMERICA_VANCOUVER,
+        binary: raw_tzdata::AMERICA_VANCOUVER,
+    },
+    Item {
+        name: b"Africa/Ouagadougou",
+        tz: tzdata::AFRICA_OUAGADOUGOU,
+        binary: raw_tzdata::AFRICA_OUAGADOUGOU,
+    },
+    Item {
+        name: b"Europe/Vienna",
+        tz: tzdata::EUROPE_VIENNA,
+        binary: raw_tzdata::EUROPE_VIENNA,
+    },
+    Item {
+        name: b"Australia/Queensland",
+        tz: tzdata::AUSTRALIA_BRISBANE,
+        binary: raw_tzdata::AUSTRALIA_BRISBANE,
+    },
+    Item {
+        name: b"Asia/Dushanbe",
+        tz: tzdata::ASIA_DUSHANBE,
+        binary: raw_tzdata::ASIA_DUSHANBE,
+    },
+    Item {
+        name: b"Europe/Belgrade",
+        tz: tzdata::EUROPE_BELGRADE,
+        binary: raw_tzdata::EUROPE_BELGRADE,
+    },
+    Item {
+        name: b"Africa/Algiers",
+        tz: tzdata::AFRICA_ALGIERS,
+        binary: raw_tzdata::AFRICA_ALGIERS,
+    },
+    Item {
+        name: b"America/Louisville",
+        tz: tzdata::AMERICA_LOUISVILLE,
+        binary: raw_tzdata::AMERICA_LOUISVILLE,
+    },
+    Item {
+        name: b"Asia/Shanghai",
+        tz: tzdata::PRC,
+        binary: raw_tzdata::PRC,
+    },
+    Item {
+        name: b"Australia/Currie",
+        tz: tzdata::AUSTRALIA_CURRIE,
+        binary: raw_tzdata::AUSTRALIA_CURRIE,
+    },
+    Item {
+        name: b"America/Lima",
+        tz: tzdata::AMERICA_LIMA,
+        binary: raw_tzdata::AMERICA_LIMA,
+    },
+    Item {
+        name: b"America/Montreal",
+        tz: tzdata::AMERICA_MONTREAL,
+        binary: raw_tzdata::AMERICA_MONTREAL,
+    },
+    Item {
+        name: b"America/Metlakatla",
+        tz: tzdata::AMERICA_METLAKATLA,
+        binary: raw_tzdata::AMERICA_METLAKATLA,
+    },
+    Item {
+        name: b"America/Lower_Princes",
+        tz: tzdata::AMERICA_CURACAO,
+        binary: raw_tzdata::AMERICA_CURACAO,
+    },
+    Item {
+        name: b"Africa/Bujumbura",
+        tz: tzdata::AFRICA_BUJUMBURA,
+        binary: raw_tzdata::AFRICA_BUJUMBURA,
+    },
+    Item {
+        name: b"Pacific/Bougainville",
+        tz: tzdata::PACIFIC_BOUGAINVILLE,
+        binary: raw_tzdata::PACIFIC_BOUGAINVILLE,
+    },
+    Item {
+        name: b"America/Bahia",
+        tz: tzdata::AMERICA_BAHIA,
+        binary: raw_tzdata::AMERICA_BAHIA,
+    },
+    Item {
+        name: b"Pacific/Ponape",
+        tz: tzdata::PACIFIC_POHNPEI,
+        binary: raw_tzdata::PACIFIC_POHNPEI,
+    },
+    Item {
+        name: b"Europe/Volgograd",
+        tz: tzdata::EUROPE_VOLGOGRAD,
+        binary: raw_tzdata::EUROPE_VOLGOGRAD,
+    },
+    Item {
+        name: b"Indian/Kerguelen",
+        tz: tzdata::INDIAN_KERGUELEN,
+        binary: raw_tzdata::INDIAN_KERGUELEN,
+    },
+    Item {
+        name: b"Europe/Tirane",
+        tz: tzdata::EUROPE_TIRANE,
+        binary: raw_tzdata::EUROPE_TIRANE,
+    },
+    Item {
+        name: b"US/Mountain",
+        tz: tzdata::NAVAJO,
+        binary: raw_tzdata::NAVAJO,
+    },
+    Item {
+        name: b"America/Shiprock",
+        tz: tzdata::NAVAJO,
+        binary: raw_tzdata::NAVAJO,
+    },
+    Item {
+        name: b"Europe/Sarajevo",
+        tz: tzdata::EUROPE_SARAJEVO,
+        binary: raw_tzdata::EUROPE_SARAJEVO,
+    },
+    Item {
+        name: b"Chile/EasterIsland",
+        tz: tzdata::CHILE_EASTER_ISLAND,
+        binary: raw_tzdata::CHILE_EASTER_ISLAND,
+    },
+    Item {
+        name: b"America/Mexico_City",
+        tz: tzdata::AMERICA_MEXICO_CITY,
+        binary: raw_tzdata::AMERICA_MEXICO_CITY,
+    },
+    Item {
+        name: b"America/Belem",
+        tz: tzdata::AMERICA_BELEM,
+        binary: raw_tzdata::AMERICA_BELEM,
+    },
+    Item {
+        name: b"Africa/Gaborone",
+        tz: tzdata::AFRICA_GABORONE,
+        binary: raw_tzdata::AFRICA_GABORONE,
+    },
+    Item {
+        name: b"Africa/Niamey",
+        tz: tzdata::AFRICA_NIAMEY,
+        binary: raw_tzdata::AFRICA_NIAMEY,
+    },
+    Item {
+        name: b"Europe/Saratov",
+        tz: tzdata::EUROPE_SARATOV,
+        binary: raw_tzdata::EUROPE_SARATOV,
+    },
+    Item {
+        name: b"Asia/Choibalsan",
+        tz: tzdata::ASIA_CHOIBALSAN,
+        binary: raw_tzdata::ASIA_CHOIBALSAN,
+    },
+    Item {
+        name: b"Pacific/Gambier",
+        tz: tzdata::PACIFIC_GAMBIER,
+        binary: raw_tzdata::PACIFIC_GAMBIER,
+    },
+    Item {
+        name: b"Pacific/Samoa",
+        tz: tzdata::PACIFIC_PAGO_PAGO,
+        binary: raw_tzdata::PACIFIC_PAGO_PAGO,
+    },
+    Item {
+        name: b"Pacific/Pago_Pago",
+        tz: tzdata::PACIFIC_PAGO_PAGO,
+        binary: raw_tzdata::PACIFIC_PAGO_PAGO,
+    },
+    Item {
+        name: b"America/Cayman",
+        tz: tzdata::AMERICA_CAYMAN,
+        binary: raw_tzdata::AMERICA_CAYMAN,
+    },
+    Item {
+        name: b"Europe/London",
+        tz: tzdata::GB,
+        binary: raw_tzdata::GB,
+    },
+    Item {
+        name: b"Arctic/Longyearbyen",
+        tz: tzdata::ARCTIC_LONGYEARBYEN,
+        binary: raw_tzdata::ARCTIC_LONGYEARBYEN,
+    },
+    Item {
+        name: b"America/Mazatlan",
+        tz: tzdata::AMERICA_MAZATLAN,
+        binary: raw_tzdata::AMERICA_MAZATLAN,
+    },
+    Item {
+        name: b"Europe/Paris",
+        tz: tzdata::EUROPE_PARIS,
+        binary: raw_tzdata::EUROPE_PARIS,
+    },
+    Item {
+        name: b"Asia/Vladivostok",
+        tz: tzdata::ASIA_VLADIVOSTOK,
+        binary: raw_tzdata::ASIA_VLADIVOSTOK,
+    },
+    Item {
+        name: b"Asia/Pyongyang",
+        tz: tzdata::ASIA_PYONGYANG,
+        binary: raw_tzdata::ASIA_PYONGYANG,
+    },
+    Item {
+        name: b"Europe/Moscow",
+        tz: tzdata::W_SU,
+        binary: raw_tzdata::W_SU,
+    },
+    Item {
+        name: b"Europe/Vilnius",
+        tz: tzdata::EUROPE_VILNIUS,
+        binary: raw_tzdata::EUROPE_VILNIUS,
+    },
+    Item {
+        name: b"America/Anchorage",
+        tz: tzdata::AMERICA_ANCHORAGE,
+        binary: raw_tzdata::AMERICA_ANCHORAGE,
+    },
+    Item {
+        name: b"America/Adak",
+        tz: tzdata::AMERICA_ADAK,
+        binary: raw_tzdata::AMERICA_ADAK,
+    },
+    Item {
+        name: b"Pacific/Chatham",
+        tz: tzdata::NZ_CHAT,
+        binary: raw_tzdata::NZ_CHAT,
+    },
+    Item {
+        name: b"Europe/Vatican",
+        tz: tzdata::EUROPE_ROME,
+        binary: raw_tzdata::EUROPE_ROME,
+    },
+    Item {
+        name: b"Europe/Warsaw",
+        tz: tzdata::POLAND,
+        binary: raw_tzdata::POLAND,
+    },
+    Item {
+        name: b"America/Chihuahua",
+        tz: tzdata::AMERICA_CHIHUAHUA,
+        binary: raw_tzdata::AMERICA_CHIHUAHUA,
+    },
+    Item {
+        name: b"America/Inuvik",
+        tz: tzdata::AMERICA_INUVIK,
+        binary: raw_tzdata::AMERICA_INUVIK,
+    },
+    Item {
+        name: b"Europe/Lisbon",
+        tz: tzdata::PORTUGAL,
+        binary: raw_tzdata::PORTUGAL,
+    },
+    Item {
+        name: b"Africa/Kampala",
+        tz: tzdata::AFRICA_KAMPALA,
+        binary: raw_tzdata::AFRICA_KAMPALA,
+    },
+    Item {
+        name: b"America/Bahia_Banderas",
+        tz: tzdata::AMERICA_BAHIA_BANDERAS,
+        binary: raw_tzdata::AMERICA_BAHIA_BANDERAS,
+    },
+    Item {
+        name: b"Etc/GMT",
+        tz: tzdata::GMT,
+        binary: raw_tzdata::GMT,
+    },
+    Item {
+        name: b"America/Cambridge_Bay",
+        tz: tzdata::AMERICA_CAMBRIDGE_BAY,
+        binary: raw_tzdata::AMERICA_CAMBRIDGE_BAY,
+    },
+    Item {
+        name: b"Pacific/Saipan",
+        tz: tzdata::PACIFIC_SAIPAN,
+        binary: raw_tzdata::PACIFIC_SAIPAN,
+    },
+    Item {
+        name: b"US/Central",
+        tz: tzdata::AMERICA_CHICAGO,
+        binary: raw_tzdata::AMERICA_CHICAGO,
+    },
+    Item {
+        name: b"Indian/Chagos",
+        tz: tzdata::INDIAN_CHAGOS,
+        binary: raw_tzdata::INDIAN_CHAGOS,
+    },
+    Item {
+        name: b"Etc/GMT+0",
+        tz: tzdata::GMT,
+        binary: raw_tzdata::GMT,
+    },
+    Item {
+        name: b"Asia/Tashkent",
+        tz: tzdata::ASIA_TASHKENT,
+        binary: raw_tzdata::ASIA_TASHKENT,
+    },
+    Item {
+        name: b"Europe/Prague",
+        tz: tzdata::EUROPE_BRATISLAVA,
+        binary: raw_tzdata::EUROPE_BRATISLAVA,
+    },
+    Item {
+        name: b"Pacific/Nauru",
+        tz: tzdata::PACIFIC_NAURU,
+        binary: raw_tzdata::PACIFIC_NAURU,
+    },
+    Item {
+        name: b"Etc/GMT-0",
+        tz: tzdata::GMT,
+        binary: raw_tzdata::GMT,
+    },
+    Item {
+        name: b"America/New_York",
+        tz: tzdata::AMERICA_NEW_YORK,
+        binary: raw_tzdata::AMERICA_NEW_YORK,
+    },
+    Item {
+        name: b"Etc/UCT",
+        tz: tzdata::UCT,
+        binary: raw_tzdata::UCT,
+    },
+    Item {
+        name: b"Pacific/Pitcairn",
+        tz: tzdata::PACIFIC_PITCAIRN,
+        binary: raw_tzdata::PACIFIC_PITCAIRN,
+    },
+    Item {
+        name: b"Etc/GMT0",
+        tz: tzdata::GMT,
+        binary: raw_tzdata::GMT,
+    },
+    Item {
+        name: b"Etc/GMT+7",
+        tz: tzdata::ETC_GMT_PLUS_7,
+        binary: raw_tzdata::ETC_GMT_PLUS_7,
+    },
+    Item {
+        name: b"Pacific/Funafuti",
+        tz: tzdata::PACIFIC_FUNAFUTI,
+        binary: raw_tzdata::PACIFIC_FUNAFUTI,
+    },
+    Item {
+        name: b"Europe/Busingen",
+        tz: tzdata::EUROPE_BUSINGEN,
+        binary: raw_tzdata::EUROPE_BUSINGEN,
+    },
+    Item {
+        name: b"Etc/GMT+5",
+        tz: tzdata::ETC_GMT_PLUS_5,
+        binary: raw_tzdata::ETC_GMT_PLUS_5,
+    },
+    Item {
+        name: b"Etc/GMT-7",
+        tz: tzdata::ETC_GMT_MINUS_7,
+        binary: raw_tzdata::ETC_GMT_MINUS_7,
+    },
+    Item {
+        name: b"Etc/GMT+10",
+        tz: tzdata::ETC_GMT_PLUS_10,
+        binary: raw_tzdata::ETC_GMT_PLUS_10,
+    },
+    Item {
+        name: b"Africa/Lusaka",
+        tz: tzdata::AFRICA_LUSAKA,
+        binary: raw_tzdata::AFRICA_LUSAKA,
+    },
+    Item {
+        name: b"Etc/GMT-5",
+        tz: tzdata::ETC_GMT_MINUS_5,
+        binary: raw_tzdata::ETC_GMT_MINUS_5,
+    },
+    Item {
+        name: b"Etc/GMT+8",
+        tz: tzdata::ETC_GMT_PLUS_8,
+        binary: raw_tzdata::ETC_GMT_PLUS_8,
+    },
+    Item {
+        name: b"Etc/GMT-10",
+        tz: tzdata::ETC_GMT_MINUS_10,
+        binary: raw_tzdata::ETC_GMT_MINUS_10,
+    },
+    Item {
+        name: b"Pacific/Marquesas",
+        tz: tzdata::PACIFIC_MARQUESAS,
+        binary: raw_tzdata::PACIFIC_MARQUESAS,
+    },
+    Item {
+        name: b"Etc/GMT+2",
+        tz: tzdata::ETC_GMT_PLUS_2,
+        binary: raw_tzdata::ETC_GMT_PLUS_2,
+    },
+    Item {
+        name: b"Etc/GMT-8",
+        tz: tzdata::ETC_GMT_MINUS_8,
+        binary: raw_tzdata::ETC_GMT_MINUS_8,
+    },
+    Item {
+        name: b"America/St_Kitts",
+        tz: tzdata::AMERICA_ST_KITTS,
+        binary: raw_tzdata::AMERICA_ST_KITTS,
+    },
+    Item {
+        name: b"Africa/Lubumbashi",
+        tz: tzdata::AFRICA_LUBUMBASHI,
+        binary: raw_tzdata::AFRICA_LUBUMBASHI,
+    },
+    Item {
+        name: b"Etc/GMT+12",
+        tz: tzdata::ETC_GMT_PLUS_12,
+        binary: raw_tzdata::ETC_GMT_PLUS_12,
+    },
+    Item {
+        name: b"Etc/GMT-2",
+        tz: tzdata::ETC_GMT_MINUS_2,
+        binary: raw_tzdata::ETC_GMT_MINUS_2,
+    },
+    Item {
+        name: b"Etc/GMT+1",
+        tz: tzdata::ETC_GMT_PLUS_1,
+        binary: raw_tzdata::ETC_GMT_PLUS_1,
+    },
+    Item {
+        name: b"Etc/GMT+11",
+        tz: tzdata::ETC_GMT_PLUS_11,
+        binary: raw_tzdata::ETC_GMT_PLUS_11,
+    },
+    Item {
+        name: b"Etc/GMT-12",
+        tz: tzdata::ETC_GMT_MINUS_12,
+        binary: raw_tzdata::ETC_GMT_MINUS_12,
+    },
+    Item {
+        name: b"Factory",
+        tz: tzdata::FACTORY,
+        binary: raw_tzdata::FACTORY,
+    },
+    Item {
+        name: b"Etc/GMT-1",
+        tz: tzdata::ETC_GMT_MINUS_1,
+        binary: raw_tzdata::ETC_GMT_MINUS_1,
+    },
+    Item {
+        name: b"Etc/GMT-11",
+        tz: tzdata::ETC_GMT_MINUS_11,
+        binary: raw_tzdata::ETC_GMT_MINUS_11,
+    },
+    Item {
+        name: b"Pacific/Noumea",
+        tz: tzdata::PACIFIC_NOUMEA,
+        binary: raw_tzdata::PACIFIC_NOUMEA,
+    },
+    Item {
+        name: b"Etc/GMT+6",
+        tz: tzdata::ETC_GMT_PLUS_6,
+        binary: raw_tzdata::ETC_GMT_PLUS_6,
+    },
+    Item {
+        name: b"Etc/GMT+9",
+        tz: tzdata::ETC_GMT_PLUS_9,
+        binary: raw_tzdata::ETC_GMT_PLUS_9,
+    },
+    Item {
+        name: b"Europe/Oslo",
+        tz: tzdata::ARCTIC_LONGYEARBYEN,
+        binary: raw_tzdata::ARCTIC_LONGYEARBYEN,
+    },
+    Item {
+        name: b"Etc/GMT-6",
+        tz: tzdata::ETC_GMT_MINUS_6,
+        binary: raw_tzdata::ETC_GMT_MINUS_6,
+    },
+    Item {
+        name: b"Etc/GMT-14",
+        tz: tzdata::ETC_GMT_MINUS_14,
+        binary: raw_tzdata::ETC_GMT_MINUS_14,
+    },
+    Item {
+        name: b"Etc/GMT-9",
+        tz: tzdata::ETC_GMT_MINUS_9,
+        binary: raw_tzdata::ETC_GMT_MINUS_9,
+    },
+    Item {
+        name: b"Etc/GMT-13",
+        tz: tzdata::ETC_GMT_MINUS_13,
+        binary: raw_tzdata::ETC_GMT_MINUS_13,
+    },
+    Item {
+        name: b"Egypt",
+        tz: tzdata::EGYPT,
+        binary: raw_tzdata::EGYPT,
+    },
+    Item {
+        name: b"Etc/GMT+4",
+        tz: tzdata::ETC_GMT_PLUS_4,
+        binary: raw_tzdata::ETC_GMT_PLUS_4,
+    },
+    Item {
+        name: b"Asia/Jakarta",
+        tz: tzdata::ASIA_JAKARTA,
+        binary: raw_tzdata::ASIA_JAKARTA,
+    },
+    Item {
+        name: b"America/St_Barthelemy",
+        tz: tzdata::AMERICA_MARIGOT,
+        binary: raw_tzdata::AMERICA_MARIGOT,
+    },
+    Item {
+        name: b"Pacific/Kanton",
+        tz: tzdata::PACIFIC_ENDERBURY,
+        binary: raw_tzdata::PACIFIC_ENDERBURY,
+    },
+    Item {
+        name: b"Etc/GMT+3",
+        tz: tzdata::ETC_GMT_PLUS_3,
+        binary: raw_tzdata::ETC_GMT_PLUS_3,
+    },
+    Item {
+        name: b"Etc/GMT-4",
+        tz: tzdata::ETC_GMT_MINUS_4,
+        binary: raw_tzdata::ETC_GMT_MINUS_4,
+    },
+    Item {
+        name: b"America/St_Lucia",
+        tz: tzdata::AMERICA_ST_LUCIA,
+        binary: raw_tzdata::AMERICA_ST_LUCIA,
+    },
+    Item {
+        name: b"Etc/GMT-3",
+        tz: tzdata::ETC_GMT_MINUS_3,
+        binary: raw_tzdata::ETC_GMT_MINUS_3,
+    },
+    Item {
+        name: b"Europe/Brussels",
+        tz: tzdata::EUROPE_BRUSSELS,
+        binary: raw_tzdata::EUROPE_BRUSSELS,
+    },
+    Item {
+        name: b"Asia/Seoul",
+        tz: tzdata::ROK,
+        binary: raw_tzdata::ROK,
+    },
+    Item {
+        name: b"Indian/Christmas",
+        tz: tzdata::INDIAN_CHRISTMAS,
+        binary: raw_tzdata::INDIAN_CHRISTMAS,
+    },
+    Item {
+        name: b"Brazil/DeNoronha",
+        tz: tzdata::AMERICA_NORONHA,
+        binary: raw_tzdata::AMERICA_NORONHA,
+    },
+    Item {
+        name: b"Australia/Yancowinna",
+        tz: tzdata::AUSTRALIA_BROKEN_HILL,
+        binary: raw_tzdata::AUSTRALIA_BROKEN_HILL,
+    },
+    Item {
+        name: b"Canada/Yukon",
+        tz: tzdata::AMERICA_WHITEHORSE,
+        binary: raw_tzdata::AMERICA_WHITEHORSE,
+    },
+    Item {
+        name: b"America/Havana",
+        tz: tzdata::CUBA,
+        binary: raw_tzdata::CUBA,
+    },
+    Item {
+        name: b"Asia/Thimbu",
+        tz: tzdata::ASIA_THIMBU,
+        binary: raw_tzdata::ASIA_THIMBU,
+    },
+    Item {
+        name: b"Africa/El_Aaiun",
+        tz: tzdata::AFRICA_EL_AAIUN,
+        binary: raw_tzdata::AFRICA_EL_AAIUN,
+    },
+    Item {
+        name: b"America/Hermosillo",
+        tz: tzdata::AMERICA_HERMOSILLO,
+        binary: raw_tzdata::AMERICA_HERMOSILLO,
+    },
+    Item {
+        name: b"Mexico/BajaNorte",
+        tz: tzdata::AMERICA_ENSENADA,
+        binary: raw_tzdata::AMERICA_ENSENADA,
+    },
+    Item {
+        name: b"Asia/Baku",
+        tz: tzdata::ASIA_BAKU,
+        binary: raw_tzdata::ASIA_BAKU,
+    },
+    Item {
+        name: b"Asia/Bangkok",
+        tz: tzdata::ASIA_BANGKOK,
+        binary: raw_tzdata::ASIA_BANGKOK,
+    },
+    Item {
+        name: b"Brazil/West",
+        tz: tzdata::AMERICA_MANAUS,
+        binary: raw_tzdata::AMERICA_MANAUS,
+    },
+    Item {
+        name: b"Asia/Almaty",
+        tz: tzdata::ASIA_ALMATY,
+        binary: raw_tzdata::ASIA_ALMATY,
+    },
+    Item {
+        name: b"Asia/Atyrau",
+        tz: tzdata::ASIA_ATYRAU,
+        binary: raw_tzdata::ASIA_ATYRAU,
+    },
+    Item {
+        name: b"Pacific/Kiritimati",
+        tz: tzdata::PACIFIC_KIRITIMATI,
+        binary: raw_tzdata::PACIFIC_KIRITIMATI,
+    },
+    Item {
+        name: b"Pacific/Guam",
+        tz: tzdata::PACIFIC_GUAM,
+        binary: raw_tzdata::PACIFIC_GUAM,
+    },
+    Item {
+        name: b"Africa/Conakry",
+        tz: tzdata::AFRICA_CONAKRY,
+        binary: raw_tzdata::AFRICA_CONAKRY,
+    },
+    Item {
+        name: b"Australia/Lord_Howe",
+        tz: tzdata::AUSTRALIA_LHI,
+        binary: raw_tzdata::AUSTRALIA_LHI,
+    },
+    Item {
+        name: b"Australia/Lindeman",
+        tz: tzdata::AUSTRALIA_LINDEMAN,
+        binary: raw_tzdata::AUSTRALIA_LINDEMAN,
+    },
+    Item {
+        name: b"America/Los_Angeles",
+        tz: tzdata::AMERICA_LOS_ANGELES,
+        binary: raw_tzdata::AMERICA_LOS_ANGELES,
+    },
+    Item {
+        name: b"Asia/Tbilisi",
+        tz: tzdata::ASIA_TBILISI,
+        binary: raw_tzdata::ASIA_TBILISI,
+    },
+    Item {
+        name: b"Pacific/Enderbury",
+        tz: tzdata::PACIFIC_ENDERBURY,
+        binary: raw_tzdata::PACIFIC_ENDERBURY,
+    },
+    Item {
+        name: b"Pacific/Kosrae",
+        tz: tzdata::PACIFIC_KOSRAE,
+        binary: raw_tzdata::PACIFIC_KOSRAE,
+    },
+    Item {
+        name: b"America/Nuuk",
+        tz: tzdata::AMERICA_GODTHAB,
+        binary: raw_tzdata::AMERICA_GODTHAB,
+    },
+    Item {
+        name: b"Australia/Broken_Hill",
+        tz: tzdata::AUSTRALIA_BROKEN_HILL,
+        binary: raw_tzdata::AUSTRALIA_BROKEN_HILL,
+    },
+    Item {
+        name: b"Mexico/BajaSur",
+        tz: tzdata::AMERICA_MAZATLAN,
+        binary: raw_tzdata::AMERICA_MAZATLAN,
+    },
+    Item {
+        name: b"Europe/Belfast",
+        tz: tzdata::GB,
+        binary: raw_tzdata::GB,
+    },
+    Item {
+        name: b"Asia/Ujung_Pandang",
+        tz: tzdata::ASIA_MAKASSAR,
+        binary: raw_tzdata::ASIA_MAKASSAR,
+    },
+    Item {
+        name: b"America/Guayaquil",
+        tz: tzdata::AMERICA_GUAYAQUIL,
+        binary: raw_tzdata::AMERICA_GUAYAQUIL,
+    },
+    Item {
+        name: b"Pacific/Auckland",
+        tz: tzdata::NZ,
+        binary: raw_tzdata::NZ,
+    },
+    Item {
+        name: b"Asia/Khandyga",
+        tz: tzdata::ASIA_KHANDYGA,
+        binary: raw_tzdata::ASIA_KHANDYGA,
+    },
+    Item {
+        name: b"Antarctica/Rothera",
+        tz: tzdata::ANTARCTICA_ROTHERA,
+        binary: raw_tzdata::ANTARCTICA_ROTHERA,
+    },
+    Item {
+        name: b"Brazil/Acre",
+        tz: tzdata::AMERICA_PORTO_ACRE,
+        binary: raw_tzdata::AMERICA_PORTO_ACRE,
+    },
+    Item {
+        name: b"Europe/Amsterdam",
+        tz: tzdata::EUROPE_AMSTERDAM,
+        binary: raw_tzdata::EUROPE_AMSTERDAM,
+    },
+    Item {
+        name: b"Asia/Omsk",
+        tz: tzdata::ASIA_OMSK,
+        binary: raw_tzdata::ASIA_OMSK,
+    },
+    Item {
+        name: b"Pacific/Wake",
+        tz: tzdata::PACIFIC_WAKE,
+        binary: raw_tzdata::PACIFIC_WAKE,
+    },
+    Item {
+        name: b"Antarctica/DumontDUrville",
+        tz: tzdata::ANTARCTICA_DUMONT_D_URVILLE,
+        binary: raw_tzdata::ANTARCTICA_DUMONT_D_URVILLE,
+    },
+    Item {
+        name: b"Kwajalein",
+        tz: tzdata::KWAJALEIN,
+        binary: raw_tzdata::KWAJALEIN,
+    },
+    Item {
+        name: b"America/Jujuy",
+        tz: tzdata::AMERICA_JUJUY,
+        binary: raw_tzdata::AMERICA_JUJUY,
+    },
+    Item {
+        name: b"Atlantic/Jan_Mayen",
+        tz: tzdata::ARCTIC_LONGYEARBYEN,
+        binary: raw_tzdata::ARCTIC_LONGYEARBYEN,
+    },
+    Item {
+        name: b"America/Yakutat",
+        tz: tzdata::AMERICA_YAKUTAT,
+        binary: raw_tzdata::AMERICA_YAKUTAT,
+    },
+    Item {
+        name: b"Pacific/Guadalcanal",
+        tz: tzdata::PACIFIC_GUADALCANAL,
+        binary: raw_tzdata::PACIFIC_GUADALCANAL,
+    },
+    Item {
+        name: b"Atlantic/Faeroe",
+        tz: tzdata::ATLANTIC_FAEROE,
+        binary: raw_tzdata::ATLANTIC_FAEROE,
+    },
+    Item {
+        name: b"Africa/Banjul",
+        tz: tzdata::AFRICA_BANJUL,
+        binary: raw_tzdata::AFRICA_BANJUL,
+    },
+    Item {
+        name: b"Atlantic/Faroe",
+        tz: tzdata::ATLANTIC_FAEROE,
+        binary: raw_tzdata::ATLANTIC_FAEROE,
+    },
+    Item {
+        name: b"Atlantic/Bermuda",
+        tz: tzdata::ATLANTIC_BERMUDA,
+        binary: raw_tzdata::ATLANTIC_BERMUDA,
+    },
+    Item {
+        name: b"Atlantic/Madeira",
+        tz: tzdata::ATLANTIC_MADEIRA,
+        binary: raw_tzdata::ATLANTIC_MADEIRA,
+    },
+    Item {
+        name: b"Asia/Katmandu",
+        tz: tzdata::ASIA_KATHMANDU,
+        binary: raw_tzdata::ASIA_KATHMANDU,
+    },
+    Item {
+        name: b"Pacific/Fiji",
+        tz: tzdata::PACIFIC_FIJI,
+        binary: raw_tzdata::PACIFIC_FIJI,
+    },
+    Item {
+        name: b"Asia/Istanbul",
+        tz: tzdata::TURKEY,
+        binary: raw_tzdata::TURKEY,
+    },
+    Item {
+        name: b"Europe/San_Marino",
+        tz: tzdata::EUROPE_ROME,
+        binary: raw_tzdata::EUROPE_ROME,
+    },
+    Item {
+        name: b"Pacific/Majuro",
+        tz: tzdata::PACIFIC_MAJURO,
+        binary: raw_tzdata::PACIFIC_MAJURO,
+    },
+    Item {
+        name: b"Antarctica/Syowa",
+        tz: tzdata::ANTARCTICA_SYOWA,
+        binary: raw_tzdata::ANTARCTICA_SYOWA,
+    },
+    Item {
+        name: b"Europe/Budapest",
+        tz: tzdata::EUROPE_BUDAPEST,
+        binary: raw_tzdata::EUROPE_BUDAPEST,
+    },
+    Item {
+        name: b"Zulu",
+        tz: tzdata::UCT,
+        binary: raw_tzdata::UCT,
+    },
+    Item {
+        name: b"Antarctica/South_Pole",
+        tz: tzdata::ANTARCTICA_MC_MURDO,
+        binary: raw_tzdata::ANTARCTICA_MC_MURDO,
+    },
+    Item {
+        name: b"Pacific/Kwajalein",
+        tz: tzdata::KWAJALEIN,
+        binary: raw_tzdata::KWAJALEIN,
+    },
+    Item {
+        name: b"Europe/Kaliningrad",
+        tz: tzdata::EUROPE_KALININGRAD,
+        binary: raw_tzdata::EUROPE_KALININGRAD,
+    },
+    Item {
+        name: b"Antarctica/Davis",
+        tz: tzdata::ANTARCTICA_DAVIS,
+        binary: raw_tzdata::ANTARCTICA_DAVIS,
+    },
+    Item {
+        name: b"Asia/Kolkata",
+        tz: tzdata::ASIA_CALCUTTA,
+        binary: raw_tzdata::ASIA_CALCUTTA,
+    },
+    Item {
+        name: b"Pacific/Galapagos",
+        tz: tzdata::PACIFIC_GALAPAGOS,
+        binary: raw_tzdata::PACIFIC_GALAPAGOS,
+    },
+    Item {
+        name: b"Asia/Yekaterinburg",
+        tz: tzdata::ASIA_YEKATERINBURG,
+        binary: raw_tzdata::ASIA_YEKATERINBURG,
+    },
+    Item {
+        name: b"Etc/UTC",
+        tz: tzdata::UCT,
+        binary: raw_tzdata::UCT,
+    },
+    Item {
+        name: b"Asia/Ho_Chi_Minh",
+        tz: tzdata::ASIA_HO_CHI_MINH,
+        binary: raw_tzdata::ASIA_HO_CHI_MINH,
+    },
+    Item {
+        name: b"Asia/Tokyo",
+        tz: tzdata::JAPAN,
+        binary: raw_tzdata::JAPAN,
+    },
+    Item {
+        name: b"Libya",
+        tz: tzdata::LIBYA,
+        binary: raw_tzdata::LIBYA,
+    },
+    Item {
+        name: b"US/Hawaii",
+        tz: tzdata::PACIFIC_HONOLULU,
+        binary: raw_tzdata::PACIFIC_HONOLULU,
+    },
+    Item {
+        name: b"Africa/Kigali",
+        tz: tzdata::AFRICA_KIGALI,
+        binary: raw_tzdata::AFRICA_KIGALI,
+    },
+    Item {
+        name: b"Australia/North",
+        tz: tzdata::AUSTRALIA_DARWIN,
+        binary: raw_tzdata::AUSTRALIA_DARWIN,
+    },
+    Item {
+        name: b"Australia/Hobart",
+        tz: tzdata::AUSTRALIA_CURRIE,
+        binary: raw_tzdata::AUSTRALIA_CURRIE,
+    },
+    Item {
+        name: b"Asia/Tel_Aviv",
+        tz: tzdata::ISRAEL,
+        binary: raw_tzdata::ISRAEL,
+    },
+    Item {
+        name: b"Asia/Jayapura",
+        tz: tzdata::ASIA_JAYAPURA,
+        binary: raw_tzdata::ASIA_JAYAPURA,
+    },
+    Item {
+        name: b"Europe/Isle_of_Man",
+        tz: tzdata::EUROPE_ISLE_OF_MAN,
+        binary: raw_tzdata::EUROPE_ISLE_OF_MAN,
+    },
+    Item {
+        name: b"Asia/Srednekolymsk",
+        tz: tzdata::ASIA_SREDNEKOLYMSK,
+        binary: raw_tzdata::ASIA_SREDNEKOLYMSK,
+    },
+    Item {
+        name: b"Asia/Kashgar",
+        tz: tzdata::ASIA_KASHGAR,
+        binary: raw_tzdata::ASIA_KASHGAR,
+    },
+    Item {
+        name: b"Europe/Berlin",
+        tz: tzdata::EUROPE_BERLIN,
+        binary: raw_tzdata::EUROPE_BERLIN,
+    },
+    Item {
+        name: b"Europe/Luxembourg",
+        tz: tzdata::EUROPE_LUXEMBOURG,
+        binary: raw_tzdata::EUROPE_LUXEMBOURG,
+    },
+    Item {
+        name: b"Australia/South",
+        tz: tzdata::AUSTRALIA_ADELAIDE,
+        binary: raw_tzdata::AUSTRALIA_ADELAIDE,
+    },
+    Item {
+        name: b"Pacific/Tahiti",
+        tz: tzdata::PACIFIC_TAHITI,
+        binary: raw_tzdata::PACIFIC_TAHITI,
+    },
+    Item {
+        name: b"Brazil/East",
+        tz: tzdata::AMERICA_SAO_PAULO,
+        binary: raw_tzdata::AMERICA_SAO_PAULO,
+    },
+    Item {
+        name: b"Pacific/Port_Moresby",
+        tz: tzdata::PACIFIC_PORT_MORESBY,
+        binary: raw_tzdata::PACIFIC_PORT_MORESBY,
+    },
+    Item {
+        name: b"Antarctica/Mawson",
+        tz: tzdata::ANTARCTICA_MAWSON,
+        binary: raw_tzdata::ANTARCTICA_MAWSON,
+    },
+    Item {
+        name: b"Antarctica/McMurdo",
+        tz: tzdata::ANTARCTICA_MC_MURDO,
+        binary: raw_tzdata::ANTARCTICA_MC_MURDO,
+    },
+    Item {
+        name: b"Atlantic/South_Georgia",
+        tz: tzdata::ATLANTIC_SOUTH_GEORGIA,
+        binary: raw_tzdata::ATLANTIC_SOUTH_GEORGIA,
+    },
+    Item {
+        name: b"Antarctica/Macquarie",
+        tz: tzdata::ANTARCTICA_MACQUARIE,
+        binary: raw_tzdata::ANTARCTICA_MACQUARIE,
+    },
+    Item {
+        name: b"Pacific/Fakaofo",
+        tz: tzdata::PACIFIC_FAKAOFO,
+        binary: raw_tzdata::PACIFIC_FAKAOFO,
+    },
+    Item {
+        name: b"Pacific/Norfolk",
+        tz: tzdata::PACIFIC_NORFOLK,
+        binary: raw_tzdata::PACIFIC_NORFOLK,
+    },
+    Item {
+        name: b"Africa/Windhoek",
+        tz: tzdata::AFRICA_WINDHOEK,
+        binary: raw_tzdata::AFRICA_WINDHOEK,
+    },
+    Item {
+        name: b"Asia/Kuching",
+        tz: tzdata::ASIA_KUCHING,
+        binary: raw_tzdata::ASIA_KUCHING,
+    },
+    Item {
+        name: b"Europe/Tallinn",
+        tz: tzdata::EUROPE_TALLINN,
+        binary: raw_tzdata::EUROPE_TALLINN,
+    },
+    Item {
+        name: b"Europe/Dublin",
+        tz: tzdata::EIRE,
+        binary: raw_tzdata::EIRE,
+    },
+    Item {
+        name: b"Asia/Kabul",
+        tz: tzdata::ASIA_KABUL,
+        binary: raw_tzdata::ASIA_KABUL,
+    },
+    Item {
+        name: b"Asia/Oral",
+        tz: tzdata::ASIA_ORAL,
+        binary: raw_tzdata::ASIA_ORAL,
+    },
+    Item {
+        name: b"Antarctica/Palmer",
+        tz: tzdata::ANTARCTICA_PALMER,
+        binary: raw_tzdata::ANTARCTICA_PALMER,
+    },
+    Item {
+        name: b"America/Halifax",
+        tz: tzdata::AMERICA_HALIFAX,
+        binary: raw_tzdata::AMERICA_HALIFAX,
+    },
+    Item {
+        name: b"Europe/Gibraltar",
+        tz: tzdata::EUROPE_GIBRALTAR,
+        binary: raw_tzdata::EUROPE_GIBRALTAR,
+    },
+    Item {
+        name: b"Asia/Novokuznetsk",
+        tz: tzdata::ASIA_NOVOKUZNETSK,
+        binary: raw_tzdata::ASIA_NOVOKUZNETSK,
+    },
+    Item {
+        name: b"Europe/Stockholm",
+        tz: tzdata::EUROPE_STOCKHOLM,
+        binary: raw_tzdata::EUROPE_STOCKHOLM,
+    },
+    Item {
+        name: b"Asia/Karachi",
+        tz: tzdata::ASIA_KARACHI,
+        binary: raw_tzdata::ASIA_KARACHI,
+    },
+    Item {
+        name: b"Asia/Phnom_Penh",
+        tz: tzdata::ASIA_PHNOM_PENH,
+        binary: raw_tzdata::ASIA_PHNOM_PENH,
+    },
+    Item {
+        name: b"Atlantic/Cape_Verde",
+        tz: tzdata::ATLANTIC_CAPE_VERDE,
+        binary: raw_tzdata::ATLANTIC_CAPE_VERDE,
+    },
+    Item {
+        name: b"Pacific/Midway",
+        tz: tzdata::PACIFIC_MIDWAY,
+        binary: raw_tzdata::PACIFIC_MIDWAY,
+    },
+    Item {
+        name: b"America/Kralendijk",
+        tz: tzdata::AMERICA_CURACAO,
+        binary: raw_tzdata::AMERICA_CURACAO,
+    },
+    Item {
+        name: b"Europe/Tiraspol",
+        tz: tzdata::EUROPE_CHISINAU,
+        binary: raw_tzdata::EUROPE_CHISINAU,
+    },
+    Item {
+        name: b"Africa/Brazzaville",
+        tz: tzdata::AFRICA_BRAZZAVILLE,
+        binary: raw_tzdata::AFRICA_BRAZZAVILLE,
+    },
+    Item {
+        name: b"Europe/Istanbul",
+        tz: tzdata::TURKEY,
+        binary: raw_tzdata::TURKEY,
+    },
+    Item {
+        name: b"Pacific/Chuuk",
+        tz: tzdata::PACIFIC_CHUUK,
+        binary: raw_tzdata::PACIFIC_CHUUK,
+    },
+    Item {
+        name: b"Atlantic/St_Helena",
+        tz: tzdata::ATLANTIC_ST_HELENA,
+        binary: raw_tzdata::ATLANTIC_ST_HELENA,
+    },
+    Item {
+        name: b"Asia/Barnaul",
+        tz: tzdata::ASIA_BARNAUL,
+        binary: raw_tzdata::ASIA_BARNAUL,
+    },
+    Item {
+        name: b"Pacific/Honolulu",
+        tz: tzdata::PACIFIC_HONOLULU,
+        binary: raw_tzdata::PACIFIC_HONOLULU,
+    },
+    Item {
+        name: b"Africa/Kinshasa",
+        tz: tzdata::AFRICA_KINSHASA,
+        binary: raw_tzdata::AFRICA_KINSHASA,
+    },
+    Item {
+        name: b"Asia/Jerusalem",
+        tz: tzdata::ISRAEL,
+        binary: raw_tzdata::ISRAEL,
+    },
+    Item {
+        name: b"Pacific/Johnston",
+        tz: tzdata::PACIFIC_HONOLULU,
+        binary: raw_tzdata::PACIFIC_HONOLULU,
+    },
+    Item {
+        name: b"Australia/Perth",
+        tz: tzdata::AUSTRALIA_PERTH,
+        binary: raw_tzdata::AUSTRALIA_PERTH,
+    },
+    Item {
+        name: b"Chile/Continental",
+        tz: tzdata::AMERICA_SANTIAGO,
+        binary: raw_tzdata::AMERICA_SANTIAGO,
+    },
+    Item {
+        name: b"Europe/Uzhgorod",
+        tz: tzdata::EUROPE_UZHGOROD,
+        binary: raw_tzdata::EUROPE_UZHGOROD,
+    },
+    Item {
+        name: b"Europe/Skopje",
+        tz: tzdata::EUROPE_SKOPJE,
+        binary: raw_tzdata::EUROPE_SKOPJE,
+    },
+    Item {
+        name: b"Pacific/Palau",
+        tz: tzdata::PACIFIC_PALAU,
+        binary: raw_tzdata::PACIFIC_PALAU,
+    },
+    Item {
+        name: b"Europe/Simferopol",
+        tz: tzdata::EUROPE_SIMFEROPOL,
+        binary: raw_tzdata::EUROPE_SIMFEROPOL,
+    },
+    Item {
+        name: b"Australia/Sydney",
+        tz: tzdata::AUSTRALIA_ACT,
+        binary: raw_tzdata::AUSTRALIA_ACT,
+    },
+    Item {
+        name: b"Pacific/Pohnpei",
+        tz: tzdata::PACIFIC_POHNPEI,
+        binary: raw_tzdata::PACIFIC_POHNPEI,
+    },
+    Item {
+        name: b"Pacific/Yap",
+        tz: tzdata::PACIFIC_CHUUK,
+        binary: raw_tzdata::PACIFIC_CHUUK,
+    },
+    Item {
+        name: b"Etc/Zulu",
+        tz: tzdata::UCT,
+        binary: raw_tzdata::UCT,
+    },
+    Item {
+        name: b"Europe/Minsk",
+        tz: tzdata::EUROPE_MINSK,
+        binary: raw_tzdata::EUROPE_MINSK,
+    },
+    Item {
+        name: b"Pacific/Truk",
+        tz: tzdata::PACIFIC_CHUUK,
+        binary: raw_tzdata::PACIFIC_CHUUK,
+    },
+    Item {
+        name: b"Asia/Krasnoyarsk",
+        tz: tzdata::ASIA_KRASNOYARSK,
+        binary: raw_tzdata::ASIA_KRASNOYARSK,
+    },
+    Item {
+        name: b"Africa/Khartoum",
+        tz: tzdata::AFRICA_KHARTOUM,
+        binary: raw_tzdata::AFRICA_KHARTOUM,
+    },
+    Item {
+        name: b"Asia/Baghdad",
+        tz: tzdata::ASIA_BAGHDAD,
+        binary: raw_tzdata::ASIA_BAGHDAD,
+    },
+    Item {
+        name: b"Universal",
+        tz: tzdata::UCT,
+        binary: raw_tzdata::UCT,
+    },
+    Item {
+        name: b"America/Yellowknife",
+        tz: tzdata::AMERICA_YELLOWKNIFE,
+        binary: raw_tzdata::AMERICA_YELLOWKNIFE,
+    },
+    Item {
+        name: b"Europe/Jersey",
+        tz: tzdata::EUROPE_JERSEY,
+        binary: raw_tzdata::EUROPE_JERSEY,
+    },
+    Item {
+        name: b"Atlantic/Canary",
+        tz: tzdata::ATLANTIC_CANARY,
+        binary: raw_tzdata::ATLANTIC_CANARY,
+    },
+    Item {
+        name: b"Atlantic/Stanley",
+        tz: tzdata::ATLANTIC_STANLEY,
+        binary: raw_tzdata::ATLANTIC_STANLEY,
+    },
+    Item {
+        name: b"Europe/Kiev",
+        tz: tzdata::EUROPE_KIEV,
+        binary: raw_tzdata::EUROPE_KIEV,
+    },
+    Item {
+        name: b"Europe/Ljubljana",
+        tz: tzdata::EUROPE_LJUBLJANA,
+        binary: raw_tzdata::EUROPE_LJUBLJANA,
+    },
+    Item {
+        name: b"Antarctica/Troll",
+        tz: tzdata::ANTARCTICA_TROLL,
+        binary: raw_tzdata::ANTARCTICA_TROLL,
+    },
+    Item {
+        name: b"Greenwich",
+        tz: tzdata::GMT,
+        binary: raw_tzdata::GMT,
+    },
+    Item {
+        name: b"Europe/Bucharest",
+        tz: tzdata::EUROPE_BUCHAREST,
+        binary: raw_tzdata::EUROPE_BUCHAREST,
+    },
+    Item {
+        name: b"Asia/Kathmandu",
+        tz: tzdata::ASIA_KATHMANDU,
+        binary: raw_tzdata::ASIA_KATHMANDU,
+    },
+    Item {
+        name: b"Europe/Kirov",
+        tz: tzdata::EUROPE_KIROV,
+        binary: raw_tzdata::EUROPE_KIROV,
+    },
+    Item {
+        name: b"Europe/Chisinau",
+        tz: tzdata::EUROPE_CHISINAU,
+        binary: raw_tzdata::EUROPE_CHISINAU,
+    },
+    Item {
+        name: b"Europe/Zurich",
+        tz: tzdata::EUROPE_BUSINGEN,
+        binary: raw_tzdata::EUROPE_BUSINGEN,
+    },
+    Item {
+        name: b"Antarctica/Casey",
+        tz: tzdata::ANTARCTICA_CASEY,
+        binary: raw_tzdata::ANTARCTICA_CASEY,
+    },
+    Item {
+        name: b"Asia/Bishkek",
+        tz: tzdata::ASIA_BISHKEK,
+        binary: raw_tzdata::ASIA_BISHKEK,
+    },
+    Item {
+        name: b"Etc/Universal",
+        tz: tzdata::UCT,
+        binary: raw_tzdata::UCT,
+    },
+    Item {
+        name: b"Asia/Thimphu",
+        tz: tzdata::ASIA_THIMBU,
+        binary: raw_tzdata::ASIA_THIMBU,
+    },
+    Item {
+        name: b"Turkey",
+        tz: tzdata::TURKEY,
+        binary: raw_tzdata::TURKEY,
+    },
+    Item {
+        name: b"Antarctica/Vostok",
+        tz: tzdata::ANTARCTICA_VOSTOK,
+        binary: raw_tzdata::ANTARCTICA_VOSTOK,
+    },
+    Item {
+        name: b"America/La_Paz",
+        tz: tzdata::AMERICA_LA_PAZ,
+        binary: raw_tzdata::AMERICA_LA_PAZ,
+    },
+    Item {
+        name: b"Australia/LHI",
+        tz: tzdata::AUSTRALIA_LHI,
+        binary: raw_tzdata::AUSTRALIA_LHI,
+    },
+    Item {
+        name: b"Europe/Ulyanovsk",
+        tz: tzdata::EUROPE_ULYANOVSK,
+        binary: raw_tzdata::EUROPE_ULYANOVSK,
+    },
+    Item {
+        name: b"Atlantic/Azores",
+        tz: tzdata::ATLANTIC_AZORES,
+        binary: raw_tzdata::ATLANTIC_AZORES,
+    },
+    Item {
+        name: b"Asia/Sakhalin",
+        tz: tzdata::ASIA_SAKHALIN,
+        binary: raw_tzdata::ASIA_SAKHALIN,
+    },
+    Item {
+        name: b"Pacific/Wallis",
+        tz: tzdata::PACIFIC_WALLIS,
+        binary: raw_tzdata::PACIFIC_WALLIS,
+    },
+    Item {
+        name: b"Asia/Irkutsk",
+        tz: tzdata::ASIA_IRKUTSK,
+        binary: raw_tzdata::ASIA_IRKUTSK,
+    },
+    Item {
+        name: b"Asia/Kuala_Lumpur",
+        tz: tzdata::ASIA_KUALA_LUMPUR,
+        binary: raw_tzdata::ASIA_KUALA_LUMPUR,
+    },
+    Item {
+        name: b"Portugal",
+        tz: tzdata::PORTUGAL,
+        binary: raw_tzdata::PORTUGAL,
+    },
+    Item {
+        name: b"Europe/Guernsey",
+        tz: tzdata::EUROPE_GUERNSEY,
+        binary: raw_tzdata::EUROPE_GUERNSEY,
+    },
+    Item {
+        name: b"etc/localtime",
+        tz: tzdata::FACTORY,
+        binary: raw_tzdata::FACTORY,
+    },
+    Item {
+        name: b"Hongkong",
+        tz: tzdata::HONGKONG,
+        binary: raw_tzdata::HONGKONG,
+    },
+    Item {
+        name: b"Atlantic/Reykjavik",
+        tz: tzdata::ICELAND,
+        binary: raw_tzdata::ICELAND,
+    },
+    Item {
+        name: b"Europe/Kyiv",
+        tz: tzdata::EUROPE_KIEV,
+        binary: raw_tzdata::EUROPE_KIEV,
+    },
+    Item {
+        name: b"Asia/Riyadh",
+        tz: tzdata::ASIA_RIYADH,
+        binary: raw_tzdata::ASIA_RIYADH,
+    },
+    Item {
+        name: b"Europe/Vaduz",
+        tz: tzdata::EUROPE_VADUZ,
+        binary: raw_tzdata::EUROPE_VADUZ,
+    },
+    Item {
+        name: b"Mexico/General",
+        tz: tzdata::AMERICA_MEXICO_CITY,
+        binary: raw_tzdata::AMERICA_MEXICO_CITY,
+    },
+    Item {
+        name: b"Etc/Greenwich",
+        tz: tzdata::GMT,
+        binary: raw_tzdata::GMT,
+    },
+    Item {
+        name: b"Asia/Yakutsk",
+        tz: tzdata::ASIA_YAKUTSK,
+        binary: raw_tzdata::ASIA_YAKUTSK,
+    },
 ];
 
-const ASSO_VALUES: [u16; 257] = [
+const ASSO_VALUES: [u16; 256] = [
     2324, 2324, 2324, 2324, 2324, 2324, 2324, 2324, 2324, 2324, 2324, 2324, 2324, 2324, 2324, 2324,
     2324, 2324, 2324, 2324, 2324, 2324, 2324, 2324, 2324, 2324, 2324, 2324, 2324, 2324, 2324, 2324,
     2324, 2324, 2324, 2324, 2324, 2324, 2324, 2324, 2324, 2324, 2324, 5, 5, 7, 10, 744, 5, 20, 17,
@@ -7499,7 +5785,7 @@ const ASSO_VALUES: [u16; 257] = [
     2324, 2324, 2324, 2324, 2324, 2324, 2324, 2324, 2324, 2324, 2324, 2324, 2324, 2324, 2324, 2324,
     2324, 2324, 2324, 2324, 2324, 2324, 2324, 2324, 2324, 2324, 2324, 2324, 2324, 2324, 2324, 2324,
     2324, 2324, 2324, 2324, 2324, 2324, 2324, 2324, 2324, 2324, 2324, 2324, 2324, 2324, 2324, 2324,
-    2324, 2324, 2324, 2324, 2324, 2324, 2324, 2324, 2324, 2324, 2324, 2324, 2324,
+    2324, 2324, 2324, 2324, 2324, 2324, 2324, 2324, 2324, 2324, 2324, 2324,
 ];
 
 fn find_item(s: &[u8]) -> Option<&'static Item> {
@@ -7540,19 +5826,20 @@ fn find_item(s: &[u8]) -> Option<&'static Item> {
     }
     let key = WORDLIST[key]?;
     let key: u16 = unsafe { transmute(key) };
-    let (key, ref item) = ITEMS[key as usize];
-    if !key.eq_ignore_ascii_case(s) {
+    let item = &ITEMS[key as usize];
+    if !item.name.eq_ignore_ascii_case(s) {
         return None;
     }
 
     Some(item)
 }
 
+#[inline]
 pub(crate) fn find_tz(s: &[u8]) -> Option<TimeZoneRef<'static>> {
-    Some(find_item(s)?.0)
+    Some(find_item(s)?.tz)
 }
 
-#[cfg(feature = "binary")]
+#[inline]
 pub(crate) fn find_raw(s: &[u8]) -> Option<&'static [u8]> {
-    Some(find_item(s)?.1)
+    Some(find_item(s)?.binary)
 }

@@ -2,7 +2,6 @@
 
 use core::fmt;
 
-#[cfg(feature = "local")]
 use iana_time_zone::{get_timezone, GetTimezoneError};
 use tz::error::ProjectDateTimeError;
 use tz::{DateTime, TimeZoneRef};
@@ -14,17 +13,7 @@ mod opaque {
     #[derive(Copy, Clone)]
     pub struct Opaque;
 
-    #[derive(Copy, Clone)]
-    pub struct Impossible(core::convert::Infallible);
-
     impl fmt::Debug for Opaque {
-        #[inline]
-        fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-            f.write_str("_")
-        }
-    }
-
-    impl fmt::Debug for Impossible {
         #[inline]
         fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
             f.write_str("_")
@@ -43,29 +32,15 @@ mod opaque {
 #[derive(Debug)]
 pub enum NowError {
     /// Could not get time zone. Only returned by [`local()`].
-    TimeZone(
-        #[cfg(feature = "local")] GetTimezoneError,
-        #[cfg(not(feature = "local"))]
-        #[doc(hidden)]
-        opaque::Impossible,
-    ),
+    TimeZone(GetTimezoneError),
     /// Unknown system time zone. Only returned by [`local()`], and [`in_named()`].
-    UnknownTimezone(
-        #[cfg(feature = "by-name")]
-        #[doc(hidden)]
-        opaque::Opaque,
-        #[cfg(not(feature = "by-name"))]
-        #[doc(hidden)]
-        opaque::Impossible,
-    ),
+    UnknownTimezone(#[doc(hidden)] opaque::Opaque),
     /// Could not project timestamp.
     ProjectDateTime(ProjectDateTimeError),
     /// Could not get current time.
     Utcnow(utcnow::Error),
 }
 
-#[cfg(feature = "local")]
-#[cfg_attr(docsrs, doc(cfg(feature = "local")))]
 impl From<GetTimezoneError> for NowError {
     #[inline]
     fn from(err: GetTimezoneError) -> Self {
@@ -103,10 +78,7 @@ impl fmt::Display for NowError {
 impl std::error::Error for NowError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match self {
-            #[cfg(feature = "local")]
             Self::TimeZone(err) => Some(err),
-            #[cfg(not(feature = "local"))]
-            Self::TimeZone(_) => None,
             Self::UnknownTimezone(_) => None,
             Self::ProjectDateTime(err) => Some(err),
             Self::Utcnow(err) => Some(err),
@@ -131,10 +103,8 @@ impl std::error::Error for NowError {
 ///
 /// ```rust
 /// # fn main() -> Result<(), tzdb::now::NowError> {
-/// # #[cfg(feature = "local")] let _: () = {
 /// // Query the time zone of the local system:
 /// let now = tzdb::now::local()?;
-/// # };
 /// # Ok(()) }
 /// ```
 ///
@@ -143,9 +113,7 @@ impl std::error::Error for NowError {
 ///
 /// ```rust
 /// # fn main() -> Result<(), tzdb::now::NowError> {
-/// # #[cfg(feature = "local")] let _: () = {
 /// let now = tzdb::now::local_or(tzdb::time_zone::GMT)?;
-/// # };
 /// # Ok(()) }
 /// ```
 ///
@@ -154,8 +122,6 @@ impl std::error::Error for NowError {
 /// * `local()` / [`local_or()`]
 /// * [`in_named()`] / [`in_named_or()`]
 /// * [`in_tz()`]
-#[cfg(feature = "local")]
-#[cfg_attr(docsrs, doc(cfg(feature = "local")))]
 pub fn local() -> Result<DateTime, NowError> {
     in_named(get_timezone()?)
 }
@@ -175,10 +141,8 @@ pub fn local() -> Result<DateTime, NowError> {
 ///
 /// ```rust
 /// # fn main() -> Result<(), tzdb::now::NowError> {
-/// # #[cfg(feature = "local")] let _: () = {
 /// // Query the time zone of the local system, or use GMT as default:
 /// let now = tzdb::now::local_or(tzdb::time_zone::GMT)?;
-/// # };
 /// # Ok(()) }
 /// ```
 ///
@@ -187,8 +151,6 @@ pub fn local() -> Result<DateTime, NowError> {
 /// * [`local()`] / `local_or()`
 /// * [`in_named()`] / [`in_named_or()`]
 /// * [`in_tz()`]
-#[cfg(feature = "local")]
-#[cfg_attr(docsrs, doc(cfg(feature = "local")))]
 pub fn local_or(default: TimeZoneRef<'_>) -> Result<DateTime, NowError> {
     let tz = get_timezone()
         .ok()
@@ -247,10 +209,8 @@ pub fn in_tz(time_zone_ref: TimeZoneRef<'_>) -> Result<DateTime, NowError> {
 ///
 /// ```rust
 /// # fn main() -> Result<(), tzdb::now::NowError> {
-/// # #[cfg(feature = "by-name")] let _: () = {
 /// // What is the time in Berlin?
 /// let now = tzdb::now::in_named("Europe/Berlin")?;
-/// # };
 /// # Ok(()) }
 /// ```
 ///
@@ -259,9 +219,7 @@ pub fn in_tz(time_zone_ref: TimeZoneRef<'_>) -> Result<DateTime, NowError> {
 ///
 /// ```rust
 /// # fn main() -> Result<(), tzdb::now::NowError> {
-/// # #[cfg(feature = "by-name")] let _: () = {
 /// let now = tzdb::now::in_named_or(tzdb::time_zone::GMT, "Some/City")?;
-/// # };
 /// # Ok(()) }
 /// ```
 ///
@@ -270,8 +228,6 @@ pub fn in_tz(time_zone_ref: TimeZoneRef<'_>) -> Result<DateTime, NowError> {
 /// * [`local()`] / [`local_or()`]
 /// * `in_named()` / [`in_named_or()`]
 /// * [`in_tz()`]
-#[cfg(feature = "by-name")]
-#[cfg_attr(docsrs, doc(cfg(feature = "by-name")))]
 pub fn in_named(tz: impl AsRef<[u8]>) -> Result<DateTime, NowError> {
     in_tz(crate::tz_by_name(tz).ok_or(NowError::UnknownTimezone(opaque::Opaque))?)
 }
@@ -291,10 +247,8 @@ pub fn in_named(tz: impl AsRef<[u8]>) -> Result<DateTime, NowError> {
 ///
 /// ```rust
 /// # fn main() -> Result<(), tzdb::now::NowError> {
-/// # #[cfg(feature = "by-name")] let _: () = {
 /// // What is the time in Some City?
 /// let now = tzdb::now::in_named_or(tzdb::time_zone::GMT, "Some/City")?;
-/// # };
 /// # Ok(()) }
 /// ```
 ///
@@ -303,8 +257,6 @@ pub fn in_named(tz: impl AsRef<[u8]>) -> Result<DateTime, NowError> {
 /// * [`local()`] / [`local_or()`]
 /// * [`in_named()`] / `in_named_or()`
 /// * [`in_tz()`]
-#[cfg(feature = "by-name")]
-#[cfg_attr(docsrs, doc(cfg(feature = "by-name")))]
 pub fn in_named_or(default: TimeZoneRef<'_>, tz: impl AsRef<[u8]>) -> Result<DateTime, NowError> {
     in_tz(crate::tz_by_name(tz).unwrap_or(default))
 }

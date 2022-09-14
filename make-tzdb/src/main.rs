@@ -31,13 +31,13 @@ use subprocess::{Popen, PopenConfig, Redirection};
 use tz::TimeZone;
 
 struct TzName {
-    /// to_pascal("Europe/Belfast")
+    /// "Europe/Belfast"
     canon: String,
     /// "Europe/Guernsey"
     full: String,
-    /// Some(to_pascal("Europe"))
+    /// Some("europe")  // Snake
     major: Option<String>,
-    /// to_pascal("Guernsey")
+    /// "GUERNSEY" // UpperSnake
     minor: String,
 }
 
@@ -202,7 +202,8 @@ pub fn main() -> anyhow::Result<()> {
 
 #![allow(clippy::pedantic)]
 
-#[cfg(feature = "by-name")]
+#[cfg(test)]
+mod test_all_names;
 pub(crate) mod by_name;
 
 use tz::TimeZoneRef;
@@ -223,6 +224,7 @@ pub(crate) use unwrap;
 "#
     )?;
 
+    // generate lookup table
     {
         let mut keywords = String::new();
         writeln!(
@@ -254,6 +256,90 @@ pub(crate) use unwrap;
         gperf.communicate(Some(&keywords))?;
     }
 
+    // generate exhaustive by-name test
+    let mut r = String::new();
+    writeln!(r, "#[test]")?;
+    writeln!(r, "fn test() {{")?;
+    writeln!(
+        r,
+        "    use crate::{{time_zone, tz_by_name, raw_tz_by_name}};"
+    )?;
+    writeln!(r)?;
+    writeln!(
+        r,
+        "    const TIME_ZONES: &[(tz::TimeZoneRef<'static>, &[u8], &[&str])] = &["
+    )?;
+    for entries in entries_by_bytes.values() {
+        for entry in entries {
+            let name = match entry.major {
+                Some(ref major) => format!("{}::{}", major, &entry.minor),
+                None => format!("{}", &entry.minor),
+            };
+            let raw_name = match entry.major {
+                Some(ref major) => format!("{}::RAW_{}", major, &entry.minor),
+                None => format!("RAW_{}", &entry.minor),
+            };
+
+            writeln!(r, "        (")?;
+            writeln!(r, "            time_zone::{name},")?;
+            writeln!(r, "            time_zone::{raw_name},")?;
+            writeln!(r, "            &[")?;
+            for f in [
+                |s: &str| s.to_owned(),
+                |s: &str| s.to_ascii_lowercase(),
+                |s: &str| s.to_uppercase(),
+                |s: &str| {
+                    s.chars()
+                        .map(|c| match c {
+                            'A'..='Z' => c.to_ascii_lowercase(),
+                            'a'..='z' => c.to_ascii_uppercase(),
+                            c => c,
+                        })
+                        .collect()
+                },
+                |s: &str| {
+                    s.chars()
+                        .enumerate()
+                        .map(|(i, c)| match i % 2 == 0 {
+                            false => c.to_ascii_lowercase(),
+                            true => c.to_ascii_uppercase(),
+                        })
+                        .collect()
+                },
+                |s: &str| {
+                    s.chars()
+                        .enumerate()
+                        .map(|(i, c)| match i % 2 == 0 {
+                            true => c.to_ascii_lowercase(),
+                            false => c.to_ascii_uppercase(),
+                        })
+                        .collect()
+                },
+            ] {
+                writeln!(r, "                {:?},", f(&entry.full))?;
+            }
+            writeln!(r, "            ],")?;
+            writeln!(r, "        ),")?;
+        }
+    }
+    writeln!(r, "    ];")?;
+    writeln!(r)?;
+    writeln!(
+        r,
+        "    for &(tz, raw, names) in TIME_ZONES {{ for name in names {{",
+    )?;
+    writeln!(
+        r,
+        "        assert_eq!(Some(tz), tz_by_name(name), \"tz_by_name({{:?}})\", name);",
+    )?;
+    writeln!(
+        r,
+        "        assert_eq!(Some(raw), raw_tz_by_name(name), \"raw_tz_by_name({{:?}})\", name);",
+    )?;
+    writeln!(r, "    }} }}")?;
+    writeln!(r, "}}")?;
+    write_string(r, target_dir.join("test_all_names.rs"))?;
+
     // all known time zones as reference to (raw_)tzdata
     writeln!(f, "/// All defined time zones statically accessible")?;
     writeln!(f, "pub mod time_zone {{")?;
@@ -282,8 +368,6 @@ pub(crate) use unwrap;
                 "    /// Raw, unparsed time zone data for {},",
                 entry.full
             )?;
-            writeln!(f, r#"#[cfg(feature = "binary")]"#)?;
-            writeln!(f, r#"#[cfg_attr(docsrs, doc(cfg(feature = "binary")))]"#)?;
             writeln!(
                 f,
                 "pub const RAW_{}: &[u8] = raw_tzdata::{};",
@@ -305,7 +389,6 @@ pub(crate) use unwrap;
         .map(|entry| entry.full.as_str())
         .collect_vec();
     time_zones_list.sort_by_key(|l| l.to_ascii_lowercase());
-    writeln!(f, r#"#[cfg(feature = "list")]"#)?;
     writeln!(
         f,
         "pub(crate) const TIME_ZONES_LIST: [&str; {}] = include!(\"time_zones_list.inc.rs\");",
@@ -336,7 +419,6 @@ pub(crate) use unwrap;
     writeln!(f)?;
 
     // raw time zone data by canonical name
-    writeln!(f, r#"#[cfg(feature = "binary")]"#)?;
     writeln!(f, "mod raw_tzdata;")?;
     writeln!(f)?;
     let mut r = String::new();

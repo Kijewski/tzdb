@@ -139,7 +139,6 @@ def convert(stdin, stdout):
     print(file=stdout)
     print('use tz::TimeZoneRef;', file=stdout)
     print(file=stdout)
-    print('#[cfg(feature = "binary")]', file=stdout)
     print('use super::raw_tzdata;', file=stdout)
     print('use super::tzdata;', file=stdout)
     print(file=stdout)
@@ -169,20 +168,26 @@ def convert(stdin, stdout):
     print('];', file=stdout)
     print(file=stdout)
 
-    print('struct Item(', file=stdout)
-    print('    TimeZoneRef<\'static>,', file=stdout)
-    print('    #[cfg(feature = "binary")] &\'static [u8],', file=stdout)
-    print(');', file=stdout)
+    print('struct Item {', file=stdout)
+    print('    name: &\'static [u8],', file=stdout)
+    print('    tz: TimeZoneRef<\'static>,', file=stdout)
+    print('    binary: &\'static [u8],', file=stdout)
+    print('}', file=stdout)
 
-    print(f'const ITEMS: [(&[u8], Item); {entry_count}] = [', file=stdout)
+    print(f'const ITEMS: [Item; {entry_count}] = [', file=stdout)
     for entry in table:
         match entry:
             case (name, canon):
-                print(f'    (b"{name}", Item(tzdata::{canon}, #[cfg(feature = "binary")] raw_tzdata::{canon})),', file=stdout)
+                print('    Item {', file=stdout)
+                print(f'        name: b"{name}",', file=stdout)
+                print(f'        tz: tzdata::{canon},', file=stdout)
+                print(f'        binary: raw_tzdata::{canon},', file=stdout)
+                print('    },', file=stdout)
     print('];', file=stdout)
     print(file=stdout)
 
-    print(f'const ASSO_VALUES: [u16; 257] = [', file=stdout)
+    asso_values.pop()
+    print(f'const ASSO_VALUES: [u16; 256] = [', file=stdout)
     for asso_value in asso_values:
         print(f'    {asso_value},', file=stdout)
     print('];', file=stdout)
@@ -232,8 +237,8 @@ def convert(stdin, stdout):
     print('    }', file=stdout)
     print('    let key = WORDLIST[key]?;', file=stdout)
     print('    let key: u16 = unsafe { transmute(key) };', file=stdout)
-    print('    let (key, ref item) = ITEMS[key as usize];', file=stdout)
-    print('    if !key.eq_ignore_ascii_case(s) {', file=stdout)
+    print('    let item = &ITEMS[key as usize];', file=stdout)
+    print('    if !item.name.eq_ignore_ascii_case(s) {', file=stdout)
     print('        return None;', file=stdout)
     print('    }', file=stdout)
     print(file=stdout)
@@ -241,14 +246,15 @@ def convert(stdin, stdout):
     print('}', file=stdout)
     print(file=stdout)
 
+    print('#[inline]')
     print('pub(crate) fn find_tz(s: &[u8]) -> Option<TimeZoneRef<\'static>> {', file=stdout)
-    print('    Some(find_item(s)?.0)', file=stdout)
+    print('    Some(find_item(s)?.tz)', file=stdout)
     print('}', file=stdout)
     print(file=stdout)
 
-    print('#[cfg(feature = "binary")]', file=stdout)
+    print('#[inline]')
     print('pub(crate) fn find_raw(s: &[u8]) -> Option<&\'static [u8]> {', file=stdout)
-    print('    Some(find_item(s)?.1)', file=stdout)
+    print('    Some(find_item(s)?.binary)', file=stdout)
     print('}', file=stdout)
 
 
