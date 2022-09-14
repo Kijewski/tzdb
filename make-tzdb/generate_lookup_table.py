@@ -168,21 +168,27 @@ def convert(stdin, stdout):
     print('];', file=stdout)
     print(file=stdout)
 
-    print('struct Item {', file=stdout)
-    print('    name: &\'static [u8],', file=stdout)
-    print('    tz: TimeZoneRef<\'static>,', file=stdout)
-    print('    binary: &\'static [u8],', file=stdout)
-    print('}', file=stdout)
-
-    print(f'const ITEMS: [Item; {entry_count}] = [', file=stdout)
+    print(f'const NAMES: [&[u8]; {entry_count}] = [', file=stdout)
     for entry in table:
         match entry:
             case (name, canon):
-                print('    Item {', file=stdout)
-                print(f'        name: b"{name}",', file=stdout)
-                print(f'        tz: tzdata::{canon},', file=stdout)
-                print(f'        binary: raw_tzdata::{canon},', file=stdout)
-                print('    },', file=stdout)
+                print(f'    b"{name}",', file=stdout)
+    print('];', file=stdout)
+    print(file=stdout)
+
+    print(f'const TIME_ZONES: [&TimeZoneRef<\'static>; {entry_count}] = [', file=stdout)
+    for entry in table:
+        match entry:
+            case (name, canon):
+                print(f'    &tzdata::{canon},', file=stdout)
+    print('];', file=stdout)
+    print(file=stdout)
+
+    print(f'const RAW_TIME_ZONES: [&[u8]; {entry_count}] = [', file=stdout)
+    for entry in table:
+        match entry:
+            case (name, canon):
+                print(f'    raw_tzdata::{canon},', file=stdout)
     print('];', file=stdout)
     print(file=stdout)
 
@@ -193,7 +199,7 @@ def convert(stdin, stdout):
     print('];', file=stdout)
     print(file=stdout)
 
-    print('fn find_item(s: &[u8]) -> Option<&\'static Item> {', file=stdout)
+    print('fn find_key(s: &[u8]) -> Option<Index> {', file=stdout)
     print('    let len = s.len();', file=stdout)
     print(f'    if !matches!(len, {min_word_length}..={max_word_length}) {{', file=stdout)
     print('        return None;', file=stdout)
@@ -236,25 +242,29 @@ def convert(stdin, stdout):
     print('        return None;', file=stdout)
     print('    }', file=stdout)
     print('    let key = WORDLIST[key]?;', file=stdout)
-    print('    let key: u16 = unsafe { transmute(key) };', file=stdout)
-    print('    let item = &ITEMS[key as usize];', file=stdout)
-    print('    if !item.name.eq_ignore_ascii_case(s) {', file=stdout)
+    print('    let index: u16 = unsafe { transmute(key) };', file=stdout)
+    print('    let name = NAMES[index as usize];', file=stdout)
+    print('    if !name.eq_ignore_ascii_case(s) {', file=stdout)
     print('        return None;', file=stdout)
     print('    }', file=stdout)
     print(file=stdout)
-    print('    Some(item)', file=stdout)
+    print('    Some(key)', file=stdout)
     print('}', file=stdout)
     print(file=stdout)
 
     print('#[inline]')
     print('pub(crate) fn find_tz(s: &[u8]) -> Option<TimeZoneRef<\'static>> {', file=stdout)
-    print('    Some(find_item(s)?.tz)', file=stdout)
+    print('    let key = find_key(s)?;', file=stdout)
+    print('    let index: u16 = unsafe { transmute(key) };', file=stdout)
+    print('    Some(*TIME_ZONES[index as usize])', file=stdout)
     print('}', file=stdout)
     print(file=stdout)
 
     print('#[inline]')
     print('pub(crate) fn find_raw(s: &[u8]) -> Option<&\'static [u8]> {', file=stdout)
-    print('    Some(find_item(s)?.binary)', file=stdout)
+    print('    let key = find_key(s)?;', file=stdout)
+    print('    let index: u16 = unsafe { transmute(key) };', file=stdout)
+    print('    Some(RAW_TIME_ZONES[index as usize])', file=stdout)
     print('}', file=stdout)
 
 
