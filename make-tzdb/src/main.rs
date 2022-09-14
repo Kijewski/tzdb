@@ -300,18 +300,24 @@ pub(crate) use unwrap;
                 |s: &str| {
                     s.chars()
                         .enumerate()
-                        .map(|(i, c)| match i % 2 == 0 {
-                            false => c.to_ascii_lowercase(),
-                            true => c.to_ascii_uppercase(),
+                        .map(|(i, c)| {
+                            if i % 2 == 0 {
+                                c.to_ascii_uppercase()
+                            } else {
+                                c.to_ascii_lowercase()
+                            }
                         })
                         .collect()
                 },
                 |s: &str| {
                     s.chars()
                         .enumerate()
-                        .map(|(i, c)| match i % 2 == 0 {
-                            true => c.to_ascii_lowercase(),
-                            false => c.to_ascii_uppercase(),
+                        .map(|(i, c)| {
+                            if i % 2 == 1 {
+                                c.to_ascii_uppercase()
+                            } else {
+                                c.to_ascii_lowercase()
+                            }
                         })
                         .collect()
                 },
