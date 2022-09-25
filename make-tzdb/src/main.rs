@@ -19,7 +19,7 @@ mod parse;
 use std::cmp::Ordering;
 use std::env::{args, var_os};
 use std::fmt::Write as _;
-use std::fs::{create_dir_all, read_dir, OpenOptions};
+use std::fs::{create_dir_all, read_dir, read_to_string, OpenOptions};
 use std::io::Write as _;
 use std::path::PathBuf;
 
@@ -85,6 +85,7 @@ impl TzName {
 pub fn main() -> anyhow::Result<()> {
     let mut args = args().into_iter().fuse();
     let _ = args.next(); // exe path
+
     let target_dir = PathBuf::from(args.next().unwrap_or_else(|| "tzdb/generated".to_owned()));
     create_dir_all(&target_dir)?;
 
@@ -103,6 +104,16 @@ pub fn main() -> anyhow::Result<()> {
     if !base_path.ends_with('/') {
         base_path.push('/');
     }
+
+    let hash_file = args.next().unwrap_or_else(|| "tzdb.tar.lz.sha".to_owned());
+    let hash_file = read_to_string(&hash_file)?;
+    let (hash, version) = hash_file
+        .trim()
+        .split_once("  ")
+        .ok_or_else(|| anyhow!("Hash file {hash_file:?} malformed."))?;
+    let version = version.rsplit_once('/').unwrap_or(("", version)).1;
+    let version = version.split_once('.').unwrap_or((version, "")).0;
+    let version = version.rsplit_once('-').unwrap_or(("", version)).1;
 
     let mut entries_by_bytes = IndexMap::<Vec<u8>, Vec<TzName>>::new();
 
@@ -221,6 +232,9 @@ macro_rules! unwrap {{
     }}
 }}
 pub(crate) use unwrap;
+
+pub(crate) const VERSION: &str = {version:?};
+pub(crate) const VERSION_HASH: &str = {hash:?};
 "#
     )?;
 
