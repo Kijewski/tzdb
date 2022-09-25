@@ -13,7 +13,7 @@ rust-version = "1.55"
 
 [dependencies]
 tz-rs = { version = "^0.6.14", default-features = false, features = ["const"] }
-iana-time-zone = { version = "^0.1.48", default-features = false }
+iana-time-zone = { version = "^0.1.50", default-features = false }
 utcnow = { version = "^0.2.1", default-features = false }
 
 [dev-dependencies]
