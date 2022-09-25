@@ -103,10 +103,10 @@ pub mod changelog {
 }
 
 /// The version of the source Time Zone Database
-pub const VERSION: &str = "2022c";
+pub const VERSION: &str = generated::VERSION;
 
 /// The SHA512 hash of the source Time Zone Database (using the "Complete Distribution")
-pub const VERSION_HASH: &str = "e51a9044da116a52906bc0fc22a3dde0e1a6d4e486f9e610a63aa6634ccc1ebd0bc2d47d2faa84bde2b78cc890fe3fb08f6c1ac4e1e0c147d45de5c21d26b26a";
+pub const VERSION_HASH: &str = generated::VERSION_HASH;
 
 /// Find a time zone by name, e.g. `"Europe/Berlin"` (case-insensitive)
 ///
