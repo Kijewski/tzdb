@@ -1,5 +1,17 @@
 ## Changes between the versions
 
+### 0.2.10
+
+* Update to [Time Zone Database 2022d](https://mm.icann.org/pipermail/tz-announce/2022-September/000073.html)
+
+### 0.2.9
+
+* Update to [Time Zone Database 2022c](https://mm.icann.org/pipermail/tz-announce/2022-August/000072.html)
+
+### 0.2.8
+
+* Update to [Time Zone Database 2022b](https://mm.icann.org/pipermail/tz-announce/2022-August/000071.html)
+
 ### 0.2.7
 
 * Fix error if build and target platform have different pointer widths

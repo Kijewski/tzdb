@@ -1,6 +1,6 @@
 .DELETE_ON_ERROR:
 
-TZDB_VERSION := tzdb-2022c
+TZDB_VERSION := tzdb-2022d
 
 tzdb/src/generated.rs: tmp/${TZDB_VERSION}/usr/share/zoneinfo/
 	cargo r --bin make-tzdb -- $@ $<
