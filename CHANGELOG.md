@@ -1,8 +1,13 @@
 ## Changes between the versions
 
+### 0.5.0-pre.2 (2022-09-25)
+
+* Update to Time Zone Database release 2022d
+* Update to iana-time-zone 0.1.50
+
 ### 0.5.0-pre.1 (2022-09-14)
 
-*  Simplify a lot by removing feature gates [[#123](https://github.com/Kijewski/tzdb/pull/123)]
+* Simplify a lot by removing feature gates [[#123](https://github.com/Kijewski/tzdb/pull/123)]
 
 ### 0.4.5 (2022-08-31)
 

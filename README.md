@@ -8,7 +8,7 @@
 Static time zone information for [tz-rs](https://crates.io/crates/tz-rs).
 
 This crate provides all time zones found in the [Time Zone Database](https://www.iana.org/time-zones),
-currently in the version 2022c (released 2022-08-16).
+currently in the version 2022d (released 2022-09-23).
 
 See the documentation for a full list the the contained time zones:
 <https://docs.rs/tzdb/latest/tzdb/time_zone/index.html>
@@ -43,8 +43,3 @@ let current_time = tzdb::now::in_named_or(tzdb::time_zone::GMT, "Some/City")?;
 * `alloc` <sup>(enabled by default, enabled by `std`)</sup> – enable features that need the standard library `alloc`
 
 * `fallback` <sup>(enabled by default)</sup> — compile for unknown target platforms, too
-
-## Git cloning
-
-The `main` branch gets squashed regularily to keep the size of the repository at a maintainable size.
-To get the history until then, please refer to the id in the initial commit.
