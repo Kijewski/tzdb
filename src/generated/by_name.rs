@@ -4893,9 +4893,9 @@ const ITEMS: [(&[u8], Item); 571] = [
     (
         b"Europe/Zaporozhye",
         Item(
-            tzdata::EUROPE_ZAPOROZHYE,
+            tzdata::EUROPE_KIEV,
             #[cfg(feature = "binary")]
-            raw_tzdata::EUROPE_ZAPOROZHYE,
+            raw_tzdata::EUROPE_KIEV,
         ),
     ),
     (
@@ -7069,9 +7069,9 @@ const ITEMS: [(&[u8], Item); 571] = [
     (
         b"Europe/Uzhgorod",
         Item(
-            tzdata::EUROPE_UZHGOROD,
+            tzdata::EUROPE_KIEV,
             #[cfg(feature = "binary")]
-            raw_tzdata::EUROPE_UZHGOROD,
+            raw_tzdata::EUROPE_KIEV,
         ),
     ),
     (

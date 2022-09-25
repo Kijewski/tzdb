@@ -1,5 +1,9 @@
 ## Changes between the versions
 
+### 0.4.6 (2022-09-25)
+
+* Update to [Time Zone Database 2022d](https://mm.icann.org/pipermail/tz-announce/2022-September/000073.html)
+
 ### 0.4.5 (2022-08-31)
 
 * Remove [phf](https://crates.io/crates/phf) dependency
