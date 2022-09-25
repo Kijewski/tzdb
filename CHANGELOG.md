@@ -1,5 +1,17 @@
 ## Changes between the versions
 
+### 0.3.7 (2022-09-25)
+
+* Update to 2022d
+
+### 0.3.6 (2022-08-16)
+
+* Update to 2022b
+
+### 0.3.5 (2022-08-11)
+
+* Update to 2022b
+
 ### 0.3.4 (2022-08-02)
 
 * Fix endianess issues for PowerPCs

@@ -3402,7 +3402,7 @@ pub mod time_zone {
         pub const ULYANOVSK: TimeZoneRef<'static> = tzdata::EUROPE_ULYANOVSK;
 
         /// Time zone data for Europe/Uzhgorod,
-        pub const UZHGOROD: TimeZoneRef<'static> = tzdata::EUROPE_UZHGOROD;
+        pub const UZHGOROD: TimeZoneRef<'static> = tzdata::EUROPE_KIEV;
 
         /// Time zone data for Europe/Vaduz,
         pub const VADUZ: TimeZoneRef<'static> = tzdata::EUROPE_VADUZ;
@@ -3426,7 +3426,7 @@ pub mod time_zone {
         pub const ZAGREB: TimeZoneRef<'static> = tzdata::EUROPE_ZAGREB;
 
         /// Time zone data for Europe/Zaporozhye,
-        pub const ZAPOROZHYE: TimeZoneRef<'static> = tzdata::EUROPE_ZAPOROZHYE;
+        pub const ZAPOROZHYE: TimeZoneRef<'static> = tzdata::EUROPE_KIEV;
 
         /// Time zone data for Europe/Zurich,
         pub const ZURICH: TimeZoneRef<'static> = tzdata::EUROPE_BUSINGEN;
@@ -3704,7 +3704,7 @@ pub mod time_zone {
         /// Raw, unparsed time zone data for Europe/Uzhgorod,
         #[cfg(feature = "binary")]
         #[cfg_attr(docsrs, doc(cfg(feature = "binary")))]
-        pub const RAW_UZHGOROD: &[u8] = raw_tzdata::EUROPE_UZHGOROD;
+        pub const RAW_UZHGOROD: &[u8] = raw_tzdata::EUROPE_KIEV;
 
         /// Raw, unparsed time zone data for Europe/Vaduz,
         #[cfg(feature = "binary")]
@@ -3744,7 +3744,7 @@ pub mod time_zone {
         /// Raw, unparsed time zone data for Europe/Zaporozhye,
         #[cfg(feature = "binary")]
         #[cfg_attr(docsrs, doc(cfg(feature = "binary")))]
-        pub const RAW_ZAPOROZHYE: &[u8] = raw_tzdata::EUROPE_ZAPOROZHYE;
+        pub const RAW_ZAPOROZHYE: &[u8] = raw_tzdata::EUROPE_KIEV;
 
         /// Raw, unparsed time zone data for Europe/Zurich,
         #[cfg(feature = "binary")]
@@ -5711,25 +5711,15 @@ mod tzdata {
                     crate::generated::unwrap!(LocalTimeType::new(-3180, false, Some(b"FMT"))),
                     crate::generated::unwrap!(LocalTimeType::new(-2400, true, Some(b"-0040"))),
                     crate::generated::unwrap!(LocalTimeType::new(-3600, false, Some(b"-01"))),
-                    crate::generated::unwrap!(LocalTimeType::new(1200, true, Some(b"+01"))),
+                    crate::generated::unwrap!(LocalTimeType::new(0, false, Some(b"GMT"))),
                 ];
                 V
             },
             &[],
             &Some({
-                const V: TransitionRule =
-                    TransitionRule::Alternate(crate::generated::unwrap!(AlternateTime::new(
-                        crate::generated::unwrap!(LocalTimeType::new(2400, false, Some(b"XXX"))),
-                        crate::generated::unwrap!(LocalTimeType::new(1200, true, Some(b"+01"))),
-                        RuleDay::Julian0WithLeap(crate::generated::unwrap!(Julian0WithLeap::new(
-                            0
-                        ))),
-                        0,
-                        RuleDay::Julian1WithoutLeap(crate::generated::unwrap!(
-                            Julian1WithoutLeap::new(365)
-                        )),
-                        85200
-                    )));
+                const V: TransitionRule = TransitionRule::Fixed(crate::generated::unwrap!(
+                    LocalTimeType::new(0, false, Some(b"GMT"))
+                ));
                 V
             })
         ));
@@ -18638,6 +18628,8 @@ mod tzdata {
             Transition::new(1603490400, 2),
             Transition::new(1616796000, 1),
             Transition::new(1635458400, 2),
+            Transition::new(1648332000, 1),
+            Transition::new(1666998000, 2),
         ],
         &{
             const V: [LocalTimeType; 5] = [
@@ -18656,9 +18648,9 @@ mod tzdata {
                     crate::generated::unwrap!(LocalTimeType::new(7200, false, Some(b"EET"))),
                     crate::generated::unwrap!(LocalTimeType::new(10800, true, Some(b"EEST"))),
                     RuleDay::MonthWeekDay(crate::generated::unwrap!(MonthWeekDay::new(3, 4, 4))),
-                    259200,
+                    180000,
                     RuleDay::MonthWeekDay(crate::generated::unwrap!(MonthWeekDay::new(10, 4, 4))),
-                    90000
+                    180000
                 )));
             V
         })
@@ -18788,6 +18780,8 @@ mod tzdata {
             Transition::new(1603490400, 2),
             Transition::new(1616796000, 1),
             Transition::new(1635458400, 2),
+            Transition::new(1648332000, 1),
+            Transition::new(1666998000, 2),
         ],
         &{
             const V: [LocalTimeType; 5] = [
@@ -18806,9 +18800,9 @@ mod tzdata {
                     crate::generated::unwrap!(LocalTimeType::new(7200, false, Some(b"EET"))),
                     crate::generated::unwrap!(LocalTimeType::new(10800, true, Some(b"EEST"))),
                     RuleDay::MonthWeekDay(crate::generated::unwrap!(MonthWeekDay::new(3, 4, 4))),
-                    259200,
+                    180000,
                     RuleDay::MonthWeekDay(crate::generated::unwrap!(MonthWeekDay::new(10, 4, 4))),
-                    90000
+                    180000
                 )));
             V
         })
@@ -28764,79 +28758,6 @@ mod tzdata {
             })
         ));
 
-    pub(crate) const EUROPE_UZHGOROD: TimeZoneRef<'static> =
-        crate::generated::unwrap!(TimeZoneRef::<'static>::new(
-            &[
-                Transition::new(-2500939752, 1),
-                Transition::new(-938905200, 2),
-                Transition::new(-857257200, 1),
-                Transition::new(-844556400, 2),
-                Transition::new(-828226800, 1),
-                Transition::new(-812502000, 2),
-                Transition::new(-794714400, 1),
-                Transition::new(-773456400, 4),
-                Transition::new(354920400, 3),
-                Transition::new(370728000, 4),
-                Transition::new(386456400, 3),
-                Transition::new(402264000, 4),
-                Transition::new(417992400, 3),
-                Transition::new(433800000, 4),
-                Transition::new(449614800, 3),
-                Transition::new(465346800, 4),
-                Transition::new(481071600, 3),
-                Transition::new(496796400, 4),
-                Transition::new(512521200, 3),
-                Transition::new(528246000, 4),
-                Transition::new(543970800, 3),
-                Transition::new(559695600, 4),
-                Transition::new(575420400, 3),
-                Transition::new(591145200, 4),
-                Transition::new(606870000, 3),
-                Transition::new(622594800, 4),
-                Transition::new(646786800, 1),
-                Transition::new(670384800, 5),
-                Transition::new(701827200, 6),
-                Transition::new(717552000, 5),
-                Transition::new(733276800, 6),
-                Transition::new(749001600, 5),
-                Transition::new(764726400, 6),
-                Transition::new(780451200, 5),
-                Transition::new(796176000, 6),
-                Transition::new(811900800, 5),
-                Transition::new(828230400, 6),
-                Transition::new(846378000, 5),
-            ],
-            &{
-                const V: [LocalTimeType; 7] = [
-                    crate::generated::unwrap!(LocalTimeType::new(5352, false, Some(b"LMT"))),
-                    crate::generated::unwrap!(LocalTimeType::new(3600, false, Some(b"CET"))),
-                    crate::generated::unwrap!(LocalTimeType::new(7200, true, Some(b"CEST"))),
-                    crate::generated::unwrap!(LocalTimeType::new(14400, true, Some(b"MSD"))),
-                    crate::generated::unwrap!(LocalTimeType::new(10800, false, Some(b"MSK"))),
-                    crate::generated::unwrap!(LocalTimeType::new(7200, false, Some(b"EET"))),
-                    crate::generated::unwrap!(LocalTimeType::new(10800, true, Some(b"EEST"))),
-                ];
-                V
-            },
-            &[],
-            &Some({
-                const V: TransitionRule =
-                    TransitionRule::Alternate(crate::generated::unwrap!(AlternateTime::new(
-                        crate::generated::unwrap!(LocalTimeType::new(7200, false, Some(b"EET"))),
-                        crate::generated::unwrap!(LocalTimeType::new(10800, true, Some(b"EEST"))),
-                        RuleDay::MonthWeekDay(crate::generated::unwrap!(MonthWeekDay::new(
-                            3, 5, 0
-                        ))),
-                        10800,
-                        RuleDay::MonthWeekDay(crate::generated::unwrap!(MonthWeekDay::new(
-                            10, 5, 0
-                        ))),
-                        14400
-                    )));
-                V
-            })
-        ));
-
     pub(crate) const EUROPE_VADUZ: TimeZoneRef<'static> = crate::generated::unwrap!(TimeZoneRef::<
         'static,
     >::new(
@@ -29226,82 +29147,6 @@ mod tzdata {
                             10, 5, 0
                         ))),
                         10800
-                    )));
-                V
-            })
-        ));
-
-    pub(crate) const EUROPE_ZAPOROZHYE: TimeZoneRef<'static> =
-        crate::generated::unwrap!(TimeZoneRef::<'static>::new(
-            &[
-                Transition::new(-2840149240, 1),
-                Transition::new(-1441160400, 2),
-                Transition::new(-1247536800, 3),
-                Transition::new(-894769200, 5),
-                Transition::new(-857257200, 4),
-                Transition::new(-844556400, 5),
-                Transition::new(-828226800, 4),
-                Transition::new(-826419600, 3),
-                Transition::new(354920400, 6),
-                Transition::new(370728000, 3),
-                Transition::new(386456400, 6),
-                Transition::new(402264000, 3),
-                Transition::new(417992400, 6),
-                Transition::new(433800000, 3),
-                Transition::new(449614800, 6),
-                Transition::new(465346800, 3),
-                Transition::new(481071600, 6),
-                Transition::new(496796400, 3),
-                Transition::new(512521200, 6),
-                Transition::new(528246000, 3),
-                Transition::new(543970800, 6),
-                Transition::new(559695600, 3),
-                Transition::new(575420400, 6),
-                Transition::new(591145200, 3),
-                Transition::new(606870000, 6),
-                Transition::new(622594800, 3),
-                Transition::new(638319600, 6),
-                Transition::new(654649200, 3),
-                Transition::new(670374000, 7),
-                Transition::new(686091600, 2),
-                Transition::new(701827200, 7),
-                Transition::new(717552000, 2),
-                Transition::new(733276800, 7),
-                Transition::new(749001600, 2),
-                Transition::new(764726400, 7),
-                Transition::new(780451200, 2),
-                Transition::new(796176000, 7),
-                Transition::new(811900800, 2),
-                Transition::new(828230400, 7),
-                Transition::new(846378000, 2),
-            ],
-            &{
-                const V: [LocalTimeType; 8] = [
-                    crate::generated::unwrap!(LocalTimeType::new(8440, false, Some(b"LMT"))),
-                    crate::generated::unwrap!(LocalTimeType::new(8400, false, Some(b"+0220"))),
-                    crate::generated::unwrap!(LocalTimeType::new(7200, false, Some(b"EET"))),
-                    crate::generated::unwrap!(LocalTimeType::new(10800, false, Some(b"MSK"))),
-                    crate::generated::unwrap!(LocalTimeType::new(3600, false, Some(b"CET"))),
-                    crate::generated::unwrap!(LocalTimeType::new(7200, true, Some(b"CEST"))),
-                    crate::generated::unwrap!(LocalTimeType::new(14400, true, Some(b"MSD"))),
-                    crate::generated::unwrap!(LocalTimeType::new(10800, true, Some(b"EEST"))),
-                ];
-                V
-            },
-            &[],
-            &Some({
-                const V: TransitionRule =
-                    TransitionRule::Alternate(crate::generated::unwrap!(AlternateTime::new(
-                        crate::generated::unwrap!(LocalTimeType::new(7200, false, Some(b"EET"))),
-                        crate::generated::unwrap!(LocalTimeType::new(10800, true, Some(b"EEST"))),
-                        RuleDay::MonthWeekDay(crate::generated::unwrap!(MonthWeekDay::new(
-                            3, 5, 0
-                        ))),
-                        10800,
-                        RuleDay::MonthWeekDay(crate::generated::unwrap!(MonthWeekDay::new(
-                            10, 5, 0
-                        ))),
-                        14400
                     )));
                 V
             })
@@ -31462,20 +31307,21 @@ mod tzdata {
             &[
                 Transition::new(-2177410232, 1),
                 Transition::new(-428504400, 2),
-                Transition::new(-420645600, 1),
+                Transition::new(-420645600, 3),
             ],
             &{
-                const V: [LocalTimeType; 3] = [
+                const V: [LocalTimeType; 4] = [
                     crate::generated::unwrap!(LocalTimeType::new(-42568, false, Some(b"LMT"))),
                     crate::generated::unwrap!(LocalTimeType::new(-39600, false, Some(b"-11"))),
                     crate::generated::unwrap!(LocalTimeType::new(-36000, true, Some(b"-10"))),
+                    crate::generated::unwrap!(LocalTimeType::new(-39600, false, Some(b"SST"))),
                 ];
                 V
             },
             &[],
             &Some({
                 const V: TransitionRule = TransitionRule::Fixed(crate::generated::unwrap!(
-                    LocalTimeType::new(-39600, false, Some(b"-11"))
+                    LocalTimeType::new(-39600, false, Some(b"SST"))
                 ));
                 V
             })
@@ -31776,15 +31622,32 @@ mod tzdata {
             &[
                 Transition::new(-3944626980, 1),
                 Transition::new(-2177487780, 2),
-                Transition::new(-7981200, 3),
-                Transition::new(977493600, 4),
+                Transition::new(-804157200, 4),
+                Transition::new(-331891200, 3),
+                Transition::new(-281610000, 4),
+                Transition::new(-73728000, 3),
+                Transition::new(-29415540, 4),
+                Transition::new(-16704000, 3),
+                Transition::new(-10659600, 4),
+                Transition::new(9907200, 3),
+                Transition::new(21394800, 4),
+                Transition::new(41356800, 3),
+                Transition::new(52844400, 4),
+                Transition::new(124819200, 3),
+                Transition::new(130863600, 4),
+                Transition::new(201888000, 3),
+                Transition::new(209487660, 4),
+                Transition::new(230659200, 3),
+                Transition::new(241542000, 4),
+                Transition::new(977493600, 5),
             ],
             &{
-                const V: [LocalTimeType; 5] = [
+                const V: [LocalTimeType; 6] = [
                     crate::generated::unwrap!(LocalTimeType::new(-51420, false, Some(b"LMT"))),
                     crate::generated::unwrap!(LocalTimeType::new(34980, false, Some(b"LMT"))),
                     crate::generated::unwrap!(LocalTimeType::new(32400, false, Some(b"+09"))),
-                    crate::generated::unwrap!(LocalTimeType::new(36000, false, Some(b"+10"))),
+                    crate::generated::unwrap!(LocalTimeType::new(39600, true, Some(b"GDT"))),
+                    crate::generated::unwrap!(LocalTimeType::new(36000, false, Some(b"GST"))),
                     crate::generated::unwrap!(LocalTimeType::new(36000, false, Some(b"ChST"))),
                 ];
                 V
