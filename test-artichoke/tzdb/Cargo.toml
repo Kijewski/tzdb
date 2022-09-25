@@ -1,6 +1,6 @@
 [package]
 name = "tzdb"
-version = "0.4.6"
+version = "0.4.999"
 edition = "2018"
 
 [dependencies]
