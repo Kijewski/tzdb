@@ -272,6 +272,7 @@ pub fn in_tz(time_zone_ref: TimeZoneRef<'_>) -> Result<DateTime, NowError> {
 /// * [`in_tz()`]
 #[cfg(feature = "by-name")]
 #[cfg_attr(docsrs, doc(cfg(feature = "by-name")))]
+#[allow(clippy::or_fun_call)]
 pub fn in_named(tz: impl AsRef<[u8]>) -> Result<DateTime, NowError> {
     in_tz(crate::tz_by_name(tz).ok_or(NowError::UnknownTimezone(opaque::Opaque))?)
 }
