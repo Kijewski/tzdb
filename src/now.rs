@@ -1,25 +1,14 @@
+#![cfg_attr(docsrs, doc(cfg(feature = "std")))]
+
 //! Get the current time in some time zone
 
-use core::fmt;
+use std::convert::TryFrom;
+use std::fmt;
+use std::time::{SystemTime, SystemTimeError};
 
 use iana_time_zone::{get_timezone, GetTimezoneError};
 use tz::error::ProjectDateTimeError;
 use tz::{DateTime, TimeZoneRef};
-
-#[allow(unreachable_pub)]
-mod opaque {
-    use core::fmt;
-
-    #[derive(Copy, Clone)]
-    pub struct Opaque;
-
-    impl fmt::Debug for Opaque {
-        #[inline]
-        fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-            f.write_str("_")
-        }
-    }
-}
 
 /// An error as returned by [`local()`] and similart functions
 ///
@@ -34,52 +23,29 @@ pub enum NowError {
     /// Could not get time zone. Only returned by [`local()`].
     TimeZone(GetTimezoneError),
     /// Unknown system time zone. Only returned by [`local()`], and [`in_named()`].
-    UnknownTimezone(#[doc(hidden)] opaque::Opaque),
+    UnknownTimezone,
     /// Could not project timestamp.
     ProjectDateTime(ProjectDateTimeError),
-    /// Could not get current time.
-    Utcnow(utcnow::Error),
-}
-
-impl From<GetTimezoneError> for NowError {
-    #[inline]
-    fn from(err: GetTimezoneError) -> Self {
-        Self::TimeZone(err)
-    }
-}
-
-impl From<ProjectDateTimeError> for NowError {
-    #[inline]
-    fn from(err: ProjectDateTimeError) -> Self {
-        Self::ProjectDateTime(err)
-    }
-}
-
-impl From<utcnow::Error> for NowError {
-    #[inline]
-    fn from(err: utcnow::Error) -> Self {
-        Self::Utcnow(err)
-    }
+    /// Could not get current system time.
+    Utcnow(SystemTimeError),
 }
 
 impl fmt::Display for NowError {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         f.write_str(match self {
             Self::TimeZone(_) => "could not get time zone",
-            Self::UnknownTimezone(_) => "unknown system time zone",
+            Self::UnknownTimezone => "unknown system time zone",
             Self::ProjectDateTime(_) => "could not project timestamp",
-            Self::Utcnow(_) => "could not get current time",
+            Self::Utcnow(_) => "could not get current system time",
         })
     }
 }
 
-#[cfg(feature = "std")]
-#[cfg_attr(docsrs, doc(cfg(feature = "std")))]
 impl std::error::Error for NowError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match self {
             Self::TimeZone(err) => Some(err),
-            Self::UnknownTimezone(_) => None,
+            Self::UnknownTimezone => None,
             Self::ProjectDateTime(err) => Some(err),
             Self::Utcnow(err) => Some(err),
         }
@@ -123,7 +89,7 @@ impl std::error::Error for NowError {
 /// * [`in_named()`] / [`in_named_or()`]
 /// * [`in_tz()`]
 pub fn local() -> Result<DateTime, NowError> {
-    in_named(get_timezone()?)
+    in_named(get_timezone().map_err(NowError::TimeZone)?)
 }
 
 /// Get the current time in the local system time zone with a fallback time zone
@@ -185,12 +151,14 @@ pub fn local_or(default: TimeZoneRef<'_>) -> Result<DateTime, NowError> {
 /// * [`in_named()`] / [`in_named_or()`]
 /// * `in_tz()`
 pub fn in_tz(time_zone_ref: TimeZoneRef<'_>) -> Result<DateTime, NowError> {
-    let now = utcnow::utcnow()?;
-    Ok(DateTime::from_timespec(
-        now.as_secs(),
-        now.subsec_nanos(),
-        time_zone_ref,
-    )?)
+    let now = SystemTime::now()
+        .duration_since(SystemTime::UNIX_EPOCH)
+        .map_err(NowError::Utcnow)?;
+    let secs = i64::try_from(now.as_secs()).map_err(|_| {
+        NowError::ProjectDateTime(ProjectDateTimeError("now is too far in the future"))
+    })?;
+    let nanos = now.subsec_nanos();
+    DateTime::from_timespec(secs, nanos, time_zone_ref).map_err(NowError::ProjectDateTime)
 }
 
 /// Get the current time in a given time zone, by name
@@ -229,7 +197,7 @@ pub fn in_tz(time_zone_ref: TimeZoneRef<'_>) -> Result<DateTime, NowError> {
 /// * `in_named()` / [`in_named_or()`]
 /// * [`in_tz()`]
 pub fn in_named(tz: impl AsRef<[u8]>) -> Result<DateTime, NowError> {
-    in_tz(crate::tz_by_name(tz).ok_or(NowError::UnknownTimezone(opaque::Opaque))?)
+    in_tz(crate::tz_by_name(tz).ok_or(NowError::UnknownTimezone)?)
 }
 
 /// Get the current time in a given time zone, by name, or default to some static time zone

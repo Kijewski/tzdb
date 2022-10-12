@@ -87,6 +87,7 @@ extern crate alloc;
 extern crate std;
 
 mod generated;
+#[cfg(feature = "std")]
 pub mod now;
 #[cfg(test)]
 mod test_by_name;
