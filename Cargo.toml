@@ -12,7 +12,7 @@ readme = "README.md"
 rust-version = "1.55"
 
 [dependencies]
-tz-rs = { version = "^0.6.14", default-features = false, features = ["const"] }
+tz-rs = { version = "^0.6.14", default-features = false, features = ["const", "std"] }
 iana-time-zone = { version = "^0.1.50", default-features = false }
 
 [dev-dependencies]
@@ -26,13 +26,7 @@ structmeta = "=0.1.4"
 once_cell = "=1.14"
 
 [features]
-default = ["std", "fallback"]
-
-# Enable features that need the standard library `std`:
-std = ["alloc", "tz-rs/std"]
-
-# Enable features that need the standard library `alloc`:
-alloc = ["tz-rs/alloc"]
+default = ["fallback"]
 
 # Do not fail to compile for unknown target platforms:
 fallback = ["iana-time-zone/fallback"]

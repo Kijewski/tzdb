@@ -14,7 +14,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#![cfg_attr(not(any(test, feature = "std")), no_std)]
 #![cfg_attr(docsrs, feature(doc_cfg))]
 #![allow(unused_attributes)]
 #![warn(absolute_paths_not_starting_with_crate)]
@@ -74,20 +73,15 @@
 //!
 //! ## Feature flags
 //!
-//! * `std` <sup>*(enabled by default)*</sup> — enable features that need the standard library [`std`]
-//!
-//! * `alloc` <sup>*(enabled by default, enabled by* `std`*)*</sup> — enable features that need the standard library [`alloc`]
-//!
 //! * `fallback` <sup>*(enabled by default)*</sup> — compile for unknown target platforms, too
 //!
 
 #[cfg(docsrs)]
 extern crate alloc;
-#[cfg(docsrs)]
-extern crate std;
 
+#[cfg(docsrs)]
+pub mod changelog;
 mod generated;
-#[cfg(feature = "std")]
 pub mod now;
 #[cfg(test)]
 mod test_by_name;
@@ -97,11 +91,6 @@ mod test_proptest;
 use iana_time_zone::get_timezone;
 
 pub use crate::generated::time_zone;
-
-#[cfg(docsrs)]
-pub mod changelog {
-    #![doc = include_str!("../CHANGELOG.md")]
-}
 
 /// The version of the source Time Zone Database
 pub const VERSION: &str = generated::VERSION;

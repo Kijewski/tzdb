@@ -3,6 +3,7 @@
 ### 0.5.0-pre.3 (2022-10-12)
 
 * Remove `utcnow` integration
+* Simplify by removing `no_std` support
 
 ### 0.5.0-pre.2 (2022-09-25)
 
