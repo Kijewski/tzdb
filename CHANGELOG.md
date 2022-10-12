@@ -1,5 +1,9 @@
 ## Changes between the versions
 
+### 0.3.8 (2022-10-12)
+
+* Update to 2022e
+
 ### 0.3.7 (2022-09-25)
 
 * Update to 2022d

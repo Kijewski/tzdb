@@ -43,7 +43,7 @@
 //! Static time zone information for [tz-rs](https://crates.io/crates/tz-rs).
 //!
 //! This crate provides all time zones found in the [Time Zone Database](https://www.iana.org/time-zones),
-//! currently in the version 2022d (released 2022-09-23).
+//! currently in the version 2022e (released 2022-10-11).
 //!
 //! See the documentation for a full list the the contained time zones:
 //! <https://docs.rs/tzdb/latest/tzdb/time_zone/index.html>
@@ -105,10 +105,10 @@ pub mod changelog {
 }
 
 /// The version of the source Time Zone Database
-pub const VERSION: &str = "2022d";
+pub const VERSION: &str = "2022e";
 
 /// The SHA512 hash of the source Time Zone Database (using the "Complete Distribution")
-pub const VERSION_HASH: &str = "bb1873550d5bb3fb0d1b595f321e2e90e63bba11bbd80a8c3d440903cb7a9ecd1db58644751b0925bc2854c2b17107238b3a2b9d5f8f91188e3b80b0b67f2673";
+pub const VERSION_HASH: &str = "6b316ac2d9dfe615685164accd126ee29c363fafe0d3483ac155644c5693693758e7315aa9f55c0a3e3c027d38f1125462d84a13fd424458b86f6be33f153cc7";
 
 /// Find a time zone by name, e.g. `"Europe/Berlin"` (case-insensitive)
 ///
