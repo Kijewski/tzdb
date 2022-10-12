@@ -1,6 +1,6 @@
 [package]
 name = "tzdb"
-version = "0.4.6"
+version = "0.4.7"
 edition = "2021"
 authors = ["René Kijewski <crates.io@k6i.de>"]
 repository = "https://github.com/Kijewski/tzdb"
