@@ -431,7 +431,7 @@ dependencies = [
 
 [[package]]
 name = "tzdb"
-version = "0.2.9"
+version = "0.2.11"
 dependencies = [
  "byte-slice-cast",
  "iana-time-zone",
