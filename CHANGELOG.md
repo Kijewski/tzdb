@@ -4,6 +4,7 @@
 
 * Remove `utcnow` integration
 * Simplify by removing `no_std` support
+* Update to Time Zone Database release 2022e
 
 ### 0.5.0-pre.2 (2022-09-25)
 
