@@ -1,5 +1,3 @@
-#![cfg_attr(docsrs, doc(cfg(feature = "std")))]
-
 //! Get the current time in some time zone
 
 use std::convert::TryFrom;
