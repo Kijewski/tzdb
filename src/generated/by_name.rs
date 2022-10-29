@@ -3301,9 +3301,9 @@ const ITEMS: [(&[u8], Item); 571] = [
     (
         b"Africa/Nairobi",
         Item(
-            tzdata::AFRICA_NAIROBI,
+            tzdata::AFRICA_ASMERA,
             #[cfg(feature = "binary")]
-            raw_tzdata::AFRICA_NAIROBI,
+            raw_tzdata::AFRICA_ASMERA,
         ),
     ),
     (
@@ -3429,9 +3429,9 @@ const ITEMS: [(&[u8], Item); 571] = [
     (
         b"America/Coral_Harbour",
         Item(
-            tzdata::AMERICA_ATIKOKAN,
+            tzdata::AMERICA_CORAL_HARBOUR,
             #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_ATIKOKAN,
+            raw_tzdata::AMERICA_CORAL_HARBOUR,
         ),
     ),
     (
@@ -3557,9 +3557,9 @@ const ITEMS: [(&[u8], Item); 571] = [
     (
         b"America/Winnipeg",
         Item(
-            tzdata::AMERICA_WINNIPEG,
+            tzdata::AMERICA_RAINY_RIVER,
             #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_WINNIPEG,
+            raw_tzdata::AMERICA_RAINY_RIVER,
         ),
     ),
     (
@@ -3621,9 +3621,9 @@ const ITEMS: [(&[u8], Item); 571] = [
     (
         b"Africa/Asmera",
         Item(
-            tzdata::AFRICA_ASMARA,
+            tzdata::AFRICA_ASMERA,
             #[cfg(feature = "binary")]
-            raw_tzdata::AFRICA_ASMARA,
+            raw_tzdata::AFRICA_ASMERA,
         ),
     ),
     (
@@ -3885,9 +3885,9 @@ const ITEMS: [(&[u8], Item); 571] = [
     (
         b"America/Marigot",
         Item(
-            tzdata::AMERICA_MARIGOT,
+            tzdata::AMERICA_KRALENDIJK,
             #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_MARIGOT,
+            raw_tzdata::AMERICA_KRALENDIJK,
         ),
     ),
     (
@@ -3909,9 +3909,9 @@ const ITEMS: [(&[u8], Item); 571] = [
     (
         b"America/Panama",
         Item(
-            tzdata::AMERICA_PANAMA,
+            tzdata::AMERICA_CORAL_HARBOUR,
             #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_PANAMA,
+            raw_tzdata::AMERICA_CORAL_HARBOUR,
         ),
     ),
     (
@@ -3949,9 +3949,9 @@ const ITEMS: [(&[u8], Item); 571] = [
     (
         b"America/Virgin",
         Item(
-            tzdata::AMERICA_ST_THOMAS,
+            tzdata::AMERICA_KRALENDIJK,
             #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_ST_THOMAS,
+            raw_tzdata::AMERICA_KRALENDIJK,
         ),
     ),
     (
@@ -3965,9 +3965,9 @@ const ITEMS: [(&[u8], Item); 571] = [
     (
         b"America/Port_of_Spain",
         Item(
-            tzdata::AMERICA_MARIGOT,
+            tzdata::AMERICA_PORT_OF_SPAIN,
             #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_MARIGOT,
+            raw_tzdata::AMERICA_PORT_OF_SPAIN,
         ),
     ),
     (
@@ -3997,9 +3997,9 @@ const ITEMS: [(&[u8], Item); 571] = [
     (
         b"America/Nipigon",
         Item(
-            tzdata::AMERICA_NIPIGON,
+            tzdata::AMERICA_MONTREAL,
             #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_NIPIGON,
+            raw_tzdata::AMERICA_MONTREAL,
         ),
     ),
     (
@@ -4021,9 +4021,9 @@ const ITEMS: [(&[u8], Item); 571] = [
     (
         b"America/Puerto_Rico",
         Item(
-            tzdata::AMERICA_PUERTO_RICO,
+            tzdata::AMERICA_KRALENDIJK,
             #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_PUERTO_RICO,
+            raw_tzdata::AMERICA_KRALENDIJK,
         ),
     ),
     (
@@ -4253,9 +4253,9 @@ const ITEMS: [(&[u8], Item); 571] = [
     (
         b"Africa/Abidjan",
         Item(
-            tzdata::AFRICA_ABIDJAN,
+            tzdata::ICELAND,
             #[cfg(feature = "binary")]
-            raw_tzdata::AFRICA_ABIDJAN,
+            raw_tzdata::ICELAND,
         ),
     ),
     (
@@ -5077,17 +5077,17 @@ const ITEMS: [(&[u8], Item); 571] = [
     (
         b"Africa/Timbuktu",
         Item(
-            tzdata::AFRICA_BAMAKO,
+            tzdata::ICELAND,
             #[cfg(feature = "binary")]
-            raw_tzdata::AFRICA_BAMAKO,
+            raw_tzdata::ICELAND,
         ),
     ),
     (
         b"America/Thunder_Bay",
         Item(
-            tzdata::AMERICA_THUNDER_BAY,
+            tzdata::AMERICA_MONTREAL,
             #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_THUNDER_BAY,
+            raw_tzdata::AMERICA_MONTREAL,
         ),
     ),
     (
@@ -5261,9 +5261,9 @@ const ITEMS: [(&[u8], Item); 571] = [
     (
         b"Canada/Central",
         Item(
-            tzdata::AMERICA_WINNIPEG,
+            tzdata::AMERICA_RAINY_RIVER,
             #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_WINNIPEG,
+            raw_tzdata::AMERICA_RAINY_RIVER,
         ),
     ),
     (
@@ -5381,9 +5381,9 @@ const ITEMS: [(&[u8], Item); 571] = [
     (
         b"America/Lower_Princes",
         Item(
-            tzdata::AMERICA_CURACAO,
+            tzdata::AMERICA_KRALENDIJK,
             #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_CURACAO,
+            raw_tzdata::AMERICA_KRALENDIJK,
         ),
     ),
     (
@@ -5413,9 +5413,9 @@ const ITEMS: [(&[u8], Item); 571] = [
     (
         b"Pacific/Ponape",
         Item(
-            tzdata::PACIFIC_POHNPEI,
+            tzdata::PACIFIC_GUADALCANAL,
             #[cfg(feature = "binary")]
-            raw_tzdata::PACIFIC_POHNPEI,
+            raw_tzdata::PACIFIC_GUADALCANAL,
         ),
     ),
     (
@@ -6021,9 +6021,9 @@ const ITEMS: [(&[u8], Item); 571] = [
     (
         b"Europe/Oslo",
         Item(
-            tzdata::ARCTIC_LONGYEARBYEN,
+            tzdata::EUROPE_OSLO,
             #[cfg(feature = "binary")]
-            raw_tzdata::ARCTIC_LONGYEARBYEN,
+            raw_tzdata::EUROPE_OSLO,
         ),
     ),
     (
@@ -6085,9 +6085,9 @@ const ITEMS: [(&[u8], Item); 571] = [
     (
         b"America/St_Barthelemy",
         Item(
-            tzdata::AMERICA_MARIGOT,
+            tzdata::AMERICA_KRALENDIJK,
             #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_MARIGOT,
+            raw_tzdata::AMERICA_KRALENDIJK,
         ),
     ),
     (
@@ -6589,9 +6589,9 @@ const ITEMS: [(&[u8], Item); 571] = [
     (
         b"Antarctica/South_Pole",
         Item(
-            tzdata::ANTARCTICA_MC_MURDO,
+            tzdata::NZ,
             #[cfg(feature = "binary")]
-            raw_tzdata::ANTARCTICA_MC_MURDO,
+            raw_tzdata::NZ,
         ),
     ),
     (
@@ -6749,9 +6749,9 @@ const ITEMS: [(&[u8], Item); 571] = [
     (
         b"Europe/Berlin",
         Item(
-            tzdata::EUROPE_BERLIN,
+            tzdata::ARCTIC_LONGYEARBYEN,
             #[cfg(feature = "binary")]
-            raw_tzdata::EUROPE_BERLIN,
+            raw_tzdata::ARCTIC_LONGYEARBYEN,
         ),
     ),
     (
@@ -6965,9 +6965,9 @@ const ITEMS: [(&[u8], Item); 571] = [
     (
         b"America/Kralendijk",
         Item(
-            tzdata::AMERICA_CURACAO,
+            tzdata::AMERICA_KRALENDIJK,
             #[cfg(feature = "binary")]
-            raw_tzdata::AMERICA_CURACAO,
+            raw_tzdata::AMERICA_KRALENDIJK,
         ),
     ),
     (
@@ -7117,9 +7117,9 @@ const ITEMS: [(&[u8], Item); 571] = [
     (
         b"Pacific/Yap",
         Item(
-            tzdata::PACIFIC_CHUUK,
+            tzdata::PACIFIC_PORT_MORESBY,
             #[cfg(feature = "binary")]
-            raw_tzdata::PACIFIC_CHUUK,
+            raw_tzdata::PACIFIC_PORT_MORESBY,
         ),
     ),
     (
@@ -7141,9 +7141,9 @@ const ITEMS: [(&[u8], Item); 571] = [
     (
         b"Pacific/Truk",
         Item(
-            tzdata::PACIFIC_CHUUK,
+            tzdata::PACIFIC_PORT_MORESBY,
             #[cfg(feature = "binary")]
-            raw_tzdata::PACIFIC_CHUUK,
+            raw_tzdata::PACIFIC_PORT_MORESBY,
         ),
     ),
     (
@@ -7429,9 +7429,9 @@ const ITEMS: [(&[u8], Item); 571] = [
     (
         b"Atlantic/Reykjavik",
         Item(
-            tzdata::ICELAND,
+            tzdata::ATLANTIC_REYKJAVIK,
             #[cfg(feature = "binary")]
-            raw_tzdata::ICELAND,
+            raw_tzdata::ATLANTIC_REYKJAVIK,
         ),
     ),
     (

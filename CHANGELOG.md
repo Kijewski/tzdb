@@ -1,5 +1,9 @@
 ## Changes between the versions
 
+### 0.4.8 (2022-10-29)
+
+* Update to [Time Zone Database 2022f](https://mm.icann.org/pipermail/tz-announce/2022-October/000075.html)
+
 ### 0.4.7 (2022-10-12)
 
 * Update to [Time Zone Database 2022e](https://mm.icann.org/pipermail/tz-announce/2022-October/000074.html)
