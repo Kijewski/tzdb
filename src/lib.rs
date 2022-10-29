@@ -193,5 +193,5 @@ pub const TZ_NAMES: &[&str] = &crate::generated::TIME_ZONES_LIST;
 #[cfg_attr(docsrs, doc(cfg(feature = "local")))]
 #[must_use]
 pub fn local_tz() -> Option<tz::TimeZoneRef<'static>> {
-    tz_by_name(&get_timezone().ok()?)
+    tz_by_name(get_timezone().ok()?)
 }
