@@ -140,7 +140,7 @@ pub const TZ_NAMES: &[&str] = &crate::generated::TIME_ZONES_LIST;
 #[cfg(feature = "local")]
 #[cfg_attr(feature = "docsrs", doc(cfg(feature = "local")))]
 pub fn local_tz() -> Option<TimeZoneRef<'static>> {
-    tz_by_name(&iana_time_zone::get_timezone().ok()?)
+    tz_by_name(iana_time_zone::get_timezone().ok()?)
 }
 
 #[cfg(all(test, feature = "by-name"))]
