@@ -1,22 +1,26 @@
 ## Changes between the versions
 
-### 0.5.0-pre.4 (2022-10-29)
+### 0.5.0 (2022-11-24)
 
-* Update to Time Zone Database release [Time Zone Database 2022e](https://mm.icann.org/pipermail/tz-announce/2022-October/000075.html)
+* Release v0.5.0
+
+#### 0.5.0-pre.4 (2022-10-29)
+
+* Update to Time Zone Database release [Time Zone Database 2022f](https://mm.icann.org/pipermail/tz-announce/2022-October/000075.html)
 * Use `edition = "2021"`
 
-### 0.5.0-pre.3 (2022-10-12)
+#### 0.5.0-pre.3 (2022-10-12)
 
 * Remove `utcnow` integration
 * Simplify by removing `no_std` support
 * Update to Time Zone Database release [Time Zone Database 2022e](https://mm.icann.org/pipermail/tz-announce/2022-October/000074.html)
 
-### 0.5.0-pre.2 (2022-09-25)
+#### 0.5.0-pre.2 (2022-09-25)
 
 * Update to Time Zone Database release [Time Zone Database 2022d](https://mm.icann.org/pipermail/tz-announce/2022-September/000073.html)
 * Update to iana-time-zone 0.1.50
 
-### 0.5.0-pre.1 (2022-09-14)
+#### 0.5.0-pre.1 (2022-09-14)
 
 * Simplify a lot by removing feature gates [[#123](https://github.com/Kijewski/tzdb/pull/123)]
 
