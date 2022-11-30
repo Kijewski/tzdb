@@ -3,174 +3,100 @@ name: CI
 on:
   push:
     branches:
-      - main
-      - v0.1.x
       - v0.2.x
-      - v0.3.x
-      - v0.4.x
   pull_request:
     branches:
-      - main
-      - v0.1.x
       - v0.2.x
-      - v0.3.x
-      - v0.4.x
   schedule:
-    - cron: "58 7 * * 3"
+    - cron: "58 2 * * 3"
 
 jobs:
-  fmt:
-    runs-on: ubuntu-latest
+  check:
+    runs-on: ubuntu-20.04
     steps:
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          lfs: true
+          submodules: recursive
 
       - name: Setup Rust
         uses: ./.github/actions/setup-rust
         with:
-          key: fmt
           toolchain: nightly
-          components: rustfmt
+          components: clippy,rustfmt
 
       - run: cargo fmt --all -- --check
-
-  check:
-    strategy:
-      matrix:
-        toolchain:
-          - "1.57"
-          - stable
-          - nightly
-
-    name: "Check/${{ matrix.toolchain }}"
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          lfs: true
-
-      - name: Setup Rust
-        uses: ./.github/actions/setup-rust
-        with:
-          key: check
-          toolchain: ${{ matrix.toolchain }}
-          components: clippy
-
-      - name: Check
-        run: cargo check --workspace --all-targets --features testing
-
-      - name: Lint
-        run: cargo clippy --workspace --all-targets --features testing -- -D warnings
+      - run: cargo clippy --package tzdb@0.2.14 --all-targets -- -D clippy::pedantic
+      - run: cargo package --package tzdb@0.2.14
 
   test:
-    strategy:
-      matrix:
-        toolchain:
-          - "1.57"
-          - stable
-          - nightly
-        platform:
-          - ubuntu-latest
-          - windows-latest
-          - macos-latest
-
-    name: "Test/${{ matrix.toolchain }} (${{ matrix.platform }})"
-    runs-on: ${{ matrix.platform }}
+    runs-on: ubuntu-20.04
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        with:
-          lfs: true
 
       - name: Setup Rust
         uses: ./.github/actions/setup-rust
         with:
-          key: test
-          toolchain: ${{ matrix.toolchain }}
+          toolchain: stable
+          components: clippy
 
-      - name: Test
-        run: cargo test --workspace --all-targets --features testing -- --show-output
-
-  minimum-versions:
-    name: "Minimal versions"
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          lfs: true
-
-      - name: Setup Rust
-        uses: ./.github/actions/setup-rust
-        with:
-          key: minimum-versions
-          toolchain: nightly
-
-      - name: Update lockfile
-        run: cd tzdb && cargo generate-lockfile -Zminimal-versions
-
-      - name: Test
-        run: cd tzdb && cargo test --all-targets --features testing -- --show-output
-
-  miri:
-    name: "Miri"
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          lfs: true
-
-      - name: Setup Rust
-        uses: ./.github/actions/setup-rust
-        with:
-          key: miri
-          toolchain: nightly
-          components: miri
-
-      - name: Test
-        run: cargo miri test --workspace --all-targets --features testing -- --show-output
+      - run: cargo check --package tzdb@0.2.14 --all-targets
+      - run: cargo clippy --package tzdb@0.2.14 --all-targets -- -D warnings
+      - run: cargo test --package tzdb@0.2.14 --all-targets
+      - run: cargo run --example current-time
 
   doc:
-    name: "Documentation"
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          lfs: true
+          submodules: recursive
 
       - name: Setup Rust
         uses: ./.github/actions/setup-rust
         with:
-          key: name
           toolchain: nightly
           components: rust-docs
 
-      - run: cargo doc --package tzdb --all-features
+      - run: cargo doc --package tzdb@0.2.14 --all-features --no-deps
         env:
-          RUSTDOCFLAGS: -D warnings --cfg docsrs
+          RUSTDOCFLAGS: "-D warnings"
 
   audit:
-    name: "Cargo audit"
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          lfs: true
+          submodules: recursive
 
       - name: Setup Rust
         uses: ./.github/actions/setup-rust
-        with:
-          key: audit
-
-      - run: cargo update
 
       - name: Audit
         uses: actions-rs/audit-check@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+
+  devskim:
+    name: DevSkim
+    runs-on: ubuntu-20.04
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          submodules: recursive
+
+      - name: Run DevSkim scanner
+        uses: microsoft/DevSkim-Action@v1
+
+      - name: Upload DevSkim scan results to GitHub Security tab
+        uses: github/codeql-action/upload-sarif@v2
+        with:
+          sarif_file: devskim-results.sarif
