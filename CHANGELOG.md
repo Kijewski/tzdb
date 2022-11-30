@@ -1,5 +1,9 @@
 ## Changes between the versions
 
+### 0.3.10 (2022-11-30)
+
+* Update to 2022g
+
 ### 0.3.9 (2022-10-29)
 
 * Update to 2022f
