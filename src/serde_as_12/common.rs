@@ -1,15 +1,19 @@
 use std::fmt;
 use std::marker::PhantomData;
 
-use serde::de::{Error, SeqAccess, Visitor};
-use serde::ser::SerializeTuple;
-use serde::{Deserialize, Deserializer, Serialize, Serializer};
 use tz::timezone::LocalTimeType;
 use tz::{DateTime, TimeZoneRef, UtcDateTime};
 
+use self::de::Error;
+use self::ser::SerializeTuple;
+use super::serde::{de, ser};
+
 pub(super) type TzTuple<'de> = (i32, bool, &'de str);
 
-pub(super) fn project_utc<E: Error>(utc: UtcDateTime, value: TzTuple<'_>) -> Result<DateTime, E> {
+pub(super) fn project_utc<E: de::Error>(
+    utc: UtcDateTime,
+    value: TzTuple<'_>,
+) -> Result<DateTime, E> {
     let (ut_offset, is_dst, tz) = value;
     let tz = match tz {
         "" => None,
@@ -21,19 +25,19 @@ pub(super) fn project_utc<E: Error>(utc: UtcDateTime, value: TzTuple<'_>) -> Res
     utc.project(tz).map_err(E::custom)
 }
 
-pub(super) fn deserialize_date_time<'de, D: Deserializer<'de>, T: Deserialize<'de>>(
+pub(super) fn deserialize_date_time<'de, D: de::Deserializer<'de>, T: de::Deserialize<'de>>(
     deserializer: D,
 ) -> Result<(T, TzTuple<'de>), D::Error> {
     struct UnixTpl<T>(PhantomData<T>);
 
-    impl<'de, T: Deserialize<'de>> Visitor<'de> for UnixTpl<T> {
+    impl<'de, T: de::Deserialize<'de>> de::Visitor<'de> for UnixTpl<T> {
         type Value = (T, TzTuple<'de>);
 
         fn expecting(&self, formatter: &mut fmt::Formatter<'_>) -> fmt::Result {
             formatter.write_str("UnixTime tuple")
         }
 
-        fn visit_seq<A: SeqAccess<'de>>(self, mut seq: A) -> Result<Self::Value, A::Error> {
+        fn visit_seq<A: de::SeqAccess<'de>>(self, mut seq: A) -> Result<Self::Value, A::Error> {
             let ut = seq
                 .next_element()?
                 .ok_or_else(|| A::Error::custom("expected UnixTime"))?;
@@ -47,7 +51,7 @@ pub(super) fn deserialize_date_time<'de, D: Deserializer<'de>, T: Deserialize<'d
     deserializer.deserialize_tuple(2, UnixTpl(PhantomData))
 }
 
-pub(super) fn serialize_date_time<S: Serializer, T: Serialize>(
+pub(super) fn serialize_date_time<S: ser::Serializer, T: ser::Serialize>(
     serializer: S,
     source: &DateTime,
     date_time: T,

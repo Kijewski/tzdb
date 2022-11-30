@@ -30,13 +30,12 @@ pub fn main() -> Result<()> {
     }
 
     let timezone = if let Some(argument) = argument {
-        match tz_by_name(&argument) {
-            Some(timezone) => timezone,
-            None => {
-                eprintln!("No such time zone found in database: {:?}", argument);
-                eprintln!("To see a list of all known time zones run: {} --list", exe);
-                exit(1);
-            },
+        if let Some(timezone) = tz_by_name(&argument) {
+            timezone
+        } else {
+            eprintln!("No such time zone found in database: {:?}", argument);
+            eprintln!("To see a list of all known time zones run: {} --list", exe);
+            exit(1);
         }
     } else {
         eprintln!("No time zone selected, defaulting to the system time zone.");
