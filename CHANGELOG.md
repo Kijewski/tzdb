@@ -1,5 +1,10 @@
 ## Changes between the versions
 
+### 0.2.14
+
+* Make v0.2.x branch re-export v0.5.x branch
+* Implement for `serde_with` v2
+
 ### 0.2.13
 
 * Update to [Time Zone Database 2022g](https://mm.icann.org/pipermail/tz-announce/2022-November/000076.html)

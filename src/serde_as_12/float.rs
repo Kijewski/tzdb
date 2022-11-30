@@ -1,13 +1,12 @@
 use std::fmt;
 use std::num::FpCategory;
 
-use serde::de::{Error, Visitor};
-use serde::{Deserializer, Serializer};
-use serde_with::{DeserializeAs, SerializeAs};
 use tz::{DateTime, UtcDateTime};
 
-use super::common::{deserialize_date_time, serialize_date_time};
-use crate::serde_as::common::project_utc;
+use self::serde::{de, ser};
+use self::serde_with::{DeserializeAs, SerializeAs};
+use super::common::{deserialize_date_time, project_utc, serialize_date_time};
+use super::{serde, serde_with};
 
 /// (De)serialize a (Utc)DateTime as an f64 with millisecond resolution
 ///
@@ -17,17 +16,17 @@ use crate::serde_as::common::project_utc;
 /// * For [DateTime] a tuple `(f64, (i32, bool, &str))`, the Unix time,
 ///   and the time zone information (offset, DST, name).
 ///
-/// Annotate a struct/enum with [`#[serde_with::serde_as]`][serde_with::serde_as],
+/// Annotate a struct/enum with [`#[serde_with::serde_as]`][serde_with],
 /// and a [UtcDateTime]/[DateTime] field with [`#[serde_as(as = "Float")]`]
 /// to make it [serde] serializable/deserializable.
 ///
-/// ```
+/// ```ignore
 /// use serde::{Deserialize, Serialize};
 /// use serde_with::serde_as;
 /// use tz::UtcDateTime;
 /// use tzdb::serde_as::Float;
 ///
-/// #[serde_as]
+/// #[serde_as(crate = "serde_with")]
 /// #[derive(Deserialize, Serialize)]
 /// struct Foo {
 ///     #[serde_as(as = "Float")]
@@ -38,7 +37,7 @@ use crate::serde_as::common::project_utc;
 #[derive(Debug, Clone, Copy, Default)]
 pub struct Float;
 
-fn nanos_to_utc<E: Error>(value: f64) -> Result<UtcDateTime, E> {
+fn nanos_to_utc<E: de::Error>(value: f64) -> Result<UtcDateTime, E> {
     match value.classify() {
         FpCategory::Nan | FpCategory::Infinite => Err(E::custom("illegal Unix time")),
         FpCategory::Zero | FpCategory::Subnormal => {
@@ -61,29 +60,29 @@ fn serialize_nanos(nanos: i128) -> f64 {
 }
 
 impl<'de> DeserializeAs<'de, UtcDateTime> for Float {
-    fn deserialize_as<D: Deserializer<'de>>(deserializer: D) -> Result<UtcDateTime, D::Error> {
+    fn deserialize_as<D: de::Deserializer<'de>>(deserializer: D) -> Result<UtcDateTime, D::Error> {
         struct UnixTpl;
 
-        impl Visitor<'_> for UnixTpl {
+        impl de::Visitor<'_> for UnixTpl {
             type Value = f64;
 
             fn expecting(&self, formatter: &mut fmt::Formatter<'_>) -> fmt::Result {
                 formatter.write_str("UnixTime")
             }
 
-            fn visit_f64<E: Error>(self, value: f64) -> Result<Self::Value, E> {
+            fn visit_f64<E: de::Error>(self, value: f64) -> Result<Self::Value, E> {
                 Ok(value)
             }
 
-            fn visit_f32<E: Error>(self, value: f32) -> Result<Self::Value, E> {
+            fn visit_f32<E: de::Error>(self, value: f32) -> Result<Self::Value, E> {
                 Ok(value as f64)
             }
 
-            fn visit_u64<E: Error>(self, value: u64) -> Result<Self::Value, E> {
+            fn visit_u64<E: de::Error>(self, value: u64) -> Result<Self::Value, E> {
                 Ok(value as f64)
             }
 
-            fn visit_i64<E: Error>(self, value: i64) -> Result<Self::Value, E> {
+            fn visit_i64<E: de::Error>(self, value: i64) -> Result<Self::Value, E> {
                 Ok(value as f64)
             }
         }
@@ -93,13 +92,16 @@ impl<'de> DeserializeAs<'de, UtcDateTime> for Float {
 }
 
 impl SerializeAs<UtcDateTime> for Float {
-    fn serialize_as<S: Serializer>(source: &UtcDateTime, serializer: S) -> Result<S::Ok, S::Error> {
+    fn serialize_as<S: ser::Serializer>(
+        source: &UtcDateTime,
+        serializer: S,
+    ) -> Result<S::Ok, S::Error> {
         serializer.serialize_f64(serialize_nanos(source.total_nanoseconds()))
     }
 }
 
 impl<'de> DeserializeAs<'de, DateTime> for Float {
-    fn deserialize_as<D: Deserializer<'de>>(deserializer: D) -> Result<DateTime, D::Error> {
+    fn deserialize_as<D: de::Deserializer<'de>>(deserializer: D) -> Result<DateTime, D::Error> {
         let (value, tz) = deserialize_date_time(deserializer)?;
         let utc = nanos_to_utc(value)?;
         project_utc(utc, tz)
@@ -107,7 +109,10 @@ impl<'de> DeserializeAs<'de, DateTime> for Float {
 }
 
 impl SerializeAs<DateTime> for Float {
-    fn serialize_as<S: Serializer>(source: &DateTime, serializer: S) -> Result<S::Ok, S::Error> {
+    fn serialize_as<S: ser::Serializer>(
+        source: &DateTime,
+        serializer: S,
+    ) -> Result<S::Ok, S::Error> {
         serialize_date_time(
             serializer,
             source,
@@ -121,20 +126,17 @@ impl SerializeAs<DateTime> for Float {
 fn test_seconds_tuple() {
     use serde::{Deserialize, Serialize};
     use serde_json::{from_str, to_string};
-    use serde_with::serde_as;
 
+    use super::serde_with::{self, serde_as};
     use crate::time_zone::europe::BERLIN;
 
-    #[serde_as]
+    #[serde_as(crate = "serde_with")]
     #[derive(Debug, Serialize, Deserialize, PartialEq, PartialOrd)]
     struct UtcStruct(#[serde_as(as = "Float")] UtcDateTime);
 
-    #[serde_as]
+    #[serde_as(crate = "serde_with")]
     #[derive(Debug, Serialize, Deserialize, PartialEq, PartialOrd)]
     struct DtStruct(#[serde_as(as = "Float")] DateTime);
-
-    #[cfg(not(feature = "testing"))]
-    compile_error!("When testing, use: --features testing");
 
     let utc_full = UtcDateTime::new(2022, 3, 1, 15, 20, 37, 730_296_742).unwrap();
     let utc_reduced = UtcDateTime::new(2022, 3, 1, 15, 20, 37, 730_000_000).unwrap();

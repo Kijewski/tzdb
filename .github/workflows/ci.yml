@@ -150,7 +150,9 @@ jobs:
           toolchain: nightly
           components: rust-docs
 
-      - run: cargo doc --package tzdb --features docsrs --all-features
+      - run: cargo doc --package tzdb --all-features
+        env:
+          RUSTDOCFLAGS: -D warnings --cfg docsrs
 
   audit:
     name: "Cargo audit"
