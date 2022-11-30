@@ -43,7 +43,7 @@
 //! Static time zone information for [tz-rs](https://crates.io/crates/tz-rs).
 //!
 //! This crate provides all time zones found in the [Time Zone Database](https://www.iana.org/time-zones),
-//! currently in the version 2022f (released 2022-10-28).
+//! currently in the version 2022g (released 2022-11-29).
 //!
 //! See the documentation for a full list the the contained time zones:
 //! <https://docs.rs/tzdb/latest/tzdb/time_zone/index.html>
@@ -98,6 +98,8 @@ extern crate alloc;
 #[cfg(docsrs)]
 extern crate std;
 
+#[cfg(docsrs)]
+pub mod changelog;
 mod generated;
 #[cfg(feature = "now")]
 #[cfg_attr(docsrs, doc(cfg(feature = "now")))]
@@ -112,16 +114,11 @@ use iana_time_zone::get_timezone;
 
 pub use crate::generated::time_zone;
 
-#[cfg(docsrs)]
-pub mod changelog {
-    #![doc = include_str!("../CHANGELOG.md")]
-}
-
 /// The version of the source Time Zone Database
-pub const VERSION: &str = "2022f";
+pub const VERSION: &str = "2022g";
 
 /// The SHA512 hash of the source Time Zone Database (using the "Complete Distribution")
-pub const VERSION_HASH: &str = "1dd9f8fc3e9fa113a72010b9bceb04c7540b1175801fbd15b591a6bca9400503c6683a4c89f83e08d77f5b78624a005113a8fc428c552a2a4a2b8d26de110141";
+pub const VERSION_HASH: &str = "f471046189f519de5735ac2d8c3edb27cbe925247b06f44634e700e5e4453ec5f715d85256fc74d300bcdaa070a7600fcc054327f2dfe743ab3c0fe404ff83c1";
 
 /// Find a time zone by name, e.g. `"Europe/Berlin"` (case-insensitive)
 ///
