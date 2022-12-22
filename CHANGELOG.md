@@ -1,5 +1,9 @@
 ## Changes between the versions
 
+### 0.5.2 (2022-12-22)
+
+* Prepare v0.5.x branch so that v0.3.x can re-export it
+
 ### 0.5.1 (2022-11-30)
 
 * Update to Time Zone Database release [Time Zone Database 2022g](https://mm.icann.org/pipermail/tz-announce/2022-November/000076.html)
