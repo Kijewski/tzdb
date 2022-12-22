@@ -1,5 +1,9 @@
 ## Changes between the versions
 
+### 0.3.11 (2022-12-22)
+
+* Re-export v0.5.x
+
 ### 0.3.10 (2022-11-30)
 
 * Update to 2022g
