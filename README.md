@@ -1,17 +1,14 @@
 # tzdb — Time Zone Database
 
-[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/Kijewski/tzdb/CI?logo=github)](https://github.com/Kijewski/tzdb/actions/workflows/ci.yml)
+[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/Kijewski/tzdb/ci.yml?branch=v0.3.x)](https://github.com/Kijewski/tzdb/actions/workflows/ci.yml)
 [![Crates.io](https://img.shields.io/crates/v/tzdb?logo=rust)](https://crates.io/crates/tzdb)
-![Minimum supported Rust version](https://img.shields.io/badge/rustc-1.55+-important?logo=rust "Minimum Supported Rust Version")
-[![License](https://img.shields.io/crates/l/tzdb?color=informational&logo=apache)](/LICENSES)
+![Minimum supported Rust version: 1.55](https://img.shields.io/badge/rustc-1.55+-important?logo=rust "Minimum Supported Rust Version: 1.55")
+[![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-informational?logo=apache)](/LICENSE.md "License: Apache-2.0")
 
 Static time zone information for [tz-rs](https://crates.io/crates/tz-rs).
 
-This crate provides all time zones found in the [Time Zone Database](https://www.iana.org/time-zones),
-currently in the version 2022g (released 2022-11-29).
-
 See the documentation for a full list the the contained time zones:
-<https://docs.rs/tzdb/latest/tzdb/time_zone/index.html>
+<https://docs.rs/tzdb/latest/0.3/time_zone/index.html>
 
 ## Usage examples
 
@@ -29,15 +26,4 @@ DateTime::now(tz_by_name("ArCtIc/LongYeArByEn").unwrap());
 
 ## Feature flags
 
-* `by-name` <sup>*(enabled by default, enabled by* `local`*)*</sup> — enables tz_by_name() to get a time zone at runtime by name
-* `list` <sup>*(enabled by default)*</sup> — enables TZ_NAMES to get a list of all shipped time zones
-* `local` <sup>*(enabled by default)*</sup> — enables local_tz() to get the system time zone
-* `binary` – make the unparsed, binary tzdata of a time zone available
-* `std` <sup>*(enabled by default)*</sup> – enable features that need the standard library `std`
-* `alloc` <sup>*(enabled by default, enabled by* `std`*)*</sup> – enable features that need the standard library `alloc`
 * `fallback` <sup>*(enabled by default)*</sup> — compile for unknown target platforms, too
-
-## Git cloning
-
-The `main` branch gets squashed regularily to keep the size of the repository at a maintainable size.
-To get the history until then, please refer to the id in the initial commit.

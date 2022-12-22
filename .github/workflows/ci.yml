@@ -3,18 +3,10 @@ name: CI
 on:
   push:
     branches:
-      - main
-      - v0.1.x
-      - v0.2.x
       - v0.3.x
-      - v0.4.x
   pull_request:
     branches:
-      - main
-      - v0.1.x
-      - v0.2.x
       - v0.3.x
-      - v0.4.x
   schedule:
     - cron: "58 7 * * 3"
 
@@ -42,12 +34,8 @@ jobs:
           - "1.55"
           - stable
           - nightly
-        platform:
-          - ubuntu-20.04
-          - windows-2022
-          - macos-12
 
-    runs-on: ${{ matrix.platform }}
+    runs-on: ubuntu-20.04
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -59,114 +47,10 @@ jobs:
           toolchain: ${{ matrix.toolchain }}
           components: clippy
 
-      - run: cargo check --package tzdb --all-targets
-      - run: cargo clippy --package tzdb --all-targets -- -D warnings
-      - run: cargo test --package tzdb --all-targets -- --show-output
-
-  clippy-pedantic:
-    runs-on: ubuntu-20.04
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Setup Rust
-        uses: ./.github/actions/setup-rust
-        with:
-          key: pedantic
-          components: clippy
-
-      - run: cargo clippy --package tzdb --all-targets -- -D clippy::pedantic
-
-  test-shadow:
-    runs-on: ubuntu-20.04
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Setup Rust
-        uses: ./.github/actions/setup-rust
-        with:
-          key: shadow
-
-      - run: cd test-shadow && cargo run
-
-  minimum-versions:
-    strategy:
-      fail-fast: false
-      matrix:
-        toolchain:
-          - "1.55"
-          - stable
-          - nightly
-        platform:
-          - ubuntu-20.04
-          - windows-2022
-          - macos-12
-
-    runs-on: ${{ matrix.platform }}
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Setup Rust
-        uses: ./.github/actions/setup-rust
-        with:
-          key: minimum-versions
-          toolchain: ${{ matrix.toolchain }}
-
-      - name: Update lockfile
-        env:
-          RUSTC_BOOTSTRAP: 1
-        run: cargo generate-lockfile -Zminimal-versions
-
-      - name: Test
-        run: cargo test --all-targets -- --show-output
-
-  miri:
-    name: "Miri"
-    runs-on: ubuntu-20.04
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Setup Rust
-        uses: ./.github/actions/setup-rust
-        with:
-          key: miri
-          toolchain: nightly
-          components: miri
-
-      - name: Test
-        run: cargo miri test --package tzdb --all-targets -- --show-output
-
-  cross-miri:
-    strategy:
-      fail-fast: false
-      matrix:
-        target:
-          - aarch64-unknown-linux-gnu
-          - i586-unknown-linux-gnu
-          - mipsel-unknown-linux-gnu
-          - mips64el-unknown-linux-gnuabi64
-          - powerpc-unknown-linux-gnu
-          - powerpc64-unknown-linux-gnu
-          - powerpc64le-unknown-linux-gnu
-
-    runs-on: ubuntu-20.04
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Setup Rust
-        uses: ./.github/actions/setup-rust
-        with:
-          key: cross-miri
-          toolchain: nightly
-          components: miri
-          target: ${{ matrix.target }}
-
-      - name: Test
-        run: cargo miri test --package tzdb --no-default-features --features by-name --target ${{ matrix.target }} -- --show-output
+      - run: cargo check --package tzdb:0.3.11 --all-targets
+      - run: cargo clippy --package tzdb:0.3.11 --all-targets -- -D warnings
+      - run: cargo test --package tzdb:0.3.11 --all-targets -- --show-output
+      - run: cargo clippy --package tzdb:0.3.11 --all-targets -- -D clippy::pedantic
 
   doc:
     name: "Documentation"
@@ -182,7 +66,7 @@ jobs:
           toolchain: nightly
           components: rust-docs
 
-      - run: RUSTDOCFLAGS="-D warnings --cfg docsrs" cargo doc --package tzdb --all-features --no-deps
+      - run: RUSTDOCFLAGS="-D warnings --cfg docsrs" cargo doc --package tzdb:0.3.11 --all-features --no-deps
 
   audit:
     name: "Cargo audit"
@@ -204,124 +88,6 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
-  powerset-docs:
-    strategy:
-      fail-fast: false
-      matrix:
-        toolchain:
-          - "1.55"
-          - stable
-          - nightly
-        platform:
-          - ubuntu-20.04
-          - windows-2022
-          - macos-12
-
-    runs-on: ${{ matrix.platform }}
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Setup Rust
-        uses: ./.github/actions/setup-rust
-        with:
-          key: powerset-docs
-          toolchain: ${{ matrix.toolchain }}
-
-      - name: Install hack
-        run: cargo hack --version || cargo +stable install cargo-hack --force
-
-      - name: Powerset
-        run: cargo hack test --feature-powerset --ignore-private --doc
-
-  powerset-tests:
-    strategy:
-      fail-fast: false
-      matrix:
-        toolchain:
-          - "1.55"
-          - stable
-          - nightly
-        platform:
-          - ubuntu-20.04
-          - windows-2022
-          - macos-12
-
-    runs-on: ${{ matrix.platform }}
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Setup Rust
-        uses: ./.github/actions/setup-rust
-        with:
-          key: powerset-tests
-          toolchain: ${{ matrix.toolchain }}
-
-      - name: Install hack
-        run: cargo hack --version || cargo +stable install cargo-hack --force
-
-      - name: Powerset
-        run: cargo hack test --feature-powerset --ignore-private --tests --lib
-
-  build-cross:
-    strategy:
-      fail-fast: false
-      matrix:
-        target:
-          - x86_64-unknown-freebsd
-          - x86_64-unknown-illumos
-          - x86_64-unknown-netbsd
-          - x86_64-linux-android
-          - i686-linux-android
-          - arm-linux-androideabi
-          - aarch64-linux-android
-    runs-on: ubuntu-20.04
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Setup Rust
-        uses: ./.github/actions/setup-rust
-        with:
-          key: cross
-          toolchain: stable
-          target: ${{ matrix.target }}
-          components: clippy
-
-      - run: cross rustc --target ${{ matrix.target }} -- --version || cargo +stable install cross --force
-      - run: cross check --target ${{ matrix.target }} --package tzdb --all-targets
-      - run: cross clippy --target ${{ matrix.target }} --package tzdb --all-targets -- -D warnings
-      - run: cross build --target ${{ matrix.target }} --package tzdb --lib
-      - run: cross build --target ${{ matrix.target }} --examples
-
-  build-cross-ios:
-    strategy:
-      fail-fast: false
-      matrix:
-        target:
-          - aarch64-apple-ios-sim
-          - aarch64-apple-ios
-          - x86_64-apple-ios
-    runs-on: macos-12
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Setup Rust
-        uses: ./.github/actions/setup-rust
-        with:
-          key: ios
-          toolchain: stable
-          target: ${{ matrix.target }}
-          components: clippy
-
-      - run: cross rustc --target ${{ matrix.target }} -- --version || cargo +stable install cross --force
-      - run: cross check --target ${{ matrix.target }} --package tzdb --all-targets
-      - run: cross clippy --target ${{ matrix.target }} --package tzdb --all-targets -- -D warnings
-      - run: cross build --target ${{ matrix.target }} --package tzdb --lib
-      - run: cross build --target ${{ matrix.target }} --examples
-
   package:
     runs-on: ubuntu-20.04
     steps:
@@ -334,7 +100,7 @@ jobs:
           key: package
           toolchain: stable
 
-      - run: cargo package --package tzdb
+      - run: cargo package --package tzdb:0.3.11
 
   devskim:
     name: DevSkim
