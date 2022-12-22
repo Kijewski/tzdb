@@ -2,8 +2,8 @@
 
 [![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/Kijewski/tzdb/ci.yml?branch=v0.5.x)](https://github.com/Kijewski/tzdb/actions/workflows/ci.yml)
 [![Crates.io](https://img.shields.io/crates/v/tzdb?logo=rust)](https://crates.io/crates/tzdb)
-![Minimum supported Rust version](https://img.shields.io/badge/rustc-1.56+-important?logo=rust "Minimum Supported Rust Version")
-[![License](https://img.shields.io/crates/l/tzdb?color=informational&logo=apache)](/LICENSES)
+![Minimum supported Rust version](https://img.shields.io/badge/rustc-1.56+-important?logo=rust "Minimum Supported Rust Version: 1.56")
+[![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-informational?logo=apache)](/LICENSE.md "License: Apache-2.0")
 
 Static time zone information for [tz-rs](https://crates.io/crates/tz-rs).
 
