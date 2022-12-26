@@ -44,4 +44,5 @@ members = [
     ".",
     "examples/current-time",
     "make-tzdb",
+    "fuzz",
 ]

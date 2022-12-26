@@ -1,0 +1,40 @@
+[package]
+name = "tzdb-fuzz"
+version = "0.0.0"
+authors = ["René Kijewski <crates.io@k6i.de>"]
+repository = "https://github.com/Kijewski/tzdb"
+description = "… fuzz …"
+license = "Apache-2.0"
+publish = false
+edition = "2018"
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+tzdb = { version = "*", path = ".." }
+
+afl = { version = "=0.12", optional = true }
+honggfuzz = { version = "=0.5", optional = true }
+libfuzzer-sys = { version = "=0.4", optional = true }
+
+[[bin]]
+name = "tzdb-fuzz-afl"
+path = "bin/afl.rs"
+test = false
+doc = false
+required-features = ["afl"]
+
+[[bin]]
+name = "tzdb-fuzz-honggfuzz"
+path = "bin/honggfuzz.rs"
+test = false
+doc = false
+required-features = ["honggfuzz"]
+
+[[bin]]
+name = "tzdb-fuzz-libfuzzer"
+path = "bin/libfuzzer.rs"
+test = false
+doc = false
+required-features = ["libfuzzer-sys"]
