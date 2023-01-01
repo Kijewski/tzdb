@@ -135,8 +135,6 @@ def convert(stdin, stdout):
 
     assert duplicates == 0
 
-    print('use core::mem::transmute;', file=stdout)
-    print(file=stdout)
     print('use tz::TimeZoneRef;', file=stdout)
     print(file=stdout)
     print('use super::raw_tzdata;', file=stdout)
@@ -193,10 +191,10 @@ def convert(stdin, stdout):
     print(file=stdout)
 
     asso_values.pop()
-    print(f'const ASSO_VALUES: [u16; 256] = [', file=stdout)
+    print(f'const ASSO_VALUES: [u16; 257] = [', file=stdout)
     for asso_value in asso_values:
         print(f'    {asso_value},', file=stdout)
-    print('];', file=stdout)
+    print(f'{max_hash_value + 1}];', file=stdout)
     print(file=stdout)
 
     print('fn find_key(s: &[u8]) -> Option<Index> {', file=stdout)
@@ -207,15 +205,15 @@ def convert(stdin, stdout):
     print(file=stdout)
 
     def hash_add(idx, offs):
-        value = f's[{idx}]'
+        value = f's[{idx}] as usize'
         if offs:
             if offs.startswith('+'):
-                value = f'{value}.wrapping_add({offs[1:]})'
+                value = f'({value}).wrapping_add({offs[1:]})'
             elif offs.startswith('-'):
-                value = f'{value}.wrapping_sub({offs[1:]})'
+                value = f'({value}).wrapping_sub({offs[1:]})'
             else:
                 raise Exception(f'offs? {offs!r}')
-        return f'key = key.wrapping_add(ASSO_VALUES[{value} as usize] as usize);'
+        return f'key = key.wrapping_add(ASSO_VALUES[{value}] as usize);'
 
     match hash_init:
         case 'len':
@@ -242,9 +240,7 @@ def convert(stdin, stdout):
     print('        return None;', file=stdout)
     print('    }', file=stdout)
     print('    let key = WORDLIST[key]?;', file=stdout)
-    print('    let index: u16 = unsafe { transmute(key) };', file=stdout)
-    print('    let name = NAMES[index as usize];', file=stdout)
-    print('    if !name.eq_ignore_ascii_case(s) {', file=stdout)
+    print('    if !NAMES[key as u16 as usize].eq_ignore_ascii_case(s) {', file=stdout)
     print('        return None;', file=stdout)
     print('    }', file=stdout)
     print(file=stdout)
@@ -254,17 +250,13 @@ def convert(stdin, stdout):
 
     print('#[inline]')
     print('pub(crate) fn find_tz(s: &[u8]) -> Option<TimeZoneRef<\'static>> {', file=stdout)
-    print('    let key = find_key(s)?;', file=stdout)
-    print('    let index: u16 = unsafe { transmute(key) };', file=stdout)
-    print('    Some(*TIME_ZONES[index as usize])', file=stdout)
+    print('    Some(*TIME_ZONES[find_key(s)? as u16 as usize])', file=stdout)
     print('}', file=stdout)
     print(file=stdout)
 
     print('#[inline]')
     print('pub(crate) fn find_raw(s: &[u8]) -> Option<&\'static [u8]> {', file=stdout)
-    print('    let key = find_key(s)?;', file=stdout)
-    print('    let index: u16 = unsafe { transmute(key) };', file=stdout)
-    print('    Some(RAW_TIME_ZONES[index as usize])', file=stdout)
+    print('    Some(RAW_TIME_ZONES[find_key(s)? as u16 as usize])', file=stdout)
     print('}', file=stdout)
 
 
