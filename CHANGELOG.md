@@ -1,5 +1,9 @@
 ## Changes between the versions
 
+### 0.5.3 (2023-01-01)
+
+* No need to use `unsafe` functions
+
 ### 0.5.2 (2022-12-22)
 
 * Prepare v0.5.x branch so that v0.3.x can re-export it
