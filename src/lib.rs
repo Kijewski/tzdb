@@ -16,7 +16,7 @@
 
 #![cfg_attr(docsrs, feature(doc_cfg))]
 #![allow(unused_attributes)]
-#![deny(unsafe_code)]
+#![forbid(unsafe_code)]
 #![warn(absolute_paths_not_starting_with_crate)]
 #![warn(elided_lifetimes_in_paths)]
 #![warn(explicit_outlives_requirements)]
