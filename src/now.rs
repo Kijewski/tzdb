@@ -8,7 +8,7 @@ use iana_time_zone::{get_timezone, GetTimezoneError};
 use tz::error::ProjectDateTimeError;
 use tz::{DateTime, TimeZoneRef};
 
-/// An error as returned by [`local()`] and similart functions
+/// An error as returned by [`local()`] and similar functions
 ///
 /// # See also:
 ///

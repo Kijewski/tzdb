@@ -68,7 +68,7 @@
 
 ### 0.3.4 (2022-08-02)
 
-* Fix endianess issues for PowerPCs
+* Fix endianness issues for PowerPCs
 
 ### 0.3.3 (2022-08-01)
 
