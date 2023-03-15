@@ -27,7 +27,7 @@ once_cell = "=1.14"
 # 1.2 is edition 2021, used (transitively) by criterion
 csv = "=1.1"
 # 1.7 has rust-version = "1.59", used (transitively) by criterion
-rayon = "=1.6"
+rayon = "=1.7"
 # 1.11 has rust-version = "1.59", used (transitively) by criterion
 rayon-core = "=1.10"
 
