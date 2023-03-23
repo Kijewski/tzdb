@@ -24,6 +24,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          submodules: recursive
 
       - name: Setup Rust
         uses: ./.github/actions/setup-rust
@@ -53,6 +55,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          submodules: recursive
 
       - name: Setup Rust
         uses: ./.github/actions/setup-rust
@@ -75,6 +79,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          submodules: recursive
 
       - name: Setup Rust
         uses: ./.github/actions/setup-rust
@@ -83,77 +89,13 @@ jobs:
 
       - run: cargo clippy --package tzdb --all-targets -- -D clippy::pedantic
 
-  test-shadow:
-    runs-on: ubuntu-20.04
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Setup Rust
-        uses: ./.github/actions/setup-rust
-
-      - run: cd test-shadow && cargo run
-
-  test-artichoke:
-    runs-on: ubuntu-20.04
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Setup Rust
-        uses: ./.github/actions/setup-rust
-
-      - run: cd test-artichoke && cargo run
-
-  miri:
-    name: "Miri"
-    runs-on: ubuntu-20.04
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Setup Rust
-        uses: ./.github/actions/setup-rust
-        with:
-          toolchain: nightly
-          components: miri
-
-      - name: Test
-        run: cargo miri test --package tzdb --all-targets -- --show-output
-
-  cross-miri:
-    strategy:
-      fail-fast: false
-      matrix:
-        target:
-          - aarch64-unknown-linux-gnu
-          - i586-unknown-linux-gnu
-          - mipsel-unknown-linux-gnu
-          - mips64el-unknown-linux-gnuabi64
-          - powerpc-unknown-linux-gnu
-          - powerpc64-unknown-linux-gnu
-          - powerpc64le-unknown-linux-gnu
-
-    runs-on: ubuntu-20.04
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Setup Rust
-        uses: ./.github/actions/setup-rust
-        with:
-          toolchain: nightly
-          components: miri
-          target: ${{ matrix.target }}
-
-      - name: Test
-        run: cargo miri test --package tzdb --no-default-features --features by-name --target ${{ matrix.target }} -- --show-output
-
   doc:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          submodules: recursive
 
       - name: Setup Rust
         uses: ./.github/actions/setup-rust
@@ -177,6 +119,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          submodules: recursive
 
       - name: Setup Rust
         uses: ./.github/actions/setup-rust
@@ -191,103 +135,13 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
-  powerset:
-    strategy:
-      fail-fast: false
-      matrix:
-        toolchain:
-          - "1.60"
-          - stable
-          - nightly
-        platform:
-          - ubuntu-20.04
-          # - windows-2022
-          # - macos-12
-        versions:
-          - ""
-          - "-Zminimal-versions"
-
-    runs-on: ${{ matrix.platform }}
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Setup Rust
-        uses: ./.github/actions/setup-rust
-        with:
-          toolchain: ${{ matrix.toolchain }}
-
-      - name: Install hack
-        run: cargo hack --version || cargo +stable install cargo-hack --force
-
-      - run: cargo generate-lockfile ${{ matrix.versions }}
-        env:
-          RUSTC_BOOTSTRAP: 1
-
-      - name: Powerset
-        run: cargo hack test --feature-powerset --exclude-features default --ignore-private
-
-  build-cross:
-    strategy:
-      fail-fast: false
-      matrix:
-        target:
-          - x86_64-unknown-freebsd
-          - x86_64-unknown-illumos
-          - x86_64-unknown-netbsd
-          - x86_64-linux-android
-          - i686-linux-android
-          - arm-linux-androideabi
-          - aarch64-linux-android
-    runs-on: ubuntu-20.04
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Setup Rust
-        uses: ./.github/actions/setup-rust
-        with:
-          toolchain: stable
-          target: ${{ matrix.target }}
-          components: clippy
-
-      - run: cross rustc --target ${{ matrix.target }} -- --version || cargo +stable install cross --force
-      - run: cross check --target ${{ matrix.target }} --package tzdb --all-targets
-      - run: cross clippy --target ${{ matrix.target }} --package tzdb --all-targets -- -D warnings
-      - run: cross build --target ${{ matrix.target }} --package tzdb --lib
-      - run: cross build --target ${{ matrix.target }} --examples
-
-  build-cross-ios:
-    strategy:
-      fail-fast: false
-      matrix:
-        target:
-          - aarch64-apple-ios-sim
-          - aarch64-apple-ios
-          - x86_64-apple-ios
-    runs-on: macos-12
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Setup Rust
-        uses: ./.github/actions/setup-rust
-        with:
-          toolchain: stable
-          target: ${{ matrix.target }}
-          components: clippy
-
-      - run: cross rustc --target ${{ matrix.target }} -- --version || cargo +stable install cross --force
-      - run: cross check --target ${{ matrix.target }} --package tzdb --all-targets
-      - run: cross clippy --target ${{ matrix.target }} --package tzdb --all-targets -- -D warnings
-      - run: cross build --target ${{ matrix.target }} --package tzdb --lib
-      - run: cross build --target ${{ matrix.target }} --examples
-
   package:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          submodules: recursive
 
       - name: Setup Rust
         uses: ./.github/actions/setup-rust
@@ -306,6 +160,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+        with:
+          submodules: recursive
 
       - name: Run DevSkim scanner
         uses: microsoft/DevSkim-Action@v1

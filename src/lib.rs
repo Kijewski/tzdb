@@ -43,7 +43,7 @@
 //! Static time zone information for [tz-rs](https://crates.io/crates/tz-rs).
 //!
 //! This crate provides all time zones found in the [Time Zone Database](https://www.iana.org/time-zones),
-//! currently in the version 2022g (released 2022-11-29).
+//! currently in the version 2023a (released 2023-02-22).
 //!
 //! See the documentation for a full list the the contained time zones:
 //! <https://docs.rs/tzdb/latest/tzdb/time_zone/index.html>
@@ -76,12 +76,6 @@
 //!
 //! ## Feature flags
 //!
-//! * `by-name` <sup>*(enabled by default, enabled by* `local`*)*</sup> — enables [`tz_by_name()`] to get a time zone at runtime by name
-//!
-//! * `list` <sup>*(enabled by default)*</sup> — enables [`TZ_NAMES`] to get a list of all shipped time zones
-//!
-//! * `local` <sup>*(enabled by default)*</sup> — enables [`local_tz()`] to get the system time zone
-//!
 //! * `now` <sup>*(enabled by default)*</sup> — enables the module [`now`] to get the current time
 //!
 //! * `binary` — make the unparsed, binary tzdata of a time zone available
@@ -104,9 +98,9 @@ mod generated;
 #[cfg(feature = "now")]
 #[cfg_attr(docsrs, doc(cfg(feature = "now")))]
 pub mod now;
-#[cfg(all(test, feature = "by-name"))]
+#[cfg(test)]
 mod test_by_name;
-#[cfg(all(test, not(miri), feature = "by-name"))]
+#[cfg(all(test, not(miri)))]
 mod test_proptest;
 
 #[cfg(feature = "local")]
@@ -115,10 +109,10 @@ use iana_time_zone::get_timezone;
 pub use crate::generated::time_zone;
 
 /// The version of the source Time Zone Database
-pub const VERSION: &str = "2022g";
+pub const VERSION: &str = self::generated::VERSION;
 
 /// The SHA512 hash of the source Time Zone Database (using the "Complete Distribution")
-pub const VERSION_HASH: &str = "f471046189f519de5735ac2d8c3edb27cbe925247b06f44634e700e5e4453ec5f715d85256fc74d300bcdaa070a7600fcc054327f2dfe743ab3c0fe404ff83c1";
+pub const VERSION_HASH: &str = self::generated::VERSION_HASH;
 
 /// Find a time zone by name, e.g. `"Europe/Berlin"` (case-insensitive)
 ///
@@ -133,8 +127,6 @@ pub const VERSION_HASH: &str = "f471046189f519de5735ac2d8c3edb27cbe925247b06f446
 /// # };
 /// ```
 #[inline]
-#[cfg(feature = "by-name")]
-#[cfg_attr(docsrs, doc(cfg(feature = "by-name")))]
 pub fn tz_by_name<S: AsRef<[u8]>>(s: S) -> Option<tz::TimeZoneRef<'static>> {
     generated::by_name::find_tz(s.as_ref())
 }
@@ -152,15 +144,11 @@ pub fn tz_by_name<S: AsRef<[u8]>>(s: S) -> Option<tz::TimeZoneRef<'static>> {
 /// # };
 /// ```
 #[inline]
-#[cfg(all(feature = "binary", feature = "by-name"))]
-#[cfg_attr(docsrs, doc(cfg(all(feature = "binary", feature = "by-name"))))]
 pub fn raw_tz_by_name<S: AsRef<[u8]>>(s: S) -> Option<&'static [u8]> {
     generated::by_name::find_raw(s.as_ref())
 }
 
 /// A list of all known time zones
-#[cfg(feature = "list")]
-#[cfg_attr(docsrs, doc(cfg(feature = "list")))]
 pub const TZ_NAMES: &[&str] = &crate::generated::TIME_ZONES_LIST;
 
 /// Find the time zone of the current system
