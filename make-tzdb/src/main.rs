@@ -120,10 +120,13 @@ pub fn main() -> anyhow::Result<()> {
     let mut folders = vec![];
     for entry in read_dir(&base_path)?.filter_map(|f| f.ok()) {
         let name = entry.file_name();
-        let name = match name.to_str() {
-            Some(name) if !name.contains('.') => name,
-            _ => continue,
+        let Some(name) = name.to_str() else {
+            continue;
         };
+        if !name.is_ascii() || name.contains('.') || !name.as_bytes()[0].is_ascii_uppercase() {
+            continue;
+        }
+
         if entry.file_type().map(|f| f.is_dir()).unwrap_or_default() {
             folders.push(name.to_owned());
             continue;
@@ -138,10 +141,13 @@ pub fn main() -> anyhow::Result<()> {
     for folder in folders {
         for entry in read_dir(format!("{}/{}", base_path, folder))?.filter_map(|f| f.ok()) {
             let name = entry.file_name();
-            let name = match name.to_str() {
-                Some(name) if !name.contains('.') => name,
-                _ => continue,
+            let Some(name) = name.to_str() else {
+                continue;
             };
+            if !name.is_ascii() || name.contains('.') || !name.as_bytes()[0].is_ascii_uppercase() {
+                continue;
+            }
+
             if let Ok(bytes) = std::fs::read(format!("{}/{}/{}", &base_path, &folder, name)) {
                 if TimeZone::from_tz_data(&bytes).is_ok() {
                     let tz_entry = TzName::new(Some(folder.as_str()), name);

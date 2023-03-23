@@ -1,5 +1,10 @@
 ## Changes between the versions
 
+### 0.5.4 (2023-03-24)
+
+* Update to Time Zone Database release [2023a](https://mm.icann.org/pipermail/tz-announce/2023-March/000077.html)
+* Remove "etc/localtime" as it should not be part of this library
+
 ### 0.5.3 (2023-01-01)
 
 * No need to use `unsafe` functions
@@ -10,7 +15,7 @@
 
 ### 0.5.1 (2022-11-30)
 
-* Update to Time Zone Database release [Time Zone Database 2022g](https://mm.icann.org/pipermail/tz-announce/2022-November/000076.html)
+* Update to Time Zone Database release [2022g](https://mm.icann.org/pipermail/tz-announce/2022-November/000076.html)
 
 ### 0.5.0 (2022-11-24)
 
@@ -18,18 +23,18 @@
 
 #### 0.5.0-pre.4 (2022-10-29)
 
-* Update to Time Zone Database release [Time Zone Database 2022f](https://mm.icann.org/pipermail/tz-announce/2022-October/000075.html)
+* Update to Time Zone Database release [2022f](https://mm.icann.org/pipermail/tz-announce/2022-October/000075.html)
 * Use `edition = "2021"`
 
 #### 0.5.0-pre.3 (2022-10-12)
 
 * Remove `utcnow` integration
 * Simplify by removing `no_std` support
-* Update to Time Zone Database release [Time Zone Database 2022e](https://mm.icann.org/pipermail/tz-announce/2022-October/000074.html)
+* Update to Time Zone Database release [2022e](https://mm.icann.org/pipermail/tz-announce/2022-October/000074.html)
 
 #### 0.5.0-pre.2 (2022-09-25)
 
-* Update to Time Zone Database release [Time Zone Database 2022d](https://mm.icann.org/pipermail/tz-announce/2022-September/000073.html)
+* Update to Time Zone Database release [2022d](https://mm.icann.org/pipermail/tz-announce/2022-September/000073.html)
 * Update to iana-time-zone 0.1.50
 
 #### 0.5.0-pre.1 (2022-09-14)
