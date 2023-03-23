@@ -1,6 +1,6 @@
 [package]
 name = "tzdb"
-version = "0.4.9"
+version = "0.4.10"
 edition = "2021"
 authors = ["René Kijewski <crates.io@k6i.de>"]
 repository = "https://github.com/Kijewski/tzdb"
@@ -26,17 +26,8 @@ structmeta = "^0.1.5"
 [features]
 default = ["by-name", "list", "local", "std", "fallback", "now"]
 
-# Enables [`tz_by_name()`] to get a time zone at runtime by name:
-by-name = []
-
-# Enables [`TZ_NAMES`] to get a list of all shipped time zones:
-list = []
-
 # Enables [`local_tz()`] to get the system time zone:
 local = ["by-name", "iana-time-zone"]
-
-# Make the unparsed, binary tzdata of a time zone available:
-binary = []
 
 # Enable features that need the standard library `std`:
 std = ["alloc", "tz-rs/std", "utcnow?/std"]
@@ -50,6 +41,11 @@ fallback = ["iana-time-zone?/fallback", "utcnow?/fallback"]
 # Enables the module [`now`] to get the current time:
 now = ["utcnow"]
 
+# Legacy features:
+by-name = []
+list = []
+binary = []
+
 [package.metadata.docs.rs]
 all-features = true
 rustdoc-args = ["--cfg", "docsrs"]
@@ -58,5 +54,4 @@ rustdoc-args = ["--cfg", "docsrs"]
 members = [
     ".",
     "examples/current-time",
-    "make-tzdb",
 ]
