@@ -35,7 +35,7 @@
 
 //! # tzdb — Time Zone Database
 //!
-//! [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/Kijewski/tzdb/CI?logo=github)](https://github.com/Kijewski/tzdb/actions/workflows/ci.yml)
+//! [![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/Kijewski/tzdb/ci.yml?branch=v0.4.x)](https://github.com/Kijewski/tzdb/actions/workflows/ci.yml)
 //! [![Crates.io](https://img.shields.io/crates/v/tzdb?logo=rust)](https://crates.io/crates/tzdb)
 //! ![Minimum supported Rust version](https://img.shields.io/badge/rustc-1.60+-important?logo=rust "Minimum Supported Rust Version")
 //! [![License](https://img.shields.io/crates/l/tzdb?color=informational&logo=apache)](/LICENSES)
