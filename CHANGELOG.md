@@ -1,8 +1,12 @@
 ## Changes between the versions
 
+### 0.4.11 (2023-03-24)
+
+* Update to [Time Zone Database 2023b](https://mm.icann.org/pipermail/tz-announce/2023-March/000078.html)
+
 ### 0.4.10 (2023-03-24)
 
-* Update to [Time Zone Database 2023a](https://mm.icann.org/pipermail/tz-announce/2023-January/000077.html)
+* Update to [Time Zone Database 2023a](https://mm.icann.org/pipermail/tz-announce/2023-March/000077.html)
 * Make the features `binary`, `by-name`, `list` always present
 * Use the same generated code as the v0.5.x branch
 
