@@ -1,9 +1,11 @@
 ## Changes between the versions
 
-### 0.5.4 (2023-03-24)
+### 0.5.5 (2023-03-24)
 
 * Update to Time Zone Database release [2023a](https://mm.icann.org/pipermail/tz-announce/2023-March/000077.html)
 * Remove "etc/localtime" as it should not be part of this library
+
+### ~~0.5.4 (2023-03-24)~~
 
 ### 0.5.3 (2023-01-01)
 
