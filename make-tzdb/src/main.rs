@@ -223,24 +223,86 @@ pub fn main() -> anyhow::Result<()> {
 mod test_all_names;
 pub(crate) mod by_name;
 
-use tz::TimeZoneRef;
-
-macro_rules! unwrap {{
-    ($($tt:tt)*) => {{
-        match $($tt)* {{
-            Ok(value) => value,
-            Err(_) => {{
-                #[allow(unconditional_panic)]
-                let err = [][0];
-                err
-            }}
-        }}
-    }}
-}}
-pub(crate) use unwrap;
-
 pub(crate) const VERSION: &str = {version:?};
 pub(crate) const VERSION_HASH: &str = {hash:?};
+
+pub(crate) const fn new_time_zone_ref(
+    transitions: &'static [tz::timezone::Transition],
+    local_time_types: &'static [tz::LocalTimeType],
+    leap_seconds: &'static [tz::timezone::LeapSecond],
+    extra_rule: &'static Option<tz::timezone::TransitionRule>,
+) -> tz::timezone::TimeZoneRef<'static> {{
+    match tz::timezone::TimeZoneRef::new(transitions, local_time_types, leap_seconds, extra_rule) {{
+        Ok(value) => value,
+        Err(_) => {{
+            #[allow(unconditional_panic)]
+            let err = [][0];
+            err
+        }},
+    }}
+}}
+
+pub(crate) const fn new_local_time_type(
+    ut_offset: i32,
+    is_dst: bool,
+    time_zone_designation: Option<&[u8]>,
+) -> tz::LocalTimeType {{
+    match tz::LocalTimeType::new(ut_offset, is_dst, time_zone_designation) {{
+        Ok(value) => value,
+        Err(_) => {{
+            #[allow(unconditional_panic)]
+            let err = [][0];
+            err
+        }},
+    }}
+}}
+
+pub(crate) const fn new_transition(
+    unix_leap_time: i64,
+    local_time_type_index: usize,
+) -> tz::timezone::Transition {{
+    tz::timezone::Transition::new(unix_leap_time, local_time_type_index)
+}}
+
+pub(crate) const fn new_alternate_time(
+    std: tz::LocalTimeType,
+    dst: tz::LocalTimeType,
+    dst_start: tz::timezone::RuleDay,
+    dst_start_time: i32,
+    dst_end: tz::timezone::RuleDay,
+    dst_end_time: i32,
+) -> tz::timezone::AlternateTime {{
+    match tz::timezone::AlternateTime::new(
+        std,
+        dst,
+        dst_start,
+        dst_start_time,
+        dst_end,
+        dst_end_time,
+    ) {{
+        Ok(value) => value,
+        Err(_) => {{
+            #[allow(unconditional_panic)]
+            let err = [][0];
+            err
+        }},
+    }}
+}}
+
+pub(crate) const fn new_month_week_day(
+    month: u8,
+    week: u8,
+    week_day: u8,
+) -> tz::timezone::MonthWeekDay {{
+    match tz::timezone::MonthWeekDay::new(month, week, week_day) {{
+        Ok(value) => value,
+        Err(_) => {{
+            #[allow(unconditional_panic)]
+            let err = [][0];
+            err
+        }},
+    }}
+}}
 "#
     )?;
 
@@ -369,26 +431,21 @@ pub(crate) const VERSION_HASH: &str = {hash:?};
     // all known time zones as reference to (raw_)tzdata
     writeln!(f, "/// All defined time zones statically accessible")?;
     writeln!(f, "pub mod time_zone {{")?;
-    writeln!(f, "    use super::*;")?;
     for (folder, entries) in &entries_by_major {
-        writeln!(f)?;
         if let Some(folder) = folder {
             writeln!(f, "/// {}", folder)?;
             writeln!(f, "pub mod {} {{", folder)?;
-            writeln!(f, "    use super::*;")?;
         }
         for entry in entries {
-            writeln!(f)?;
             writeln!(f, "    /// Time zone data for {},", entry.full)?;
             writeln!(
                 f,
-                "pub const {}: TimeZoneRef<'static> = tzdata::{};",
+                "pub const {}: tz::TimeZoneRef<'static> = crate::generated::tzdata::{};",
                 entry.minor, entry.canon,
             )?;
         }
 
         for entry in entries {
-            writeln!(f)?;
             writeln!(
                 f,
                 "    /// Raw, unparsed time zone data for {},",
@@ -396,7 +453,7 @@ pub(crate) const VERSION_HASH: &str = {hash:?};
             )?;
             writeln!(
                 f,
-                "pub const RAW_{}: &[u8] = raw_tzdata::{};",
+                "pub const RAW_{}: &[u8] = crate::generated::raw_tzdata::{};",
                 entry.minor, entry.canon,
             )?;
         }
@@ -436,9 +493,9 @@ pub(crate) const VERSION_HASH: &str = {hash:?};
         writeln!(f)?;
         writeln!(
             f,
-            "pub(crate) const {}: TimeZoneRef<'static> = {};",
+            "pub(crate) const {}: tz::TimeZoneRef<'static> = {};",
             &entries[0].canon,
-            parse::Unwrap(&tz_convert(bytes)),
+            tz_convert(bytes),
         )?;
     }
     writeln!(f, "}}")?;
