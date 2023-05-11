@@ -38,3 +38,6 @@ path = "bin/libfuzzer.rs"
 test = false
 doc = false
 required-features = ["libfuzzer-sys"]
+
+[workspace]
+members = ["."]
