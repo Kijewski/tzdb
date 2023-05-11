@@ -1,9 +1,9 @@
 use std::convert::TryInto;
 use std::time::{Duration, Instant};
 
-use rand::rngs::SmallRng;
 use rand::seq::{IteratorRandom, SliceRandom};
 use rand::SeedableRng;
+use rand_xoshiro::Xoroshiro128PlusPlus;
 use tzdb::{raw_tz_by_name, TZ_NAMES};
 
 fn benchmark_by_name(c: &mut criterion::Criterion) {
@@ -57,7 +57,7 @@ fn benchmark_by_name(c: &mut criterion::Criterion) {
 
     // insert a bunch of unknown names
     for idx in 0..100 {
-        let mut rng = SmallRng::seed_from_u64(idx);
+        let mut rng = Xoroshiro128PlusPlus::seed_from_u64(idx);
 
         let mut continent = *b"abcdefghijklmnopqrstuvwxyz";
         let mut city = *b"abcdefghijklmnopqrstuvwxyz";
@@ -84,7 +84,7 @@ fn benchmark_by_name(c: &mut criterion::Criterion) {
         b.iter_custom(|iters| {
             let mut nanos = 0;
             for i in 0..iters {
-                names.shuffle(&mut SmallRng::seed_from_u64(i));
+                names.shuffle(&mut Xoroshiro128PlusPlus::seed_from_u64(i));
 
                 let start = Instant::now();
                 let names = criterion::black_box(&*names);

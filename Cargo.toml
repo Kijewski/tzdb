@@ -18,7 +18,8 @@ iana-time-zone = { version = "^0.1.50", default-features = false }
 [dev-dependencies]
 criterion = { version = "^0.3.6", default-features = false }
 proptest = "=1.0"
-rand = { version = "^0.8.5", default-features = false, features = ["std", "small_rng"] }
+rand = { version = "^0.8.5", default-features = false, features = ["std"] }
+rand_xoshiro = "^0.6.0"
 test-strategy = "=0.1.2"
 structmeta = "=0.1.4"
 
