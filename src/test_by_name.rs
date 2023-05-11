@@ -2,8 +2,8 @@ use crate::{time_zone, tz_by_name};
 
 #[test]
 fn test_by_name() {
-    let _ = tz_by_name("Europe/Berlin").unwrap();
-    let _ = tz_by_name("America/Dominica").unwrap();
+    let _: tz::TimeZoneRef<'static> = tz_by_name("Europe/Berlin").unwrap();
+    let _: tz::TimeZoneRef<'static> = tz_by_name("America/Dominica").unwrap();
 }
 
 #[test]

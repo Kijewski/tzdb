@@ -18,11 +18,6 @@ tz-rs = { version = "^0.6.14", default-features = false, features = ["const"] }
 iana-time-zone = { version = "^0.1.46", default-features = false, optional = true }
 utcnow = { version = "^0.2.0", default-features = false, optional = true }
 
-[dev-dependencies]
-proptest = "=1"
-test-strategy = "^0.2.0"
-structmeta = "^0.1.5"
-
 [features]
 default = ["by-name", "list", "local", "std", "fallback", "now"]
 

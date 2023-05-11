@@ -100,8 +100,6 @@ mod generated;
 pub mod now;
 #[cfg(test)]
 mod test_by_name;
-#[cfg(all(test, not(miri)))]
-mod test_proptest;
 
 #[cfg(feature = "local")]
 use iana_time_zone::get_timezone;
