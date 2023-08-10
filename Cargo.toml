@@ -16,7 +16,7 @@ tz-rs = { version = "^0.6.14", default-features = false, features = ["const", "s
 iana-time-zone = { version = "^0.1.50", default-features = false }
 
 [dev-dependencies]
-proptest = "=1.0"
+proptest = "=1.2"
 test-strategy = "=0.1.2"
 structmeta = "=0.1.4"
 
