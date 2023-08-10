@@ -84,10 +84,6 @@ extern crate alloc;
 pub mod changelog;
 mod generated;
 pub mod now;
-#[cfg(test)]
-mod test_by_name;
-#[cfg(all(test, not(miri)))]
-mod test_proptest;
 
 use iana_time_zone::get_timezone;
 

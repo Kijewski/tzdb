@@ -15,11 +15,6 @@ readme = "README.md"
 tz-rs = { version = "^0.6.14", default-features = false, features = ["const", "std"] }
 iana-time-zone = { version = "^0.1.50", default-features = false }
 
-[dev-dependencies]
-proptest = "=1.0"
-test-strategy = "=0.1.2"
-structmeta = "=0.1.4"
-
 [features]
 default = ["fallback"]
 

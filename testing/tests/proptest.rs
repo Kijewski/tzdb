@@ -1,6 +1,10 @@
+#![cfg(all(test, not(miri)))]
+
 use proptest::collection::{vec, SizeRange};
 use proptest::prelude::*;
 use test_strategy::proptest;
+use tz::TimeZoneRef;
+use tzdb::{tz_by_name, raw_tz_by_name};
 
 fn ascii_string(size: impl Into<SizeRange>) -> impl Strategy<Value = String> {
     vec(proptest::char::range('\0', '\x7f'), size).prop_map(|v| v.into_iter().collect())
@@ -16,36 +20,36 @@ fn random_bytes(size: impl Into<SizeRange>) -> impl Strategy<Value = Vec<u8>> {
 
 #[proptest]
 fn test_short_ascii_string(#[strategy(ascii_string(0..8))] s: String) {
-    let _: Option<tz::TimeZoneRef<'static>> = crate::tz_by_name(&s);
-    let _: Option<&[u8]> = crate::raw_tz_by_name(&s);
+    let _: Option<TimeZoneRef<'static>> = tz_by_name(&s);
+    let _: Option<&[u8]> = raw_tz_by_name(&s);
 }
 
 #[proptest]
 fn test_ascii_string(#[strategy(ascii_string(8..40))] s: String) {
-    let _: Option<tz::TimeZoneRef<'static>> = crate::tz_by_name(&s);
-    let _: Option<&[u8]> = crate::raw_tz_by_name(&s);
+    let _: Option<TimeZoneRef<'static>> = tz_by_name(&s);
+    let _: Option<&[u8]> = raw_tz_by_name(&s);
 }
 
 #[proptest]
 fn test_short_string(#[strategy(random_string(0..8))] s: String) {
-    let _: Option<tz::TimeZoneRef<'static>> = crate::tz_by_name(&s);
-    let _: Option<&[u8]> = crate::raw_tz_by_name(&s);
+    let _: Option<TimeZoneRef<'static>> = tz_by_name(&s);
+    let _: Option<&[u8]> = raw_tz_by_name(&s);
 }
 
 #[proptest]
 fn test_string(#[strategy(random_string(8..40))] s: String) {
-    let _: Option<tz::TimeZoneRef<'static>> = crate::tz_by_name(&s);
-    let _: Option<&[u8]> = crate::raw_tz_by_name(&s);
+    let _: Option<TimeZoneRef<'static>> = tz_by_name(&s);
+    let _: Option<&[u8]> = raw_tz_by_name(&s);
 }
 
 #[proptest]
 fn test_short_bytes(#[strategy(random_bytes(0..8))] s: Vec<u8>) {
-    let _: Option<tz::TimeZoneRef<'static>> = crate::tz_by_name(&s);
-    let _: Option<&[u8]> = crate::raw_tz_by_name(&s);
+    let _: Option<TimeZoneRef<'static>> = tz_by_name(&s);
+    let _: Option<&[u8]> = raw_tz_by_name(&s);
 }
 
 #[proptest]
 fn test_bytes(#[strategy(random_bytes(8..40))] s: Vec<u8>) {
-    let _: Option<tz::TimeZoneRef<'static>> = crate::tz_by_name(&s);
-    let _: Option<&[u8]> = crate::raw_tz_by_name(&s);
+    let _: Option<TimeZoneRef<'static>> = tz_by_name(&s);
+    let _: Option<&[u8]> = raw_tz_by_name(&s);
 }

@@ -37,7 +37,7 @@ jobs:
 
       - run: cargo fmt --all -- --check
 
-  test:
+  lint:
     strategy:
       fail-fast: false
       matrix:
@@ -45,15 +45,11 @@ jobs:
           - "1.56"
           - stable
           - nightly
-        platform:
-          - ubuntu-20.04
-          - windows-2022
-          - macos-12
         versions:
           - ""
           - "-Zminimal-versions"
 
-    runs-on: ${{ matrix.platform }}
+    runs-on: ubuntu-20.04
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -73,8 +69,6 @@ jobs:
 
       - run: cargo check --package tzdb --all-targets
       - run: cargo clippy --package tzdb --all-targets -- -D warnings
-      - run: cargo test --package tzdb --all-targets
-      - run: cargo run --package current-time
 
   clippy-pedantic:
     runs-on: ubuntu-20.04
@@ -91,6 +85,25 @@ jobs:
 
       - run: cargo clippy --package tzdb --all-targets -- -D clippy::pedantic
 
+  test:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          submodules: recursive
+
+      - name: Setup Rust
+        uses: ./.github/actions/setup-rust
+        with:
+          components: clippy
+
+      - run: cargo check --package tzdb --all-targets
+      - run: cargo clippy --package tzdb --all-targets -- -D warnings
+      - run: cargo test --package tzdb --all-targets
+      - run: cargo run --package current-time
+      - run: cd testing && cargo test
+
   miri:
     name: "Miri"
     runs-on: ubuntu-20.04
@@ -106,8 +119,11 @@ jobs:
           toolchain: nightly
           components: miri
 
-      - name: Test
+      - name: Test (tzdb)
         run: cargo miri test --package tzdb --all-targets
+
+      - name: Test (testing)
+        run: cd testing && cargo miri test --package tzdb --all-targets
 
   cross-miri:
     strategy:
@@ -200,7 +216,7 @@ jobs:
           components: clippy
 
       - name: Install "cross"
-        run: curl --location --silent --show-error --fail https://github.com/cargo-bins/cargo-quickinstall/releases/download/cross-0.2.4-x86_64-unknown-linux-gnu/cross-0.2.4-x86_64-unknown-linux-gnu.tar.gz | tar -xzvvf - -C $HOME/.cargo/bin
+        run: curl --location --silent --show-error --fail https://github.com/cargo-bins/cargo-quickinstall/releases/download/cross-0.2.5-x86_64-unknown-linux-gnu/cross-0.2.5-x86_64-unknown-linux-gnu.tar.gz | tar -xzvvf - -C $HOME/.cargo/bin
       - run: cross check --target ${{ matrix.target }} --package tzdb --all-targets
       - run: cross clippy --target ${{ matrix.target }} --package tzdb --all-targets -- -D warnings
       - run: cross build --target ${{ matrix.target }} --package tzdb --lib
@@ -229,7 +245,7 @@ jobs:
           components: clippy
 
       - name: Install "cross"
-        run: curl --location --silent --show-error --fail https://github.com/cargo-bins/cargo-quickinstall/releases/download/cross-0.2.4-x86_64-apple-darwin/cross-0.2.4-x86_64-apple-darwin.tar.gz | tar -xzvvf - -C $HOME/.cargo/bin
+        run: curl --location --silent --show-error --fail https://github.com/cargo-bins/cargo-quickinstall/releases/download/cross-0.2.5-x86_64-apple-darwin/cross-0.2.5-x86_64-apple-darwin.tar.gz | tar -xzvvf - -C $HOME/.cargo/bin
       - run: cross check --target ${{ matrix.target }} --package tzdb --all-targets
       - run: cross clippy --target ${{ matrix.target }} --package tzdb --all-targets -- -D warnings
       - run: cross build --target ${{ matrix.target }} --package tzdb --lib
