@@ -1,4 +1,6 @@
-use crate::{time_zone, tz_by_name};
+#![cfg(test)]
+
+use tzdb::{time_zone, tz_by_name, raw_tz_by_name};
 
 #[test]
 fn test_by_name() {
@@ -38,7 +40,7 @@ fn test_static() {
 fn test_raw_static() {
     assert_eq!(
         time_zone::pacific::RAW_NAURU,
-        crate::raw_tz_by_name("Pacific/Nauru").unwrap()
+        raw_tz_by_name("Pacific/Nauru").unwrap()
     );
 }
 
