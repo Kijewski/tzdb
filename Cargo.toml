@@ -26,8 +26,4 @@ all-features = true
 rustdoc-args = ["--cfg", "docsrs"]
 
 [workspace]
-members = [
-    ".",
-    "examples/current-time",
-    "make-tzdb",
-]
+members = [".", "examples/current-time"]
