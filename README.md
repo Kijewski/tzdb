@@ -38,4 +38,4 @@ let current_time = tzdb::now::in_named_or(tzdb::time_zone::GMT, "Some/City")?;
 
 ## Feature flags
 
-* `fallback` <sup>(enabled by default)</sup> — compile for unknown target platforms, too
+* `local` <sup>(enabled by default)</sup> — enable functions to query the current system time

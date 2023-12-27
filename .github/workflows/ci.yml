@@ -9,6 +9,7 @@ on:
       - v0.3.x
       - v0.4.x
       - v0.5.x
+      - v0.6.x
   pull_request:
     branches:
       - main
@@ -17,6 +18,7 @@ on:
       - v0.3.x
       - v0.4.x
       - v0.5.x
+      - v0.6.x
   schedule:
     - cron: "58 7 * * 3"
 

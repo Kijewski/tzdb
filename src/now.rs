@@ -4,9 +4,19 @@ use std::convert::TryFrom;
 use std::fmt;
 use std::time::{SystemTime, SystemTimeError};
 
-use iana_time_zone::{get_timezone, GetTimezoneError};
 use tz::error::ProjectDateTimeError;
 use tz::{DateTime, TimeZoneRef};
+
+#[cfg(not(feature = "local"))]
+mod iana_time_zone {
+    #[allow(missing_copy_implementations)] // intentionally omitted
+    #[derive(Debug)]
+    #[non_exhaustive]
+    pub struct GetTimezoneError(Impossible);
+
+    #[derive(Debug, Clone, Copy)]
+    enum Impossible {}
+}
 
 /// An error as returned by [`local()`] and similar functions
 ///
@@ -19,7 +29,7 @@ use tz::{DateTime, TimeZoneRef};
 #[derive(Debug)]
 pub enum NowError {
     /// Could not get time zone. Only returned by [`local()`].
-    TimeZone(GetTimezoneError),
+    TimeZone(iana_time_zone::GetTimezoneError),
     /// Unknown system time zone. Only returned by [`local()`], and [`in_named()`].
     UnknownTimezone,
     /// Could not project timestamp.
@@ -42,7 +52,10 @@ impl fmt::Display for NowError {
 impl std::error::Error for NowError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match self {
+            #[cfg(feature = "local")]
             Self::TimeZone(err) => Some(err),
+            #[cfg(not(feature = "local"))]
+            Self::TimeZone(_) => None,
             Self::UnknownTimezone => None,
             Self::ProjectDateTime(err) => Some(err),
             Self::Utcnow(err) => Some(err),
@@ -86,8 +99,10 @@ impl std::error::Error for NowError {
 /// * `local()` / [`local_or()`]
 /// * [`in_named()`] / [`in_named_or()`]
 /// * [`in_tz()`]
+#[cfg(feature = "local")]
+#[cfg_attr(docsrs, doc(cfg(feature = "local")))]
 pub fn local() -> Result<DateTime, NowError> {
-    in_named(get_timezone().map_err(NowError::TimeZone)?)
+    in_named(iana_time_zone::get_timezone().map_err(NowError::TimeZone)?)
 }
 
 /// Get the current time in the local system time zone with a fallback time zone
@@ -115,8 +130,10 @@ pub fn local() -> Result<DateTime, NowError> {
 /// * [`local()`] / `local_or()`
 /// * [`in_named()`] / [`in_named_or()`]
 /// * [`in_tz()`]
+#[cfg(feature = "local")]
+#[cfg_attr(docsrs, doc(cfg(feature = "local")))]
 pub fn local_or(default: TimeZoneRef<'_>) -> Result<DateTime, NowError> {
-    let tz = get_timezone()
+    let tz = iana_time_zone::get_timezone()
         .ok()
         .and_then(crate::tz_by_name)
         .unwrap_or(default);

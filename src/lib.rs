@@ -51,9 +51,11 @@
 //! ## Usage examples
 //!
 //! ```rust
+//! # #[cfg(feature = "local")] {
 //! // get the system time zone
 //! let time_zone = tzdb::local_tz().unwrap();       // tz::TimeZoneRef<'_>
 //! let current_time = tzdb::now::local().unwrap();  // tz::DateTime
+//! # }
 //!
 //! // access by identifier
 //! let time_zone = tzdb::time_zone::europe::KYIV;
@@ -68,13 +70,15 @@
 //! let current_time = tzdb::now::in_named("ArCtIc/LongYeArByEn").unwrap();
 //!
 //! // provide a default time zone
+//! # #[cfg(feature = "local")] {
 //! let current_time = tzdb::now::local_or(tzdb::time_zone::GMT).unwrap();
+//! # }
 //! let current_time = tzdb::now::in_named_or(tzdb::time_zone::GMT, "Some/City").unwrap();
 //! ```
 //!
 //! ## Feature flags
 //!
-//! * `fallback` <sup>*(enabled by default)*</sup> — compile for unknown target platforms, too
+//! * `local` <sup>(enabled by default)</sup> — enable functions to query the current system time
 //!
 
 #[cfg(docsrs)]
@@ -84,8 +88,6 @@ extern crate alloc;
 pub mod changelog;
 mod generated;
 pub mod now;
-
-use iana_time_zone::get_timezone;
 
 pub use crate::generated::time_zone;
 
@@ -130,7 +132,7 @@ pub const TZ_NAMES: &[&str] = &crate::generated::TIME_ZONES_LIST;
 
 /// Find the time zone of the current system
 ///
-/// This function uses [`iana_time_zone::get_timezone()`](get_timezone) in the background.
+/// This function uses [`iana_time_zone::get_timezone()`] in the background.
 /// You may want to cache the output to avoid repeated filesystem accesses by `get_timezone()`.
 ///
 /// # Example
@@ -148,6 +150,8 @@ pub const TZ_NAMES: &[&str] = &crate::generated::TIME_ZONES_LIST;
 /// let time_zone = tzdb::local_tz().unwrap_or(tzdb::time_zone::GMT);
 /// ```
 #[must_use]
+#[cfg(feature = "local")]
+#[cfg_attr(docsrs, doc(cfg(feature = "local")))]
 pub fn local_tz() -> Option<tz::TimeZoneRef<'static>> {
-    tz_by_name(get_timezone().ok()?)
+    tz_by_name(iana_time_zone::get_timezone().ok()?)
 }

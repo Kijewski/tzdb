@@ -1,6 +1,6 @@
 [package]
 name = "tzdb"
-version = "0.5.9"
+version = "0.6.0-pre.1"
 edition = "2018"
 authors = ["René Kijewski <crates.io@k6i.de>"]
 repository = "https://github.com/Kijewski/tzdb"
@@ -13,13 +13,12 @@ readme = "README.md"
 
 [dependencies]
 tz-rs = { version = "^0.6.14", default-features = false, features = ["const", "std"] }
-iana-time-zone = { version = "^0.1.50", default-features = false }
+iana-time-zone = { version = "^0.1.50", default-features = false, features = ["fallback"], optional = true }
 
 [features]
-default = ["fallback"]
-
-# Do not fail to compile for unknown target platforms:
-fallback = ["iana-time-zone/fallback"]
+default = ["local"]
+# Enable functions to query the current system time:
+local = ["iana-time-zone"]
 
 [package.metadata.docs.rs]
 all-features = true
