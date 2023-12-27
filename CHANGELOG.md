@@ -1,5 +1,9 @@
 ## Changes between the versions
 
+### 0.4.13 (2023-12-27)
+
+* Update to [Time Zone Database 2023d](https://mm.icann.org/pipermail/tz-announce/2023-March/000080.html)
+
 ### 0.4.12 (2023-05-11)
 
 * Fewer macros = faster compile times
