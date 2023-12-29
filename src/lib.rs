@@ -15,6 +15,7 @@
 // limitations under the License.
 
 #![cfg_attr(docsrs, feature(doc_cfg))]
+#![allow(unknown_lints)]
 #![allow(unused_attributes)]
 #![forbid(unsafe_code)]
 #![warn(absolute_paths_not_starting_with_crate)]
@@ -78,59 +79,15 @@
 //!
 
 #[cfg(docsrs)]
-extern crate alloc;
-
-#[cfg(docsrs)]
 pub mod changelog;
-mod generated;
 pub mod now;
 
-use iana_time_zone::get_timezone;
-
-pub use crate::generated::time_zone;
-
-/// The version of the source Time Zone Database
-pub const VERSION: &str = generated::VERSION;
-
-/// The SHA512 hash of the source Time Zone Database (using the "Complete Distribution")
-pub const VERSION_HASH: &str = generated::VERSION_HASH;
-
-/// Find a time zone by name, e.g. `"Europe/Berlin"` (case-insensitive)
-///
-/// # Example
-///
-/// ```
-/// assert_eq!(
-///     tzdb::time_zone::europe::BERLIN,
-///     tzdb::tz_by_name("Europe/Berlin").unwrap(),
-/// );
-/// ```
-#[inline]
-pub fn tz_by_name<S: AsRef<[u8]>>(s: S) -> Option<tz::TimeZoneRef<'static>> {
-    generated::by_name::find_tz(s.as_ref())
-}
-
-/// Find the raw, unparsed time zone data by name, e.g. `"Europe/Berlin"` (case-insensitive)
-///
-/// # Example
-///
-/// ```
-/// assert_eq!(
-///     tzdb::time_zone::europe::RAW_BERLIN,
-///     tzdb::raw_tz_by_name("Europe/Berlin").unwrap(),
-/// );
-/// ```
-#[inline]
-pub fn raw_tz_by_name<S: AsRef<[u8]>>(s: S) -> Option<&'static [u8]> {
-    generated::by_name::find_raw(s.as_ref())
-}
-
-/// A list of all known time zones
-pub const TZ_NAMES: &[&str] = &crate::generated::TIME_ZONES_LIST;
+#[cfg_attr(docsrs, doc(no_inline))]
+pub use tzdb_06::{raw_tz_by_name, time_zone, tz_by_name, TZ_NAMES, VERSION, VERSION_HASH};
 
 /// Find the time zone of the current system
 ///
-/// This function uses [`iana_time_zone::get_timezone()`](get_timezone) in the background.
+/// This function uses [`iana_time_zone::get_timezone()`] in the background.
 /// You may want to cache the output to avoid repeated filesystem accesses by `get_timezone()`.
 ///
 /// # Example
@@ -149,5 +106,5 @@ pub const TZ_NAMES: &[&str] = &crate::generated::TIME_ZONES_LIST;
 /// ```
 #[must_use]
 pub fn local_tz() -> Option<tz::TimeZoneRef<'static>> {
-    tz_by_name(get_timezone().ok()?)
+    tz_by_name(iana_time_zone::get_timezone().ok()?)
 }
