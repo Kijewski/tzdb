@@ -13,6 +13,7 @@ rust-version = "1.60"
 
 [dependencies]
 tz-rs = { version = "^0.6.14", default-features = false, features = ["const"] }
+tzdb_06 = { package = "tzdb", version = "0.6.0" }
 
 # optional dependencies
 iana-time-zone = { version = "^0.1.46", default-features = false, optional = true }

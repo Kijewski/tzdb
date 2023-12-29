@@ -94,7 +94,6 @@ extern crate std;
 
 #[cfg(docsrs)]
 pub mod changelog;
-mod generated;
 #[cfg(feature = "now")]
 #[cfg_attr(docsrs, doc(cfg(feature = "now")))]
 pub mod now;
@@ -104,50 +103,8 @@ mod test_by_name;
 #[cfg(feature = "local")]
 use iana_time_zone::get_timezone;
 
-pub use crate::generated::time_zone;
-
-/// The version of the source Time Zone Database
-pub const VERSION: &str = self::generated::VERSION;
-
-/// The SHA512 hash of the source Time Zone Database (using the "Complete Distribution")
-pub const VERSION_HASH: &str = self::generated::VERSION_HASH;
-
-/// Find a time zone by name, e.g. `"Europe/Berlin"` (case-insensitive)
-///
-/// # Example
-///
-/// ```
-/// # #[cfg(feature = "by-name")] let _: () = {
-/// assert_eq!(
-///     tzdb::time_zone::europe::BERLIN,
-///     tzdb::tz_by_name("Europe/Berlin").unwrap(),
-/// );
-/// # };
-/// ```
-#[inline]
-pub fn tz_by_name<S: AsRef<[u8]>>(s: S) -> Option<tz::TimeZoneRef<'static>> {
-    generated::by_name::find_tz(s.as_ref())
-}
-
-/// Find the raw, unparsed time zone data by name, e.g. `"Europe/Berlin"` (case-insensitive)
-///
-/// # Example
-///
-/// ```
-/// # #[cfg(all(feature = "binary", feature = "by-name"))] let _: () = {
-/// assert_eq!(
-///     tzdb::time_zone::europe::RAW_BERLIN,
-///     tzdb::raw_tz_by_name("Europe/Berlin").unwrap(),
-/// );
-/// # };
-/// ```
-#[inline]
-pub fn raw_tz_by_name<S: AsRef<[u8]>>(s: S) -> Option<&'static [u8]> {
-    generated::by_name::find_raw(s.as_ref())
-}
-
-/// A list of all known time zones
-pub const TZ_NAMES: &[&str] = &crate::generated::TIME_ZONES_LIST;
+#[cfg_attr(docsrs, doc(no_inline))]
+pub use tzdb_06::{raw_tz_by_name, time_zone, tz_by_name, TZ_NAMES, VERSION, VERSION_HASH};
 
 /// Find the time zone of the current system
 ///
