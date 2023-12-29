@@ -1,5 +1,9 @@
 ## Changes between the versions
 
+### 0.6.0 (2023-12-29)
+
+* Unchanged stable release
+
 ### 0.6.0-pre.1 (2023-12-27)
 
 * Make `iana_time_zone` inclusion optional
