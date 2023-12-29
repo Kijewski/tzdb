@@ -1,4 +1,0 @@
-[submodule "src/generated"]
-	path = src/generated
-	url = ./
-	branch = generated

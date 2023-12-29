@@ -67,8 +67,8 @@ jobs:
           RUSTC_BOOTSTRAP: 1
         run: cargo generate-lockfile ${{ matrix.versions }}
 
-      - run: cargo check --package tzdb --all-targets
-      - run: cargo clippy --package tzdb --all-targets -- -D warnings
+      - run: cargo check --package 'tzdb:0.5.10' --all-targets
+      - run: cargo clippy --package 'tzdb:0.5.10' --all-targets -- -D warnings
 
   clippy-pedantic:
     runs-on: ubuntu-20.04
@@ -83,7 +83,7 @@ jobs:
         with:
           components: clippy
 
-      - run: cargo clippy --package tzdb --all-targets -- -D clippy::pedantic
+      - run: cargo clippy --package 'tzdb:0.5.10' --all-targets -- -D clippy::pedantic
 
   test:
     runs-on: ubuntu-20.04
@@ -98,9 +98,9 @@ jobs:
         with:
           components: clippy
 
-      - run: cargo check --package tzdb --all-targets
-      - run: cargo clippy --package tzdb --all-targets -- -D warnings
-      - run: cargo test --package tzdb --all-targets
+      - run: cargo check --package 'tzdb:0.5.10' --all-targets
+      - run: cargo clippy --package 'tzdb:0.5.10' --all-targets -- -D warnings
+      - run: cargo test --package 'tzdb:0.5.10' --all-targets
       - run: cargo run --package current-time
       - run: cd testing && cargo test
 
@@ -120,10 +120,10 @@ jobs:
           components: miri
 
       - name: Test (tzdb)
-        run: cargo miri test --package tzdb --all-targets
+        run: cargo miri test --package 'tzdb:0.5.10' --all-targets
 
       - name: Test (testing)
-        run: cd testing && cargo miri test --package tzdb --all-targets
+        run: cd testing && cargo miri test --package 'tzdb:0.5.10' --all-targets
 
   cross-miri:
     strategy:
@@ -132,8 +132,6 @@ jobs:
         target:
           - aarch64-unknown-linux-gnu
           - i586-unknown-linux-gnu
-          - mipsel-unknown-linux-gnu
-          - mips64el-unknown-linux-gnuabi64
           - powerpc-unknown-linux-gnu
           - powerpc64-unknown-linux-gnu
           - powerpc64le-unknown-linux-gnu
@@ -153,7 +151,7 @@ jobs:
           target: ${{ matrix.target }}
 
       - name: Test
-        run: cargo miri test --package tzdb --target ${{ matrix.target }}
+        run: cargo miri test --package 'tzdb:0.5.10' --target ${{ matrix.target }}
 
   doc:
     runs-on: ubuntu-20.04
@@ -169,7 +167,7 @@ jobs:
           toolchain: nightly
           components: rust-docs
 
-      - run: cargo doc --package tzdb --all-features --no-deps
+      - run: cargo doc --package 'tzdb:0.5.10' --all-features --no-deps
         env:
           RUSTDOCFLAGS: -D warnings --cfg docsrs
 
@@ -217,9 +215,9 @@ jobs:
 
       - name: Install "cross"
         run: curl --location --silent --show-error --fail https://github.com/cargo-bins/cargo-quickinstall/releases/download/cross-0.2.5-x86_64-unknown-linux-gnu/cross-0.2.5-x86_64-unknown-linux-gnu.tar.gz | tar -xzvvf - -C $HOME/.cargo/bin
-      - run: cross check --target ${{ matrix.target }} --package tzdb --all-targets
-      - run: cross clippy --target ${{ matrix.target }} --package tzdb --all-targets -- -D warnings
-      - run: cross build --target ${{ matrix.target }} --package tzdb --lib
+      - run: cross check --target ${{ matrix.target }} --package 'tzdb:0.5.10' --all-targets
+      - run: cross clippy --target ${{ matrix.target }} --package 'tzdb:0.5.10' --all-targets -- -D warnings
+      - run: cross build --target ${{ matrix.target }} --package 'tzdb:0.5.10' --lib
       - run: cross build --target ${{ matrix.target }} --examples
 
   build-cross-ios:
@@ -246,9 +244,9 @@ jobs:
 
       - name: Install "cross"
         run: curl --location --silent --show-error --fail https://github.com/cargo-bins/cargo-quickinstall/releases/download/cross-0.2.5-x86_64-apple-darwin/cross-0.2.5-x86_64-apple-darwin.tar.gz | tar -xzvvf - -C $HOME/.cargo/bin
-      - run: cross check --target ${{ matrix.target }} --package tzdb --all-targets
-      - run: cross clippy --target ${{ matrix.target }} --package tzdb --all-targets -- -D warnings
-      - run: cross build --target ${{ matrix.target }} --package tzdb --lib
+      - run: cross check --target ${{ matrix.target }} --package 'tzdb:0.5.10' --all-targets
+      - run: cross clippy --target ${{ matrix.target }} --package 'tzdb:0.5.10' --all-targets -- -D warnings
+      - run: cross build --target ${{ matrix.target }} --package 'tzdb:0.5.10' --lib
       - run: cross build --target ${{ matrix.target }} --examples
 
   package:
@@ -264,7 +262,7 @@ jobs:
         with:
           toolchain: stable
 
-      - run: cargo package --package tzdb
+      - run: cargo package --package 'tzdb:0.5.10'
 
   devskim:
     name: DevSkim

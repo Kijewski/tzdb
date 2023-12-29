@@ -1,6 +1,6 @@
 [package]
 name = "tzdb"
-version = "0.5.9"
+version = "0.5.10"
 edition = "2018"
 authors = ["René Kijewski <crates.io@k6i.de>"]
 repository = "https://github.com/Kijewski/tzdb"
@@ -14,6 +14,7 @@ readme = "README.md"
 [dependencies]
 tz-rs = { version = "^0.6.14", default-features = false, features = ["const", "std"] }
 iana-time-zone = { version = "^0.1.50", default-features = false }
+tzdb_06 = { package = "tzdb", version = "0.6.0" }
 
 [features]
 default = ["fallback"]

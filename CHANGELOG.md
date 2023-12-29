@@ -1,5 +1,9 @@
 ## Changes between the versions
 
+### 0.5.10 (2023-12-29)
+
+* Use v0.6.x to implement v0.5.x
+
 ### 0.5.9 (2023-12-27)
 
 * Update to Time Zone Database release [2023d](https://mm.icann.org/pipermail/tz-announce/2023-December/000080.html)
