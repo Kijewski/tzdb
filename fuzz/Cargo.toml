@@ -12,7 +12,7 @@ edition = "2018"
 cargo-fuzz = true
 
 [dependencies]
-tzdb = { version = "0.6.0", path = ".." }
+tzdb_data = { path = "../tzdb_data" }
 
 afl = { version = "0.15", optional = true }
 honggfuzz = { version = "0.5", optional = true }

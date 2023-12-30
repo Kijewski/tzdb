@@ -1,10 +1,12 @@
+#![allow(clippy::pedantic)]
+
 use std::env::args;
 use std::process::exit;
 
 use tzdb::{local_tz, now, time_zone, tz_by_name, TZ_NAMES};
 
 pub fn main() -> Result<(), now::NowError> {
-    let mut args = args().into_iter().fuse();
+    let mut args = args().fuse();
     let exe = args.next();
     let exe = exe.as_deref().unwrap_or("current-time");
     let argument = args.next();

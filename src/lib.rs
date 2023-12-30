@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: Apache-2.0
 //
-// Copyright 2022 René Kijewski <crates.io@k6i.de>
+// Copyright 2022-2024 René Kijewski <crates.io@k6i.de>
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -15,7 +15,7 @@
 // limitations under the License.
 
 #![cfg_attr(docsrs, feature(doc_cfg))]
-#![allow(unused_attributes)]
+#![allow(unknown_lints)]
 #![forbid(unsafe_code)]
 #![warn(absolute_paths_not_starting_with_crate)]
 #![warn(elided_lifetimes_in_paths)]
@@ -86,16 +86,10 @@ extern crate alloc;
 
 #[cfg(docsrs)]
 pub mod changelog;
-mod generated;
 pub mod now;
 
-pub use crate::generated::time_zone;
-
-/// The version of the source Time Zone Database
-pub const VERSION: &str = generated::VERSION;
-
-/// The SHA512 hash of the source Time Zone Database (using the "Complete Distribution")
-pub const VERSION_HASH: &str = generated::VERSION_HASH;
+#[cfg_attr(docsrs, doc(no_inline))]
+pub use tzdb_data::{time_zone, TZ_NAMES, VERSION, VERSION_HASH};
 
 /// Find a time zone by name, e.g. `"Europe/Berlin"` (case-insensitive)
 ///
@@ -109,7 +103,7 @@ pub const VERSION_HASH: &str = generated::VERSION_HASH;
 /// ```
 #[inline]
 pub fn tz_by_name<S: AsRef<[u8]>>(s: S) -> Option<tz::TimeZoneRef<'static>> {
-    generated::by_name::find_tz(s.as_ref())
+    Some(*tzdb_data::find_tz(s.as_ref())?)
 }
 
 /// Find the raw, unparsed time zone data by name, e.g. `"Europe/Berlin"` (case-insensitive)
@@ -124,11 +118,8 @@ pub fn tz_by_name<S: AsRef<[u8]>>(s: S) -> Option<tz::TimeZoneRef<'static>> {
 /// ```
 #[inline]
 pub fn raw_tz_by_name<S: AsRef<[u8]>>(s: S) -> Option<&'static [u8]> {
-    generated::by_name::find_raw(s.as_ref())
+    tzdb_data::find_raw(s.as_ref())
 }
-
-/// A list of all known time zones
-pub const TZ_NAMES: &[&str] = &crate::generated::TIME_ZONES_LIST;
 
 /// Find the time zone of the current system
 ///

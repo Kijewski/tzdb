@@ -1,10 +1,16 @@
-.DELETE_ON_ERROR:
+#.DELETE_ON_ERROR:
 
 TZDB_VERSION := tzdb-2023d
 
-src/generated/mod.rs: tmp/${TZDB_VERSION}/usr/share/zoneinfo/ tzdb.tar.lz.sha
+tzdb_data/src/generated/mod.rs: tmp/${TZDB_VERSION}/usr/share/zoneinfo/ tzdb.tar.lz.sha
 	cd make-tzdb && cargo r -- ../$(@D) ../$< ../tzdb.tar.lz.sha
-	cargo +nightly fmt -- $(@D)/mod.rs $(@D)/by_name.rs $(@D)/raw_tzdata.rs $(@D)/test_all_names.rs
+	cargo +nightly fmt -- \
+	    $(@D)/by_name.rs \
+	    $(@D)/mod.rs \
+	    $(@D)/raw_tzdata.rs \
+	    $(@D)/test_all_names.rs \
+	    $(@D)/time_zone.rs \
+	    $(@D)/tzdata.rs
 
 tmp/${TZDB_VERSION}/usr/share/zoneinfo/: tmp/${TZDB_VERSION}/
 	cd tmp/${TZDB_VERSION}/ && make PACKRATDATA=backzone PACKRATLIST=zone.tab TOPDIR="." install

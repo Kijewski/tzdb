@@ -137,13 +137,14 @@ def convert(stdin, stdout):
 
     print('use tz::TimeZoneRef;', file=stdout)
     print(file=stdout)
+    print('use crate::eq_ignore_ascii_case;', file=stdout)
     print('use super::raw_tzdata;', file=stdout)
     print('use super::tzdata;', file=stdout)
     print(file=stdout)
 
     print('#[derive(Clone, Copy)]', file=stdout)
     print('#[repr(u16)]', file=stdout)
-    print('enum Index {', file=stdout)
+    print('pub(crate) enum Index {', file=stdout)
     idx = 0
     for entry in table:
         match entry:
@@ -174,7 +175,7 @@ def convert(stdin, stdout):
     print('];', file=stdout)
     print(file=stdout)
 
-    print(f'const TIME_ZONES: [&TimeZoneRef<\'static>; {entry_count}] = [', file=stdout)
+    print(f'pub(crate) const TIME_ZONES: [&TimeZoneRef<\'static>; {entry_count}] = [', file=stdout)
     for entry in table:
         match entry:
             case (name, canon):
@@ -182,7 +183,7 @@ def convert(stdin, stdout):
     print('];', file=stdout)
     print(file=stdout)
 
-    print(f'const RAW_TIME_ZONES: [&[u8]; {entry_count}] = [', file=stdout)
+    print(f'pub(crate) const RAW_TIME_ZONES: [&[u8]; {entry_count}] = [', file=stdout)
     for entry in table:
         match entry:
             case (name, canon):
@@ -197,7 +198,7 @@ def convert(stdin, stdout):
     print(f'{max_hash_value + 1}];', file=stdout)
     print(file=stdout)
 
-    print('fn find_key(s: &[u8]) -> Option<Index> {', file=stdout)
+    print('pub(crate) const fn find_key(s: &[u8]) -> Option<Index> {', file=stdout)
     print('    let len = s.len();', file=stdout)
     print(f'    if !matches!(len, {min_word_length}..={max_word_length}) {{', file=stdout)
     print('        return None;', file=stdout)
@@ -239,25 +240,17 @@ def convert(stdin, stdout):
     print(f'    if key > {max_hash_value} {{', file=stdout)
     print('        return None;', file=stdout)
     print('    }', file=stdout)
-    print('    let key = WORDLIST[key]?;', file=stdout)
-    print('    if !NAMES[key as u16 as usize].eq_ignore_ascii_case(s) {', file=stdout)
+    print('    let key = match WORDLIST[key] {', file=stdout)
+    print('        Some(key) => key,', file=stdout)
+    print('        None => return None,', file=stdout)
+    print('    };', file=stdout)
+    print('    if !eq_ignore_ascii_case(s, NAMES[key as u16 as usize]) {', file=stdout)
     print('        return None;', file=stdout)
     print('    }', file=stdout)
     print(file=stdout)
     print('    Some(key)', file=stdout)
     print('}', file=stdout)
     print(file=stdout)
-
-    print('#[inline]')
-    print('pub(crate) fn find_tz(s: &[u8]) -> Option<TimeZoneRef<\'static>> {', file=stdout)
-    print('    Some(*TIME_ZONES[find_key(s)? as u16 as usize])', file=stdout)
-    print('}', file=stdout)
-    print(file=stdout)
-
-    print('#[inline]')
-    print('pub(crate) fn find_raw(s: &[u8]) -> Option<&\'static [u8]> {', file=stdout)
-    print('    Some(RAW_TIME_ZONES[find_key(s)? as u16 as usize])', file=stdout)
-    print('}', file=stdout)
 
 
 if __name__ == '__main__':
