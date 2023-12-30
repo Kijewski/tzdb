@@ -24,7 +24,27 @@
 #![allow(clippy::type_complexity)]
 #![no_std]
 
+//! # `tzdb_data` — Time Zone Database
+//!
+//! [![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/Kijewski/tzdb/ci.yml?branch=v0.6.x&style=for-the-badge)](https://github.com/Kijewski/tzdb/actions/workflows/ci.yml)
+//! [![Crates.io](https://img.shields.io/crates/v/tzdb?logo=rust&style=for-the-badge)](https://crates.io/crates/tzdb)
+//! ![Minimum supported Rust version](https://img.shields.io/badge/rustc-1.56+-important?logo=rust&style=for-the-badge "Minimum Supported Rust Version: 1.56")
+//! [![License: MIT-0](https://img.shields.io/badge/license-MIT--0-informational?logo=apache&style=for-the-badge)](/LICENSE.md "License: MIT-0")
+//!
 //! Static, `#![no_std]` time zone information for tz-rs
+//!
+//! This crate provides all time zones found in the [Time Zone Database](https://www.iana.org/time-zones).
+//!
+//! ## Usage examples
+//!
+//! ```rust
+//! // access by identifier
+//! let time_zone = tzdb_data::time_zone::europe::KYIV;
+//! // access by name
+//! let time_zone = tzdb_data::find_tz(b"Europe/Berlin").unwrap();
+//! // names are case insensitive
+//! let time_zone = tzdb_data::find_tz(b"ArCtIc/LoNgYeArByEn").unwrap();
+//! ```
 //!
 
 mod generated;
@@ -32,7 +52,7 @@ mod generated;
 #[cfg_attr(docsrs, doc(inline))]
 pub use crate::generated::{time_zone, TZ_NAMES, VERSION, VERSION_HASH};
 
-/// Find a time zone by name, e.g. `"Europe/Berlin"` (case-insensitive)
+/// Find a time zone by name, e.g. `b"Europe/Berlin"` (case-insensitive)
 ///
 /// # Example
 ///
@@ -51,7 +71,7 @@ pub const fn find_tz(s: &[u8]) -> Option<&'static tz::TimeZoneRef<'static>> {
     }
 }
 
-/// Find the raw, unparsed time zone data by name, e.g. `"Europe/Berlin"` (case-insensitive)
+/// Find the raw, unparsed time zone data by name, e.g. `b"Europe/Berlin"` (case-insensitive)
 ///
 /// # Example
 ///

@@ -189,21 +189,6 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
-  package:
-    runs-on: ubuntu-20.04
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          submodules: recursive
-
-      - name: Setup Rust
-        uses: ./.github/actions/setup-rust
-        with:
-          toolchain: stable
-
-      - run: cargo package --workspace
-
   devskim:
     name: DevSkim
     runs-on: ubuntu-20.04
