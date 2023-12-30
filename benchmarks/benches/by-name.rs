@@ -1,6 +1,8 @@
 use std::convert::TryInto;
+use std::str::FromStr;
 use std::time::{Duration, Instant};
 
+use criterion::black_box;
 use rand::seq::{IteratorRandom, SliceRandom};
 use rand::SeedableRng;
 use rand_xoshiro::Xoroshiro128PlusPlus;
@@ -75,7 +77,9 @@ fn benchmark_by_name(c: &mut criterion::Criterion) {
         let city = std::str::from_utf8(city).unwrap();
 
         let raw_name = format!("{}/{}", continent, city);
-        let raw_len = crate::find_raw(raw_name.as_bytes()).unwrap_or_default().len();
+        let raw_len = crate::find_raw(raw_name.as_bytes())
+            .unwrap_or_default()
+            .len();
         names.push((raw_name, raw_len));
     }
 
@@ -91,8 +95,56 @@ fn benchmark_by_name(c: &mut criterion::Criterion) {
                 for &(ref name, raw_len) in names {
                     assert_eq!(
                         raw_len,
-                        crate::find_raw(name.as_bytes()).unwrap_or_default().len(),
+                        black_box(crate::find_raw(name.as_bytes())).unwrap_or_default().len(),
                     );
+                }
+                nanos += start.elapsed().as_nanos();
+            }
+            Duration::from_nanos(
+                (nanos / names.len() as u128)
+                    .try_into()
+                    .expect("Did the test take 584 years to finish?"),
+            )
+        });
+    });
+
+    // compare to chrono_tz
+    c.bench_function("chrono_tz::Tz::from_str", |b| {
+        b.iter_custom(|iters| {
+            let mut nanos = 0;
+            for i in 0..iters {
+                names.shuffle(&mut Xoroshiro128PlusPlus::seed_from_u64(i));
+
+                let start = Instant::now();
+                let names = criterion::black_box(&*names);
+                for &(ref name, _) in names {
+                    if let Ok(tz) = chrono_tz::Tz::from_str(name) {
+                        assert!(!black_box(tz.name()).is_empty());
+                    }
+                }
+                nanos += start.elapsed().as_nanos();
+            }
+            Duration::from_nanos(
+                (nanos / names.len() as u128)
+                    .try_into()
+                    .expect("Did the test take 584 years to finish?"),
+            )
+        });
+    });
+
+    // compare to chrono_tz
+    c.bench_function("chrono_tz::Tz::from_str_insensitive", |b| {
+        b.iter_custom(|iters| {
+            let mut nanos = 0;
+            for i in 0..iters {
+                names.shuffle(&mut Xoroshiro128PlusPlus::seed_from_u64(i));
+
+                let start = Instant::now();
+                let names = criterion::black_box(&*names);
+                for &(ref name, _) in names {
+                    if let Ok(tz) = chrono_tz::Tz::from_str_insensitive(name) {
+                        assert!(!black_box(tz.name()).is_empty());
+                    }
                 }
                 nanos += start.elapsed().as_nanos();
             }
@@ -113,6 +165,7 @@ fn main() {
 
         criterion::Criterion::default()
             .configure_from_args()
+            .with_plots()
             .final_summary();
     }
 }

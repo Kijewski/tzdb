@@ -10,10 +10,11 @@ license = "Apache-2.0"
 publish = false
 
 [dependencies]
+chrono-tz = { version = "0.8", features = ["case-insensitive"] }
 tzdb_data = { path = "../tzdb_data" }
 
 [dev-dependencies]
-criterion = { version = "0.5", default-features = false }
+criterion = { version = "0.5", default-features = false, features = ["html_reports"] }
 rand = { version = "0.8", default-features = false, features = ["std"] }
 rand_xoshiro = "0.6"
 test-strategy = "0.3"
