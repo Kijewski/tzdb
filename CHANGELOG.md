@@ -1,5 +1,10 @@
 ## Changes between the versions
 
+### 0.6.1 (2023-12-30)
+
+* Split into `tzdb` and `tzdb_data`
+* Optimize lookup. It's ~39% faster now.
+
 ### 0.6.0 (2023-12-29)
 
 * Unchanged stable release
