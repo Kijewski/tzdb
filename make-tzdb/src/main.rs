@@ -196,14 +196,12 @@ pub fn main() -> anyhow::Result<()> {
 
     writeln!(
         f,
-        r#"// SPDX-License-Identifier: MIT-0
-//
-// GENERATED FILE
+        r#"// GENERATED FILE
 // ALL CHANGES MADE IN THIS FOLDER WILL BE LOST!
 //
 // MIT No Attribution
 //
-// Copyright 2022 René Kijewski <crates.io@k6i.de>
+// Copyright 2022-2023 René Kijewski <crates.io@k6i.de>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
 // associated documentation files (the "Software"), to deal in the Software without restriction,
@@ -221,88 +219,19 @@ pub fn main() -> anyhow::Result<()> {
 
 #[cfg(all(test, not(miri)))]
 mod test_all_names;
+
 pub(crate) mod by_name;
+mod raw_tzdata;
+mod tzdata;
 
-pub(crate) const VERSION: &str = {version:?};
-pub(crate) const VERSION_HASH: &str = {hash:?};
+/// All defined time zones statically accessible
+pub mod time_zone;
 
-pub(crate) const fn new_time_zone_ref(
-    transitions: &'static [tz::timezone::Transition],
-    local_time_types: &'static [tz::LocalTimeType],
-    leap_seconds: &'static [tz::timezone::LeapSecond],
-    extra_rule: &'static Option<tz::timezone::TransitionRule>,
-) -> tz::timezone::TimeZoneRef<'static> {{
-    match tz::timezone::TimeZoneRef::new(transitions, local_time_types, leap_seconds, extra_rule) {{
-        Ok(value) => value,
-        Err(_) => {{
-            #[allow(unconditional_panic)]
-            let err = [][0];
-            err
-        }},
-    }}
-}}
+/// The version of the source Time Zone Database
+pub const VERSION: &str = {version:?};
 
-pub(crate) const fn new_local_time_type(
-    ut_offset: i32,
-    is_dst: bool,
-    time_zone_designation: Option<&[u8]>,
-) -> tz::LocalTimeType {{
-    match tz::LocalTimeType::new(ut_offset, is_dst, time_zone_designation) {{
-        Ok(value) => value,
-        Err(_) => {{
-            #[allow(unconditional_panic)]
-            let err = [][0];
-            err
-        }},
-    }}
-}}
-
-pub(crate) const fn new_transition(
-    unix_leap_time: i64,
-    local_time_type_index: usize,
-) -> tz::timezone::Transition {{
-    tz::timezone::Transition::new(unix_leap_time, local_time_type_index)
-}}
-
-pub(crate) const fn new_alternate_time(
-    std: tz::LocalTimeType,
-    dst: tz::LocalTimeType,
-    dst_start: tz::timezone::RuleDay,
-    dst_start_time: i32,
-    dst_end: tz::timezone::RuleDay,
-    dst_end_time: i32,
-) -> tz::timezone::AlternateTime {{
-    match tz::timezone::AlternateTime::new(
-        std,
-        dst,
-        dst_start,
-        dst_start_time,
-        dst_end,
-        dst_end_time,
-    ) {{
-        Ok(value) => value,
-        Err(_) => {{
-            #[allow(unconditional_panic)]
-            let err = [][0];
-            err
-        }},
-    }}
-}}
-
-pub(crate) const fn new_month_week_day(
-    month: u8,
-    week: u8,
-    week_day: u8,
-) -> tz::timezone::MonthWeekDay {{
-    match tz::timezone::MonthWeekDay::new(month, week, week_day) {{
-        Ok(value) => value,
-        Err(_) => {{
-            #[allow(unconditional_panic)]
-            let err = [][0];
-            err
-        }},
-    }}
-}}
+/// The SHA512 hash of the source Time Zone Database (using the "Complete Distribution")
+pub const VERSION_HASH: &str = {hash:?};
 "#
     )?;
 
@@ -344,12 +273,12 @@ pub(crate) const fn new_month_week_day(
     writeln!(r, "fn test() {{")?;
     writeln!(
         r,
-        "    use crate::{{time_zone, tz_by_name, raw_tz_by_name}};"
+        "    use crate::{{find_raw, find_tz, time_zone}};"
     )?;
     writeln!(r)?;
     writeln!(
         r,
-        "    const TIME_ZONES: &[(tz::TimeZoneRef<'static>, &[u8], &[&str])] = &["
+        "    const TIME_ZONES: &[(&tz::TimeZoneRef<'static>, &[u8], &[&[u8]])] = &["
     )?;
     for entries in entries_by_bytes.values() {
         for entry in entries {
@@ -363,7 +292,7 @@ pub(crate) const fn new_month_week_day(
             };
 
             writeln!(r, "        (")?;
-            writeln!(r, "            time_zone::{name},")?;
+            writeln!(r, "            &time_zone::{name},")?;
             writeln!(r, "            time_zone::{raw_name},")?;
             writeln!(r, "            &[")?;
             for f in [
@@ -404,7 +333,7 @@ pub(crate) const fn new_month_week_day(
                         .collect()
                 },
             ] {
-                writeln!(r, "                {:?},", f(&entry.full))?;
+                writeln!(r, "                b{:?},", f(&entry.full))?;
             }
             writeln!(r, "            ],")?;
             writeln!(r, "        ),")?;
@@ -418,28 +347,27 @@ pub(crate) const fn new_month_week_day(
     )?;
     writeln!(
         r,
-        "        assert_eq!(Some(tz), tz_by_name(name), \"tz_by_name({{:?}})\", name);",
+        "        assert_eq!(Some(tz), find_tz(name), \"find_tz({{:?}})\", name);",
     )?;
     writeln!(
         r,
-        "        assert_eq!(Some(raw), raw_tz_by_name(name), \"raw_tz_by_name({{:?}})\", name);",
+        "        assert_eq!(Some(raw), find_raw(name), \"find_raw({{:?}})\", name);",
     )?;
     writeln!(r, "    }} }}")?;
     writeln!(r, "}}")?;
     write_string(r, target_dir.join("test_all_names.rs"))?;
 
     // all known time zones as reference to (raw_)tzdata
-    writeln!(f, "/// All defined time zones statically accessible")?;
-    writeln!(f, "pub mod time_zone {{")?;
+    let mut r = String::new();
     for (folder, entries) in &entries_by_major {
         if let Some(folder) = folder {
-            writeln!(f, "/// {}", folder)?;
-            writeln!(f, "pub mod {} {{", folder)?;
+            writeln!(r, "/// {}", folder)?;
+            writeln!(r, "pub mod {} {{", folder)?;
         }
         for entry in entries {
-            writeln!(f, "    /// Time zone data for {},", entry.full)?;
+            writeln!(r, "    /// Time zone data for {},", entry.full)?;
             writeln!(
-                f,
+                r,
                 "pub const {}: tz::TimeZoneRef<'static> = crate::generated::tzdata::{};",
                 entry.minor, entry.canon,
             )?;
@@ -447,23 +375,22 @@ pub(crate) const fn new_month_week_day(
 
         for entry in entries {
             writeln!(
-                f,
+                r,
                 "    /// Raw, unparsed time zone data for {},",
                 entry.full
             )?;
             writeln!(
-                f,
+                r,
                 "pub const RAW_{}: &[u8] = crate::generated::raw_tzdata::{};",
                 entry.minor, entry.canon,
             )?;
         }
 
         if folder.is_some() {
-            writeln!(f, "}}")?;
+            writeln!(r, "}}")?;
         }
     }
-    writeln!(f, "}}")?;
-    writeln!(f)?;
+    write_string(r, target_dir.join("time_zone.rs"))?;
 
     // list of known time zone names
     let mut time_zones_list = entries_by_major
@@ -472,38 +399,32 @@ pub(crate) const fn new_month_week_day(
         .map(|entry| entry.full.as_str())
         .collect_vec();
     time_zones_list.sort_by_key(|l| l.to_ascii_lowercase());
+    writeln!(f, "/// A list of all known time zones")?;
     writeln!(
         f,
-        "pub(crate) const TIME_ZONES_LIST: [&str; {}] = include!(\"time_zones_list.inc.rs\");",
-        time_zones_list.len()
+        "pub const TZ_NAMES: &[&str] = &[",
     )?;
-    writeln!(f)?;
-    let mut r = String::new();
-    writeln!(r, "[")?;
     for name in time_zones_list {
-        writeln!(r, "{:?},", name)?;
+        writeln!(f, "    {:?},", name)?;
     }
-    writeln!(r, "]")?;
-    write_string(r, target_dir.join("time_zones_list.inc.rs"))?;
+    writeln!(f, "];")?;
+    writeln!(f)?;
 
     // parsed time zone data by canonical name
-    writeln!(f, "mod tzdata {{")?;
-    writeln!(f, "    use tz::timezone::*;")?;
+    let mut r = String::new();
+    writeln!(r, "use tz::timezone::*;")?;
     for (bytes, entries) in &entries_by_bytes {
-        writeln!(f)?;
+        writeln!(r)?;
         writeln!(
-            f,
+            r,
             "pub(crate) const {}: tz::TimeZoneRef<'static> = {};",
             &entries[0].canon,
             tz_convert(bytes),
         )?;
     }
-    writeln!(f, "}}")?;
-    writeln!(f)?;
+    write_string(r, target_dir.join("tzdata.rs"))?;
 
     // raw time zone data by canonical name
-    writeln!(f, "mod raw_tzdata;")?;
-    writeln!(f)?;
     let mut r = String::new();
     for (bytes, entries) in &entries_by_bytes {
         writeln!(

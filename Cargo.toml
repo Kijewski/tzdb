@@ -1,6 +1,6 @@
 [package]
 name = "tzdb"
-version = "0.6.0"
+version = "0.6.1-pre.1"
 edition = "2018"
 authors = ["René Kijewski <crates.io@k6i.de>"]
 repository = "https://github.com/Kijewski/tzdb"
@@ -12,8 +12,9 @@ readme = "README.md"
 # rust-version = "1.56"
 
 [dependencies]
-tz-rs = { version = "^0.6.14", default-features = false, features = ["const", "std"] }
 iana-time-zone = { version = "^0.1.50", default-features = false, features = ["fallback"], optional = true }
+tzdb_data = { version = "0.1.0-pre.1", default-features = false, path = "tzdb_data" }
+tz-rs = { version = "^0.6.14", default-features = false, features = ["const", "std"] }
 
 [features]
 default = ["local"]
@@ -25,4 +26,8 @@ all-features = true
 rustdoc-args = ["--cfg", "docsrs"]
 
 [workspace]
-members = [".", "examples/current-time"]
+members = [
+    ".",
+    "examples/current-time",
+    "tzdb_data",
+]

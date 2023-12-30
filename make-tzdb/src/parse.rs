@@ -85,7 +85,7 @@ impl fmt::Display for Transition {
         } = &self;
         writeln!(
             f,
-            "crate::generated::new_transition({}, {})",
+            "crate::new_transition({}, {})",
             unix_leap_time, local_time_type_index
         )?;
         Ok(())
@@ -102,7 +102,7 @@ impl fmt::Display for LocalTimeType {
         let time_zone_designation = time_zone_designation.as_deref().map(DisplayTzd);
         writeln!(
             f,
-            "crate::generated::new_local_time_type({}, {}, {})",
+            "crate::new_local_time_type({}, {}, {})",
             ut_offset,
             is_dst,
             DisplayOption(time_zone_designation.as_ref()),
@@ -119,7 +119,7 @@ impl fmt::Display for LeapSecond {
         } = self;
         writeln!(
             f,
-            "crate::generated::new_leap_second({}, {})",
+            "crate::new_leap_second({}, {})",
             unix_leap_time, correction
         )?;
         Ok(())
@@ -150,7 +150,7 @@ impl fmt::Display for AlternateTime {
         } = self;
         writeln!(
             f,
-            "crate::generated::new_alternate_time({}, {}, {}, {}, {}, {})",
+            "crate::new_alternate_time({}, {}, {}, {}, {}, {})",
             std, dst, dst_start, dst_start_time, dst_end, dst_end_time,
         )
     }
@@ -165,7 +165,7 @@ impl fmt::Display for MonthWeekDay {
         } = self;
         writeln!(
             f,
-            "crate::generated::new_month_week_day({}, {}, {})",
+            "crate::new_month_week_day({}, {}, {})",
             month, week, week_day
         )
     }
@@ -174,14 +174,14 @@ impl fmt::Display for MonthWeekDay {
 impl fmt::Display for Julian0WithLeap {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         let Julian0WithLeap::Julian0WithLeap(t) = self;
-        writeln!(f, "crate::generated::new_julian0_with_leap({})", t)
+        writeln!(f, "crate::new_julian0_with_leap({})", t)
     }
 }
 
 impl fmt::Display for Julian1WithoutLeap {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         let Julian1WithoutLeap::Julian1WithoutLeap(t) = self;
-        writeln!(f, "crate::generated::new_julian1_without_leap({})", t)
+        writeln!(f, "crate::new_julian1_without_leap({})", t)
     }
 }
 
@@ -239,7 +239,7 @@ impl fmt::Display for TimeZone {
         } = self;
         writeln!(
             f,
-            "crate::generated::new_time_zone_ref(&{}, &{}, &{}, &{})",
+            "crate::new_time_zone_ref(&{}, &{}, &{}, &{})",
             DisplayVec(transitions),
             DisplayVec(local_time_types),
             DisplayVec(leap_seconds),

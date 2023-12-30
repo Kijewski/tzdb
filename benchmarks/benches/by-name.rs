@@ -4,14 +4,14 @@ use std::time::{Duration, Instant};
 use rand::seq::{IteratorRandom, SliceRandom};
 use rand::SeedableRng;
 use rand_xoshiro::Xoroshiro128PlusPlus;
-use tzdb::{raw_tz_by_name, TZ_NAMES};
+use tzdb_data::{find_raw, TZ_NAMES};
 
 fn benchmark_by_name(c: &mut criterion::Criterion) {
     // collect all names with "random" capitalization
     let mut names: Vec<(String, usize)> = TZ_NAMES
         .iter()
         .flat_map(|&name| {
-            let raw_len = raw_tz_by_name(name).unwrap().len();
+            let raw_len = find_raw(name.as_bytes()).unwrap().len();
             let upper = name.to_uppercase();
             let lower = name.to_lowercase();
             let inverted = name
@@ -75,12 +75,12 @@ fn benchmark_by_name(c: &mut criterion::Criterion) {
         let city = std::str::from_utf8(city).unwrap();
 
         let raw_name = format!("{}/{}", continent, city);
-        let raw_len = crate::raw_tz_by_name(&raw_name).unwrap_or_default().len();
+        let raw_len = crate::find_raw(raw_name.as_bytes()).unwrap_or_default().len();
         names.push((raw_name, raw_len));
     }
 
     // benchmark per name lookup time
-    c.bench_function("tzdb::raw_tz_by_name", |b| {
+    c.bench_function("tzdb::find_raw", |b| {
         b.iter_custom(|iters| {
             let mut nanos = 0;
             for i in 0..iters {
@@ -91,7 +91,7 @@ fn benchmark_by_name(c: &mut criterion::Criterion) {
                 for &(ref name, raw_len) in names {
                     assert_eq!(
                         raw_len,
-                        crate::raw_tz_by_name(name).unwrap_or_default().len(),
+                        crate::find_raw(name.as_bytes()).unwrap_or_default().len(),
                     );
                 }
                 nanos += start.elapsed().as_nanos();
