@@ -1,5 +1,9 @@
 ## Changes between the versions
 
+### 0.4.14 (2023-12-30)
+
+* Fix no-std implementation
+
 ### 0.4.13 (2023-12-27)
 
 * Update to [Time Zone Database 2023d](https://mm.icann.org/pipermail/tz-announce/2023-March/000080.html)

@@ -1,6 +1,6 @@
 [package]
 name = "tzdb"
-version = "0.4.13"
+version = "0.4.14"
 edition = "2021"
 authors = ["René Kijewski <crates.io@k6i.de>"]
 repository = "https://github.com/Kijewski/tzdb"
@@ -13,7 +13,7 @@ rust-version = "1.60"
 
 [dependencies]
 tz-rs = { version = "^0.6.14", default-features = false, features = ["const"] }
-tzdb_06 = { package = "tzdb", version = "0.6.0" }
+tzdb_data = "0.1.0"
 
 # optional dependencies
 iana-time-zone = { version = "^0.1.46", default-features = false, optional = true }

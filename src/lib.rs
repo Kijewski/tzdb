@@ -42,11 +42,7 @@
 //!
 //! Static time zone information for [tz-rs](https://crates.io/crates/tz-rs).
 //!
-//! This crate provides all time zones found in the [Time Zone Database](https://www.iana.org/time-zones),
-//! currently in the version 2023d (released 2023-12-27).
-//!
-//! See the documentation for a full list the the contained time zones:
-//! <https://docs.rs/tzdb/latest/tzdb/time_zone/index.html>
+//! This crate provides all time zones found in the [Time Zone Database](https://www.iana.org/time-zones).
 //!
 //! ## Usage examples
 //!
@@ -102,9 +98,38 @@ mod test_by_name;
 
 #[cfg(feature = "local")]
 use iana_time_zone::get_timezone;
-
 #[cfg_attr(docsrs, doc(no_inline))]
-pub use tzdb_06::{raw_tz_by_name, time_zone, tz_by_name, TZ_NAMES, VERSION, VERSION_HASH};
+pub use tzdb_data::{time_zone, TZ_NAMES, VERSION, VERSION_HASH};
+
+/// Find a time zone by name, e.g. `"Europe/Berlin"` (case-insensitive)
+///
+/// # Example
+///
+/// ```
+/// assert_eq!(
+///     tzdb::time_zone::europe::BERLIN,
+///     tzdb::tz_by_name("Europe/Berlin").unwrap(),
+/// );
+/// ```
+#[inline]
+pub fn tz_by_name<S: AsRef<[u8]>>(s: S) -> Option<tz::TimeZoneRef<'static>> {
+    Some(*tzdb_data::find_tz(s.as_ref())?)
+}
+
+/// Find the raw, unparsed time zone data by name, e.g. `"Europe/Berlin"` (case-insensitive)
+///
+/// # Example
+///
+/// ```
+/// assert_eq!(
+///     tzdb::time_zone::europe::RAW_BERLIN,
+///     tzdb::raw_tz_by_name("Europe/Berlin").unwrap(),
+/// );
+/// ```
+#[inline]
+pub fn raw_tz_by_name<S: AsRef<[u8]>>(s: S) -> Option<&'static [u8]> {
+    tzdb_data::find_raw(s.as_ref())
+}
 
 /// Find the time zone of the current system
 ///
