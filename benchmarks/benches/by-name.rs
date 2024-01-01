@@ -83,78 +83,63 @@ fn benchmark_by_name(c: &mut criterion::Criterion) {
         names.push((raw_name, raw_len));
     }
 
+    let orig_names: Vec<_> = names
+        .iter()
+        .map(|&(ref s, len)| (s.as_str(), len))
+        .collect();
+    let mut names = Vec::with_capacity(orig_names.len());
+
     // benchmark per name lookup time
-    c.bench_function("tzdb::find_raw", |b| {
-        b.iter_custom(|iters| {
-            let mut nanos = 0;
-            for i in 0..iters {
-                names.shuffle(&mut Xoroshiro128PlusPlus::seed_from_u64(i));
 
-                let start = Instant::now();
-                let names = criterion::black_box(&*names);
-                for &(ref name, raw_len) in names {
-                    assert_eq!(
-                        raw_len,
-                        black_box(crate::find_raw(name.as_bytes())).unwrap_or_default().len(),
-                    );
-                }
-                nanos += start.elapsed().as_nanos();
-            }
-            Duration::from_nanos(
-                (nanos / names.len() as u128)
-                    .try_into()
-                    .expect("Did the test take 584 years to finish?"),
-            )
-        });
-    });
+    macro_rules! bench_function {
+        ($id:literal($name:pat, $raw_len:pat) $body:expr) => {
+            c.bench_function($id, |b| {
+                b.iter_custom(|iters| {
+                    let mut nanos = 0;
+                    for i in 0..iters {
+                        names.clear();
+                        names.extend_from_slice(orig_names.as_slice());
+                        names.shuffle(&mut Xoroshiro128PlusPlus::seed_from_u64(i));
+                        let names = black_box(names.as_slice());
 
-    // compare to chrono_tz
-    c.bench_function("chrono_tz::Tz::from_str", |b| {
-        b.iter_custom(|iters| {
-            let mut nanos = 0;
-            for i in 0..iters {
-                names.shuffle(&mut Xoroshiro128PlusPlus::seed_from_u64(i));
-
-                let start = Instant::now();
-                let names = criterion::black_box(&*names);
-                for &(ref name, _) in names {
-                    if let Ok(tz) = chrono_tz::Tz::from_str(name) {
-                        assert!(!black_box(tz.name()).is_empty());
+                        let start = Instant::now();
+                        for &($name, $raw_len) in names {
+                            $body
+                        }
+                        nanos += start.elapsed().as_nanos();
                     }
-                }
-                nanos += start.elapsed().as_nanos();
-            }
-            Duration::from_nanos(
-                (nanos / names.len() as u128)
-                    .try_into()
-                    .expect("Did the test take 584 years to finish?"),
-            )
-        });
-    });
+                    Duration::from_nanos(
+                        (nanos / orig_names.len() as u128)
+                            .try_into()
+                            .expect("Did the test take 584 years to finish?"),
+                    )
+                });
+            });
+        };
+    }
 
-    // compare to chrono_tz
-    c.bench_function("chrono_tz::Tz::from_str_insensitive", |b| {
-        b.iter_custom(|iters| {
-            let mut nanos = 0;
-            for i in 0..iters {
-                names.shuffle(&mut Xoroshiro128PlusPlus::seed_from_u64(i));
-
-                let start = Instant::now();
-                let names = criterion::black_box(&*names);
-                for &(ref name, _) in names {
-                    if let Ok(tz) = chrono_tz::Tz::from_str_insensitive(name) {
-                        assert!(!black_box(tz.name()).is_empty());
-                    }
-                }
-                nanos += start.elapsed().as_nanos();
-            }
-            Duration::from_nanos(
-                (nanos / names.len() as u128)
-                    .try_into()
-                    .expect("Did the test take 584 years to finish?"),
-            )
-        });
-    });
+    bench_function!(
+        "tzdb::find_raw"
+        (name, raw_len)
+        assert_eq!(
+            raw_len,
+            black_box(crate::find_raw(name.as_bytes())).unwrap_or_default().len(),
+        )
+    );
+    bench_function!(
+        "chrono_tz::Tz::from_str"
+        (name, _)
+        if let Ok(tz) = chrono_tz::Tz::from_str(name) {
+            assert!(!black_box(tz.name()).is_empty());
+        }
+    );
+    bench_function!(
+        "chrono_tz::Tz::from_str_insensitive"
+        (name, _)
+        if let Ok(tz) = chrono_tz::Tz::from_str_insensitive(name) {
+            assert!(!black_box(tz.name()).is_empty());
+        }
+    );
 }
 
 fn main() {

@@ -13,11 +13,11 @@ def convert(stdin, stdout):
     if not gperf:
         raise Exception('No gperf')
     gperf = Popen(
-        ['gperf', '--ignore-case', '--readonly-tables', '--struct-type', '--global-table', '-m', '100'],
+        ['gperf', '--ignore-case', '--readonly-tables', '--struct-type', '--global-table', '-m', '1000'],
         stdin=stdin, stdout=PIPE,
     )
     with gperf:
-        stdin, _ = gperf.communicate(timeout=30)
+        stdin, _ = gperf.communicate(timeout=120)
     match gperf.returncode:
         case 0:
             pass
@@ -135,6 +135,9 @@ def convert(stdin, stdout):
 
     assert duplicates == 0
 
+    print('// GENERATED FILE', file=stdout)
+    print('// ALL CHANGES MADE IN THIS FOLDER WILL BE LOST!', file=stdout)
+    print(file=stdout)
     print('use tz::TimeZoneRef;', file=stdout)
     print(file=stdout)
     print('use crate::eq_ignore_ascii_case;', file=stdout)
