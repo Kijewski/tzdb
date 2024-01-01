@@ -19,9 +19,9 @@ mod parse;
 use std::cmp::Ordering;
 use std::env::{args, var_os};
 use std::fmt::Write as _;
-use std::fs::{create_dir_all, read_dir, read_to_string, OpenOptions};
+use std::fs::{create_dir_all, read, read_to_string, OpenOptions};
 use std::io::Write as _;
-use std::path::PathBuf;
+use std::path::{Path, PathBuf};
 
 use anyhow::anyhow;
 use convert_case::{Case, Casing};
@@ -29,13 +29,15 @@ use indexmap::IndexMap;
 use itertools::Itertools;
 use subprocess::{Popen, PopenConfig, Redirection};
 use tz::TimeZone;
+use walkdir::WalkDir;
 
+#[derive(Debug, Clone)]
 struct TzName {
     /// "Europe/Belfast"
     canon: String,
     /// "Europe/Guernsey"
     full: String,
-    /// Some("europe")  // Snake
+    /// Some("europe") // Snake
     major: Option<String>,
     /// "GUERNSEY" // UpperSnake
     minor: String,
@@ -68,16 +70,35 @@ impl Ord for TzName {
 }
 
 impl TzName {
-    fn new(folder: Option<&str>, name: &str) -> TzName {
-        let full_name = match folder {
-            Some(folder) => format!("{}/{}", folder, name),
-            None => name.to_owned(),
-        };
-        Self {
-            canon: "".to_owned(),
-            full: full_name,
-            major: folder.map(|s| prepare_casing(s).to_case(Case::Snake)),
-            minor: prepare_casing(name).to_case(Case::UpperSnake),
+    fn new(base_path: &Path, path: &Path) -> Option<TzName> {
+        let mut path = path.iter().fuse();
+        for _ in base_path {
+            path.next();
+        }
+        let a = path.next().and_then(|o| o.to_str());
+        let b = path.next().and_then(|o| o.to_str());
+        let c = path.next().and_then(|o| o.to_str());
+        match [a, b, c] {
+            [Some("etc"), ..] => None,
+            [Some(a), None, None] => Some(Self {
+                canon: "".to_owned(),
+                full: a.to_owned(),
+                major: None,
+                minor: prepare_casing(a).to_case(Case::UpperSnake),
+            }),
+            [Some(a), Some(b), None] => Some(Self {
+                canon: "".to_owned(),
+                full: format!("{a}/{b}"),
+                major: Some(prepare_casing(a).to_case(Case::Snake)),
+                minor: prepare_casing(b).to_case(Case::UpperSnake),
+            }),
+            [Some(a), Some(b), Some(c)] => Some(Self {
+                canon: "".to_owned(),
+                full: format!("{a}/{b}/{c}"),
+                major: Some(prepare_casing(&format!("{a}/{b}")).to_case(Case::Snake)),
+                minor: prepare_casing(c).to_case(Case::UpperSnake),
+            }),
+            _ => None,
         }
     }
 }
@@ -104,6 +125,7 @@ pub fn main() -> anyhow::Result<()> {
     if !base_path.ends_with('/') {
         base_path.push('/');
     }
+    let base_path = Path::new(&base_path).canonicalize()?;
 
     let hash_file = args.next().unwrap_or_else(|| "tzdb.tar.lz.sha".to_owned());
     let hash_file = read_to_string(&hash_file)?;
@@ -115,46 +137,27 @@ pub fn main() -> anyhow::Result<()> {
     let version = version.split_once('.').unwrap_or((version, "")).0;
     let version = version.rsplit_once('-').unwrap_or(("", version)).1;
 
-    let mut entries_by_bytes = IndexMap::<Vec<u8>, Vec<TzName>>::new();
-
-    let mut folders = vec![];
-    for entry in read_dir(&base_path)?.filter_map(|f| f.ok()) {
-        let name = entry.file_name();
-        let Some(name) = name.to_str() else {
+    let mut entries_by_bytes: IndexMap<Vec<u8>, Vec<TzName>> = IndexMap::new();
+    let walkdir = WalkDir::new(&base_path)
+        .min_depth(1)
+        .contents_first(true)
+        .follow_links(true);
+    for entry in walkdir {
+        let entry = entry?;
+        if !entry.file_type().is_file() {
+            continue;
+        }
+        let path = base_path.join(entry.path());
+        let Ok(bytes) = read(&path) else {
             continue;
         };
-        if !name.is_ascii() || name.contains('.') || !name.as_bytes()[0].is_ascii_uppercase() {
+        if !TimeZone::from_tz_data(&bytes).is_ok() {
             continue;
         }
-
-        if entry.file_type().map(|f| f.is_dir()).unwrap_or_default() {
-            folders.push(name.to_owned());
+        let Some(tz_entry) = TzName::new(&base_path, &path) else {
             continue;
-        }
-        if let Ok(bytes) = std::fs::read(format!("{}/{}", &base_path, name)) {
-            if TimeZone::from_tz_data(&bytes).is_ok() {
-                let tz_entry = TzName::new(None, name);
-                entries_by_bytes.entry(bytes).or_default().push(tz_entry);
-            }
-        }
-    }
-    for folder in folders {
-        for entry in read_dir(format!("{}/{}", base_path, folder))?.filter_map(|f| f.ok()) {
-            let name = entry.file_name();
-            let Some(name) = name.to_str() else {
-                continue;
-            };
-            if !name.is_ascii() || name.contains('.') || !name.as_bytes()[0].is_ascii_uppercase() {
-                continue;
-            }
-
-            if let Ok(bytes) = std::fs::read(format!("{}/{}/{}", &base_path, &folder, name)) {
-                if TimeZone::from_tz_data(&bytes).is_ok() {
-                    let tz_entry = TzName::new(Some(folder.as_str()), name);
-                    entries_by_bytes.entry(bytes).or_default().push(tz_entry);
-                }
-            }
-        }
+        };
+        entries_by_bytes.entry(bytes).or_default().push(tz_entry);
     }
     for entries in entries_by_bytes.values_mut() {
         entries.sort();
@@ -194,14 +197,17 @@ pub fn main() -> anyhow::Result<()> {
 
     let mut f = String::new();
 
+    const GENERATED_FILE: &str = r#"// GENERATED FILE
+// ALL CHANGES MADE IN THIS FOLDER WILL BE LOST!
+
+"#;
+
     writeln!(
         f,
-        r#"// GENERATED FILE
-// ALL CHANGES MADE IN THIS FOLDER WILL BE LOST!
-//
+        r#"{GENERATED_FILE}
 // MIT No Attribution
 //
-// Copyright 2022-2023 René Kijewski <crates.io@k6i.de>
+// Copyright 2022-2024 René Kijewski <crates.io@k6i.de>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
 // associated documentation files (the "Software"), to deal in the Software without restriction,
@@ -268,13 +274,10 @@ pub const VERSION_HASH: &str = {hash:?};
     }
 
     // generate exhaustive by-name test
-    let mut r = String::new();
+    let mut r = GENERATED_FILE.to_owned();
     writeln!(r, "#[test]")?;
     writeln!(r, "fn test() {{")?;
-    writeln!(
-        r,
-        "    use crate::{{find_raw, find_tz, time_zone}};"
-    )?;
+    writeln!(r, "    use crate::{{find_raw, find_tz, time_zone}};")?;
     writeln!(r)?;
     writeln!(
         r,
@@ -358,14 +361,19 @@ pub const VERSION_HASH: &str = {hash:?};
     write_string(r, target_dir.join("test_all_names.rs"))?;
 
     // all known time zones as reference to (raw_)tzdata
-    let mut r = String::new();
+    let mut r = GENERATED_FILE.to_owned();
     for (folder, entries) in &entries_by_major {
         if let Some(folder) = folder {
-            writeln!(r, "/// {}", folder)?;
-            writeln!(r, "pub mod {} {{", folder)?;
+            let doc = entries[0].full.as_str();
+            let doc = match doc.rsplit_once('/') {
+                Some((doc, _)) => doc,
+                None => doc,
+            };
+            writeln!(r, "/// {doc}")?;
+            writeln!(r, "pub mod {folder} {{")?;
         }
         for entry in entries {
-            writeln!(r, "    /// Time zone data for {},", entry.full)?;
+            writeln!(r, "    /// Time zone data for `{:?}`", entry.full)?;
             writeln!(
                 r,
                 "pub const {}: tz::TimeZoneRef<'static> = crate::generated::tzdata::{};",
@@ -376,7 +384,7 @@ pub const VERSION_HASH: &str = {hash:?};
         for entry in entries {
             writeln!(
                 r,
-                "    /// Raw, unparsed time zone data for {},",
+                "    /// Raw, unparsed time zone data for `{:?}`",
                 entry.full
             )?;
             writeln!(
@@ -400,10 +408,7 @@ pub const VERSION_HASH: &str = {hash:?};
         .collect_vec();
     time_zones_list.sort_by_key(|l| l.to_ascii_lowercase());
     writeln!(f, "/// A list of all known time zones")?;
-    writeln!(
-        f,
-        "pub const TZ_NAMES: &[&str] = &[",
-    )?;
+    writeln!(f, "pub const TZ_NAMES: &[&str] = &[",)?;
     for name in time_zones_list {
         writeln!(f, "    {:?},", name)?;
     }
@@ -411,13 +416,22 @@ pub const VERSION_HASH: &str = {hash:?};
     writeln!(f)?;
 
     // parsed time zone data by canonical name
-    let mut r = String::new();
-    writeln!(r, "use tz::timezone::*;")?;
+    let mut r = GENERATED_FILE.to_owned();
+    writeln!(r, "use tz::timezone::RuleDay;")?;
+    writeln!(r, "use tz::timezone::TransitionRule;")?;
+    writeln!(r, "use tz::TimeZoneRef;")?;
+    writeln!(r)?;
+    writeln!(r, "use crate::new_alternate_time;")?;
+    writeln!(r, "use crate::new_local_time_type;")?;
+    writeln!(r, "use crate::new_month_week_day;")?;
+    writeln!(r, "use crate::new_time_zone_ref;")?;
+    writeln!(r, "use crate::new_transition;")?;
+    writeln!(r)?;
     for (bytes, entries) in &entries_by_bytes {
         writeln!(r)?;
         writeln!(
             r,
-            "pub(crate) const {}: tz::TimeZoneRef<'static> = {};",
+            "pub(crate) const {}: TimeZoneRef<'static> = {};",
             &entries[0].canon,
             tz_convert(bytes),
         )?;
@@ -425,12 +439,13 @@ pub const VERSION_HASH: &str = {hash:?};
     write_string(r, target_dir.join("tzdata.rs"))?;
 
     // raw time zone data by canonical name
-    let mut r = String::new();
+    let mut r = GENERATED_FILE.to_owned();
     for (bytes, entries) in &entries_by_bytes {
         writeln!(
             r,
-            "pub(crate) const {}: &[u8] = &{:?};",
-            &entries[0].canon, bytes,
+            "pub(crate) const {}: &[u8] = b\"{}\";",
+            &entries[0].canon,
+            hex_encode(bytes)?,
         )?;
     }
     write_string(r, target_dir.join("raw_tzdata.rs"))?;
@@ -464,4 +479,16 @@ fn tz_convert(bytes: &[u8]) -> crate::parse::TimeZone {
     let s = s.replace('{', "(");
     let s = s.replace('}', ")");
     ron::from_str::<crate::parse::TimeZone>(&s).unwrap()
+}
+
+fn hex_encode(v: &[u8]) -> Result<String, std::fmt::Error> {
+    let mut s = String::with_capacity(v.len() * 4);
+    for &b in v {
+        if b == 0 {
+            s.push_str("\\0");
+        } else {
+            write!(s, "\\x{b:02x}")?;
+        }
+    }
+    Ok(s)
 }
