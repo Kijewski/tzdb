@@ -1,6 +1,6 @@
 .DELETE_ON_ERROR:
 
-TZDB_VERSION := tzdb-2023d
+TZDB_VERSION := tzdb-2024a
 
 tzdb_data/src/generated/mod.rs: tmp/${TZDB_VERSION}/usr/share/zoneinfo/ tzdb.tar.lz.sha
 	cd make-tzdb && cargo r -- ../$(@D) ../$< ../tzdb.tar.lz.sha
