@@ -152,7 +152,7 @@ def convert(stdin, stdout):
     for entry in table:
         match entry:
             case (name, canon):
-                print(f'    V{idx} = {idx},', file=stdout)
+                print(f'    V{idx} = {idx + 1},', file=stdout)
                 idx += 1
     entry_count = idx
     print('}', file=stdout)
@@ -170,7 +170,8 @@ def convert(stdin, stdout):
     print('];', file=stdout)
     print(file=stdout)
 
-    print(f'const NAMES: [&[u8]; {entry_count}] = [', file=stdout)
+    print(f'const NAMES: [&[u8]; {entry_count + 1}] = [', file=stdout)
+    print(f'    b"",', file=stdout)
     for entry in table:
         match entry:
             case (name, canon):
@@ -178,7 +179,12 @@ def convert(stdin, stdout):
     print('];', file=stdout)
     print(file=stdout)
 
-    print(f'pub(crate) const TIME_ZONES: [&TimeZoneRef<\'static>; {entry_count}] = [', file=stdout)
+    print(f'pub(crate) const TIME_ZONES: [&TimeZoneRef<\'static>; {entry_count + 1}] = [', file=stdout)
+    for entry in table:
+        match entry:
+            case (name, canon):
+                print(f'    &tzdata::{canon},', file=stdout)
+                break
     for entry in table:
         match entry:
             case (name, canon):
@@ -186,7 +192,12 @@ def convert(stdin, stdout):
     print('];', file=stdout)
     print(file=stdout)
 
-    print(f'pub(crate) const RAW_TIME_ZONES: [&[u8]; {entry_count}] = [', file=stdout)
+    print(f'pub(crate) const RAW_TIME_ZONES: [&[u8]; {entry_count + 1}] = [', file=stdout)
+    for entry in table:
+        match entry:
+            case (name, canon):
+                print(f'    raw_tzdata::{canon},', file=stdout)
+                break
     for entry in table:
         match entry:
             case (name, canon):
