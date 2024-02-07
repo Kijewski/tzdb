@@ -10,7 +10,8 @@ tzdb_data/src/generated/mod.rs: tmp/${TZDB_VERSION}/usr/share/zoneinfo/ tzdb.tar
 	    $(@D)/raw_tzdata.rs \
 	    $(@D)/test_all_names.rs \
 	    $(@D)/time_zone.rs \
-	    $(@D)/tzdata.rs
+	    $(@D)/tzdata.rs \
+	    $(@D)/tz_names.rs
 
 tmp/${TZDB_VERSION}/usr/share/zoneinfo/: tmp/${TZDB_VERSION}/
 	cd tmp/${TZDB_VERSION}/ && make PACKRATDATA=backzone PACKRATLIST=zone.tab TOPDIR="." install

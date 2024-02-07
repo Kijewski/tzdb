@@ -31,6 +31,11 @@ use subprocess::{Popen, PopenConfig, Redirection};
 use tz::TimeZone;
 use walkdir::WalkDir;
 
+const GENERATED_FILE: &str = r#"// GENERATED FILE
+// ALL CHANGES MADE IN THIS FOLDER WILL BE LOST!
+
+"#;
+
 #[derive(Debug, Clone)]
 struct TzName {
     /// "Europe/Belfast"
@@ -110,6 +115,113 @@ pub fn main() -> anyhow::Result<()> {
     let target_dir = PathBuf::from(args.next().unwrap_or_else(|| "tzdb/generated".to_owned()));
     create_dir_all(&target_dir)?;
 
+    let entries_by_bytes = collect_entries_by_bytes(&mut args)?;
+    let entries_by_major = collect_entries_by_major(&entries_by_bytes)?;
+
+    gen_mod(&mut args, &target_dir)?;
+    // generate lookup table
+    gen_lookup_table(&entries_by_bytes, &target_dir)?;
+    // generate exhaustive by-name test
+    gen_test_all_names(&entries_by_bytes, &target_dir)?;
+    // all known time zones as reference to (raw_)tzdata
+    gen_time_zones(&entries_by_major, &target_dir)?;
+    // list of known time zone names
+    gen_tz_names(entries_by_major, &target_dir)?;
+    // parsed time zone data by canonical name
+    gen_tzdata(&entries_by_bytes, &target_dir)?;
+    // raw time zone data by canonical name
+    gen_raw_tzdata(entries_by_bytes, &target_dir)?;
+
+    Ok(())
+}
+
+fn gen_mod(args: &mut impl Iterator<Item = String>, target_dir: &Path) -> Result<(), anyhow::Error> {
+    let hash_file = args.next().unwrap_or_else(|| "tzdb.tar.lz.sha".to_owned());
+    let hash_file = read_to_string(&hash_file)?;
+    let (hash, version) = hash_file
+        .trim()
+        .split_once("  ")
+        .ok_or_else(|| anyhow!("Hash file {hash_file:?} malformed."))?;
+    let version = version.rsplit_once('/').unwrap_or(("", version)).1;
+    let version = version.split_once('.').unwrap_or((version, "")).0;
+    let version = version.rsplit_once('-').unwrap_or(("", version)).1;
+
+    let r = format!(
+        r#"{GENERATED_FILE}
+// MIT No Attribution
+//
+// Copyright 2022-2024 René Kijewski <crates.io@k6i.de>
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
+// associated documentation files (the "Software"), to deal in the Software without restriction,
+// including without limitation the rights to use, copy, modify, merge, publish, distribute,
+// sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is
+// furnished to do so.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT
+// NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+// NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+#![allow(clippy::pedantic)]
+
+#[cfg(all(test, not(miri)))]
+mod test_all_names;
+
+pub(crate) mod by_name;
+mod raw_tzdata;
+mod tzdata;
+mod tz_names;
+
+/// All defined time zones statically accessible
+pub mod time_zone;
+
+/// The version of the source Time Zone Database
+pub const VERSION: &str = {version:?};
+
+/// The SHA512 hash of the source Time Zone Database (using the "Complete Distribution")
+pub const VERSION_HASH: &str = {hash:?};
+
+pub use self::tz_names::TZ_NAMES;
+"#
+    );
+    write_string(r, target_dir.join("mod.rs"))?;
+    Ok(())
+}
+
+fn collect_entries_by_major(entries_by_bytes: &IndexMap<Vec<u8>, Vec<TzName>>) -> anyhow::Result<Vec<(Option<String>, Vec<&TzName>)>> {
+    let entries_by_major = entries_by_bytes
+        .values()
+        .flat_map(|entries| entries.iter())
+        .map(|tz_entry| (tz_entry.major.as_deref(), tz_entry))
+        .sorted_by(|(l, _), (r, _)| match (l, r) {
+            (None, None) => Ordering::Equal,
+            (None, Some(_)) => Ordering::Greater,
+            (Some(_), None) => Ordering::Less,
+            (Some(l), Some(r)) => l.cmp(r),
+        })
+        .group_by(|(k, _)| k.map(|s| s.to_owned()))
+        .into_iter()
+        .map(|(major, entries)| {
+            let mut entries = entries.map(|(_, e)| e).collect_vec();
+            entries.sort();
+            (major, entries)
+        })
+        .collect_vec();
+
+    let max_len = entries_by_major
+        .iter()
+        .flat_map(|(_, entries)| entries.iter())
+        .map(|entry| entry.full.len())
+        .max()
+        .unwrap();
+    assert!(max_len <= 32);
+
+    Ok(entries_by_major)
+}
+
+fn collect_entries_by_bytes(args: &mut impl Iterator<Item = String>) -> anyhow::Result<IndexMap<Vec<u8>, Vec<TzName>>> {
     let mut base_path = args
         .next()
         .unwrap_or_else(|| "/usr/share/zoneinfo/posix/".to_owned());
@@ -126,16 +238,6 @@ pub fn main() -> anyhow::Result<()> {
         base_path.push('/');
     }
     let base_path = Path::new(&base_path).canonicalize()?;
-
-    let hash_file = args.next().unwrap_or_else(|| "tzdb.tar.lz.sha".to_owned());
-    let hash_file = read_to_string(&hash_file)?;
-    let (hash, version) = hash_file
-        .trim()
-        .split_once("  ")
-        .ok_or_else(|| anyhow!("Hash file {hash_file:?} malformed."))?;
-    let version = version.rsplit_once('/').unwrap_or(("", version)).1;
-    let version = version.split_once('.').unwrap_or((version, "")).0;
-    let version = version.rsplit_once('-').unwrap_or(("", version)).1;
 
     let mut entries_by_bytes: IndexMap<Vec<u8>, Vec<TzName>> = IndexMap::new();
     let walkdir = WalkDir::new(&base_path)
@@ -168,112 +270,110 @@ pub fn main() -> anyhow::Result<()> {
     }
     entries_by_bytes.sort_by(|_, l, _, r| l[0].canon.cmp(&r[0].canon));
 
-    let entries_by_major = entries_by_bytes
-        .values()
-        .flat_map(|entries| entries.iter())
-        .map(|tz_entry| (tz_entry.major.as_deref(), tz_entry))
-        .sorted_by(|(l, _), (r, _)| match (l, r) {
-            (None, None) => Ordering::Equal,
-            (None, Some(_)) => Ordering::Greater,
-            (Some(_), None) => Ordering::Less,
-            (Some(l), Some(r)) => l.cmp(r),
-        })
-        .group_by(|(k, _)| k.map(|s| s.to_owned()))
-        .into_iter()
-        .map(|(major, entries)| {
-            let mut entries = entries.map(|(_, e)| e).collect_vec();
-            entries.sort();
-            (major, entries)
-        })
-        .collect_vec();
+    Ok(entries_by_bytes)
+}
 
-    let max_len = entries_by_major
+fn gen_raw_tzdata(entries_by_bytes: IndexMap<Vec<u8>, Vec<TzName>>, target_dir: &Path) -> anyhow::Result<()> {
+    let mut r = GENERATED_FILE.to_owned();
+    for (bytes, entries) in &entries_by_bytes {
+        writeln!(
+            r,
+            "pub(crate) const {}: &[u8] = b\"{}\";",
+            &entries[0].canon,
+            hex_encode(bytes)?,
+        )?;
+    }
+    write_string(r, target_dir.join("raw_tzdata.rs"))?;
+    Ok(())
+}
+
+fn gen_tzdata(entries_by_bytes: &IndexMap<Vec<u8>, Vec<TzName>>, target_dir: &Path) -> anyhow::Result<()> {
+    let mut r = GENERATED_FILE.to_owned();
+    writeln!(r, "use tz::timezone::RuleDay;")?;
+    writeln!(r, "use tz::timezone::TransitionRule;")?;
+    writeln!(r, "use tz::TimeZoneRef;")?;
+    writeln!(r)?;
+    writeln!(r, "use crate::new_alternate_time;")?;
+    writeln!(r, "use crate::new_local_time_type;")?;
+    writeln!(r, "use crate::new_month_week_day;")?;
+    writeln!(r, "use crate::new_time_zone_ref;")?;
+    writeln!(r, "use crate::new_transition;")?;
+    writeln!(r)?;
+    for (bytes, entries) in entries_by_bytes {
+        writeln!(r)?;
+        writeln!(
+            r,
+            "pub(crate) const {}: TimeZoneRef<'static> = {};",
+            &entries[0].canon,
+            tz_convert(bytes),
+        )?;
+    }
+    write_string(r, target_dir.join("tzdata.rs"))?;
+    Ok(())
+}
+
+fn gen_tz_names(entries_by_major: Vec<(Option<String>, Vec<&TzName>)>, target_dir: &Path) -> anyhow::Result<()> {
+    let mut time_zones_list = entries_by_major
         .iter()
         .flat_map(|(_, entries)| entries.iter())
-        .map(|entry| entry.full.len())
-        .max()
-        .unwrap();
-    assert!(max_len <= 32);
+        .map(|entry| entry.full.as_str())
+        .collect_vec();
+    time_zones_list.sort_by_key(|l| l.to_ascii_lowercase());
 
-    let mut f = String::new();
-
-    const GENERATED_FILE: &str = r#"// GENERATED FILE
-// ALL CHANGES MADE IN THIS FOLDER WILL BE LOST!
-
-"#;
-
-    writeln!(
-        f,
-        r#"{GENERATED_FILE}
-// MIT No Attribution
-//
-// Copyright 2022-2024 René Kijewski <crates.io@k6i.de>
-//
-// Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
-// associated documentation files (the "Software"), to deal in the Software without restriction,
-// including without limitation the rights to use, copy, modify, merge, publish, distribute,
-// sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is
-// furnished to do so.
-//
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT
-// NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-// NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
-// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-#![allow(clippy::pedantic)]
-
-#[cfg(all(test, not(miri)))]
-mod test_all_names;
-
-pub(crate) mod by_name;
-mod raw_tzdata;
-mod tzdata;
-
-/// All defined time zones statically accessible
-pub mod time_zone;
-
-/// The version of the source Time Zone Database
-pub const VERSION: &str = {version:?};
-
-/// The SHA512 hash of the source Time Zone Database (using the "Complete Distribution")
-pub const VERSION_HASH: &str = {hash:?};
-"#
-    )?;
-
-    // generate lookup table
-    {
-        let mut keywords = String::new();
-        writeln!(
-            keywords,
-            "struct keyword {{ const char* name; const char* canon; }}"
-        )?;
-        writeln!(keywords, "%%")?;
-        for entries in entries_by_bytes.values() {
-            for entry in entries {
-                writeln!(keywords, "{:?}, {:?}", entry.full, entry.canon)?;
-            }
-        }
-        writeln!(keywords, "%%")?;
-
-        let file = OpenOptions::new()
-            .create(true)
-            .write(true)
-            .truncate(true)
-            .open(target_dir.join("by_name.rs"))?;
-        let mut gperf = Popen::create(
-            &["/usr/bin/env", "python3", "generate_lookup_table.py"],
-            PopenConfig {
-                stdin: Redirection::Pipe,
-                stdout: Redirection::File(file),
-                cwd: Some(var_os("CARGO_MANIFEST_DIR").ok_or(anyhow!("!CARGO_MANIFEST_DIR"))?),
-                ..PopenConfig::default()
-            },
-        )?;
-        gperf.communicate(Some(&keywords))?;
+    let mut r = GENERATED_FILE.to_owned();
+    writeln!(r, "/// A list of all known time zones")?;
+    writeln!(r, "pub const TZ_NAMES: &[&str] = &[",)?;
+    for name in time_zones_list {
+        writeln!(r, "    {:?},", name)?;
     }
+    writeln!(r, "];")?;
+    write_string(r, target_dir.join("tz_names.rs"))?;
+    Ok(())
+}
 
-    // generate exhaustive by-name test
+fn gen_time_zones(entries_by_major: &Vec<(Option<String>, Vec<&TzName>)>, target_dir: &Path) -> anyhow::Result<()> {
+    let mut r = GENERATED_FILE.to_owned();
+    for (folder, entries) in entries_by_major {
+        if let Some(folder) = folder {
+            let doc = entries[0].full.as_str();
+            let doc = match doc.rsplit_once('/') {
+                Some((doc, _)) => doc,
+                None => doc,
+            };
+            writeln!(r, "/// {doc}")?;
+            writeln!(r, "pub mod {folder} {{")?;
+        }
+        for entry in entries {
+            writeln!(r, "    /// Time zone data for `{:?}`", entry.full)?;
+            writeln!(
+                r,
+                "pub const {}: tz::TimeZoneRef<'static> = crate::generated::tzdata::{};",
+                entry.minor, entry.canon,
+            )?;
+        }
+
+        for entry in entries {
+            writeln!(
+                r,
+                "    /// Raw, unparsed time zone data for `{:?}`",
+                entry.full
+            )?;
+            writeln!(
+                r,
+                "pub const RAW_{}: &[u8] = crate::generated::raw_tzdata::{};",
+                entry.minor, entry.canon,
+            )?;
+        }
+
+        if folder.is_some() {
+            writeln!(r, "}}")?;
+        }
+    }
+    write_string(r, target_dir.join("time_zone.rs"))?;
+    Ok(())
+}
+
+fn gen_test_all_names(entries_by_bytes: &IndexMap<Vec<u8>, Vec<TzName>>, target_dir: &Path) -> anyhow::Result<()> {
     let mut r = GENERATED_FILE.to_owned();
     writeln!(r, "#[test]")?;
     writeln!(r, "fn test() {{")?;
@@ -359,99 +459,37 @@ pub const VERSION_HASH: &str = {hash:?};
     writeln!(r, "    }} }}")?;
     writeln!(r, "}}")?;
     write_string(r, target_dir.join("test_all_names.rs"))?;
+    Ok(())
+}
 
-    // all known time zones as reference to (raw_)tzdata
-    let mut r = GENERATED_FILE.to_owned();
-    for (folder, entries) in &entries_by_major {
-        if let Some(folder) = folder {
-            let doc = entries[0].full.as_str();
-            let doc = match doc.rsplit_once('/') {
-                Some((doc, _)) => doc,
-                None => doc,
-            };
-            writeln!(r, "/// {doc}")?;
-            writeln!(r, "pub mod {folder} {{")?;
-        }
+fn gen_lookup_table(entries_by_bytes: &IndexMap<Vec<u8>, Vec<TzName>>, target_dir: &Path) -> anyhow::Result<()> {
+    let mut keywords = String::new();
+    writeln!(
+        keywords,
+        "struct keyword {{ const char* name; const char* canon; }}"
+    )?;
+    writeln!(keywords, "%%")?;
+    for entries in entries_by_bytes.values() {
         for entry in entries {
-            writeln!(r, "    /// Time zone data for `{:?}`", entry.full)?;
-            writeln!(
-                r,
-                "pub const {}: tz::TimeZoneRef<'static> = crate::generated::tzdata::{};",
-                entry.minor, entry.canon,
-            )?;
-        }
-
-        for entry in entries {
-            writeln!(
-                r,
-                "    /// Raw, unparsed time zone data for `{:?}`",
-                entry.full
-            )?;
-            writeln!(
-                r,
-                "pub const RAW_{}: &[u8] = crate::generated::raw_tzdata::{};",
-                entry.minor, entry.canon,
-            )?;
-        }
-
-        if folder.is_some() {
-            writeln!(r, "}}")?;
+            writeln!(keywords, "{:?}, {:?}", entry.full, entry.canon)?;
         }
     }
-    write_string(r, target_dir.join("time_zone.rs"))?;
-
-    // list of known time zone names
-    let mut time_zones_list = entries_by_major
-        .iter()
-        .flat_map(|(_, entries)| entries.iter())
-        .map(|entry| entry.full.as_str())
-        .collect_vec();
-    time_zones_list.sort_by_key(|l| l.to_ascii_lowercase());
-    writeln!(f, "/// A list of all known time zones")?;
-    writeln!(f, "pub const TZ_NAMES: &[&str] = &[",)?;
-    for name in time_zones_list {
-        writeln!(f, "    {:?},", name)?;
-    }
-    writeln!(f, "];")?;
-    writeln!(f)?;
-
-    // parsed time zone data by canonical name
-    let mut r = GENERATED_FILE.to_owned();
-    writeln!(r, "use tz::timezone::RuleDay;")?;
-    writeln!(r, "use tz::timezone::TransitionRule;")?;
-    writeln!(r, "use tz::TimeZoneRef;")?;
-    writeln!(r)?;
-    writeln!(r, "use crate::new_alternate_time;")?;
-    writeln!(r, "use crate::new_local_time_type;")?;
-    writeln!(r, "use crate::new_month_week_day;")?;
-    writeln!(r, "use crate::new_time_zone_ref;")?;
-    writeln!(r, "use crate::new_transition;")?;
-    writeln!(r)?;
-    for (bytes, entries) in &entries_by_bytes {
-        writeln!(r)?;
-        writeln!(
-            r,
-            "pub(crate) const {}: TimeZoneRef<'static> = {};",
-            &entries[0].canon,
-            tz_convert(bytes),
-        )?;
-    }
-    write_string(r, target_dir.join("tzdata.rs"))?;
-
-    // raw time zone data by canonical name
-    let mut r = GENERATED_FILE.to_owned();
-    for (bytes, entries) in &entries_by_bytes {
-        writeln!(
-            r,
-            "pub(crate) const {}: &[u8] = b\"{}\";",
-            &entries[0].canon,
-            hex_encode(bytes)?,
-        )?;
-    }
-    write_string(r, target_dir.join("raw_tzdata.rs"))?;
-
-    write_string(f, target_dir.join("mod.rs"))?;
-
+    writeln!(keywords, "%%")?;
+    let file = OpenOptions::new()
+        .create(true)
+        .write(true)
+        .truncate(true)
+        .open(target_dir.join("by_name.rs"))?;
+    let mut gperf = Popen::create(
+        &["/usr/bin/env", "python3", "generate_lookup_table.py"],
+        PopenConfig {
+            stdin: Redirection::Pipe,
+            stdout: Redirection::File(file),
+            cwd: Some(var_os("CARGO_MANIFEST_DIR").ok_or(anyhow!("!CARGO_MANIFEST_DIR"))?),
+            ..PopenConfig::default()
+        },
+    )?;
+    gperf.communicate(Some(&keywords))?;
     Ok(())
 }
 
@@ -484,10 +522,10 @@ fn tz_convert(bytes: &[u8]) -> crate::parse::TimeZone {
 fn hex_encode(v: &[u8]) -> Result<String, std::fmt::Error> {
     let mut s = String::with_capacity(v.len() * 4);
     for &b in v {
-        if b == 0 {
-            s.push_str("\\0");
-        } else {
-            write!(s, "\\x{b:02x}")?;
+        match b {
+            0 => s.push_str("\\0"),
+            c @ (1..=31 | 127..=255 | b'"' | b'\\') => write!(s, "\\x{c:02x}")?,
+            c @ 32..=126 => s.push(c as char),
         }
     }
     Ok(s)
