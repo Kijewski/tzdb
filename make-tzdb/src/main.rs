@@ -164,6 +164,7 @@ fn gen_mod(args: &mut impl Iterator<Item = String>, target_dir: &Path) -> Result
 // DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+#![allow(unknown_lints)]
 #![allow(clippy::pedantic)]
 
 #[cfg(all(test, not(miri)))]
@@ -183,6 +184,7 @@ pub const VERSION: &str = {version:?};
 /// The SHA512 hash of the source Time Zone Database (using the "Complete Distribution")
 pub const VERSION_HASH: &str = {hash:?};
 
+#[allow(unreachable_pub)] // false positive
 pub use self::tz_names::TZ_NAMES;
 "#
     );
@@ -275,6 +277,9 @@ fn collect_entries_by_bytes(args: &mut impl Iterator<Item = String>) -> anyhow::
 
 fn gen_raw_tzdata(entries_by_bytes: IndexMap<Vec<u8>, Vec<TzName>>, target_dir: &Path) -> anyhow::Result<()> {
     let mut r = GENERATED_FILE.to_owned();
+    writeln!(r, "#![allow(unknown_lints)]")?;
+    writeln!(r, "#![allow(clippy::octal_escapes)]")?;
+    writeln!(r)?;
     for (bytes, entries) in &entries_by_bytes {
         writeln!(
             r,
