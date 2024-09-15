@@ -1,0 +1,14 @@
+[default]
+locale = "en-us"
+
+[files]
+extend-exclude = [
+    # hidden files
+    ".*",
+    # generated files
+    "tzdb_data/src/generated/*",
+]
+
+[default.extend-words]
+# a suffix, as in "2nd"
+nd = "nd"

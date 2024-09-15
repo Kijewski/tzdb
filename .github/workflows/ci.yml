@@ -3,28 +3,20 @@ name: CI
 on:
   push:
     branches:
-      - main
-      - v0.1.x
-      - v0.2.x
-      - v0.3.x
-      - v0.4.x
-      - v0.5.x
-      - v0.6.x
+      - v0.7.x
   pull_request:
     branches:
-      - main
-      - v0.1.x
-      - v0.2.x
-      - v0.3.x
-      - v0.4.x
-      - v0.5.x
-      - v0.6.x
+      - v0.7.x
   schedule:
     - cron: "58 7 * * 3"
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   fmt:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -32,7 +24,7 @@ jobs:
           submodules: recursive
 
       - name: Setup Rust
-        uses: ./.github/actions/setup-rust
+        uses: dtolnay/rust-toolchain@master
         with:
           toolchain: nightly
           components: rustfmt
@@ -40,18 +32,17 @@ jobs:
       - run: cargo fmt --all -- --check
 
   lint:
+    runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
         toolchain:
-          - "1.56"
+          - "1.81"
           - stable
           - nightly
         versions:
           - ""
           - "-Zminimal-versions"
-
-    runs-on: ubuntu-20.04
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -59,7 +50,7 @@ jobs:
           submodules: recursive
 
       - name: Setup Rust
-        uses: ./.github/actions/setup-rust
+        uses: dtolnay/rust-toolchain@master
         with:
           toolchain: ${{ matrix.toolchain }}
           components: clippy
@@ -73,7 +64,12 @@ jobs:
       - run: cargo clippy --workspace --all-targets -- -D warnings
 
   clippy-pedantic:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        package:
+          - tzdb
+          - tzdb_data
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -81,14 +77,15 @@ jobs:
           submodules: recursive
 
       - name: Setup Rust
-        uses: ./.github/actions/setup-rust
+        uses: dtolnay/rust-toolchain@master
         with:
+          toolchain: stable
           components: clippy
 
-      - run: cargo clippy --workspace --all-targets -- -D clippy::pedantic
+      - run: cargo clippy --package ${{ matrix.package }} --all-targets -- -D clippy::pedantic
 
   test:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -96,8 +93,9 @@ jobs:
           submodules: recursive
 
       - name: Setup Rust
-        uses: ./.github/actions/setup-rust
+        uses: dtolnay/rust-toolchain@master
         with:
+          toolchain: stable
           components: clippy
 
       - run: cargo check --workspace --all-targets
@@ -108,7 +106,7 @@ jobs:
 
   miri:
     name: "Miri"
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -116,7 +114,7 @@ jobs:
           submodules: recursive
 
       - name: Setup Rust
-        uses: ./.github/actions/setup-rust
+        uses: dtolnay/rust-toolchain@master
         with:
           toolchain: nightly
           components: miri
@@ -128,6 +126,7 @@ jobs:
         run: cd testing && cargo miri test --workspace --all-targets
 
   cross-miri:
+    runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
@@ -137,8 +136,6 @@ jobs:
           - powerpc-unknown-linux-gnu
           - powerpc64-unknown-linux-gnu
           - powerpc64le-unknown-linux-gnu
-
-    runs-on: ubuntu-20.04
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -146,7 +143,7 @@ jobs:
           submodules: recursive
 
       - name: Setup Rust
-        uses: ./.github/actions/setup-rust
+        uses: dtolnay/rust-toolchain@master
         with:
           toolchain: nightly
           components: miri
@@ -156,7 +153,7 @@ jobs:
         run: cargo miri test --workspace --target ${{ matrix.target }}
 
   doc:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -164,34 +161,29 @@ jobs:
           submodules: recursive
 
       - name: Setup Rust
-        uses: ./.github/actions/setup-rust
+        uses: dtolnay/rust-toolchain@master
         with:
           toolchain: nightly
-          components: rust-docs
+          components: miri
 
       - run: cargo doc --workspace --all-features --no-deps
         env:
-          RUSTDOCFLAGS: -D warnings --cfg docsrs
+          RUSTDOCFLAGS: -Z unstable-options --generate-link-to-definition --cfg=docsrs -D warnings
 
   audit:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
           submodules: recursive
 
-      - name: Setup Rust
-        uses: ./.github/actions/setup-rust
-
       - name: Audit
-        uses: actions-rs/audit-check@v1
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+        uses: EmbarkStudios/cargo-deny-action@v2
 
   devskim:
     name: DevSkim
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     permissions:
       actions: read
       contents: read
@@ -209,3 +201,28 @@ jobs:
         uses: github/codeql-action/upload-sarif@v3
         with:
           sarif_file: devskim-results.sarif
+
+  typos:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: crate-ci/typos@master
+
+  feature-powerset:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@master
+        with:
+          toolchain: nightly
+
+      - name: Install cargo-hack
+        uses: taiki-e/install-action@cargo-hack
+
+      - name: Check feature-powerset
+        run: cargo hack --workspace --feature-powerset check

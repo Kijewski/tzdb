@@ -6,20 +6,20 @@ authors = ["René Kijewski <crates.io@k6i.de>"]
 repository = "https://github.com/Kijewski/tzdb"
 description = "… benchmarking …"
 license = "Apache-2.0"
-# rust-version = "1.56"
+rust-version = "1.81.0"
 publish = false
 
 [dependencies]
-chrono-tz = { version = "0.8", features = ["case-insensitive"] }
+chrono-tz = { version = "0.10.0", features = ["case-insensitive"] }
 tzdb_data = { path = "../tzdb_data" }
 
 [dev-dependencies]
-criterion = { version = "0.5", default-features = false, features = ["html_reports"] }
-minstant = "0.1"
-rand = { version = "0.8", default-features = false, features = ["std"] }
-rand_xoshiro = "0.6"
-test-strategy = "0.3"
-structmeta = "0.2"
+criterion = { version = "0.5.1", default-features = false, features = ["html_reports"] }
+minstant = "0.1.7"
+rand = { version = "0.8.5", default-features = false, features = ["std"] }
+rand_xoshiro = "0.6.0"
+test-strategy = "0.4.0"
+structmeta = "0.3.0"
 
 [[bench]]
 name = "by-name"

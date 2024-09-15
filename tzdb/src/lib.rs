@@ -14,7 +14,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#![cfg_attr(docsrs, feature(doc_cfg))]
+#![cfg_attr(docsrs, feature(doc_cfg, doc_auto_cfg))]
 #![allow(unknown_lints)]
 #![forbid(unsafe_code)]
 #![warn(absolute_paths_not_starting_with_crate)]
@@ -32,13 +32,15 @@
 #![warn(unused_extern_crates)]
 #![warn(unused_lifetimes)]
 #![warn(unused_results)]
+#![no_std]
 
 //! # `tzdb` — Time Zone Database
 //!
-//! [![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/Kijewski/tzdb/ci.yml?branch=v0.6.x&style=for-the-badge)](https://github.com/Kijewski/tzdb/actions/workflows/ci.yml)
-//! [![Crates.io](https://img.shields.io/crates/v/tzdb?logo=rust&style=for-the-badge)](https://crates.io/crates/tzdb)
-//! ![Minimum supported Rust version](https://img.shields.io/badge/rustc-1.56+-important?logo=rust&style=for-the-badge "Minimum Supported Rust Version: 1.56")
-//! [![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-informational?logo=apache&style=for-the-badge)](https://github.com/Kijewski/tzdb/blob/v0.6.1/LICENSE.md "License: Apache-2.0")
+//! [![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/Kijewski/tzdb/ci.yml?branch=v0.7.x&style=flat-square&logo=github&logoColor=white "GitHub Workflow Status")](https://github.com/Kijewski/tzdb/actions/workflows/ci.yml)
+//! [![Crates.io](https://img.shields.io/crates/v/tzdb?logo=rust&style=flat-square "Crates.io")](https://crates.io/crates/tzdb)
+//! [![docs.rs](https://img.shields.io/docsrs/tzdb?logo=docsdotrs&style=flat-square&logoColor=white "docs.rs")](https://docs.rs/tzdb/)
+//! ![Minimum supported Rust version](https://img.shields.io/badge/rustc-1.81+-important?logo=rust&style=flat-square "Minimum Supported Rust Version: 1.81")
+//! [![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-informational?logo=apache&style=flat-square)](https://github.com/Kijewski/tzdb/blob/v0.6.1/LICENSE.md "License: Apache-2.0")
 //!
 //! Static time zone information for [tz-rs](https://crates.io/crates/tz-rs).
 //!
@@ -55,33 +57,47 @@
 //!
 //! // access by identifier
 //! let time_zone = tzdb::time_zone::europe::KYIV;
+//! # #[cfg(feature = "now")] {
 //! let current_time = tzdb::now::in_tz(tzdb::time_zone::europe::KYIV).unwrap();
+//! # }
 //!
 //! // access by name
 //! let time_zone = tzdb::tz_by_name("Europe/Berlin").unwrap();
+//! # #[cfg(feature = "now")] {
 //! let current_time = tzdb::now::in_named("Europe/Berlin").unwrap();
+//! # }
 //!
 //! // names are case insensitive
 //! let time_zone = tzdb::tz_by_name("ArCtIc/LoNgYeArByEn").unwrap();
+//! # #[cfg(feature = "now")] {
 //! let current_time = tzdb::now::in_named("ArCtIc/LoNgYeArByEn").unwrap();
+//! # }
 //!
 //! // provide a default time zone
-//! # #[cfg(feature = "local")] {
+//! # #[cfg(feature = "now")] {
 //! let current_time = tzdb::now::local_or(tzdb::time_zone::GMT).unwrap();
-//! # }
 //! let current_time = tzdb::now::in_named_or(tzdb::time_zone::GMT, "Some/City").unwrap();
+//! # }
 //! ```
 //!
 //! ## Feature flags
 //!
 //! * `local` <sup>(enabled by default)</sup> — enable functions to query the current system time
-//!
+//! * `now` <sup>(enabled by default)</sup> — enable functions to query the current system time
+//! * `std` <sup>(enabled by default, `now` and `local`)</sup> — enable the use of features in the [`std`] crate
+//! * `alloc` <sup>(enabled by `std`)</sup> — enable the use of features in the [`alloc`] crate
+
+#[cfg(docsrs)]
+extern crate alloc;
+#[cfg(docsrs)]
+extern crate std;
 
 #[cfg(docsrs)]
 pub mod changelog;
+#[cfg(feature = "now")]
 pub mod now;
 
-#[cfg_attr(docsrs, doc(no_inline))]
+#[doc(no_inline)]
 pub use tzdb_data::{time_zone, TZ_NAMES, VERSION, VERSION_HASH};
 
 /// Find a time zone by name, e.g. `"Europe/Berlin"` (case-insensitive)

@@ -1,7 +1,7 @@
 [package]
 name = "tzdb_data"
-version = "0.1.3"
-edition = "2018"
+version = "0.2.0-pre.0"
+edition = "2021"
 authors = ["René Kijewski <crates.io@k6i.de>"]
 repository = "https://github.com/Kijewski/tzdb"
 description = "Static, #![no_std] time zone information for tz-rs"
@@ -9,11 +9,11 @@ license = "MIT-0"
 keywords = ["timezone", "no_std"]
 categories = ["date-and-time", "no-std"]
 readme = "README.md"
-# rust-version = "1.56"
+rust-version = "1.81.0"
 
 [dependencies]
-tz-rs = { version = "^0.6.14", default-features = false, features = ["const"] }
+tz-rs = { version = "^0.7.0", default-features = false }
 
 [package.metadata.docs.rs]
 all-features = true
-rustdoc-args = ["--cfg", "docsrs"]
+rustdoc-args = ["--generate-link-to-definition", "--cfg=docsrs"]

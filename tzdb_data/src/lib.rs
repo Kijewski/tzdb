@@ -26,10 +26,11 @@
 
 //! # `tzdb_data` — Time Zone Database
 //!
-//! [![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/Kijewski/tzdb/ci.yml?branch=v0.6.x&style=for-the-badge)](https://github.com/Kijewski/tzdb/actions/workflows/ci.yml)
-//! [![Crates.io](https://img.shields.io/crates/v/tzdb_data?logo=rust&style=for-the-badge)](https://crates.io/crates/tzdb_data)
-//! ![Minimum supported Rust version](https://img.shields.io/badge/rustc-1.56+-important?logo=rust&style=for-the-badge "Minimum Supported Rust Version: 1.56")
-//! [![License: MIT-0](https://img.shields.io/badge/license-MIT--0-informational?logo=apache&style=for-the-badge)](https://github.com/Kijewski/tzdb/blob/v0.6.1/tzdb_data/LICENSE.md "License: MIT-0")
+//! [![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/Kijewski/tzdb/ci.yml?branch=v0.7.x&style=flat-square&logo=github&logoColor=white "GitHub Workflow Status")](https://github.com/Kijewski/tzdb/actions/workflows/ci.yml)
+//! [![Crates.io](https://img.shields.io/crates/v/tzdb_data?logo=rust&style=flat-square "Crates.io")](https://crates.io/crates/tzdb_data)
+//! [![docs.rs](https://img.shields.io/docsrs/tzdb_data?logo=docsdotrs&style=flat-square&logoColor=white "docs.rs")](https://docs.rs/tzdb_data/)
+//! ![Minimum supported Rust version](https://img.shields.io/badge/rustc-1.81+-important?logo=rust&style=flat-square "Minimum Supported Rust Version: 1.81")
+//! [![License: MIT-0](https://img.shields.io/badge/license-MIT--0-informational?logo=apache&style=flat-square)](https://github.com/Kijewski/tzdb/blob/v0.6.1/tzdb_data/LICENSE.md "License: MIT-0")
 //!
 //! Static, `#![no_std]` time zone information for tz-rs
 //!
@@ -49,7 +50,7 @@
 
 mod generated;
 
-#[cfg_attr(docsrs, doc(inline))]
+#[doc(inline)]
 pub use crate::generated::{time_zone, TZ_NAMES, VERSION, VERSION_HASH};
 
 /// Find a time zone by name, e.g. `b"Europe/Berlin"` (case-insensitive)
@@ -90,7 +91,6 @@ pub const fn find_raw(s: &[u8]) -> Option<&'static [u8]> {
     }
 }
 
-#[allow(clippy::out_of_bounds_indexing)]
 #[must_use]
 const fn new_time_zone_ref(
     transitions: &'static [tz::timezone::Transition],
@@ -100,15 +100,10 @@ const fn new_time_zone_ref(
 ) -> tz::timezone::TimeZoneRef<'static> {
     match tz::timezone::TimeZoneRef::new(transitions, local_time_types, leap_seconds, extra_rule) {
         Ok(value) => value,
-        Err(_) => {
-            #[allow(unconditional_panic)]
-            let err = [][0];
-            err
-        },
+        Err(_) => panic!(),
     }
 }
 
-#[allow(clippy::out_of_bounds_indexing)]
 #[must_use]
 const fn new_local_time_type(
     ut_offset: i32,
@@ -117,11 +112,7 @@ const fn new_local_time_type(
 ) -> tz::LocalTimeType {
     match tz::LocalTimeType::new(ut_offset, is_dst, time_zone_designation) {
         Ok(value) => value,
-        Err(_) => {
-            #[allow(unconditional_panic)]
-            let err = [][0];
-            err
-        },
+        Err(_) => panic!(),
     }
 }
 
@@ -133,7 +124,6 @@ const fn new_transition(
     tz::timezone::Transition::new(unix_leap_time, local_time_type_index)
 }
 
-#[allow(clippy::out_of_bounds_indexing)]
 #[must_use]
 const fn new_alternate_time(
     std: tz::LocalTimeType,
@@ -152,24 +142,15 @@ const fn new_alternate_time(
         dst_end_time,
     ) {
         Ok(value) => value,
-        Err(_) => {
-            #[allow(unconditional_panic)]
-            let err = [][0];
-            err
-        },
+        Err(_) => panic!(),
     }
 }
 
-#[allow(clippy::out_of_bounds_indexing)]
 #[must_use]
 const fn new_month_week_day(month: u8, week: u8, week_day: u8) -> tz::timezone::MonthWeekDay {
     match tz::timezone::MonthWeekDay::new(month, week, week_day) {
         Ok(value) => value,
-        Err(_) => {
-            #[allow(unconditional_panic)]
-            let err = [][0];
-            err
-        },
+        Err(_) => panic!(),
     }
 }
 

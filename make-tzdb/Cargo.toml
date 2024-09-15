@@ -1,7 +1,7 @@
 [package]
 name = "make-tzdb"
 version = "0.0.0"
-edition = "2018"
+edition = "2021"
 authors = ["René Kijewski <crates.io@k6i.de>"]
 repository = "https://github.com/Kijewski/tzdb"
 description = "Tool to generate `tzdb/src/generated.rs`"
@@ -9,15 +9,15 @@ license = "MIT OR Apache-2.0"
 publish = false
 
 [dependencies]
-anyhow = "1"
-convert_case = "0.6"
-indexmap = "2"
-itertools = "0.12"
-ron = "0.8"
-serde = { version = "1", features = ["derive"] }
-subprocess = "0.2"
-tz-rs = "0.6"
-walkdir = "2"
+anyhow = "1.0.88"
+convert_case = "0.6.0"
+indexmap = "2.5.0"
+itertools = "0.13.0"
+ron = "0.8.1"
+serde = { version = "1.0.210", features = ["derive"] }
+subprocess = "0.2.9"
+tz-rs = "0.7.0"
+walkdir = "2.5.0"
 
 [workspace]
 members = ["."]
