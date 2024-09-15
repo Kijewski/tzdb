@@ -36,3 +36,6 @@ let current_time = tzdb::now::in_named_or(tzdb::time_zone::GMT, "Some/City")?;
 ## Feature flags
 
 * `local` <sup>(enabled by default)</sup> — enable functions to query the current system time
+* `now` <sup>(enabled by default)</sup> — enable functions to query the current system time
+* `std` <sup>(enabled by default, `now` and `local`)</sup> — enable the use of features in the `std` crate
+* `alloc` <sup>(enabled by `std`)</sup> — enable the use of features in the `alloc` crate
