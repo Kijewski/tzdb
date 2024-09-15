@@ -12,10 +12,10 @@ readme = "README.md"
 rust-version = "1.81.0"
 
 [dependencies]
-tzdb_data = { version = "^0.2.0-pre.0", default-features = false, path = "../tzdb_data" }
+tzdb_data = { version = "0.2.0-pre.0", default-features = false, path = "../tzdb_data" }
 
-iana-time-zone = { version = "^0.1.60", default-features = false, features = ["fallback"], optional = true }
-tz-rs = { version = "^0.7.0", default-features = false, features = ["std"] }
+iana-time-zone = { version = "0.1.60", default-features = false, features = ["fallback"], optional = true }
+tz-rs = { version = "0.7.0", default-features = false, features = ["std"] }
 
 [features]
 default = ["local", "now", "std"]
