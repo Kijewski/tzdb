@@ -1,11 +1,12 @@
 //! Get the current time in some time zone
 
-use std::convert::TryFrom;
-use std::fmt;
+extern crate std;
+
+use core::convert::TryFrom;
+use core::fmt;
 use std::time::{SystemTime, SystemTimeError};
 
-use tz::error::ProjectDateTimeError;
-use tz::{DateTime, TimeZoneRef};
+use tz::{DateTime, TimeZoneRef, TzError};
 
 #[cfg(not(feature = "local"))]
 mod iana_time_zone {
@@ -33,7 +34,7 @@ pub enum NowError {
     /// Unknown system time zone. Only returned by [`local()`], and [`in_named()`].
     UnknownTimezone,
     /// Could not project timestamp.
-    ProjectDateTime(ProjectDateTimeError),
+    ProjectDateTime(TzError),
     /// Could not get current system time.
     Utcnow(SystemTimeError),
 }
@@ -49,8 +50,8 @@ impl fmt::Display for NowError {
     }
 }
 
-impl std::error::Error for NowError {
-    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+impl core::error::Error for NowError {
+    fn source(&self) -> Option<&(dyn core::error::Error + 'static)> {
         match self {
             #[cfg(feature = "local")]
             Self::TimeZone(err) => Some(err),
@@ -169,9 +170,8 @@ pub fn in_tz(time_zone_ref: TimeZoneRef<'_>) -> Result<DateTime, NowError> {
     let now = SystemTime::now()
         .duration_since(SystemTime::UNIX_EPOCH)
         .map_err(NowError::Utcnow)?;
-    let secs = i64::try_from(now.as_secs()).map_err(|_| {
-        NowError::ProjectDateTime(ProjectDateTimeError("now is too far in the future"))
-    })?;
+    let secs =
+        i64::try_from(now.as_secs()).map_err(|_| NowError::ProjectDateTime(TzError::OutOfRange))?;
     let nanos = now.subsec_nanos();
     DateTime::from_timespec(secs, nanos, time_zone_ref).map_err(NowError::ProjectDateTime)
 }

@@ -4,7 +4,7 @@ use proptest::collection::{vec, SizeRange};
 use proptest::prelude::*;
 use test_strategy::proptest;
 use tz::TimeZoneRef;
-use tzdb::{tz_by_name, raw_tz_by_name};
+use tzdb::{raw_tz_by_name, tz_by_name};
 
 fn ascii_string(size: impl Into<SizeRange>) -> impl Strategy<Value = String> {
     vec(proptest::char::range('\0', '\x7f'), size).prop_map(|v| v.into_iter().collect())

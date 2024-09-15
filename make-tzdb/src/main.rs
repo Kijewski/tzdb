@@ -203,7 +203,7 @@ fn collect_entries_by_major(entries_by_bytes: &IndexMap<Vec<u8>, Vec<TzName>>) -
             (Some(_), None) => Ordering::Less,
             (Some(l), Some(r)) => l.cmp(r),
         })
-        .group_by(|(k, _)| k.map(|s| s.to_owned()))
+        .chunk_by(|(k, _)| k.map(|s| s.to_owned()))
         .into_iter()
         .map(|(major, entries)| {
             let mut entries = entries.map(|(_, e)| e).collect_vec();

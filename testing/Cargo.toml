@@ -6,16 +6,16 @@ authors = ["René Kijewski <crates.io@k6i.de>"]
 repository = "https://github.com/Kijewski/tzdb"
 description = "… benchmarking …"
 license = "Apache-2.0"
-# rust-version = "1.56"
+rust-version = "1.81.0"
 publish = false
 
 [dependencies]
-tzdb = { path = ".." }
+tzdb = { path = "../tzdb" }
 
-proptest = "1.2.0"
-structmeta = "0.2.0"
-test-strategy = "0.3.1"
-tz-rs = { version = "^0.6.14", default-features = false, features = ["const", "std"] }
+proptest = "1.5.0"
+structmeta = "0.3.0"
+test-strategy = "0.4.0"
+tz-rs = { version = "0.7.0", default-features = false, features = ["std"] }
 
 [workspace]
 members = ["."]

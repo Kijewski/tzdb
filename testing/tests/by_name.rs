@@ -1,6 +1,6 @@
 #![cfg(test)]
 
-use tzdb::{time_zone, tz_by_name, raw_tz_by_name};
+use tzdb::{raw_tz_by_name, time_zone, tz_by_name};
 
 #[test]
 fn test_by_name() {

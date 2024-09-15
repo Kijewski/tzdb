@@ -1,5 +1,9 @@
 ## Changes between the versions
 
+### 0.7.0 (2024-09-15)
+
+* Update to tz-rs v0.7.0
+
 ### 0.6.1 (2023-12-30)
 
 * Split into `tzdb` and `tzdb_data`
