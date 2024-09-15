@@ -1,5 +1,9 @@
 ## Changes between the versions
 
+### 0.7.1 (2024-09-15)
+
+* Add missing Changelog for doc creation
+
 ### 0.7.0 (2024-09-15)
 
 * Update to tz-rs v0.7.0
