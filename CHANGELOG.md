@@ -1,5 +1,9 @@
 ## Changes between the versions
 
+### 0.7.2 (2024-09-16)
+
+* Enable full no-std use
+
 ### 0.7.1 (2024-09-15)
 
 * Add missing Changelog for doc creation
