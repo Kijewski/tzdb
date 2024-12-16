@@ -37,7 +37,7 @@ fn benchmark_by_name(c: &mut criterion::Criterion) {
             }
 
             c.bench_function(
-                stringify!($id),
+                stringify!($ident),
                 |b| b.iter_custom(|iters| $ident(iters, black_box(&names))),
             );
         })* };
