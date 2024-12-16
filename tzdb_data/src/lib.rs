@@ -91,6 +91,7 @@ pub const fn find_raw(s: &[u8]) -> Option<&'static [u8]> {
     }
 }
 
+#[allow(clippy::ref_option)] // we cannot change `TimeZoneRef::new`'s interface
 #[must_use]
 const fn new_time_zone_ref(
     transitions: &'static [tz::timezone::Transition],
