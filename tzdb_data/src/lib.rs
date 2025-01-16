@@ -50,7 +50,7 @@
 mod generated;
 
 #[cfg_attr(docsrs, doc(inline))]
-pub use crate::generated::{time_zone, TZ_NAMES, VERSION, VERSION_HASH};
+pub use crate::generated::{TZ_NAMES, VERSION, VERSION_HASH, time_zone};
 
 /// Find a time zone by name, e.g. `b"Europe/Berlin"` (case-insensitive)
 ///
@@ -91,6 +91,7 @@ pub const fn find_raw(s: &[u8]) -> Option<&'static [u8]> {
 }
 
 #[allow(clippy::out_of_bounds_indexing)]
+#[allow(clippy::ref_option)]
 #[must_use]
 const fn new_time_zone_ref(
     transitions: &'static [tz::timezone::Transition],

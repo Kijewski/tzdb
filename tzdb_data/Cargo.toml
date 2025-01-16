@@ -1,6 +1,6 @@
 [package]
 name = "tzdb_data"
-version = "0.1.3"
+version = "0.1.4"
 edition = "2018"
 authors = ["René Kijewski <crates.io@k6i.de>"]
 repository = "https://github.com/Kijewski/tzdb"
@@ -16,4 +16,4 @@ tz-rs = { version = "^0.6.14", default-features = false, features = ["const"] }
 
 [package.metadata.docs.rs]
 all-features = true
-rustdoc-args = ["--cfg", "docsrs"]
+rustdoc-args = ["--generate-link-to-definition", "--cfg=docsrs"]

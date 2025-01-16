@@ -82,7 +82,7 @@ pub mod changelog;
 pub mod now;
 
 #[cfg_attr(docsrs, doc(no_inline))]
-pub use tzdb_data::{time_zone, TZ_NAMES, VERSION, VERSION_HASH};
+pub use tzdb_data::{TZ_NAMES, VERSION, VERSION_HASH, time_zone};
 
 /// Find a time zone by name, e.g. `"Europe/Berlin"` (case-insensitive)
 ///

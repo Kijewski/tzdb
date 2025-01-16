@@ -1,5 +1,6 @@
 combine_control_expr = false
-edition = "2021"
+edition = "2018"
+style_edition = "2024"
 format_macro_matchers = true
 match_block_trailing_comma = true
 imports_granularity = "Module"
@@ -11,4 +12,3 @@ group_imports = "StdExternalCrate"
 unstable_features = true
 use_field_init_shorthand = true
 use_try_shorthand = true
-version = "Two"
