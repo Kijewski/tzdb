@@ -51,7 +51,7 @@
 mod generated;
 
 #[doc(inline)]
-pub use crate::generated::{time_zone, TZ_NAMES, VERSION, VERSION_HASH};
+pub use crate::generated::{TZ_NAMES, VERSION, VERSION_HASH, time_zone};
 
 /// Find a time zone by name, e.g. `b"Europe/Berlin"` (case-insensitive)
 ///

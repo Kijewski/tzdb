@@ -3,7 +3,7 @@
 use std::env::args;
 use std::process::exit;
 
-use tzdb::{local_tz, now, time_zone, tz_by_name, TZ_NAMES};
+use tzdb::{TZ_NAMES, local_tz, now, time_zone, tz_by_name};
 
 pub fn main() -> Result<(), now::NowError> {
     let mut args = args().fuse();
