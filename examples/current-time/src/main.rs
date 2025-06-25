@@ -15,7 +15,7 @@ pub fn main() -> Result<(), now::NowError> {
         let mut line = String::with_capacity(80);
         for tz_name in TZ_NAMES {
             if line.len() + 2 + tz_name.len() >= 80 {
-                println!("{},", line);
+                println!("{line},");
                 line.clear();
             }
             if !line.is_empty() {
@@ -24,7 +24,7 @@ pub fn main() -> Result<(), now::NowError> {
             line.push_str(tz_name);
         }
         if !line.is_empty() {
-            println!("{}", line);
+            println!("{line}");
         }
         return Ok(());
     }
@@ -33,14 +33,14 @@ pub fn main() -> Result<(), now::NowError> {
         match tz_by_name(&argument) {
             Some(timezone) => timezone,
             None => {
-                eprintln!("No such time zone found in database: {:?}", argument);
-                eprintln!("To see a list of all known time zones run: {} --list", exe);
+                eprintln!("No such time zone found in database: {argument:?}");
+                eprintln!("To see a list of all known time zones run: {exe} --list");
                 exit(1);
             },
         }
     } else {
         eprintln!("No time zone selected, defaulting to the system time zone.");
-        eprintln!("To see a list of all known time zones run: {} --list", exe);
+        eprintln!("To see a list of all known time zones run: {exe} --list");
         eprintln!();
         local_tz().unwrap_or(time_zone::UTC)
     };
@@ -77,7 +77,7 @@ pub fn main() -> Result<(), now::NowError> {
         dt.minute(),
         dt.second(),
     );
-    println!("{}", dt);
+    println!("{dt}");
 
     Ok(())
 }
