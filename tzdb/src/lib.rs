@@ -14,7 +14,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#![cfg_attr(docsrs, feature(doc_cfg, doc_auto_cfg))]
+#![cfg_attr(docsrs, feature(doc_cfg))]
 #![allow(unknown_lints)]
 #![forbid(unsafe_code)]
 #![warn(absolute_paths_not_starting_with_crate)]

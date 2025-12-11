@@ -37,12 +37,14 @@ jobs:
       fail-fast: false
       matrix:
         toolchain:
-          - "1.81"
           - stable
           - nightly
         versions:
           - ""
           - "-Zminimal-versions"
+        include:
+          - toolchain: "1.81"
+            versions: "-Zminimal-versions"
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -121,9 +123,13 @@ jobs:
 
       - name: Test (tzdb)
         run: cargo miri test --workspace --all-targets
+        env:
+          MIRIFLAGS: "-Zmiri-disable-isolation"
 
       - name: Test (testing)
         run: cd testing && cargo miri test --workspace --all-targets
+        env:
+          MIRIFLAGS: "-Zmiri-disable-isolation"
 
   cross-miri:
     runs-on: ubuntu-latest
@@ -151,6 +157,8 @@ jobs:
 
       - name: Test
         run: cargo miri test --workspace --target ${{ matrix.target }}
+        env:
+          MIRIFLAGS: "-Zmiri-disable-isolation"
 
   doc:
     runs-on: ubuntu-latest
