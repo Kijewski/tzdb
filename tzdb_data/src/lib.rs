@@ -1,6 +1,5 @@
-// SPDX-License-Identifier: MIT-0
-//
-// Copyright 2022-2024 René Kijewski <crates.io@k6i.de>
+// SPDX-License-Identifier: MIT-0 OR MIT OR Apache-2.0
+// SPDX-FileCopyrightText: 2022-2026 René Kijewski <crates.io@k6i.de>
 
 #![cfg_attr(docsrs, feature(doc_cfg))]
 #![allow(unknown_lints)]

@@ -24,7 +24,7 @@ on:
 
 jobs:
   fmt:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -44,14 +44,16 @@ jobs:
       fail-fast: false
       matrix:
         toolchain:
-          - "1.56"
           - stable
           - nightly
         versions:
           - ""
           - "-Zminimal-versions"
+        include:
+          - toolchain: "1.56"
+            versions: "-Zminimal-versions"
 
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -73,7 +75,7 @@ jobs:
       - run: cargo clippy --workspace --all-targets -- -D warnings
 
   clippy-pedantic:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -88,7 +90,7 @@ jobs:
       - run: cargo clippy --workspace --all-targets -- -D clippy::pedantic
 
   test:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -108,7 +110,7 @@ jobs:
 
   miri:
     name: "Miri"
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -123,9 +125,13 @@ jobs:
 
       - name: Test (tzdb)
         run: cargo miri test --workspace --all-targets
+        env:
+          MIRIFLAGS: "-Zmiri-disable-isolation"
 
       - name: Test (testing)
         run: cd testing && cargo miri test --workspace --all-targets
+        env:
+          MIRIFLAGS: "-Zmiri-disable-isolation"
 
   cross-miri:
     strategy:
@@ -138,7 +144,7 @@ jobs:
           - powerpc64-unknown-linux-gnu
           - powerpc64le-unknown-linux-gnu
 
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -154,9 +160,11 @@ jobs:
 
       - name: Test
         run: cargo miri test --workspace --target ${{ matrix.target }}
+        env:
+          MIRIFLAGS: "-Zmiri-disable-isolation"
 
   doc:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -174,7 +182,7 @@ jobs:
           RUSTDOCFLAGS: -D warnings --cfg docsrs
 
   audit:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -191,7 +199,7 @@ jobs:
 
   devskim:
     name: DevSkim
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
     permissions:
       actions: read
       contents: read
